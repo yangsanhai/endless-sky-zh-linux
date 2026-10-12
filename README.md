@@ -95,10 +95,36 @@ cmake --build build -j$(nproc)
 
 ## 七、许可与来源
 
-- 本项目的游戏源码来自 [SoluteToNight/endless-sky-CN](https://github.com/SoluteToNight/endless-sky-CN)（GPL-3.0），
+- 本项目的游戏源码来自 [SoluteToNight/endless-sky-CN](https://github.com/SoluteToNight/endless-sky-CN)（GPL-3.0，分支 `feature/cjk-localization`），
   上游为 [endless-sky/endless-sky](https://github.com/endless-sky/endless-sky)（GPL-3.0）。
+  本发行版编译起点：commit `18f317533db3a395b838f7112f4634e41a92ba41`（2026-09-26）。
 - 中文数据来自该项目 Android 版（Endless Sky 中文数据）。
 - 界面文本翻译参考了 [ok-komputer](https://github.com/ok-komputer) 提交的 PR（部分术语音译）。
 - 本项目同样以 **GPL-3.0** 协议发布，保留原作者版权声明。
 
-> Endless Sky 是 Michael Zahniser 等人的开源作品，本项目是非官方汉化，与官方无关。
+### 依 GPL-3.0 第 5 条声明的修改内容
+
+1. 集成社区中文数据（任务剧情、对话、星球描述、飞船/装备/商品中文名）
+2. 附加界面文本翻译补丁 `interface-translation.patch`（1456 条程序内文本）
+3. 使用思源黑体（SourceHanSansCN）渲染中文
+
+以上改动仅涉及文本与字体资源，**未修改游戏逻辑与程序行为**。
+
+### 许可与署名的相关文件
+
+| 文件 | 说明 |
+|---|---|
+| `LICENSE` | GNU General Public License v3.0 全文（本发行包同样以该协议发布） |
+| `credits.txt` | 游戏自带署名/贡献者文件，**同时是游戏定位资源目录的锚点，不能删** |
+| `copyright` | 上游版权与贡献者信息（Debian 版权格式） |
+| `NOTICE-zh.txt` | 本中文版的来源、改动与对应源码说明 |
+
+### 对应源码（Corresponding Source）
+
+依 GPL-3.0 要求：对应源码 = 上述上游分支（commit 见上）+ 本仓库的全部改动
+（`interface-translation.patch` 界面翻译补丁、打包脚本与发布记录）。
+发行包里也自带 `LICENSE` / `copyright` / `NOTICE-zh.txt`（位于 `usr/share/doc/endless-sky-zh/`）。
+
+> Endless Sky 是 Michael Zahniser 等人的开源作品，本项目是非官方中文版，与 Endless Sky 官方无关，
+> 也未获官方背书；如有问题请在本仓库提 Issue，不要打扰上游作者。
+

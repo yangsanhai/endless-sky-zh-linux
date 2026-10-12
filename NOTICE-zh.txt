@@ -1,0 +1,28 @@
+Endless Sky 无尽天空 · Linux 简体中文版 —— 许可与来源说明
+================================================================
+
+本发行包是 Endless Sky 的【非官方简体中文版】，与 Endless Sky 官方无关。
+
+【上游来源 Upstream】
+  官方原版     : https://github.com/endless-sky/endless-sky            (GPL-3.0)
+  中文分支     : https://github.com/SoluteToNight/endless-sky-CN       (GPL-3.0, branch: feature/cjk-localization)
+  本包编译起点 : 18f317533db3a395b838f7112f4634e41a92ba41 2026-09-26 fix(sync): Correct the MSYS2 toolchain path used for the build
+
+【本项目做的修改（依 GPL-3.0 第 5 条声明）】
+  1. 集成社区中文数据：任务剧情、对话、星球描述、飞船/装备/商品中文名
+  2. 附加界面文本翻译补丁：interface-translation.patch（1456 条程序内文本）
+  3. 使用思源黑体（SourceHanSansCN）渲染中文
+  以上改动仅涉及文本与字体资源，未修改游戏逻辑与程序行为。
+
+【许可证 License】
+  本发行包整体按 GNU General Public License v3.0 发布，完整协议文本见同目录 LICENSE。
+  全部版权与贡献者信息见 copyright 与 credits.txt（游戏自带署名文件，请勿删除，
+  游戏亦通过 credits.txt 定位资源目录）。
+
+【对应源码 Corresponding Source】
+  依 GPL-3.0 要求，对应源码可从上述上游仓库获取；
+  本项目自身的改动（界面翻译补丁、打包脚本、发布记录）见：
+      https://github.com/yangsanhai/endless-sky-zh-linux
+
+【维护者 Maintainer】
+  yangsanhai <yangsanhai@users.noreply.github.com>
