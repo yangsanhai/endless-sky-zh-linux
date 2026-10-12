@@ -1,0 +1,1111 @@
+# Copyright (c) 2023 by Azure
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+mission "Avgi: Lost in Twilight"
+	invisible
+	entering
+	source
+		attributes "twilight"
+	destination "Earth"
+	on offer
+		log "在进入一个跳跃引擎无法返回的星系后，被困在了一个奇异区域。"
+		set "avgi: lost in twilight"
+		conversation
+			`你一跳跃到这个星系，就立刻察觉到不对劲。你的跳跃引擎排放出的特征等离子体消散得异常迅速；检查飞船系统时，你发现它的温度莫名比正常低了很多。飞船电脑显示你过来的那个星系已经超出范围，无法跳回。看来你暂时被困在这片区域了。如果你没有携带冲压集气器，建议你读档先装一个再回来。`
+				decline
+
+phrase "lost in twilight"
+	word
+		`当你跃迁进入星系时，立刻察觉到异常。跳跃引擎的特征等离子体以不自然的速度迅速消散，检查飞船系统时，你发现温度莫名远低于正常值。计算机显示，你来自的星系已超出有效范围，无法跃迁返回。看来你暂时被困在这里。如果没携带冲压收集器，建议你读回之前的存档，装好后再回来。`
+
+mission "Avgi: First Contact"
+	landing
+	autosave
+	name "外星遭遇"
+	description "护送外星飞船前往地图上标记的目的地。"
+	source
+		attributes "avgi"
+	destination "Peripheria"
+	mark "Arche"
+	clearance
+	on offer
+		set "avgi: aberrant siege"
+		event "twilight label"
+		event "tangled shroud label"
+		conversation
+			branch aviskir
+				has "flagship planet: Aviskir"
+			branch "core world"
+				has "flagship planet attribute: avgi core"
+			branch station
+				has "flagship planet attribute: station"
+			branch uninhabited
+				has "flagship planet attribute: uninhabited"
+
+			label aviskir
+			`你首先注意到这颗类地世界的是轨道上的彻底毁灭。你的飞船传感器探测到数十座残破的空间站和无数被摧毁的卫星残骸，形成一大片散落在不同轨道上的碎片区。几个较大的物体大体完整，但毫无生气，没有信号发射或热特征。当你的飞船触及高层大气时，即使肉眼也能看到一条极长缆绳的闪烁碎片在轨道上缓慢旋转。`
+			`	你的观察被控制台发出的刺耳警告打断。你勉强将飞船拉开，一道明亮的等离子轨迹几乎擦过你，那是从地面发射的超高速弹丸的尾迹。显然，尽管轨道上毁灭殆尽，下面还有人活着。如果你的飞船无法承受那些行星防御炮台的直接命中，继续前进可能会很危险。`
+			action
+				set "avgi: fired on by planets"
+			choice
+				`	(Attempt to land regardless.)`
+					goto explode
+					to display
+						"flagship attribute: shields" + "flagship attribute: hull" <= 18000 * 1000
+				`	(Attempt to land regardless.)`
+					goto hit
+					to display
+						"flagship attribute: shields" + "flagship attribute: hull" > 18000 * 1000
+						"flagship attribute: shields" + "flagship attribute: hull" < 90000 * 1000
+				`	(Attempt to land regardless.)`
+					goto scratched
+					to display
+						"flagship attribute: shields" + "flagship attribute: hull" >= 90000 * 1000
+				`	(Move to a higher orbit.)`
+					goto orbit
+
+			label "core world"
+			`你首先注意到这颗宜居世界的是轨道上的彻底毁灭。你的飞船传感器探测到少量残破的空间站和无数被摧毁的卫星残骸，形成一大片散落在不同轨道上的碎片区。几个较大的物体大体完整，但毫无生气，没有信号发射或热特征。当你的飞船触及高层大气时，你看到一艘巨型星舰的一半残骸在翻滚，它的驱动装置同样巨大，脊梁沿着断裂处碎裂开来。`
+			`	你的观察被控制台发出的刺耳警告打断。你勉强将飞船拉开，一道明亮的等离子轨迹几乎擦过你，那是从地面发射的超高速弹丸的尾迹。显然，尽管轨道上毁灭殆尽，下面还有人活着。如果你的飞船无法承受那些行星防御炮台的直接命中，继续前进可能会很危险。`
+			action
+				set "avgi: fired on by planets"
+			choice
+				`	(Attempt to land regardless.)`
+					goto explode
+					to display
+						"flagship attribute: shields" + "flagship attribute: hull" <= 9000 * 1000
+				`	(Attempt to land regardless.)`
+					goto hit
+					to display
+						"flagship attribute: shields" + "flagship attribute: hull" > 9000 * 1000
+						"flagship attribute: shields" + "flagship attribute: hull" < 60000 * 1000
+				`	(Attempt to land regardless.)`
+					goto scratched
+					to display
+						"flagship attribute: shields" + "flagship attribute: hull" >= 60000 * 1000
+				`	(Move to a higher orbit.)`
+					goto orbit
+
+			label explode
+			`	You make it no more than a few seconds before your ship is lanced by a rapid succession of shots from below. Your shields shatter almost instantly, your hull pierced as though it is tissue paper. You don't even have time to think before you are consumed by the rapidly expanding cloud of plasma that was once the <ship>.`
+				explode
+
+			label hit
+			`	You make it no more than a few seconds before the <ship> is lanced by a rapid succession of shots from below. Your ship appears to be holding up under the fire, but the species that lives here doesn't seem willing to welcome you. When you detect the launch of a rather unreasonable number of missiles, you decide it would be safer to proceed back to orbit.`
+				goto orbit
+
+			label scratched
+			`	You make it no more than a few seconds before the <ship> is lanced by a rapid succession of shots from below. Your ship easily shrugs off the kinetic impacts, but the species that lives here doesn't seem willing to welcome you. When you detect the launch of a rather unreasonable number of missiles, you decide it would be safer to proceed back to orbit.`
+				goto orbit
+
+			label uninhabited
+			`虽然这个世界目前看上去无人定居，但你可以清楚地看出它被外星文明探索甚至利用过的迹象。然而，这些迹象也表明这里发生过灾难性事件。废弃的卫星遍布低轨道，你可以探测到地表前哨的破碎残骸散布在下方陆地上。你驾驶<ship>低空掠过其中一座建筑，可以看到周围散布着小坑和玻璃化的地面。`
+				goto orbit
+
+			label orbit
+			`	回到轨道上，地平线上出现了一艘沿着拦截航向向你飞来的飞船，让你吓了一跳。它看起来和你以前见过的任何飞船都不一样，与你习惯的流线型人类飞船相比显得有些笨拙。你不确定它属于居住在这片空间的同一种族，还是完全不同的另一个种族，但至少它肯定不像那些充斥着这个星团的敌对飞船。`
+			choice
+				`	(Try transmitting a standard hail.)`
+					goto talk
+				`	(Transmit a series of prime numbers.)`
+					goto prime
+				`	（保持沉默。）`
+					goto silent
+
+			label station
+			`这座外星空间站显然已经风光不再。虽然主体结构仍然完好，没有像你见过的其他废墟那样沦为碎片区，但船体上布满了强大的武器射击留下的刻痕和缺口。空间站的所有系统似乎都已断电，因为你探测不到任何光或热辐射。不指望能找到任何活物，你机动靠近一个你认为可能是开放对接舱口的位置。`
+			`	就在<ship>靠近那个"对接舱口"时，你发现里面藏着一艘像飞船的东西。它和你以前见过的任何飞船都不一样，与你习惯的流线型人类飞船相比显得有点笨拙。你不确定它属于这片空间的原生种族，还是完全不同的另一个种族，但至少它肯定不像那些似乎充斥这个星团的敌对飞船。更重要的是，它的反应堆正在运行，似乎有活跃的护盾矩阵。看来确实有人在家。`
+			choice
+				`	(Transmit a standard hail.)`
+					goto talk
+				`	(Transmit a series of prime numbers.)`
+					goto prime
+				`	（保持沉默。）`
+					goto silent
+
+			label talk
+			`	你不太确定如何与完全未知的物种交流，但你发送了标准呼号，至少让那艘外星飞船知道你在试图联系它。`
+			`	然而，令你震惊的是，那艘外星飞船只过了几分钟就回应了，不仅使用相同的频段，而且编码方式居然能被你的飞船电脑解析：一种标准的人类数据格式，与你刚刚发送的类似。要么这些外星人有惊人的解码能力，要么他们之前以某种方式接触过人类。`
+			`	The message is short and direct:`
+				goto transmission
+
+			label prime
+			`	你不能指望一个新的外星种族能解码你的传输，更不用说理解你的语言了，所以你就通过简单的振幅调制信号发送了一串短质数，至少让那艘外星飞船知道你在尝试沟通。`
+			`	然而，令你震惊的是，当你刚发送完数字"37"时，那艘外星飞船就中断了你的传输，不仅使用相同的频段，而且编码方式居然能被你的飞船电脑解析：一种标准的人类数据格式，与你刚刚发送的类似。他们一定之前以某种方式接触过人类。`
+			`	The message is short and direct:`
+				goto transmission
+
+			label silent
+			`	不确定那艘外星飞船的意图，你保持沉默。然而，看来这些外星人另有打算，因为你很快收到了一条传输，编码方式能被你的飞船电脑解析，采用标准的人类数据格式。信息简短而直接：`
+
+			label transmission
+			`	"问候。我是阿夫吉人。你，人类，疑问？重要。你跟着。这片空间，‘薄暮’，不安全。你有超光速引擎，对吧？强调。我们要穿越的空间不稳定，像迷宫。跟紧，小心。"`
+			`	The message includes an alien-looking star chart, with a trail of marked systems leading to a system far to the south. Something appears to have been lost in translation, as the systems are unmarked past a certain point and are instead labeled as "shrouded," whatever that means. Just as you are still processing first contact with an alien civilization, a group of the same ships that attacked you earlier jump into the system.`
+				launch
+
+	npc
+		government "Aberrant"
+		personality coward secretive vindictive entering
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Latte" 2
+				"Aberrant Whiskers"
+
+	npc
+		government "Aberrant"
+		personality
+			confusion 90
+			coward secretive uninterested vindictive
+		system "Quintessence"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Chomper"
+
+	npc
+		government "Aberrant"
+		personality
+			confusion 90
+			coward secretive uninterested vindictive
+		system "Ballad"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Trip"
+
+	npc
+		government "Aberrant"
+		personality
+			confusion 90
+			coward secretive uninterested vindictive
+		system "H-1"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Hugger" 2
+
+	npc save accompany
+		government "Avgi (Twilight Guard)"
+		personality escort fleeing launching timid
+		ship "Polari" "Distant Shores"
+
+	on accept
+		"reputation: Avgi" >?= 5
+		"reputation: Avgi (Consonance)" >?= 5
+		"reputation: Avgi (Twilight Guard)" >?= 5
+
+	on enter "Arche"
+		mark "Ballad"
+		unmark "Arche"
+
+	on enter "Ballad"
+		unmark "Ballad"
+
+	on enter "Concerto"
+		conversation
+			`经过穿越曲折超空间航线的混乱旅程后，你终于抵达了外星人在你的星图上标记的最后一个星系。你注意到飞行计算机没有记录下你经过的大多数星系的位置，可能是由于那个让飞船在这片区域几乎完全失明的异常现象。不过，这片区域似乎不受影响，你的计算机能够像往常一样定位。`
+			`	外星飞船发出信号，示意你跟它飞向星系中一个看起来有人居住的大型空间站。空间站呈圆盘状，中心有一个巨大的切口，露出数百个对接舱和一个看起来像是太空港的地方。你看着时，三架流线型的战斗机从空间站起飞，在你和你跟了一路的那艘外星飞船周围占据护卫位置。你只能假设你的护卫正在与空间站当局通信。`
+
+	on fail
+		dialog `外星飞船已被摧毁。若想继续阿夫吉剧情，请读取自动存档或更早的游戏快照。`
+
+	on visit
+		dialog `你已抵达<planet>，但把外星飞船甩在了后面！最好先离开，等待他们正式介绍你。`
+
+	on complete
+		"reputation: Avgi" += 10
+		"reputation: Avgi (Consonance)" += 10
+		"reputation: Avgi (Twilight Guard)" += 10
+		set "discovered avgi"
+		event "outer limits label"
+
+
+
+mission "Avgi: Humans From the Deep"
+	landing
+	name "阿夫吉中的人类"
+	description "拜访 <destination>，那里还有另一个人类，达里厄斯·卡尔韦尔，被困在阿夫吉星域。"
+	source "Peripheria"
+	destination "Aktina Cylinder"
+	to offer
+		has "Avgi: First Contact: done"
+	on offer
+		log `Met an alien species calling themselves the Avgi. Their home cluster appears infested with hostile ships from some unknown advanced civilization. Made contact with a scout ship and followed it back through a region south of Avgi space called the Tangled Shroud. Met with members of the Avgi government and made an agreement to let me purchase civilian technology.`
+		log "Factions" "Avgi" `阿夫吉是一个年轻的异族，形似色彩斑斓的大型蜻蜓，栖息于银河系这一区域的暮光星云中。在遭遇他们称为“异变体”的舰船大举入侵后，大多数幸存的飞船向南逃窜，穿过一片名为「缠结帷幕星」的迷宫般的区域。`
+		log "Factions" "Avgi Consonance" `流亡的阿夫吉人似乎由一个称为“协和”的中央政权领导，但有许多人并不承认这个政权。`
+		log "People" "Asime" `阿西梅是协和议会的三位首席发言者之一。尽管她性格矜持，但对于协和议会为应对异变体入侵所做出的决策，阿西梅似乎表现得极力维护。`
+		log "People" "Galano" `加兰诺是协和议会三位首席发言人之一。他看起来像一位年长的政治家，对阿夫吉所取得的成就充满自豪。`
+		log "People" "Prasinos" `普拉西诺斯是协和议会三位首席发言人之一。她似乎对阿夫吉分裂与纷争的历史持负面看法。`
+		set "avgi: met lait"
+		set "language: Avgi"
+		conversation
+			`	你的同伴加速向前，灵巧地滑入外层甲板的一个泊位。当你试图跟进时，那架战斗机从你前方掠过，将你引向靠近中层甲板的另一个泊位。`
+			`	泊位里一片繁忙景象，你终于第一次近距离见到这个新物种。它们看起来类似地球的蜻蜓，或者更接近豆娘——平均体长一米半，有六条肢体和翅膀。当你最终在一块空地上降落时，一群外星人迅速而精准地围拢到你的飞船周围。显然，这些外星人一直在等你。`
+			`	没有一个外星人看起来携带武器，但它们以清晰的防御性圆阵排列在你的飞船周围——有的在地面，有的在空中飞舞。其中一些似乎穿着某种护甲，但并没有携带明显武器。当你步出<ship>，感受到较轻的重力时，一小群外星人迅速上前迎接你。`
+			choice
+				`	“你好，我是<first> <last>船长。”`
+					goto next
+				`	“我来此并无恶意。”`
+					goto next
+				`	“带我去见你们的领袖。”`
+					goto next
+				`	（开枪射击。）`
+
+			`	你拔出佩枪向那群外星人开火，它们四散奔逃。第一枪擦过外星人的护甲，第二枪在翅膀上烧了个洞，让那个外星人翻滚坠落。然而你还没来得及庆祝这短暂的胜利，一道难以理解的亮蓝绿色光芒闪过，你便化作一团迅速扩散的热蒸汽。`
+				die
+
+			label next
+			`	外星人彼此兴奋地嗡嗡鸣叫，声音让你想起某种弦乐器。你注意到它们似乎不是从特定的发声器官发出声音，而是像蟋蟀一样通过摩擦前臂或腿来发声。其中一个乳白色身体的外星人似乎在示意其他同伴安静，它展开翅膀又合拢回背上，随后举起一个弯曲的黑色装置，类似小提琴的琴弓，在前肢上拉了一会儿，那装置便开始用一种合成的、略带男性化的声音说话。`
+			`	“邀请。欢迎，<first> <last>船长。我是阿夫吉的莱特，方才与你通话者。我将带你去见我们的领袖，讨论你抵达我们空间一事。”`
+			choice
+				`	（跟随外星人。）`
+					goto follow
+				`	“你们怎么能说我的语言？”`
+				`	“北部那些敌对的外星人是谁？”`
+				`	“你能讲讲你们的文明吗？”`
+
+			`	“安心。所有问题届时都会得到解答，<last>船长。请先随我来。”`
+
+			label follow
+			`	你被领着穿过机库，一群卫兵将你与好奇的旁观者隔开——你分不清那些人是飞行员、机械师还是士兵。被一群高度仅到你膝盖的生物簇拥着有点尴尬，但你仍任由它们护送。穿过地板上的向下斜坡通道后，你跟随一条似乎不断向上弯曲的长廊。这让你想起老式空间站——在重力板普及之前依赖旋转重力的那种。出乎意料的是，尽管你的向导身材矮小，走廊和门道却似乎完全能容纳你的身高；在你多次看到这些外星人飞行而非步行后，这一设计便显得合理了。`
+			`	经过数次转弯和下降后，你穿过一个敞开的拱门进入一间会议室。房间宽敞且呈圆形，天花板高圆，里面有三只色彩各异的蜻蜓状外星人，各自栖息在圆形桌旁的金属环上。`
+			choice
+				`	“你好。”`
+				`	“你是谁？”`
+			`	正对你的那只灰白色外星人在另一个翻译器的帮助下开始说话——这次是女性的声音。`
+			`	“邀请。抱歉让你从飞船远道而来见我们，但我被建议不要在场迎接你的到来，以防出现意外敌对行为——尽管估计可能性很小。我的名字，由于缺乏直接翻译，是‘阿西梅’，与我同在的是发言者普拉西诺斯和加拉诺。我们共同代表阿夫吉和声作为政体议会的首席发言者。”`
+			`	草绿色的普拉西诺斯和外表脆弱的乳白色阿夫吉人加拉诺都用前肢朝你挥了挥，模仿人类手势，有点超现实。`
+			choice
+				`	“你们怎么能说我的语言？”`
+					goto humans
+				`	“北部那些敌对的外星人是谁？”`
+					goto aberrant
+				`	“你能讲讲你们的文明吗？”`
+			label avgi
+			action
+				set "avgi: asked about avgi"
+			`	她微微抖了抖翅膀，或许是在笑。“愉悦。那要花很长时间详细讲述，但我可以一试。”她切换回自己的语言，与另外两位阿夫吉人商议了一分钟，然后转向你。`
+			`	“自豪，成就。我们是阿夫吉。我们的六个星系、七个世界，以及数百个各如城市般大小的轨道站，共同组成了一千个政体，为了文明的福祉与进步团结一致——”`
+			`	加拉诺打断了他，他的翻译器声音听起来有些苍老。“追忆。但在那之前，在超光速驱动出现之前，我们便已穿越群星间的虚空。最后一艘真正的恒星际飞船发射时我还是个孩子，但我记得。早在学会超越光速之前，我们便以巨大的代价和努力定居了母星系外的世界。我们首次接触太空是在六百年前，然后——”`
+			`	他被普拉西诺斯打断。“反驳。你该从起点讲起，早在离开阿维斯基尔之前。我们的祖先在费尔山脉河谷的泉边建立家园，数千年来遍布整个星球。从火焰到长矛再到原子，我们将自然世界屈服于意志的技艺不断增长，随之而来的是构建文明的能力：因意识形态、传统和宗教而非仅因血缘或地理联系在一起的阿夫吉群体。随之而来的是冲突，每个政体与其他政体争锋—— ”`
+			`	这时阿西梅和加拉诺都发出了反对的声音，加拉诺语速匆忙地打断道。“紧急。或许我们不如你们人类团结，确实我们之间打过许多仗，但那是很久以前的事了。我们看清了理性，于是和声创立，由政体议会治理，代表阿夫吉的每个分支，无论大小。从民族国家到意识形态城邦，我们种族的共识政府用于解决争端、防止另一场大战。尽管仍有愚蠢短视者发动战争，但阿维斯基尔地表已超过一个世纪没有核武器被启用。议会虽有缺陷，但在运作。”`
+			`	阿西梅补充道：“真言。而我们现在需要这样的机制，因为这一切都可能毁于入侵，毁于它产生的异变体。我们需要人类拥有的东西：一个统一的共和国来领导我们所有人民。”`
+			choice
+				`	“你们怎么知道人类？”`
+					goto humans
+					to display
+						not "avgi: asked about humans"
+				`	“什么是异变体？”`
+					goto aberrant
+					to display
+						not "avgi: asked about aberrant"
+				`	“我没有其他问题了。现在怎么办？”`
+					goto conclusion
+
+			label humans
+			action
+				set "avgi: asked about humans"
+			`	普拉西诺斯思考了一会儿，然后说：“犹豫。你可能会惊讶，但你并非第一个来到我们空间的人类。三——不，应该说是你们地球的六年之前，一艘外星飞船被发现漂流在我们空间的一颗恒星附近，被异变体群包围。不知何故它们被驱散，飞船得以回收。那是第一批，也是至今为止我们唯一有幸遇见的人类。一批探索者，我相信他们说过来自‘深渊’，但我不确定那是一个星球还是一片空间区域。”`
+			`	“感激。他们告诉了我们很多关于人类的事，并开发了这些装置以便我们更顺畅交流。由于无法返家，他们如今生活在我们的族群中，利用他们对人类先进技术的知识在力所能及之处提供帮助。”`
+			label "human questions"
+			choice
+				`	“这些‘异变体’是什么？”`
+					goto aberrant
+					to display
+						not "avgi: asked about aberrant"
+				`	“多告诉我一些关于阿夫吉的事。”`
+					goto avgi
+					to display
+						not "avgi: asked about avgi"
+				`	“我不知道我是否会把人类技术称为先进。”`
+					goto technology
+					to display
+						not "avgi: asked about human tech"
+				`	“我没有其他问题了。我想见见那些人类。”`
+					goto conclusion
+
+			label technology
+			action
+				set "avgi: asked about human tech"
+			`	加拉诺发言：“感激。或许对你不算什么，但人类早在阿夫吉抵达自己卫星之前很久就拥有了超光速驱动。我曾见证仅仅几十年所能带来的变化与进步，而你们物种领先我们几个世纪的优势，为你们带来了护盾和斥力器这样的奇迹。”`
+				goto "human questions"
+
+			label aberrant
+			action
+				set "avgi: asked about aberrant"
+			`	加拉诺发言：“悲伤。我们称之为异变体的存在尽管夺走了我们许多东西，却依然神秘。它们从何而来，我们并不完全确定。它们二十年前出现，从东方，超出我们所知的边界，来自一个难以探测的危险区域。已知空间边缘的侦察船和探索者最先失联，然后前哨站一个接一个陷落。”`
+			`	阿西梅继续说：“遗憾。当和声终于注意到时，异变体已扫清了阿维斯基尔各政体所能集结起来抵抗它们的舰船。整整一代的暮光卫队在一场战斗中覆灭。它们的科技远超我们，当时根本无法对抗。而我们成功摧毁的少数异变体也令人大惑不解：没有船员，内部只有一个有机实体，系统运作原理我们也一无所知。可以说我们是从人类那里学会了如何制作护盾，但我们却是从异变体身上首次了解到护盾的威力。”`
+			`	普拉西诺斯说：“愤怒。于是我们落到了今天的地步。当军事局势显然已毫无希望时，每一艘拥有超光速驱动的飞船都接到命令，搭载乘客进入纠缠帷幕——这片由破碎星道和阴暗空间组成的混乱网络，如今我们不得不称之为家园。我们遗弃了我们的行星，仅留下地表防御工事任凭异变体摆布，同时拆解回收了几个世纪以来煞费苦心建立的轨道基础设施。”`
+			`	他被阿西梅打断，她似乎有些恼怒。“澄清。我们并非无情。撤离的决定是在异变体明显对轨道轰炸兴趣不大、且我们的地表炮台能驱散少数试图轰炸的敌舰后才做出的。我们带走了数千万平民，让他们进入冷眠，待资源允许时再复活。”`
+			`	“决意。我们会回去。我们确实遭受了失败，但最终会收复我们的星系，”加拉诺以不容置疑的口吻说。其他人没有反驳。`
+			choice
+				`	“你们是怎么懂我的语言的？”`
+					goto humans
+					to display
+						not "avgi: asked about humans"
+				`	“多告诉我一些关于阿夫吉的事。”`
+					goto avgi
+					to display
+						not "avgi: asked about avgi"
+				`	“我没有其他问题了。现在怎么办？”`
+					goto conclusion
+
+			label conclusion
+			`	普拉西诺斯说：“保证。当然，我们会带你见见你的同胞。但是……”他声音渐弱。`
+			`	阿西梅替他说道：“忧虑。之前来到这里的人类，我不得不坦白，他们仍在此处是有原因的。或许他们能提供更多细节，但他们告诉我们，当他们首次进入我们的空间时，曾立即试图离开。出于某种原因，他们未能成功。我不知道你是通过何种方式来到我们空间的，但也许你能返回，并带上这些被困的人类。”`
+			`	“又或者，你可能发现自己同样被困于此。无论如何，我们当然会尽己所能让你舒适，视你为贵宾，如同对待任何外国要人。”`
+			choice
+				`	“我有一个跳跃引擎，可以穿越超空间航线之外，但它无法将我跳回人类空间。”`
+				`	“我有一个设备可以来去自如，但目前失灵了。”`
+
+			`	“遗憾。那么情况很不幸，”她说。“承诺。我们会提供力所能及的帮助，但我不想对你隐瞒他们的困境，或给予虚假的希望。”`
+			`	“保留。或许<last>船长能找到解决之道，”加拉诺说。“我不会太快否定这种可能性。”`
+			choice
+				`	“我在这里期间，可以购买你们的技术吗？”`
+					goto "buy stuff"
+				`	“在此期间我能做些什么来帮忙吗？”`
+
+			`	“考量。作为外星人，你难免会成为我们大多数人的新奇事物，但人类的存在在公众中已广为人知，足以让你在我们中间行走无碍。我会与其他人商议更正式的职位，但在此之前，我不确定除了维持和平之外还能要求你做什么。”`
+			label "buy stuff"
+			`	加拉诺说：“兴趣。我预计人类科技在大多数方面优于我们，但我们当然会在议会同意后允许你购买我们的物品。如果未来有可能与你们的人类政府建立贸易关系，也许先前的交易记录会有用。”`
+			`	“愉悦。更不用说这样的姿态能为我们赢得善意，”阿西梅说。`
+			`	普拉西诺斯更严肃地说：“保留。我们目前的物质资源很有限，因此现在我只支持提供不触及卫队需求的小件物品的采购。”`
+			`	阿西梅似乎想要反对，但加拉诺接着说：“同意。这是一个合理的妥协，我应该很容易向议会推销。除此之外，我们将为你提供一笔信用额度，用于购买住房和食物。我不能保证它在……某些不承认和声权威的群体中好用，但在其他任何地方，你应该都不会遇到问题。”`
+			`	他抖了抖翅膀。“满意。现在，我们会留些时间和空间让你思考。带来那批人类的飞船上任船长，达瑞斯·卡尔威尔，目前正在这个星系的筒状栖息地指导建设工作。如果你愿与他交谈，可以在阿克提纳圆筒站找到他。若你也有意与我们交谈，今天我们将赐予你最后一份礼物，以便于交流。”`
+			`	在你离开之前，他伸出一只长长的手臂，三根尖锐的手指间夹着一根黑色发夹状的短棒，类似于阿夫吉人用来与你沟通的翻译器的缩小版。塞在耳后，这个装置能将你周围听到的最常见的阿夫吉语言翻译出来，并将含义低声轻语在你耳畔。`
+				accept
+	on accept
+		clear "avgi: asked about avgi"
+		clear "avgi: asked about humans"
+		clear "avgi: asked about aberrant"
+
+
+
+mission "Avgi: Defend Ensemble 1"
+	landing
+	name "阿夫吉打击部队"
+	description "在<destination>与阿夫吉打击部队会合。"
+	source "Aktina Cylinder"
+	destination "Navigeo Yards"
+	passengers 1
+	blocked "如果你想带达里厄斯离开这个空间站，你需要<ship>上有一个空闲铺位。"
+	to offer
+		has "Avgi: Humans From the Deep: done"
+	on offer
+		log "People" "Darius Caldwell" `达里乌斯曾是深渊安保的一名舰长，他率领了一支由幽海星资助的远征队，旨在进一步了解夸格的技术。在返航途中，他下令让船员调查一条通往人类空间南部的异常额外超空间航道。在受困于阿夫吉空间后，这批幽海星船员向协和寻求了庇护。对于船员们的处境，达里乌斯似乎一直深感自责。`
+		conversation
+			`从远处看，阿克提纳圆筒站就像一根巨大的骨骼状管道，肋骨由石墨烯构成，脊柱是金属的。按照空间站控制中心的指引，你飞过站体的开放框架，进入它那小型加压区——那里住着建筑工人和维修人员。`
+			`	你事先已被告知，你的抵达消息已经提前传了过来，所以当你看到一位中年人类在等你时并不完全意外；当你的飞船停入空置机库时，他脸上满是震惊。你从<ship>上下来，发现达里乌斯就在舱门外等着。`
+			choice
+				`	“你好啊。”`
+				`	“你好，人类。我来此并无恶意。”`
+			`	那人惊异地眨了眨眼，然后伸出手来，你握住了。“所以，又一个来到仙境的人。我不知道是该高兴又见到一张友善的面孔，还是该难过又一个灵魂和我们一起被困在这里。”他摇摇头。“找个地方聊聊吧。如果你不介意告诉我，你是怎么到这儿来的？”`
+			choice
+				`	“我有一个跳跃引擎。”`
+				`	“我有一个能绕过超空间航线的装置。”`
+			`	他走路时脸上的表情显得更加惊异了。“跳跃引擎？你从哪儿搞到的？”`
+			choice
+				`	“我从核心区附近的一些敌对外星人那里抢来的。”`
+					goto korath
+					to display
+						"reputation: Korath" < -10
+				`	“我从天津四星系的一些外星人那里抢来的。”`
+					goto pug
+					to display
+						has "FWC Pug 2D: done"
+				`	“我从辛迪加那里拿到的，他们是从核心区附近的一个外星种族那里抢来的。”`
+					goto korath
+					to display
+						has "FW Pug 2B: done"
+						not "FW Pug 2C: Jump Drive: done"
+				`	“我从一些愤怒的太空松鼠那里抢来的。”`
+					goto unfettered
+					to display
+						has "Wanderers: Translation Machine: done"
+				`	“我从夸格那里抢来的。”`
+					goto quarg
+					to display
+						"reputation: Quarg" < 0
+				`	“抱歉，我不能告诉你。”`
+			`	他看起来很是怀疑。“好吧，那你就保守秘密吧。”`
+				goto next
+
+			label korath
+			`	“夸格之外还有外星人？”你点点头。“嗯。我之前听说过核心区有外星人袭击的传闻，但一直以为是辛迪加在为自己地区失控的海盗活动找借口。”`
+				goto next
+
+			label pug
+			`	“天津四？那个星系没有超空间航线吧，是不是？真奇怪。”他沉思了一会儿。“我以前听说过一些故事，关于……算了，没事。”`
+				goto next
+
+			label unfettered
+			`	“亥族有跳跃引擎？我以为他们的技术没那么先进。”他若有所思地说。“除非他们是从别人那里得到的。”`
+				goto next
+
+			label quarg
+			`	“……什么？你在开玩笑吧？你怎么打败一艘夸格飞船的？”他一时担心起来，后退了一步。“我真的想被人看到我和你在一起吗？”他紧张地笑了笑。`
+
+			label next
+			`	达里乌斯摇了摇头，然后看向你。“好吧，既然你还在这儿，我猜你的跳跃引擎没能把你带出去？”你告诉他你无法跳回人类空间，他跟着点了点头。`
+			`	“一定有办法出去，我知道的。但六年来，我们只能在毗邻人类空间的星系里待上几天，然后那些该死的太空修格斯就会把我们逼回来。而且，”他压低声音，偷偷环顾四周，“我觉得阿夫吉族也不太热心让我们去勘察这片区域。我倒不觉得他们是想把我们关在这儿，但他们一直坚持不让我们人类因为干蠢事而送命，比如拼命找回家的路。”他听起来很是沮丧。`
+			choice
+				`	“别担心，我们一定能找到回家的路。”`
+					goto reassuring
+				`	“阿夫吉族想把你们关在这儿？这很让人担忧。”`
+				`	“你是怎么在没有跳跃引擎的情况下来到阿夫吉空间的？”`
+					goto story
+
+			`	“可能是我多疑了。毕竟他们非常热心想与人类结盟来对抗那些异变体，不管我跟他们解释多少次人类其实没那么先进都没用。但他们觉得如果我能找到回去的路，我们或许能打开一条连接人类空间和阿夫吉空间的航线，尤其是考虑到我们是怎么到这儿来的。不过我可不想这么干，万一异变体泛滥到人类空间就糟了。”`
+
+			label reassuring
+			`	“有时候我觉得我们永远回不了家了，但告诉自己还有希望，这能让我好受些。”他说。`
+			choice
+				`	“你是怎么在没有跳跃引擎的情况下来到阿夫吉空间的？”`
+
+			label story
+			`	“说来话长，”他说。“我们是瓦尔哈拉一支大型护航队的一部分，由那里的一所主要大学资助。我在海军服役结束后……就去了深渊安保工作。”他声音渐弱。“总之，我们开着一艘骡子级飞船，带着一些扫描设备。为了研究夸格，你懂的。名义上是去做文化交流，你知道，老一套，但实际上我们想好好扫描一下战争龙。夸格不太赞同，但也不怎么阻止。”`
+			`	他继续说。“所以我们返程时，刚进入土司空。任务很成功，因为横跨整个共和国的旅程很长，我还能拿到一大笔奖金。但后来我们的扫描仪开始从特定的超空间航线上接收到异常读数，我们听到一些海盗在议论说天津一星系出了怪事。他们说有一条新的超空间航线，指向南方。离我们当时的位置只有几跳，而且我们是附近唯一一艘能单独出动的深渊飞船。”`
+			`	他看着自己的双手。“所以我……我作为船长做了决定。我志愿让我的船员去调查，以科学的名义穿过那条超空间航线。为了星渊的最高信条，因为我想……我不知道。不是为了声望。而是为了配得上星渊应有的样子——人类探索和研究的先锋。他们在我无处可去时收留了我，我想报答他们。可现在，现在十几名优秀的船员死了，剩下的被困在这里，被一条我们一穿过就关闭的超空间航线挡在身后，与正在打一场几乎不可能赢的灭绝战争的外星人生活在一起。”`
+			choice
+				`	“你的其他船员现在在哪儿？”`
+
+			`	“我们剩下没几个人了，”他叹了口气，“但是，呃，我和他们关系不太好。他们怪我带他们到这儿，我也不能怪他们。”`
+			choice
+				`	“这听起来不公平。你不可能事先知道会发生什么。”`
+					goto blame
+				`	“有没有可能和他们和解？”`
+			`	“我犯过……很多错误。有的付出了生命的代价。但是，”他低下头，“……也许吧。他们并不恨我或是怎样，只是……我们保持距离。索拉正在维莱多斯跟暮光卫队不知道做什么，利昂则频繁出入东边的那些采矿公会。还有几个其他人，但就像我说的，付出了生命的代价。”`
+				goto end
+
+			label blame
+			`	“我希望事情能那么简单。在那之后我又犯了更多错误，同样付出了生命的代价。我们的飞船瘫痪后死了十一个人，全是因为我命令我们靠近那些看起来可怕的外星飞船，希望能和它们交流。当然，你可以说我当时不可能知道异变体会想杀我们，但我无视了船员的建议，只是因为急于回家。索拉和利昂都叫我们逃跑，可我没听他们的。”`
+
+			label end
+			`	你们一起沉默地坐了几分钟，这时达里乌斯的通讯器似乎收到了消息。“我接入了紧急警报系统，”他一边读一边解释。突然，他脸色发白。“侦察员报告说有一支巨大的入侵舰队正在逼近合奏星系。几十个异变体，径直穿过帷幕星。”他抬头看着你。“它们平时不会太深入帷幕星。我觉得那里有什么东西让它们害怕，但合奏的位置比较浅，以前也被攻击过。不过没有这个规模，而且……该死，索拉就在维莱多斯，合奏星系的那颗卫星上。”`
+			`	他满怀希望地看着你。“我们得做点什么。阿夫吉族正在纳维杰奥船厂附近集结一支救援部队，那个大船厂离这儿不远。来吧，我们一起加入。”`
+				accept
+	on visit
+		dialog `你降落在了<planet>，但发现载有达里乌斯的护航舰尚未进入该星系。最好离港等待其抵达。`
+
+
+mission "Avgi: Defend Ensemble 2"
+	autosave
+	landing
+	name "合奏防御"
+	description "帮助合奏星系中的阿夫吉抵挡异变体的袭击，直至援军抵达。"
+	source "Navigeo Yards"
+	destination "Weledos"
+	passengers 1
+	blocked "你的<ship>需要有一个空余铺位才能将达里乌斯带到<planet>。"
+	to offer
+		has "Avgi: Defend Ensemble 1: done"
+	on offer
+		log `同意协助暮光守卫在缠结帷幕星域内保卫合奏星系，抵御异变体的袭击。阿夫吉人似乎热衷于使用核武器，这与多数人类对此类武器的禁忌相悖。`
+		log "Factions" "Twilight Guard" `暮光卫队是阿夫吉协和的军事力量，这是一个为应对异变体入侵而建立的统一指挥体系。`
+		log "Factions" "Avgi" `值得注意的是，阿夫吉人似乎对核武器毫无禁忌，并随意将其用于对抗异变体。`
+		conversation
+			`当你驶入为数不多的可用空泊位之一时，纳维杰奥空间站里正一片繁忙。各种尺寸的阿夫吉飞船，漆着暮光守卫的深蓝色，每隔几分钟便腾空而起，而在片刻之后，又会有伤痕累累的战舰滑入干船坞进行维修。`
+			`	在距离空间站几公里外，一个舰队群正在展开宽阔的阵型进行集结。你看到几艘巡洋舰级别的飞船，周围簇拥着十几艘较小的飞船。你呼叫它们，请求加入编队，一位感到有些吃惊的阿夫吉海军上将指示你飞往合奏星系。`
+			`	“警告。接下来的战斗中将会使用核武器，所以请与我们的弹头保持距离，”她说。“如果你能飞在我们舰队的前方，清除沿途零星的异变体，我们将不胜感激。这样一来，我们就能为合奏之战节省尽可能多的核弹头。”`
+			choice
+				`	"Acknowledged."`
+					goto end
+				`	“等等，核武器？你们竟然使用这种武器？”`
+
+			`	“困惑。当然。不然我们该用什么，光束武器吗？”她抖了抖翅膀。“别告诉我你是个‘光束党’，我得让你知道，制导武器每次都是最后的赢家。”`
+			choice
+				`	"It's nothing, I was just surprised."`
+					goto end
+				`	“我不确定自己是否能接受使用这种用于灭绝种族的武器。”`
+
+			`	"恼怒。我们又不是用它们攻击平民目标，甚至一开始就不是针对行星目标。说实话，你们人类有些古怪的敏感性。"`
+
+			label end
+			`	She turns away from the viewscreen as another Avgi starts speaking to her, dismissing you with a flick of her fingers.`
+				accept
+	npc
+		government "Avgi (Twilight Guard)"
+		personality heroic frugal escort
+		fleet
+			names "avgi military names"
+			variant
+				"Prismaios"
+				"Prismaios (Orchid)" 2
+				"Tremoros" 3
+	npc
+		government "Avgi (Twilight Guard)"
+		personality heroic frugal waiting escort
+		fleet
+			names "avgi military names"
+			variant
+				"Difraktos (Orchid)"
+				"Refraktos"
+				"Atenuatia (Orchid)"
+				"Vibratia" 20
+				"Photikon (Ophrys)" 6
+	npc
+		government "Avgi (Twilight Guard)"
+		personality heroic staying waiting
+		system "Ensemble"
+		fleet
+			names "avgi military names"
+			variant
+				"Prismaios"
+				"Tremoros" 3
+				"Refraktos"
+				"Diaspersi"
+				"Vibratia" 6
+				"Photikon" 2
+	npc
+		government "Avgi (Twilight Guard)"
+		personality heroic waiting
+		system "Arche"
+		fleet
+			names "avgi military names"
+			variant
+				"Prismaios" 3
+				"Tremoros" 6
+				"Refraktos" 2
+	npc evade
+		government "Aberrant"
+		personality
+			confusion 40
+			coward hunting secretive staying vindictive target
+		system "Ensemble"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Latte" 2
+				"Aberrant Chomper (Disable-able)" 2
+				"Aberrant Pileup"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Latte" 2
+				"Aberrant Chomper"
+				"Aberrant Whiskers" 2
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Latte"
+				"Aberrant Chomper" 2
+				"Aberrant Whiskers"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Icebreaker"
+				"Aberrant Mole" 2
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Icebreaker" 2
+				"Aberrant Mole"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Trip"
+				"Aberrant Triplet (Disable-able)" 3
+	on visit
+		dialog `你已降落在了<planet>，但该星系仍有异变体在进攻。你应该起飞帮助阿夫吉击败它们。`
+
+	on complete
+		log `在一支装备核武器的暮光卫队舰队的协助下，成功抵御了异变体对合奏星的袭击。异变体通常不会如此深入地侵扰盘绕帷幕星，这让此次战斗的规模显得令人不安。`
+		log "People" "Sora Kun" `索拉是受困于阿夫吉空间的星渊探险队的一员，担任工程师。她一直在协助暮光卫队加强盘绕帷幕星的防御。尽管达里乌斯对此心存担忧，但她似乎并没有因为他们所处的困境而责怪他。`
+		log "People" "Darius Caldwell" `尽管达里厄斯悲观不已，但他手下至少有一部分船员并未因当前的处境而责怪他。`
+		log "People" "Kokkino" `科基诺是暮光卫队的一名舰长，他似乎对你可能为阿夫吉人提供的帮助很感兴趣。`
+		conversation
+			`战斗结束后你降落在维莱多斯，而大多数幸存的阿夫吉飞船则在轨道上进行临时维修，随后再返回纳维杰奥船厂。你正和达里乌斯检查<ship>的受损情况，这时听到有人走来，那脚步声明显属于人类。`
+			`	“看来那些传闻并非空穴来风。这里确实还有另一个我们的人。”你抬起头，看见一名身穿作战服的女人站在面前，伸出了手。`
+			choice
+				`	(Shake her hand.)`
+					goto handshake
+				`	“你是谁？”`
+			`	She drops her hand after a moment. "Name's Sora. And you?"`
+				goto name
+			label handshake
+			`	“我叫索拉。你呢？”`
+			label name
+			`	“我是<first> <last>船长，”你说。`
+			`	“我看你身边也有个跟班。终于让老达里乌斯从壳里出来了，是吧？”你看向达里乌斯，他满脸羞愧地盯着地面。`
+			`	“现在，我很想知道你是怎么找到这里的。能解释一下吗？”她问道。`
+			`	你向索拉讲述了你的旅途是如何将你带到这里的，以及你是如何获得跃迁引擎的。达里乌斯全程一言不发，默默地站在一旁。`
+			`	“真了不起。那么，你的跃迁引擎能带我们离开这里吗？”`
+			choice
+				`	“恐怕不能。它因为某种原因无法返回人类空域。”`
+				`	“不能，但我不会放弃寻找别的出路。”`
+				`	“不行！”`
+			`	“该死。我想那也太容易了。但我已经太久没见过新的人类面孔了。几个月来，我一直在这里为暮光卫队工作，试图建立第二道防线，以防阿尔克的那个空间站失守。至少今天的战斗表明，这些防线加上支援舰队是能守住的。你介意我跟着你吗？万一你真能找到出路呢？”`
+			choice
+				`	“当然可以。”`
+					goto yes
+				`	“没问题，只要达里乌斯不介意。”`
+			`	你看向达里乌斯，他沉默了几秒后回应道：“你当然可以一起来，索拉。”`
+			label yes
+			`	“那就太好了。等你准备好离开时，我们再见。”她走开去收拾自己的物品。`
+			`	几个小时后，一艘阿夫吉巡洋舰——一艘“折射”级激光星舰——降落在你旁边的停机坪上，一名阿夫吉军官走了下来。`
+			`	“致意。你好，<first> <last>船长。我叫科基诺，‘幽灵碰撞’号的船长。告诉我，<ship>是一艘战舰吗，疑问？”`
+			choice
+				`	"Yes, the <ship> is as powerful as they come."`
+					goto warship
+				`	“不，<ship>不是为战斗而造的。”`
+			action
+				set "avgi: rescue intro"
+			`	“思忖。不过，你仍然愿意利用你飞船绕过星道的特殊能力来帮助我们吗，疑问？”`
+			choice
+				`	“是的，当然。”`
+				`	“我洗耳恭听。”`
+			`	"Approval. That is very good, for your unique capabilities may help us save the lives of some very brave people. Come, meet me in the spaceport in an hour." He gives you a set of directions to a small building in Ensemble's main spaceport before leaving. "We will have much to discuss."`
+				goto end
+
+			label warship
+			action
+				set "avgi: warship intro"
+			`	“极好。考虑到它在战斗中的表现，我并不惊讶，因为就我们所知，你们外星人的飞船哪怕只是一艘简单的货船，在我们眼中依然令人生畏。你愿意用你的战舰力量协助我们吗，疑问？”`
+			choice
+				`	“是的，当然。”`
+				`	“我洗耳恭听。”`
+			`	“热忱。你的帮助将拯救许多生命。那么，如果可以的话，一小时后在太空港见我。”他离开前给了你一套指引，指向合奏星主太空港内的一栋小楼。“我们有很多要谈的。”`
+
+			label end
+			`	达里乌斯跟着你走出了<ship>。“那是在干什么？”他问道。`
+			choice
+				`	“听起来他们想让我帮忙做点什么。”`
+				`	“我要为他们的战争出份力。”`
+			`	他皱起眉头。“我明白了。你觉得我们什么时候能北上寻找出路？”`
+			choice
+				`	“我们很快会去的，我保证。”`
+				`	“我不确定。”`
+			`	他看起来有些失望，然后振作起来。“嗯，我想这件事并不迫切。不过，我一直在想。如果你的跃迁引擎没能让你从北方逃脱，那往那个方向寻找可能没有意义。”`
+			`	“你有什么建议？”你问道。`
+			`	“我在阿夫吉人中有一个朋友，他不怎么在协和会的官方圈子里走动。在纠缠帷幕星中有许多隐秘处和分支，那里的前哨站大多由矿工和小型造船厂经营。他们正是那种喜欢私下谈论传闻和奇谈的人。关于那场入侵——异变体的入侵——官方的说法是他们来自东方的一连串星系，但没人确切说过那个星系链到底通向哪里。我觉得等你完成下一个任务后，我们应该去拜访一下我那位朋友。”`
+
+
+mission "Avgi: Scout Rescue"
+	name "搜救"
+	description "找到并撤离<npc>的船员。该船最后一次被目击是在旋转星系，但现在可能处于本地星团的任何地方。"
+	source "Weledos"
+	destination "Peripheria"
+	mark "Twirl"
+	passengers 12
+	blocked "你需要<capacity>才能完成此任务。"
+	to offer
+		has "Avgi: Defend Ensemble 2: done"
+	to fail
+		has "avgi: warship intro"
+	on offer
+		conversation
+			`你按照科基诺的指示，来到了航天港内的一座预制建筑前，这地方看起来像是某种指挥中心。科基诺正在中央的一张桌子旁等你，桌子亮着光，显示出一幅阿夫吉空间的星图，上面还带有你看不懂的彩色标记。`
+			`	“【解释】。我们定期向异变体控制的空域派遣侦察队和巡逻队。每一次跨越消逝星的远征本质上都是深入敌后，断绝补给，在许多情况下甚至会中断通讯。正如你所想象的那样，这种冒险充满危险，而不幸的是，侦察船失踪的情况也并非闻所未闻。”`
+			choice
+				`	“是的，我发现探索常常伴随着危险。”`
+					goto exploration
+				`	“听起来你们应该建造更加坚固的侦察船。”`
+			`	“同意。波拉里级是一流的飞船，但并非为战争环境所造。我们曾尝试在冲突更加激烈的环境中使用棱晶号作为情报平台，但它缺乏波拉里级最初备受推崇的多功能性与无人机舱。”`
+				goto point
+			label exploration
+			`	他抖了抖翅膀。“遗憾。这是一个悲哀的事实，但那些走在扩展知识最前沿的人，往往也是直面未知巨大危险的人。”`
+			label point
+			`	“但言归正传。两周前，一支乘坐波拉里级侦察船‘白银星反照率号’的侦察队被派去勘测旋转星系，但他们已错过了汇报时间好几天。要抵达那个星团并返回，通常需要数周的航程，且全程都要穿过危险区域，我很惭愧地说，我们可能不得不考虑将这些侦察员视为失踪。但我听说，来访的人类——<last>舰长，拥有一种新型的超光速引擎，无需依赖星道便可航行。告诉我，这是真的吗，提问？”`
+			choice
+				`	“是的。”`
+				`	“是的，它叫作跳跃引擎。”`
+			`	“兴奋。那么，航程就能缩短到只需几天，让我们有可能展开救援。我会在你的地图上标出旋转星系的位置，尽管白银星反照率号很可能在星团中的其他地方。首要任务当然是安全救回船员，不过如果你能找回他们设法收集到的任何数据或样本，我们也将不胜感激。”`
+				accept
+	on accept
+		log `同意帮助科基诺，尝试营救一艘阿夫吉侦察船的船员，该船在暮光区执行任务后未能按时汇报。`
+
+	on enter "Twirl"
+		unmark "Twirl"
+		dialog `你已到达 Twirl 星系，但没有发现“白银星反照率号”的踪迹。也许你应该检查这个星团的其他部分。`
+
+	npc assist
+		government "Avgi (Twilight Guard)"
+		personality derelict mute pacifist target
+		system Whirlwind
+		ship "Polari" "Silver Albedo"
+		conversation
+			`你操控飞船靠向满是烧焦痕迹与其他战损的白银星号。在发送了科基诺船长给你的识别码后，你开始等待任何生命迹象。几分钟后你收到了回复，并将其输入了翻译器。`
+			`	“谨慎。陌生的飞船，你是怎么得到协和会的识别码的？”`
+			choice
+				`	“没时间解释了。我是来救你们的。”`
+					goto serious
+				`	“我是外星人，开着外星飞船来救你们这些外星人。”`
+			`	“逗趣。好吧，我想我们除了接受你的帮助外别无选择，来得正巧的小丑。如你所见，白银星号现在陷入了困境。”`
+				goto next
+			label serious
+			`	“思索。我想我们除了接受你的帮助外别无选择，陌生人。如你所见，白银星号现在陷入了困境。”`
+			label next
+			`	你与阿夫吉指挥官商讨治疗伤员的事宜，同时将飞船对接上白银星号。但凡能动的阿夫吉人都抱着成堆的录音和日志登船。所有人安全转移到<ship>后，你与这艘弃船脱离对接。`
+				depart
+
+	on complete
+		conversation
+			`你回到边缘空间站，受到了热烈欢迎，白银星号的前船员们纷纷下船。一些伤势较重的船员被用吊床式担架抬出，但大多数都能自己走或飞离<ship>。`
+			`	短暂的庆祝和诸多深切的感谢之后，你发现达里乌斯和索拉正在<ship>旁等着与你谈话。`
+			`	“<first>，我觉得我们碰上了一个绝佳的机会，”达里乌斯说。“我刚才正跟一位叫赫里索的议员交谈，他正对缠结帷幕东部区域的政治局势感到担忧。”`
+			`	“他们就是一群自私的懦夫，”索拉不屑地说道。`
+			`	“好像是关于矿工们在抱怨镍铁的价格管制，”达里乌斯过了一会儿说道，“但他想知道你能不能用跃迁引擎带他去那里，去接触一下那些矿工，这样就不必花上几周时间在那些杂乱无章的超空间航线中穿梭了。这也是去见我朋友并问他些问题的绝佳机会。一小时后在太空港见我，我们把这趟行程安排好。”`
+	on visit
+		dialog `你降落在了<planet>，但发现载有获救船员的护航舰尚未进入该星系。最好离港等待其抵达。`
+
+
+mission "Avgi: Frontline Combat"
+	name "猎杀异变体"
+	description "帮助阿夫吉人肃清精粹星以北各星系中的异变体，从而解放防御资源，然后返回<destination>。"
+	source "Weledos"
+	destination "Feo Platform"
+	waypoint "Corporeal"
+	waypoint "Empyrean"
+	waypoint "Firmament"
+	waypoint "Lumine"
+	to offer
+		has "Avgi: Defend Ensemble 2: done"
+	to fail
+		has "avgi: rescue intro"
+	on offer
+		conversation
+			`你按照科基诺的指示，来到了航天港内的一座预制建筑前，这地方看起来像是某种指挥中心。科基诺正在中央的一张桌子旁等你，桌子亮着光，显示出一幅阿夫吉空间的星图，上面还带有你看不懂的彩色标记。`
+			`	“说明。异变体虽然攻势连绵，但通常很少深入缠结帷幕。当然，最近那次入侵是个例外。但阿尔克坚守着第一道防线，依托费奥平台及其火炮。”他指向缠结帷幕外的一个三合星系。`
+			`	“但是，如果要夺回我们的家园，就不能仅仅被动防守。因此，最近这场战争的前线被推到了精华星系，以及其北边呈三角形分布的星系，我们目前仍在清理那片区域。”`
+			choice
+				`	“我该做什么？”`
+				`	“你想让我做什么？”`
+			`	“考虑。你的飞船性能远超我们目前能够本土制造的任何飞船，至少眼下如此。虽然你确实擅长舰队战，但我认为，你最适合去执行独立打击——也就是我们单艘舰船根本无法独立完成的任务。”`
+			`	He looks down at a device similar to a tablet. "With the attack on Ensemble, we were forced to pull back our main fleetgroups from the front lines in Quintessence in an attempt to contain them. While we have since reclaimed many of our initial positions, during all the maneuvering a large number of Aberrant were able to slip past us, not into the Shroud, but rather north, towards the Empyrean system. With the current situation, I do not want to divert an entire strike force from the defenses to hunt them down. Report back to the Feo Platform when the Aberrant are eliminated."`
+				accept
+	on accept
+		log `同意帮助科基诺清除侵扰前线后方星系群的异变体溃兵。`
+	on visit
+		dialog `你已降落在了<planet>，但北方的星系中仍有异变体残余。将它们全部消灭后再返回。`
+
+	npc kill
+		government "Aberrant"
+		personality
+			confusion 40
+			coward secretive staying target uninterested vindictive
+		system "Corporeal"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Junior"
+				"Aberrant Icebreaker"
+	npc kill
+		government "Aberrant"
+		personality
+			confusion 40
+			coward secretive staying target uninterested vindictive
+		system "Empyrean"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Hugger"
+				"Aberrant Pileup"
+	npc kill
+		government "Aberrant"
+		personality
+			confusion 40
+			coward secretive staying target uninterested vindictive
+		system "Firmament"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Triplet"
+	npc kill
+		government "Aberrant"
+		personality
+			confusion 40
+			coward secretive staying target uninterested vindictive
+		system "Lumine"
+		fleet
+			names "aberrant names"
+			variant
+				"Aberrant Chomper" 2
+
+
+
+mission "Avgi: Dissonance Outreach 0.5"
+	landing
+	name "返回边缘空间站"
+	description "返回<destination>接上协和议会议员赫里索。"
+	source "Feo Platform"
+	destination "Peripheria"
+	passengers 2
+	blocked "你的<ship>需要有两个空余铺位才能搭载达里乌斯和索拉。"
+	to offer
+		has "Avgi: Frontline Combat: done"
+	on offer
+		conversation
+			`你在费奥平台受到了驻守在此的暮光守卫们英雄般的欢迎。在举行了简短的庆祝并收到了许多对你这位异星客人的赞誉后，你发现达里乌斯和索拉正在<ship>旁等候着，想与你谈谈。`
+			`	“<first>，我觉得我们碰上了一个绝佳的机会，”达里乌斯说。“我刚才正跟一位叫赫里索的议员交谈，他正对缠结帷幕东部区域的政治局势感到担忧。”`
+			`	“他们就是一群自私的懦夫，”索拉不屑地说道。`
+			`	“好像是矿工们对镍铁的价格管制颇有怨言，”达里乌斯顿了顿说道，“但他想知道，你能不能用跳跃引擎带他去那里，与矿工们进行一些接触，而不用花上几个星期在那些一团糟的扭曲超空间航线里绕来绕去。这正好是见见我那朋友、问他几个问题的好机会。我们得先前往佩里菲里亚接上赫里索，好把这次行程安排妥当。”`
+				accept
+	on complete
+		dialog
+			`当你驾驶<ship>在一个机库降落时，达里乌斯说道：“我会联系赫里索，让他在航天港与我们会合。”`
+	on visit
+		dialog `你降落在了<planet>，但发现载有达里乌斯和索拉的护航舰尚未进入该星系。最好离港等待其抵达。`
+
+
+mission "Avgi: Dissonance Outreach"
+	name "不谐联络"
+	description "护送赫里索前往<destination>与当地矿工进行谈判。你可能需要向空间站发出呼叫以获得停靠许可。"
+	source "Peripheria"
+	destination "Outpost Tekis"
+	passengers 3
+	blocked "你需要<capacity>才能运送达里乌斯、索拉和赫里索。"
+	clearance "赫里索与航天港的调度员发生了激烈的争执，说了些有关访问权限的话，并最终勉强为你争取到了停靠许可。"
+	to offer
+		or
+			has "Avgi: Scout Rescue: done"
+			has "Avgi: Frontline Combat: done"
+	on offer
+		log "People" "Hriso" `赫里索是一名阿夫吉外交官，负责与对谐律统治不满的异见者谈判。虽然忠于谐律，但他似乎对不谐运动及其观点有些同情。`
+		log "People" "Sora Kun" `索拉对“不协和”持负面看法，对那些在她看来未能为对抗异变体的战争做出贡献的人也颇为不满。`
+		log "Factions" "Avgi Consonance" `在各个阿夫吉政体中，对于协和的成员身份认同差异极大，相当一部分逃离了异变体的阿夫吉人并不承认其合法性。`
+		log "Factions" "Avgi Dissonance" `“不协和”是一个笼统的称呼，用来指代那些不承认“协和”为统一阿夫吉政府的各类团体与个人。从无政府主义者到持不同政见的企业，“不协和”是一场兼收并蓄的运动，而非一个集权组织。`
+		conversation
+			`赫里索原来是一只黄橙色的中年阿夫吉。“兴奋。真是十分荣幸能见到你，<first> <last>船长。我期待着在这次谈判中与你同行。”`
+			choice
+				`	“阿夫吉人难道没有统一在谐律之下吗？”`
+				`	“你到底是在和谁谈判？”`
+					goto dissonance
+			`	他发出嗡嗡的笑声。“但愿我们的种族能有那么团结。不，加入谐律完全凭自愿，即便在当前的危机下，许多政体也选择自行其是。遗憾。最初撤离到缠结帷幕的过程，至少可以说是一片混乱，因为那里大部分区域过去和现在都还没有绘制出星图。许多船长驾驶飞船走上了不同的道路，只是为了生存才彼此相遇并结成同盟。从某种意义上说，谐律能重新组建起来本身就是一个奇迹。”`
+
+			label dissonance
+			`	“那些没有完全与谐律结盟的政体彼此基本独立，但他们的运动被统称为‘不谐’。请务必理解，我们并非敌人，我们对他们也并无恶意。不谐派与我们进行贸易，在事实上也遵守议会通过的法令，而且他们中的每一个人都和我们一样，渴望将异变体从我们的空间中彻底清除。”`
+			`	他直视着你。“我们这次要去谈判的对象仍然忠于谐律，只是对某些矿物实施的价格管制感到不满。这对于暮光守卫扩充舰队是必要的，”他解释道。`
+			`	索拉说：“我还是觉得他们就是一群懦夫。你们整个种族的生存都受到了威胁，你们却让别人去战斗？然后你们还抱怨他们收购铁矿的价格？到底是什么样的人才会干出这种事？”`
+			`	赫里索抖了抖翅膀。“责备。那些仍需要维持生计，并为自己无法制造的精密机械买单的人。不过我们可以稍后再讨论这个。眼下，我们还是尽快出发吧。”`
+				accept
+
+	on accept
+		log `Agreed to transport Hriso to a Dissonance mining station in the Tangled Shroud, while Darius and Sora investigate a lead that could potentially help me escape the Twilight.`
+
+
+mission "Avgi: Twilight Escape 1"
+	landing
+	name "逃离暮光"
+	description "寻找离开暮光区域的道路。你也许可以去暮光的极东方向看看，那里是入侵最初开始的地方。"
+	source "Outpost Tekis"
+	destination "Vinci"
+	passengers 3
+	blocked "你的<ship>需要有<capacity>才能运送达里乌斯、索拉和利昂。"
+	to offer
+		has "Avgi: Dissonance Outreach: done"
+	on offer
+		log `听说有一条可能离开暮光区的路径。显然，异变体是通过一条向东延伸的星系链入侵的，尽管自入侵发生以来，没有任何阿夫吉飞船能够探索该区域，但利昂认为从那里可能有一条返回人类空间的通道。`
+		log "Factions" "Avgi Dissonance" `独立矿工、联合组织和企业都对谐律从小行星开采的矿物实施的价格管制感到不满。尽管谐律声称，由于紧缩的战时经济和对原材料的需求，这些管制是不可或缺的，但人为压低的价格让人们难以维持生计。`
+		log "People" "Leon Shez" `利昂曾是达里乌斯飞船上的科学家，当时那艘飞船被困在暮光区域。与索拉不同，他确实责怪达里乌斯害得他们与阿夫吉人一同被困。虽然有些粗鲁无礼，但他似乎建立起了一些有价值的人脉关系，或许很快就能找到一条返回人类空间的道路。`
+		conversation
+			`特基斯前哨站是一座嵌入直径数公里小行星的大型空间站，管道与居住舱的网格纵横交错。你将 <ship> 驶入岩石中挖出的狭小机库，与赫里索一同下船，他径直前往事先约好的会面地点。你注意到前哨站里许多阿夫吉人都盯着你、达里乌斯和索拉，这大概是他们头一次见到人类。`
+			`	你们一起走进一间铺着抛光岩壁的大型圆形会议室。里面已有几位年龄各异的阿夫吉人等着，他们立刻用自己的语言和赫里索交谈起来。`
+			`	其中一人看着你说：“不悦。所以，你们是期待外星人出面支持，好让我们挪地方？我们原以为你们是来重新考虑立场的，不是来固化的。”`
+			choice
+				`	“他们在说什么？”`
+				`	（保持沉默。）`
+
+			`	“驳斥。 <last> 舰长不是站在‘我’这边，也不是其他任何人那边，他只是一个对我们的风俗感到好奇的观察者。”赫里索转向你，“思虑。我猜你或许对我们讨论的内容感到好奇。本地矿工公会说，协和会强制要求的低价铁矿石让他们难以维持运营，因为我们没有购买足够多的稀有金属（比如钛）来弥补差额。”`
+			`	“这太蠢了，”索拉说，“没有廉价钢材，我们根本没法继续扩建边缘空间站或者建造阿克提纳圆筒站。”`
+			`	赫里索没有翻译那句话，继续与矿工们交谈。索拉拿出自己的翻译器，聚精会神地听着对话，但达里乌斯把你拉到一边。“我在来的路上和几个人聊了聊，他们说有个人更了解入侵之后最初几天的情况。跟我来。”`
+			`	“他们说了什么？”你问道。`
+			`	“显然得亲自和那个人见面，”他咕哝道，“我不喜欢这样，但我觉得没什么危险，就是麻烦。”你告退后和达里乌斯一起走了。`
+			`	没过多久，你发现自己来到某种食堂，几十个阿夫吉人正喝着色彩鲜艳的饮料。达里乌斯僵住了，他看见一个矮个子男人正和几个阿夫吉人一起坐在一张简陋的凳子上——那是房间里唯一的人类风格座位。`
+			`	“达里乌斯。我没料到会在这里见到你，”他说，“哦，这是什么，又一个人类出现在阿夫吉空域？”`
+			`	达里乌斯停顿了一会儿才回答。“莱昂。好久不见。”`
+			`	莱昂哼了一声。“这么说都算轻的。索拉和你在一起，还是你自己爬过来的？”`
+			choice
+				`	“她在帮忙谈些事情。”`
+					goto you
+				`	（让达里乌斯说话。）`
+
+			`	“她和协和会的人在一起，正在和这里的矿工谈判，”达里乌斯说。`
+			label you
+			`	“这人是谁？”莱昂看着你说，“你怎么会跑到这——这种地方来？”`
+			choice
+				`	“ <last> 舰长。我和你一样被困在这里。”`
+				`	“ <first> 。很高兴认识你。”`
+
+			`	你迅速解释了自己是如何来到阿夫吉空域的，莱昂点了点头。“这就说得通那位好舰长问的问题了，”他朝达里乌斯点点头，“我花了几年时间收集这些信息，从听官方叙事到在阿夫吉空域的角落里挖掘传言。”`
+			`	他凑近身子。“所以，在告诉你之前，我有一个条件。我花了几个月想办法找一艘船带我去……你会知道的。但愿意让船穿过‘纠缠帷幕’和‘异变体’封锁的船长不多，所以如果这条线索能带来什么结果，我就要在你的船上占个铺位。”`
+			choice
+				`	“同意。”`
+					goto agreed
+				`	“不行。”`
+			`	你张嘴正要回答，但达里乌斯抢先一步。“当然可以，莱昂。”`
+
+			label agreed
+			`	“好。嗯，大致情况是这样的：入侵并非凭空出现。人人都说他们来自阿夫吉探索的最远疆域之外，但那不完全准确。第一个遭遇他们的是艘侦察船，几分钟内就被他们的武器击落。不过在那之前，他们向姊妹船发送了一段杂乱的通讯，那艘船逃回了其余的阿夫吉人那里。”`
+			`	他顿了顿，喝了一口看起来像水的东西。“他们说发现了一道某种形态的门，一件由未知的先驱种族建造的古代外星遗物。不知怎么的，他们激活了它，第一个异变体就是从那里来的。”`
+			choice
+				`	“而你打算用这道门当作出口？”`
+				`	“你觉得这道门通向哪里？”`
+
+			`	“我不知道它通向哪里，但肯定不是阿夫吉空域。也许是你的跃迁引擎能起作用的地方，这样我们最终就能回到人类空域。总比坐在这里再无所事事六年强。”`
+			`	“这道门在哪？”达里乌斯问。`
+			`	“异变体来自东方，暮光之域最远疆域之外。那个地方阿夫吉人一直很难探索，因为周期性的能量风暴会让整个星系电离。但显然那片区域被红色星云笼罩着，就像暮光之域被一团蓝色星云环绕一样，所以很好认。”`
+			branch "unknown ember waste"
+				not "event: ember waste label"
+			choice
+				`	“我听说过那个区域。叫‘余烬废土’。”`
+			`	“它能带我们回人类空域吗？”莱昂问，你点了点头。`
+
+			label "unknown ember waste"
+			`	“那就没必要再等了。只要有机会，哪怕很小，也值得去看看，”达里乌斯说，自从你认识他以来，他头一次看上去充满希望。`
+			branch accept
+				has "avgi: discovered magnetar"
+			`	为了你们俩着想，你只希望他的希望没有落空。`
+				accept
+	on enter
+		system
+			attributes "core" "deep" "dirt belt" "near earth" "rim" "south"
+		conversation
+			`随着你跃迁引擎的紫色火焰熄灭，达里乌斯、索拉和莱昂全都说不出话来。六年来，他们第一次回到了人类空域。`
+			choice
+				`	“嘿，我说过我们能行的。”`
+				`	“我们出来了。接下来去哪？”`
+
+			`	莱昂愣了一会儿，然后骂了一句。“那颗该死的磁星一直就在那里？我在那儿待了几年。几年！”`
+			`	“我们都待了那么久。而且如果没有<first>的跃迁引擎，你也拿它没辙，”索拉提醒道。`
+			`	“<first>，”达里乌斯用颤抖的声音说，“请带我们去幽海星。我得去看看我的家。还有我的妻子。”`
+			`	“先把我放在芬奇，”莱昂插话道，“我得让生活重新步入正轨，而且那里有个人，我需要和他谈谈这一切。反正去幽海星也顺路。”`
+	on complete
+		log `成功与被困在暮光区域的其他人类一同逃离了暮光区域。`
+		log "People" "Leon Shez" `Leon is extremely grateful for helping him return to human space. He wants to tell a contact on Vinci about the Avgi, and asks to stay in touch.`
+		clear "avgi: lost in twilight"
+		"reputation: Avgi (Dissonance Angry)" <?= -10
+		conversation
+			`当你将<ship>降落在着陆坪上时，团队一片寂静。你注意到索拉正望着窗外，而达里乌斯低头看着自己的双手。至于莱昂，他早在你进入大气层之前就已经准备好离开，一直在舱门附近来回踱步，直到你打开舱门的那一刻。`
+			`	"我要去透透气，"索拉说着，突然挡在愤怒的莱昂面前，不情愿的达里乌斯被她拽着一起。"我们会在太空港里，所以别丢下我们自个儿走了。"`
+			`	莱昂无奈成了最后一个下船的人，在离开<ship>前停下脚步，转向你。"<first>，谢谢你。"他难得地露出阴郁的神情，平日里那种对世界的轻蔑暂时消失不见。`
+			choice
+				`	"别在意。"`
+				`	"很高兴我能帮上忙。"`
+
+			`	"不，真的。我原以为会死在那儿，跟那些阿夫吉人一起。六年了……我不知道该怎么感谢你，但如果你以后路过这儿，需要什么帮助，尽管打电话给我。"说完，他跟你握了握手，朝着索拉和达里乌斯离开的方向走去，前往芬奇的太空港。`
+			`	记得在离开芬奇前，去太空港与达里乌斯和索拉碰头。`
+	on visit
+		dialog `你降落在<planet>，但发现载有达里乌斯、索拉和利昂的护航飞船尚未进入星系。最好先起飞并等待它们抵达。`
+
+
+mission "Avgi: Twilight Escape 2"
+	name "索拉的回归"
+	description "将索拉带到记忆星上她父母的农场。"
+	source "Vinci"
+	destination "Memory"
+	passengers 2
+	blocked "你需要在<ship>上拥有<capacity>才能运送达里乌斯和索拉。"
+	to offer
+		has "Avgi: Twilight Escape 1: done"
+	on offer
+		conversation
+			`你发现达里乌斯和纱罗正坐在咖啡馆外，啜饮咖啡。“好久没喝到这么好的咖啡了，”纱罗说着，为你拉出一把椅子。`
+			`	“怎么，阿夫吉星域没有咖啡吗？”你打趣道。`
+			`	“没，不过你有空得尝尝他们的饮料。伙计，那味道可真绝了。”`
+			`	“不过，重返故土的感觉无可替代，”达里乌斯安静地说，环视着周围繁忙的太空港。“很难相信我竟然真的回来了。更难以理解的是，为什么那些跟随我的人大多没能逃出来，而偏偏是我做到了。”`
+			`	“哦，别说了。”纱罗拍了一下他的后脑勺。“你不是第一个误入险境的。还记得你妻子那个故事吗？”她的语气带着戏谑，但你从她眼中能看到担忧，因为达里乌斯明显感到愧疚。`
+			`	达里乌斯摇了摇头，继续说道：“我们该送你回家了。你父母大概还留着那个农场，那是家族多年的产业。离这儿不远，对吧？”`
+			`	停顿片刻，纱罗说：“记忆星。我多年没回去了，不过我想我的公寓肯定已经不在了……所以暂时没别的地方可去。”`
+			`	“那就行动吧。<first>，你能带我们去记忆星吗？”`
+			`	“当然可以，”你说。`
+				accept
+
+	on accept
+		log `同意将索拉送到她父母在记忆星的农场，因为她别无去处。`
+		log "People" "Darius Caldwell" `尽管从“黄昏”中逃脱，但达里乌斯仍对自己那些死于异变体的船员感到内疚。`
+	on visit
+		dialog `你降落在了<planet>，但发现载有达里乌斯和索拉的护航舰尚未进入该星系。最好离港等待其抵达。`
+
+
+mission "Avgi: Twilight Escape 3"
+	landing
+	name "达里乌斯归来"
+	description "带达里乌斯回到他在瓦尔哈拉的家，希望他的妻子在他被推定死亡后仍住在那里。"
+	source "Memory"
+	destination "Valhalla"
+	passengers 1
+	blocked "你需要在<ship>上拥有<capacity>才能运送达里乌斯。"
+	to offer
+		has "Avgi: Twilight Escape 2: done"
+	on offer
+		log "People" "Darius Caldwell" `达里乌斯对妻子卡特里娜深情不渝，但担心在自己失踪的这六年里，她已经重新开始了自己的生活。`
+		conversation
+			`记忆星是一颗干燥的星球，覆盖着沙地与灌木林。在太空港，你们三人搭上一辆穿梭巴士，驶向乡间。窗外是连绵数英里的仙人掌和干枯植物，然后突然转变为绿意盎然的农田——很可能是靠地下含水层灌溉。你们最终抵达了其中一座农场，纱罗说那是她父母的家。这里显然很少有车辆经过，巴士刚停靠几分钟，那座保养良好的农舍门便打开了，一对中年夫妇向外张望。`
+			`	“……纱罗？是你吗？”年长的女人喊道，而男人则在一旁惊讶得说不出话来。`
+			`	纱罗两眼放光，在离开前给了你和达里乌斯一个紧紧的拥抱。“谢谢你，<first>。还有达里乌斯，”她严肃地看了他一眼，“我会保持联系的。别太自责了。”他沉默地点点头，她转身跑向房子。`
+			`	你们不想打扰这场重逢，便一同起身告辞，返回太空港。回到<ship>上，你们默默地坐了一会儿，气氛舒适。`
+			choice
+				`	“那么，你想让我带你去哪里？”`
+				`	“那接下来去哪儿？”`
+			`	“……我不知道。我的妻子卡特琳娜……我们住在瓦尔哈拉，但那已经是六年前的事了。她大概以为我死了，该死，整个共和国大概都以为我死了。她……”他哽咽了，“她现在很可能已经重新开始了。我也希望她这么做，她知道的。”`
+			choice
+				`	“不管结果如何，你都得搞清楚。我们去瓦尔哈拉吧。”`
+				`	“我相信她一直在等你。我们去瓦尔哈拉吧。”`
+					goto optimism
+			`	“我不知道自己能否面对真相。但我也不能连查都不查一下就走——万一她还没有放弃我呢。”`
+			label optimism
+			`	达里乌斯揉了揉眼睛。“谢谢你，<first>。但愿我猜错了。我们去瓦尔哈拉吧。”`
+				accept
+
+	on accept
+		log `在送索拉与父母团聚后，同意帮助达里乌斯在瓦尔哈拉寻找他的妻子。`
+
+	on complete
+		log `成功使达里乌斯与妻子卡特里娜重聚，她此前一直不愿相信他已经死去。`
+		log "Minor People" "Katrina Caldwell" `卡特里娜是达里乌斯的妻子，虽然她搬出了城市，但始终不愿相信丈夫已经死去。`
+		conversation
+			`你降落在瓦尔哈拉的主太空港，达里乌斯几乎在飞船还没触地时就跳了出来。他迅速叫了一辆自动出租车，很快你们就来到了一座宽敞、外观豪华的公寓楼前。“我们以前的地址，”他解释道，“那时我们还在租房，但已经在考虑几年内买下这套公寓了。”`
+			`	你们敲响了那套公寓的门，开门的是一个黑发高个男人。“你好，有什么事吗？”他谨慎地问道。`
+			`	达里乌斯显得很沮丧。“请问……这里有一位卡特里娜吗？”`
+			`	“卡特里娜？我在这儿住了五年，从没见过叫这个名字的人。她是你的朋友吗？”`
+			`	达里乌斯转身时一脸阴郁。“是的。抱歉打扰了，我们这就走。”`
+			choice
+				`	“别放弃。她可能只是搬家了之类的。”`
+				`	“我们可以试着查查她的信息。”`
+					goto lookup
+			`	“她当然搬走了。但我不明白为什么，买下那套公寓是我们的梦想。这根本说不通！”他打住自己，“抱歉，<first>。我只是太紧张了。”他叹了口气继续说，“我可以试着找找她，也许……”他陷入了沉思。`
+			`	“瓦尔哈拉有公共记录吗？”你问道。`
+			label lookup
+			`	“……有的，我们去查查记录册。可以去图书馆查。”`
+			`	很快到了图书馆，你们坐在桌旁，达里乌斯查阅公共记录。他在名字和地址列表上滚动，停在一个名字上。“卡特里娜……考德威尔。我们的姓。”他脸上明显露出希望。“至少她保留了我们的姓氏。”`
+			`	你瞥了一眼地址，记了下来。看起来在城外更远的地方。“我们去那个地址看看。今晚还能赶到，”你说。`
+			`	地址似乎在乡下，当出租车平稳地沿着道路滑行时，你欣赏着风景。与记忆星不同，这里的景色郁郁葱葱，连绵起伏的山丘，茂密的森林，奔流的溪水。你们发现地址是一栋看起来舒适的河畔房屋，旁边可见一个大花园。`
+			`	达里乌斯这辈子从未如此紧张，但你轻轻地推了他一下，让他走向门口。他敲门无人应答，他的脸再次滑向绝望，但你听到了花园里传来的声音。`
+			`	“达里乌斯？是你吗？”一个头发花白的女人走上门廊，眼睛闪着光。“你回来了……我就知道你还活着！”她喊道，冲过去拥抱他。两人开始说话，快得你跟不上，你有些尴尬地退后。`
+			`	几分钟后，你试图告辞，但达里乌斯不同意。“不，不，这一切都归功于你，<first>。我之所以能在这里，全是因为你。”`
+			`	卡特里娜好奇地看着你。“外星人，嗯？你看起来不像外星人。”`
+			choice
+				`	“嗯？”`
+				`	“因为我不是。”`
+				`	“是啊，这些皮肤衣挺不错的。”`
+			`	她大笑起来。“要是别人告诉我，我肯定不会相信。我是说，男人回家晚了总能想出各种借口，但这个可真是出格！”她的语气突然严肃起来。“和政府部门处理好这件事会很头疼。他们给了我买这房子的钱，作为你所谓‘死亡’的补偿，不管我怎么坚持说你还活着。”`
+			`	“我们会解决的。反正他们还欠我退职金呢，”达里乌斯开玩笑说，他仍被卡特里娜抱着。`
+			`	当两人走向门口时，你向他们告别，达里乌斯承诺他会就阿夫吉的事与你保持联系。你们都没有忘记那些在银河边缘为生存而战的外星人，既然现在知道了进出他们领地的安全路线，你们可以回去而不用担心被困住了。`
+	on visit
+		dialog `你降落在了<planet>，但发现载有达里乌斯的护航舰尚未进入该星系。最好离港等待其抵达。`
+
+
+mission "Discovery of Decet Magnetar"
+	invisible
+	entering
+	source
+		system "Decet"
+	destination "Earth"
+	on offer
+		log `在德塞特星系发现了一颗磁星，它能够提升我跳跃引擎的射程，似乎反转了将我困在此处的神秘效应。`
+		set "avgi: discovered magnetar"
+		conversation
+			`就像你第一次进入阿夫吉空间时跳跃引擎反应异常一样，这种情况再次发生了，但这次的效果是相反的。跳跃产生的等离子体不正常地滞留，仿佛被某种外部力量激活了。仪表显示跳跃后的引擎温度远高于正常水平，几乎热到危险的地步。也许你的跳跃引擎的航程也改变了？`
+				decline

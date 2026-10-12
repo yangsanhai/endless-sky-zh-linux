@@ -1,0 +1,406 @@
+# Copyright (c) 2023 by RisingLeaf (https://github.com/RisingLeaf)
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Weapons:
+outfit "Plasma Discharger"
+	"display name" "等离子放电器"
+	category "Guns"
+	series "Guns"
+	index 12010
+	cost 140000
+	mass 25
+	"outfit space" -20
+	"weapon capacity" -20
+	"gun ports" -1
+	thumbnail "outfit/plasma discharger"
+	weapon
+		sprite "projectile/plasma discharge"
+		sound "plasma discharger"
+		"hit effect" "blaster impact"
+		"submunition" "plasma particle" 5
+		"inaccuracy" 8
+		"velocity" 10
+		"lifetime" 64
+		"random lifetime" 12
+		"reload" 40
+		"firing energy" 60
+		"firing heat" 30
+		"shield damage" 33
+		"hull damage" 39
+		"minable damage" 90
+	description "因西皮亚斯人在开始星系内航行之前很久就已经开始开采小行星，这是因为他们母星的大气层与行星环距离很近。因此，这种采矿工具似乎比他们的通用技术更为先进，但其效率仍无法与人类武器相提并论。"
+	description "	放电器本身发射高密度等离子体弹丸，一段时间后会分裂成微小粒子。由于等离子注入器的存在，射速极高，但能量消耗也非常严重。"
+
+outfit "plasma particle"
+	"display name" "等离子粒子"
+	weapon
+		sprite "effect/plasma particle"
+		"hit effect" "blaster impact"
+		"lifetime" 60
+		"random velocity" 2
+		"inaccuracy" 20
+		"shield damage" 6.6
+		"hull damage" 7.8
+		"minable damage" 18
+
+outfit "Stagnation Beam"
+	"display name" "停滞光束"
+	category "Turrets"
+	series "Turrets"
+	index 12010
+	cost 180000
+	mass 30
+	"outfit space" -30
+	"weapon capacity" -30
+	"turret mounts" -1
+	thumbnail "outfit/stagnation beam"
+	licenses
+		"Hicemus Conflict"
+	weapon
+		sprite "projectile/stagnation beam"
+			"random start frame"
+			"frame rate" 6
+		"hardpoint sprite" "hardpoint/stagnation beam"
+		sound "stagnation beam"
+		"hit effect" "stagnation beam impact"
+		"inaccuracy" .5
+		"turret turn" 3.8
+		"velocity" 600
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 0.5
+		"firing heat" 3.2
+		# Deal damage to provoke ships.
+		"shield damage" 0.1
+		"hull damage" 0.1
+		"hit force" -40
+		"slowing damage" 0.1
+	description "停滞光束是因西皮亚斯掌握的极少数超越人类迄今所有成就的技术之一——实际上，第一批原型机早在因西皮亚斯梦想太空旅行之前就已建成。这种武器的起源在于建造巨型反应堆，用以将小行星从其母星轨道拖出，从而轻松获取更多资源。自然，也配备了一种减速机制，以防止意外的小行星撞击。"
+	description "	随着因西皮亚斯对太空飞行的掌握日益精进，其能源发生器的效率也随之提高，从而能够制造出更紧凑的舰载牵引光束。这些新型号极大地简化了资源收集工作，对因西皮亚斯原本迟缓的飞船来说尤为有利。"
+	description "	这些停滞光束的工作原理只有因西皮亚斯中少数受国家控制的科学家知晓。这类知识一旦公开，可能会对希塞穆斯及其权力掌控造成灾难性后果。"
+
+effect "stagnation beam impact"
+	sprite "effect/stagnation beam impact"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 5
+	"random angle" 2
+	"velocity scale" -.005
+
+outfit "Star Tail"
+	"display name" "星尾"
+	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 12010
+	cost 320000
+	mass 48
+	"outfit space" -50
+	"weapon capacity" -50
+	"gun ports" -1
+	thumbnail "outfit/star tail launcher"
+	"star tail capacity" 20
+	licenses
+		"Hicemus Conflict"
+	weapon
+		sprite "projectile/star tail upload"
+			"frame rate" 10
+			"no repeat"
+		sound "star tail"
+		"hit effect" "blaster impact"
+		"velocity" 1
+		"lifetime" 58
+		"reload" 180
+		"firing energy" 60
+		"firing heat" 30
+		"shield damage" 820
+		"hull damage" 860
+		"range override" 3000
+		
+		# To make the AI fire even if the ship is not directly in front.
+		"homing"
+			"blindspot"
+		"optical tracking" 1
+		"turn" 0.5
+
+		ammo "Star Tail Cell"
+		"submunition" "Star Tail Projectile" 1
+	description "关于这件武器，几乎没有公开信息。传闻称它发射的是高挥发性等离子体块。"
+	description "	使用过该武器的船长们说，它的射弹能在飞行中改变方向，即使目标试图躲避射击，也能跟踪命中。"
+	description "	该武器的弹药可在任何装备商处补充。"
+		to display
+			has "gamerule: universal ammo restocking"
+
+outfit "Star Tail Projectile"
+	"display name" "星尾弹丸"
+	weapon
+		sprite "projectile/star tail"
+			"frame rate" 12
+		"hit effect" "star tail hit"
+		"live effect" "star tail live" 120
+		"velocity" 1
+		acceleration 5
+		drag .2
+		"lifetime" 120
+		"shield damage" 410
+		"hull damage" 430
+		"homing"
+			"blindspot"
+		"optical tracking" 1
+		"turn" .5
+
+effect "star tail hit"
+	sprite "effect/star tail hit"
+		"no repeat"
+		"frame rate" 40
+	sound "explosion small"
+	"lifetime" 30
+	"velocity scale" 0.
+
+effect "star tail live"
+	sprite "effect/star tail live"
+		"no repeat"
+		"frame rate" 28
+	"lifetime" 15
+	"velocity scale" 0.
+
+outfit "Star Tail Cell"
+	"display name" "星尾电池"
+	category "Ammunition"
+	cost 1500
+	thumbnail "outfit/star tail cell"
+	"mass" .1
+	"star tail capacity" -1
+	description "星尾武器需要极其庞大的能量，因西皮亚斯无法在短时间内生成。为此，星尾电池内含一种能量富集物质，在开火时释放能量。每个电池所储存的能量恰好足够发射一发。"
+
+outfit "Star Tail Storage"
+	"display name" "星尾储能"
+	category "Ammunition"
+	cost 6000
+	thumbnail "outfit/star tail cell storage"
+	"mass" 10
+	"outfit space" -10
+	"star tail capacity" 20
+	ammo "Star Tail Cell"
+	licenses
+		"Hicemus Conflict"
+	description "由于星尾电池高度不稳定，需要配备坚固的存储系统。这种径向设计采用一种可临时部署的护盾变体，能够承受小型爆炸。"
+	description "	该易扩展系统的一层结构已随武器一同交付。如需增加存储空间，只需在顶部叠加更多层即可。"
+
+outfitter "Star Tail Cell Restock"
+	to sell
+		has "gamerule: universal ammo restocking"
+		or
+			has "outfit: Star Tail"
+			has "outfit: Star Tail Storage"
+	location
+		attributes "outfitter"
+	stock
+		"Star Tail Cell"
+
+
+outfit "Horizon Grappler"
+	"display name" "地平线抓钩"
+	category "Turrets"
+	series "Tractor Beams"
+	index 12020
+	cost 200000
+	thumbnail "outfit/horizon grappler"
+	"mass" 25
+	"outfit space" -25
+	"weapon capacity" -25
+	"turret mounts" -1
+	weapon
+		"hardpoint sprite" "hardpoint/horizon grappler"
+		"hardpoint offset" 0.
+		sound "tractor beam"
+		"hit effect" "horizon grappler"
+		"tractor beam" 1.8
+		"velocity" 400
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 3.2
+		"firing heat" 1.1
+	description `这款采矿设备代表了因西皮亚斯科技的巅峰。经过数个世纪的完善，这根牵引光束远超因西皮亚斯迄今为止开发出的任何产品。该光束的名称源自其首个原型机，早于太空飞行时代就已开发，它通过将小行星从母星环带拖入大气层来采集矿物质。`
+
+effect "horizon grappler"
+	sprite "effect/horizon grappler"
+		"frame rate" 3.5
+	"lifetime" 1
+	"velocity scale" 1
+
+# Shields/Energy:
+outfit "Gas-Class Shield"
+	"display name" "气态级护盾"
+	category "Systems"
+	series "Shields"
+	index 12010
+	thumbnail "outfit/gas class shield"
+	cost 136000
+	mass 60
+	"outfit space" -60
+	"shield generation" .1
+	"energy generation" 4.2
+	"heat generation" 5
+	"shield fuel" .01
+	description "护盾技术是因西皮亚斯最新开发的成果之一。虽然这种护盾在外观上与人类的护盾装置相似，但其工作原理完全不同。其核心通过燃烧氢气来提供再生能量。这一技术如此高效，以至于成为了他们所有飞船的主要能源。"
+
+outfit "Liquid-Class Shield"
+	"display name" "液态级护盾"
+	category "Systems"
+	series "Shields"
+	index 12020
+	thumbnail "outfit/liquid class shield"
+	cost 216000
+	mass 80
+	"outfit space" -90
+	"shield generation" .25
+	"energy generation" 6.1
+	"heat generation" 6
+	"shield fuel" .02
+	description "这款更先进的护盾发生器使用液态而非气态燃料。虽然效率大幅提升，但占用空间也更大，因此仅适用于大型飞船。"
+
+outfit "Metallic Hydrogen Cell"
+	"display name" "金属氢电池"
+	category "Power"
+	series "Batteries"
+	index 12010
+	thumbnail "outfit/metallic hydrogen cell"
+	cost 2500
+	mass 20
+	"outfit space" -20
+	"energy capacity" 500
+	description "氢能存储技术是由因西皮亚斯早期发现的，这得益于他们母星上存在的大量金属氢。由于因西皮亚斯的飞船通常在使用能量的同时即时生成能量，因此只需要少量的存储空间。因此，他们的大多数飞船仅安装了一个金属氢电池单元。"
+
+# Engines:
+outfit "MH Blue-Class Thruster"
+	"display name" "MH 蓝级推进器"
+	category "Engines"
+	series "Engines"
+	index 12011
+	thumbnail "outfit/mh blue-class thruster"
+	cost 32000
+	mass 27
+	"outfit space" -27
+	"engine capacity" -27
+	"flare sprite" "effect/incipias flare/metallic hydrogen small"
+		"frame rate" 24
+	"flare sound" "incip plasma small"
+	"thrust" 24
+	"thrusting energy" 2
+	"thrusting heat" 2.5
+	description "在因西皮亚斯文化中，蓝色是最弱的颜色。标为蓝色的推进器对使用它的任何飞船的速度来说都不是好兆头。"
+
+outfit "MH Blue-Class Steering"
+	"display name" "MH 蓝级转向器"
+	category "Engines"
+	series "Engines"
+	index 12010
+	thumbnail "outfit/mh blue-class steering"
+	cost 28000
+	mass 24
+	"outfit space" -24
+	"engine capacity" -24
+	"turn" 498
+	"turning energy" 1.
+	"turning heat" 3
+	description "这个转向装置只能提供转向所需的最小推力，但由于价格低廉，仍然被广泛使用。"
+
+outfit "MH Green-Class Thruster"
+	"display name" "MH 绿级推进器"
+	category "Engines"
+	series "Engines"
+	index 12021
+	thumbnail "outfit/mh green-class thruster"
+	cost 44000
+	mass 32
+	"outfit space" -32
+	"engine capacity" -32
+	"flare sprite" "effect/incipias flare/metallic hydrogen medium"
+		"frame rate" 24
+	"flare sound" "incip plasma med"
+	"thrust" 30
+	"thrusting energy" 2.2
+	"thrusting heat" 2.8
+	description "绿色对于因西皮亚斯而言是平衡之色。这款推进器在空间需求与强劲引擎之间取得了平衡。"
+
+outfit "MH Green-Class Steering"
+	"display name" "MH 绿级转向器"
+	category "Engines"
+	series "Engines"
+	index 12020
+	thumbnail "outfit/mh green-class steering"
+	cost 35000
+	mass 28
+	"outfit space" -28
+	"engine capacity" -28
+	"turn" 618
+	"turning energy" 1.1
+	"turning heat" 3.1
+	description "因西皮亚斯似乎对给飞船增加转向能力有所抵触。尽管这款转向系统本应是蓝级转向系统的升级版，但它几乎没有改进。"
+
+outfit "MH Red-Class Thruster"
+	"display name" "MH 红级推进器"
+	category "Engines"
+	series "Engines"
+	index 12031
+	thumbnail "outfit/mh red-class thruster"
+	cost 50000
+	mass 41
+	"outfit space" -41
+	"engine capacity" -41
+	"flare sprite" "effect/incipias flare/metallic hydrogen large"
+		"frame rate" 24
+	"flare sound" "incip plasma large"
+	"thrust" 48
+	"thrusting energy" 5
+	"thrusting heat" 10
+	description "因西皮亚斯母星上丰富的金属氢催生了利用这种强大能源的发动机，使得推进器效率远超对因西皮亚斯短暂航天历史的预期。"
+
+outfit "MH Red-Class Steering"
+	"display name" "MH 红级转向器"
+	category "Engines"
+	series "Engines"
+	index 12030
+	thumbnail "outfit/mh red-class steering"
+	cost 49000
+	mass 41
+	"outfit space" -41
+	"engine capacity" -41
+	"turn" 1134
+	"turning energy" 2.5
+	"turning heat" 12
+	description "就连因西皮亚斯人也明白，飞船需要转向目标才能开火。这款转向系统专为战斗设计，但资金充裕的船长们发现它在采矿中也大有用途。"
+
+
+# Hand to Hand
+outfit "Cloud Piercer"
+	"display name" "穿云者"
+	category "Hand to Hand"
+	series "H2H"
+	index 12010
+	cost 10000
+	thumbnail "outfit/cloud piercer"
+	licenses
+		"Hicemus Conflict"
+	"capture attack" .55
+	"capture defense" 1.5
+	"unplunderable" 1
+	description "谈及近身战斗时，因西皮亚斯是可怕的对手。这种野蛮的武器或许不是登船入侵的最佳选择，但在防守时，它确实能将敌人撕成碎片。"
+
+# Special
+outfit "Hicemus Conflict License"
+	"display name" "希塞穆斯冲突许可证"
+	category "Licenses"
+	series "Licenses"
+	index 12010
+	description "希塞穆斯已经足够信任你，给予你这张许可证，让你得以一窥他们最珍贵的技术——这些技术旨在让他们在其他派系面前占据优势。"

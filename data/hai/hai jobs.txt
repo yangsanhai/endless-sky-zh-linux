@@ -1,0 +1,2088 @@
+# Copyright (c) 2014 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Human Vacation [1]"
+	name "人类度假者前往<planet>"
+	job
+	repeat
+	description "这个人类想去<destination>的亥族世界度假，并会付给你<payment>。"
+	passengers 1
+	to offer
+		random < 50
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		attributes "human tourism"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 8000 150
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Human Vacation [2]"
+	name "人类度假者前往<planet>"
+	job
+	repeat
+	description "这<bunks>名人类想在亥族世界<destination>度假，他们会付给你<payment>。"
+	passengers 2 12 .8
+	to offer
+		random < 20
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		attributes "human tourism"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 5000 150
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Hai Vacation [1]"
+	name "前往<planet>的亥族度假者"
+	job
+	repeat
+	description "这个亥族人想去奇怪的亥族世界<destination>度假，并会付给你<payment>。"
+	passengers 1
+	to offer
+		random < 70
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		attributes "hai tourism"
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 6000 150
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Hai Vacation [2]"
+	name "前往<planet>的亥族度假者"
+	job
+	repeat
+	description "这<bunks>名亥族人想去奇怪的亥族世界<destination>度假，并会付给你<payment>。"
+	passengers 2 12 .8
+	to offer
+		random < 50
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		attributes "hai tourism"
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 4000 150
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Hai Vacation [3]"
+	name "前往<planet>的亥族度假者"
+	job
+	repeat
+	description "这<bunks>名亥族人想去奇怪的亥族世界<destination>度假，并会付给你<payment>。"
+	passengers 2 12 .8
+	to offer
+		random < 30
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		attributes "hai tourism"
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 4000 150
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Hai Vacation [4]"
+	name "前往<planet>的亥族度假者"
+	job
+	repeat
+	description "这<bunks>名亥族人想去奇怪的亥族世界<destination>度假，并会付给你<payment>。"
+	passengers 2 12 .8
+	to offer
+		random < 20
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		attributes "hai tourism"
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment
+		payment 6000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Wealthy Hai [1]"
+	name "亥族富豪前往<planet>"
+	job
+	repeat
+	description "这户由<bunks>人组成的富裕亥族家庭愿意支付<payment>，以求在<date>前快速舒适地抵达<planet>。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 55
+	to accept
+		has "outfit (installed): Luxury Accommodations"
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 15000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Wealthy Hai [2]"
+	name "亥族富豪前往<planet>"
+	job
+	repeat
+	description "这户由<bunks>人组成的富裕亥族家庭愿意支付<payment>，以求在<date>前快速舒适地抵达<planet>。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 15
+	to accept
+		has "outfit (installed): Luxury Accommodations"
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 15000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+
+phrase "hai festival payment dialog"
+	word
+		`幸好你的<passengers>在旅途中没惹太多麻烦。他们收拾完东西后，付给你<payment>，然后前往节日现场。`
+
+mission "Hai Festival [1]"
+	name "<planet>的庆典"
+	job
+	repeat
+	description "每年有一个月，亥族都会举办盛大的节日庆典。这群<bunks>名亥族人将支付你<payment>，要求你在<date>前将他们及其<tons>吨的物资运往<planet>。"
+	deadline 0 2
+	passengers 10 20
+	cargo "party supplies" 1 2
+	to offer
+		or
+			and
+				month == 3
+				day <= 17
+			and
+				month == 2
+				day >= 27
+		random < 60
+	to fail
+		month >= 4
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 10000 200
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "hai festival payment dialog"
+
+mission "Hai Festival [2]"
+	name "<planet>的庆典"
+	job
+	repeat
+	description "每年有一个月，亥族都会举办盛大的节日庆典。这群<bunks>名人类将支付你<payment>，要求你在<date>之前将他们及其<tons>吨的物资运送至<planet>。"
+	deadline 0 2
+	passengers 10 20
+	cargo "party supplies" 1 2
+	to offer
+		or
+			and
+				month == 3
+				day <= 17
+			and
+				month == 2
+				day >= 27
+		random < 60
+	to fail
+		month >= 4
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 10000 200
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "hai festival payment dialog"
+
+mission "Hai Festival [3]"
+	name "<planet>的庆典"
+	job
+	repeat
+	description "每年有一个月，亥族都会举办盛大的节日庆典。这群共计<bunks>名的亥族和人类将支付你<payment>，要求你在<date>之前将他们及其<tons>吨的物资运送到<planet>。"
+	deadline 0 2
+	passengers 10 20
+	cargo "party supplies" 1 2
+	to offer
+		or
+			and
+				month == 3
+				day <= 17
+			and
+				month == 2
+				day >= 27
+		random < 60
+	to fail
+		month >= 4
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 10000 200
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "hai festival payment dialog"
+
+
+phrase "unfettered aid payment dialog"
+	word
+		`你将援助物资（或者他们喜欢称之为“贡品”）交付给无羁者，并从你在<origin>上的联系人处收到<payment>。`
+
+phrase "unfettered aid pickup dialog"
+	word
+		`亥族码头工人把给无羁者的食物装上你的飞船，其中一人对你说：`
+		`当亥族码头工人把食物装上你的飞船时，其中一人说道：`
+	word
+		` `
+	word
+		`“谢谢你。这总比眼睁睁看着我们的同胞挨饿要强得多。”`
+		`“请转告我们的兄弟姐妹，只要他们愿意悔改，随时欢迎他们回家。”`
+
+mission "Unfettered Aid [0]"
+	name "援助无羁者"
+	job
+	repeat
+	clearance "与无羁者交谈并说明来意后，他们准许你携货着陆。"
+	description "将<tons>吨食物运送至<destination>的无羁者处。你将获得<payment>报酬。"
+	cargo "food (aid)" 25 2 .05
+	to offer
+		random < 40
+		"cargo space" >= 50
+		has "Ask the Hai about the Unfettered: offered"
+	source
+		government "Hai"
+		not attributes "station"
+	destination
+		distance 3 4
+		attributes "unfettered"
+	on accept
+		dialog phrase "unfettered aid pickup dialog"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 5000 1600
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 7.5
+		dialog phrase "unfettered aid payment dialog"
+
+mission "Unfettered Aid [1]"
+	name "援助无羁者"
+	job
+	repeat
+	clearance "与无羁者交谈并说明来意后，他们准许你携货着陆。"
+	description "将<tons>吨食物运送至<destination>的无羁者处。你将获得<payment>报酬。"
+	cargo "food (aid)" 30 2 .05
+	to offer
+		random < 30
+		"cargo space" > 60
+		has "Ask the Hai about the Unfettered: offered"
+	source
+		government "Hai"
+		not attributes "station"
+	destination
+		distance 4 5
+		attributes "unfettered"
+	on accept
+		dialog phrase "unfettered aid pickup dialog"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 6000 1800
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 7.5
+		dialog phrase "unfettered aid payment dialog"
+
+mission "Unfettered Aid [2]"
+	name "援助无羁者"
+	job
+	repeat
+	clearance "与无羁者交谈并说明来意后，他们准许你携货着陆。"
+	description "将<tons>吨食物运送至<destination>的无羁者处。你将获得<payment>报酬。"
+	cargo "food (aid)" 35 2 .05
+	to offer
+		random < 20
+		"cargo space" > 65
+		has "Ask the Hai about the Unfettered: offered"
+	source
+		government "Hai"
+		not attributes "station"
+	destination
+		distance 5 6
+		attributes "unfettered"
+	on accept
+		dialog phrase "unfettered aid pickup dialog"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 7000 2000
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 7.5
+		dialog phrase "unfettered aid payment dialog"
+
+
+mission "Delivery to Human Space [0]"
+	name "特殊运送至<planet>"
+	job
+	repeat
+	description "这位人类希望将<cargo>送往人类空间的<destination>。报酬为<payment>。"
+	cargo random 2 2 .29
+	to offer
+		random < 30
+	source
+		government "Hai"
+		near "Heia Due" 2
+	destination
+		attributes "north"
+	"distance calculation settings"
+		"only unrestricted wormholes"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 50000
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 5
+		dialog phrase "generic cargo delivery payment"
+
+mission "Delivery to Human Space [1]"
+	name "特殊运送至<planet>"
+	job
+	repeat
+	description "这位亥族希望将<cargo>运送至人类空间中的<destination>。报酬为<payment>。"
+	cargo random 2 2 .29
+	to offer
+		random < 25
+	source
+		government "Hai"
+		near "Heia Due" 2
+	destination
+		attributes "north"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 50000
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 5
+		dialog phrase "generic cargo delivery payment"
+
+mission "Delivery to Human Space [2]"
+	name "特殊运送至<planet>"
+	job
+	repeat
+	description "这位人类希望将<cargo>送往人类空间的<destination>。报酬为<payment>。"
+	cargo random 2 2 .29
+	to offer
+		random < 20
+	source
+		government "Hai"
+		near "Heia Due" 2
+	destination
+		attributes "north"
+	"distance calculation settings"
+		"only unrestricted wormholes"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 50000
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 5
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Retrieve Human Luxury Goods"
+	name "来自<planet stopovers>的特殊订单"
+	job
+	repeat
+	description "一位在<planet>的亥族社会名流想在同伴面前炫耀他们对人类文化的了解。他们要求在<date>之前从<stopovers>取得<cargo>。报酬为<payment>。"
+	cargo "Luxury Goods" 2 2 .29
+	deadline 24
+	to offer
+		random < 15
+	source
+		government "Hai"
+		near "Heia Due" 2
+		not attributes "station"
+	stopover
+		attributes "north"
+	"distance calculation settings"
+		"only unrestricted wormholes"
+	on stopover
+		dialog "你收集齐了所需的<commodity>并装上飞船，准备返回<planet>。"
+	on visit
+		dialog phrase "generic missing stopover or cargo"
+	on complete
+		payment 100000 200
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 5
+		dialog "当你降落时，你的<payment>报酬已经备好，随附的还有交货说明。你通过专人递送了<commodity>。"
+
+mission "Hai Retrieve Human Food"
+	name "来自<planet stopovers>的特殊订单"
+	job
+	repeat
+	description "一位位于<planet>上的亥族美食家对当地菜肴感到厌倦，想尝试他们从人类游客那里听说的食物。他们要求在<date>之前从<stopovers>取得<cargo>。报酬为<payment>。"
+	cargo "Food" 2 2 .29
+	deadline 24
+	to offer
+		random < 15
+	source
+		government "Hai"
+		near "Heia Due" 2
+	stopover
+		attributes "north"
+	"distance calculation settings"
+		"only unrestricted wormholes"
+	on stopover
+		dialog "你收集齐了所需的<commodity>并装上飞船，准备返回<planet>。"
+	on visit
+		dialog phrase "generic missing stopover or cargo"
+	on complete
+		payment 100000 200
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 5
+		dialog "你刚一降落就收到了那位亥族美食家的致谢信息，并收到了支付给你的<payment>报酬。"
+
+mission "Hai Retrieve Human Electronics"
+	name "来自<planet stopovers>的特殊订单"
+	job
+	repeat
+	description "一位在<planet>的亥族修补匠想要拿人类科技做实验。他们要求在<date>之前从<stopovers>取得<cargo>。报酬为<payment>。"
+	cargo "Electronics" 2 2 .29
+	deadline 24
+	to offer
+		random < 15
+	source
+		government "Hai"
+		near "Heia Due" 2
+	stopover
+		attributes "north"
+	"distance calculation settings"
+		"only unrestricted wormholes"
+	on stopover
+		dialog "你收集齐了所需的<commodity>并装上飞船，准备返回<planet>。"
+	on visit
+		dialog phrase "generic missing stopover or cargo"
+	on complete
+		payment 100000 200
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 5
+		dialog "当你抵达时，那位亥族修补匠已经等在那里。他们付给你<payment>，然后追着货物托盘跑去，仿佛打算当场在太空港里把它们拆开。"
+
+
+
+mission "Escort to Human Space (Small)"
+	name "特殊护卫前往<planet>"
+	description "<npc>号的船长将支付你<payment>，要求在<date>前护送其抵达人类空间中的<destination>。"
+	repeat
+	job
+	deadline 15
+	to offer
+		random < 70
+		"combat rating" > 5
+	source
+		government "Hai"
+		near "Heia Due" 2
+	destination
+		attributes "north"
+	npc
+		government "Pirate"
+		personality nemesis waiting harvests plunders
+		system "Rajak"
+		fleet "Small Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis waiting harvests plunders
+		system destination
+		fleet "Small Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis staying harvests plunders
+		system destination
+		fleet "Small Northern Pirates"
+	
+	npc accompany save
+		government "Merchant"
+		personality escort timid
+		fleet
+			names "civilian"
+			variant
+				"Freighter (Hai)"
+	on complete
+		payment 120000
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 5
+		dialog phrase "generic safe escort completion dialog"
+	on visit
+		dialog phrase "generic arrived-without-npc dialog"
+
+mission "Escort to Human Space (Medium)"
+	name "特殊护卫前往<planet>"
+	description "<npc>号的船长将支付你<payment>，要求在<date>前护送其抵达人类空间中的<destination>。"
+	repeat
+	job
+	deadline 15
+	to offer
+		random < 40
+		"combat rating" > 20
+	source
+		government "Hai"
+		near "Heia Due" 2
+	destination
+		attributes "north"
+	npc
+		government "Pirate"
+		personality nemesis waiting harvests plunders
+		system "Cardax"
+		fleet "Small Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis waiting harvests plunders
+		system "Rigel"
+		fleet "Small Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis waiting harvests plunders
+		system "Rajak"
+		fleet "Small Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis staying harvests plunders
+		system destination
+		fleet "Small Northern Pirates" 2
+	
+	npc accompany save
+		government "Merchant"
+		personality escort timid
+		fleet
+			names "civilian"
+			variant
+				"Freighter (Hai)"
+	on complete
+		payment 180000
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 5
+		dialog phrase "generic safe escort completion dialog"
+	on visit
+		dialog phrase "generic arrived-without-npc dialog"
+
+mission "Escort to Human Space (Large)"
+	name "特殊护卫前往<planet>"
+	description "<npc>号的船长将支付你<payment>，要求在<date>前护送其抵达人类空间中的<destination>。"
+	repeat
+	job
+	deadline 15
+	to offer
+		random < 30
+		"combat rating" > 60
+	source
+		government "Hai"
+		near "Heia Due" 2
+	destination
+		attributes "north"
+	npc
+		government "Pirate"
+		personality nemesis waiting harvests plunders
+		system "Rajak"
+		fleet "Large Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis waiting harvests plunders
+		system destination
+		fleet "Small Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis staying harvests plunders
+		system destination
+		fleet "Large Northern Pirates"
+	
+	npc accompany save
+		government "Merchant"
+		personality escort timid
+		fleet
+			names "civilian"
+			variant
+				"Behemoth (Hai)"
+	on complete
+		payment 240000
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 5
+		dialog phrase "generic safe escort completion dialog"
+	on visit
+		dialog phrase "generic arrived-without-npc dialog"
+
+mission "Escort to Human Space (Extra Large)"
+	name "特殊护卫前往<planet>"
+	description "<npc>号的船长将支付你<payment>，要求在<date>前护送其抵达人类空间中的<destination>。"
+	repeat
+	job
+	deadline 15
+	to offer
+		random < 15
+		"combat rating" > 100
+	source
+		government "Hai"
+		near "Heia Due" 2
+	destination
+		attributes "north"
+	npc
+		government "Pirate"
+		personality nemesis waiting harvests plunders
+		system "Rigel"
+		fleet "Small Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis waiting harvests plunders
+		system "Cardax"
+		fleet "Large Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis waiting harvests plunders
+		system "Rajak"
+		fleet "Large Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis staying harvests plunders
+		system destination
+		fleet "Small Northern Pirates"
+		fleet "Large Northern Pirates"
+	
+	npc accompany save
+		government "Merchant"
+		personality escort timid
+		fleet
+			names "civilian"
+			variant
+				"Behemoth (Hai)"
+	on complete
+		payment 300000
+		"reputation: Hai" += 5
+		"reputation: Hai (Wormhole Access)" += 5
+		"reputation: Hai Merchant" += 5
+		"reputation: Hai Merchant (Human)" += 5
+		"reputation: Hai Merchant (Sympathizers)" += 5
+		dialog phrase "generic safe escort completion dialog"
+	on visit
+		dialog phrase "generic arrived-without-npc dialog"
+
+
+
+mission "Hai Passengers [1]"
+	name "运送乘客至<planet>"
+	job
+	repeat
+	description "将<fare>送往<destination>。报酬为<payment>。"
+	passengers 1 10 .7
+	to offer
+		random < 75
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		government "Hai"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Hai Passengers [2]"
+	name "运送乘客至<planet>"
+	job
+	repeat
+	description "将<fare>送往<destination>。报酬为<payment>。"
+	passengers 1 10 .7
+	to offer
+		random < 50
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		government "Hai"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Hai Passengers [3]"
+	name "运送乘客至<planet>"
+	job
+	repeat
+	description "将<fare>送往<destination>。报酬为<payment>。"
+	passengers 1 10 .7
+	to offer
+		random < 25
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		government "Hai"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Hai Family [0]"
+	name "运送家庭至<planet>"
+	job
+	repeat
+	description "这户由<bunks>人组成的家庭正搬迁至<destination>。他们将支付你<payment>带他们前往那里。"
+	passengers 2 4 .5
+	to offer
+		random < 60
+		"passenger space" >= 5
+	source
+		government "Hai"
+		not attributes "station"
+	destination
+		distance 4 16
+		government "Hai"
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment
+		payment 4000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog "你运送的那户家庭在付给你<payment>后离开了飞船。"
+
+mission "Hai Family [1]"
+	name "运送家庭至<planet>"
+	job
+	repeat
+	description "这户由<bunks>人组成的家庭正搬迁至<destination>。他们将支付你<payment>带他们前往那里。"
+	passengers 2 4 .5
+	to offer
+		random < 40
+		"passenger space" >= 5
+	source
+		government "Hai"
+		not attributes "station"
+	destination
+		distance 5 20
+		government "Hai"
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment
+		payment 6000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog "你运送的那户家庭在付给你<payment>后离开了飞船。"
+
+mission "Transport Hai miners to <planet>"
+	job
+	repeat
+	description "这户由<bunks>人组成的矿工家庭希望到<destination>寻找工作，他们会支付你<payment>带他们前往那里。"
+	passengers 3 3 .6
+	to offer
+		random < 40
+	source
+		government "Hai"
+		not attributes "station"
+	destination
+		attributes "mining"
+		distance 3 12
+		government "Hai"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment
+		payment 2000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog "你祝愿这户矿工家庭在<planet>上好运，并收下了<payment>的报酬。"
+
+mission "Transport Hai farmers to <planet>"
+	job
+	repeat
+	description "这户由<bunks>人组成的农民家庭希望在<destination>寻找工作，他们会支付你<payment>带他们前往那里。"
+	passengers 3 3 .6
+	to offer
+		random < 40
+	source
+		government "Hai"
+		not attributes "station"
+	destination
+		attributes "farming"
+		distance 3 12
+		government "Hai"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment
+		payment 2000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog "你祝愿这户农民家庭在<planet>上好运，并收下了<payment>的报酬。"
+
+mission "Transport Hai mill workers to <planet>"
+	job
+	repeat
+	description "这户由<bunks>人组成的磨坊工人家庭希望到<destination>寻找工作，他们会支付你<payment>带他们前往那里。"
+	passengers 3 3 .6
+	to offer
+		random < 40
+	source
+		government "Hai"
+		not attributes "station"
+	destination
+		attributes "textiles"
+		distance 3 12
+		government "Hai"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment
+		payment 2000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog "你祝工人们在<planet>上好运，并收下了<payment>的报酬。"
+
+mission "Transport Hai workers to <planet>"
+	job
+	repeat
+	description "这户由<bunks>人组成的工厂工人家庭希望到<destination>寻找工作，他们会支付你<payment>带他们前往那里。"
+	passengers 3 3 .6
+	to offer
+		random < 70
+	source
+		government "Hai"
+		not attributes "station"
+	destination
+		attributes "factory"
+		distance 3 12
+		government "Hai"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment
+		payment 2000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog "你祝工人们在<planet>上好运，并收下了<payment>的报酬。"
+
+
+
+mission "Hai Cargo [0]"
+	name "运送至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 8 4 .1
+	to offer
+		random < 90
+	source
+		government "Hai"
+	destination
+		distance 2 8
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Cargo [1]"
+	name "运送至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 8 4 .1
+	to offer
+		random < 70
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Cargo [2]"
+	name "运送至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 8 4 .1
+	to offer
+		random < 60
+	source
+		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
+		government "Hai"
+	destination
+		distance 2 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Cargo [3]"
+	name "运送至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 8 4 .1
+	to offer
+		random < 50
+	source
+		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
+		government "Hai"
+	destination
+		distance 3 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 2000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Cargo [4]"
+	name "运送至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 8 4 .1
+	to offer
+		random < 40
+	source
+		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
+		government "Hai"
+	destination
+		distance 4 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 4000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Bulk Delivery [0]"
+	name "批量送货至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 35 3 .05
+	to offer
+		random < 70
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Bulk Delivery [1]"
+	name "批量送货至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 35 3 .05
+	to offer
+		random < 60
+	source
+		government "Hai"
+	destination
+		distance 3 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 2000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Bulk Delivery [2]"
+	name "批量送货至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 35 3 .05
+	to offer
+		random < 50
+	source
+		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
+		government "Hai"
+	destination
+		distance 4 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 4000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Large Bulk Delivery [0]"
+	name "大宗货物运送至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 50 3 .02
+	to offer
+		random < 60
+		"cargo space" > 100
+	source
+		government "Hai"
+	destination
+		distance 2 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 4000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Large Bulk Delivery [1]"
+	name "大宗货物运送至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 50 3 .02
+	to offer
+		random < 50
+		"cargo space" > 100
+	source
+		government "Hai"
+	destination
+		distance 3 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 6000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Large Bulk Delivery [2]"
+	name "大宗货物运送至<planet>"
+	job
+	repeat
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	cargo random 50 3 .02
+	to offer
+		random < 40
+		"cargo space" > 100
+	source
+		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
+		government "Hai"
+	destination
+		distance 4 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 8000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Rush Delivery [0]"
+	name "紧急运送至<planet>"
+	job
+	repeat
+	deadline
+	description "在<date>之前将<cargo>送达至<destination>。报酬为<payment>。"
+	cargo random 8 3 .1
+	to offer
+		random < 70
+	source
+		government "Hai"
+	destination
+		distance 3 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 16000
+		"reputation: Hai" += 2
+		"reputation: Hai (Wormhole Access)" += 2
+		"reputation: Hai Merchant" += 2
+		"reputation: Hai Merchant (Human)" += 2
+		"reputation: Hai Merchant (Sympathizers)" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Rush Delivery [1]"
+	name "紧急运送至<planet>"
+	job
+	repeat
+	deadline
+	description "在<date>之前将<cargo>送达至<destination>。报酬为<payment>。"
+	cargo random 8 3 .1
+	to offer
+		random < 60
+	source
+		government "Hai"
+	destination
+		distance 4 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 18000
+		"reputation: Hai" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Rush Delivery [2]"
+	name "紧急运送至<planet>"
+	job
+	repeat
+	deadline
+	description "在<date>之前将<cargo>送达至<destination>。报酬为<payment>。"
+	cargo random 8 3 .1
+	to offer
+		random < 50
+	source
+		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
+		government "Hai"
+	destination
+		distance 5 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 20000
+		"reputation: Hai" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Rush Delivery [3]"
+	name "紧急运送至<planet>"
+	job
+	repeat
+	deadline
+	description "在<date>之前将<cargo>送达至<destination>。报酬为<payment>。"
+	cargo random 8 3 .1
+	to offer
+		random < 40
+	source
+		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
+		government "Hai"
+	destination
+		distance 6 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 22000
+		"reputation: Hai" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Large Rush Delivery [0]"
+	name "大型急件速递至<planet>"
+	job
+	repeat
+	deadline
+	description "在<date>之前将<cargo>送达至<destination>。报酬为<payment>。"
+	cargo random 30 8 .1
+	to offer
+		random < 80
+		"cargo space" >= 50
+	source
+		government "Hai"
+	destination
+		distance 3 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 36000
+		"reputation: Hai" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Large Rush Delivery [1]"
+	name "大型急件速递至<planet>"
+	job
+	repeat
+	deadline
+	description "在<date>之前将<cargo>送达至<destination>。报酬为<payment>。"
+	cargo random 30 8 .1
+	to offer
+		random < 60
+		"cargo space" >= 50
+	source
+		government "Hai"
+	destination
+		distance 4 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 38000
+		"reputation: Hai" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Large Rush Delivery [2]"
+	name "大型急件速递至<planet>"
+	job
+	repeat
+	deadline
+	description "在<date>之前将<cargo>送达至<destination>。报酬为<payment>。"
+	cargo random 30 8 .1
+	to offer
+		random < 40
+		"cargo space" >= 50
+	source
+		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
+		government "Hai"
+	destination
+		distance 5 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 40000
+		"reputation: Hai" += 2
+		dialog phrase "generic cargo delivery payment"
+
+mission "Hai Large Rush Delivery [3]"
+	name "大型急件速递至<planet>"
+	job
+	repeat
+	deadline
+	description "在<date>之前将<cargo>送达至<destination>。报酬为<payment>。"
+	cargo random 30 8 .1
+	to offer
+		random < 30
+		"cargo space" >= 50
+	source
+		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
+		government "Hai"
+	destination
+		distance 6 7
+		government "Hai"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 42000
+		"reputation: Hai" += 2
+		dialog phrase "generic cargo delivery payment"
+
+
+
+mission "Hai Prisoner Roleplay"
+	name `亥族“监狱”游轮前往<planet>`
+	job
+	repeat
+	description "一群亥族人想体验成为人类罪犯的感觉。用禁闭室将他们中的<bunks>人运送至<planet>。报酬为<payment>。"
+	passengers 3 20
+	to offer
+		random < 5
+	source
+		government "Hai"
+		not attributes "station"
+	destination
+		distance 3 7
+		government "Hai"
+		not attributes "station"
+	to accept
+		has "outfit (installed): Brig"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 15000 150
+		"reputation: Hai" += 5
+		dialog "亥族们兴奋地吱吱叫着离开了你的飞船。其中一人递给你<payment>报酬，然后跑去追赶同伴。"
+
+
+
+mission "Swiftsong Business Convention [1]"
+	job
+	repeat
+	name "<planet>商务大会"
+	description "一群（共<bunks>名）需要前往商务大会的亥族愿意支付你<payment>，以换取你将他们以及<tons>吨物资运送至<planet>。"
+	passengers 4 2 .1
+	cargo "office supplies" 1 2
+	to offer
+		random < 8
+	source
+		government "Hai"
+		not planet "Swiftsong"
+	destination "Swiftsong"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 10000 100
+		"reputation: Hai" += 3
+		dialog `旅途中，你的乘客似乎在为大会的演讲做练习。当他们递给你<payment>并离开飞船时，你察觉到了一丝紧张。`
+
+
+
+mission "Swiftsong Business Convention [2]"
+	job
+	repeat
+	name "<planet>商务大会"
+	description "一群（共<bunks>名）需要前往商务大会的亥族愿意支付你<payment>，以换取你将他们以及<tons>吨物资运送至<planet>。"
+	passengers 4 4 .1
+	cargo "office supplies" 1 3
+	to offer
+		random < 2
+	source
+		government "Hai"
+		not planet "Swiftsong"
+	destination "Swiftsong"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 10000 100
+		"reputation: Hai" += 3
+		dialog `旅途中，你的乘客似乎在为大会的演讲做练习。当他们递给你<payment>并离开飞船时，你察觉到了一丝紧张。`
+
+
+
+mission "Swiftsong Film Festival [1]"
+	job
+	repeat
+	name "<planet>电影节"
+	description "一群（共<bunks>名）亥族影迷愿意支付你<payment>，以换取你将他们运送至正在举办电影节的<planet>。"
+	passengers 4 2 .1
+	to offer
+		random < 8
+	source
+		government "Hai"
+		not planet "Swiftsong"
+	destination "Swiftsong"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 100
+		"reputation: Hai" += 3
+		dialog `亥族们兴奋地吱吱叫着，递给你<payment>后走下了你的飞船。他们在旅途中讨论的一些电影情节着实令人费解。`
+
+
+
+mission "Swiftsong Film Festival [2]"
+	job
+	repeat
+	name "<planet>电影节"
+	description "一群（共<bunks>名）亥族影迷愿意支付你<payment>，以换取你将他们运送至正在举办大型电影节的<planet>。"
+	passengers 4 4 .1
+	to offer
+		random < 3
+	source
+		government "Hai"
+		not planet "Swiftsong"
+	destination "Swiftsong"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 100
+		"reputation: Hai" += 3
+		dialog `亥族们兴奋地吱吱叫着，递给你<payment>后走下了你的飞船。他们在旅途中讨论的一些电影情节着实令人费解。`
+
+
+
+mission "Swiftsong Music Festival [1]"
+	job
+	repeat
+	name "<planet>音乐节"
+	description "一群（共<bunks>名）亥族愿意支付你<payment>，以换取你将他们运送至正在举办音乐节的<planet>。"
+	passengers 4 2 .1
+	to offer
+		random < 8
+	source
+		government "Hai"
+		not planet "Swiftsong"
+	destination "Swiftsong"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 100
+		"reputation: Hai" += 3
+		dialog `亥族们兴奋地吱吱叫着，递给你<payment>后走下了你的飞船。即使在太空港，你也能听到远处传来的震耳欲聋的音乐。`
+
+
+
+mission "Swiftsong Music Festival [2]"
+	job
+	repeat
+	name "<planet>音乐节"
+	description "一群（共<bunks>名）亥族愿意支付你<payment>，以换取你将他们运送至正在举办大型音乐节的<planet>。"
+	passengers 4 4 .1
+	to offer
+		random < 3
+	source
+		government "Hai"
+		not planet "Swiftsong"
+	destination "Swiftsong"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 100
+		"reputation: Hai" += 3
+		dialog `亥族们兴奋地吱吱叫着，递给你<payment>后走下了你的飞船。即使在太空港，你也能听到远处传来的震耳欲聋的音乐。`
+
+
+
+mission "Swiftsong Computer Security Conference [1]"
+	job
+	repeat
+	name "<planet>计算机安全会议"
+	description "一群（共<bunks>名）亥族愿意支付你<payment>，以换取你将他们送往正在举办计算机安全会议的<planet>。"
+	passengers 4 2 .1
+	to offer
+		random < 8
+	source
+		government "Hai"
+		not planet "Swiftsong"
+	destination "Swiftsong"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 100
+		"reputation: Hai" += 3
+		dialog `亥族们兴奋地吱吱叫着，递给你<payment>后走下了你的飞船。乘客们的对话你大都听不懂，但整个旅程中他们一直很愉快。`
+
+
+
+mission "Swiftsong Computer Security Conference [2]"
+	job
+	repeat
+	name "<planet>计算机安全会议"
+	description "一群（共<bunks>名）亥族愿意支付你<payment>，以换取你将他们运送至正在举办大型计算机安全会议的<planet>。"
+	passengers 4 4 .1
+	to offer
+		random < 3
+	source
+		government "Hai"
+		not planet "Swiftsong"
+	destination "Swiftsong"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 100
+		"reputation: Hai" += 3
+		dialog `亥族们兴奋地吱吱叫着，递给你<payment>后走下了你的飞船。乘客们的对话你大都听不懂，但整个旅程中他们一直很愉快。`
+
+
+mission "Swiftsong Science Fiction Convention [1]"
+	job
+	repeat
+	name "<planet>科幻大会"
+	description "一群（共<bunks>名）亥族愿意支付你<payment>，以换取你将他们运送至正在举办科幻大会的<planet>。"
+	passengers 4 2 .1
+	to offer
+		random < 8
+	source
+		government "Hai"
+		not planet "Swiftsong"
+	destination "Swiftsong"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 50
+		"reputation: Hai" += 3
+		dialog `亥族们兴奋地吱吱叫着，递给你<payment>后走下了你的飞船。临走前，其中一人朝你做了一个手势，你认出那是来自一部古老的人类科幻节目。`
+
+
+
+mission "Swiftsong Science Fiction Convention [2]"
+	job
+	repeat
+	name "<planet>科幻大会"
+	description "一群（共<bunks>名）亥族愿意支付你<payment>，以换取你将他们运送至正在举办大型科幻大会的<planet>。"
+	passengers 4 4 .1
+	to offer
+		random < 3
+	source
+		government "Hai"
+		not planet "Swiftsong"
+	destination "Swiftsong"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 100
+		"reputation: Hai" += 3
+		dialog `亥族们兴奋地吱吱叫着，递给你<payment>后走下了你的飞船。临走前，其中一人朝你做了一个手势，你认出那是来自一部古老的人类科幻节目。`
+
+
+mission "Superstitious Hai [1]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "这位亥族女族长愿意支付<payment>，租用一艘配备基石的飞船在<date>之前将她的<bunks>名家人运送至<destination>。他们要求飞船必须安装正宗的亥族基石。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Superstitious Hai [2]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "这个由<bunks>人组成的牧场主家族愿意支付<payment>，乘坐一艘配备基石的飞船在<date>之前前往<destination>。他们要求飞船必须安装正宗的亥族基石。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		attributes farming
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Superstitious Hai [3]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "这位年迈的亥族愿意支付<payment>，乘坐一艘配备基石的飞船在<date>之前前往其位于<destination>的养老住所。他们要求飞船必须安装正宗的亥族基石。"
+	passengers 1
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+		not attributes "retirement"
+	destination
+		government "Hai"
+		attributes "retirement"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Superstitious Hai [4]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "这群（共<bunks>名）农工愿意支付<payment>，乘坐一艘配备基石的飞船在<date>之前前往<destination>。他们要求飞船必须安装正宗的亥族基石。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		attributes "farming"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Superstitious Hai [5]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "一群（共<bunks>名）年迈的亥族愿意支付<payment>，乘坐一艘配备基石的飞船在<date>之前前往<destination>度假。他们要求飞船必须安装正宗的亥族基石。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		attributes "hai tourism"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Superstitious Hai [6]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "这个由<bunks>人组成的亥族家族愿意支付<payment>，乘坐一艘配备基石的飞船在<date>之前前往<destination>。他们要求飞船必须安装正宗的亥族基石。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Superstitious Hai [7]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "这位亥族女族长愿意支付<payment>，租用一艘配备基石的飞船在<date>之前将她的<bunks>名家人运送至<destination>。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Superstitious Hai [8]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "这个由<bunks>人组成的牧场主家族愿意支付<payment>，乘坐一艘配备基石的飞船在<date>之前前往<destination>。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		attributes farming
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Superstitious Hai [9]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "这位年迈的亥族愿意支付<payment>，乘坐一艘配备基石的飞船在<date>之前前往其位于<destination>的养老住所。"
+	passengers 1
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+		not attributes "retirement"
+	destination
+		government "Hai"
+		attributes "retirement"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Superstitious Hai [10]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "这群（共<bunks>名）农工愿意支付<payment>，乘坐一艘配备基石的飞船在<date>之前前往<destination>。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		attributes "farming"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Superstitious Hai [11]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "一群（共<bunks>名）年迈的亥族愿意支付<payment>，乘坐一艘配备基石的飞船在<date>之前前往<destination>度假。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		attributes "hai tourism"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Superstitious Hai [12]"
+	name "迷信的亥族前往<planet>"
+	job
+	repeat
+	description "这个由<bunks>人组成的亥族家族愿意支付<payment>，乘坐一艘配备基石的飞船在<date>之前前往<destination>。"
+	passengers 2 4 .8
+	deadline
+	to offer
+		random < 5
+	to accept
+		has "ship attribute: quantum keystone"
+	source
+		government "Hai"
+	destination
+		government "Hai"
+		distance 4 8
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 300
+		"reputation: Hai" += 3
+		"reputation: Hai (Wormhole Access)" += 3
+		"reputation: Hai Merchant" += 3
+		"reputation: Hai Merchant (Human)" += 3
+		"reputation: Hai Merchant (Sympathizers)" += 3
+		dialog phrase "generic passenger dropoff payment"

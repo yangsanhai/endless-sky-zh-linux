@@ -1,0 +1,386 @@
+# Copyright (c) 2025 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Entering Republic space
+mission "Message Buoy: Entering Republic space from Pirates"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		government "Republic"
+	destination "Earth"
+	to offer
+		not "entered system by: takeoff"
+		not "flagship system: Mintaka"
+		or
+			has "previous system government: Pirate"
+			and
+				has "flagship system: Alnitak"
+				has "previous system: Mintaka"
+	on offer
+		message
+			phrase "entering republic space from pirates"
+		fail
+
+phrase "entering republic space from pirates"
+	word
+		"致所有舰船的信息浮标：您已进入共和国控制星区"
+	word
+		"。未悬挂蓝色标识的民用舰船必须停机并服从海军人员指挥，否则将被视为合法打击目标。"
+		"，且来路星系不属于共和国管辖。特此预警：根据《外星系（关系）法案》，在共和国港口降落时，您可能会接受进一步质询。"
+
+mission "Message Buoy: Entering Republic space from Free Worlds (hostile)"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		government "Republic"
+		neighbor government "Free Worlds"
+		not system "Graffias"
+	destination "Earth"
+	to offer
+		has "chosen sides"
+		not "main plot completed"
+		"reputation: Republic" < 0
+		not "entered system by: takeoff"
+		has "previous system government: Free Worlds"
+	on offer
+		message
+			phrase "entering republic space from free worlds (hostile)"
+		fail
+
+phrase "entering republic space from free worlds (hostile)"
+	word
+		"通信浮标向自由世界舰船广播：你已进入共和国控制星区"
+	word
+		"。所有悬挂未经授权标识的舰船均须服从海军人员指挥，否则将被视为合法打击目标。"
+		"。根据《3014年行星民兵组织（重组）法案》，绿色标识仅限获授权的民兵舰船悬挂。凡非法悬挂民兵绿标识的舰船均须服从海军人员指挥，否则将被视为合法打击目标。"
+		`。所有隶属于所谓“自由世界”的舰船均须停航并服从海军人员指挥，否则将被视为合法打击目标。`
+
+mission "Message Buoy: Entering Republic space from Free Worlds"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		government "Republic"
+		neighbor government "Free Worlds"
+		not system "Graffias"
+	destination "Earth"
+	to offer
+		has "main plot completed"
+		not "entered system by: takeoff"
+		has "previous system government: Free Worlds"
+	on offer
+		message
+			phrase "entering republic space from free worlds"
+		fail
+
+phrase "entering republic space from free worlds"
+	word
+		"致所有舰船的通信浮标：您已进入共和国控制星域"
+	word
+		"。请准备接受扫描。"
+		"。愿繁星间永享和平。"
+		"。降落共和国港口后，请配合接受针对入侵物种及病原体的舰船扫描。"
+		"。您是“银河快速通关”认证公民吗？出示您的星球身份证明即可免去在入境处排队。"
+		"（自非共和国管辖星系驶入）。请预先注意：根据《外星系（关系）法案》，在降落共和国港口后，您可能会接受进一步质询。"
+
+
+
+# Entering Syndicate space
+mission "Message Buoy: Entering Syndicate space"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		government "Syndicate"
+		neighbor government "Republic" "Neutral" "Independent"
+	destination "Earth"
+	to offer
+		not "entered system by: takeoff"
+		or
+			has "previous system government: Republic"
+			has "previous system government: Neutral"
+			has "previous system government: Independent"
+	on offer
+		message
+			phrase "entering syndicate space"
+		fail
+
+phrase "entering syndicate space"
+	word
+		"信息浮标通告所有舰船：欢迎来到辛迪加星域"
+	word
+		"，这里是银河系最大的自由贸易区。"
+		"，这里是银河系经济最自由的区域。"
+		"，这里是共和国工业实力的支柱。"
+		"，这里是你于银河系中的未来所在。"
+		"，这里充满了无限机遇。"
+		"愿意砸多少钱。"
+
+
+
+# Entering Free Worlds space
+mission "Message Buoy: Entering Free Worlds space from Republic"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		government "Free Worlds"
+		neighbor government "Republic" "Neutral" "Independent"
+	destination "Earth"
+	to offer
+		not "entered system by: takeoff"
+		or
+			has "previous system government: Republic"
+			has "previous system government: Neutral"
+			has "previous system government: Independent"
+	on offer
+		message
+			phrase "entering free worlds space from republic"
+		fail
+
+phrase "entering free worlds space from republic"
+	word
+		"消息浮标致所有飞船：您已进入自由星域"
+	word
+		"。祝航行安全，船长。"
+		"。为了南部边缘星区的自由！"
+		"。团结一致。"
+
+mission "Message Buoy: Entering Free Worlds space from Pirate"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		government "Free Worlds"
+		neighbor government "Pirate" "Independent"
+	destination "Earth"
+	to offer
+		not "entered system by: takeoff"
+		has "previous system government: Pirate"
+	on offer
+		message
+			phrase "entering free worlds space from pirate"
+		fail
+
+phrase "entering free worlds space from pirate"
+	word
+		"信息浮标：您已进入自由星域"
+	word
+		"。根据自由世界法律，商船必须展示蓝色标识以明示身份。任何带有未经授权标识的舰船均可能被即刻击毁。"
+
+
+
+# Entering Deep space
+mission "Message Buoy: Entering Deep space"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Zosma"
+	destination "Earth"
+	to offer
+		not "entered system by: takeoff"
+		or
+			has "previous system: Alphard"
+			has "previous system: Algieba"
+	on offer
+		message
+			text "Message buoy to all ships: Welcome to Deep space. We bid you peace, prosperity, and progress."
+		fail
+
+
+
+# Other message buoys
+mission "Message Buoy: Martini Restricted"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Pollux"
+	destination "Earth"
+	to offer
+		"reputation: Republic" < 80
+		has "event: war begins"
+		not "martini recovers"
+	on offer
+		message
+			text "Message buoy to all ships: Due to the attacks of July 4, 3014, access to the Republic planet of Martini is restricted."
+		fail
+
+mission "Message Buoy: Geminus Restricted"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Castor"
+	destination "Earth"
+	to offer
+		"reputation: Republic" < 80
+		has "event: war begins"
+		not "geminus rebuilt"
+	on offer
+		message
+			text "Message buoy to all ships: Due to the attacks of July 4, 3014, access to the Republic planet of Geminus is restricted."
+		fail
+
+mission "Message Buoy: Graffias"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Graffias"
+		government "Republic"
+	destination "Earth"
+	to offer
+		not "entered system by: takeoff"
+		has "event: war begins"
+		not "main plot completed"
+	on offer
+		message
+			text "Message buoy to all ships: You are entering the Republic system of Graffias. Poisonwood is restricted to solely Merchant or Republic ships."
+		fail
+
+mission "Message Buoy: Capella"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Capella"
+	destination "Earth"
+	to offer
+		"reputation: Republic" < 10
+	on offer
+		message
+			text "Message buoy to all ships: Access to the Republic planet of Hermes is restricted without spaceport authority approval."
+		fail
+
+mission "Message Buoy: Elnath"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Elnath"
+	destination "Earth"
+	to offer
+		"reputation: Republic" < 100
+	on offer
+		message
+			text "Message buoy to all ships: All inhabited installations in the Elnath system are restricted to employees of Lovelace Labs. Please refuel or repair in another system."
+		fail
+
+mission "Message Buoy: Occupied Greenrock"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Shaula"
+	destination "Earth"
+	to offer
+		not "entered system by: takeoff"
+		has "event: fw suppressed Greenrock"
+		not "event: fw abandoned Greenrock"
+	on offer
+		message
+			phrase "occupied greenrock message buoy"
+		fail
+
+phrase "occupied greenrock message buoy"
+	word
+		"信息浮标致所有舰船：尾宿八星系正处于自由世界占领之下。"
+	word
+		"所有悬挂未经授权旗帜的舰船必须向民兵舰船投降，否则将被视为合法打击目标。"
+		"我们正在对所有进出舰船进行扫描，盘查违禁品和逃犯。"
+		"在绿岩星的海盗活动被彻底铲除之前，我们将持续驻扎于此。"
+
+mission "Message Buoy: beyond Farpoint"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Mintaka"
+	destination "Earth"
+	to offer
+		has "previous system: Alnitak"
+	on offer
+		message
+			text "Message buoy to all ships: You have exited Republic-controlled space. Assistance from Navy vessels is limited beyond the system of Alnitak. It is recommended you return to Farpoint immediately."
+		fail
+
+mission "Message Buoy: Megaparsec"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Mirfak"
+	destination "Earth"
+	to offer
+		not "entered system by: takeoff"
+	on offer
+		message
+			phrase "message buoy: megaparsec"
+		fail
+
+phrase "message buoy: megaparsec"
+	word
+		"通信浮标向所有舰船广播："
+	word
+		"欢迎来到天船三，Megaparsec 公司的大本营。"
+		"需要在武装配置与载货能力之间寻求完美平衡？选择 Megaparsec “裂片”级吧。"
+		" Megaparsec “星跃者”级——树立星际航行新标准。"
+
+mission "Message Buoy: Tarazed Corporation"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Tarazed"
+	destination "Earth"
+	to offer
+		not "entered system by: takeoff"
+	on offer
+		message
+			text "Message buoy to all ships: Welcome to the home of the Tarazed Corporation - the galaxy-leading manufacturer of sleek, modern spacecraft."
+		fail
+
+mission "Message Buoy: Betelgeuse Shipyards"
+	invisible
+	entering
+	non-blocking
+	repeat
+	source
+		system "Betelgeuse"
+	destination "Earth"
+	to offer
+		not "entered system by: takeoff"
+	on offer
+		message
+			text "Message buoy to all ships: Betelgeuse Shipyards - centuries of service."
+		fail

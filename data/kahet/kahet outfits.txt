@@ -1,0 +1,578 @@
+# Copyright (c) 2019 by Tommaso Becca
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Weapons:
+
+outfit "Ka'het Nullifier"
+	"display name" "卡'赫特湮灭器"
+	category "Guns"
+	series "Guns"
+	index 05030
+	cost 3062000
+	thumbnail "outfit/ka'het nullifier"
+	"mass" 68
+	"outfit space" -97
+	"weapon capacity" -97
+	"gun ports" -1
+	weapon
+		sprite "projectile/ionball"
+			"frame rate" 15
+			"rewind"
+		sound "ionball"
+		"fire effect" "finisher sparks" 20
+		"hit effect" "ionball ring" 15
+		"hit effect" "ionball impact"
+		"hit effect" "ionball fragment" 24
+		"live effect" "ionball spark" 140
+		"live effect" "ionball trail" 140
+		"live effect" "ionball twinkle" 560
+		"inaccuracy" 0.2
+		"velocity" 9
+		"lifetime" 200
+		"reload" 350
+		"cluster"
+		"firing energy" 710
+		"firing force" 135
+		"firing heat" 160
+		"turn" 73
+		"shield damage" 120
+		"hull damage" 40
+		"energy damage" 3200
+		"ion damage" 220
+		"scrambling damage" 10
+		"hit force" 75
+		"blast radius" 20
+	description "无效化器是建造者曾开发的最大型武器之一，专为瓦雷蒂在战斗中携带而制造。尽管其对护盾和船体几乎不造成伤害，但一发便能在数秒内瘫痪大多数类型的反应堆。"
+
+effect "ionball spark"
+	sprite "effect/ion impact"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 11
+	"random angle" 360
+	"random spin" 10
+	"random velocity" 3
+	"velocity scale" 1.1
+
+effect "ionball trail"
+	sprite "effect/spark"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 9
+	"random angle" 360
+	"random frame rate" 6
+	"random velocity" 5
+	"random spin" 10
+	"velocity scale" 0.3
+
+effect "ionball twinkle"
+	sprite "effect/finisher sparks"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 8
+	"random angle" 360
+	"random velocity" 3
+	"random spin" 10
+	"velocity scale" 0.1
+
+effect "ionball impact"
+	sprite "effect/ion explosion"
+		"no repeat"
+		"frame rate" 20
+	"lifetime" 13
+	sound "explosion huge"
+	"random spin" 20
+	"velocity scale" 0
+
+effect "ionball fragment"
+	sprite "effect/emp torpedo fire"
+		"no repeat"
+		"frame rate" 15
+	"lifetime" 21
+	"random angle" 360
+	"random velocity" 6
+	"velocity scale" 0
+
+effect "ionball ring"
+	sprite "effect/ionball ring"
+		"no repeat"
+		"frame rate" 24
+	"lifetime" 30
+	"random angle" 360
+	"random frame rate" 12
+	"random velocity" 4
+	"velocity scale" 0
+
+outfit "Ka'het Ravager Beam"
+	"display name" "卡'赫特蹂躏者光束"
+	category "Guns"
+	series "Guns"
+	index 05020
+	cost 322000
+	thumbnail "outfit/ka'het ravager beam"
+	"mass" 13
+	"outfit space" -18
+	"weapon capacity" -18
+	"gun ports" -1
+	weapon
+		sprite "projectile/ravager beam"
+			"frame rate" 15
+		sound "disruptor"
+		"hit effect" "ravager impact"
+		"inaccuracy" .2
+		"velocity" 480
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 3.7
+		"firing heat" 1.5
+		"shield damage" 1.8
+		"hull damage" 4.3
+	description "这道激光束由建造者创造，用于小行星采矿。不幸的是，当他们意识到它在战斗中的威力时，它已经调转枪口对准了他们。"
+
+outfit "Ka'het Ravager Turret"
+	"display name" "卡'赫特蹂躏者碉塔"
+	category "Turrets"
+	series "Turrets"
+	index 05020
+	cost 417000
+	thumbnail "outfit/ka'het ravager turret"
+	"mass" 16
+	"outfit space" -22
+	"weapon capacity" -22
+	"turret mounts" -1
+	weapon
+		sprite "projectile/ravager beam"
+			"frame rate" 15
+		"hardpoint sprite" "hardpoint/ravager turret"
+		"hardpoint offset" 3.
+		sound "disruptor"
+		"hit effect" "ravager impact"
+		"inaccuracy" .2
+		"turret turn" 4.2
+		"velocity" 480
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 3.7
+		"firing heat" 1.5
+		"shield damage" 1.8
+		"hull damage" 4.3
+	description "这款炮塔安装型的劫掠者光束是卡赫特所拥有的最强武器之一。"
+
+effect "ravager impact"
+	sprite "effect/ravager impact"
+		"no repeat"
+		"frame rate" 1
+	"lifetime" 1
+	"velocity scale" 0
+
+outfit "Ka'het Annihilator"
+	"display name" "卡'赫特歼灭者"
+	category "Guns"
+	series "Guns"
+	index 05010
+	cost 351000
+	thumbnail "outfit/ka'het annihilator"
+	"mass" 10
+	"outfit space" -14
+	"weapon capacity" -14
+	"gun ports" -1
+	weapon
+		sprite "projectile/annihilator"
+			"frame rate" 7
+		sound "inhibitor"
+		"hit effect" "bullet impact"
+		"inaccuracy" 2.5
+		"velocity" 18
+		"lifetime" 35
+		"reload" 10
+		"firing energy" 31
+		"firing heat" 8
+		"shield damage" 43
+		"hull damage" 12
+	description "建造者很久以前最初创造了歼灭者，作为应对他们新发现的护盾矩阵的对策。他们持续开发了数个世纪，这是其最终版本。"
+
+outfit "Ka'het Annihilator Turret"
+	"display name" "卡'赫特歼灭者碉塔"
+	category "Turrets"
+	series "Turrets"
+	index 05010
+	cost 529000
+	thumbnail "outfit/ka'het annihilator turret"
+	"mass" 25
+	"outfit space" -32
+	"weapon capacity" -32
+	"turret mounts" -1
+	weapon
+		sprite "projectile/annihilator"
+			"frame rate" 7
+		sound "inhibitor"
+		"hardpoint sprite" "hardpoint/annihilator turret"
+		"hardpoint offset" 15.
+		"hit effect" "bullet impact"
+		"inaccuracy" 1
+		"turret turn" 3.2
+		"range override" 630
+		"velocity override" 18
+		"reload" 10
+		"firing energy" 62
+		"firing heat" 16
+		"submunition" "Annihilator Projectile" 2
+	description "建造者在这座炮塔上安装了两台歼灭者，使其对敌方护盾极为高效。"
+
+outfit "Annihilator Projectile"
+	"display name" "歼灭者弹丸"
+	weapon
+		sprite "projectile/annihilator"
+			"frame rate" 7
+		sound "inhibitor"
+		"hit effect" "bullet impact"
+		"inaccuracy" 2
+		"velocity" 18
+		"lifetime" 35
+		"shield damage" 43
+		"hull damage" 12
+
+outfit "Ka'het EMP Deployer"
+	"display name" "卡'赫特电磁脉冲部署器"
+	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 05010
+	cost 715000
+	thumbnail "outfit/ka'het emp deployer"
+	"mass" 10
+	"outfit space" -26
+	"weapon capacity" -26
+	"gun ports" -1
+	"emp torpedo capacity" 27
+	weapon
+		sprite "projectile/emp torpedo"
+			"frame rate" 2
+			"no repeat"
+		sound "torpedo"
+		ammo "EMP Torpedo"
+		stream
+		icon "icon/emp"
+		"fire effect" "emp torpedo fire" 5
+		"hit effect" "nuke explosion"
+		"hit effect" "emp ring" 30
+		"hit effect" "emp spark" 20
+		"die effect" "tiny explosion"
+		"inaccuracy" 4
+		"velocity" 7
+		"lifetime" 300
+		"reload" 180
+		"firing energy" 540
+		"firing heat" 11
+		"acceleration" .7
+		"drag" .1
+		"turn" 2
+		"homing"
+			"throttle control"
+		"infrared tracking" .2
+		"radar tracking" .8
+		"trigger radius" 50
+		"blast radius" 200
+		"shield damage" 700
+		"hull damage" 100
+		"ion damage" 48
+		"scrambling damage" 48
+		"hit force" 135
+		"missile strength" 80
+	description "亿万年前，建造者曾遭外星飞船袭击，那些飞船使用的武器能无视船体直接损伤反应堆。尽管他们始终未能缴获任何这类武器，但经过多年研究，他们成功复制了其效果。"
+	description "	该武器的弹药可在任何装备商处补充。"
+		to display
+			has "gamerule: universal ammo restocking"
+
+outfit "Ka'het Emergency Deployer"
+	"display name" "卡'赫特应急部署器"
+	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 05020
+	cost 645000
+	thumbnail "outfit/ka'het mhd deployer"
+	"mass" 13
+	"outfit space" -17
+	"gun ports" -1
+	weapon
+		sprite "projectile/mhd"
+			"frame rate" 2
+		sound "rocket"
+		ammo "Ka'het MHD Generator"
+		icon "icon/mhd"
+		"hit effect" "mhd explosion"
+		"hit effect" "mhd spark" 860
+		"die effect" "small explosion"
+		"inaccuracy" 3
+		"velocity" 12
+		"lifetime" 230
+		"reload" 60
+		"range override" 400
+		"firing energy" -3800
+		"firing force" 1350
+		"firing heat" 5800
+		"firing hull" 60
+		"trigger radius" 40
+		"blast radius" 230
+		"shield damage" 28750
+		"hull damage" 9060
+		"heat damage" 4920
+		"hit force" 2400
+		"missile strength" 280
+	description "建造者拥有的大多数无人机完全无武装，因此极易受到敌方攻击。由于安装武器会大幅降低其货运容量，他们转而决定开发这些紧急部署器来威慑潜在的劫机者：其工作原理是激活飞船磁流体发电机内部的一系列反应，然后将发电机抛向敌人，一旦击中目标便会引发大规模爆炸。"
+
+effect "mhd spark"
+	sprite "effect/mhd spark"
+		"frame rate" 12
+		"rewind"
+		"random start frame"
+	"random angle" 360
+	"lifetime" 30
+	"velocity scale" .2
+	"random lifetime" 30
+	"random velocity" 4.45
+
+effect "mhd explosion"
+	sprite "effect/ion explosion"
+		"no repeat"
+		"frame rate" 30
+	sound "explosion nuke"
+	"lifetime" 5
+	"random angle" 360
+	"random spin" 5
+	"random velocity" 1
+	"velocity scale" .2
+
+# Cooling:
+
+outfit "Ka'het Support Cooling"
+	"display name" "卡'赫特辅助冷却"
+	category "Systems"
+	series "Cooling"
+	index 05010
+	cost 218000
+	thumbnail "outfit/ka'het support cooling"
+	"mass" 6
+	"outfit space" -8
+	"active cooling" 32
+	"cooling energy" 3.1
+	description "典型飞船的冷却系统只需保证特定区域船员的舒适，而卡赫特飞船的整体则需要维持适宜温度，以供内部的赫特存活。"
+
+
+outfit "Ka'het Primary Cooling"
+	"display name" "卡'赫特主冷却"
+	category "Systems"
+	series "Cooling"
+	index 05020
+	cost 563000
+	thumbnail "outfit/ka'het primary cooling"
+	"mass" 11
+	"outfit space" -14
+	"active cooling" 65
+	"cooling energy" 5.9
+	description "这是卡赫特使用的主冷却器。虽然耗能巨大，但效率极高，能够单独冷却某些赫特。"
+
+# Shield:
+
+outfit "Ka'het Shield Restorer"
+	"display name" "卡'赫特护盾修复器"
+	category "Systems"
+	series "Shields"
+	index 05010
+	cost 138000
+	thumbnail "outfit/ka'het shield restorer"
+	"mass" 14
+	"outfit space" -17
+	"shield generation" 1.02
+	"energy consumption" 1.53
+	description "建造者们向来不怎么依赖护盾矩阵，而更倾向于强化船体。然而，战争的现实迫使建造者研发出强大的护盾技术，最终一些赫特舰船开始广泛使用此模块。"
+
+outfit "Ka'het Grand Restorer"
+	"display name" "卡'赫特大型修复器"
+	category "Systems"
+	series "Shields"
+	index 05020
+	cost 1022000
+	thumbnail "outfit/ka'het grand restorer"
+	"mass" 72
+	"outfit space" -86
+	"delayed shield generation" 7.08
+	"energy consumption" 10.62
+	"depleted shield delay" 350
+	description "这部护盾发生器是卡赫特护盾技术的巅峰之作——该领域是出于生存需要而飞速发展的，并非长期渐进完善而成。尽管如此，“大修复者”仍能为最大的赫特飞船提供良好的防护，取代了其他飞船上使用的标准修复者。"
+	description "	与大多数发生器不同，该恢复器在飞船护盾耗尽后需要几秒钟才能重新启动。"
+
+# Power:
+
+outfit "Ka'het MHD Generator"
+	"display name" "卡'赫特磁流体发电机"
+	category "Power"
+	series "Generators"
+	index 05010
+	cost 1263000
+	thumbnail "outfit/ka'het mhd generator"
+	"mass" 20
+	"outfit space" -22
+	"energy generation" 3.8
+	"heat generation" 5.8
+	description "建造者最初制造了这台磁流体发电机作为卡玛尔的主要动力源。与许多玛尔装置的情况类似，后来它被重新用于赫特飞船的辅助能源发电机，当它们集成的动力系统被证明不令人满意时，补充其能量供应。"
+
+outfit "Ka'het Reserve Accumulator"
+	"display name" "卡'赫特备用蓄能器"
+	category "Power"
+	series "Batteries"
+	index 05010
+	cost 27000
+	thumbnail "outfit/ka'het reserve accumulator"
+	"mass" 2
+	"outfit space" -3
+	"energy capacity" 2400
+	description "这块微型电池是为卡玛尔无人机开发的紧急储能设备，以防其发电机不足以满足大多数建造者系统的高功率需求。"
+
+# Engines:
+
+outfit "Maeri Engine Nacelles"
+	"display name" "梅里引擎舱"
+	plural "梅里引擎舱"
+	category "Engines"
+	series "Engines"
+	index 05030
+	"cost" 928000
+	thumbnail "outfit/ka'het maeri engine"
+	"mass" 59
+	"outfit space" -76
+	"engine capacity" -59
+	"energy consumption" 5.01
+	"heat generation" 1.1
+	"thrust" 58.08
+	"thrusting heat" 2.8
+	"turn" 1397.1
+	"turning heat" 1.3
+	"flare sprite" "effect/ka'het flare/large"
+		"frame rate" 30
+	"flare sound" "plasma medium"
+	"steering flare sprite" "effect/ka'het flare/large"
+		"frame rate" 30
+	"steering flare sound" "plasma medium"
+	description "卡赫特引擎的独特之处在于，它们持续消耗大量能量，但启动时无需额外能量：这意味着其他子系统可用的能量会减少，但比起大多数推进方式也更为高效，且仅产生微量的热量。"
+
+outfit "Ka'het Sustainer Nacelles"
+	"display name" "卡'赫特维持引擎舱"
+	plural "卡赫特维持者引擎舱"
+	category "Engines"
+	series "Engines"
+	index 05020
+	"cost" 357000
+	thumbnail "outfit/ka'het sustainer engine"
+	"mass" 27
+	"outfit space" -34
+	"engine capacity" -27
+	"heat generation" 0.6
+	"energy consumption" 2.49
+	"thrust" 25.17
+	"thrusting heat" 1.0
+	"turn" 648.15
+	"turning heat" 0.5
+	"flare sprite" "effect/ka'het flare/medium"
+		"frame rate" 30
+	"flare sound" "plasma small"
+	"steering flare sprite" "effect/ka'het flare/medium"
+		"frame rate" 30
+	"steering flare sound" "plasma small"
+	description "虽然卡赫特船只已配备标准引擎，但大多数还额外使用维持引擎，为飞船提供足够的机动性以应对战斗。与它的大型同类设计相同，维持引擎无需电力即可运行，但代价是持续消耗能量。"
+
+outfit "Telis Engine Nacelles"
+	"display name" "泰利斯引擎短舱"
+	plural "泰利斯引擎舱"
+	category "Engines"
+	series "Engines"
+	index 05040
+	"cost" 1372000
+	thumbnail "outfit/ka'het telis engine"
+	"mass" 81
+	"outfit space" -101
+	"engine capacity" -81
+	"energy consumption" 6.81
+	"heat generation" 1.4
+	"thrust" 83.1
+	"thrusting heat" 3.5
+	"turn" 2068.8
+	"turning heat" 1.9
+	"flare sprite" "effect/ka'het flare/large"
+		"frame rate" 30
+	"flare sound" "plasma medium"
+	"steering flare sprite" "effect/ka'het flare/large"
+		"frame rate" 30
+	"steering flare sound" "plasma medium"
+	description "这些吊舱原本构成了整台泰利斯赫特飞船的引擎组。虽与其他引擎相比体积并不惊人，但若与一两台持续推进器配合使用，它们可以成为一种强大的推进形式，将转向与推进引擎合二为一。"
+
+outfit "Vareti Engine Block"
+	"display name" "瓦雷蒂引擎组"
+	category "Engines"
+	series "Engines"
+	index 05050
+	"cost" 1815000
+	thumbnail "outfit/ka'het vareti engine"
+	"mass" 137
+	"outfit space" -168
+	"engine capacity" -137
+	"energy consumption" 10.90
+	"heat generation" 2.58
+	"thrust" 140.85
+	"thrusting heat" 6.7
+	"turn" 3500.85
+	"turning heat" 3.32
+	"flare sprite" "effect/ka'het flare/large"
+		"frame rate" 30
+	"flare sound" "plasma large"
+	"steering flare sprite" "effect/ka'het flare/large"
+		"frame rate" 30
+	"steering flare sound" "plasma large"
+	description "这是建造者建造过的最大单体引擎，专为他们控制的最大型舰船制造。由于其巨大体积，它不像较小版本那样模块化，但因此也更加高效和强大。"
+
+outfit "Ka'het Compact Engine"
+	"display name" "卡'赫特紧凑引擎"
+	category "Engines"
+	series "Engines"
+	index 05010
+	"cost" 172000
+	thumbnail "outfit/ka'het compact engine"
+	"mass" 21
+	"outfit space" -26
+	"engine capacity" -21
+	"heat generation" 0.3
+	"energy consumption" 0.48
+	"thrust" 19.17
+	"thrusting energy" 1.7
+	"thrusting heat" 1.2
+	"turn" 351.6
+	"turning energy" 0.42
+	"turning heat" 0.3
+	"flare sprite" "effect/ka'het flare/medium"
+		"frame rate" 30
+	"flare sound" "plasma small"
+	"steering flare sprite" "effect/ka'het flare/medium"
+		"frame rate" 30
+	"steering flare sound" "plasma small"
+	description "这款微型引擎最初是为卡玛尔无人机开发的主要推进装置，远在卡赫特被创造出来并标准化其引擎舱设计之前。随着时间推移的改进使其得以保持与大型型号相当的效率，但与那些型号不同的是，除了所有建造者设计引擎都有的持续能量损耗外，它还需要额外能量来启动引擎。"
+
+# Hand to Hand:
+
+outfit "Ka'het Electric Stunner"
+	"display name" "卡'赫特电击器"
+	category "Hand to Hand"
+	cost 103500
+	thumbnail "outfit/ka'het taser"
+	"capture attack" 1.3
+	"capture defense" 8.5
+	"unplunderable" 1
+	description "这件武器设计奇特，显然不是以人类之手为考量而建造。它的短射程使其仅能有效防御敌方登舰者，利用你对飞船结构的认知来占据优势。"

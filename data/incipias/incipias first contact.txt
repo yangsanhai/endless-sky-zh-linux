@@ -1,0 +1,434 @@
+# Copyright (c) 2023 by RisingLeaf (https://github.com/RisingLeaf)
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Incipias: Warning of the Guardian"
+	invisible
+	entering
+	source
+		system "Il'le"
+	destination "Earth"
+	on offer
+		conversation
+			`一个声音从某处开始说话。“你的路走到了尽头，旅行者。前方已无任何东西等着你。”`
+			`	你警惕地环顾四周，却不见人影。你检查了扫描仪，但这个星系中除了少数本土生命形态外空无一物。然而，你的导航系统显示有超空间航线通往更远的地方。`
+			choice
+				`	（忽略它。）`
+				`	“这看起来不像死路。”`
+					goto reason
+				`	“我为什么要听你的？”`
+					goto reason
+			`	“无视这些话只会是愚蠢之举。掉头吧，旅行者。”声音在空中回荡，仍然无从判断来自何处。`
+			choice
+				`	“你骗不了我。这不是死路。”`
+				`	“我为什么要听你的？”`
+			label reason
+			`	“这里沉睡着尚未绽放的花朵。你在这里找不到任何东西。听从劝告，回去吧。”这次声音听起来更有力，你感觉它似乎是从你脑中发出的。`
+			choice
+				`	“未绽放的花朵。听起来挺有趣。”`
+				`	“我要亲眼看看。”`
+				`	“谢谢你的警告。”`
+					goto agree
+			`	一声深沉的叹息仿佛在时空中飘散。“人类，这些未绽放的花朵只会因你的存在而受到威胁。”一阵愉悦感涌上心头，因为你再次听到了“未绽放的花朵”这个词。`
+			`“请尊重生命之美，不要踏足这片即将孕育新生命的区域。你们这类种族比你们在此处能找到的任何东西都要先进得多。这里没有宝藏等着你。”`
+			choice
+				`	“你为何在乎这些‘花朵’？”`
+					goto care
+				`	“我要寻找的不是科技。”`
+			`	声音现在带着平静的语调。“你在这个话题上的坚持值得钦佩，但请允许我用一个例子来解释我的信念。”`
+			label care
+			action
+				log `进入了亥族东北部的一片星域，并听到一个凭空传来的声音警告我，不要惊扰居住在那里的“未绽放的花朵”。`
+				event "label incipias space"
+			`	“为什么人类在乎艺术？”声音此刻仿佛遥远，却又前所未有的清晰。“因为它令你惊叹，正如我们看到另一种族成长并克服自身负担时所惊叹的一样。他人生命就像一幅永不停止绘制的画作，而看着绘画停止则是一件悲剧。这就是为什么我们试图保护这些生命的造物——这样我们才能看到它们能达到何等高度。”`
+			`	停顿了片刻。“看来我无法说服你。虽然我可以干涉你的旅程，但我不喜欢不愉快的对抗。”声音此刻变得坚定。“我让你通过，但我会注视着你，因为我是这片空间的守护者。”`
+			`	声音渐渐消失，只留下一种被注视的感觉。`
+				decline
+			label agree
+			action
+				log `进入了亥族东北方的星域，一个无形的声音警告我不要打扰栖息在此处的“未绽之花”。我同意远离此地。`
+				set "Incipias: accepted the guardian's warning"
+				event "label incipias space"
+			`	“你很通情达理，人类，所以我以因西皮亚斯之名感谢你。”声音消散，只留下一种被注视的感觉。`
+				decline
+
+mission "Incipias: Presence of the Guardian: Dom'us"
+	invisible
+	entering
+	source
+		system "Dom'us"
+	destination "Earth"
+	# Don't offer if the old version of this mission from prior to v0.11.0 was already offered.
+	to offer
+		not "Incipias: Presence of the Guardian: offered"
+	on offer
+		conversation
+			`来自上一个星系的某种存在感久久不散，你依然感觉自己正被窥视着。`
+				decline
+				to display
+					not "Incipias: accepted the guardian's warning"
+			`进入星系时，之前那个声音再次在你脑海中回荡，但这一次似乎带着沉重的压力。“我不喜欢你的欺骗，人类。记住，你将被监视。”声音逐渐消散，但某种强烈的存在感依然留存。`
+				decline
+				to display
+					has "Incipias: accepted the guardian's warning"
+
+mission "Incipias: Presence of the Guardian: Hui'uc"
+	invisible
+	entering
+	source
+		system "Hui'uc"
+	destination "Earth"
+	# Don't offer if the old version of this mission from prior to v0.11.0 was already offered.
+	to offer
+		not "Incipias: Presence of the Guardian: offered"
+	on offer
+		conversation
+			`来自上一个星系的某种存在感久久不散，你依然感觉自己正被窥视着。`
+				decline
+				to display
+					not "Incipias: accepted the guardian's warning"
+			`进入星系时，之前那个声音再次在你脑海中回荡，但这一次似乎带着沉重的压力。“我不喜欢你的欺骗，人类。记住，你将被监视。”声音逐渐消散，但某种强烈的存在感依然留存。`
+				decline
+				to display
+					has "Incipias: accepted the guardian's warning"
+
+
+event "label incipias space"
+	galaxy "label incipias"
+		sprite "label/incipias"
+
+mission "Incipias: First Contact"
+	invisible
+	entering
+	source
+		system "Dom'us"
+	destination "Earth"
+	on offer
+		conversation
+			`进入星系后，你注意到一些前所未见的飞船。对他们呼叫只得到静电噪音。多次尝试无果后，你放弃了。或许你可以在附近的星系找到更多线索。`
+				decline
+				to display
+					not "Visit Quarg in Incipias Space: offered"
+			`进入星系后，你注意到一些前所未见的飞船。对他们呼叫只得到静电噪音。多次尝试无果后，你放弃了。这一定是夸格提起过的那个种族。`
+				decline
+				to display
+					has "Visit Quarg in Incipias Space: offered"
+
+
+
+mission "Visit Quarg in Incipias Space"
+	invisible
+	landing
+	source
+		government "Quarg (Incipias)"
+	on offer
+		conversation
+			branch "ut divitas" "spec inci"
+				has "flagship planet: Ut Divitas"
+			label "ut divitas"
+			`你的飞船轻轻一震降落下来，一小群夸格迅速围拢过来，用简单但明确的手势示意你等待。他们确认你理解后，其中一人匆匆离去。你等了好一会儿，直到另一个夸格到来——大概是个能说你的语言的。它开口说话，口音你从未听过。`
+				goto "both planets"
+			label "spec inci"
+			`	将飞船降落在月面上后，你等了好一会儿，才见到三个夸格出现。中间那位示意你上前，它们开口说话，口音你从未听过。`
+			label "both planets"
+			`	“欢迎，人类。你漫长的漂泊将你带到了这里，然而你的同类从未踏足这片星域。敢问你有何使命？”`
+			choice
+				`	“我只是在探索星系。”`
+					goto explorer
+				`	“我在寻找新的物种。”`
+					goto "new species"
+			label explorer
+			`	“对于年轻人来说，这是显而易见的追求，”它点点头。“若容我建议，切勿轻率地漫游这片空间区域。银河中存在着许多危险情况，你的种族尚未发现，甚至无法理解。”它挺直身躯，高耸在你面前。`
+				goto end
+			label "new species"
+			`	“何等奇特的任务。”它困惑地歪着头。“你希望借此达成什么？难道你没有预见到，与其他物种接触和交涉伴随着不可估量的危险吗？空间的界限并非偶然形成。我建议你谨慎行事，仔细权衡每一步。”`
+			label end
+			`	短暂的停顿后，你注意到夸格脸上潜藏着一丝不易察觉的沮丧，随后它继续说道：“你被允许在此继续你的游牧航行，但我们夸格对你有所要求。在这颗卫星的不远处，一个邻近种族已经踏上了星辰之旅。不要为了你们或他们自己的利益去打扰他们。”`
+			`	说完这番话，夸格转身离去。看来你现在可以使用当地的设施了。`
+				decline
+
+ship "Nimbus" "Nimbus FTL"
+	add attributes
+		"bunks" -25
+	outfits
+		"Liquid-Class Shield"
+		"Metallic Hydrogen Cell"
+		"Cloud Piercer" 20
+
+		"MH Red-Class Thruster"
+		"MH Red-Class Steering"
+
+mission "Incipias: The Derelict"
+	invisible
+	non-blocking
+	transition
+	source
+		system "Hui'uc"
+	destination "Earth"
+	to offer
+		has "Visit Quarg in Incipias Space: offered"
+	on enter
+		dialog
+			`进入星系后，你发现一艘孤立的外星飞船，已经瘫痪且严重受损。除了它之外，星系中似乎没有其他飞船，也没有任何救援迹象。或许有办法帮助这艘飞船和它的船员。`
+	npc assist
+		personality
+			confusion 50
+			derelict staying uninterested
+		government "Hicemus"
+		system "Hui'uc"
+		ship "Nimbus FTL" "HIC Veni #000001"
+		to despawn
+			has "incipias: helped the derelict"
+		on assist
+			log `在一个无人星系中救助了一艘滞留的外星飞船，其船员看起来类似于漂浮的章鱼或水母。由于语言障碍，无法与他们交流，但成功送去了他们维修飞船所需的设备。不幸的是，他们没有超空间引擎，因此无法返回家乡星系。`
+			conversation
+				scene "scene/incipias message"
+				`当你接近那艘废弃飞船时，它向你发送了呼叫请求。一旦你接受呼叫，屏幕上突然开始以令人眩目的方式移动着渐变色彩，但奇怪的是没有任何声音。很显然，除非你拥有某种翻译设备，否则你将无法理解刚才目睹的任何传输内容。你继续尝试援助这艘船，准备将一些维修物资送上船。`
+				`	你相当轻松地与那艘失去动力的飞船完成了对接。舱门打开，一条通道呈现在你面前，显而易见，这艘飞船绝非为人类所设计。墙壁有着奇异的弧度，地板也几乎没有任何摩擦力。当你把维修设备搬进飞船时，你的目光被五个巨大的外星人吸引了——它们的外形半像章鱼，半像水母。它们身上闪烁着明亮的色彩，与之前出现在你屏幕上的渐变色彩非常相似。其中一个悬浮在一门显然是巨型座装武器的后方，双管炮口正笔直地对准你。那个外星炮手闪烁起橙色的光芒，你可以感觉到房间里的紧张气氛陡然上升。`
+				choice
+					`	（试图表明我没有恶意。）`
+						goto peace
+					`	（扔下维修设备，跑回我的飞船。）`
+						goto flee
+					`	（试着朝炮塔后面的家伙开枪，然后逃跑。）`
+				`	你击中了操纵炮塔的生物，使其伴随着刺耳的声音爆炸开来。在你能享受这短暂的胜利之前，你注意到走廊深处有动静。转过头去，你看到一个枪手正闪烁着深红色的光芒，随后将你击倒，为其倒下的战友报了仇。`
+					die
+				label peace
+				`	感觉到局势随时可能升级，你缓缓将装有维修设备的箱子放在地上，然后向后退了几步。你非常小心，没有做出任何轻率的举动。你和外星人都静止了片刻，直到其中一个缓缓向前漂浮。这只生物橙色的身体里开始混入黄色色调，它用两条触手缠住箱子，而另外四条触手则向后退去以作响应。当外星人终于打开箱子并向内看时，它的颜色变成了淡淡的绿色。其余的船员似乎也放松了下来，呈现出同样的颜色。`
+				`	由于存在沟通障碍，在外星人取回维修设备后，你也没有什么其他能做的了。就在你离开时，你看到那些外星人开始闪烁出光谱中的所有色彩；颜色渐变在它们的皮肤上流转得如此之快，以至于它们看起来几乎变成了白色。`
+					goto end
+				label flee
+				`	你扔下维修设备并跑回自己的飞船，猛击关闭气闸舱门的按钮。你最后看了一眼其中一个外星人：它的皮肤上正交织着蓝色与黄色的色调，但它并没有采取任何行动。`
+				label end
+				`	当你飞离时，你看到那艘飞船的引擎缓缓重新启动。显然他们已经摸索出了维修设备的使用方法。然而，那艘飞船并没有离开星系，而是开始朝附近的一颗气态巨行星飞去。`
+				`	回到飞船上，你的目光落在显示器上仍然打开的扫描日志上。值得注意的是，这艘飞船没有安装超空间引擎或任何类似的装置，考虑到这个星系中没有任何有人居住的星球，这实在有些奇怪。也许你应该和夸格人谈谈，看看他们对此是否有什么见解。`
+				action
+					set "incipias: helped the derelict"
+
+mission "Incipias: Help The Stranded 1"
+	landing
+	name "向因西皮亚斯寻求帮助"
+	description "向因西皮亚斯求助，拯救他们的一艘飞船。"
+	source
+		government "Quarg (Incipias)"
+	destination "Pon'tes"
+	to offer
+		has "incipias: helped the derelict"
+	on offer
+		conversation
+			`你想问问夸格关于你与那艘被困外星飞船的奇怪遭遇有什么见解吗？`
+			choice
+				`	（是的。）`
+				`	（现在还不想。）`
+					defer
+			`	你刚一降落到星球上，就四处寻找会说人类语言的夸格，想告诉他们你发现的那艘被困飞船。其中一名夸格似乎明白了你的意图，示意你稍等。过了一会儿，它回来了，身后跟着你之前交谈过的那名夸格。`
+			`	“人类，你似乎很着急。什么事情这么要紧？”它问道。`
+			choice
+				`	（说明情况。）`
+					goto explanation
+				`	“我需要关于这个区域物种的建议。”`
+			`	它好奇地看着你。“所以你与年轻的因西皮亚斯交流过了？这真让我意外，你竟然能成功地与他们沟通。我们花了很长时间才破译了他们的传播方式。”`
+			`	你迅速解释了发生的事情。据你观察，夸格似乎因为你没能和他们交上话而松了一口气。`
+			label explanation
+			`	“你遇到了一个非常特殊的情况。因西皮亚斯目前还没有能力跨越自己的星系边界。”它歪了歪头，思考着你刚才的话。“我们很愿意帮助他们，但现在向他们暴露我们自身还为时过早，而且他们现在与你这样的独立闯入者互动也肯定为时过早。恐怕对于这种不幸的变局，我们无能为力。”`
+			choice
+				`	“我可以帮助他们。”`
+				`	“你怎么能做出如此冷酷的决定？”`
+					goto cold
+				`	“我明白了。我会离他们远点。”`
+					goto declined
+			label initiative
+			`	“你缺乏执行这种任务所需的工具。据我所知，你们人类从未开发出能够在气态巨行星上降落的飞船。而且你肯定也无法以任何有意义的方式让他们明白你的意图。”夸格盯着你看了一会儿，稍微沉思了一下。`
+			`	“但为了因西皮亚斯，我将在最后这一点上帮助你。如果你无法被劝阻的话，最好给你提供一种沟通方式，这样你们的互动就能在友好的条件下进行。我可以为你制作一个我们的翻译器，这将使你能向他们传达你的意图。请求他们卖给你一艘他们的飞船，这样你就能在他们的动荡星球上降落了。”`
+			`	它停顿了一下，然后语气变得更加严肃。“不过，你不得向这个年轻物种提供任何你们的先进技术。如果你同意这一点，我们就为你提供翻译器。”`
+			choice
+				`	“如果这样能帮到他们，当然可以。”`
+					goto yes
+				`	“为什么你们不想让我给他们我的技术？”`
+			`	“强行干涉一个物种的自然发展在最乐观的情况下也是不可预测的。你们人类缺乏理解这一点的智慧，因为你们还年轻，没有见过我们所见过的东西。”夸格停顿了一下，陷入了沉思。“即使只是让你们接触他们的可预见风险也是巨大的，你不应该轻视。”`
+			choice
+				`	“我愿意接受你的条件来帮助他们。”`
+				`	“这些风险听起来确实令人担忧。我最终还是不去打扰他们了。”`
+					goto declined
+			label yes
+			action
+				set "language: Incipias"
+				log `发现亥族空间东北方向的物种因西皮亚斯处于夸格的保护之下。一名夸格给了我一台翻译器，以便协助一艘被困的因西皮亚斯飞船，但警告我不要给予因西皮亚斯任何先进技术或干预他们的发展。`
+			`	“很高兴你同意这个条件。记住，船长，最微小的失误都可能带来严重后果。”夸格盯着你。“我们会监视你的行动，确保它们是和平的，没有恶意或不智的意图。请在此稍等，”它说完就走开了。`
+			`	夸格很快就回来了，现在拿着一个光滑的银色盒子，一侧有显示屏。“这是我们的翻译器，我们与因西皮亚斯的联系工具。它也能将他们独特的语言翻译成你们的语言。请铭记我将此物赠予你的这份殊荣，”它说道。`
+			`	当你把它收好时，夸格又开口了。“要有效地使用这个设备，你必须将其指向交流源，以便它能辨别相关的信号。考虑到他们语言的复杂性，翻译器可能无法完全翻译他们某些晦涩的表述。”`
+			`	然后它直视着你的眼睛。“记住我说的话，人类。星辰中没有那些对同伴行为愚蠢轻率之人的位置。”夸格随后走开了，留下你独自一人。`
+				accept
+			label cold
+			`	“对于像你们这样年轻的物种来说，理解我们的方式也许是一项艰巨的任务，但我们必须将物种的延续置于个体之上。如果在这种不合时宜的时刻向他们暴露我们自己，如此先进的物种出现在他们的空间所带来的冲击将会煽起混乱的火焰。”`
+			choice
+				`	“那就让我来帮助他们。”`
+					goto initiative
+				`	“后果以后处理。现在先帮助他们！”`
+			`	夸格露出不悦的表情。“你坚持如此。要知道我们自己肯定不会介入。”它叹了口气。“不过，我可以预见到你很可能会鲁莽冲动地决定进一步接触这些因西皮亚斯。”`
+			choice
+				`	“当然，让我去做这件事。”`
+				`	“如果你执意不帮忙……”`
+			`	夸格飞快地磕了磕牙齿，然后继续说道。`
+				goto initiative
+			label declined
+			`	“我们感谢你的理解，但请记住：因西皮亚斯处于我们的监视和保护之下。任何人伤害他们都必将招致我们的怒火。”说完这些话，夸格转身离去。`
+				decline
+	on enter Dom'us
+		"reputation: Hicemus" += 10
+		conversation
+			`进入星系后，你准备好用夸格的翻译器发出你的第一条信息。`
+			choice
+				`	“你好。我是<first> <last>船长，前来建立联系。”`
+				`	“你们好，陌生人。我寻求帮助你们。”`
+				`	“我来此并无恶意。”`
+			`	你注意到翻译器开始闪烁一连串灯光，你将它对准飞船的通讯设备。整整一分钟，什么也没有发生。`
+			`	过了一会儿，一阵波动穿过了星系中所有飞船，空间站打开了一个通讯频道。色彩涌上你的显示屏：黄色和绿色交织。你将翻译器对准闪烁的光芒，希望它能捕捉到这些外星人对你所说的话。`
+			`	“欢迎你，世界旅行者。我们在家园空间向你致意。”声音平滑而合成，缺乏任何可见的情绪。色彩停顿了一下，然后再次涌过你的屏幕。“你在这里的意图目标是？”`
+			choice
+				`	“我是来与你们进行和平接触的。”`
+				`	“我想帮助你们一艘被困的飞船。”`
+			`	又是一次长时间的停顿。“你的意图目标受欢迎。请靠港首都站。”伴随着信息传来一张小地图，上面标注了停靠口的位置。`
+	on complete
+		log `在因西皮亚斯空间站与他们会面，并获准访问他们的飞船。这些飞船能够进入那艘被困的因西皮亚斯飞船所避难的气态巨行星。`
+		log "Factions" "Incipias" `因西皮亚斯是一个居住在亥族空间东北方的外星物种。它们起源于一颗气态巨星，外形类似于漂浮的大型章鱼。由于尚未研发出超光速驱动器，它们被困于单一星系，并处于夸格的保护之下。`
+		conversation
+			`得益于地图，你轻松对接了空间站。气闸打开，你进入了一个前所未见的环境。这里没有人类空间站那种走廊——取而代之的是充满雾气的管道，有些甚至垂直上升，似乎是唯一的通行方式。一群生物聚集在你的气闸前，闪烁着各种颜色。五只漂浮在人群前方，你终于看清了这些生物。它们体型庞大，约三米高，顶部有一个覆盖着鳞片的球状结构。球状结构基部附近，三只大眼睛排列成浅弧，下方有八条波动着的灵活触手。人群中央的因西皮亚斯开始以平静的色调脉动。`
+			`	"欢迎你，外界生物，来到我们的首都。我们是因西皮亚斯。"它停下来，似乎在等待回答。光线似乎从覆盖它的鳞片中散发出来，但你无法分辨是它们发出的还是仅仅反射。`
+			choice
+				`	"你好，因西皮亚斯。我是人类。"`
+				`	"感谢你的款待。"`
+			`	你的翻译器开始快速闪烁。因西皮亚斯似乎对此有反应——人群中开始扩散出移动和色彩，如同波浪。`
+			`	"发言人"继续道："你是第一个与我们交流的外界生物。你是唯一的外界生物吗？"`
+			choice
+				`	"不，还有其他生物。"`
+				`	"银河系充满了其他生物。"`
+			`	又一阵波浪穿过人群。"所以还有更多。但是，远方的陌生人，我们能帮你什么？"`
+			choice
+				`	（告诉他们那艘被困的飞船，以及你想帮忙。）`
+					goto stranded
+				`	"我想要你们的一艘飞船。"`
+			`	"如果这样就能让你不再构成危险，我们会允许你购买一艘。请见谅。我们需要讨论这个新情况-机遇对我们种族意味着什么。希望以后我们能向你提出更多问题。"`
+				goto end
+			label stranded
+			`	又一波波动掠过人群，但这次你注意到溢出的大量绿色调。`
+			`	"所以他们还活着。我们会向你开放我们的飞船，这样你就能进入他们避难的空气-行星。但请注意，它们不能像你的飞船那样在星系-地点之间跳跃。希望能在另一个未来-时间向你提出更多问题。"`
+			label end
+			`	那五只飘走了，但人群继续盯着你，大概是出于好奇。`
+
+mission "Incipias: Fix Saves Missing Language"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "Incipias: Help The Stranded 1: offered"
+		not "Incipias: Help The Stranded 1: declined"
+		not "language: Incipias"
+	on offer
+		set "language: Incipias"
+		log `注意到<ship>的仪表盘上有一条关于数据轻微损坏的警报。以下日志条目已恢复，但原始时间戳已丢失。`
+		log `发现亥族空间东北方向的物种因西皮亚斯处于夸格的保护之下。一名夸格给了我一台翻译器，以便协助一艘被困的因西皮亚斯飞船，但警告我不要给予因西皮亚斯任何先进技术或干预他们的发展。`
+		fail
+
+
+mission "Incipias: No Help For The Stranded"
+	landing
+	invisible
+	source
+		planet Turra
+	to offer
+		has "Incipias: The Derelict: done"
+		or
+			has "Incipias: Help The Stranded 1: declined"
+			not "Incipias: Help The Stranded 1: offered"
+	on offer
+		fail
+		dialog `你在扫描仪上辨认出先前协助过的那艘遇险外星飞船，但无法与他们沟通，也就无从施以援手。你别无选择，只能任凭他们在这片风暴肆虐的世界中走向毁灭。`
+
+mission "Incipias: Help The Stranded 2"
+	landing
+	name "护送因西皮亚斯返回<planet>"
+	description "将获救的因西皮亚斯送回<destination>的家"
+	passengers 5
+	source Turra
+	destination "Pon'tes"
+	blocked "你已经降落在<origin>，但你的乘客舱位不足以容纳<bunks>名因西皮亚斯。请在腾出所需空间后返回此处。"
+	to offer
+		has "Incipias: Help The Stranded 1: done"
+	on offer
+		conversation
+			`你的飞船冲入气态巨行星的云层，进入一个你从未体验过的宏大环境。巨大的云层如城堡般高耸，有时又裂开成同样巨大的空气洞穴。旋风如同擎天之柱般扫过大气层。尽管狂风肆虐，你的飞船却在其中滑行，仿佛毫无影响。`
+			`	启动扫描仪，你寻找之前那艘搁浅的飞船。很快，雷达上出现一个小光点，你操控飞船驶向它的位置。那艘搁浅的飞船出现了，状况比第一次见到时更糟。风暴似乎损坏了部分船体，护盾完全失效；护盾发生器很可能是在燃料耗尽时关闭的。`
+			`	任何试图呼叫那艘因西皮亚斯飞船的尝试都没有得到应答。你小心翼翼地操控自己的飞船靠近，直到能够与之对接。`
+			branch "has incipias ship"
+				or
+					has "flagship model: Nimbus"
+					has "flagship model: Nimbo Cirrus"
+					has "flagship model: Nimbo Stratus"
+					has "flagship model: Venta"
+					has "flagship model: Gero"
+			`	气闸门打开时，你看到五个因西皮亚斯漂浮在面前。他们起初显得戒备，过了一会儿才认出你是之前遇到的那个人。你正在准备翻译设备与他们交谈。`
+				goto "initial choice"
+			label "has incipias ship"
+			`	气闸门打开时，你看到五个因西皮亚斯漂浮在面前。注意到你的存在，他们迅速后退；他们显然没料到会有一个人类驾驶着他们自己的飞船。过了一会儿他们才认出你是之前遇到的那个人，而你已经准备好翻译设备与他们交谈。`
+			label "initial choice"
+			choice
+				`	"你好，我是来救你们的。"`
+				`	"我是受你们族人所托，带你们回家的。"`
+			`	因西皮亚斯似乎从紧张状态转为惊讶状态，其中一个开始发出脉冲光。"你点亮了我们的语言？真是太令人惊讶了。我们在这里连另一个白昼-时刻都活不下去了。你是我们的生命-保护者。我们很想多聊几句，但一场天气-灾难就要来了。我们得马上离开。"考虑到消息的内容，翻译中缺乏情感这一点令人担忧。`
+			`	你告诉他们登上你的飞船，随后不久，你起飞了。幸运的是，你正好及时离开，避开了即将抵达该地区的强烈风暴。`
+				launch
+	on complete
+		log "Factions" "Incipias" `因西皮亚斯人似乎分裂为两个派系，分别称为希塞穆斯和孔拉提奥；前者占据着一座空间站，而后者则占据了因西皮亚斯的母星。孔拉提奥似乎不允许外人踏足他们的母星。`
+		conversation
+			`你降落在空间站上后，乘客们再次向你道谢，然后离去，大概是去好好休息一番。当你走出<ship>时，另一只因西皮亚斯向你靠近。它的鳞片看上去有些磨损，你注意到其触手末端环绕着精巧的爪状附肢。“跟我来，外界-帮手，趁人群聚集之前。我们想谈谈。”`
+			`	它们引导你穿过走廊以避开大批人群，不过它们只选择水平通道。你来到一间能俯瞰整个空间站的大房间，已有三只因西皮亚斯在场。其中一只开始发光。`
+			`	“欢迎。我们是希塞穆斯的领袖-统治者，因西皮亚斯当前政权的管辖者。如果你同意，我们想问你几个问题-问询。作为回报，我们也欢迎你提出问题-问询。”`
+			choice
+				`	“当然，问吧。”`
+				`	“抱歉，我还有别的事要做。”`
+					goto "end no time"
+			`	它们全体泛起绿光。“感谢你抽出时间-耐心与我们交谈。你能告诉我们更多关于周围深邃太空-虚空的信息吗？”`
+			choice
+				`	（向他们详尽讲述我至今的所有见闻。）`
+					goto detail
+				`	（粗略概述一下我的见闻。）`
+			`	在“观看”了你的解释后，因西皮亚斯之间迅速交换了一连串色彩。你的翻译器无法跟上，你只能看着它们闪烁，最终呈现为黄色基调混合绿色和红色。`
+			`	“感谢你的深刻见解。迄今为止我们所有的收获都来自观察-研究星辰。想到外面竟有如此广阔的世界……这确实激发-加强了探索的决心。”`
+				goto yours
+			label detail
+			`	在“观看”了你的解释后，因西皮亚斯之间迅速交换了一连串色彩。你的翻译器无法跟上，你只能看着它们闪烁，最终呈现为黄色基调混合绿色。`
+			`	“感谢你的深刻-深邃见解。迄今为止我们所有的收获都来自观察-研究附近的星辰。想到外面竟有如此广阔的世界……这真正唤起了探索的意志-决心。”`
+			label yours
+			`	“现在轮到你了。你想知道些什么吗？”`
+			label choice
+			choice
+				`	“为什么我不能降落在你们的母星上？”`
+				`	“为什么你们把这个空间站称为首都？”`
+					goto capital
+				`	“在气态巨行星上生活是怎样的？”`
+					goto "odd question"
+				`	“我没有更多问题了。”`
+					goto end
+			`	一道红光只闪了一秒。“我们的起源-世界并非直接由我们统治。他们或许会在一个未来-时刻单独找你，但小心他们的光芒。他们的年代-时间价值观早已被我们这些快速进步的同类抛在身后。”`
+				goto choice
+			label capital
+			`	现在脉动的那只变成了亮绿色，“这个空间站是我们最伟大的行动-骄傲，我们的星桥。为了纪念我们扩张的渴望，我们将此站设为首都，以展示我们的决心。”`
+				goto choice
+			label "odd question"
+			`	“真是个奇怪又合理的问题。”它的光芒变成紫色和绿色的旋涡。“我们也可以反过来问你——生活在硬岩上是什么感觉？但我们理解你的理由-起源。那么让我告诉你我们故乡天空的云殿吧。闪电会在柱状云之间描绘出最美丽的色彩之歌。这些云层之间是我们的城市，你将见到的最富有色彩-生命的地方。这描述有点诗意-渐变，但我不晓得还能怎么说。”`
+			label end
+			`	“再次感谢你的时间。你给了我们很多需要消化的内容。我们希望你也从这次会面-交谈中有所收获。”`
+			`	你道别后离开房间，可以看到一片色彩涌动反射在墙壁上。`
+				decline
+			label "end no time"
+			`	“我们感到理解-悲伤。一路平安，船长。”你注意到代表的交流中带有一丝蓝色调，同时一只因西皮亚斯引导你回到飞船。`

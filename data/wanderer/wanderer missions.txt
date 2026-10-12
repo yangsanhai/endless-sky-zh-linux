@@ -1,0 +1,183 @@
+# Copyright (c) 2024 by Quantumshark
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Wanderers: Mereti: The Plant 1"
+	landing
+	name "植物运往 <planet>"
+	description "这株植物似乎对梅雷蒂具有重要意义。将植物和两名流浪者“导师”带到<destination>，以便流浪者们尝试找出让它生长的方法。"
+	source "Korbatri Eska"
+	destination "Vara Kehi'ki"
+	passengers 2
+	cargo "strange plant" 1
+	to offer
+		has "event: wanderers: sestor planets unrestricted"
+	on offer
+		conversation
+			`自从你上次访问这颗星球以来，梅雷蒂人明显扩建了他们的温室。你的飞船降落时，几架较小的无人机聚拢过来，当你走出船舱时，它们向你表示欢迎。`
+			`	然后，没等你来得及回应，它们就把你领进一间特别大的温室里。室内中央，一株植物被栽在一个华贵的花盆中，上方窗户射进一束光，照亮了它。这株植物很小，长着鲜艳的深蓝色花瓣和蓝绿色的叶子，尽管你对它不熟悉，也能看出它长得不太好。`
+			`	其中一架无人机对你说话，声音比上次交谈时轻得多。“你是我们的朋友。我们被攻击时，你帮助我们[防御，保护]。你把我们的[父母？祖先？]带了回来。请再帮帮我们。”`
+			choice
+				`	“我会帮助你们的。”`
+				`	"你们需要我做什么？"`
+			`	无人机再次开口。“这株植物对我们很重要。它是我们的……”无人机停顿了几秒钟，灯光在它身上闪烁。“它对我们很重要。我们的[老师，导师]说它并非[原产于，本地分布]这个世界，无法在这里存活。”它说话时，两位流浪者跟着另一架梅雷蒂无人机走了进来，正低声交谈。当与你说话的无人机提到他们时，他们抬起头来，迅速向你走来。`
+			choice
+				`	“你能帮帮他们吗？”`
+				`	“我们该怎么做？”`
+			`	一位流浪者开口了。“这株植物……它与我们在<planet>[种植，照料]的一些植物有重要的相似之处，所以暂时让我们把它带到那里去。会有一些[差异，麻烦]，但这是短期内[最好，最可能]的[办法，解决方案]。不过我们依然打算将这些世界留给无羁者，所以不能永远在那里[安置，培育]它。”`
+			`	一直在静静聆听两位流浪者说话的无人机小心翼翼端起装植物的花盆，朝你飞船的方向飞了回去，两位流浪者跟在后面。你跟着他们返回，准备出发前往<planet>。`
+				accept
+	on complete
+		conversation
+			`你降落时，跟随你的梅雷蒂飞船在本地居民中引起了一些骚动，尤其是星港的交通管制部门——他们不习惯这些飞船几乎全速俯冲下来时，距离流浪者飞船不到一米的飞行方式。`
+			`	你降落之后，乘客们几乎立刻下了船，星港工人小心地将植物从你的货舱中卸下。“到星港来找我们，我们会告诉你我们下一步的[计划，步骤]。”`
+		
+	on enter Chimitarp
+		dialog `当你从 <origin> 起飞时，你注意到几架小型梅雷蒂无人机也随你一同起飞，并伴飞在你的飞船旁边。`
+	npc
+		government "Kor Mereti"
+		personality timid launching
+		system Chimitarp
+		fleet
+			names "kor mereti"
+			variant
+				"Model 16" 3
+
+mission "Wanderers: Mereti: The Plant 2"
+	name "植物之家"
+	description "带凯蒂·瓦伊卡前往她标记的科拉斯行星，判断其中是否有适合来自梅雷蒂的植物生存的家园。"
+	source "Vara Kehi'ki"
+	destination "Solima Skarati"
+	passengers 1
+	to offer
+		has "Wanderers: Mereti: The Plant 1: done"
+	on offer
+		conversation
+			`先前的两位流浪者在太空港等你，但这次还有另一位流浪者与她们在一起。她自我介绍叫凯蒂·瓦伊卡，是一名外星植物学专家。当她开始解释情况时，另外两人离开了。`
+			`	“我们已经[恢复，治愈]了这株植物，它目前在这里存活，但我们很快就要离开这些星系。这株植物[原产于，属于]科拉斯空间，所以我们必须想办法把它送回那里。”`
+			`	瓦伊卡停顿片刻，思考了一会儿，然后继续说道。“在我看来，科拉斯人似乎不是那种会通过[人工，非自然]手段[创造，培育]这种花朵的类型。我怀疑它原产于他们的某个世界。如果我们幸运的话，它可能还在那里[生长，繁盛]。根据初步观察，我们[认为，怀疑]它原产于<planet>、索皮勒法卡塔，或者是某个遭受了严重[破坏，毁灭]以至于很难[看出，想象]它曾经模样的世界。”`
+			choice
+				`	“那么你真的打算把这些世界交给无羁者？”`
+				`	“那你建议我们怎么做？”`
+					goto end
+			`	瓦伊卡尖锐地回应。“那是我们的[目的，方式]。我们治愈世界，然后把它们交给其他物种。我们不会[设想，考虑]任何其他的行动方案。”`
+			label end
+			`	瓦伊卡指着地图，标出了<system>星系。“我们先去[搜索，访问]<planet>。它靠近梅雷蒂的世界，而且不在其[对手，敌人]的[领土，区域]内，所以这株植物更可能[原产，生长]在那里。”`
+				accept
+
+mission "Wanderers: Mereti: The Plant 3"
+	landing
+	name "植物之家"
+	description "带凯蒂·瓦伊卡前往她标记的科拉斯行星，判断其中是否有适合来自梅雷蒂的植物生存的家园。"
+	source "Solima Skarati"
+	destination "Sopi Lefarkata"
+	passengers 1
+	to offer
+		has "Wanderers: Mereti: The Plant 2: done"
+	on offer
+		conversation
+			`当你靠近时，瓦伊卡指引你来到一片高寒草原地带。你找到一个合适的降落点，她走下飞船。从开着的舱门吹进来的空气刺痛了你的眼睛，但瓦伊卡似乎沉思得太深，没有注意到。“它曾经[生长于，发源于]这里，我确信。但它再也不会这样了，在许多[年，周期]内都不会了。”瓦伊卡低下头，默默地将一只翅膀护在身前，停了一会儿才继续说。“我们必须找到一个有类似[区域，环境]的世界，把它引种过去。也许我们在索皮勒法卡塔会更顺利。”`
+				accept
+
+mission "Wanderers: Mereti: The Plant 4"
+	landing
+	name "返回<planet>"
+	description "将瓦伊卡带回<destination>，以收集梅雷蒂植物并将其带到<origin>。"
+	source "Sopi Lefarkata"
+	destination "Vara Kehi'ki"
+	passengers 1
+	to offer
+		has "Wanderers: Mereti: The Plant 3: done"
+	on offer
+		conversation
+			`这次，瓦伊卡带你降落到赤道低地——一片干燥的草原，凉风拂过。你能感受到它和你在索利马斯卡拉蒂到访过的干草原相似，但这次你可以自由呼吸，空气不再刺眼刺鼻。瓦伊卡取了一些土壤，放进一个小装置里，看了一会儿，然后转向你。“这里。它会在这里[生长，繁荣]。”`
+			choice
+				`	“还有什么我能帮忙的吗？”`
+					goto "next steps"
+				`	“你怎么这么肯定？”`
+			`	“我们已经收集了这个世界的大量气候数据。唯一需要我亲自确认的问题是土壤的[成分，特性]是否合适。”`
+			label "next steps"
+			`	“我们回瓦拉克希基吧。我们会派一小队[治愈者，园丁]去<planet>，确保这些植物能扎根。长期来看，当<origin>得到恢复后，我们会把它们送回去。”`
+				accept
+	on complete
+		dialog `当你抵达时，之前遇到的梅雷蒂无人机仍在星港等候。瓦伊卡迅速下船，开始与当地人交谈，只短暂停顿了一下，让你去星港找她。`
+
+mission "Wanderers: Mereti: The Plant 5"
+	name "植物运往 <planet>"
+	description "护卫载有这株植物和一群准备帮助其生长的流浪者的飞船，前往<destination>。"
+	source "Vara Kehi'ki"
+	destination "Sopi Lefarkata"
+	on visit
+		dialog `你已抵达<planet>，但<npc>被留在了后面。它正载着那株植物，所以你应该起飞等候它到达。`
+	to offer
+		has "Wanderers: Mereti: The Plant 4: done"
+	on offer
+		conversation
+			`你及时抵达星港，正好看到那株植物被小心翼翼地装上一艘“强风”号飞船。梅雷蒂无人机静静地停在着陆坪上，你强烈地感觉到它们正在凝视着你。`
+			`	瓦伊卡站在你身旁，看着你，几乎忧郁地凝视远方，然后开口。“很遗憾我们[被迫，强迫]用这些飞船进行战争。这更接近我们最初[构思，设计]它们时所要[服务，实现]的目的。”你看到她说话时一片羽毛飘落到地面。然后她打断自己。“不，我不该如此[沮丧？]。科拉斯无人机背弃了创造者的[意愿，设计]，寻求与我们一同[治愈，照料]这些世界。这是我们都能赞赏的。”`
+			choice
+				`	“你确定这能行吗？”`
+			`	Va'ika straightens up, and speaks with clear confidence. "It is a [fortunate, convenient] situation. <planet> needs relatively little healing, so [housing, growing] these plants here will not create [difficulties, inconveniences] for our work. We have sent a small specialist [group, team] to [cultivate, look after] the plants. I have the utmost confidence in their [knowledge, abilities]."`
+				accept
+	on complete
+		event "mereti visiting eneremprukt" 5
+		event "field of mereti plants" 700
+		conversation
+			`梅雷蒂无人机跟随你和<npc>降落到星球上，停在附近。你和瓦伊卡看着植物被小心翼翼、几乎像仪式般取出并放置到地里。`
+			`	植物被妥善安置后，瓦伊卡转向你。“我会在这里待一段时间来[监督，观察]工作，但很快我就要[离开，返回]去监督其他世界的治愈。我[由衷，真诚]地感谢你的帮助，<first>。”`
+	npc
+		government "Kor Mereti"
+		personality timid launching
+		system "Iyech'yek"
+		fleet
+			names "kor mereti"
+			variant
+				"Model 16" 3
+	npc accompany save
+		government Wanderer
+		personality escort
+		system "Iyech'yek"
+		fleet
+			names "wanderer"
+			variant
+				"Strong Wind"
+
+event "mereti visiting eneremprukt"
+	system Eneremprukt
+		fleet "Small Kor Mereti" 800
+
+event "field of mereti plants"
+
+mission "Wanderers: Mereti: The Plant Epilogue"
+	minor
+	landing
+	invisible
+	source "Sopi Lefarkata"
+	to offer
+		has "event: field of mereti plants"
+	on offer
+		conversation
+			`当你接近 <planet> 时，你想起这就是你和流浪者们种下梅雷蒂赠予之花的那颗星球。穿过云层下降时，你在深谷中瞥见一个蓝色小点，正是多年前你离开流浪者们的地方。`
+			choice
+				`	（仔细看看。）`
+				`	（现在还不想。）`
+					defer
+			`	随着你靠近，那个斑点逐渐变大，直到你看见“强风”号停在一片花海中央，花瓣闪烁着美丽的深蓝色。`
+			`	你小心翼翼地将飞船停在花田外，一台小梅雷蒂无人机飞到你面前，声音远比预期的要低沉。“感谢您，<first> <last>。您[拯救，恢复]了 sitrasanir。”你的翻译器对最后一个词毫无反应，它听起来不像你在亥族或流浪者语言中听到过的任何一个词。`
+			choice
+				`	“西特拉萨尼尔？”`
+				`	"不用谢。"`
+					goto end
+			`	“这朵花名叫 sitrasanir。它的[象征，外貌]对我们的创造者[存在？活着？]时具有[重要性，意义]。我们多年来[抛弃，忽视]了它，但我们的[父母，祖先]帮助我们将它记起。”`
+			label end
+			`	无人机陷入沉思的静默，凝望着花田。太阳升得更高，田野泛着蓝色的光泽，几乎与天空中梅雷蒂飞船上的蓝色涂装完全一致。`
+				decline

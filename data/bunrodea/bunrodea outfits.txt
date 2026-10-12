@@ -1,0 +1,425 @@
+# Copyright (c) 2021 by Amazinite
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+outfit "Shield Relay Booster"
+	"display name" "护盾中继增强器"
+	category "Systems"
+	series "Shields"
+	index 10098
+	cost 59000
+	thumbnail "outfit/shield booster"
+	"mass" 2
+	"outfit space" -2
+	"shield generation" 0.4
+	"shield energy" 1.2
+	"relay upgrades" -1
+	description "护盾中继增强器是一种可安装到邦罗迪亚护盾中继器中的组件，用以调整其效能。增强器能提升中继器的护盾生成强度，但代价是降低能量效率。"
+
+outfit "Shield Relay Limiter"
+	"display name" "护盾中继限制器"
+	category "Systems"
+	series "Shields"
+	index 10099
+	cost 12000
+	thumbnail "outfit/shield limiter"
+	"mass" 1
+	"outfit space" -1
+	"shield generation" -0.02
+	"shield energy" -0.1
+	"relay upgrades" -1
+	description "护盾中继限制器是一种可安装到邦罗迪亚护盾中继器中以调整其效能的组件。限制器可提高中继器的能量效率，但代价是降低其护盾生成强度。"
+
+outfit "Small Shield Relay"
+	"display name" "小型护盾中继器"
+	category "Systems"
+	series "Shields"
+	index 10010
+	cost 172000
+	thumbnail "outfit/small shield relay"
+	"mass" 21
+	"outfit space" -21
+	"shield generation" 0.65
+	"shield energy" 0.6
+	"relay upgrades" 6
+	linked "Shield Relay Booster"
+	linked "Shield Relay Limiter"
+	description "邦罗迪亚护盾中继器的效率惊人；尽管其他派系同等大小的护盾发生器或许能提供更多的护盾生成，但邦罗迪亚护盾中继器仅消耗少量能量就能产生适中的护盾。"
+	description "	护盾中继器可通过安装护盾增强器或限制器进行升级，从而改变其性能。不过，每个中继器上用于这些升级的插槽数量有限。"
+
+outfit "Large Shield Relay"
+	"display name" "大型护盾中继器"
+	category "Systems"
+	series "Shields"
+	index 10020
+	cost 593000
+	thumbnail "outfit/large shield relay"
+	"mass" 56
+	"outfit space" -56
+	"shield generation" 2
+	"shield energy" 1.6
+	"relay upgrades" 16
+	linked "Shield Relay Booster"
+	linked "Shield Relay Limiter"
+	description "一些邦罗迪亚军事舰长认为用护盾生成换取能源效率是愚蠢的交易，而希望最大限度利用反应堆的商人舰长则认为它们可以更加节能。因此，护盾中继器可使用外部组件按船主的喜好进行定制。"
+	description "	护盾中继器可通过安装护盾增强器或限制器进行升级，从而改变其性能。不过，每个中继器上用于这些升级的插槽数量有限。"
+
+
+
+outfit "Nanite Enhancer"
+	"display name" "纳米机增强器"
+	category "Systems"
+	series "Repair"
+	index 10098
+	cost 76000
+	thumbnail "outfit/nanite enhancer"
+	"mass" 5
+	"outfit space" -5
+	"hull repair rate" 0.25
+	"hull energy" 0.75
+	"nanite upgrades" -2
+	description "纳米增强器是一种可安装到邦罗迪亚纳米制造机中的组件，用于调整其效能。增强器能提升制造机的船体修复强度，但代价是降低能源效率。"
+
+outfit "Nanite Limiter"
+	"display name" "纳米机限制器"
+	category "Systems"
+	series "Repair"
+	index 10099
+	cost 21000
+	thumbnail "outfit/nanite limiter"
+	"mass" 2
+	"outfit space" -2
+	"hull repair rate" -0.025
+	"hull energy" -0.2
+	"nanite upgrades" -1
+	description "纳米限制器是一种可安装到邦罗迪亚纳米制造机上的组件，用于调整其效能。限制器能提升制造机的能量与散热效率，但代价是降低其船体修复强度。"
+
+outfit "Small Nanite Fabricator"
+	"display name" "小型纳米机装配器"
+	category "Systems"
+	series "Repair"
+	index 10010
+	cost 650000
+	thumbnail "outfit/small nanite fabricator"
+	"mass" 23
+	"outfit space" -23
+	"hull repair rate" 0.72
+	"hull energy" 1.08
+	"nanite upgrades" 4
+	linked "Nanite Enhancer"
+	linked "Nanite Limiter"
+	description "尽管邦罗迪亚飞船倾向于依靠护盾进行防御，但一些飞行员会选择安装纳米制造机。这些制造机会产生稳定的纳米流，在飞船船体表面移动并修复它们发现的任何损伤。"
+	description "	纳米制造机可通过安装纳米增强器或限制器来升级，从而改变制造机的性能。不过，每台制造机用于这些升级的插槽数量有限。"
+
+outfit "Large Nanite Fabricator"
+	"display name" "大型纳米机装配器"
+	category "Systems"
+	series "Repair"
+	index 10020
+	cost 1940000
+	thumbnail "outfit/large nanite fabricator"
+	"mass" 58
+	"outfit space" -58
+	"hull repair rate" 2.12
+	"hull energy" 3.18
+	"nanite upgrades" 10
+	linked "Nanite Enhancer"
+	linked "Nanite Limiter"
+	description "纳米制造机的诞生源于邦罗迪亚与科拉斯的早期接触。科拉斯系统核心的壳体行走微型机器人使得科拉斯飞船无需太空港即可进行维修，这一特性正是邦罗迪亚青睐于将其应用于侦察船的原因。"
+	description "	纳米制造机可通过安装纳米增强器或限制器进行升级，从而改变制造机的性能。然而，每台制造机用于这些升级的插槽数量是有限的。"
+
+
+
+outfit "Solar Battery"
+	"display name" "太阳能电池板"
+	plural "太阳能蓄电池"
+	category "Power"
+	series "Batteries"
+	index 10010
+	cost 49000
+	thumbnail "outfit/solar battery"
+	"mass" 7
+	"outfit space" -7
+	"energy capacity" 6000
+	"solar cell" 36
+	linked "Solar Cell"
+	description "邦罗迪亚太阳能蓄电池是安装太阳能电池板所必需的，但太阳能蓄电池完全可以脱离太阳能电池板独立使用。许多船长会安装蓄电池来储存常规反应堆产生的能量，而根本不安装太阳能电池板。"
+
+outfit "Solar Cell"
+	"display name" "太阳能电池"
+	category "Power"
+	series "Batteries"
+	index 10020
+	cost 17000
+	thumbnail "outfit/solar cell"
+	"mass" 1
+	"outfit space" -1
+	"solar collection" 0.145
+	"solar heat" 0.07
+	"solar cell" -1
+	description "邦罗迪亚太阳能电池板效率极高，甚至能为较小或火力较弱的战舰提供动力。但请注意：虽然这些太阳能电池板能提供大量能量，但弊端是会产生与发电量成正比的废热，在靠近明亮恒星时尤其危险。"
+	description "	这些电池板必须安装在太阳能蓄电池自带的安装平台上才能使用。"
+
+
+
+outfit "Reactor Overclocker"
+	"display name" "反应堆超频器"
+	category "Power"
+	series "Generators"
+	index 10098
+	cost 142000
+	thumbnail "outfit/reactor overclocker"
+	"mass" 4
+	"outfit space" -4
+	"energy generation" 0.9
+	"heat generation" 3.15
+	"reactor upgrades" -3
+	description "反应堆超频器是一种可安装到邦罗迪亚反应堆上的组件，用于调整其效能。超频器能够增强反应堆的能量生成强度，但代价是降低热效率。"
+
+outfit "Reactor Limiter"
+	"display name" "反应堆限制器"
+	category "Power"
+	series "Generators"
+	index 10099
+	cost 26000
+	thumbnail "outfit/reactor limiter"
+	"mass" 2
+	"outfit space" -2
+	"energy generation" -0.55
+	"heat generation" -6.6
+	"reactor upgrades" -2
+	description "反应堆限制器是一种可安装到邦罗迪亚反应堆中以调整其效能的组件。限制器能提升反应堆的热效率，但代价是削弱其能量生成的强度。"
+
+outfit "Quark Reactor"
+	"display name" "夸克反应堆"
+	category "Power"
+	series "Generators"
+	index 10010
+	cost 3367000
+	thumbnail "outfit/quark reactor"
+	"mass" 61
+	"outfit space" -61
+	"energy generation" 8.35
+	"heat generation" 10.9
+	"reactor upgrades" 6
+	linked "Reactor Overclocker"
+	linked "Reactor Limiter"
+	description "邦罗迪亚反应堆似乎以奇特恒星类型命名，这些恒星过去或现在仍被人类视为理论天体。28世纪，人类在勾陈一星系附近首次发现夸克星，其核心温度与压力极高，以至于产生了夸克物质。"
+	description "	邦罗迪亚反应堆可通过安装反应堆超频器或限制器进行升级，以改变反应堆的性能。不过，每个反应堆用于安装这些升级组件的槽位数量有限。"
+
+outfit "Electroweak Reactor"
+	"display name" "电弱反应堆"
+	category "Power"
+	series "Generators"
+	index 10020
+	cost 8393000
+	thumbnail "outfit/electroweak reactor"
+	"mass" 106
+	"outfit space" -106
+	"energy generation" 17.25
+	"heat generation" 20.5
+	"reactor upgrades" 18
+	linked "Reactor Overclocker"
+	linked "Reactor Limiter"
+	description "这款邦罗迪亚反应堆所冠名的奇异星，其存在对人类而言仍是未知。电弱星是一种奇异星，当恒星核心中的夸克转化为轻子时，电弱力会阻止其坍缩。"
+	description "	邦罗迪亚反应堆可通过安装反应堆超频器或限制器进行升级，以改变反应堆的性能。不过，每个反应堆用于安装这些升级组件的槽位数量有限。"
+
+outfit "Dark Reactor"
+	"display name" "黑暗反应堆"
+	category "Power"
+	series "Generators"
+	index 10030
+	cost 15022000
+	thumbnail "outfit/dark reactor"
+	"mass" 142
+	"outfit space" -142
+	"energy generation" 24.7
+	"heat generation" 28.6
+	"reactor upgrades" 30
+	linked "Reactor Overclocker"
+	linked "Reactor Limiter"
+	description `“暗星”一词可能有不同含义，但其中一种定义是：其核心由大量暗物质形成的恒星。人类理论认为，这种奇异星可能存在于宇宙最早的一批恒星中，那时暗物质的聚集充当了成核位点。`
+	description "	邦罗迪亚反应堆可通过安装反应堆超频器或限制器进行升级，以改变反应堆的性能。不过，每个反应堆用于安装这些升级组件的槽位数量有限。"
+
+
+
+outfit "Lasher Pistol"
+	"display name" "鞭笞手枪"
+	category "Hand to Hand"
+	series "H2H"
+	index 10010
+	cost 47000
+	thumbnail "outfit/lasher pistol"
+	"capture attack" 1.1
+	"capture defense" 2.8
+	"unplunderable" 1
+	description "在与科拉斯人的战争中，邦罗迪亚船只被寻找技术和物资的科拉斯劫掠者登船的情况并不少见。因此，有效的单兵武器成为了每一支可能需要击退登船部队的邦罗迪亚船员的必备装备。"
+
+
+
+outfit "Chiisana Rift Thruster"
+	"display name" "奇伊萨纳裂隙推进器"
+	category "Engines"
+	series "Engines"
+	index 10011
+	cost 130000
+	thumbnail "outfit/chiisana rift thruster"
+	"mass" 11
+	"outfit space" -11
+	"engine capacity" -11
+	"thrust" 11.6625
+	"thrusting energy" 1.15
+	"thrusting heat" 0.65
+	"flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.3
+	"flare sound" "ion tiny"
+	description "尽管科拉斯人偏好引擎的纯粹功率，邦罗迪亚人则追求效率，他们选择使用推力较小但产生热量显著降低的引擎。"
+
+outfit "Nami Rift Thruster"
+	"display name" "纳米裂隙推进器"
+	category "Engines"
+	series "Engines"
+	index 10021
+	cost 262000
+	thumbnail "outfit/nami rift thruster"
+	"mass" 19
+	"outfit space" -19
+	"engine capacity" -19
+	"thrust" 21.135
+	"thrusting energy" 2.3
+	"thrusting heat" 1.3
+	"flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.6
+	"flare sound" "ion small"
+	description "尽管裂隙引擎的热效率极高，但相对于其产生的推力，其能量需求仍然相当高，即便与效率极其低下的科拉斯引擎相比也是如此。"
+
+outfit "Ookii Rift Thruster"
+	"display name" "奥基裂隙推进器"
+	category "Engines"
+	series "Engines"
+	index 10031
+	cost 512000
+	thumbnail "outfit/ookii rift thruster"
+	"mass" 32
+	"outfit space" -32
+	"engine capacity" -32
+	"thrust" 37.455
+	"thrusting energy" 4.4
+	"thrusting heat" 2.5
+	"flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.8
+	"flare sound" "ion medium"
+	description "虽然裂隙引擎的单位推力能量消耗不如科拉斯引擎，但其总体能量需求仍然远小于后者。"
+
+outfit "Subarashii Rift Thruster"
+	"display name" "素晴裂隙推进器"
+	category "Engines"
+	series "Engines"
+	index 10041
+	cost 1004000
+	thumbnail "outfit/subarashii rift thruster"
+	"mass" 55
+	"outfit space" -55
+	"engine capacity" -55
+	"thrust" 69.75
+	"thrusting energy" 8.6
+	"thrusting heat" 4.9
+	"flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+	"flare sound" "ion large"
+	description "由于裂隙引擎的尺寸和推力较小，邦罗迪亚飞船在追击能力方面并不出名。但在部分邦罗迪亚人中流传着一种传闻：存在一批古老的引擎，其威力甚至超越科拉斯所拥有的，足以让任何飞船如彗星般划过星海并追上任何潜在目标。"
+
+outfit "Chiisana Rift Steering"
+	"display name" "奇伊萨纳裂隙转向器"
+	category "Engines"
+	series "Engines"
+	index 10010
+	cost 201000
+	thumbnail "outfit/chiisana rift steering"
+	"mass" 17
+	"outfit space" -17
+	"engine capacity" -17
+	"turn" 808.5
+	"turning energy" 2.6
+	"turning heat" 1
+	"steering flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.3
+	"steering flare sound" "ion tiny"
+	description "由于邦罗迪亚飞船通常侧重于大量使用前向火炮，邦罗迪亚人比起高航速更偏好高转向率。因此，裂隙转向系统比同尺寸级别的推进系统更大。"
+
+outfit "Nami Rift Steering"
+	"display name" "纳米裂隙转向器"
+	category "Engines"
+	series "Engines"
+	index 10020
+	cost 442000
+	thumbnail "outfit/nami rift steering"
+	"mass" 31
+	"outfit space" -31
+	"engine capacity" -31
+	"turn" 1705.5
+	"turning energy" 5.3
+	"turning heat" 2.1
+	"steering flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.6
+	"steering flare sound" "ion small"
+	description "与许多邦罗迪亚系统一样，裂隙引擎产生的热量极少。这使得他们的飞船可以省去大型冷却系统，从而为其他系统（无论是防御型还是攻击型）腾出更多空间。"
+
+outfit "Ookii Rift Steering"
+	"display name" "奥基裂隙转向器"
+	category "Engines"
+	series "Engines"
+	index 10030
+	cost 940000
+	thumbnail "outfit/ookii rift steering"
+	"mass" 53
+	"outfit space" -53
+	"engine capacity" -53
+	"turn" 3148.5
+	"turning energy" 9.2
+	"turning heat" 3.65
+	"steering flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+		"scale" 0.8
+	"steering flare sound" "ion medium"
+	description "尽管侧重转向而非推进使得邦罗迪亚飞船容易成为被追踪的目标，但其武器系统的威力，足以让任何把它们当成待宰羔羊的蠢货付出代价。"
+
+outfit "Subarashii Rift Steering"
+	"display name" "素晴裂隙转向器"
+	category "Engines"
+	series "Engines"
+	index 10040
+	cost 1577000
+	thumbnail "outfit/subarashii rift steering"
+	"mass" 90
+	"outfit space" -90
+	"engine capacity" -90
+	"turn" 5850
+	"turning energy" 17.1
+	"turning heat" 6.5
+	"steering flare sprite" "effect/bunrodea flare/large"
+		"frame rate" 1
+		"rewind"
+	"steering flare sound" "ion large"
+	description "作为最大的裂隙转向系统，这些引擎能让邦罗迪亚的重型炮艇将其众多火炮对准不幸的目标。"

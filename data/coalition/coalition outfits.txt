@@ -1,0 +1,565 @@
+# Copyright (c) 2016 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+outfit "Small Collector Module"
+	"display name" "小型收集器模块"
+	category "Power"
+	series "Solar"
+	index 08010
+	licenses
+		Coalition
+	cost 60000
+	thumbnail "outfit/small collector module"
+	"mass" 8
+	"outfit space" -6
+	"solar collection" .8
+	"solar heat" .4
+	description "太阳能是联盟商船队的主力能源。数千年来，这些面板的设计不断优化，效率也日益提高。"
+
+outfit "Large Collector Module"
+	"display name" "大型收集器模块"
+	category "Power"
+	series "Solar"
+	index 08020
+	licenses
+		Coalition
+	cost 300000
+	thumbnail "outfit/large collector module"
+	"mass" 28
+	"outfit space" -21
+	"solar collection" 3.3
+	"solar heat" 1.5
+	description "一块这样的太阳能板足以满足一艘中型联盟民用飞船的能源需求，尤其是考虑到其引擎的能效，以及根据他们的法律，只有日政司的飞船才允许配备武器这一事实。"
+
+outfit "Small Reactor Module"
+	"display name" "小型反应堆模块"
+	category "Power"
+	series "Generators"
+	index 08030
+	licenses
+		Heliarch
+	cost 5497000
+	thumbnail "outfit/small reactor module"
+	"mass" 42
+	"outfit space" -42
+	"energy generation" 9.8
+	"heat generation" 19
+	description "太阳能足以应对商业需求，但在战争中过度节俭鲜少能成为制胜之策。对于必须拥有可靠能源来驱动武器的舰船，日政司采用了紧凑型核反应堆。"
+	description "	一束反质子触发了注入的微小燃料丸中的聚变，实现了完全燃耗，其效率远高于其他方式所能达到的水平。"
+
+outfit "Large Reactor Module"
+	"display name" "大型反应堆模块"
+	category "Power"
+	series "Generators"
+	index 08040
+	licenses
+		Heliarch
+	cost 17754000
+	thumbnail "outfit/large reactor module"
+	"mass" 98
+	"outfit space" -98
+	"energy generation" 24.2
+	"heat generation" 45
+	description "尽管仍无法复制夸格的发电技术，日政司的科学团队始终致力于验证他们对其工作原理的最新猜想。在这款更大的模块中，稳定注入的反质子流催化着精心约束的聚变等离子体中的反应，从中提取出物理上尽可能多的能量。"
+	description "	这款先进的聚变反应堆专为日政司最强大的战舰设计。自与夸格的首次战役以来的数千年里，其结构并未发生显著变化，但每一代反应堆的效率都比前一代略有提升。"
+
+outfit "Small Cogeneration Module"
+	"display name" "小型联合发电模块"
+	category "Power"
+	series "Generators"
+	index 08010
+	licenses
+		Coalition
+	cost 176000
+	thumbnail "outfit/small cogeneration module"
+	"mass" 11
+	"outfit space" -11
+	"energy generation" 1.15
+	"heat generation" .85
+	description "基梅克人最初制造了这种模块的更大版本，旨在为他们的饥饿塔提供能量。"
+	description "	这种紧凑设计能回收大部分原本会被浪费的热量，使其成为一种非常高效的燃料电池。"
+
+outfit "Large Cogeneration Module"
+	"display name" "大型热电联产模块"
+	category "Power"
+	series "Generators"
+	index 08020
+	licenses
+		Coalition
+	cost 799000
+	thumbnail "outfit/large cogeneration module"
+	"mass" 46
+	"outfit space" -46
+	"energy generation" 5.3
+	"heat generation" 3.45
+	description "和平时期缺乏激动人心的工作，许多联盟工程师开始摆弄现有设备以提高其效率。"
+
+outfit "Small Battery Module"
+	"display name" "小型电池模块"
+	category "Power"
+	series "Batteries"
+	index 08010
+	licenses
+		Coalition
+	cost 22000
+	thumbnail "outfit/small battery module"
+	"mass" 4
+	"outfit space" -4
+	"energy capacity" 3600
+	description "因为联盟飞船依赖太阳能，所以它们也必须能够储存大量能量。这个小电池组比同类人类技术高效得多。"
+
+outfit "Large Battery Module"
+	"display name" "大型电池模块"
+	category "Power"
+	series "Batteries"
+	index 08020
+	licenses
+		Coalition
+	cost 170000
+	thumbnail "outfit/large battery module"
+	"mass" 18
+	"outfit space" -18
+	"energy capacity" 18000
+	description "这个电池组储存了足够的能量，使得联盟飞船即使在其太阳能板仅产生峰值输出的一小部分时，也能继续机动。"
+
+
+outfit "Small Shield Module"
+	"display name" "小型护盾模块"
+	category "Systems"
+	series "Shields"
+	index 08010
+	licenses
+		Coalition
+	cost 84000
+	thumbnail "outfit/small shield module"
+	"mass" 11
+	"outfit space" -11
+	"shield generation" .28
+	"shield energy" .28
+	"shield heat" .1
+	description "尽管在联盟空间中几乎从未听闻战斗，但他们几乎所有飞船都能在必要时为护盾重新充能。"
+
+outfit "Large Shield Module"
+	"display name" "大型护盾模块"
+	category "Systems"
+	series "Shields"
+	index 08020
+	licenses
+		Coalition
+	cost 553000
+	thumbnail "outfit/large shield module"
+	"mass" 39
+	"outfit space" -39
+	"shield generation" 1.3
+	"shield energy" 1.3
+	"shield heat" .5
+	description "联盟为其舰船制造重型护盾发生器，以应对可能来自夸格或其他物种的侵略。"
+
+outfit "Overcharged Shield Module"
+	"display name" "超载护盾模块"
+	category "Systems"
+	series "Shields"
+	index 08030
+	licenses
+		Heliarch
+	cost 1216000
+	thumbnail "outfit/overcharged shield module"
+	"mass" 44
+	"outfit space" -44
+	"shield generation" 4.6
+	"shield energy" 4.6
+	"shield heat" 1.4
+	"energy consumption" .5
+	description "这些模块化护盾发生器是联盟空间中生产的最强效发射器，因此受到严格管控，且仅供日政司使用。对大型护盾模块的改进使其护盾生成量达到原来的三倍以上，但代价是需要持续的能量供应来使其稳定。"
+
+outfit "Small Repair Module"
+	"display name" "小型维修模块"
+	category "Systems"
+	series "Repair"
+	index 08010
+	licenses
+		Coalition
+	cost 64000
+	thumbnail "outfit/small repair module"
+	"mass" 6
+	"outfit space" -6
+	"hull repair rate" .12
+	"hull energy" .12
+	"hull heat" .1
+	description "阿拉克舰船更依赖坚固的船体而非能量护盾，通常会携带这种修复模块，以便在航行中即时修补受损的船体外板。"
+
+outfit "Large Repair Module"
+	"display name" "大型维修模块"
+	category "Systems"
+	series "Repair"
+	index 08020
+	licenses
+		Coalition
+	cost 553000
+	thumbnail "outfit/large repair module"
+	"mass" 21
+	"outfit space" -21
+	"hull repair rate" .57
+	"hull energy" .57
+	"hull heat" .5
+	description "这个基站容纳了一小队维修机器人，它们能在飞船船体上爬行并修复损伤，即使在战斗中也不例外。"
+
+outfit "Overclocked Repair Module"
+	"display name" "超频维修模块"
+	category "Systems"
+	series "Repair"
+	index 08030
+	licenses
+		Heliarch
+	cost 1126000
+	thumbnail "outfit/overclocked repair module"
+	"mass" 32
+	"outfit space" -32
+	"hull repair rate" 1.4
+	"hull energy" 1.4
+	"hull heat" 1.2
+	"heat generation" .6
+	description "这些高级维修模块配发给日政司飞船，提供整个联盟空间中无与伦比的船体修复能力。大量小型维修无人机随附遍布船内的专用通道，以便快速穿梭于飞船各处，但因此该装备可能会干扰飞船的冷却与散热系统。"
+
+outfit "Cooling Module"
+	"display name" "冷却模块"
+	category "Systems"
+	series "Cooling"
+	index 08010
+	licenses
+		Coalition
+	cost 160000
+	thumbnail "outfit/cooling module"
+	"mass" 5
+	"outfit space" -5
+	"active cooling" 21
+	"cooling energy" 1.4
+	description "此冷却模块消耗能量。为了节省电能，除非飞船非常接近过热状态，否则它不会全负荷运转。"
+
+outfit "Fuel Module"
+	"display name" "燃料模块"
+	category "Systems"
+	series "Fuel"
+	index 08020
+	licenses
+		Coalition
+	cost 270000
+	thumbnail "outfit/fuel module"
+	"mass" 19
+	"outfit space" -19
+	"fuel capacity" 400
+	"fuel protection" .25
+	description "在太空探索的早期，萨里德人开发了燃料模块，以便能够前往远离萨罗斯的地方旅行，无需担心燃料耗尽或突然发生燃料泄漏。"
+	description "	如今，联盟中的几乎每个星系都设有燃料补给设施，但一些船长仍然觉得这些模块提供的额外跃迁次数非常实用。"
+
+outfit "Decoy Plating"
+	"display name" "诱饵装甲"
+	category "Systems"
+	series "Jammers"
+	index 08010
+	cost 93000
+	thumbnail "outfit/decoy plating"
+	"mass" 7
+	"outfit space" -7
+	"scan interference" 2
+	"radar jamming" 5
+	description "这种装甲利用飞船的扫描日志，模拟附近其他飞船的数据，能有效规避对其真实货物与装备的扫描。"
+	description "	出于保护自身免受毁灭性日政司鱼雷攻击的需要，月影社在每块装甲板中都集成了小型的独立雷达干扰系统，哪怕仅仅是作为最后一道防线。"
+
+outfit "Refueling Module"
+	"display name" "加油模块"
+	category "Systems"
+	series "Fuel"
+	index 08030
+	cost 822000
+	thumbnail "outfit/refueling module"
+	"mass" 10
+	"outfit space" -10
+	"fuel capacity" -100
+	"fuel generation" .05
+	"energy consumption" .11
+	description "为了规避在行星上补给燃料时被日政司检查的风险，月影社船长们在携带物资或偷来的装备时会使用这种装备。"
+	description "	该装备的运作机制需要预留特定份额的燃料才能正常工作，因此一艘飞船所能安装的此类模块数量有限，否则将无法跳跃到其他星系。"
+
+outfit "Shield Refactor Module"
+	"display name" "护盾重构模块"
+	category "Systems"
+	series "Shields"
+	index 08040
+	cost 3248000
+	thumbnail "outfit/shield refactor module"
+	"mass" 7
+	"outfit space" -7
+	"hull repair rate" -.25
+	"shield energy multiplier" .2
+	"shield heat" .32
+	"shield generation multiplier" .2
+	"hull repair multiplier" -.2
+	description "理论上，所有护盾发生器在被推向极限时，都能以远高于常规的速率运行。然而，在激烈战斗中持续重构护盾的需求会迅速使发生器过载并损坏。通过重新配置专用的船体修复系统以专注于修复此类损伤，这个紧凑型装置能让护盾发生器发挥其真正潜力。"
+	description "	面对日政司鱼雷对船体外板造成的毁灭性打击，这无疑是一项急需的福音。月影社非常青睐生产这种昂贵的部件，因为它相比其他护盾发生器具有独特的优势。"
+
+outfit "Small Recovery Module"
+	"display name" "小型回收模块"
+	category "Systems"
+	series "Shields"
+	index 08050
+	cost 625000
+	thumbnail "outfit/small recovery module"
+	"mass" 25
+	"outfit space" -25
+	"shield generation" .97
+	"shield energy" .43
+	"shield heat" .7
+	"hull repair rate" .43
+	"hull energy" .97
+	"hull heat" .07
+	description "通过将联盟的护盾生成和船体修复技术整合进同一件设备，月影社同时提升了两者的效能，从而能更好地抵御日政司的武器。"
+
+outfit "Scanning Module"
+	"display name" "扫描模块"
+	category "Systems"
+	series "Scanners"
+	index 08010
+	licenses
+		Heliarch
+	cost 453600
+	thumbnail "outfit/scan module"
+	"mass" 3
+	"outfit space" -3
+	"outfit scan power" 25
+	"outfit scan efficiency" 18
+	"cargo scan power" 25
+	"cargo scan efficiency" 18
+	"tactical scan power" 25
+	description "该系统使日政司能够扫描附近的船只，从而检测武器或非法货物。"
+
+outfit "Outskirts Gauger"
+	"display name" "边陲量测者"
+	category "Systems"
+	series "Scanners"
+	index 08020
+	cost 1406000
+	thumbnail "outfit/outskirts gauger"
+	"mass" 8
+	"outfit space" -8
+	"unique" 1
+	"tactical scan power" 169
+	"energy consumption" .2
+	description "利用其一颗失落已久的卫星提供的数据研制而成，伊德里斯家族的最新扫描仪擅长在极远距离下读取各种能量特征。"
+	description "	该测量仪持续对其惊人探测范围内发现的每一件细微事物进行计算，因此需要稳定的电能供应才能正常运转。"
+
+outfit "Small Thrust Module"
+	"display name" "小型推力模块"
+	category "Engines"
+	series "Engines"
+	index 08011
+	licenses
+		Coalition
+	"cost" 66000
+	thumbnail "outfit/small thrust module"
+	"mass" 9
+	"outfit space" -9
+	"engine capacity" -9
+	"thrust" 12.45
+	"thrusting energy" 0.46
+	"thrusting heat" 3
+	"flare sprite" "effect/coalition flare/small"
+		"frame rate" 10
+	"flare sound" "atomic tiny"
+	description "这个微型推进器能产生相当大的推力……但同时也会产生相当多的热量。"
+
+outfit "Large Thrust Module"
+	"display name" "大型推进模块"
+	category "Engines"
+	series "Engines"
+	index 08021
+	licenses
+		Coalition
+	"cost" 292000
+	thumbnail "outfit/large thrust module"
+	"mass" 32
+	"outfit space" -32
+	"engine capacity" -32
+	"thrust" 45.9
+	"thrusting energy" 1.7
+	"thrusting heat" 11
+	"flare sprite" "effect/coalition flare/large"
+		"frame rate" 7
+	"flare sound" "atomic small"
+	description "联盟工程师更倾向于专注于完善少数几种多功能设计，而非设计生产多种多样的型号。这种推进器效率很高，但大型舰船需要将多个推进器堆叠在一起使用，才能产生足够的推力。"
+
+outfit "Small Reverse Module"
+	"display name" "小型反推模块"
+	category "Engines"
+	series "Engines"
+	index 08012
+	licenses
+		Coalition
+	"cost" 66000
+	thumbnail "outfit/small reverse module"
+	"mass" 9
+	"outfit space" -9
+	"weapon capacity" -9
+	"reverse thrust" 12.45
+	"reverse thrusting energy" 0.46
+	"reverse thrusting heat" 3
+	"reverse flare sprite" "effect/coalition flare/small"
+		"frame rate" 10
+	"reverse flare sound" "atomic tiny"
+	description "将这个微型推进器安装在货船或运输舰的前部，能让联盟商人显著提高其能源能效，这在依赖太阳能时大有裨益。"
+	description "	由于反向推进器必须朝前安装，因此它需安装在飞船的武器槽位中，而非引擎槽位。"
+
+outfit "Large Reverse Module"
+	"display name" "大型反推模块"
+	category "Engines"
+	series "Engines"
+	index 08022
+	licenses
+		Coalition
+	"cost" 292000
+	thumbnail "outfit/large reverse module"
+	"mass" 32
+	"outfit space" -32
+	"weapon capacity" -32
+	"reverse thrust" 45.9
+	"reverse thrusting energy" 1.7
+	"reverse thrusting heat" 11
+	"reverse flare sprite" "effect/coalition flare/large"
+		"frame rate" 7
+	"reverse flare sound" "atomic small"
+	description "在和平时期，由于有大量的武器槽位处于闲置状态，大型联盟货船与运输舰的船长们可以利用大型反向模块来使飞船迅速减速，从而节省时间和能量。"
+	description "	由于反向推进器必须朝前安装，因此它需安装在飞船的武器槽位中，而非引擎槽位。"
+
+outfit "Small Steering Module"
+	"display name" "小型转向模块"
+	category "Engines"
+	series "Engines"
+	index 08010
+	licenses
+		Coalition
+	"cost" 60000
+	thumbnail "outfit/small steering module"
+	"mass" 7
+	"outfit space" -7
+	"engine capacity" -7
+	"turn" 268.2
+	"turning energy" 0.26
+	"turning heat" 1.8
+	"steering flare sprite" "effect/coalition flare/small"
+		"frame rate" 10
+	"steering flare sound" "atomic tiny"
+	description "尽管其效率很高，但除了最小的飞船外，该模块并不够用。相反，这些模块在设计之初就考虑到了飞船可能会协同使用两到三个。"
+
+outfit "Large Steering Module"
+	"display name" "大型转向模块"
+	category "Engines"
+	series "Engines"
+	index 08020
+	licenses
+		Coalition
+	"cost" 269000
+	thumbnail "outfit/large steering module"
+	"mass" 25
+	"outfit space" -25
+	"engine capacity" -25
+	"turn" 1120.5
+	"turning energy" 1.0
+	"turning heat" 6.5
+	"steering flare sprite" "effect/coalition flare/large"
+		"frame rate" 7
+	"steering flare sound" "atomic small"
+	description "通过专注于小型模块化引擎，而非像大多数其他种族那样开发巨型主力舰引擎，联盟虽然在超大型舰船上损失了一些潜在效率，但也因此获得了极大的灵活性。"
+
+outfit "Enforcer Confrontation Gear"
+	"display name" "执法者对抗装备"
+	category "Hand to Hand"
+	series "H2H"
+	index 08020
+	licenses
+		Heliarch
+	cost 369000
+	thumbnail "outfit/enforcer confrontation gear"
+	"capture attack" 3.1
+	"capture defense" 4.9
+	"unplunderable" 1
+	description "作为日政司战斗工程的巅峰之作，这款武器利用凝聚的能量爆射来消灭任何胆敢威胁联盟安全的人。"
+
+outfit "Enforcer Riot Staff"
+	"display name" "执法者镇暴棍"
+	category "Hand to Hand"
+	series "H2H"
+	index 08010
+	licenses
+		Heliarch
+	cost 97000
+	thumbnail "outfit/enforcer riot staff"
+	"capture attack" 2.0
+	"capture defense" 3.5
+	"unplunderable" 1
+	description "这种武器旨在以非致命方式处理联盟空间中偶尔出现的异议分子，在舰船战斗中极少使用，但为了防范异议分子登船，飞船上依然会携带它们。"
+
+outfit "Guardian Turret"
+	"display name" "守护者碉塔"
+	category "Hand to Hand"
+	series "Fortifications"
+	index 08025
+	licenses
+		Heliarch
+	cost 876000
+	thumbnail "outfit/guardian turret"
+	"mass" 1
+	"outfit space" -1
+	"capture defense" 19
+	"unplunderable" 1
+	description "这些紧凑的自动炮塔由日政司根据夸格本族的防登船装备设计建造，可用于保护建筑与舰船。如剃刀般纤细的活跃光束连接着炮塔与目标，无论需要射击多少次，直至确认目标已被消灭。"
+	description "	每座炮塔还配备了一个紧凑型发射器，旨在炮塔基座周围的小区域内提供护盾。尽管最初开发时颇具挑战，但这项技术不仅使大多数炮塔免遭狙击，还确保了许多日政司成员的幸存——否则他们本会遭遇极为痛苦的死劫。"
+	description "	唯一的缺点是，需要将每名船员逐一注册到炮塔系统中，这样在登船遭遇时它才能识别并避免向友方开火。"
+
+outfit "Anti-Materiel Gun"
+	"display name" "反器材炮"
+	category "Hand to Hand"
+	series "H2H"
+	index 08030
+	cost 257200
+	thumbnail "outfit/anti-materiel gun"
+	"capture attack" 3.4
+	"capture defense" 1.9
+	"unplunderable" 1
+	description "这些武器易于使用且制造成本相对低廉，它们源自对日政司常用武器的改装——新的枪管将能量塑造成致命的爆发式射击，即便是最坚硬的护甲也能被轻易撕碎。"
+
+outfit "Coalition License"
+	"display name" "联盟许可"
+	category "Licenses"
+	series "Licenses"
+	index 08010
+	thumbnail "outfit/coalition license"
+	description "一块呈风格化徽章形状的数字芯片，该凭证代表所有者拥有浏览、使用及交易联盟民用技术的许可。"
+	description "	这份执照的历史充满争议，数千年来，日政司的多部法律在获取执照所需满足的条件上反复摇摆。这场争论始于独立战争后仅几十年颁布的第三部《民用商品与票价法案》，一直延续到相对近期的——两百年前通过的《第九次商业与交通修正案》第二条第二十六号增补，该增补大幅放宽了获取执照的要求。"
+
+outfit "Heliarch License"
+	"display name" "赫利阿克执照"
+	category "Licenses"
+	series "Licenses"
+	index 08020
+	thumbnail "outfit/heliarch license"
+	description "一个由黄金和白金制成的华丽环冠，既是军阶的象征，也是进入日政司专属设施的许可证。它专为人类头部定制，出奇地轻便舒适。"
+
+outfit "Beyond the Hyperdrive"
+	"display name" "超越超空间引擎"
+	category "Unique"
+	series "Non-Functional Unique"
+	index 11
+	thumbnail "outfit/beyond the hyperdrive"
+	"unique" 1
+	description "一本由安娜·方文赠予你的书，她是一位在联盟空间中取得成功的坎坷作家。这是一本亲笔签名本。"
+	description "	故事讲述了一位人类船长从夸格那里偷取了跳跃驱动器，并航行至超空间航道之外，探索并了解银河系中外星种族的新奇事物。"

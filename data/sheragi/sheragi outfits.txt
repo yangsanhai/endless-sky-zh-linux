@@ -1,0 +1,434 @@
+# Copyright (c) 2020 by @Karirawri
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Outfits
+
+outfit "Small EM Battery"
+	"display name" "小型电磁电池"
+	plural "小型电磁电池"
+	category "Power"
+	series "Batteries"
+	index 13010
+	cost 200000
+	thumbnail "outfit/small embattery"
+	"mass" 14
+	"outfit space" -14
+	"unique" 1
+	"shield generation" 0.14
+	"shield energy" 0.14
+	"shield heat" 0.14
+	"heat generation" 0.8
+	"energy capacity" 8300
+	description "这种小型超导电感器存储的电力刚好足以维持一架战斗机的运转，其产生的电磁场有助于维持护盾矩阵。"
+
+outfit "Large EM Battery"
+	"display name" "大型电磁电池"
+	plural "大型电磁电池组"
+	category "Power"
+	series "Batteries"
+	index 13020
+	cost 1000000
+	thumbnail "outfit/embattery"
+	"mass" 150
+	"outfit space" -150
+	"unique" 1
+	"shield generation" 0.8
+	"shield energy" 0.8
+	"shield heat" 0.8
+	"heat generation" 6.5
+	"energy capacity" 100000
+	description "这是一个巨大的超导线圈，能够在电磁场中储存大量能量，并在不到一秒的时间内全部释放。其磁场还能为飞船的护盾恢复提供少量增强，否则护盾恢复会非常缓慢。"
+
+outfit "Small Hybrid Cooling"
+	"display name" "小型混合冷却"
+	category "Systems"
+	series "Cooling"
+	index 13010
+	cost 200000
+	thumbnail "outfit/small sheragi cooling"
+	"mass" 8
+	"outfit space" -8
+	"unique" 1
+	"cooling" 9
+	"active cooling" 17
+	"cooling energy" 3.1
+	description "这款小型冷却方案专为战斗机设计，因此不储存燃料。然而，它提供的被动冷却能力却胜过其兄长型号。"
+
+outfit "Large Hybrid Cooling"
+	"display name" "大型混合冷却"
+	category "Systems"
+	series "Cooling"
+	index 13020
+	cost 1000000
+	thumbnail "outfit/sheragicooling"
+	"mass" 40
+	"outfit space" -40
+	"unique" 1
+	"cooling" 24
+	"active cooling" 128
+	"cooling energy" 16.2
+	"fuel capacity" 200
+	description "这套谢拉吉冷却系统虽然技术相当原始，但兼具主动与被动散热能力，因此能比简单的散热器散发更多热量。不过，在承受战斗高温时会消耗大量电力。它还内置了低温燃料箱，可储存额外燃料用作临时热库。"
+
+outfit "Fission Drive"
+	"display name" "裂变引擎"
+	category "Engines"
+	series "Engines"
+	index 13010
+	cost 2650000
+	thumbnail "outfit/fissiondrive"
+	"mass" 71
+	"outfit space" -71
+	"engine capacity" -38
+	"unique" 1
+	"energy generation" 5.2
+	"heat generation" 19.4
+	"thrust" 26.7
+	"thrusting energy" 1.508
+	"thrusting heat" 2.86
+	"turn" 479.7
+	"turning energy" 0.585
+	"turning heat" 1.365
+	"flare sprite" "effect/fissionflare"
+		"frame rate" 30
+		"rewind"
+	"flare sound" "atomic small"
+	"steering flare sprite" "effect/fissionflare"
+		"frame rate" 30
+		"rewind"
+	"steering flare sound" "atomic tiny"
+	description "聚变引擎的小型表亲，依靠裂变而非聚变运作，提供驱动重离子回旋加速器所需的发电能力和推力。"
+
+outfit "Fusion Drive"
+	"display name" "聚变引擎"
+	category "Engines"
+	series "Engines"
+	index 13020
+	cost 80000000
+	thumbnail "outfit/fusiondrive"
+	"mass" 480
+	"outfit space" -480
+	"engine capacity" -230
+	"unique" 1
+	"jump fuel" 100
+	"jump speed" 0.2
+	"hyperdrive" 1
+	"energy generation" 54
+	"heat generation" 156
+	"turn" 3744.0
+	"turning energy" 4.55
+	"turning heat" 12.35
+	"thrust" 270.75
+	"thrusting energy" 11
+	"thrusting heat" 33
+	"reverse thrust" 63.9
+	"reverse thrusting energy" 4.9
+	"reverse thrusting heat" 13.3
+	"flare sprite" "effect/fusionflare"
+		"frame rate" 30
+		"rewind"
+	"flare sound" "atomic huge"
+	"steering flare sprite" "effect/fusionflare"
+		"frame rate" 30
+		"rewind"
+	"steering flare sound" "atomic medium"
+	"reverse flare sprite" "effect/fusionflare"
+		"frame rate" 30
+		"rewind"
+	"reverse flare sound" "atomic large"
+	"unplunderable" 1
+	description "谢拉吉引擎远非简单的喷火管；它们是一组相互依存的设备，以牺牲模块化为代价换取更高的效率。这包括一台超光速引擎、一座巨大的聚变反应堆，以及你见过的最强大的等离子引擎。所有这些都算是相对简单的技术，但它们被精炼并发挥到了极致。引擎与聚变反应堆从根本上连接在一起，进一步提升了推力，从而让翡翠之剑能以惊人的速度飞行，相对轻松地穿越星际空间。"
+
+outfit "Electronic Warfare System"
+	"display name" "电子战系统"
+	category "Systems"
+	series "Scanners"
+	index 13010
+	cost 3400000
+	thumbnail "outfit/sheragi ews"
+	"mass" 6
+	"outfit space" -6
+	"unique" 1
+	"radar jamming" 10
+	"tactical scan power" 25
+	"scan interference" 2
+	"energy consumption" .2
+	description "该设备提供雷达干扰和全套电子战能力，能够实时收集战场数据并增强舰船的战斗性能。它是每艘谢拉吉战舰的必备装备，其所使用的技术至今仍难以对抗。"
+
+# Weapons
+
+outfit "Dragonflame Cannon"
+	"display name" "龙焰炮"
+	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 13020
+	cost 150000000
+	thumbnail "outfit/dragonflame"
+	"mass" 156
+	"outfit space" -156
+	"weapon capacity" -156
+	"required crew" 10
+	"gun ports" -1
+	"spinal mount" -1
+	"unique" 1
+	weapon
+		sound "dragonflame"
+		icon "icon/dragonflame"
+		"fire effect" "dragonflame"
+		"hit effect" "bright hit"
+		"hit effect" "dragonflame plasma" 30
+		"hit effect" "dragonflame debris" 50
+		"velocity" 2000
+		"lifetime" 1
+		"reload" 180
+		"firing energy" 16000
+		"firing fuel" 200
+		"firing heat" 40000
+		"firing force" 1500
+		"hit force" 3000
+		"shield damage" 25000
+		"hull damage" 15000
+		"heat damage" 50000
+		"piercing" 0.4
+		"penetration count" 20
+	description "古老的谢拉吉超级武器概念简单，但开发此类武器所需的成本极其高昂。很难想象究竟是什么动机催生了这样的造物。它消耗骇人的能量来触发极其强大的热核反应，并将爆炸产生的大部分能量向前引导，形成一道毁灭性的伽马射线束。"
+
+effect "dragonflame"
+	sprite "effect/dragonflame"
+		"no repeat"
+		"frame rate" 12
+	"lifetime" 21
+	"velocity scale" 1
+
+effect "bright hit"
+	sprite "effect/explosion/nuke"
+		"no repeat"
+		"frame rate" 60
+	sound "explosion nuke"
+	"lifetime" 7
+	"random angle" 360
+	"random spin" 30
+	"velocity scale" 0.005
+
+effect "dragonflame plasma"
+	sprite "effect/explosion/large"
+		"no repeat"
+		"frame rate" 20
+	"lifetime" 25
+	"random frame rate" 20
+	"random spin" 5
+	"random angle" 15
+	"random velocity" 40
+	"velocity scale" 0.002
+
+effect "dragonflame debris"
+	sprite "effect/bolide"
+		"no repeat"
+		"frame rate" 6
+	"lifetime" 60
+	"random frame rate" 6
+	"random angle" 25
+	"random spin" 60
+	"random velocity" 30
+	"velocity scale" 0.001
+
+outfit "Sheragi Anti-Missile"
+	"display name" "谢拉吉反导"
+	category "Turrets"
+	series "Anti-Missile"
+	index 13010
+	cost 845000
+	thumbnail "outfit/sheragiam"
+	"mass" 35
+	"outfit space" -35
+	"weapon capacity" -35
+	"turret mounts" -1
+	"unique" 1
+	weapon
+		"hardpoint sprite" "hardpoint/sheragiam"
+		"hardpoint offset" 1.5
+		"hit effect" "sheragiam"
+		"anti-missile" 200
+		"velocity" 450
+		"lifetime" 1
+		"reload" 60
+		"firing energy" 220
+		"firing heat" 440
+	description "谢拉吉反导系统发射极为强大的激光脉冲，能够一击摧毁任何导弹，但代价是充能时间较长。"
+
+effect "sheragiam"
+	sprite "effect/sheragiam"
+		"no repeat"
+		"frame rate" 30
+	sound "proton"
+	"lifetime" 5
+	"velocity scale" 1
+
+outfit "Particle Waveform Turret"
+	"display name" "粒子波形碉塔"
+	category "Turrets"
+	series "Turrets"
+	index 13010
+	cost 1650000
+	thumbnail "outfit/pwave turret"
+	"mass" 47
+	"outfit space" -47
+	"weapon capacity" -47
+	"turret mounts" -1
+	"required crew" 1
+	"unique" 1
+	weapon
+		sprite "projectile/pwavecannon"
+			"frame rate" 20
+		sound "pwave"
+		"hardpoint sprite" "hardpoint/pwavehp"
+		"hardpoint offset" 11
+		"fire effect" "lightning flare"
+		"hit effect" "pwave impact"
+		"inaccuracy" 1.5
+		"turret turn" 1.2
+		"velocity" 50
+		"lifetime" 18
+		"reload" 60
+		"firing energy" 180
+		"firing heat" 651
+		"shield damage" 95
+		"hull damage" 270
+		"heat damage" 224
+		"ion damage" 4.2
+		"scrambling damage" 4.2
+	description "这种古老的谢拉吉炮塔加速密集的电子团，尽管对任何类型的护盾都效果极差，但射程极远并能干扰电子系统。从这类武器的特性可以推断，他们的战术可能包括使用龙焰炮远程摧毁敌舰护盾，然后以相对较近的距离用粒子波形炮塔完成击杀。"
+
+effect "lightning flare"
+	sprite "effect/pwaveflare"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 7
+	"velocity scale" 1
+
+effect "pwave impact"
+	sprite "effect/pwave impact"
+		"no repeat"
+		"frame rate" 10
+	"lifetime" 19
+	"random angle" 10
+	"random spin" 1
+	"velocity scale" -.001
+
+outfit "Shard Fabricator"
+	"display name" "碎片制造器"
+	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 13010
+	cost 330000
+	thumbnail "outfit/shard"
+	"mass" 10
+	"outfit space" -10
+	"weapon capacity" -7
+	"fuel capacity" 36
+	"gun ports" -1
+	"unique" 1
+	"operating costs" 150
+	weapon
+		sprite "projectile/shardactive"
+			"frame rate" 30
+			"random start frame"
+		sound "grab-strike"
+		icon "icon/shard"
+		"fire effect" "basic launch"
+		"hit effect" "shard impact"
+		"submunition" "Shard inactive"
+		"inaccuracy" 80
+		"velocity" 15
+		"lifetime" 40
+		"random lifetime" 20
+		"reload" 60
+		"burst reload" 2
+		"burst count" 6
+		"firing energy" 40
+		"firing fuel" 2
+		"firing heat" 60
+		"acceleration" 1.5
+		"drag" .1
+		"turn" 8
+		"homing"
+			"leading"
+			"throttle control"
+		"radar tracking" .8
+		"missile strength" 1
+	description "为了减少长期战时对供应链的依赖，该装备包含专用制造机，可利用库存材料和少量储存燃料生产简易动能导弹；其制导系统仅从舰载雷达接收数据。导弹从每个发射器以六发齐射方式发射，尽管结构脆弱，却能有效压制点防御系统。然而，其携带的燃料极少，意味着只能追踪目标约一秒，随后便转为无制导弹药。因系现场制造，重新装填耗时漫长。"
+
+outfit "Shard inactive"
+	"display name" "碎片（未激活）"
+	weapon
+		sprite "projectile/shardinactive"
+			"frame rate" 5
+			"random start frame"
+		"hit effect" "shard impact"
+		"die effect" "missile death"
+		"lifetime" 60
+		"random lifetime" 40
+		"hit force" 30
+		"shield damage" 110
+		"hull damage" 160
+
+effect "shard impact"
+	sprite "effect/particle impact"
+		"no repeat"
+		"frame rate" 30
+	sound "explosion tiny"
+	"lifetime" 30
+	"velocity scale" 0
+
+outfit "Heavy Ion Cyclotron"
+	"display name" "重型离子回旋加速器"
+	category "Guns"
+	series "Guns"
+	index 13010
+	cost 1650000
+	thumbnail "outfit/hion"
+	"mass" 33
+	"outfit space" -33
+	"weapon capacity" -21
+	"gun ports" -1
+	"unique" 1
+	weapon
+		sprite "projectile/hion"
+			"frame rate" 30
+		sound "hion"
+		"hit effect" "proton impact" 3
+		"submunition" "Heavy Ion Fragment" 3
+		"velocity" 28
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 2.9
+		"firing heat" 12.2
+		"firing force" 13.5
+	description "谢拉吉战斗机的主武器是一种粒子加速器，与共和国海军和辛迪加所使用的粒子加速器颇为相似。然而，这款加速器产生的是一股密集的重金属离子流，而非较轻粒子的爆发，从而造成高额伤害并伴随强烈后坐力。由于粒子加速器本身可以安装在其他位置，因此节省了武器空间。"
+
+outfit "Heavy Ion Fragment"
+	"display name" "重型离子碎片"
+	weapon
+		sprite "projectile/hionfrag"
+			"no repeat"
+			"frame time" 8
+		"hit effect" "proton impact"
+		"inaccuracy" 1
+		"random velocity" 8
+		"lifetime" 25
+		"random lifetime" 8
+		"acceleration" 0.001
+		"drag" .02
+		"hit force" 4.5
+		"shield damage" 1.79
+		"hull damage" 1.47

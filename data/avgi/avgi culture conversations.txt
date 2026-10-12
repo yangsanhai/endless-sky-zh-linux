@@ -1,0 +1,271 @@
+# Copyright (c) 2023 by Azure
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+mission "Avgi Culture: Verticality"
+	minor
+	invisible
+	source Peripheria
+	to offer
+		not "avgi: lost in twilight"
+		random < 15
+	on offer
+		conversation
+			`你在找地方吃点东西时，发现大多数餐厅都在你所在空间港层上方的高台环带上。四处打听后，你意识到阿夫吉的建筑根本没考虑到不会飞行的人类，最后只得找一位困惑的工人帮忙，用空间港的货运电梯升了一层。`
+				decline
+
+
+mission "Avgi Culture: Free Fuel"
+	minor
+	landing
+	invisible
+	source
+		government "Avgi (Consonance)"
+	to offer
+		not "avgi: lost in twilight"
+		random < 15
+	on offer
+		conversation
+			`当一名船坞工人帮你加满<ship>的燃料时，你听到她嘀咕道：“难以置信。上头命令我们给那个外星人免费提供燃料，而我们其他人为了每一滴燃料（dee）都在拼死拼活。”`
+				decline
+
+
+mission "Avgi Culture: Playfight"
+	minor
+	invisible
+	source "Peripheria"
+	to offer
+		not "avgi: lost in twilight"
+		random < 12
+	on offer
+		conversation
+			`当你漫步在空间港时，两只小阿夫吉——也许是幼崽——从你的头顶掠过，挥舞着木棍互相追打，似乎在玩某种游戏。其中一只成功将另一只手中的木棍击落，而后者随之做出了一个令人眼花缭乱的桶滚动作，然后两只阿夫吉一同飞出了视线。`
+				decline
+
+
+mission "Avgi Culture: Cocoon"
+	minor
+	invisible
+	source
+		government "Avgi (Consonance)"
+	to offer
+		not "avgi: lost in twilight"
+		random < 12
+	on offer
+		conversation
+			`一只阿夫吉飞过，背上坐着两个阿夫吉幼崽。它们之间夹着一个由丝线织成的茧，丝线蜿蜒盘绕成绳，小心翼翼地缠绕在母亲的身体上。`
+				decline
+
+
+mission "Avgi Culture: Zapchannel Ad"
+	minor
+	invisible
+	source
+		government "Avgi (Consonance)"
+	to offer
+		not "avgi: lost in twilight"
+		random < 3
+	on offer
+		conversation
+			branch language
+				has "language: Avgi (Written)"
+			`一块廉价的电子招牌随意地贴在墙上，闪烁着一连串色彩斑斓、尖锐棱角的符号。你看不懂，但猜测这大概是某种广告或通知。`
+				decline
+
+			label language
+			`一块廉价的电子招牌随意地贴在墙上，用阿夫吉人色彩缤纷的文字闪烁着一条信息。"捷道射线能量！每份能量超过三千万亿次伽马衰变，一剂即可提供生活所需能量！立即购买！"`
+				decline
+
+
+mission "Avgi Culture: Dissonance Protest 1"
+	minor
+	invisible
+	source
+		government "Avgi (Consonance)"
+	to offer
+		not "avgi: lost in twilight"
+		random < 3
+	on offer
+		conversation
+			branch language
+				has "language: Avgi (Written)"
+			`一队怒气冲冲的阿夫吉在太空港外绕着一个大圈行进，另一些则在头顶以相似的轨迹快速穿梭。大多数人挥舞着五彩旗帜，空中的几个阿夫吉拖着横幅，上面用鲜艳的大号棱角字母写着标语。所有参与抗议的阿夫吉手臂上都绑着亮洋红色缎带，这种颜色在他们的旗帜和横幅上同样醒目。`
+				decline
+
+			label language
+			`一队怒气冲冲的阿夫吉在太空港外绕着一个大圈行进，另一些则在头顶以相似的轨迹快速穿梭。大多数人挥舞着五彩旗帜，空中的几个阿夫吉拖着横幅，上面用鲜艳的棱角阿夫吉文字写着各种标语。"停止和谐税"、"废除矿物封建制"和"别送我们去死"只是你能辨认出的几条信息。所有的阿夫吉人手臂上都绑着亮洋红色的缎带，这种颜色在他们的旗帜和横幅上同样醒目。`
+				decline
+
+
+mission "Avgi Culture: Dissonance Graffiti 1"
+	minor
+	invisible
+	source
+		government "Avgi (Consonance)"
+	to offer
+		not "avgi: lost in twilight"
+		random < 3
+	on offer
+		conversation
+			branch language
+				has "language: Avgi (Written)"
+			`你在<planet>太空港航站楼的墙壁、地板和天花板上看到了涂满的五颜六色、弯弯曲曲的符号，还看到几个阿夫吉人拿着刷子和拖把试图清理它们。你不确定那些符号是什么意思，但其他路过的阿夫吉人似乎在大笑并指指点点。不过，那些正在擦洗涂鸦的工人看起来可没那么乐呵。`
+				decline
+
+			label language
+			`五颜六色、弯弯曲曲的符号涂满了<planet>太空港航站楼的墙壁、地板和天花板，你看到几个阿夫吉人拿着刷子和拖把试图清理它们。大部分颜料顺着墙壁流下，或者与其他符号重叠在一起，能看到的部分也很潦草，但你还是能辨认出像“税收”、“扔出窗外”这样的词，以及一句“暮光守卫？我看是暮光葫芦。”`
+				decline
+
+
+mission "Avgi Culture: We Live In A Society"
+	minor
+	invisible
+	source
+		government "Avgi (Consonance)"
+	to offer
+		not "avgi: lost in twilight"
+		random < 3
+	on offer
+		conversation
+			`一个阿夫吉人从你身边走过，脑袋埋在一份看起来很像报纸的东西里。他边走边嘀咕："难以置信。我们确实生活在一个社会里，思考。"`
+				decline
+
+
+mission "Avgi Culture: Realism"
+	minor
+	invisible
+	source
+		government "Avgi (Consonance)"
+	to offer
+		not "avgi: lost in twilight"
+		random < 3
+	on offer
+		conversation
+			`一对阿夫吉人从你身边走过，正低声交谈着。"感激。我只是很高兴我们在这儿能现实一点，"其中一个说道。另一个没有回应，但你感到一阵巨大的绝望。`
+				decline
+
+
+mission "Avgi Culture: Doomed Korath"
+	minor
+	invisible
+	source
+		attributes "aberrant siege"
+	to offer
+		not "avgi: lost in twilight"
+		random < 3
+	on offer
+		conversation
+			`一名阿夫吉人站在门口，对着扩音器喊道："宣告。各位居民，听好了！生活中没有适当的平衡，你们就完蛋了！我再说一遍，完蛋了！就像我听说过的那些科拉斯人一样。末日将至！"`
+				decline
+
+
+mission "Avgi Culture: General Ripper"
+	minor
+	invisible
+	source
+		attributes "aberrant siege"
+	to offer
+		not "avgi: lost in twilight"
+		random < 3
+	on offer
+		conversation
+			`一只阿夫吉站在十字路口，挥着标语牌和激光步枪。“声明。异变体正在污染我们宝贵的体液，公民们！立刻行动！我们决不能允许出现体液差距！”`
+			`	安保人员很快赶到，他们紧张地盯着那把激光步枪，开始试图劝说那只阿夫吉冷静下来。`
+				decline
+
+
+mission "Avgi Culture: Criminal Mischief"
+	minor
+	invisible
+	source
+		government "Avgi (Consonance)"
+	to offer
+		not "avgi: lost in twilight"
+		random < 3
+	on offer
+		conversation
+			`一个系着黑色围巾的亮绿色阿夫吉从你头顶掠过，冲向太空港终端大门，身后拖着一个大得像漫画道具的麻袋。三个穿着亮黄色制服的阿夫吉在半空中拨开困惑的人群，挥舞着警棍。"注意！抓贼！"`
+			`	"嘲讽！你们休想活捉我！"小偷喊道，随后猛地撞在了一堵墙上。看着她被铐着带走，你摇了摇头。`
+				decline
+
+
+mission "Avgi Culture: False Alarm"
+	minor
+	invisible
+	source
+		government "Avgi (Twilight Guard)"
+	to offer
+		not "avgi: lost in twilight"
+		random < 3
+	on offer
+		conversation
+			`闪烁的黄灯照亮了太空港，一个机械声音播报着消息：“命令。辐射危险，立即寻找掩体。命令。辐射危险，立即寻找掩体。”`
+			`	人群还没来得及陷入恐慌，声音就被一声刺耳的静电噪音打断。“羞愧。抱歉，这是误报。Mindaro 把饮料洒在控制台上了，没有辐射危险。”`
+				decline
+
+
+mission "Avgi Culture: Fencing"
+	minor
+	invisible
+	source
+		government "Avgi (Dissonance)"
+	to offer
+		not "avgi: lost in twilight"
+		random < 15
+	on offer
+		conversation
+			`当你穿过<planet>的太空港时，看到一对阿夫吉人朝一栋大楼走去。他们手里拿着细长的、类似花剑的武器。`
+			choice
+				`	（走上前去。）`
+				`	（无视他们。）`
+					goto ignore
+			`	你走近那两个色彩鲜艳的阿夫吉人，他们瞥了你一眼。其中一位——暗蓝绿色的阿夫吉人开口了：“邀请。人类，你是否对观看古老的阿夫吉击剑运动感兴趣，问？”`
+			choice
+				`	“击剑？像人类那种运动？”`
+				`	“好啊，我乐意看看。”`
+					goto accept
+				`	“不用了，谢谢。”`
+					goto ignore
+			`	另一位——亮蓝色与紫色相间的阿夫吉人插话：“保证。虽然我们种族不太可能比你们更早发明这项运动，但我仍恳请你去观看。”`
+			`	第一个阿夫吉人继续说道：“补充。考虑到我们在敏捷性上的……差异，这对你来说绝对会是一场奇观。我是说，跟人类的这项运动比起来。”`
+			choice
+				`	“好啊，听起来很有趣！”`
+				`	“我还是算了，谢谢。”`
+					goto ignore
+			label accept
+			branch language
+				has "language: Avgi (Written)"
+			`	走了一小段路后，你来到一个巨大的露天房间，类似体育馆但高得多。环绕圆柱形区域的看台上排满了滑板公园那种铁轨，栖息的阿夫吉人挤得满满当当。许多人举着写着彩色文字的牌子，似乎在支持某位选手。`
+				goto start
+			label language
+			`	走了一小段路后，你来到一个巨大的露天房间，类似体育馆但高得多。环绕圆柱形区域的看台上排满了滑板公园那种铁轨，栖息的阿夫吉人挤得满满当当。许多人举着写着彩色文字的牌子，似乎在支持某位选手。有一块牌子特别写着：“让佐姆把他们像议会一样踩扁！”`
+			label start
+			action
+				set "avgi: watched zomp win at fencing"
+				log "Minor People" "Zomp" `佐姆普是一个暗蓝绿色的阿夫吉人，他在一场击剑比赛中击败了卫冕冠军雷兹马塔兹。`
+				log `在一座不谐派空间站上，在极其喧闹和兴奋的围观人群中，观看了两名阿夫吉人之间的击剑比赛。并目睹了一场冷门：一位名叫佐姆普的阿夫吉人击败了卫冕冠军。`
+			`	不久之后，那两位熟悉的暗蓝绿色与闪亮紫色的阿夫吉人从底层的一扇小门中走出。赛场内的观众爆发出一阵翅膀扑腾声，似乎是在大声欢呼；你的翻译器捕捉到“兴奋”和“期待”等情绪，出现了几十次。击剑手的翅膀上似乎装着细铜线，手里拿着你之前见过的那种花剑。他们跳上赛场两侧的小台座。`
+			`	一个声音通过场内的众多扬声器轰鸣：“宣告。这里有我们的卫冕冠军，拉斯马塔兹，以及初出茅庐的挑战者佐姆！你们准备好见证这两位刀剑精英之间令人陶醉的战斗了吗，问？”`
+			`	赛场再次因翅膀扑腾而嗡嗡作响。“期待。那么让决斗……开始吧。”`
+			`	随着解说员的话语，两位决斗者以惊人的速度跃起，在空中互相盘旋，剑刃相击。他们螺旋上升至赛场的极高处，又迅速俯冲而下，每秒多次相互冲刺又闪退。不到一分钟，你听到一声响亮的叮当，其中一位决斗者翅膀收拢，跌落到地上。全场从没停止嗡鸣的观众爆发出更响亮的翅膀扑腾声。`
+			`	“惊讶。佐姆赢得第一轮，”解说员宣布。“休息。我们开始第二轮吗？”`
+			`	参赛者再次排好队，以令人眼花缭乱的速度和敏捷跃入空中对决。又一次，佐姆在雷鸣般的掌声中获胜。`
+			`	“困惑。看来佐姆击败了我们的卫冕冠军！”解说员宣称。`
+			`	“狂热。我就知道他会赢！我赌赢了，1赔10！”附近的一只阿夫吉人兴奋地说着，在你周围疯狂扑腾，许多手臂里抓着各种粉色纸张。`
+			`	赛场对面传来一只粉色阿夫吉人的喊声：“崇拜！我爱你，佐姆！”`
+			`	比赛结束后，整个赛场似乎陷入了欢呼、嘘声和嗡嗡翅膀扑腾的混乱之中，持续了好几分钟。你记不起人类空间的任何一次击剑比赛有这么多热情和能量的观众。`
+			`	骚动和庆祝平息后，你发现离开拥挤的赛场并不难——大多数阿夫吉人直接从你头顶飞过。`
+				decline
+			label ignore
+			`	你让那两个阿夫吉人飞走，继续忙自己的事了。`
+				decline

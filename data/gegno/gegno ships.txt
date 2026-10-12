@@ -1,0 +1,1677 @@
+# Copyright (c) 2022 by Saugia
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Gegno Civilians:
+
+ship "Shale"
+	"display name" "页岩"
+	sprite "ship/gegno shale"
+	thumbnail "thumbnail/gegno shale"
+	"administrative cost" 1
+	attributes
+		category "Transport"
+		licenses
+			"Gegno Civilian"
+		"cost" 148000
+		"shields" 0
+		"hull" 800
+		"required crew" 1
+		"bunks" 7
+		"mass" 114
+		"drag" 2
+		"heat dissipation" 0.73
+		"fuel capacity" 400
+		"cargo space" 54
+		"outfit space" 113
+		"weapon capacity" 0
+		"engine capacity" 58
+		weapon
+			"blast radius" 18
+			"shield damage" 40
+			"hull damage" 132
+			"hit force" 210
+	outfits
+		"C3 Scrap Cell"
+		"R01 Skirmish Battery"
+		
+		"RG15 Torch Thruster"
+		"RG15 Torch Steering"
+		"Hyperdrive"
+	engine 0 40
+	leak "leak" 50 60
+	explode "small explosion" 5
+	explode "tiny explosion" 10
+	description `在格诺发现并开始使用超空间航道后，他们庞大且昂贵的世代飞船在星际贸易中显得过于笨重，因而需要一种更小、更易操控的飞船，例如本舰。页岩级相当于格诺的穿梭机：一种小巧紧凑的运输工具。无论是货物、贸易商品、旅人还是新兵，页岩级都是格诺星际文明的基石。`
+
+ship "Dolomite"
+	"display name" "白云石"
+	sprite "ship/gegno dolomite"
+	thumbnail "thumbnail/gegno dolomite"
+	"administrative cost" 3
+	attributes
+		category "Heavy Freighter"
+		licenses
+			"Gegno Civilian"
+		"cost" 2768000
+		"shields" 0
+		"hull" 8200
+		"required crew" 9
+		"bunks" 79
+		"mass" 850
+		"drag" 6.7
+		"heat dissipation" 0.42
+		"fuel capacity" 500
+		"cargo space" 200
+		"outfit space" 152
+		"weapon capacity" 0
+		"engine capacity" 81
+		weapon
+			"blast radius" 72
+			"shield damage" 320
+			"hull damage" 620
+			"hit force" 720
+	outfits
+		"C7 Brawl Cell"
+		"R01 Skirmish Battery"
+		
+		"RG15 Torch Thruster"
+		"RG15 Torch Steering" 2
+		"Hyperdrive"
+	engine -22.5 158
+	engine 22.5 158
+	leak "leak" 60 50
+	leak "flame" 60 80
+	explode "large explosion" 14
+	explode "medium explosion" 24
+	explode "small explosion" 26
+	explode "tiny explosion" 10
+	"final explode" "final explosion medium"
+	description `白云岩级几乎与人类巡洋舰一般大小，是格诺最常用的现役货船，其原始设计可追溯到太空殖民早期。它们既被用作客轮，也被用作货船。由于广受欢迎且经久不衰，维族与斯钦族都在原始设计的基础上，针对自身需求开发了不同的改型。`
+
+ship "Conglomerate"
+	"display name" "联合体"
+	sprite "ship/gegno conglomerate"
+	thumbnail "thumbnail/gegno conglomerate"
+	"administrative cost" 4
+	attributes
+		category "Heavy Freighter"
+		licenses
+			"Gegno Civilian"
+		"cost" 5909000
+		"shields" 0
+		"hull" 10600
+		"required crew" 13
+		"bunks" 50
+		"mass" 1484
+		"drag" 20.9
+		"heat dissipation" 0.4
+		"fuel capacity" 500
+		"cargo space" 415
+		"outfit space" 253
+		"weapon capacity" 0
+		"engine capacity" 146
+		weapon
+			"blast radius" 124
+			"shield damage" 960
+			"hull damage" 1160
+			"hit force" 1650
+	outfits
+		"C7 Brawl Cell"
+		"C3 Scrap Cell"
+		"R02 Battlezone Battery"
+		
+		"RG18 Torch Thruster"
+		"RG15 Torch Thruster"
+		"RG18 Torch Steering"
+		"RG15 Torch Steering"
+		"Hyperdrive"
+	engine -34.5 220
+	engine 34.5 220
+	engine 15 210 0.75
+	engine -15 210 0.75
+	leak "leak" 30 40
+	leak "flame" 80 20
+	explode "huge explosion" 10
+	explode "large explosion" 30
+	explode "medium explosion" 38
+	explode "small explosion" 26
+	"final explode" "final explosion large"
+	description `随着时间的推移，格诺需要更大的飞船在各个新世界之间运送物资——这些飞船要比他们老旧过时的世代飞船更容易建造和操作，同时又要比穿梭机更大。砾岩级正是为满足这一需求而设计的。`
+
+ship "Granofel"
+	"display name" "花岗变晶岩"
+	sprite "ship/gegno granofel"
+	thumbnail "thumbnail/gegno granofel"
+	"administrative cost" 3
+	attributes
+		category "Heavy Freighter"
+		licenses
+			"Gegno Civilian"
+		"cost" 5150000
+		"shields" 0
+		"hull" 8800
+		"required crew" 10
+		"bunks" 15
+		"mass" 1367
+		"drag" 16.3
+		"heat dissipation" 0.39
+		"fuel capacity" 500
+		"cargo space" 560
+		"outfit space" 230
+		"weapon capacity" 0
+		"engine capacity" 151
+		weapon
+			"blast radius" 96
+			"shield damage" 480
+			"hull damage" 860
+			"hit force" 970
+	outfits
+		"C7 Brawl Cell"
+		"R02 Battlezone Battery"
+		
+		"RG18 Torch Thruster" 2
+		"RG18 Torch Steering"
+		"Hyperdrive"
+	engine -36 114
+	engine 36 114
+	"steering engine" 94 -6 0.75
+		left
+	"steering engine" -94 -6 0.75
+		right
+	leak "leak" 20 30
+	leak "flame" 60 10
+	explode "huge explosion" 6
+	explode "large explosion" 22
+	explode "medium explosion" 30
+	explode "small explosion" 24
+	"final explode" "final explosion large"
+	description `与许多能够胜任多种角色的格诺飞船不同，花岗片麻岩级的设计初衷完全是为了运载大量货物；除了满足基本船员所需的铺位外，它没有多余的空间。它们最常用于在矿业产业链中往返运输海量的原矿与精炼矿石。同时，由于其具备巨大的货舱容量，也经常与采矿船搭档作业，以延长单次采矿任务的持续时长。除矿业外，花岗片麻岩级也用于运输建造其他大型飞船所需的重型材料。`
+
+ship "Gypsum"
+	"display name" "石膏"
+	sprite "ship/gegno gypsum"
+	thumbnail "thumbnail/gegno gypsum"
+	"administrative cost" 2
+	attributes
+		category "Light Freighter"
+		licenses
+			"Gegno Civilian"
+			"Gegno Driller"
+		"cost" 1692000
+		"shields" 0
+		"hull" 5500
+		"required crew" 5
+		"bunks" 9
+		"mass" 540
+		"drag" 3.9
+		"heat dissipation" 0.62
+		"fuel capacity" 600
+		"cargo space" 160
+		"outfit space" 240
+		"weapon capacity" 42
+		"engine capacity" 120
+		"drill port" 1
+		"drill lock" -1
+		weapon
+			"blast radius" 72
+			"shield damage" 320
+			"hull damage" 620
+			"hit force" 720
+	outfits
+		"Excavator"
+		"C7 Brawl Cell"
+		"R01 Skirmish Battery"
+		
+		"RG18 Torch Thruster"
+		"RG15 Torch Steering"
+		"RG18 Torch Steering"
+		"Hyperdrive"
+	engine 0 124
+	gun 0 -117 Excavator
+	leak "leak" 60 50
+	leak "flame" 60 80
+	explode "large explosion" 14
+	explode "medium explosion" 24
+	explode "small explosion" 26
+	explode "tiny explosion" 10
+	"final explode" "final explosion medium"
+	description `为了满足日益增长的物资需求，格诺设计了一种专用于采矿的新型飞船。由此诞生的“石膏”级平台不过是在一个飞行钻头后方挂载了货舱、引擎和舰桥，使其兼具极佳的成本效益，且极易制造。`
+	description `	由于格诺引擎动力较弱，石膏级很难追赶移动速度较快的小行星。为了解决这一问题，同时避免大幅增加飞船上的引擎空间，格诺转而开发了强力的挖掘钻。该钻头能在数秒内粉碎小行星，这意味着石膏级只需在小行星旁稍作停留，即可完成开采。`
+
+ship "Corundum"
+	"display name" "刚玉"
+	sprite "ship/gegno corundum"
+	thumbnail "thumbnail/gegno corundum"
+	"administrative cost" 2
+	attributes
+		category "Light Freighter"
+		licenses
+			"Gegno Civilian"
+			"Gegno Driller"
+		"cost" 2465000
+		"shields" 0
+		"hull" 5400
+		"required crew" 6
+		"bunks" 9
+		"mass" 630
+		"drag" 4.5
+		"heat dissipation" 0.64
+		"fuel capacity" 600
+		"cargo space" 140
+		"outfit space" 316
+		"weapon capacity" 64
+		"engine capacity" 162
+		"drill spar" 2
+		weapon
+			"blast radius" 84
+			"shield damage" 410
+			"hull damage" 710
+			"hit force" 800
+	outfits
+		"Burrower" 2
+		"C3 Scrap Cell"
+		"C7 Brawl Cell"
+		"R01 Skirmish Battery"
+		
+		"RG18 Torch Thruster"
+		"RG18 Torch Steering" 2
+		"Hyperdrive"
+	engine 58 -58
+	engine -58 -58
+	"steering engine" 58 -58
+		left
+	"steering engine" -58 -58
+		right
+	gun 9 -132
+		parallel
+		over
+	gun -9 -132
+		parallel
+		over
+	leak "leak" 50 60
+	leak "flame" 70 70
+	explode "large explosion" 16
+	explode "medium explosion" 22
+	explode "small explosion" 28
+	explode "tiny explosion" 12
+	"final explode" "final explosion medium"
+	description `虽然石膏级在数代人中一直是最可靠的采矿平台，但考虑到格诺不断增长的技术潜力，刚玉级是专门为了模块化而设计的。刚玉级采用了与石膏级相似的设计原理，其结构主要围绕两套（而非一套）可调节的钻探系统构建，能够搭载更为先进的采矿工具。`
+	description `	虽然无法安装强力的挖掘钻，但刚玉级的引擎容量是石膏级的两倍，且两个新型挂载系统的模块化设计使其能够适应格诺未来可能开发的任何新技术。`
+
+ship "Corundum" "Corundum (Torch)"
+	outfits
+		"Ion Torch" 2
+		"C3 Scrap Cell"
+		"C7 Brawl Cell"
+		"R01 Skirmish Battery"
+		
+		"RG18 Torch Thruster"
+		"RG18 Torch Steering" 2
+		"Hyperdrive"
+
+ship "Protolith"
+	"display name" "原岩"
+	sprite "ship/gegno protolith"
+	thumbnail "thumbnail/gegno protolith"
+	"administrative cost" 17
+	attributes
+		category "Heavy Freighter"
+		"cost" 115700000
+		"shields" 0
+		"hull" 48600
+		"required crew" 402
+		"bunks" 4040
+		"mass" 10885
+		"drag" 131
+		"heat dissipation" 0.18
+		"fuel capacity" 2100
+		"cargo space" 1160
+		"outfit space" 942
+		"weapon capacity" 0
+		"engine capacity" 480
+		weapon
+			"blast radius" 360
+			"shield damage" 1860
+			"hull damage" 2400
+			"hit force" 2720
+	outfits
+		"C7 Brawl Cell" 2
+		"C3 Scrap Cell" 2
+		"R03 Warforge Battery" 2
+
+		"RG3 Torch Thruster" 4
+		"RG3 Torch Steering" 2
+	"steering engine" 87 -289 0.5
+		angle -90
+		left
+	"steering engine" -87 -289 0.5
+		angle 90
+		right
+	"steering engine" 97 214 0.5
+		angle -90
+		right
+	"steering engine" -97 214 0.5
+		angle 90
+		left
+	engine 76 365
+	engine -76 365
+	engine 46 366
+	engine -46 366
+	leak "leak" 40 50
+	leak "flame" 40 70
+	leak "big leak" 60 40
+	explode "huge explosion" 34
+	explode "large explosion" 38
+	explode "medium explosion" 46
+	explode "small explosion" 42
+	"final explode" "final explosion large"
+	description `作为另一个时代的遗物，原岩级是格诺为殖民星辰而建造的最后一批世代飞船。如今，其他更易建造且配备超空间引擎的运输船已司空见惯，原岩级已不再服役；仍在运转的极少数飞船要么作为历史文物得以保存，要么极少被用作格诺母星系霍伊特斯尔各行星之间的货运工具。`
+
+# Gegno Vi:
+
+ship "Dunite"
+	"display name" "橄榄岩"
+	sprite "ship/gegno dunite"
+	thumbnail "thumbnail/gegno dunite"
+	"administrative cost" 1
+	attributes
+		category "Interceptor"
+		licenses
+			"Vi Evocati"
+		"cost" 50000
+		"shields" 0
+		"hull" 500
+		"required crew" 1
+		"bunks" 1
+		"mass" 109
+		"drag" 0.63
+		"heat dissipation" 0.86
+		"fuel capacity" 1
+		"cargo capacity" 1
+		"outfit space" 115
+		"weapon capacity" 22
+		"engine capacity" 56
+		weapon
+			"blast radius" 10
+			"shield damage" 20
+			"hull damage" 100
+			"hit force" 100
+	outfits
+		"Irate Cannon"
+		"Savagery Bludgeon"
+		
+		"C3 Scrap Cell"
+		"R01 Skirmish Battery"
+		"Savagery Pike"
+
+		"RG15 Torch Thruster"
+		"RG15 Torch Steering"
+	engine 0 40
+	gun -3 -80 "Savagery Bludgeon"
+	gun 4.5 -60 "Irate Cannon"
+	leak "leak" 40 20
+	explode "small explosion" 4
+	explode "tiny explosion" 8
+	description `纯橄岩级是格诺维专为决斗设计的独特飞船。它就像是各种部件的拼凑物，仅仅将引擎、电力系统、驾驶舱和愤怒加农炮拼凑在一起，完全没有考虑结构强度。其最显著的特征是愤怒加农炮旁延伸出的一根长长的狼牙棒状突起，用于对冲刺击或撞击其他决斗者。`
+	description `	作为仅为单一目的而设计的混乱机械集合体，纯橄岩级飞船既没有配备、也没有空间安装超空间引擎，是纯粹的恒星系内飞船。`
+
+ship "Augen"
+	"display name" "奥根"
+	sprite "ship/gegno augen"
+	thumbnail "thumbnail/gegno augen"
+	"administrative cost" 24
+	attributes
+		category "Superheavy"
+		licenses
+			"Vi Lord"
+		"cost" 58800000
+		"shields" 0
+		"hull" 167000
+		"required crew" 280
+		"bunks" 360
+		"mass" 14615
+		"drag" 120
+		"heat dissipation" 0.17
+		"fuel capacity" 500
+		"cargo space" 84
+		"outfit space" 1868
+		"weapon capacity" 1073
+		"engine capacity" 460
+		weapon
+			"blast radius" 450
+			"shield damage" 2000
+			"hull damage" 2700
+			"hit force" 2100
+	outfits
+		"Choleric Cannon"
+		"Irate Cannon" 17
+		"Ballistic Cannon Turret" 6
+		"Choleric Cannon Turret" 2
+		"Irate Cannon Turret"
+
+		"C17 Warzone Core"
+		"C27 Campaign Core"
+		"R04 Crusade Battery"
+		"Savagery Pike" 280
+		"Irate Carronade" 4
+		
+		"RG3 Torch Thruster" 4
+		"RG3 Torch Steering" 2
+		"Hyperdrive"
+	engine 94 302
+	engine 60 372
+	engine -80 206
+	engine -40 268
+	"steering engine" 94 302
+		left
+	"steering engine" 60 372
+		left
+	"steering engine" -80 206
+		right
+	"steering engine" -40 268
+		right
+	"steering engine" 132 95
+		angle -60
+		zoom 0.3
+		right
+	"steering engine" 131 125
+		zoom 0.3
+		angle -60
+		right
+	"steering engine" -126 103
+		zoom 0.3
+		angle 65
+		left
+	"steering engine" -125 131
+		zoom 0.3
+		angle 65
+		left
+	gun 58 -385 "Choleric Cannon"
+	gun -29 -378.5 "Irate Cannon"
+	gun -35.5 -373.5 "Irate Cannon"
+	gun -42.5 -367.5 "Irate Cannon"
+	gun 100.5 -309 "Irate Cannon"
+		parallel
+		angle 40
+	gun -85.5 -309.5 "Irate Cannon"
+		parallel
+		angle -43
+	gun 116.5 -200.5 "Irate Cannon"
+		parallel
+		angle 90
+	gun 116.5 -195.5 "Irate Cannon"
+		parallel
+		angle 90
+	gun -121.5 -115.5 "Irate Cannon"
+		parallel
+		angle -90
+	gun -121 -109.5 "Irate Cannon"
+		parallel
+		angle -90
+	gun 127 -37.5 "Irate Cannon"
+		parallel
+		angle 85
+	gun -134.5 33.5 "Irate Cannon"
+		parallel
+		angle -90
+	gun -134.5 39 "Irate Cannon"
+		parallel
+		angle -90
+	gun -119 140.5 "Irate Cannon"
+		parallel
+		angle -115
+	gun 114 186.5 "Irate Cannon"
+		parallel
+		angle 90
+	gun 114 192 "Irate Cannon"
+		parallel
+		angle 90
+	gun -58.5 256 "Irate Cannon"
+		parallel
+		angle -150
+	gun 88.5 334 "Irate Cannon"
+		parallel
+		angle 155
+	turret 13 -297.5 "Ballistic Cannon Turret"
+	turret 13 -212 "Ballistic Cannon Turret"
+	turret 27 -122.5 "Ballistic Cannon Turret"
+	turret 27 140.5 "Ballistic Cannon Turret"
+	turret 17.5 229 "Ballistic Cannon Turret"
+	turret 17.5 317 "Ballistic Cannon Turret"
+	turret 92 -208 "Choleric Cannon Turret"
+	turret -81.5 -25.5 "Irate Cannon Turret"
+	turret -81.5 100 "Choleric Cannon Turret"
+	leak "leak" 50 50
+	leak "flame" 80 140
+	explode "huge explosion" 36
+	explode "large explosion" 40
+	explode "medium explosion" 60
+	explode "small explosion" 20
+	explode "tiny explosion" 60
+	"final explode" "final explosion large"
+	description `眼斑岩级是由维族提出的一种古代战舰，旨在作为搭载弹道加农炮的大型武器平台。它在恩比的峡谷造船厂中历经多年秘密建造，其间建造工作曾多次搁置。近期与斯钦族的内战促成了这艘战舰的最终完工，但与维族舰队现役舰船相比，它在某种程度上仍显陈旧。`
+	description `	该项目原本计划建造两艘庞大的姊妹舰，但另一款设计的蓝图在早期阶段就已遗失，至今下落不明。`
+
+ship "Slate"
+	"display name" "板岩"
+	sprite "ship/gegno slate"
+	thumbnail "thumbnail/gegno slate"
+	"administrative cost" 1
+	attributes
+		category "Light Freighter"
+		licenses
+			"Vi Evocati"
+		"cost" 169000
+		"shields" 0
+		"hull" 1000
+		"required crew" 1
+		"bunks" 4
+		"mass" 140
+		"drag" 2.2
+		"heat dissipation" 0.73
+		"fuel capacity" 400
+		"cargo space" 81
+		"outfit space" 122
+		"weapon capacity" 0
+		"engine capacity" 58
+		weapon
+			"blast radius" 18
+			"shield damage" 40
+			"hull damage" 132
+			"hit force" 210
+	outfits
+		"C3 Scrap Cell"
+		"R01 Skirmish Battery"
+		"Savagery Pike" 1
+		
+		"RG15 Torch Thruster"
+		"RG15 Torch Steering"
+		"Hyperdrive"
+	engine 0 40
+	leak "leak" 60 50
+	explode "small explosion" 5
+	explode "tiny explosion" 10
+	description `由格诺维设计的板岩级是页岩级的改进型，拥有更坚固的船体和更大的空间，这也是维族舰船的主要特征。为了契合维族的体型，它比其他穿梭机稍大一些，能够搭载少数格诺学员，同时货运容量也有了可观的提升。`
+
+ship "Schist"
+	"display name" "片岩"
+	sprite "ship/gegno schist a"
+	thumbnail "thumbnail/gegno schist a"
+	"administrative cost" 4
+	attributes
+		category "Heavy Freighter"
+		licenses
+			"Vi Evocati"
+		"cost" 3737000
+		"shields" 0
+		"hull" 10700
+		"required crew" 23
+		"bunks" 73
+		"mass" 950
+		"drag" 8.5
+		"heat dissipation" 0.5
+		"fuel capacity" 500
+		"cargo space" 140
+		"outfit space" 298
+		"weapon capacity" 100
+		"engine capacity" 96
+		weapon
+			"blast radius" 71
+			"shield damage" 310
+			"hull damage" 660
+			"hit force" 700
+	outfits
+		"Irate Cannon" 6
+		"Irate Cannon Turret"
+		
+		"C7 Brawl Cell"
+		"R02 Battlezone Battery"
+		"Savagery Pike" 23
+		"Irate Carronade"
+		
+		"RG18 Torch Thruster"
+		"RG18 Torch Steering"
+		"Hyperdrive"
+	engine 0 153.5
+	gun -16.5 -181.5 "Irate Cannon"
+	gun 16.5 -181.5 "Irate Cannon"
+	gun 44.5 -81 "Irate Cannon"
+		parallel
+		angle 80
+	gun -44.5 -81 "Irate Cannon"
+		parallel
+		angle -80
+	gun 56.5 30.5 "Irate Cannon"
+		parallel
+		angle 112
+	gun -56.5 30.5 "Irate Cannon"
+		parallel
+		angle -112
+	turret 0 -139.5 "Irate Cannon Turret"
+	leak "leak" 60 50
+	leak "flame" 60 80
+	explode "large explosion" 10
+	explode "medium explosion" 25
+	explode "small explosion" 25
+	explode "tiny explosion" 10
+	"final explode" "final explosion medium"
+	description `基于格诺旧型的白云岩级，片岩级是维族所使用的一款中程飞船。它能承载相当数量的货物，并且拥有足够的铺位来容纳一整排战士。它是将新兵运往前线、并将老兵送回本土的主要工具。`
+	description `	尽管与其他维族飞船相比武装较轻，片岩级仍配备了一对前向加农炮和一具炮塔，以便在任何可能的交战中提供某种火力支援；此外还装有一组斜角炮，用于阻击任何试图侧翼包抄该舰的小型快速飞船。`
+
+ship "Schist" "Schist (Light Load)"
+	sprite "ship/gegno schist b"
+	thumbnail "thumbnail/gegno schist b"
+	add attributes
+		"mass" 33
+		"drag" 0.15
+		"cargo space" 25
+
+ship "Schist" "Schist (Heavy Load)"
+	sprite "ship/gegno schist c"
+	thumbnail "thumbnail/gegno schist c"
+	add attributes
+		"bunks" -12
+		"mass" 57
+		"drag" 0.3
+		"cargo space" 49
+
+ship "Rhyolite"
+	"display name" "流纹岩"
+	sprite "ship/gegno rhyolite"
+	thumbnail "thumbnail/gegno rhyolite"
+	"administrative cost" 1
+	attributes
+		category "Interceptor"
+		licenses
+			"Vi Centurion"
+		"cost" 1165000
+		"shields" 0
+		"hull" 4000
+		"required crew" 5
+		"bunks" 9
+		"mass" 225
+		"drag" 4
+		"heat dissipation" 0.64
+		"fuel capacity" 400
+		"cargo space" 30
+		"outfit space" 220
+		"weapon capacity" 78
+		"engine capacity" 100
+		weapon
+			"blast radius" 28
+			"shield damage" 190
+			"hull damage" 360
+			"hit force" 330
+	outfits
+		"Irate Cannon" 4
+		
+		"C7 Brawl Cell"
+		"R02 Battlezone Battery"
+		"Savagery Pike" 5
+		
+		"RG18 Torch Thruster"
+		"RG18 Torch Steering"
+		"Hyperdrive"
+	engine -28.5 61.5
+	engine 28.5 61.5
+	gun -43.5 -15 "Irate Cannon"
+	gun 43.5 -15 "Irate Cannon"
+	gun -52 -11 "Irate Cannon"
+	gun 52 -11 "Irate Cannon"
+	leak "leak" 50 40
+	leak "flame" 40 70
+	explode "medium explosion" 10
+	explode "small explosion" 15
+	explode "tiny explosion" 10
+	"final explode" "final explosion small"
+	description `流纹岩级是由生产榴辉岩级与闪长岩级的同一家船厂建造的维族原型拦截机。目前该型号仅生产了寥寥数艘，现存飞船主要由少数维族战士驾驶，用于技术测试或是私人拥有。`
+
+ship "Eclogite"
+	"display name" "榴辉岩"
+	sprite "ship/gegno eclogite"
+	thumbnail "thumbnail/gegno eclogite"
+	"administrative cost" 2
+	attributes
+		category "Light Warship"
+		licenses
+			"Vi Centurion"
+		"cost" 2500000
+		"shields" 0
+		"hull" 6900
+		"required crew" 9
+		"bunks" 12
+		"mass" 415
+		"drag" 4.6
+		"heat dissipation" 0.56
+		"fuel capacity" 400
+		"cargo space" 70
+		"outfit space" 285
+		"weapon capacity" 96
+		"engine capacity" 94
+		weapon
+			"blast radius" 36
+			"shield damage" 210
+			"hull damage" 490
+			"hit force" 470
+	outfits
+		"Choleric Cannon"
+		"Irate Cannon" 4
+		
+		"C7 Brawl Cell"
+		"R03 Warforge Battery"
+		"Savagery Pike" 9
+		
+		"RG18 Torch Thruster"
+		"RG18 Torch Steering"
+		"Hyperdrive"
+	engine 0 82
+	gun 0 -98 "Choleric Cannon"
+	gun -11.5 -53 "Irate Cannon"
+	gun 11.5 -53 "Irate Cannon"
+	gun -11.5 -29 "Irate Cannon"
+	gun 11.5 -29 "Irate Cannon"
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "medium explosion" 10
+	explode "small explosion" 20
+	explode "tiny explosion" 15
+	"final explode" "final explosion small"
+	description `虽然船身较长、类似战列舰的风格是格诺维的一贯传统，但另一家船厂也加入了维族战舰设计的竞争。榴辉岩级是维族舰队最新的设计之一——它是一艘武装到牙齿的炮艇，装备了大量火炮，并拥有维族大型舰船所缺乏的机动性。它扮演着“打了就跑”的角色，利用快速机动，在调整位置进行下一轮攻击前，向目标的装甲倾泻一轮轮密集的炮弹。`
+
+ship "Diorite"
+	"display name" "闪长岩"
+	sprite "ship/gegno diorite"
+	thumbnail "thumbnail/gegno diorite"
+	"administrative cost" 2
+	attributes
+		category "Medium Warship"
+		licenses
+			"Vi Centurion"
+		"cost" 3350000
+		"shields" 0
+		"hull" 7900
+		"required crew" 14
+		"bunks" 29
+		"mass" 549
+		"drag" 7.54
+		"heat dissipation" 0.56
+		"fuel capacity" 500
+		"cargo space" 40
+		"outfit space" 453
+		"weapon capacity" 195
+		"engine capacity" 140
+		weapon
+			"blast radius" 90
+			"shield damage" 540
+			"hull damage" 770
+			"hit force" 810
+	outfits
+		"Choleric Cannon" 3
+		"Choleric Cannon Turret" 2
+		
+		"C17 Warzone Core"
+		"R02 Battlezone Battery"
+		"Savagery Pike" 14
+		"Irate Carronade"
+		
+		"RG18 Torch Thruster"
+		"RG3 Torch Steering"
+		"Hyperdrive"
+	engine -19.5 132
+	engine 0 137
+	engine 19.5 132
+	gun -6 -160 "Choleric Cannon"
+	gun 6 -160 "Choleric Cannon"
+	gun 0 116 "Choleric Cannon"
+		angle 180
+	turret -19.5 -63 "Choleric Cannon Turret"
+	turret 19.5 -63 "Choleric Cannon Turret"
+	leak "leak" 30 50
+	leak "flame" 50 90
+	explode "large explosion" 9
+	explode "medium explosion" 15
+	explode "small explosion" 20
+	explode "tiny explosion" 17
+	"final explode" "final explosion medium"
+	description `延续了维族榴辉岩级的设计理念，闪长岩级由另一家有别于建造大型维族舰船的独立造船厂制造。它在同级别的维族飞船中拥有更出色的机动性，使其能够轻松锁定与它体型相当甚至更小的飞船。`
+
+ship "Diorite" "Diorite (Ballistic)"
+	outfits
+		"Ballistic Cannon" 2
+		
+		"C7 Brawl Cell" 2
+		"R01 Skirmish Battery"
+		
+		"RG18 Torch Thruster"
+		"RG3 Torch Steering"
+		"RG15 Torch Steering"
+		"Hyperdrive"
+
+ship "Hornfel"
+	"display name" "角岩"
+	sprite "ship/gegno hornfel a"
+	thumbnail "thumbnail/gegno hornfel a"
+	"administrative cost" 5
+	attributes
+		category "Medium Warship"
+		licenses
+			"Vi Centurion"
+		"cost" 5052000
+		"shields" 0
+		"hull" 14600
+		"required crew" 32
+		"bunks" 48
+		"mass" 1489
+		"drag" 10.1
+		"heat dissipation" 0.38
+		"fuel capacity" 600
+		"cargo space" 120
+		"outfit space" 508
+		"weapon capacity" 240
+		"engine capacity" 94
+		weapon
+			"blast radius" 90
+			"shield damage" 600
+			"hull damage" 840
+			"hit force" 900
+	outfits
+		"Irate Cannon" 10
+		"Choleric Cannon Turret" 2
+		
+		"C17 Warzone Core"
+		"R03 Warforge Battery"
+		"Savagery Pike" 32
+		"Irate Carronade" 2
+		
+		"RG18 Torch Thruster"
+		"RG18 Torch Steering"
+		"Hyperdrive"
+	engine -18 193
+	engine 18 193
+	gun 18.5 -220 "Irate Cannon"
+	gun -18.5 -220 "Irate Cannon"
+	gun -24.5 -208 "Irate Cannon"
+	gun 24.5 -208 "Irate Cannon"
+	gun 29 -120 "Irate Cannon"
+		parallel
+		angle 60
+	gun -29 -107.5 "Irate Cannon"
+		parallel
+		angle -60
+	gun -38 -1.5 "Irate Cannon"
+		parallel
+		angle -90
+	gun 40.5 30 "Irate Cannon"
+		parallel
+		angle 90
+	gun -29 141.5 "Irate Cannon"
+		parallel
+		angle -135
+	gun 29 120.5 "Irate Cannon"
+		parallel
+		angle 135
+	turret 0 -111 "Choleric Cannon Turret"
+	turret 0 -42 "Choleric Cannon Turret"
+	leak "leak" 60 50
+	leak "flame" 60 80
+	explode "large explosion" 10
+	explode "medium explosion" 25
+	explode "small explosion" 25
+	explode "tiny explosion" 10
+	"final explode" "final explosion medium"
+	description `角岩级是格诺维军队的主力——它是体型适中、速度适中，且火力极其出众的战舰，专为前线作战设计。角岩级也是维族舰队中配置最为灵活的飞船，舰身设有许多用于挂载货舱的挂载点，以便在战时维族需要补给物资时，承担辅助运输的角色。此外，偶尔也能见到经调整以携带更重型武装的角岩级变体。这种多用途功能极为宝贵，也正是角岩级成为维族最受欢迎的飞船之一的原因。`
+
+ship "Hornfel" "Hornfel (Light Load)"
+	sprite "ship/gegno hornfel b"
+	thumbnail "thumbnail/gegno hornfel b"
+	add attributes
+		"mass" 64
+		"drag" 0.64
+		"cargo space" 40
+
+ship "Hornfel" "Hornfel (Heavy Load)"
+	sprite "ship/gegno hornfel c"
+	thumbnail "thumbnail/gegno hornfel c"
+	add attributes
+		"mass" 112
+		"drag" 1.12
+		"cargo space" 80
+
+ship "Hornfel" "Hornfel (Heavy Weapons)"
+	sprite "ship/gegno hornfel d"
+	thumbnail "thumbnail/gegno hornfel d"
+	add attributes
+		"mass" 108
+		"drag" 2.1
+		"cargo space" -70
+		"outfit space" 20
+		"weapon capacity" 70
+	outfits
+		"Choleric Cannon" 2
+		"Irate Cannon" 8
+		"Choleric Cannon Turret" 2
+		"Irate Cannon Turret"
+		
+		"C17 Warzone Core"
+		"R03 Warforge Battery"
+		
+		"RG18 Torch Thruster"
+		"RG18 Torch Steering"
+		"Hyperdrive"
+	gun 18.5 -220 "Choleric Cannon"
+	gun -18.5 -220 "Choleric Cannon"
+	gun -24.5 -208 "Irate Cannon"
+	gun 24.5 -208 "Irate Cannon"
+	gun 29 -120 "Irate Cannon"
+		parallel
+		angle 60
+	gun -29 -107.5 "Irate Cannon"
+		parallel
+		angle -60
+	gun -38 -1.5 "Irate Cannon"
+		parallel
+		angle -90
+	gun 40.5 30 "Irate Cannon"
+		parallel
+		angle 90
+	gun -29 141.5 "Irate Cannon"
+		parallel
+		angle -135
+	gun 29 120.5 "Irate Cannon"
+		parallel
+		angle 135
+	turret 0 -174 "Irate Cannon Turret"
+	turret 0 -111 "Choleric Cannon Turret"
+	turret 0 -42 "Choleric Cannon Turret"
+
+ship "Gneiss"
+	"display name" "片麻岩"
+	plural "片麻岩"
+	sprite "ship/gegno gneiss"
+	thumbnail "thumbnail/gegno gneiss"
+	"administrative cost" 7
+	attributes
+		category "Heavy Warship"
+		licenses
+			"Vi Lord"
+		"cost" 15066000
+		"shields" 0
+		"hull" 26300
+		"required crew" 112
+		"bunks" 162
+		"mass" 2718
+		"drag" 24.5
+		"heat dissipation" 0.22
+		"fuel capacity" 500
+		"cargo space" 95
+		"outfit space" 841
+		"weapon capacity" 504
+		"engine capacity" 150
+		weapon
+			"blast radius" 150
+			"shield damage" 1150
+			"hull damage" 1570
+			"hit force" 1200
+	outfits
+		"Irate Cannon" 12
+		"Ballistic Cannon Turret" 3
+		
+		"C17 Warzone Core"
+		"R04 Crusade Battery"
+		"Savagery Pike" 112
+		"Irate Carronade" 3
+		
+		"RG3 Torch Thruster"
+		"RG3 Torch Steering"
+		"Hyperdrive"
+	engine 0 270
+	gun -17 -286 "Irate Cannon"
+	gun 17 -286 "Irate Cannon"
+	gun -23 -270.5 "Irate Cannon"
+	gun 23 -270.5 "Irate Cannon"
+	gun -38.5 -192.5 "Irate Cannon"
+		parallel
+		angle -60
+	gun 39 -185 "Irate Cannon"
+		parallel
+		angle 60
+	gun 46.5 -66.5 "Irate Cannon"
+		parallel
+		angle 90
+	gun -58 -14 "Irate Cannon"
+		parallel
+		angle -40
+	gun -69.5 5.5 "Irate Cannon"
+		parallel
+		angle -95
+	gun 65.5 9.5 "Irate Cannon"
+		parallel
+		angle 45
+	gun 66 87 "Irate Cannon"
+		parallel
+		angle 135
+	gun -55.5 133.5 "Irate Cannon"
+		parallel
+		angle -135
+	turret 0 -97.5 "Ballistic Cannon Turret"
+	turret 0 -23 "Ballistic Cannon Turret"
+	turret 0 46 "Ballistic Cannon Turret"
+	leak "leak" 50 50
+	leak "flame" 80 140
+	explode "huge explosion" 18
+	explode "large explosion" 30
+	explode "medium explosion" 46
+	explode "small explosion" 40
+	explode "tiny explosion" 80
+	"final explode" "final explosion large"
+	description `片麻岩级战舰是格诺维在战争中真正的剑与盾。它们的型号比角岩级和片岩级稍老，但搭载了最重型的武装，拥有三个专门用来挂载巨型弹道加农炮的巨大炮座。片麻岩级还拥有极其坚固的装甲板，能够在承受猛烈打击的同时，向敌军进行威胁性极大的侧舷齐射。`
+	description `	遗憾的是，作为换取强大火力和防御装甲的代价，它们缺乏速度与机动性，即便装备了维族所能提供的最大型引擎系统也是如此。`
+
+ship "Granulite"
+	"display name" "麻粒岩"
+	sprite "ship/gegno granulite"
+	thumbnail "thumbnail/gegno granulite"
+	"administrative cost" 7
+	attributes
+		category "Heavy Freighter"
+		licenses
+			"Vi Lord"
+		"cost" 16820000
+		"shields" 0
+		"hull" 21200
+		"required crew" 53
+		"bunks" 237
+		"mass" 2980
+		"drag" 44.7
+		"heat dissipation" 0.22
+		"fuel capacity" 900
+		"cargo space" 718
+		"outfit space" 651
+		"weapon capacity" 216
+		"engine capacity" 203
+		weapon
+			"blast radius" 280
+			"shield damage" 1550
+			"hull damage" 2050
+			"hit force" 3950
+	outfits
+		"Irate Cannon" 11
+		"Irate Cannon Turret"
+		"Choleric Cannon Turret"
+		
+		"C7 Brawl Cell" 2
+		"C3 Scrap Cell"
+		"R03 Warforge Battery" 3
+		"Savagery Pike" 53
+		
+		"RG3 Torch Thruster"
+		"RG15 Torch Thruster"
+		"RG3 Torch Steering"
+		"RG15 Torch Steering"
+		"Hyperdrive"
+	engine 0 266
+	engine -48 258
+	engine 48 258
+	engine 28 263 0.5
+	engine -28 263 0.5
+	gun -22.5 -269 "Irate Cannon"
+	gun 22.5 -269 "Irate Cannon"
+	gun 62.5 -186.5 "Irate Cannon"
+		parallel
+		angle 45
+	gun -74 -165 "Irate Cannon"
+		parallel
+		angle -90
+	gun 93 -27.5 "Irate Cannon"
+		parallel
+		angle 100
+	gun -86.5 -60 "Irate Cannon"
+		parallel
+		angle -50
+	gun 107 -11.5 "Irate Cannon"
+		parallel
+		angle 35
+	gun -124.5 103.5 "Irate Cannon"
+		parallel
+		angle -90
+	gun 105 142 "Irate Cannon"
+		parallel
+		angle 95
+	gun -101 194.5 "Irate Cannon"
+		parallel
+		angle -125
+	gun 94.5 211 "Irate Cannon"
+		parallel
+		angle 150
+	turret 0 21 "Choleric Cannon Turret"
+	turret -69.5 21 "Irate Cannon Turret"
+	leak "leak" 30 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "huge explosion" 30
+	explode "large explosion" 45
+	explode "medium explosion" 35
+	explode "small explosion" 25
+	"final explode" "final explosion large"
+	description `麻粒岩级是格诺在发明超空间引擎之前用于殖民附近星系的早期世代飞船的后代。如今，无论在战时还是和平时期，它们都运载着数百名维族人，并为补给站运送大量的货物。它们通常不作为战舰使用，但可以装备足够的武器来威胁大多数小型飞船，或抵御大型飞船直至援军抵达。`
+
+# Gegno Scin:
+
+ship "Halite"
+	"display name" "岩盐"
+	sprite "ship/gegno halite"
+	thumbnail "thumbnail/gegno halite"
+	"administrative cost" 0
+	attributes
+		category "Fighter"
+		licenses
+			"Scin Hoplologist"
+			"Scin Architect"
+		"cost" 71000
+		"shields" 300
+		"hull" 500
+		"required crew" 1
+		"bunks" 1
+		"mass" 30
+		"drag" 0.74
+		"heat dissipation" 0.95
+		"outfit space" 78
+		"weapon capacity" 30
+		"engine capacity" 21
+		weapon
+			"blast radius" 14
+			"shield damage" 160
+			"hull damage" 85
+			"hit force" 160
+	outfits
+		"Guile Pulse Laser" 2
+		
+		"I70 Ameliorate Cell"
+		"Plasmasickle"
+		
+		"SC-1 Plasma Engines"
+	engine -11 42
+	engine 11 42
+	gun -18.5 -44.5 "Guile Pulse Laser"
+	gun 18.5 -44.5 "Guile Pulse Laser"
+	leak "leak" 60 50
+	explode "small explosion" 8
+	explode "tiny explosion" 10
+	description `岩盐级是格诺辛设计的一款成功的实验性测试平台。它们是格诺首款以战斗机为基础的飞船，也是第一种同时配备早期脉冲武器和护盾技术的型号；近一半的船体空间都专门用于开发这些新技术。`
+	description `	它们能够在护盾保护下，成群结队地对移动缓慢的维族战舰输出瞬间的爆发伤害。大量此类飞船都搭载于斯钦族的母舰之上。`
+	description `	战斗机默认不配备超空间引擎。除非你的舰队中拥有带战斗机机库的飞船，否则无法携带战斗机。`
+
+ship "Mica"
+	"display name" "云母"
+	sprite "ship/gegno mica"
+	thumbnail "thumbnail/gegno mica"
+	"administrative cost" 1
+	attributes
+		category "Transport"
+		licenses
+			"Scin Adjutant"
+		"cost" 201000
+		"shields" 0
+		"hull" 700
+		"required crew" 1
+		"bunks" 10
+		"mass" 90
+		"drag" 1.9
+		"heat dissipation" 0.6
+		"fuel capacity" 400
+		"cargo space" 36
+		"outfit space" 118
+		"weapon capacity" 0
+		"engine capacity" 50
+		weapon
+			"blast radius" 18
+			"shield damage" 40
+			"hull damage" 132
+			"hit force" 210
+	outfits
+		"C3 Scrap Cell"
+		"R01 Skirmish Battery"
+		"Plasma Grenades"
+		
+		"SC-12 Plasma Thruster"
+		"SC-12 Plasma Steering"
+		"Hyperdrive"
+	engine 0 40
+	leak "leak" 30 40
+	explode "small explosion" 4
+	explode "tiny explosion" 12
+	description `云母级是格诺辛对穿梭机的一种设计，它基于页岩级和维族的板岩级改造而来。虽然由于斯钦族的体型较小而使该船也略微偏小，但它搭载了更先进的引擎系统，使其速度几乎达到了页岩级和板岩级的两倍。`
+
+ship "Coesite"
+	"display name" "柯石英"
+	sprite "ship/gegno coesite"
+	thumbnail "thumbnail/gegno coesite"
+	"administrative cost" 2
+	attributes
+		category "Light Warship"
+		licenses
+			"Scin Adjutant"
+		"cost" 1872000
+		"shields" 0
+		"hull" 5600
+		"required crew" 8
+		"bunks" 14
+		"mass" 305
+		"drag" 4.6
+		"heat dissipation" 0.61
+		"fuel capacity" 500
+		"cargo space" 40
+		"outfit space" 264
+		"weapon capacity" 86
+		"engine capacity" 80
+		weapon
+			"blast radius" 40
+			"shield damage" 240
+			"hull damage" 460
+			"hit force" 440
+	outfits
+		"Astuit Battery" 2
+		
+		"C7 Brawl Cell"
+		"C3 Scrap Cell"
+		"R01 Skirmish Battery"
+		"R02 Battlezone Battery"
+		"Plasmasickle" 6
+		"Plasma Grenades" 2
+		
+		"SC-12 Plasma Thruster"
+		"SC-14 Plasma Steering"
+		"SC-1 Plasma Engines"
+		"Hyperdrive"
+	engine 47 85
+	engine -47 85
+	engine 32 84 0.5
+	engine -32 84 0.5
+	turret -25.5 -25.5 "Astuit Battery"
+	turret 25.5 -25.5 "Astuit Battery"
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "medium explosion" 6
+	explode "small explosion" 24
+	explode "tiny explosion" 18
+	"final explode" "final explosion small"
+	description `柯石英级是斯钦族在与维族作战时用作掩护舰的小型战舰。它们速度极快，并配备了两个炮塔基座，使其能够在移动中持续环绕目标并开火。由于体型较小，这些飞船相对易于制造，且通常成群结队地部署，从而能够压制比它们大得多的舰船。`
+
+ship "Tridymite"
+	"display name" "鳞石英"
+	sprite "ship/gegno tridymite"
+	thumbnail "thumbnail/gegno tridymite"
+	"administrative cost" 2
+	attributes
+		category "Transport"
+		licenses
+			"Scin Architect"
+			"Scin Hoplologist"
+		"cost" 1170000
+		"shields" 0
+		"hull" 4000
+		"required crew" 7
+		"bunks" 29
+		"mass" 268
+		"drag" 4.2
+		"heat dissipation" 0.59
+		"fuel capacity" 800
+		"cargo space" 56
+		"outfit space" 200
+		"weapon capacity" 0
+		"engine capacity" 86
+
+		"outfit scan power" 18
+		"outfit scan efficiency" 8
+		"cargo scan power" 6
+		"cargo scan efficiency" 2
+		weapon
+			"blast radius" 35
+			"shield damage" 220
+			"hull damage" 430
+			"hit force" 410
+	outfits
+		"C7 Brawl Cell"
+		"R02 Battlezone Battery"
+		"Plasmasickle" 3
+		"Plasma Grenades" 4
+		
+		"SC-14 Plasma Thruster"
+		"SC-14 Plasma Steering"
+		"Hyperdrive"
+	engine 44.5 63
+		zoom 0.9
+	engine -44.5 63
+		zoom 0.9
+	engine 0 60
+	leak "leak" 50 40
+	leak "flame" 40 70
+	explode "medium explosion" 3
+	explode "small explosion" 19
+	explode "tiny explosion" 14
+	"final explode" "final explosion small"
+	description `基于与柯石英级相似的骨架，鳞石英级是格诺辛的一种小型豪华运输船。鳞石英级通常被用作科研船，将科学家团队运往各个目的地，或是作为斯钦高级科学家的私人座驾。此外，军方偶尔也会将其用作侦察船，其船身结构中集成了早期的原型扫描系统。`
+
+ship "Felsic"
+	"display name" "长英质"
+	sprite "ship/gegno felsic"
+	thumbnail "thumbnail/gegno felsic"
+	"administrative cost" 3
+	attributes
+		category "Utility"
+		licenses
+			"Scin Architect"
+			"Scin Hoplologist"
+		"cost" 3955000
+		"shields" 0
+		"hull" 9100
+		"required crew" 18
+		"bunks" 53
+		"mass" 920
+		"drag" 8.3
+		"heat dissipation" 0.5
+		"fuel capacity" 500
+		"cargo space" 150
+		"outfit space" 322
+		"weapon capacity" 109
+		"engine capacity" 106
+		weapon
+			"blast radius" 74
+			"shield damage" 340
+			"hull damage" 650
+			"hit force" 690
+	outfits
+		"Astuit Battery" 3
+		
+		"C17 Warzone Core"
+		"R02 Battlezone Battery"
+		"Plasmasickle" 9
+		"Plasma Grenades" 9
+		
+		"SC-14 Plasma Thruster"
+		"SC-14 Plasma Steering"
+		"SC-12 Plasma Steering"
+		"Hyperdrive"
+	engine -18.5 155.5
+	engine 18.5 155.5
+	turret 0 -73.5 "Astuit Battery"
+	turret -41.5 84.5 "Astuit Battery"
+	turret 41.5 84.5 "Astuit Battery"
+	leak "leak" 60 50
+	leak "flame" 60 80
+	explode "large explosion" 7
+	explode "medium explosion" 20
+	explode "small explosion" 28
+	explode "tiny explosion" 16
+	"final explode" "final explosion medium"
+	description `长英质级基于片岩级设计，但以降低耐久度为代价提供了诸多升级选项。斯钦族为它们配备了三个炮塔基座，并扩大了装备、武器和引擎的容量。这使得这些飞船不仅能够执行后勤任务，还能兼作次级战斗舰船，从而弥补了斯钦族缺乏专用战舰的遗憾。`
+
+ship "Feldspar"
+	"display name" "长石"
+	sprite "ship/gegno feldspar"
+	thumbnail "thumbnail/gegno feldspar"
+	"administrative cost" 7
+	attributes
+		category "Heavy Warship"
+		licenses
+			"Scin Architect"
+			"Scin Hoplologist"
+		"cost" 14760000
+		"shields" 0
+		"hull" 20700
+		"required crew" 133
+		"bunks" 192
+		"mass" 2332
+		"drag" 26.2
+		"heat dissipation" 0.3
+		"fuel capacity" 600
+		"cargo space" 82
+		"outfit space" 566
+		"weapon capacity" 234
+		"engine capacity" 172
+		weapon
+			"blast radius" 180
+			"shield damage" 1650
+			"hull damage" 1200
+			"hit force" 1000
+	outfits
+		"Acuit Artillery" 2
+		
+		"C27 Campaign Core"
+		"R03 Warforge Battery"
+		"Plasmasickle" 66
+		"Plasma Grenades" 66
+		
+		"SC-15 Plasma Thrusters"
+		"SC-12 Plasma Steering"
+		"SC-14 Plasma Steering"
+		"Hyperdrive"
+	engine 31 194
+	engine -31 194
+	"reverse engine" -36 -186
+		zoom 0.7
+	"reverse engine" 36 -186
+		zoom 0.7
+	"steering engine" 108 34
+		zoom 0.7
+		angle -58
+		left
+	"steering engine" -108 34
+		zoom 0.7
+		angle 58
+		right
+	turret -74.5 13 "Acuit Artillery"
+	turret 74.5 13 "Acuit Artillery"
+	bay "Fighter" -73 -173.5
+		"launch effect" "scin launch"
+		over
+	bay "Fighter" 73 -173.5
+		"launch effect" "scin launch"
+		over
+	bay "Fighter" -70 -98
+		"launch effect" "scin launch"
+		over
+	bay "Fighter" 70 -98
+		"launch effect" "scin launch"
+		over
+	bay "Fighter" -65.5 120
+		"launch effect" "scin launch"
+		angle -180
+		over
+	bay "Fighter" 65.5 120
+		"launch effect" "scin launch"
+		angle -180
+		over
+	leak "leak" 50 50
+	leak "flame" 80 140
+	explode "huge explosion" 18
+	explode "large explosion" 30
+	explode "medium explosion" 46
+	explode "small explosion" 50
+	explode "tiny explosion" 40
+	"final explode" "final explosion large"
+	description `强悍的长石级是斯钦族令人叹为观止的杰作。作为新型岩盐级战斗机的试验平台，长石级会携带自身的小型编队，以压倒性优势击溃敌手。它在设计上也是一个半实验性平台，围绕着全新的多引擎系统和格诺最新的等离子技术打造。`
+	description `	长石级能够在与战场保持适度距离的同时提供火力支援，以其尺寸而言，它是一款极具威胁的全能型战舰。但缺点是，与斯钦族的其他军舰一样，它的船体较容易受损，尤其是单独行动时。因此，它们需要依赖舰载战斗机来将敌人阻截在安全距离之外。`
+
+ship "Epidote"
+	"display name" "绿帘石"
+	sprite "ship/gegno epidote"
+	thumbnail "thumbnail/gegno epidote"
+	"administrative cost" 6
+	attributes
+		category "Utility"
+		licenses
+			"Scin Architect"
+			"Scin Hoplologist"
+		"cost" 14454000
+		"shields" 0
+		"hull" 16900
+		"required crew" 102
+		"bunks" 170
+		"mass" 2420
+		"drag" 28.2
+		"heat dissipation" 0.32
+		"fuel capacity" 600
+		"cargo space" 430
+		"outfit space" 552
+		"weapon capacity" 166
+		"engine capacity" 182
+		weapon
+			"blast radius" 216
+			"shield damage" 1920
+			"hull damage" 1630
+			"hit force" 3200
+	outfits
+		"Astuit Battery" 2
+		"Acuit Artillery"
+		
+		"C7 Brawl Cell"
+		"C17 Warzone Core"
+		"R02 Battlezone Battery"
+		"R03 Warforge Battery"
+		"Plasmasickle" 51
+		"Plasma Grenades" 51
+		
+		"SC-15 Plasma Thrusters"
+		"SC-14 Plasma Steering" 2
+		"Hyperdrive"
+	engine 64 188
+	engine -64 188
+	"reverse engine" 66 -155
+	"reverse engine" -66 -155
+	turret 0 -144.5 "Astuit Battery"
+	turret 0 -27 "Astuit Battery"
+	turret 0 65 "Acuit Artillery"
+	bay "Fighter" 0 122
+		"launch effect" "scin launch"
+		angle -180
+		under
+	bay "Fighter" 0 180
+		"launch effect" "scin launch"
+		angle -180
+		under
+	leak "leak" 10 40
+	leak "flame" 40 70
+	leak "big leak" 30 50
+	explode "huge explosion" 15
+	explode "large explosion" 42
+	explode "medium explosion" 42
+	explode "small explosion" 38
+	"final explode" "final explosion large"
+	description `绿帘石级是大型独立科学研究平台，拥有容量可观的货舱，使其能作为格诺辛可靠的重型货船使用。大量的铺位既可以用来将大批斯钦科学家送往他们的项目目的地，也支持在船上进行移动演示和科学观测。每艘绿帘石级都配备有一个后部战斗机挂舱，可容纳两架岩盐级战斗机，通常用于在斯钦空间内运送岩盐级战斗机以补给航母。得益于这些战斗机以及绿帘石级自身的三个背部炮塔，它们在需要时也能够被用作辅助战舰。`
+	description `	与其他格诺辛飞船一样，绿帘石级本身也是一个实验性测试平台；它们围绕在长石级上测试过的同一套大型引擎系统建造，这使得它们在其体型下显得尤为快速。`
+
+ship "Kyanite"
+	"display name" "蓝晶石"
+	sprite "ship/gegno kyanite"
+	thumbnail "thumbnail/gegno kyanite"
+	"administrative cost" 5
+	attributes
+		category "Utility"
+		"cost" 28870000
+		"shields" 0
+		"hull" 13650
+		"required crew" 66
+		"bunks" 93
+		"mass" 1735
+		"drag" 22.6
+		"heat dissipation" 0.33
+		"fuel capacity" 400
+		"cargo space" 76
+		"outfit space" 380
+		"weapon capacity" 202
+		"engine capacity" 160
+		"energy capacity" 21300
+		"energy generation" 11.3
+		"heat generation" 27.2
+		"outfit scan power" 18
+		"outfit scan efficiency" 8
+		"cargo scan power" 6
+		"cargo scan efficiency" 2
+		weapon
+			"blast radius" 197
+			"shield damage" 2030
+			"hull damage" 1440
+			"hit force" 2800
+	outfits
+		"Astuit Battery" 2
+		"Acuit Artillery"
+
+		"Plasmasickle" 33
+		"Plasma Grenades" 33
+
+		"SC-14 Plasma Thruster" 2
+		"SC-14 Plasma Steering" 2
+		"Hyperdrive"
+	"steering engine" -84 -100 0.5
+		angle 58.5
+		right
+	"steering engine" 84 -100 0.5
+		angle -58.5
+		left
+	engine -15 140
+	engine 15 140
+	engine -28.5 169
+	engine 28.5 169
+	gun -40 -350
+	gun 40 -350
+	gun 0 -62.5
+	turret -46 -102 "Astuit Battery"
+	turret 46 -102 "Astuit Battery"
+	turret 0 69 "Acuit Artillery"
+	leak "leak" 20 50
+	leak "flame" 90 160
+	leak "big leak" 30 50
+	explode "huge explosion" 12
+	explode "large explosion" 46
+	explode "medium explosion" 44
+	explode "small explosion" 30
+	"final explode" "final explosion large"
+	description `蓝晶石级是格诺辛专门为了技术测试而精心构建的平台，配备了庞大的内置动力系统和能量储备，能够运行多种类型的装备。蓝晶石级最常进行的是武器实验，并由遍布船头两根长形结构上的各种扫描仪器进行记录。尽管是武器研究船，但由于其内部系统过度暴露、且外壳防护极弱，蓝晶石级并不具备实战能力。此外，这些系统不仅造价昂贵而且生产困难，因此只有极少量的蓝晶石级飞船在役。`
+	description `	搭载于鳞石英级上的扫描系统最初是在蓝晶石级平台上研发和测试的，最终也直接集成到了船体之中。`
+
+ship "Kyanite" "Kyanite (Guile)"
+	outfits
+		"Guile Pulse Laser" 2
+
+		"Plasmasickle" 33
+		"Plasma Grenades" 33
+
+		"SC-14 Plasma Thruster" 2
+		"SC-14 Plasma Steering" 2
+		"Hyperdrive"
+
+	gun "Guile Pulse Laser"
+	gun "Guile Pulse Laser"
+	gun
+	turret
+	turret
+	turret
+
+ship "Kyanite" "Kyanite (Acumen)"
+	outfits
+		"Acumen Bolt Cannon"
+
+		"Plasmasickle" 33
+		"Plasma Grenades" 33
+
+		"SC-14 Plasma Thruster" 2
+		"SC-14 Plasma Steering" 2
+		"Hyperdrive"
+
+	gun
+	gun
+	gun "Acumen Bolt Cannon"
+	turret
+	turret
+	turret

@@ -1,0 +1,362 @@
+# Copyright (c) 2023 by tibetiroka
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+news "artist on post-fw Deneb"
+	location
+		government "Neutral"
+		system "Deneb"
+	name
+		word
+			"Writer"
+			"Painter"
+			"Artist"
+			"Sculptor"
+			"Designer"
+			"Photographer"
+			"Composer"
+	message
+		word
+			"这个 "
+		word
+			"星球"
+			"城市"
+			"建筑"
+		word
+			"的 "
+		word
+			"外星"
+			"地外"
+			"独特的"
+			"帕格"
+		word
+			" 起源如此 "
+		word
+			"鼓舞人心"
+			"引人入胜"
+			"扣人心弦"
+			"激动人心"
+		word
+			"！我 "
+		word
+			"充满"
+			"迸发着"
+		word
+			" "
+		word
+			"想法"
+			"创造力"
+			"能量"
+		word
+			"而战！"
+
+news "tourist on post-fw Deneb"
+	location
+		government "Neutral"
+		system "Deneb"
+	name
+		word
+			"Tourist"
+			"Sightseer"
+			"Traveler"
+	message
+		word
+			"你能想象吗"
+			"你知道吗"
+		word
+			"那"
+		word
+			"整个"
+			"整个"
+			"这里的每一部分"
+		word
+			" "
+		word
+			"城市"
+			"建筑"
+		word
+			" 被 "
+		word
+			"建造"
+			"创造"
+			"建造"
+			"制造"
+		word
+			" ，出自 "
+		word
+			"一个外星种族"
+			"外星人"
+			"虫形外星人"
+			"另一个种族"
+		word
+			"吗？ "
+		word
+			"那真是"
+			"我觉得那"
+		word
+			" "
+			" 非常 "
+		word
+			"鼓舞人心"
+			"难以置信"
+			"激动人心"
+			"令人着迷"
+		word
+			"而战！"
+
+news "conspiracy theorist on post-fw Deneb"
+	location
+		government "Neutral"
+		system "Deneb"
+	name
+		word
+			"Conspiracy theorist"
+			"Critical thinker"
+			"Truth seeker"
+	message
+		word
+			"你真的"
+			"你怎么能"
+		word
+			" "
+		word
+			"相信"
+			"还认为"
+			"接受"
+			"信任"
+		word
+			" 这个 "
+		word
+			"城市"
+			"空间港"
+			"建筑"
+			"地方"
+		word
+			" 被 "
+		word
+			"创造"
+			"制造"
+			"被居住"
+		word
+			" ，出自 "
+		word
+			"另一个物种"
+			"外星人"
+			"不同种族"
+		word
+			"吗？ "
+		word
+			"这是 "
+		word
+			"明显"
+			"显然"
+			"毫无疑问"
+		word
+			" 由人类为人类建造的。 "
+		word
+			"你最终会意识到，"
+			"你会明白，"
+			"我正在为公开审判收集证据"
+			"我可以提供你所需的所有证据"
+			"这不过是共和国和自由世界的把戏"
+		word
+			"愿意砸多少钱。"
+
+news "reporter on post-fw Deneb"
+	location
+		government "Neutral"
+		system "Deneb"
+	name
+		word
+			"Reporter"
+			"Journalist"
+			"Correspondent"
+	message
+		word
+			"我不觉得有什么"
+			"我没发现有什么"
+			"没什么"
+		word
+			" "
+		word
+			"特别的"
+			"独特的"
+			"不同的"
+		word
+			" 的地方 "
+		word
+			"星球"
+			"地方"
+		word
+			"，但 "
+		word
+			"人们"
+			"我的观众们"
+		word
+			" "
+		word
+			"不这么看"
+			"总喜欢看我在这里报道"
+			"还是喜欢看我在这里"
+			"希望我在这，所以我来了"
+			"觉得这很有趣"
+		word
+			"。总之，我"
+		word
+			" 得走了"
+			"要去演播室了"
+			" 得出发了"
+			" 已经待太久了"
+			" 不该跟你聊天的"
+		word
+			"里，"
+		word
+			"节目"
+			"我的环节"
+		word
+			" "
+		word
+			"马上开始"
+			"三分钟后开始"
+			"一分钟后直播"
+		word
+			"愿意砸多少钱。"
+
+news "merchant on post-fw Deneb"
+	location
+		government "Neutral"
+		system "Deneb"
+	name
+		phrase
+			"merchant names"
+	message
+		word
+			"你简直不敢相信"
+			"我没想到"
+		word
+			"这"
+		word
+			"那种"
+			"数量"
+			"种类"
+			"庞大的流量"
+		word
+			" 的 "
+		word
+			"飞船"
+			"交通"
+			"商人"
+		word
+			" 经过"
+		word
+			" 在这里"
+			" 这个星系"
+			""
+		word
+			"。这是一条捷径，连接着 "
+		word
+			"自由世界"
+			"灰带"
+			"南方"
+			"塔拉泽德"
+		word
+			" 和辛迪加的捷径。 "
+		word
+			"就在昨天"
+			"几天前"
+			"我到达时"
+		word
+			" "
+		word
+			"我不得不等"
+			"我被耽搁了"
+			"他们让我等着"
+			"他们一直说没有空的着陆坪"
+		word
+			" 长达 "
+		word
+			""
+			"大概 "
+			"感觉像是 "
+			"大约 "
+			"将近 "
+		word
+			"四个小时"
+			"半天"
+			"九十分钟"
+		word
+			"而战！"
+
+news "worker on pug-occupied planet after fw"
+	location
+		neighbor system "Deneb"
+		not government "Pug"
+	name
+		word
+			"Dock worker"
+			"Worker"
+	message
+		word
+			"我 "
+		word
+			"被"
+			"当时在工作"
+			"恰好就在"
+			"当时有个合同"
+		word
+			" 在这里 "
+		word
+			"占领期间"
+			"帕格战争期间"
+			"帕格攻击我们时"
+		word
+			". "
+		word
+			"虽然他们是古怪的外星人"
+			"即使被挑衅"
+			"大多数时候"
+		word
+			"，他们 "
+		word
+			"其实没惹麻烦"
+			"没造成太大破坏"
+			"只是不管我们"
+		word
+			". "
+		word
+			"不像某些 "
+		word
+			"政客"
+			"文书虫"
+			"人们"
+			"官僚"
+		word
+			" "
+		word
+			"在老家"
+			"在地球"
+			"我认识的"
+			"在这里"
+			"我们如今遇到的"
+		word
+			"愿意砸多少钱。"
+
+news "pug on pug planets during fw"
+	location
+		government "Pug"
+		not attributes "uninhabited"
+	name
+		word
+			"帕格"
+	message
+		phrase
+			"friendly pug"

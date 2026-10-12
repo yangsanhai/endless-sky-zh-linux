@@ -1,0 +1,1761 @@
+# Copyright (c) 2021 by Zitchas
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Remnant: Cognizance 1"
+	minor
+	name "后续观测"
+	description `普卢姆 希望你使用一艘“加装气体线”的飞船，对涅尼亚的各行星进行后续访问。`
+	source "Aventine"
+	stopover "Nasqueron"
+	stopover "Slylandro"
+	blocked "遗民研究员又给你派了一个任务，但你需要腾出<tons>的货物空间才能接下它。"
+	cargo "scanning equipment" 8
+	to offer
+		has "event: remnant: wait for plume"
+		has "Remnant: Learn Sign Follow Up: declined"
+		random < 50
+	on offer
+		conversation
+			`你踏入阿文丁拥挤的太空港时，一张熟悉的面孔正等着你。“<first>船长！”普卢姆打着手语说。“我一直盼着你路过呢。”他示意你坐到旁边的长椅上。`
+			`	“现在大部分茧已归还，我希望你返回纳斯克戎和斯莱兰德罗，观察虚空精灵的行为。我希望能更深入地了解它们的生命周期。”`
+			choice
+				`	"Sure, I could do that."`
+					goto rc1accept
+				`	"Not right now, but I could later."`
+					defer
+				`	“报酬多少？”`
+			`	“研究发表后，你会收到一百万信用点。”`
+			choice
+				`	“我接受。”`
+				`	"Not right now, but I could later."`
+					defer
+			label rc1accept
+			`	"Excellent. As before, please visit both Nasqueron and Slylandro, record the void sprites there, and return here."`
+				accept
+	npc
+		government "Drak"
+		system "Nenia"
+		personality staying heroic disables uninterested
+		ship "Archon (Cloaked)" "Lifted Lorax"
+	npc
+		government "Korath"
+		system "Nenia"
+		personality entering forbearing timid uninterested surveillance staying
+		fleet
+			names "korath"
+			outfitters "Void Sprite Parts"
+			variant
+				"Palavret (Ember)"
+				"'olofez" 2
+	on enter "Nenia"
+		dialog
+			`扫描星系时，你首先注意到虚空精灵的行为有所不同：它们在空中飞行的数量变少了，而且你看到的几只似乎都有些畏缩——静静地漂浮，一旦你的飞船靠近，它们就沉入云层。你想起普卢姆请你访问过这两颗星球。`
+	on stopover
+		conversation
+			`这里的虚空精灵难以捉摸。你花了好一会儿追踪雷达信号，才终于将一小群纳入可视范围。你从远处记录了几分钟，直到它们突然散入一场风暴，消失无踪。`
+	on visit
+		dialog "你已返回阿文丁，但尚未获得涅尼亚两颗气态巨星的扫描数据。请确保已访问两颗行星，且搭载扫描设备的飞船已返回此处。"
+	on complete
+		conversation
+			`你对虚空精灵的行为感到失望，于是低调地将录像送到了普卢姆的实验室。普卢姆迅速接过并查看画面，然后做了一个你认为代表“困惑的沮丧”的手势。接着他似乎注意到了什么，又恢复了那惯常的专注神态。`
+			`	"你看这里！"他倒回录像，在你面前的投影上急促地比划着。"那儿，有一只受伤了。某种灼伤，笔直的一道长线。"他快速快进画面。"这里，还有零星的烧灼痕迹。"他抬起头看着你，利落地打出一连串手势："这超出了我的专业领域；我需要咨询一位专家。一小时后在太空港见我。"`
+
+
+
+mission "Remnant: Cognizance 2"
+	name "消灭科拉斯飞船"
+	description "普卢姆命令你消灭 <waypoints> 星系中的科拉斯飞船。"
+	source "Aventine"
+	waypoint "Nenia"
+	to offer
+		has "Remnant: Cognizance 1: done"
+	on offer
+		conversation
+			`你抵达太空港，发现普卢姆正沿着走道急促地踱步。他匆匆打了个招呼，便直接切入正题。"我们从未见过虚空精灵身上自然出现这样的痕迹，但这与科拉斯舰船留下的武器灼痕吻合。因此，我们认为科拉斯已经开始猎杀虚空精灵。"`
+			`	他带着惊人的活力看着你。"我不会让那些爬虫类的战争狂毁掉我们的工作。摧毁负责的科拉斯猎人，然后我们才能继续研究。"`
+			choice
+				`	"Okay, I will destroy the Korath hunters' ship."`
+					goto acceptance
+				`	"你有权下这种命令吗？"`
+			`	他简短地点点头。"我没有权调动舰队，也无权命令船长摧毁飞船，但我可以宣布这艘科拉斯船威胁到了遗民的利益。如何应对这一威胁的认定，由你决定。"`
+			choice
+				`	(Accept his explanation.)`
+					goto acceptance
+				`	"你能解释一下吗？"`
+			`	"尽管遗民拥有一个无所不包的层级体系，确保人人都向某人负责，但我们认为应当保持社会各个层面的融合，以防止分化为‘民事’或‘军事’分支。这种融合的两个方面是：何时动用武力，以及动用多大武力才算值得。根据我作为研究员的职位，我有权将某物指定为对我项目或整个遗民的威胁。我甚至可以下令让人采取行动。然而，鉴于我在军事能力方面地位较低，我无法决定军事响应的规模，并且可能被军事资格更高的人否决。"`
+			`	"在我们目前的情况下，我的异星生物学资质比你高，因此我可以向你以及大多数其他异星生物学家下达指令：保护虚空精灵是优先事项。然而，你在战斗和军事事务上比我更有经验。因此，这件事相对于其他军事任务的重要性由你决定。同样，需要动用多少武力、采用什么战术或其他军事考量，也由你决定。"`
+			`	"这正是执政官与众不同之处：他们是遗民中在自己的领域表现出色、在众多领域拥有可靠判断力、并且擅长平衡遗民资源多重需求的人。谦逊也是一项要求，因为他们必须始终认识到，尽管他们的特定技能组合可能独一无二，但在任何单一事项上总有别人比自己更强。因此，执政官是裁定我们各项任务优先级的裁决者，也是维护遗民统一的领袖。"`
+			choice
+				`	"Thanks for the explanation!"`
+					goto acceptance
+				`	"我以为执政官都是专家。"`
+			`	"嗯，既是也不是。大多数执政官会被分配特定的任务，他们需要全身心投入。通常，这些任务与其专业领域相关，但并非总是如此。一般来说，执政官被视为其负责任务的最终权威，但他们也需要考虑其他执政官以及相关领域专家的建议。`
+			`	"考虑到你自己的技能，我怀疑你最可能接触到的执政官会是奇利亚执政官，她负责协调遗民的军事防御；以及泰莉执政官，她负责将我们的最新创新整合到可用的飞船中。"`
+			choice
+				`	"谢谢！这比我预想的要详细得多。"`
+				`	"好的，暂时满足了我的好奇心。"`
+			label acceptance
+			`	"Excellent. You deal with the Korath, and I will file a report about this threat. Please inform me immediately once you have taken care of it." He pauses, then continues, "Oh, and remember to record the battle. It may be useful in understanding what they are doing there."`
+				accept
+	on enter Nenia
+		dialog
+			`当你发现科拉斯猎手时，想起普卢姆的请求，在飞船准备战斗时轻按了“记录”按钮。`
+	npc kill
+		government "Korath"
+		system "Nenia"
+		personality forbearing timid uninterested surveillance staying
+		fleet
+			names "korath"
+			outfitters "Void Sprite Parts"
+			variant
+				"Palavret (Ember)"
+				"'olofez" 2
+		dialog "你已摧毁了科拉斯猎手。现在可以返回<planet>领取报酬了。"
+	on complete
+		event "korath hunting"
+		event "korath rescue: nenia small"
+		event "korath rescue: nenia small end" 18
+		conversation
+			`当你返回<planet>时，发现普卢姆正在等你。他迫不及待地查看战斗记录。"感谢你消灭了这个猎人——"他话音未落，通讯器上的灯光闪烁起来。他快速浏览了什么，然后抬头看向你。"看来，科拉斯猎捕虚空精灵的事引起了防卫长官的注意。奇利亚要求你立刻去凯良见他。"`
+
+
+
+mission "Remnant: Cognizance 3"
+	landing
+	name "前往 <planet>"
+	description "长官奇利亚留了一条信息给普卢姆，要求你立即到<destination>见他。"
+	source "Aventine"
+	destination "Caelian"
+	to offer
+		has "Remnant: Cognizance 2: done"
+		not "Remnant: Cognizance 4: offered"
+
+
+
+mission "Remnant: Cognizance 4"
+	landing
+	name "搜寻科拉斯"
+	description "执政官奇利亚要求你在返回<destination>之前，追踪一支在余烬废土中探测到的科拉斯舰队。"
+	source "Caelian"
+	to offer
+		has "Remnant: Cognizance 2: done"
+	on offer
+		"remnant chilia" ++
+		conversation
+			branch chilia
+				has "remnant chilia"
+			`当你的<ship>刚刚在指定停机坪上停稳时，控制面板就开始闪烁，显示有人请求登船。瞥一眼屏幕，只见一位体格健壮、带着军人气质的年轻人正站在你的气闸舱门前。你迅速向星港控制中心确认，得知负责遗民军事活动的长官确实正在等待登船。你按下解锁按钮，看着奇利亚长官大步走进船舱。`
+			`	"Greetings, Captain <first>," he signs. "I am Prefect Chilia. I have the nominal responsibility for the overall defense of Remnant space and military operations." He smiles deprecatingly. "I say 'nominal' as virtually all our activities are military in some way, but usually fall under the purview of those who better understand them."`
+				goto main
+			label chilia
+			`当你的<ship>刚刚在指定停机坪上停稳时，控制面板就开始闪烁，显示有人请求登船。快速瞥一眼屏幕，只见奇利亚长官正站在你的气闸舱门前。你立刻按下解锁按钮，看着他大步走进船舱。`
+			`	“你好，<first>船长，”他打着遗民手语说道，“你似乎很擅长发现对我们重要的东西。不过，我很高兴你和普卢姆发现了这个。”`
+			label main
+			branch "void rifle"
+				has "Remnant: Face to Maw 2B: done"
+			`	His gestures take on an abrupt cadence without many of the normal connecting movements that you are accustomed to. "Now, for the task at hand: it seems the Korath have discovered the void sprites and shot at enough of them that almost all have retreated into the depths of Nasqueron and Slylandro. There are military implications of the Korath harvesting void sprites, and we must take steps to prevent this from happening.`
+				goto next
+			label "void rifle"
+			`	他的手势节奏突然变得急促，缺少了许多你习惯的常规连接动作。“好了，说正事：看来科拉斯人发现了虚空精灵，并且向它们射击了不少次，以至于几乎所有虚空精灵都退入了纳斯克戎和斯莱兰德罗的深处。你很清楚科拉斯人捕猎虚空精灵的潜在军事影响，也一定明白阻止这件事的重要性。”`
+			label next
+			`	"It is imperative that all the Korath involved in this exploration be located immediately. According to our surveillance, that ship was part of a fleet that recently passed through Parca. Locate the fleet and report back."`
+				accept
+	npc kill
+		to despawn
+			has "remnant: cognizance: found korath fleet"
+		government "Korath"
+		personality staying surveillance
+		system "Aescolanus"
+		fleet
+			names "korath"
+			outfitters "Void Sprite Parts"
+			variant
+				"Rano'erek"
+				"Palavret (Ember)" 4
+				"'olofez" 12
+		conversation
+			action
+				set "remnant: cognizance: killed korath fleet"
+				event "korath rescue: aescolanus medium"
+				event "korath rescue: aescolanus medium end" 18
+			`你摧毁了那支骚扰虚空精灵的科拉斯舰队。`
+	on enter "Aescolanus"
+		set "remnant: cognizance: found korath fleet"
+		dialog `你已定位科拉斯舰队。他们目前似乎没有移动的迹象。`
+	to complete
+		has "remnant: cognizance: found korath fleet"
+	on complete
+		payment 500000
+		conversation
+			`这次，当你完成飞行后检查时，你看到奇利亚长官从旁边的“椋鸟”号里出来，看着他大步跨过停机坪朝你的气密门走来。他爬上梯子时你按下了开门键。你一言不发地调出从埃斯科拉努斯传来的传感器日志，标出各艘船的位置。他的目光在显示屏上扫过片刻，然后点了点头。`
+			branch destroyed
+				has "remnant: cognizance: killed korath fleet"
+			`	“我会通知一支特遣队。到太空港见我，确保你的飞船做好战斗准备。”`
+			`	当他离开你的飞船时，你的通讯器响起，一条消息显示一个名为“遗民后勤部”的组织已为你额外分配了<payment>。`
+				decline
+			label destroyed
+			`	“你已经展现了良好的主动性；不过，我怀疑那并不是唯一一支猎手舰队。我会通知一支特遣队。到太空港见我，确保你的飞船做好战斗准备。”`
+			`	当他离开你的飞船时，你的通讯器响起，一条消息显示一个名为“遗民后勤部”的组织已为你额外分配了<payment>。`
+
+
+
+mission "Remnant: Cognizance 5"
+	name "摧毁科拉斯"
+	description "奇利亚长官要求你在<date>之前返回<destination>前消灭科拉斯舰队。"
+	source "Caelian"
+	mark "Aescolanus"
+	deadline 20
+	to offer
+		# 0.9.13 Compatibility patch
+		or
+			has "Remnant: Cognizance 4: done"
+			has "Remnant: Cognizance 4: failed"
+		not "Remnant: Cognizance 4: aborted"
+	on offer
+		conversation
+			branch "fleet killed"
+				has "remnant: cognizance: killed korath fleet"
+			`你到达太空港时，发现奇利亚长官正在向一群遗民做简报。你走近时他招手让你上前，并向大家介绍你。“各位，这位是<last>船长，他已经两次定位到了科拉斯猎手，本次任务将由他牵头追踪剩余目标。”当你穿过房间走向他时，你仔细打量了一下这群人。一个引人注目的细节是，这群遗民每个人都戴着一条厚皮革项圈，向上延伸到发际线。皮革有鳞片质感，而且似乎在微弱地脉动。遗憾的是，你没有时间提问，因为奇利亚仍在不停发布指令。`
+				goto next
+			label "fleet killed"
+			`你到达太空港时，发现奇利亚长官正在向一群遗民做简报。你走近时他招手让你上前，并向大家介绍你。“各位，这位是<last>船长，他已经两次定位到了科拉斯猎手，最近还摧毁了他们部分舰队。本次任务将由船长牵头追踪剩余目标。”当你穿过房间走向他时，你仔细打量了一下这群人。一个引人注目的细节是，这群遗民每个人都戴着一条厚皮革项圈，向上延伸到发际线。皮革有鳞片质感，而且似乎在微弱地脉动。遗憾的是，你没有时间提问，因为奇利亚仍在不停发布指令。`
+			label next
+			`	他转向你。“这些是听你指挥的船长。他们驾驶两艘信天翁级、两艘满员编制的朱鹭级，以及六艘椋鸟级。其中一艘信天翁级改装成了护盾船；让它承受主要攻击。”他顿了顿，环顾四周。“这支特遣队对付预定目标绰绰有余，但我们不能掉以轻心：确保杀死每一个科拉斯人。打捞是次要任务：首要优先是保证没有漏网之鱼。”`
+			`	He steps back and looks at the group. "May the Embers burn bright for you." With that, he gives the group a respectful nod and walks away. The captains all look around and make various signs you think are probably encouraging combat pilot slang and variations on Prefect Chilia's parting words. As they disperse to their ships, one gestures to you. "Lead on, Captain."`
+				accept
+	npc kill
+		government "Korath"
+		personality staying target
+		system "Nenia"
+		fleet
+			names "korath"
+			outfitters "Void Sprite Parts"
+			variant
+				"Rano'erek"
+				"Palavret (Ember)" 4
+				"'olofez" 12
+		on kill
+			unmark "Nenia"
+			dialog "你已摧毁了所有看起来在猎杀虚空精灵的科拉斯人。"
+	npc
+		government "Remnant"
+		personality escort launching appeasing unconstrained plunders
+		fleet
+			names "remnant"
+			cargo 0
+			variant
+				"Albatross (Shield)"
+				"Albatross"
+				"Ibis" 2
+				"Starling (Heavy)" 6
+				"Petrel" 4
+				"Tern" 8
+	on enter "Aescolanus"
+		unmark "Aescolanus"
+		dialog `科拉斯舰队消失了。鉴于奇利亚长官对这个任务的紧迫要求，找到它的责任落在了你身上……要快。`
+	on enter "Nenia"
+		unmark "Aescolanus"
+		mark "Nenia"
+		dialog `你找到了科拉斯舰队。是时候按奇利亚长官的要求将他们全部摧毁了。`
+	on complete
+		event "korath rescue: nenia medium"
+		event "korath rescue: nenia medium end" 18
+		conversation
+			`特遣舰队悄然返回<planet>，舰船降落在着陆坪上，带着几分满足。几秒钟之内，机械师们便攀上船壳，工程师们从天花板吊着绳索降下检查引擎。电池接上了，燃料管连好了，装载替换武器的小车驶入。一如既往，每位船长的首要职责就是确保自己的飞船随时做好重返太空的准备。当第一阵脚步声在<ship>的船壳上回响时，你将飞船切换至维护模式，然后前往太空港。`
+
+
+
+mission "Remnant: Cognizance 6"
+	name "运送普卢姆"
+	description "在<stopovers>接上普卢姆，并在<day>之前把他带到<origin>。奇利亚长官想向他请教关于虚空精灵的事。"
+	source "Caelian"
+	stopover "Aventine"
+	passengers 1
+	deadline 5
+	to offer
+		has "Remnant: Cognizance 5: done"
+	on offer
+		conversation
+			`你在主食堂旁边的一个小侧室里找到了奇利亚长官和其他船长。所有人都在埋头享用他们惯例的丰盛餐点，而长官则在房间里走动，与每个人交谈。你拉过一把椅子坐下时，奇利亚出现在你身边，把一盘食物推到你面前。他说：“这或许不是你习惯了的上界故土餐点，但这是我们能提供的东西。”奇利亚环顾着那些低声交谈着用餐的人们。“从战场上回来后一起吃顿饭，算是某种传统。分享逝者的回忆，讨论他们为何倒下，以及我们下次必须做出哪些改变。”他从自己的盘子里吃了几口。`
+			`	“那么，下次我们该怎么做些不同的事？”`
+			choice
+				`	“多几艘信天翁级就好了。”`
+				`	“电磁脉冲老是碍事。”`
+				`	“我觉得其实打得还不错。”`
+			`	他在数据板上写了些东西。“感谢反馈。”他停顿片刻，抿了一口杯中的饮品。“那么，接下来，我们需要知道科拉斯人在干什么。除了明摆着的——杀死虚空精灵、找执政官的麻烦——科拉斯人是个狡猾的对手，他们不会无缘无故地挑衅执政官。”他说。`
+			`	“我这边有些事情要查。同时，请你去<stopovers>接上普卢姆，把他带回来。在<day>之前我们得让他到场听简报。”`
+				accept
+	on stopover
+		dialog
+			`普卢姆正在着陆坪等你。你发出安全信号、打开舱门后，他低调地登上飞船。“感谢您处理了科拉斯的事，<last>船长。它们让我很担心。”说完，他安顿到铺位上，开始翻阅笔记。`
+			
+	on complete
+		payment 100000
+		conversation
+			`你刚一降落，普卢姆就急匆匆地跑去找奇利亚。等你完成关车检查，前往会议地点时，发现普卢姆几乎已经完成了简报。你只赶上了最后几分钟，内容是总结虚空精灵内部可能富集的材料，以及他的推测：尽管执政官充满敌意，但科拉斯人可能认定这些半加工资源对他们的生存有用。`
+			`	经过几分钟关于虚空精灵生理的问答，以及在场遗民飞行员们的推测，奇利亚宣布休会。“我们稍后会重新集合讨论此事的影响，但在此期间还有一些任务要处理。<first>船长，请到太空港来见我。”`
+			`	当众人朝太空港散去时，你的通讯器收到一条消息，内容是一份“来自遗民后勤部的资源偏移配额：<payment>”。`
+
+
+
+mission "Remnant: Cognizance 7"
+	name "运送普卢姆至<planet>"
+	description "普卢姆想要亲眼目睹涅尼亚正在发生的事情，并希望前往<planet>。"
+	source "Caelian"
+	destination "Nasqueron"
+	passengers 1
+	to offer
+		has "Remnant: Cognizance 6: done"
+	on offer
+		conversation
+			`你在太空港中走近时，奇利亚长官和普卢姆正对着数据板上的细节指指点点。奇利亚先注意到你，招手让你过去。“感谢你加入我们。在我整理一些更长期计划的同时，你能带普卢姆去<planet>吗？”`
+			choice
+				`	“我们为什么要回去？”`
+				`	“走吧。”`
+					goto action
+			`	“录音和传感器读数是有用的数据，但比起亲眼目睹正在发生的事情并直接体验数据，还是差远了。”普卢姆说道，“在我这个行当里，这样的机会并不多——尤其是当其他人需要我的专业知识，而他们又宁愿不花时间观察野生动物的时候。不过，我扯远了。”`
+			label action
+			`	普卢姆向奇利亚恭敬地鞠了一躬（奇利亚也以同样的恭敬回礼），然后走向你的飞船。“我会在船上等你，船长。”`
+				accept
+	npc
+		government "Korath"
+		personality staying
+		system "Nenia"
+		fleet
+			names "korath"
+			outfitters "Void Sprite Parts"
+			variant
+				"Palavret (Ember)" 2
+				"'olofez" 4
+	on complete
+		conversation
+			`降入纳斯克戎的云层对你来说已几乎变得熟悉。薄薄的气体层逐渐变成更厚重的云团，偶尔伴有猛烈的风暴。在你身旁，普卢姆正急切地望向窗外，你提醒自己，这很可能是他第一次真正在虚空精灵的世界上看到它们。`
+			`	你到达了之前发现虚空精灵最密集的高度，然后启动飞船传感器。普卢姆环顾四周，透过窗户张望。“它们在哪儿？通常不是应该有一些吗？在录像里它们看起来总是很多。”你专注于传感器，几分钟后捕捉到一些远距离信号。你跟随它们下降至较低的大气层，最终开始探测到一些虚空精灵。`
+			`	“够近了，船长。”普卢姆说，“我出去，在船体上观察它们。”你帮他穿上压力服，在他身后循环气闸。你迅速压下心中一闪而过的失望。“毕竟，这是普卢姆的工作。”你对自己说着，坐回椅子上等他回来。`
+
+
+
+mission "Remnant: Cognizance 8"
+	landing
+	name "护送普卢姆至<planet>"
+	description "普卢姆想要核对他的虚空精灵研究记录，以验证一些信息。"
+	source "Nasqueron"
+	destination "Aventine"
+	to offer
+		has "Remnant: Cognizance 7: done"
+	on offer
+		conversation
+			`数小时后，普卢姆在加压服氧气不足的警报催促下回到了船上。当你帮他脱下加压服时，他看起来似乎在为是该兴奋还是担忧而犹豫不决。`
+			`	“能来到这里，远远地观察它们，真是太好了。有几只确实也冒险靠近了。但我为它们感到担心。那边有些虚空精灵身上有烧灼痕迹，和科拉斯武器留下的刻痕类似。而且我们已经注意到，它们比平时躲藏在更深的大气层里。”他低头瞥了一眼数据板，然后又抬头看着你。“等我们回到混乱的余烬废土，我会给奇利亚发个信号。看来我需要回到阿文丁重新核对一下我的记录和样本。请带我去那里。”`
+				accept
+	npc
+		government "Korath"
+		personality staying
+		system "Nenia"
+		fleet
+			names "korath"
+			outfitters "Void Sprite Parts"
+			variant
+				"Palavret (Ember)" 3
+				"'olofez" 6
+	on complete
+		conversation
+			`当你接近阿文丁时，普卢姆指向离他实验室最近的着陆坪。“你就停那里吧。如果我实验室里的样本没问题，我马上就会给你另一个任务。这次你需要让你的高压飞船保持激活状态。一两个小时后来实验室，我们就可以开始装货了。”`
+
+
+
+mission "Remnant: Cognizance 9"
+	name "运送工程师至<planet>"
+	description "一位为普卢姆工作的工程师需要将他本人和一批设备运送到<planet>。"
+	blocked "普卢姆的工程师需要一张空闲的铺位和<tons>的货舱空间来存放他的设备。等你有足够的空间时再来。"
+	source "Aventine"
+	destination "Esquiline"
+	cargo "equipment" 8
+	passengers 1
+	to offer
+		has "Remnant: Cognizance 8: done"
+	on offer
+		log "People" "Gavriil" `一名与普卢姆共事的技术员，同时也是一位才华横溢的天体生物学家。加夫里尔是改造后的埃斯奎林空间站的项目负责人。`
+		conversation
+			`你走进普卢姆的实验室，映入眼帘的是一大堆板条箱和设备。普卢姆和另一位遗民正围着那堆东西，对照清单清点物品。“啊，<first>！来得正好。我们刚清点完这次运输需要带上的补给。”他指向那位工程师，“这位是加夫里尔，我们最优秀的技术专家之一，同时也是一位出色的天体生物学家。他将和你同行。”`
+			`	“很高兴与你合作，”加夫里尔一边打着手语，一边微微鞠躬。“我们将前往<planet>上的一个研究站。没错，那是一颗气态巨行星。”他对此笑了笑。“我得安装一些设备，并让核心系统上线。之后还会有几批材料要运。”他斜眼看向你。“我们开始吧？”`
+				accept
+	on complete
+		payment 100000
+		conversation
+			`加夫里尔给了你一组精确的坐标，你的传感器显示那是一片空旷区域。当你抵达指定地点时，看到一座小站从云层中隐隐浮现。`
+			scene "scene/remnant station"
+			`	“我们从未真正让这座站隐形过，”工程师咧嘴笑着解释道，“但我们成功地让它躲过了我们所知的所有扫描方式。我们甚至给它加了一个类似隐形场的装置，让它几乎透明。”`
+			`	他赞许地点点头。“我的前辈们用当时的条件能做到这些，已经相当了不起了。”`
+			choice
+				`	“什么意思？”`
+				`	“我们继续吧。”`
+					goto "skip info"
+			`	“嗯，这个地方相当古老。它是在我们学会建造‘椋鸟’后不久建造的——也是那时我们了解到将隐形场扩展到小型飞船之外会遇到的麻烦。我不清楚背后的原理，但我们花了近两个世纪的研究和开发，才让大型飞船的隐形场成为可能。那时候我们有很多‘海雀’，建造高压系统的技术也已非常成熟。阿尔法人对气态巨行星或者我们所谓的‘气密飞船’从未表现出任何兴趣，所以把像这样的地方作为藏身之处是合情合理的。最好的藏身之地就是没人会去寻找的地方，对吧？”说完，他自顾自地点点头，站起身来，朝宇航服储藏柜走去。`
+			label "skip info"
+			`	“这座站应该加压了正常大气，但多年来它一直处于待机状态，只有每年一次维护。是时候让这里恢复运行了。”你们两人操作着飞船的装载设备，很快就把所有东西都转移了过去。你注意到最后一个板条箱里装有大量野战口粮和生存装备。看起来加夫里尔打算在这里待上一阵子。`
+			`	当他向空间站深处走去时，你收到一条通知：“遗民后勤”已向你的账户存入<payment>。`
+
+
+
+mission "Remnant: Cognizance 10"
+	landing
+	name "运送技师与补给至<planet>"
+	description "你需要从<stopovers>接上一名技术员及其设备，并将他们送往<planet>。"
+	source "Esquiline"
+	stopover "Caelian"
+	blocked "普卢姆的技术员需要一个空闲铺位和<tons>的货舱空间来放置他的设备。等你有足够空间时再回来。"
+	cargo "equipment" 8
+	passengers 1
+	to offer
+		has "Remnant: Cognizance 9: done"
+	on offer
+		dialog
+			`当你环顾这座寂静得诡异的空间站时，通讯器收到了一条消息：普卢姆请求你去<stopovers>接上另一名技术员和<tons>的设备，并将他们带回<origin>。`
+	on stopover
+		dialog
+			`飞行管制指引你降落在一个停机坪旁，那里已经堆满了一大堆板条箱。你刚着陆，工人们就蜂拥而出帮忙装载设备。一切就绪后，一名年轻的技术员登船，放好装备，并告知你已准备好出发。你摇摇头，对遗民在项目启动时行动之迅速感到钦佩。`
+	on complete
+		payment 100000
+		conversation
+			`在飞行途中，那位技术员来到控制室和你聊天。她是一名生物技术专家，擅长在异星大气中维持生命支持系统，刚从某个类似大学的遗民教育项目毕业。显然她研究的是天体生物学，目前参与的项目旨在让互斥的环境在近距离内共存。她花了将近一个小时，兴奋地跟你讲述空间站的里里外外。`
+			`	当你接近<planet>时，你突然想到遗民可能会感激你采取措施以维持空间站的隐秘性。于是你将<ship>的航线稍微偏转，斜向下切入<planet>，然后在云层下方绕着星球蜿蜒前行，直到抵达空间站。你的乘客注意到这飞行路线后，赞许地点了点头。“对于这样的项目，保密总是好的。我们很感激你多花的心思，如果有人跟踪你，像这样穿过云层的路线几乎不会留下任何可供追踪的痕迹。”`
+			`	<ship>稳稳地停在着陆舱中，技术员迅速下了船。显然在你离开期间一定还有其他货物运抵，因为现在能看到几个人影，各处堆放的设备也多了不少。空间站本身感觉更有生气了，空气也更清新。和上次一样，你很快收到通知，另一笔<payment>已打入你的账户。`
+
+
+
+mission "Remnant: Cognizance 11"
+	landing
+	name "遗民数据运送"
+	description "将一块数据晶体运送给<planet>上的工程师。"
+	source "Esquiline"
+	destination "Viminal"
+	to offer
+		has "Remnant: Cognizance 10: done"
+	on offer
+		conversation
+			`卸货完毕后，你看到加夫里尔走了过来。他一边靠近一边打手势致意。“多谢运送。剩下的物资我们已经建立好了标准物流路线。”他停顿了一下，从袋子里摸出一块数据晶体。“你能把这个带给<planet>上的执政官塔莉吗？她正在监督一些改装工作，会需要这份数据。”`
+				accept
+	on complete
+		"remnant met taely" ++
+		conversation
+			branch familiar
+				has "remnant met taely"
+			`在维米纳尔，你很容易就找到了维修场。你四处打听执政官塔莉的下落，最终有人指引你走向一个正在鹈鹕号上工作的壮实女人。她看到你走过来，便从机器里脱出身来。“你好，<last>船长，我是执政官塔莉。听说你有东西要给我。”你把数据晶体递给她。“这里面一定是详细的化学分析和谱系资料，”她说。她把晶体插进控制台，敲了几个命令。“好了，我只需要把这些谱系资料整合进系统，再做些调整。几个小时后到太空港食堂找我。”`
+				decline
+			label familiar
+			`在维米纳尔，你很容易就找到了维修场，最终发现塔莉正埋头在一艘鹈鹕号里。她看到你走过来，便从机器里脱出身来。“你好，<first>。我们的空间站进展如何？”你回答说一切进展迅速，然后把数据晶体递给她。“啊，很好。这里面一定是详细的化学分析和谱系资料，”她说。她把晶体插进控制台，敲了几个命令。“好了，我只需要把这些谱系资料整合进系统，再做些调整。几个小时后到太空港食堂找我。”`
+
+
+
+mission "Remnant: Cognizance 12"
+	name "与护航队会合"
+	description "与<npc>一同前往<stopovers>提取一批大气，并将其运送到<destination>。"
+	source "Viminal"
+	destination "Esquiline"
+	stopover "Nasqueron"
+	cargo "equipment" 8
+	to offer
+		has "Remnant: Cognizance 11: done"
+	on offer
+		conversation
+			`在食堂里，塔莉和其他几位船长迎接了你。“感谢您的加入，”她用手势表示。“这次任务的目标是带着设备一起前往纳斯克戎，从虚空精灵的世界采集一些大气，然后带回埃斯奎林。海雀号上的设备会收集、压缩并储存气体，你可以将其卸载到鹈鹕号上特别准备的储罐中。然后前往<planet>，将你收集到的气体卸载到空间站。”`
+			branch penguin
+				has "event: remnant: penguin"
+			`	她转身面向这群船长，打出充满敬意的手势。“愿余烬为你们的旅途增添趣味。”`
+				accept
+			label penguin
+			`	她向你点了点头，继续说道：“对于这项任务，企鹅号会比海雀号更好，我们也欢迎你使用她，但目前没有空闲的企鹅号能与你同行。继续依赖海雀号并不理想，但我们只能将就使用现有的飞船。”她转身面向这群船长，打出充满敬意的手势。“愿余烬为你们的旅途增添趣味。”`
+				accept
+	npc accompany save
+		government "Remnant"
+		personality timid launching escort
+		fleet
+			names "remnant"
+			cargo 1
+			commodities Equipment
+			variant
+				Puffin 4
+				Pelican
+	on stopover
+		dialog
+			`你以悠闲的节奏巡航在大气层中，等待设备完成工作。你看到的虚空精灵比往常少，而且许多身上都带着伤痕。当设备显示容量已满时，你爬升到鹈鹕号等待的高层大气，连接管道卸载气体，然后再次返回星球深处。几个小时后，鹈鹕号的船长通知你储罐已满，是时候前往<planet>了。`
+	on complete
+		event "remnant: postverta reveal"
+		conversation
+			`你抵达了<planet>上的隐藏空间站，加夫里尔正在那里等着卸载大气气体。他们的团队很快将海雀号连接到机库墙壁的端口上，隐藏的设备开始将它们装载的气体泵入系统。几分钟后，他们断开了飞船的连接，你和海雀号便前往鹈鹕号重新装满储罐，再将其运回空间站。`
+			`	当最后一批货物开始排入空间站时，另一名技术员向你走来。“船长，我们刚收到执政官奇利亚的讯息。他希望你尽快到维米纳尔与他会面。”你点点头，开始对<ship>进行出航检查，准备等货物卸完就出发。`
+
+
+
+mission "Remnant: Cognizance 13"
+	landing
+	name "返回<planet>"
+	description "你已获悉，执政官奇利亚希望在<destination>与你会面。"
+	source "Esquiline"
+	destination "Viminal"
+	to offer
+		has "Remnant: Cognizance 12: done"
+		not "Remnant: Cognizance 14: offered"
+
+
+
+mission "Remnant: Cognizance 14"
+	landing
+	name "调查异常传感器读数"
+	description "远程传感器探测到了异常引力波。前去调查，然后返回至<destination>。"
+	source "Viminal"
+	waypoint "Postverta"
+	stopover "Ssil Vida"
+	to offer
+		has "Remnant: Cognizance 12: done"
+	on offer
+		conversation
+			`你在星港降落，一名遗民立刻迎上来，告知你执政官奇利亚正在他的私人战舰上，随后将你护送到附近的一艘椋鸟号内。在里面，你看到奇利亚和另外几名遗民围着一块全息显示屏和几个显示面板。“啊，船长。请过来加入我们吧。”奇利亚示意你加入他们。当你走近时，你注意到全息显示屏上显示的是余烬废土，不过有几个细节与你熟悉的星图并不相符。`
+			`	奇利亚注意到了你在观察那些差异。“很敏锐，船长。我们的传感器报告说这个位置传来了异常的能量信号。该区域的侦察员说他们探测到了一个新星系的迹象。目前没有立刻显现的超空间链接或虫洞连接过去，但该区域仍然存在异常的能量波动——即便在余烬废土也算不同寻常。”他抬头看向你。“我们希望你能想办法找到一条进去的路。”`
+			choice
+				`	“我可以试试看能不能用跳跃引擎抵达那里。”`
+				`	“我会看看能不能找到其他办法。”`
+			`	“谢谢你，<first>船长。我们有一些飞船可以跟上，另外该区域还有其他侦察员，应该很快会有报告传来。不过考虑到你在广阔银河中的丰富经验，我们希望由你来带路。”`
+				accept
+	on enter "Postverta"
+		dialog
+			`当你的飞船传感器重新描绘出周围的星系时，一个外星空间站映入眼帘。它看起来很老旧，且大部分区域已停止运作，但你的传感器确实捕捉到了偶尔的能量爆发——而且奇怪的是，几乎到处都有微弱的生命迹象。`
+	on stopover
+		conversation
+			`令人惊讶的是，尽管这座空间站年代久远，却仍在运作。古老的环境系统维持着可呼吸的大气，尽管空气比你觉得舒适的程度要稀薄一些。同样，空气有点凉——但还没达到危险的程度。无论你看向何处，都不断感觉自己偶然闯入了一个由巨人建造的空间站：门巨大无比，控制器放置在头部高度，显示屏似乎也是为比你高得多的生物倾斜设计的。最不寻常的是，较大的房间里，墙上半高处常常设有看起来像是长凳和桌子的东西。`
+			`	空间站的工程结构表明，这是一个为单一目的而专门建立的建造项目。你沿着一些较明显的线缆追踪，发现空间站核心处有一个巨大的球形舱室，里面充满了神秘的机械装置。它散发出大量未知能量——足以让你宇航服的医疗系统强烈警告你立即折返。虽然这些设备似乎是这座空间站的核心，但它们暂时仍将是一个谜。显然，这就是遗民派你出来寻找的东西，他们需要尽快了解此事。`
+	on complete
+		dialog
+			`当你返回维米纳尔时，你向港口当局广播了警告，称有东西在跟踪你。你告知他们那并非敌对目标，而是源于新星系的一个未知实体。`
+
+
+
+mission "Remnant: Cognizance 15"
+	landing
+	invisible
+	non-blocking
+	source "Ssil Vida"
+	destination "Viminal"
+	to offer
+		has "Remnant: Cognizance 14: active"
+	npc accompany save
+		government "Ember Waste"
+		personality waiting mute
+		ship "Ember Waste Node" "Unknown Entity"
+	
+
+
+mission "Remnant: Cognizance 16"
+	landing
+	name "追踪生物"
+	description "这个生物似乎在创造星座，并试图让你跟随它。"
+	source "Viminal"
+	waypoint "Peragenor"
+	to offer
+		has "Remnant: Cognizance 14: done"
+	to complete
+		never
+	on offer
+		conversation
+			`相当数量的遗民聚集在太空港周围，观察着这个奇怪生物的动向。它以各种方式剧烈地打着手势，然后在特定的触手尖端闪烁能量时定格在几种不同的姿势。你注意到周围几座防空炮台已经用它们那令人生畏的武器瞄准了这个生物，以防它突然暴起发难。`
+			`	观察了这个生物几个小时后，一位船长挤到你和奇利亚、普卢姆交谈的地方。“我想我明白这家伙在做什么了，执政官！”那人兴奋地打着手势。“你看它定格时发光尖端的位置。那个图案与从佩拉格诺观测到的余烬废土主要星系的位置相吻合，第二个则与对流相符。”他掏出一块数据板，调出了一幅星图的投影。“由于不够精确，很难确定，但第三个定格位置很可能就是安特沃尔塔或涅尼亚。”`
+			`	普卢姆插话道：“如果那些冻结姿势表示恒星位置，那么期间的飞行和着陆行为可能是在示意你前往那里。请试一下吧。记得开一艘‘加满气’的飞船；如果第三个星系是涅尼亚，它可能想让你进入气态巨星。”`
+				accept
+	npc accompany save
+		government "Ember Waste"
+		personality mute
+		ship "Ember Waste Node" "Unknown Entity"
+	on enter Peragenor
+		dialog `那生物在你面前停下，短暂旋转，然后以另一种方式展开触手。凭借遗民的直觉，你将它比照星图，认为很可能对应“对流”。保持姿势一分钟后，生物重新调整自身，开始闪烁出即将跳跃的明显迹象，但它停住了，仿佛在等待你。`
+	on enter Convector
+		dialog `对地点的分析似乎是对的。那生物迅速靠近你，重复之前的舞蹈，最终定格在略有不同的姿势。从这个角度，你推测它可能是涅尼亚。这次，当你更仔细地观察时，它似乎正以某种方式跟随你的尾迹。`
+	on enter Nenia
+		dialog `你从未见过虚空精魂如此活跃。许多精魂迅速聚集在一直引导你的奇怪生物周围，护送它前往纳斯克戎。那似乎正是它想去的地方。远处，你能看见执政官正有条不紊地粉碎一艘帕拉夫雷特。`
+	
+
+
+mission "Remnant: Cognizance 17"
+	landing
+	name "向<planet>汇报"
+	description "遗民们会想知道纳斯克戎上发生了什么。"
+	source "Nasqueron"
+	destination "Viminal"
+	to offer
+		has "Remnant: Cognizance 16: active"
+	on offer
+		fail "Remnant: Cognizance 16"
+		event "remnant: nenia ember waste node"
+		conversation
+			`你跟随那只生物穿过纳斯克戎的云层，来到一处只能被形容为云中剧场的所在。成千上万的虚空精魂填满了这片区域，而你追踪的那只生物正漂浮在剧场中央附近。外部传感器捕捉到无数能量脉冲和诡异的啸叫声，仿佛在云层中回响。当<ship>向前移动时，突然一片寂静，那些闪烁的能量也同步了起来。`
+			`	你感到脑海中瞬间传来一股压力与存在感，周围的世界也随之有些褪色模糊。`
+			`	“吾不知汝。活物藏于非物之中，如飞而未遍之灵。”你环顾四周，看到数百个自己正从驾驶舱窗户向外窥视，一时茫然无措。“汝之意念回响——知与不知——带更多回音归来——或能闻。”`
+			`	话音落下，那股压力消失无踪，你只能望着窗外迅速散去的虚空精魂群。你不太确定那声音的含义，但可以肯定，遗民们会想听你讲述此事。`
+				accept
+	
+
+mission "Remnant: Cognizance 18"
+	landing
+	name "收集虚空精魂"
+	description "护卫“鹈鹕”舰队前往<waypoints>并返回<planet>。"
+	source "Viminal"
+	destination "Aventine"
+	waypoint "Nenia"
+	to offer
+		has "Remnant: Cognizance 17: done"
+	on offer
+		conversation
+			`让遗民跳上你的飞船，把你的舰桥当会议室用，这感觉几乎快成家常便饭了。这一次，奇利亚长官和普卢姆像是凭空出现一样，请求登舰许可。两人围在你的控制台前观看你的航行记录。他们对你叙述的经过点点头，而当你描述脑海中那个奇怪的存在时，他们全神贯注。当你讲完这段经历后，他们向后靠去，陷入沉思。`
+			`	“<first>船长，确切含义尚不明确，但听起来像是某种不习惯与我们——或与我们类似的生物——交谈的存在发出的声音，”奇利亚长官用手语比划道，“虽然有趣，但我觉得我们应该先推进计划，稍后再继续调查此事。”普卢姆不太情愿地比划表示同意，奇利亚继续说道：“最好的情况是，我们能切断科拉斯人轻松接触虚空精魂的途径。最坏的情况是，我们能转移足够多的精魂，这样即使科拉斯人在涅尼亚将它们猎杀至灭绝，它们也仍能在我们的领土上存活。”`
+			`	普卢姆谨慎地比划手势表示同意。“这条信息确实引人入胜，但我同意它不应是我们的首要任务。话虽如此，我会在完成本次初步行动后，安排进一步的调查。”`
+			`	两人看着你，奇利亚以不容置疑的手势比划道：“我们正要把一大群虚空精魂从涅尼亚疏散到埃斯奎林。两地的大气基本匹配，而且我们已经改造了空间站，能提供那边原本缺乏的养分。我们有一支‘鹈鹕’舰队，内部基本已被掏空，好让我们尽可能多地把虚空精魂诱捕进去。”`
+			choice
+				`	“我们该怎么把它们引进去？”`
+				`	“我们确定这是个好主意吗？”`
+					goto "good idea"
+				`	"Okay, let's go do this."`
+					goto "lets go"
+			`	普卢姆显得有些尴尬。“几个世纪前我们初次研究虚空精魂时，学会了如何采集它们。在这个过程中，我们发现它们对某些类型的辐射特别感兴趣。同样地，如果它们发现某种在小行星中常见的元素，就会几乎无视一切地去啃食。所以，我们在货舱里安装了辐射发射器，还放了些小行星，好让它们短时间内有事可忙。”`
+			choice
+				`	“我们确定这是个好主意吗？”`
+				`	"Okay, let's go."`
+					goto "lets go"
+			label "good idea"
+			`	奇利亚用坚决的手语比划道。“这是个好主意吗？也许是，也许不是。但它是我们目前最好的方案吗？是的。”他叹了口气。“我完全预料到执政官会插手：它们的记性很好。据我们所知，它们能识别出是谁在带领舰队，所以你要做好它们会跟你通话的准备。当然，前提是它们没有直接开火。”`
+			label "lets go"
+			`	Chilia continues. "You don't need to actually land anywhere in Nenia this time, Captain. Just make sure the Pelicans get there, load up, and return safely." The two stand up and get ready to leave. "May the Embers burn bright for you, Captain." With that, they disembark and quickly clear the blast area around the landing pad. Around you a large group of Pelicans are warming up, each one synchronizing to your IFF and confirming their status.`
+				accept
+	npc accompany save
+		government "Remnant"
+		personality pacifist coward launching escort
+		fleet
+			names "remnant"
+			cargo 0
+			variant
+				"Pelican (Heavy Lift)" 6
+	npc
+		government "Remnant"
+		personality launching escort disables plunders
+		fleet "Large Remnant" 3
+	npc evade
+		government "Korath"
+		personality heroic disables plunders harvests entering staying
+		system "Nenia"
+		fleet
+			names "korath"
+			outfitters "Void Sprite Parts"
+			variant
+				"Rano'erek"
+				"Palavret (Ember)" 3
+				"'olofez" 10
+	on enter "Nenia"
+		dialog `进入星系后，你迅速搜寻执政官，却不见其踪影。然而，一支科拉斯狩猎队显然已等候多时，并向你发起攻击。当他们的舰船向你合围时，鹈鹕编队立刻开始收集虚空精魂。当最后一艘关闭货舱时，确认代码闪现在你的战术屏幕上。“准备就绪。”`
+	on fail
+		fail "Remnant: Cognizance 18B"
+	on complete
+		log "成功将一群虚空精魂引入埃斯奎林。它们能否适应，时间会告诉我们。"
+		"salary: Remnant" = 2500
+		payment 1000000
+		event "remnant: pantica void sprites"
+		event "remnant: cognizance timer" 30
+		conversation
+			`片刻之后，通讯链路传来提示音，奇利亚长官与普卢姆一同出现在屏幕上。普卢姆先比划手势。“感谢你的付出，船长。这次努力的结果尚不明朗，但眼下我们只能静观其变。希望虚空精魂能安顿下来。”他总结道。`
+			`	“与此同时，”奇利亚继续说道，“我们将从我们的资源中拨出一笔每日津贴，用于支付你部分持续的船员、维护和升级开销。一笔数额较大的一次性拨款已存入你在造船厂设施的账户，以帮助承担此次任务中产生的费用。”`
+
+
+
+mission "Remnant: Cognizance 18B"
+	entering
+	invisible
+	non-blocking
+	source
+		system "Nenia"
+	destination "Aventine"
+	to offer
+		has "Remnant: Cognizance 18: active"
+	on enter "Pantica"
+		dialog `你警惕地注视着满载虚空精魂的鹈鹕飞船降至埃斯奎林大气层低空，并打开了舱门。虚空精魂们先是试探性地出现，随后自信地跃入云层。几分钟后，你收到埃斯奎林空间站发来的消息：第一只虚空精魂刚刚掠过机库，抓走了一块小行星补充物，又重新消失在云层中。`
+
+
+
+mission "Remnant: Cognizance 19"
+	landing
+	name "运送导航数据"
+	description "将新星系的导航数据送到<destination>。"
+	source
+		government "Remnant"
+		near "Arculus" 0 2
+	destination
+		government "Remnant"
+		distance 1 5
+		attributes "remnant primary"
+	to offer
+		has "Remnant: Cognizance 18: done"
+		has "Remnant: Expanded Horizons Astral 2: done"
+	on offer
+		conversation
+			`在你完成着陆检查时，通讯器提示你收到一条来自Dawn的通讯：`
+			`	“你好，<first>船长！我们正在为新星系编制更新的星图，希望能获取一份你导航系统记录的最新数据。我们希望能获取一些自动化太空港系统不会例行下载的额外数据。请在<planet>停留，太空港系统会在系统检查时复制这些数据。数据集很小，无需使用数据晶体。谢谢！”`
+			`	消息末尾是<planet>上一处太空港的位置，大概就是你应该去的地方。`
+				accept
+	on complete
+		payment 100000
+		event "remnant: cognizance 1 systems available"
+		dialog `当太空港计算机下载数据时，你的电脑在日志文件末尾显示出附加的一条消息：“感谢你提供导航日志中的额外数据。这些数据在与我们侦察兵的记录进行比对时会很有用。已批准为<ship>提供<payment>的后勤调整款项。”`
+
+
+
+mission "Remnant: Cognizance 20"
+	name "远征筹备"
+	description "安装一个研究实验室，从<stopovers>取回设备，然后带到<destination>。"
+	source
+		government "Remnant"
+	stopover
+		government "Remnant"
+		distance 1 5
+		attributes "remnant primary"
+	blocked "此任务需要 10 格空余货舱空间。"
+	cargo "supplies" 10
+	to offer
+		has "Remnant: Cognizance 19: done"
+		has "event: remnant: lab availability"
+	on offer
+		conversation
+			`太空港自助餐厅里的人群激动地涌动着。你挤过人群的缝隙，发现他们正围在一个全息投影仪旁，上面正播放着那个最近跟踪你到维米纳尔，然后到涅尼亚的奇怪生物的影像。从你听到的只言片语来看，他们似乎在讨论关于它的理论。然而，你刚到不久，各种手势便静止了，一名遗民向你打手势道：“问候，寻觅者。你就是发现这个生物的人。既然你曾与它一同旅行，能否分享更多关于它的录像？”`
+			choice
+				`	“当然可以。”`
+				`	“改天吧。”`
+					goto "maybe later"
+			`	你在通讯器上输入了几道指令，你的飞船在飞行中从传感器自动生成的录像便出现在第二台投影仪上。其他几人调出他们的通讯器，开始快速浏览附带的传感器日志。几乎立刻，有一个人挥手引起所有人的注意。`
+			`	“船长，你到达那里时有什么异常吗？”`
+			choice
+				`	“是的，传感器报告了生命信号。”`
+				`	“我不记得了。你注意到了什么吗？”`
+			`	一名遗民调出相关部分并放到投影仪上。“就在这里，日志显示整个星系都有环境生命信号，但物理扫描仪上却没有显示出任何有意义的东西。”他皱眉看着投影仪。“记录中所有的设备状态信号都正常，校验位和数据哈希也全都匹配。”`
+			choice
+				`	“所以数据没有问题？”`
+				`	“跳过技术术语吧。这到底意味着什么？”`
+					goto "skip tech"
+			`	另一个遗民点点头。“没错。数据和设备都没有问题，所以无论如何，这就是它记录到的东西。因此，要么这里有我们从未见过的东西，要么有什么东西在干扰常规传感器。”他环视周围聚集的遗民，停顿了一下，仿佛在专注于你无法看到或听到的东西，然后转向你。“我们已经达成共识。”`
+				goto "mission statement"
+			label "skip tech"
+			`	那名遗民停顿了片刻，似乎在调整要说的话，然后继续道：“它的意思是，为什么那里会有生命信号，这并没有什么显而易见的解释。”他们环顾四周聚集的遗民，然后又看向你。`
+			label "mission statement"
+			`	“我们希望你能带一支由五名研究人员及其设备组成的队伍前往西尔维达。你能做到吗？”`
+			choice
+				`	“听起来很合理。”`
+					goto "take mission"
+				`	“现在不行。”`
+					goto "maybe later"
+				`	“你不是长官。你怎么能做出这样的决定？”`
+			`	在他回应之前，另一个遗民回答道：“长官并非决策的唯一来源。可以说，他们是能够当场做出决定的‘行政’权威，而遗民整体会做出可以称之为‘立法’的决策。我们作为一个群体的决策范围，受到做出决策的群体规模的限制。”`
+			choice
+				`	“有道理。”`
+					goto "mission choice"
+				`	“为什么你们需要多种决策方式？”`
+			`	“因为我们正处于战争中，并且位于银河系一个高度危险的区域。作为一族，我们每天需要做出成千上万的当场决定。如果每次部队调动、远征或资源分配都必须达成共识，我们几天内就会不堪重负。”她停止说话，另一个遗民接过了解释。`
+			`	“同样，执政官可能被杀害或过度负荷。尽可能多的决策由遗民群体处理，可以减少我们遭受暗杀打击的脆弱性，并帮助保护我们的执政官免于因责任而过度劳累。反过来，这也保护我们的社会不会变成一个由某个强大人物或小团体做所有决定的独裁政权。”`
+			label "mission choice"
+			`	遗民们静止下来，看着你。“那么，你会接受这个任务吗？”`
+			choice
+				`	“是的。”`
+				`	“晚点再说。”`
+					goto "maybe later"
+			label "take mission"
+			`	“很好。我们会将设备架装上船，设备会在<stopovers>的D43A号停机坪等待你。装好后，返回这里接上将与你同行的研究团队。记住，你需要提供5个空闲铺位以及一个船上研究实验室来配合我们的设备。”`
+				accept
+			label "maybe later"
+			`	“哦，那太遗憾了。也许下次吧。”人群做出各种失望的手势，然后转回观察投影并讨论他们的理论。`
+				defer
+	on stopover
+		conversation
+			`你降落在D43A号停机坪，果然有一组人在等待装载一大批设备到架子上。几分钟内他们就装载完毕，离开时高兴地向你挥手。`
+	on visit
+		conversation
+			`根据日志，你已到达目的地，但似乎缺少了什么。任务清单在控制台一侧安静地闪烁，提醒你需要安装研究实验室，并且所需设备必须在星系内。如果你有多艘船，可能还没到齐。`
+	on complete
+		require "Research Laboratory"
+		conversation
+			branch busy
+				has "remnant: dusk busy"
+			`一名遗民在等你。“谢谢你取回设备。你要带去西尔维达的队伍在空间港等你。”`
+				decline
+			label busy
+			`一名遗民在等你。“谢谢你取回设备。暮光将带领你要带去西尔维达的队伍，但我们知道他目前还在忙你的事。你应该先完成那项工作，然后回到这里的空间港开始下一次探险。”`
+
+
+
+mission "Remnant: Cognizance 21"
+	name "远征西尔维达"
+	description "安装一个研究实验室，将这些遗民研究员运送到<stopovers>，然后返回<destination>。"
+	source
+		government "Remnant"
+		attributes "remnant primary"
+	stopover "Ssil Vida"
+	blocked "此任务需要10单位自由空间、五个空闲铺位和一个研究实验室。"
+	passengers 5
+	cargo "supplies" 10
+	to offer
+		has "Remnant: Cognizance 20: done"
+		not "remnant: dusk busy"
+	on offer
+		require "Research Laboratory"
+		conversation
+			branch "dusk known"
+				has "remnant met dusk"
+			`餐厅里的场景变化不大：仍然有一大群遗民围在一组投影仪周围，不断用手势讨论数据的各个要点。你大致能听懂，大部分对话都在深入探讨生命信号传感器如何在没有任何可见物的情况下显示读数。与之前的主要区别是，现在多了五位穿着增压服的遗民，整齐地堆叠着设备，最上面是头盔。其中一人注意到了你，挥手示意你过去。“<first>船长！我叫暮光，是您自愿运送至西尔维达的研究员之一。”`
+			choice
+				`	“很高兴见到你，暮光。”`
+					goto "mission description"
+				`	“达斯克？像这种代表‘黄昏’的名字很常见吗？”`
+					goto "dusk name"
+			label "dusk known"
+			`	餐厅里的场景变化不大：仍然有一大群遗民围在一组投影仪周围，不断用手势讨论数据的各个要点。你大致能听懂，大部分对话都在深入探讨生命信号传感器如何在没有任何可见物的情况下显示读数。与之前的主要区别是，现在多了五位穿着增压服的遗民，整齐地堆叠着设备，最上面是头盔。你认出了其中一人是暮光，他挥手示意你过去。“<first>船长！余烬让我们的道路再次交汇。我是您自愿运送至西尔维达的研究员之一。”`
+			choice
+				`	“很高兴再次见到你，暮光。”`
+					goto "mission description"
+				`	“我正想问：这样的名字常见吗？”`
+			label "dusk name"
+			`	“你是指各种光照时段的名字？”他停顿了几秒。“我不会说它们常见，但也不稀有。我们的祖先以各种方式奉献一生，研究星辰和宇宙不断变化的光。他们的词汇如此深植于我们的文化，这并不奇怪。”`
+			choice
+				`	“你们的祖先是谁？”`
+				`	“有趣。那么，我们的任务是什么？”`
+					goto "mission description"
+			`	暮光沉思了片刻。“我们的祖先来自人类的一个不同时代。他们是人类科学发展和进步的黄金时代的继承者，那时政府与机构将巨额财富投入科学。那个时代的成果包括超空间中继网络的完成、新的地形改造技术以及先进的基因工程能力。”他脸上掠过阴霾。“这最终导致了阿尔法人的诞生。”他停顿，摇摇头。“但你是问我们的祖先是谁，而不是人类史。”`
+			`	“在那个时代，人类空间有一批蓬勃发展的天文学和探索项目。尽管它们也受益于整个科学领域的大幅预算增长，但正被推向学术界的边缘：与生物学和化学等更实用的科学不断创造奇迹不同，天文学和天体物理学纯属理论。当其他科学家正在创造超人类、实现即时星际通讯时，解释宇宙的‘为什么’是得不到预算的。”`
+			`	“所以他们联合了起来。据我所知，某一领域的学者与同行会面并非不寻常。如果一个院系无法资助一次探险，那么两个不同院系合作或许就能做到。最终他们形成了一个松散的组织，一种天文学和天体物理学的‘常设会议’，通过它来会面、讨论、辩论和策划。”`
+			choice
+				`	“你们的祖先原本是一个科学会议？”`
+				`	“感谢背景介绍。那么，我们的任务是什么？”`
+					goto "mission transition"
+			`	几名遗民点头，另一人用手语表示：“他们聚在一起讨论科学，各自带来了支持他们的船长和船员。有些船长还带来了资源。还有谁比那些跨越虚空谋生的人更懂得学习虚空之妙呢？”`
+			`	“协会随时间发展壮大，尽管据我们所知，它努力保持政治和经济中立。因此它相对小而紧密。我们许多祖先都讲述过称自己为‘探索矢量’的故事，暗示他们是人类中走向太空最远角落的那一支。他们甚至举办比赛，看谁能走得离人类空间最远，或者谁能最长时间不补给。”`
+			`	“当对抗阿尔法人的战争开始时，正是这些人对最遥远的宇宙拥有最多的知识和经验。虽然许多装备商可能向船长出售一张显示了无人区域内几个星系跳跃路线的地图，但我们的祖先却在那些星系中进行了多年的研究。因此，他们承担了运送补给或执行侦察的任务。他们亲眼目睹了战争的走向。他们前往会合点，取回了空投的设备，并且越来越担忧。”`
+			choice
+				`	“他们担心战争的进程？”`
+				`	“那确实令人担忧。我们应该专注于任务。”`
+					goto "mission transition"
+			`	暮光再次开始比划。“是的，但也担心他们所看到的东西。奇怪飞船划过天际，远处有异常能量信号，新设备毫无解释地出现在幽海星的舰船上……似乎有人正在利用混乱影响人类。是某个超出常规超空间网络范围的存在。这促使我们的祖先重新审视旧理论，激发新想法。知道那里有某种存在、某种超越我们认知的东西，让我们变得勇敢。不久后，第一艘飞船穿越了虫洞。”`
+			choice
+				`	“是哪一艘飞船？”`
+				`	“我想我大概知道方向了。该干活了。”`
+					goto "mission transition"
+			`	暮光露出微笑。“‘暗影步’，一艘独立的科学船，兼做气体采矿船。她在航线之外的偏远气态行星上采集稀有气体，悄悄赚了一笔。其收益从未多到吸引大企业的注意，但也足以过得舒适。她的船长总在对飞船进行改装。他绝非天才，但用专注和乐于实验的精神弥补了才智的不足。据记录，改装‘暗影步’是他们主要的爱好，而这支小规模的船员队伍也有着类似的兴趣。”暮光停下来喝了口水。`
+			`	“感谢‘暗影步’及其船员的勇气、与之合作的研究人员的辛勤工作，以及无数其他船只和团队的贡献，出路被发现了。”暮光以终结性的手势完成了这段叙述，许多聆听的遗民做出了“尊重”和“团结”的手势。`
+			label "mission transition"
+			`	暮光微笑着抱歉地比划。“抱歉讲得太详细了。我发现研究祖先很有趣，所以花了很多时间探寻家族历史。这进而导致我对我们社会早期产生了浓厚兴趣。”他指向西尔维达的全息投影。“但历史说得够多了，当下在召唤我们。”`
+			label "mission description"
+			`	暮光俯身在全息图上，仔细观察细节。“任务非常标准：我们去空间站，安装设备获取详细读数，完成后返回这里。第一次读数我们大约需要一天时间在现场，我们会留下一些设备进行持续记录供日后取回。之后……我们会根据数据情况再决定。”`
+				accept
+	on accept
+		set "remnant: dusk busy"
+		"remnant met dusk" ++
+	on stopover
+		require "Research Laboratory"
+		conversation
+			`暮光和科学家团队毫不拖延地开始工作：你刚离开太空港，他们就启动了初步传感器；等你对接上西尔维达时，他们已经把所有设备安排妥当，准备快速卸货安装。空间清理出来后，他们扩建了研究实验室，开始分析这个星系。不久他们就围在显示器周围调整传感器读数，深入讨论。终于，暮光大步走向你。“一切已就绪，运行正常，船长。我们需要几个小时完成测量。您不必站在旁边看着，不过如果您愿意，也欢迎。”暮光回去检查其中一个设备。`
+			choice
+				`	（返回<ship>并准备出发。）`
+					goto relax
+				`	（询问能否帮助他们的工作。）`
+					goto "science assistant"
+				`	（探索西尔维达。）`
+			action
+				"exploration interest" ++
+			`	你拿起一些仪器、记录设备和指路标签，查看追踪其他遗民研究员的路线图。选了一个未被探索的方向，你出发了。`
+			`	最初的几条走廊都标有指示其他探索者方向的标签，因此你很容易进入了未知区域。探索空荡荡的走廊时，巨型门和它们之间的巨大间距加深了你对空间规模的初步印象。透过门缝，你发现一个接一个的房间，里面都有大型平台。每个平台都铺有薄垫，两侧有若干栏杆，末端似乎嵌有一个储物柜。根据经验，你意识到这些类似于用来固定易碎货物的存储平台，但没有迹象表明货物是什么。`
+			`	进一步的探索发现了更多超大的房间，包括一间装有大量储物柜和冷冻柜的房间。你注意到搜索过的房间似乎都井井有条，因此你认为这个空间站发生的事件要么没有引起恐慌，要么之后有人清理过。探索了几个小时后，你返回了主要区域。`
+				goto wrapup
+			label "science assistant"
+			action
+				"science interest" ++
+			`	你跟着暮光走到设备旁，询问能否帮忙。他显得惊讶，但很高兴。想了一会儿后，他问你是否能帮助监控一些诊断数据，并对部分设备进行预防性维护。接下来的几个小时里，暮光让你参与工作，偶尔解释各种设备的用途。团队其他人也很快加入，不久你已感觉自己是团队一员。当暮光开始结束观测时，你已经掌握了一些科学词汇以及一些设备工作原理的基础知识。`
+			`	你帮忙打包设备，然后回到主房间，暮光和其他几个人正在那里聚集。`
+				goto wrapup
+			label relax
+			`	你返回<ship>，完成了所有预备检查，为返回<destination>的旅程做好准备。你很快完成了检查以及一些预防性维护，然后放松了几个小时，等待暮光和他的团队完成研究。`
+			`	终于，你收到暮光的消息，说他们已全部打包完毕，准备开始装载。`
+			label wrapup
+			`	你在正对<ship>停泊位的主厅里找到了暮光。遗民们忙着堆放设备准备装载，一队人似乎在房间四周安装一批仪器。暮光看到你，挥手示意你过去——他正在检查一个控制台的读数。`
+			choice
+				`	“你在做什么？”`
+				`	“准备好装载了？”`
+					goto loading
+			`	暮光朝你笑了笑，指向正在房间边缘安装仪器的人。“我们把这些仪器留在这里，让它们运行自动数据采集程序。没有像您飞船那样的大型电源，我们无法操作主仪器，但这些小型仪器能够为我们记录基线数据，并记录某些光谱发射的突然变化。它们将在未来为我们提供有用的数据。”他笑着继续说。“俗话说，开始收集数据的最佳时机是一百年前。第二好的时机就是现在。”`
+			label loading
+			`	他朝团队其他人示意，他们立即开始装载<ship>。“好了，该回去了。”暮光走向设备堆，开始把设备搬上船。`
+	on complete
+		require "Research Laboratory"
+		payment 350000
+		clear "remnant: dusk busy"
+		conversation
+			`返回<destination>的旅程快速而安静，所有遗民似乎都专注于撰写观测报告。据你所知，团队成员各自写下观察和体验，然后暮光将所有报告汇编成一份探险报告，包括每位研究员逐字报告和他自己的报告。`
+			`	<ship>进入<destination>主太空港当前的降落航线，你翻阅着外部摄像头画面。远处，你注意到一个研究机库周围有些活动，但除此之外太空港似乎照常运转。当你将<ship>停入泊位时，暮光来到驾驶舱。“感谢您的帮助，<first>。分析这些数据需要一些时间，但我们很可能不久后会再次前往西尔维达进行探险。”他停顿了一下，补充道，“我想我们从未提过，但作为对您协助的适当回报，一笔<payment>的后勤调整已应用到您的账户，以覆盖成本并提供资源为未来的工作做准备。”暮光礼貌地点点头，然后去帮助其他研究员卸载设备。`
+
+
+
+mission "Remnant: Cognizance Interest Condition Patch"
+	landing
+	invisible
+	non-blocking
+	repeat
+	to offer
+		or
+			has "explorationinterest"
+			has "scienceinterest"
+	on offer
+		"exploration interest" += "explorationinterest"
+		clear "explorationinterest"
+		"science interest" += "scienceinterest"
+		clear "scienceinterest"
+		fail
+
+
+
+mission "Remnant: Cognizance 22"
+	name "为Taely递送数据备份"
+	description "为Taely运送一份数据备份到<stopovers>。"
+	source
+		government "Remnant"
+		attributes "shipyard"
+	stopover
+		government "Remnant"
+		distance 1 5
+		not attributes "requires: gaslining"
+	to offer
+		has "Remnant: Cognizance 21: done"
+	on offer
+		conversation
+			`你走出<ship>，来到<origin>清新的空气中。你回想起在某个研究机库那边看到了一些不寻常的活动。肯定有什么有趣的事情发生，才引起这么大动静。`
+			choice
+				`	(今天不了。)`
+					defer
+				`	(去看看那边的情况。)`
+			`	你跟着工程师和技术人员的人流，发现Taely正嵌在一艘船的腔体内——它必然是一艘船。你无法看清它的全貌，因为它仍被脚手架、管道和其他系统包围着。不管它是什么，都相当小：没有这些施工设备，你猜它大概只比海雀稍大一点。`
+			`	你正四处张望支撑结构时，一个遗民匆匆跑来，手里拿着一个装有黏糊糊线缆的袋子，递给你。“给，Taely几秒后就要用到这个，等她开口要的时候你能递给她吗？我得去找下一个零件。谢谢！”没等你回应，那个遗民就消失在了隔壁的储藏室里。几乎同一时间，Taely扭过头来看向你。“哦，<first>！我还以为会是Cora带着……呃，他们把这个给你了。太好了。如果你能拿给我，那就感激不尽了。”你伸手把袋子递给她，Taely往船里又钻了钻，直到只剩双脚露在外面。一阵液体声过后，Taely滑了出来，跳到地上。`
+			`	“那么，你是来看热闹的？”`
+			choice
+				`	“我在最后进场降落时看到了它，有点好奇。”`
+					goto curious
+				`	“我是在进场降落时看到的，有点担心。”`
+			`	“那就谢谢你来关心我们了，”她微笑着用手势表示。“人们关心周围人的福祉，正是这种粘合剂让社会变得强大。”`
+			label curious
+			`	她指了指身旁的飞船。“你来得正是时候，<first>。我们这些年来的发展大多是对现有飞船进行微调，但微调总有尽头。早在建立第一个船坞之前，我们就一直在不断创新和尝试新的飞船设计。每一项新进展都会被放到概念模型上，看看能否帮助我们建造更好的飞船。”她略微皱了皱眉。“好吧，这有点夸张。并不是所有进展都适用于航天器，只是那些我最感兴趣的。”她咧嘴一笑。“不管怎样，我们的好几个开发项目都接近投产阶段了，这架原型机应该几天内就能运作起来。”`
+			`	她拍了拍一块裸露的外壳，你几乎能感觉到某种振动或嗡嗡声作为回应。Taely露出一种出神的表情，仿佛陷入了沉思。在停顿了足够久以至于有些尴尬之后，她眨了眨眼，重新将注意力集中到你身上。“不好意思。新飞船苏醒之类的事。”她若有所思地笑了笑。“在我再次投入工作之前，你能帮我送个东西吗？很简单，但很重要。我需要有人送一组数据文件到<stopovers>。因为我的开发项目已经结束，是时候把数据的硬拷贝送到我们的一处档案馆安全保存了。你能帮我送过去吗？”`
+			choice
+				`	“好的，我可以。”`
+					goto affirmative
+				`	“我太忙了，没空。”`
+			`	Taely看起来有些失望，但耸了耸肩。“没问题，我找别人送。”`
+				decline
+			label affirmative
+			`	Taely看起来很高兴。“太好了。把这个送到<stopovers>的档案馆就行。”她递给你一块看起来非常结实的数据晶体。“看起来和其他数据晶体不太一样，我知道。”她顿了顿。“这些是归档晶体，因此具有更健壮的数据结构，有更多层的冗余和纠错。同样，它们还有更多层的加密和安全措施，以确保不会落入敌人之手。换句话说，非常适合长期存储。”她笑了笑。“送完之后，请尽快回来帮忙启动新原型机。”`
+				accept
+	on stopover
+		conversation
+			`环顾太空港，你很快发现了一个问询台，几个看起来很忙的遗民在那里。你走近时，其中一个遗民用手势向你打招呼，问今天有什么能帮你的。比划了几下后，他们拿出一个设备，在数据晶体上方扫过。设备发出几声鸣叫后安静下来，遗民看起来很满意。“一切正常，<last>船长。请这边走。”他指了指问询台后面一条不起眼的走廊。`
+			branch trusted
+				has "license: Remnant Capital"
+				or
+					not "Deep: Remnant 0: offered"
+					has "Deep: Remnant 0: declined"
+					has "Deep: Remnant 3: Secret: done"
+			label "surface vault"
+			`	遗民带你穿过几道越来越气派的门，最后来到一个满是小门的房间。他选了一扇，用一把钥匙打开，取出一个小金属盒，然后用另一把钥匙打开盒子。“请您把数据晶体放在这里，我们会记录表面元数据，需要的人到时候就能取出来。”他等你把晶体放进盒子，然后反向操作，将其重新固定到保险库的墙上。`
+				goto departure
+			label trusted
+			`	遗民示意道：“如果您赶时间，可以先寄存在地表保险库，我之后会亲自把它转移到合适的存储位置。或者您也可以自己送到深层保险库。”`
+			choice
+				`	“地表保险库。”`
+					goto "surface vault"
+				`	“深层保险库。”`
+			`	遗民带你穿过几道越来越气派的门，最后带你穿过藏在储藏室后角的一扇几乎看不见的门。进去后，他停下来示意：“我建议您抓住扶手，要么把脚勾在踏脚处，要么激活靴子里的磁铁（如果有的话）。下降会很突然。”环顾四周，你注意到地板上有些看起来像踏脚的东西，沿着房间边缘用螺栓固定着，你的向导已经把脚伸进了一对踏脚里。`
+			`	你刚示意准备好，脚下的地板就好像突然掉了下去。你感觉自己在一个电梯里飞速下降，速度快到能体验到负重力。几分钟后，它开始减速，随着重力恢复，你感到比平时更重。最后，它逐渐停下来，门再次打开。`
+			choice
+				`	“好了，我们继续走吧。”`
+					goto vault
+				`	“我们现在下去多深了？”`
+			`	遗民笑了笑，示意道：“我不知道确切距离，但可以说，即使有多枚核弹直接命中太空港，也远不足以穿透到这个深度。”`
+			label vault
+			`	走出电梯，遗民带你沿着一条很短但有很多门的走廊走下去，最终走廊开到一个更大的厅里。大厅另一端是一扇巨大的门，门两旁有几台大型设备，看起来和点防御炮塔非常相似，但略有不同。你的向导走进房间几步，一个矮柱从地板上升起。他从口袋里掏出一张许可证，放进槽里，用力按压了一秒钟，然后取了出来。`
+			`	然后他快步穿过大厅，示意你跟上。盾牌在你俩周围闪烁出没，形成一系列开口，让你能接近保险库大门。你到达时门打开了。里面是一个小得令人失望的房间，有一个带小托盘的矮柱。`
+			`	“请您把数据晶体放在这里，我们会记录表面元数据，需要的人到时候就能取出来。”他指了指托盘，你把数据晶体放上去后，一道护盾瞬间包裹住托盘，整个装置沉入了地板。`
+			action
+				set "remnant: visited the vault"
+			choice
+				`	“好了，搞定了。Taely还在等我。”`
+					goto departure
+				`	“那些炮塔看起来不一样。”`
+			`	遗民点点头。“你观察力不错。实际上，这些炮塔大多是我们在这里发现的原始型号。它们本身就是一座座堡垒，所以我们仿造了类似的炮塔用作飞船的点防御系统。”`
+			choice
+				`	“原始型号？”`
+				`	“你们没有建造这座保险库？”`
+					goto "build vault"
+				`	“你说的堡垒是什么意思？”`
+					goto fortress
+			`	“是的，原始型号。就是说，它们是由我们之前住在这里的人建造的，在无数个纪元中保护着这些隐藏保险库。即使过了这么久，它们的功能仍然足够强大，是难以逾越的障碍。我们后来修复了它们，学到了很多东西，其中很多我们还未能付诸实践。”他叹了口气，但做了一个期待的手势。“如果我们能掌握制造这些所依赖的科学的一半，我们就能实现那些在祖先世界上的人看来像是魔法一样的事情。”`
+			choice
+				`	“但你们生产这些炮塔用于飞船……”`
+				`	“那你们飞船上的点防御炮塔呢？”`
+			`	“能制造类似的东西和能完美复刻之间有天壤之别。我们组成防御炮塔的那些元件实际上是这些古代护卫者中最简单、最不先进的部件。”他摇了摇头。“但终有一天会实现的。我们一直在取得新突破。”`
+				goto departure
+			label fortress
+			`	遗民的手势带上了一丝好奇。“我们不确定它们原本是用来放什么的，但它们的设计包含了很多通道和房间，就像一个蜂巢或微型城市。有人猜测保险库的建造者可能是微小的生物，这意味着这些保护装置可能曾容纳过成千上万的个体。”他摇了摇头。“在野生动物一步就能毁灭一个村庄的世界里生存和繁荣，一定是了不起的壮举。”让你消化了一下这些信息后，他转身走向门口。“该走了，船长。哨兵们看到有人在磨蹭就会变得警惕。”`
+				goto departure
+			label "build vault"
+			`	“不，我们不是保险库的建造者。它们是这些星球的古代居民建造的。我们很幸运能找到它们，它们藏得很深。我们研究了它们，修复了它们，并增加了自己的一些层次；但根本上，这些仍然是前人留下的结构。”他赞许地点了点头，看着周围的房间。你停下来看了看，发现墙壁和地板无缝连接，由一种深色金属物质制成，似乎在微微闪光。让你欣赏了一会儿设计后，他转身走向门口。“该走了，船长。我们可不想让哨兵以为你在这里磨蹭。”`
+			label departure
+			`	遗民带你原路返回，离开保险库，回到问询台。他感谢你的帮助，挥手告别，然后被另一个船长的对话吸引住了。你示意礼貌告别，返回太空港。Taely提到过要发射新原型机，那应该会很有趣。`
+	on complete
+		payment 250000
+		conversation
+			`你刚离开安全警戒线，通讯器就响了两次，通知有一笔<payment>物流费用存入你的账户，紧接着是一条信息，要你降落在泰莉工作的研究机库附近的3E5号停机坪。`
+
+
+
+mission "Remnant: Cognizance 23"
+	landing
+	name "首航"
+	description "护卫秋沙鸭前往<waypoints>，并摧毁那里的科拉斯飞船。"
+	source
+		government "Remnant"
+		attributes "shipyard"
+	waypoint "Farinus"
+	to offer
+		has "Remnant: Cognizance 22: done"
+	on offer
+		event "remnant: cognizance merganser"
+		conversation
+			`你正好走下<ship>，目睹三艘小飞船从泰莉工作的机库滑行出来。它们是些奇怪的小飞船，只比燕鸥和海燕略大一点。然而最引人注目的是，这三艘飞船似乎在自主行走，在灵活的起落架上向前移动。`
+			`	泰莉跟着它们出来，当它们到达停机坪时，她吹了声口哨，三艘飞船转身围拢在她身边。即使从你站的位置也能看到她的笑容。你看着她抬手轻拍每艘飞船的机鼻。这三艘飞船移动时闪烁着彩虹般的涟漪，船壳像某种有机生物一样弯曲扭动。`
+			choice
+				`	(Walk over to where she is standing.)`
+					goto "walk over"
+				`	（等她注意到我。）`
+			`	After several minutes of watching Taely commune with the trio of ships, she turns toward you and waves you over. "Enjoying the view?" she signs as you approach, but she continues without waiting for a response. "They are nice ships, and a major step forward in our ship development. Well worth watching." She nods to herself as she runs a hand along a fin, as if checking something.`
+				goto "merganser intro"
+			label "walk over"
+			`	你走近时，泰莉向你挥手。“急着想见我们舰队的最新成员吗？”她再次拍拍最近那艘飞船的机鼻。“它们绝对是遗民巡逻队美丽的新成员。”她对自己笑了笑，用手指划过一片鳍翼，像是在检查什么。`
+			label "merganser intro"
+			branch penguin
+				has "event: remnant: penguin"
+			`	"Captain <first>," she signs, "Please meet our first three Mergansers. I have been working on them for years now, and recent breakthroughs in our materials science have enabled significant progress in our ship designs." She pauses and gestures to one. "Would you like to touch them?"`
+				goto touch
+			label penguin
+			`	“<first>船长，”她比划着，“请见见我们的首批三艘秋沙鸭。我已经研究它们好几年了。事实上，你帮我完成的那架企鹅就是早期的原型机，用来测试其中一些技术。结合那个和最近材料科学的其他突破，我们的飞船设计才得以取得重大进展。”她停顿一下，指向其中一艘。“你想摸摸它们吗？”`
+			label touch
+			choice
+				`	“不知道。”`
+					goto "turn down"
+				`	“是的。”`
+			`	泰莉笑了。“先伸出手，让它感知你。等它碰了你的手，你就可以安全地摸它了。”你学着她的样子，不一会儿，最近的秋沙鸭轻轻蹭了蹭你的手。你跟着泰莉的引导用手抚摸它，发现——尽管外表黏滑——这艘飞船的皮肤干燥光滑。表面显然是金属的，但你能感觉到随着飞船移动，它在你手下伸展扭转。你能感觉到脉冲般的振动，与你习惯的<ship>上的振动不完全相同，但有微妙的波动。`
+			choice
+				`	"So what do these ships do?"`
+					goto "turn down"
+				`	“现在的科学真了不起。”`
+				`	“它们很漂亮。”`
+			`	泰莉赞同地点点头。“很高兴你能欣赏我们这里的一些成就。这让我觉得你也会喜欢我其他的一些项目。”`
+			label "turn down"
+			`	“一直以来，在余烬废土，我们都依赖椋鸟来承担多种轻型战斗任务。侦察、警戒、护航、哨戒、巡逻……它们扮演了太多角色。”她停顿了一下，瞥了一眼远处一架正在离开的椋鸟。“当然，我们可以建造更多椋鸟，但我们的专业乘员数量也不是无限的。我的解决方案就是这些秋沙鸭。它们足够先进，只需要一个人操作，并且航程相当远，足以巡逻余烬废土的大部分区域。这使它们成为护送海鸥进行资源采集、巡逻防范入侵等任务的理想选择。不过最重要的是，它们速度够快，能追上我们目前在这里遇到的一切。”`
+			`	她对此微微皱眉。“不幸的是，武器项目的进展没有我期望的那么快，所以秋沙鸭没有我最初设想的那种‘截停’能力。但至少它是一个熟练的猎手，我们可以用它追击敌人。”`
+			choice
+				`	“有意思。”`
+					goto "merganser mission"
+				`	“什么‘截停能力’？”`
+			`	“在太空战斗中，‘截停’指的是压制敌人使其容易受到舰队其他飞船攻击的战术。它也可以指阻碍目标移动、逃跑或脱离的能力。你可能熟悉利用导弹或具有冲击力的武器来干扰对手超空间跳跃的概念。这就是截停的一个典型例子。”她沉思着停顿了一下。“我们的抑制器是截停武器，但就我看来还不够有效。”`
+			choice
+				`	「谢谢你的解释。」`
+					goto "merganser mission"
+				`	“它们有什么问题？”`
+			`	“主要是决定性打击能力。”她的手势变得缓和。“它们是很棒的武器，适合用于飞船集群，或者安装在能携带大量此类武器的飞船上。但当只有机会命中几次时，它们就不足以压制住目标了。不过那是题外话了。眼下，我们应该庆祝我们的新飞船，看看它们能做什么。”她爱怜地拍拍最近的秋沙鸭。`
+			label "merganser mission"
+			`	“但就说到这儿吧。”她摇摇头，换上一副公事公办的表情。“我们希望你来带领两趟试航。第一趟是去猎杀一架被困在<waypoints>的受损科拉斯飞船。我们会提供这架秋沙鸭给你驾驶。”她亲切地拍拍它的机鼻。“同时还有一个四机编队陪同你。当然，如果你愿意，也可以驾驶自己的飞船；重要的是你们都完好地回来。那么，你准备好试飞了吗？”`
+			choice
+				`	（接受。）`
+					accept
+				`	（婉拒。）`
+					decline
+	on accept
+		give ship Merganser
+	npc kill
+		government "Korath"
+		personality coward target uninterested staying
+		system "Farinus"
+		fleet
+			names "korath"
+			cargo 3
+			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			outfitters "Korath Exiles Remnant Donations"
+			variant
+				"Rano'erek (Crippled)"
+		dialog "你已经摧毁了泰莉派你去追杀的科拉斯飞船。返回<destination>报告秋沙鸭的表现。"
+	npc save
+		government "Remnant"
+		personality escort unconstrained launching
+		fleet
+			names "remnant"
+			cargo 0
+			variant
+				"Merganser" 4
+	on complete
+		event "remnant: merganser fleet"
+		conversation
+			`你走下飞船，看到泰莉大步穿过停机坪，但她在最后一刻转向避开了你，拍了拍其中一架秋沙鸭的机鼻。她用手指轻轻划过一道武器划痕，片刻后转向你。“看来，科拉斯人依然是强大的战士。”她停顿了一下，眼神短暂地变得遥远，然后继续说。“但你带着整个机群完好无损地回来了。来吧，和我们一起吃顿饭，告诉我它们表现如何。”她带你走进机库，一群工程师和技术人员聚集在一个角落，旁边有个装满食物托盘的架子。他们热情地向你和秋沙鸭的飞行员打招呼，很快就把你拉入讨论，谈论秋沙鸭如何应对它们的第一次巡逻。`
+			`	不久后，技术人员和飞行员们开始交换故事，而秋沙鸭们则在人群上方投下高大的身影。有时它们会轻轻戳戳各种工程师或技术人员，技术人员则频繁地从通讯器上分享信息。显然，他们把这些通讯器和秋沙鸭连接了起来，所以飞船也在分享它们自己的巡逻经历。经过几个小时的庆祝后，泰莉宣布大家都该睡觉了，因为明天又是新的一天。大家互相道别时，你注意到道别的对象也包括了飞船——大多数人在离开时会拍打或抚摸一艘或多艘飞船。`
+			branch busy
+				has "remnant: dusk busy"
+			`	"Stop by the cafeteria tomorrow morning, <first>. Dusk and I will have more you can help with, if you are interested." With that, she gestures farewell and heads off at a brisk pace.`
+				decline
+			label busy
+			`	“等你和暮色手头的工作结束后，顺道来食堂一趟；如果你有兴趣的话，我们还有更多事情需要你帮忙。”说完，她做了个告别的手势，快步离开了。`
+
+
+
+mission "Remnant: Cognizance 24"
+	name "运送装备至西尔维达"
+	description "暮色需要从埃斯奎林取一批<cargo>，然后运送到西尔维达。"
+	source
+		government "Remnant"
+	stopover "Esquiline"
+	destination "Ssil Vida"
+	cargo "outpost equipment" 11
+	passengers 1
+	blocked "你收到来自暮色和泰莉的消息，说明下一个任务需要<tons>的货舱空间和<fare>。"
+	to offer
+		has "Remnant: Cognizance 23: done"
+		not "remnant: dusk busy"
+	on offer
+		conversation
+			`进入餐厅后，暮色和泰莉在房间另一边向你挥手示意，让你过去。你从取餐台拿起托盘，坐到他们桌旁的空位上，看着泰莉比划道：“我们刚交流了消息，发现可以把下一个任务合并起来。”`
+			`	暮色接着说：“根据我们在西尔维达收集的初步数据，那里的新数据足够组建一个永久研究团队了。巧的是，空间站已经适合居住，但我们还需要运送几批设备来建立一个独立区域。”`
+			choice
+				`	“好，明白了。”`
+					goto "skip explanation"
+				`	“为什么要这么做？”`
+			`	“为了安全。那个空间站看似坚固稳定，但如果我们缺乏独立的设施，一点微小的故障就可能让所有人丧命。既然我们连空间站是如何运作的都不了解，还依赖它继续运行就太愚蠢了。”泰莉点头同意暮色的话，补充道：“当然，我们最终会希望能对空间站进行全面评估，但它实在太庞大了。要完成那个目标还需要相当长的一段时间。”`
+			label "skip explanation"
+			`	暮色做了个手势，通讯器在你们之间投射出一份全息清单。“基本上，我们希望你装载这套设备，然后去埃斯奎林接一位名叫加夫里尔的技术员，他将负责在西尔维达建立生命维持系统。”`
+			choice
+				`	“我认识加夫里尔。”`
+					goto "know gavriil"
+				`	“那是谁？”`
+			`	“加夫里尔是个技术员，擅长平衡生命维持系统，尤其是在需要保持多种环境协调的情况下。我记得你曾和他一起建设埃斯奎林空间站。”`
+				goto onwards
+			label "know gavriil"
+			`	“太好了。他很期待再次与你合作。既然埃斯奎林的多环境部分已经步入正轨，他已经准备好迎接新挑战了。”`
+			label onwards
+			`	暮色扫了一眼设备清单。“这些足够启动项目了。你运完这批之后我们会开始定期补给，所以我们只需要你运送这批初始物资。你能接下吗？”`
+			choice
+				`	（接受。）`
+					accept
+				`	（婉拒。）`
+					decline
+	on stopover
+		conversation
+			`当你滑入埃斯奎林的对接舱时，很快发现空间站正迅速恢复全面机能，甚至可能正扩展到超出了原有的设计：到处都是人，大部分人都在有目的地移动或勤奋工作。几名技术员攀在头顶的天花板上安装新的导管。尽管气氛忙碌，人们仍不时停下望向窗外，每当有人看到虚空精灵时，就会爆发出连串的手势交流。看到如此繁忙的景象，你理解了为什么交通管制员要求你不要占用泊位过久。`
+			`	你在附近找到了加夫里尔，他正带着两名遗民检查新安装的水培阵列。他迅速结束工作，向另外两人比划告别后走向你。“你好，<first>船长！欢迎回到埃斯奎林。自你上次来后这里变化不小。”他的手势带着一丝自豪。“暮色告诉我我们又要去启用一个新空间站了，我们还是赶紧动身吧。”`
+	on complete
+		payment 250000
+		conversation
+			`设备很快被卸下，加夫里尔探查了附近几个房间。“我选了个合适的起始区域。如果你能帮忙把这些设备搬到那个房间——”他指向一个有平台的大房间，“——那就太感谢了。”`
+			choice
+				`	“还是算了。”`
+				`	“当然。”`
+					goto sure
+				`	“为什么这么急？”`
+					goto rush
+			`	“随你便，我还有活要干。”他立刻开始把设备搬进目标房间。`
+				goto "gavriil end"
+			label sure
+			`	“谢了，人多好办事。”你们很快把所有设备都搬进了目标房间。`
+				goto "gavriil end"
+			label rush
+			`	“来，帮我抬这个，我们可以边搬边聊。”他递给你一个升降器，你们开始搬运设备。“简单说吧，我们这里来了个访客。不知道是谁，但他们开着一艘帕拉夫雷特，搭载了大量混合外星科技。我们的扫描显示有一个科拉斯人领头，船员兼有外星人和人类。而且他们火力很猛，能让大家都不好过。我们当时只有几艘侦察船在附近，所以隐蔽起来和他们谈判。最后，他们给了我们一些‘无关紧要’的数据，换来一小时探索空间站并拿走一些零散物品的权利。我们的扫描显示他们从这些大厅里拿走了一些看起来没什么价值的东西。”他指着周围有平台的房间。`
+			choice
+				`	“真奇怪。”`
+					goto "moving on"
+				`	“遗民得到了什么？”`
+					goto "remnant gain"
+				`	“遗民用了什么筹码来谈判？”`
+			`	加夫里尔笑了。“嗯，看来那艘船的船长感到非常不安，因为我们能精确锁定并描绘他们及全体船员的细节，掌握的数据足以在通讯中用他们自己的外貌伪造视频，更别提我们还成功从船上的其他船员中识别出了他们。更让他们加倍不安的是，尽管他们的扫描阵列令人瞩目，却连一丝可能暗示我们位置或身份的信号都捕捉不到。”加夫里尔停下来，用手推开一扇门，把装满货物的升降机拉过去，然后继续说道：“他们一开始还在虚张声势，但当我们开始精确列出他们各种计算机系统上存在的缺陷和磨损时，他们觉得还是做个交易比较好。”`
+			choice
+				`	“真聪明！”`
+					goto "moving on"
+				`	“你们从他们那里得到了什么？”`
+			label "remnant gain"
+			`	你把设备全部卸到房间里后，加夫里尔继续说：“嗯，科拉斯人存在的时间相对较长。所以我们向他们索要了天文数据集。我们收到的数据是原始、未经校正的连续数据，涵盖了数万年的恒星观测记录。这批数据甚至可能包含与他们内战期间一些世界被毁相对应的数据。”他们顿了顿，又说道：“当然，我们得先验证这些数据。不过到目前为止，与已有可信记录比对的结果都很成功。如果能通过验证，这个数据集将极大扩展我们研究人员用于建模和研究宇宙的数据。”`
+			label "moving on"
+			`	加夫里尔把升降器收进储物壁龛。“好了，谢谢你帮忙，<first>。这确实加快了进度。”`
+			label "gavriil end"
+			`	他们环顾成堆的设备，转向你。“这些够我忙几天的了，但如果你愿意做一些巡逻任务，我会非常感激。等我整理好一些东西后会给你详细信息。”`
+
+
+
+mission "Remnant: Cognizance 25"
+	landing
+	name "在波斯特维尔塔附近的星系巡逻。"
+	description "加夫里尔要求你在附近星系进行巡逻，确保最近经过的一艘帕拉夫雷特没有留下任何意外。"
+	source "Ssil Vida"
+	waypoint "Diespiter"
+	waypoint "Statina"
+	waypoint "Egeria"
+	waypoint "Vaticanus"
+	waypoint "Prosa"
+	to offer
+		has "Remnant: Cognizance 24: done"
+	on offer
+		event "remnant: ssil vida inhabited"
+		conversation
+			`你刚做完<ship>的起飞前检查，加夫里尔就敲了敲你的气密舱门。“设置一个新环境总是个有趣的挑战，”加夫里尔比划着说。“但说回正事：你能快速巡视一下这片新可通的星域吗？我们派了侦察兵带着监视卫星前往每个星系，但我刚才捕捉到了一艘帕拉夫雷特的信号，它最近来过这里，我想确保它没留下什么‘惊喜’。”他们停顿了一下，做出一个你已熟悉的手势——表示接下来的话是总结。“所以，检查这个星区里的每个星系，确认帕拉夫雷特没留下任何东西。”他们的手势转为决断的语气。“你能帮忙吗？”`
+			choice
+				`	“是的。”`
+					accept
+				`	“不知道。”`
+					decline
+	npc kill
+		government "Korath"
+		personality target marked waiting
+		system "Egeria"
+		fleet
+			names "korath"
+			cargo 3
+			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			outfitters "Korath Basics" "Korath Exiles"
+			variant
+				"'olofez" 3
+		dialog "你已经摧毁了帕拉夫雷特留下的那些飞船。"
+	on waypoint
+		dialog "你已经巡逻了全部六个星系。"
+	on enter Egeria
+		dialog "你一进入星系，三艘“奥洛费兹”就开始瞄准你的飞船。这大概就是加夫里尔担心的意外。"
+	on visit
+		dialog "你已经返回西尔维达，但尚未确保所有邻近星系的安全。"
+	on complete
+		event "korath rescue: egeria tiny"
+		event "korath rescue: egeria tiny end" 14
+		payment 250000
+		conversation
+			`回到西尔维达，你找到加夫里尔并报告你定位并摧毁了三架“奥洛费兹”。“三架？”他们用疑问的手势比划着。“这个数字很奇怪。帕拉夫雷特最多只能携带两架。我马上报告这件事。但在此期间，来看看我布置了什么。”他们领着你走向太空港。`
+
+
+
+mission "Remnant: Cognizance 26"
+	name "运送永恒电池至西尔维达"
+	description "加夫里尔要求你在<date>之前去<stopovers>取回一枚永恒电池。"
+	deadline 14
+	source "Ssil Vida"
+	stopover "Viminal"
+	to offer
+		has "Remnant: Cognizance 25: done"
+	on offer
+		conversation
+			`加夫里尔自信地大步走进房间。“看这个！”他们比划着覆盖在墙壁上的光滑板材，同时新设备在一旁安静地嗡嗡作响。中间有一块大面板，上面是空间站的示意图，格外显眼。`
+			scene "scene/ssil vida alert hologram"
+			`	“在空间站内将生命维持系统设置为自给自足的封闭环境很简单，我顺便对空间站本身做了些初步的电力追踪。看来，空间站目前由一个巨大的聚变反应堆供电，而它显然已接近寿命尽头。”他们停顿了一下，然后继续说道，“更别提它基本上是在消耗废燃料残渣中的残渣在运行。我不知道它还能撑多久，但很可能不超过几个星期。据我所知，它仍试图为所有系统供电，但主要负载”——他们指着全息图上发光的红色球体——“似乎在电力水平低于某个阈值时就彻底关闭了。”他们对着显示屏皱起眉头。`
+			`	“我不知道主反应堆完全失效时空间站会发生什么，而我们也不希望在有机会彻底调查之前就让空间站坍塌。因此，我们现在必须采取行动，为自己争取工作空间。”他们转向你。“我已经联系了维米纳尔，他们准备好了一枚永恒电池待运输。请去取回并运到这里。”他们微微一笑。“哦，无论你把它安装在飞船上还是放在货舱里运输都可以，但要确保它不是你的主能源：我有工具从你的飞船上卸下它并接入空间站，但没有设备再把它装回你的飞船。”他们停顿了一下，查看显示屏上的读数。“记住：我必须在<date>之前拿到那枚永恒电池。”`
+				accept
+	on stopover "Viminal"
+		outfit "Aeon Cell" 1
+		dialog "当你降落后，遗民们已准备好了一枚永恒电池。他们小心翼翼地将其移动到你的飞船上，离开前有几个人虔诚地触摸了它。你提醒自己，在再次起飞之前要确保它被妥善存放。"
+	on complete
+		payment 250000
+		outfit "Aeon Cell" -1
+		conversation
+			`加夫里尔让你把永恒电池卸到附近一个机库的角落里。“谢谢你，<first>！空间站的电力已经严重不足，这应该能帮助稳定状况。我们最终还是需要一个完整的团队过来，再加上一些燃料才能让主反应堆正常运行，但首先得弄清楚它到底是用什么燃料的。”`
+			`	他们拿出通讯器检查了一些信息。“去凯良找托尔扎报到。等你到那里的时候，他应该已经把团队训练完了。回头见，船长！”`
+
+
+
+mission "Remnant: Cognizance 27"
+	landing
+	name "与<planet>的托尔扎联络"
+	description "托尔扎应该已经在<planet>准备好了一支队伍。"
+	source "Ssil Vida"
+	destination "Caelian"
+	to offer
+		has "Remnant: Cognizance 26: done"
+
+
+
+mission "Remnant: Cognizance 28"
+	landing
+	name "从拜亚努斯回收设备"
+	description "托尔扎要求你在<date>之前从<destination>回收280吨装备和20名人员。"
+	source "Caelian"
+	destination "Baianus"
+	blocked `通讯频道里，托尔扎正忙作一团，朝好几个方向下达指令。“我们现在需要另一艘能疏散280吨货物和20名人员的飞船。等你有合适能力了再回来这里。”`
+	cargo "reserved" 280
+	passengers 20
+	deadline 13
+	to offer
+		has "Remnant: Cognizance 27: done"
+	on offer
+		conversation
+			`当你进入凯良的最终进近时，通讯器突然激活，画面中的托尔扎动作急促。他短暂地对准镜头说：“船长<first>，而且驾驶着一艘运力不俗的飞船，太好了！科拉斯发现了我们的一个前沿行动基地，我们需要立刻撤离那里。基地位于帕尔卡星系的拜亚努斯上。要带走20个人和280立方米的设备。科拉斯设置了封锁线，所以你需要一艘足够快的飞船才能突破。你想打他们也好，不打也罢，但首要任务是撤离前哨站。愿余烬助你飞行，船长。”`
+				accept
+	npc
+		government "Korath"
+		personality heroic plunders harvests waiting staying
+		system "Parca"
+		fleet
+			names "korath"
+			cargo 0
+			variant
+				"Rano'erek" 1
+				"Rano'erek (Ground Assault)" 4
+				"Palavret (Ember)" 6
+				"'olofez" 32
+		on kill
+			set "remnant: cleared Baianus orbit"
+
+
+
+mission "Remnant: Cognizance 29"
+	landing
+	name "从拜亚努斯回收设备"
+	description "托尔扎要求你携带回收的设备与人员在<date>之前返回<destination>。"
+	source "Baianus"
+	destination "Caelian"
+	blocked `场面是有组织的混乱。一名遗民打着手语：“我们需要一艘能装载<tons>货物和20名乘客的飞船。”`
+	cargo "equipment" 280
+	passengers 20
+	deadline 13
+	to offer
+		has "Remnant: Cognizance 28: done"
+	on offer
+		conversation
+			branch "cleared orbit"
+				has "remnant: cleared Baianus orbit"
+			`冲破科拉斯的封锁后，你飞驰在拜亚努斯极光充盈的天空中。你迅速滑入指定的进近航线，开始输入敌我识别代码，这时地面爆发出一阵防空炮火，从你肩旁掠过。你进入规避机动时，瞥见一架‘奥洛费兹’的残骸在你身后翻滚着坠向冰面，一束火矛光束烧灼着<ship>刚刚所在的位置。片刻后，你收到确认信号，他们已接受你的身份并正在追踪你的位置。`
+				goto landed
+			label "cleared orbit"
+			`摧毁封锁本星系的科拉斯飞船赢得了一些喘息。然而好景不长，因为有些科拉斯飞船处于极光充盈的大气层内，它们避开了你在太空中的攻击，现在正追击你，意图阻止你抵达遗民基地。当你发送敌我识别代码时，来自下方的防空炮火助你一臂之力，将一架‘奥洛费兹’打落翻滚坠向冰面，它最后的火焰吐息擦过<ship>。在确认识别你身份的同时，前方基地的遗民告知你，尽管当前星系内科拉斯势力有所减弱，但他们的时间表并未改变；已有更多飞船在路上了。`
+			label landed
+			`	当你接近隐藏星港入口时，通讯面板上出现了方向指引，引导你到一个被大量设备环绕的降落点。你缓缓驶入，刚触地，一名技师便从天花板上跳下，落在你的船体上，带着加油软管和修理设备。与此同时，一群遗民正忙着准备和搬运各种设备，其中许多使用升降机和装载机。你迅速打开货舱门，遗民们冲上去装载并登上<ship>。`
+			`	遗民们动作迅速，但你能听到战斗正在逼近。即便有<ship>的减震器，你仍能感受到防空火炮沉重的轰鸣。随着护盾在来袭火力下噼啪作响，发电机被推到极限的尖啸声充斥着空气。在喧嚣声中，遗民们目标明确地行动着，在嘈杂中用手势无声地发出指令。最后一批货物装载完毕，其中一人来到驾驶舱前。“感谢您的协助，<last>船长。爆炸装置已经设置好，我建议我们立即离开。”他们恭敬地点点头，然后把自己绑在最邻近的固定带上。`
+			`	护盾最后一次打开让你离开，你几乎是跳进了科拉斯攻击的锋口中。防空火炮继续对着来袭的飞船进行有节奏的齐射，但很明显，无论是火炮还是基地周围的护盾都在攻击下逐渐失效。当你升向轨道时，你看到的最后景象是火炮部件熔化在地面上，歪斜、坍塌。你的传感器记录到洞穴中突然发生爆炸，对此遗民们露出悲伤但满意的点头。“请带我们回凯良吧，船长。”`
+				launch
+	npc
+		government "Korath"
+		personality heroic plunders harvests waiting launching
+		system "Parca"
+		fleet
+			names "korath"
+			cargo 0
+			variant
+				"Rano'erek" 1
+				"Rano'erek (Ground Assault)" 2
+				"Palavret (Ember)" 6
+				"'olofez" 24
+	on complete
+		payment 500000
+		conversation
+			`当你打开舱门让撤离者出来时，凯良的烈日像锤子一样砸在你身上。几名遗民走进阳光中，仿佛在享受炎热，而其他人则迅速移到附近建筑的阴影中商议。不过，有几个人需要被抬出来送上等候的车辆：看来他们在最初的突袭中受了伤，虽然在撤离过程中肾上腺素支撑着他们，但在返航途中病情恶化了。遗民们怀着虔诚的匆忙抬着他们，他们被装上的车辆迅速消失在附近的建筑中。`
+			`	“余烬护佑你安全通过了，”托尔扎从附近一个舱门出现，带着赞赏的意味打着手语。“那个前哨站的损失很遗憾，但至少那里大部分遗民都幸存了。感谢你的帮助。”他瞥了一眼通讯器。“当然，你的后勤调整已记入账户，但我猜你更感兴趣推进对西尔维达的研究。准备好了就到星港来找我。”`
+
+
+
+mission "Remnant: Cognizance 30"
+	name "运送车队至<planet>"
+	description "托尔扎委托你运送一队技术人员到 <destination>。"
+	source "Caelian"
+	destination "Ssil Vida"
+	blocked `你向托尔扎报到，他瞥了一眼通讯器。“你需要一艘能容纳15人和30吨货物的飞船。”`
+	cargo "equipment" 30
+	passengers 15
+	to offer
+		has "Remnant: Cognizance 29: done"
+	on offer
+		conversation
+			`你走进自助餐厅，发现一群遗民看起来很疲惫，但对自己很满意。托尔扎端着装满瓶子的托盘在他们中间大步走着，把瓶子分发下去。“干得好，各位。那次拉练的节奏很棒。”他转向你。“而且正点到达，这位船长将把你们送到西尔维达去。”他示意你坐下，也递给你一瓶。`
+			choice
+				`	(示意自己不渴。)`
+					goto "not thirsty"
+				`	(接过瓶子并示意感激。)`
+			`	你喝了一口，发现味道像某种恢复性运动饮料。你能尝出一点盐味和其他几种味道，但大部分是一种你无法分辨的难以言喻的味道。托尔扎看着你喝下，赞许地点点头。“尤其是在这种高温下，补水很重要。”他继续在人群中穿梭，分发剩下的瓶子。`
+			choice
+				`	(默默喝饮料。)`
+					goto "power briefing"
+				`	(问旁边的遗民刚才发生了什么。)`
+			`	遗民疲惫地笑了笑。“我们刚穿着应急环境服，带着基本生存和维护装备，跑了十公里，用时不到三十七分钟。托尔扎定的节奏很紧，但我们跟上了。”她喝了一口饮料。“这很辛苦，但耐力对生存相当重要，尤其是在像<planet>这样的未知环境中。”她又喝了一口。“这是一个有趣的节奏变化。通常我携带全套工程装备，相比之下这次算是‘快速突击’了。他”——她指着托尔扎——“喜欢变换花样。他定节奏时，没有哪两次拉练是一样的。”`
+				goto "power briefing"
+			label "not thirsty"
+			`	托尔扎迅速继续他的巡视，很快每个人都在小口喝着饮料。几个人调出了西尔维达的显示图，其他人则在聊天时查看库存清单。你听到的大部分对话听起来像一组技术人员在为任务做准备。`
+			label "power briefing"
+			`	几分钟后，托尔扎示意大家注意。“现在，回顾一下参数：<planet>似乎是一个巨大的机械装置，用来执行某种我们尚不知道的任务。核心系统已经耗尽了那座大型聚变反应堆的供电能力。虽然安装了永恒电池减轻了系统的压力，但它无法完全为空间站供电。你们需要集中精力处理电力系统，想办法完全稳定电力分配。与此同时，<first>将返回维米纳尔进行这次行动的下一步。你们都会留在<planet>上至少几个月，视情况可能更长。明白了吗？”房间里的人纷纷点头并打手语表示同意。`
+			`	托尔扎做出一个表示尊重的手势。“余烬擦亮你们的双眼，朋友们。”`
+				accept
+	on complete
+		payment 250000
+		event "remnant: ssil vida outfitter"
+		conversation
+			`加夫里尔在船坞等着，这时<ship>的舱门完成循环。“欢迎，”他比划道。“有新鲜的头脑来分享<planet>真是太好了。”船上的遗民们急匆匆地涌出飞船，每人背着一包沉重的装备。他们做出尊重的姿势，然后各奔东西。显然他们在到达前已经研究过地图，因为似乎都知道要去哪里。几个人留在加夫里尔身边，帮忙卸下其余装备，其中一些似乎包含一家装备店的核心设备。`
+			`	“自从你上次来之后，我们取得了很好的进展。我们已经在几个房间区域接管了生命维持系统的控制权，现在这些完全由我们自己的系统运行。除了稍微减轻了空间站核心的负载外，这也意味着即使空间站完全失效，我们仍然有安全的居住区作为我们的行动基地。”`
+			`	他停顿了一下，手势带上了厌恶的语气。“当然，我们正在努力避免这种故障。但在恶劣条件下，拥有多个备份系统是生存的关键。”`
+			`	他环顾四周，看着几个尚未消失在空间站其他地方的遗民。“感谢你带来了更多的探索者。”他递给你一个数据晶体。“我已经把这些数据传送到维米纳尔，但如果能请你把这些带给他们，以确保传输中没有错误或数据损坏，我会很感激。”`
+
+
+
+mission "Remnant: Cognizance 31"
+	landing
+	name "将数据晶体送至<planet>"
+	description "加夫里尔要求你将一枚数据晶体送至<destination>。"
+	source "Ssil Vida"
+	destination "Viminal"
+	to offer
+		has "Remnant: Cognizance 30: done"
+	on complete
+		conversation
+			`你不知道该把数据晶体交给谁，于是拿去了问讯处。当时值班的遗民打了个手势，表示他们已经料到你会来，并感谢你送来了晶体。你刚离开问讯处，通讯器便响起——是执政官奇利亚发来的信息：他想和你谈谈，此刻正在空间港的自助餐厅里。`
+
+
+
+mission "Remnant: Cognizance 32"
+	name "取回精炼燃料"
+	description "奇利亚要求你前往<planet>并在<date>之前提取58吨精炼燃料。"
+	source "Viminal"
+	destination "Clink"
+	blocked "奇利亚和泰莉看起来对某事很兴奋，但当你询问时，他们摇摇头说你需要先获得他们的主力舰执照，他们才能告诉你更多。"
+	deadline 19
+	to offer
+		has "Remnant: Cognizance 31: done"
+		or
+			not "remnant: dusk busy"
+			not "remnant: cognizance 32: dusk was busy"
+	to accept
+		has "license: Remnant Capital"
+	on offer
+		conversation
+			branch dusk
+				not "remnant: dusk busy"
+			action
+				set "remnant: cognizance 32: dusk was busy"
+			`你在食堂找到奇利亚和泰莉时，他们似乎对某件事很兴奋，但他们表示，你需要先完成和达斯克的其他工作，才能继续在这里的工作。`
+				defer
+			label dusk
+			`你走进食堂时，奇利亚正从柜台拿起托盘。看到你进来，他又拿起一个，朝泰莉和达斯克所在桌子上的两个空位点了点头。“很高兴你能来，<first>。”泰莉看上去很高兴，充满了压抑的活力。“今天是激动人心的一天，船长，但应该由达斯克来说明。”她朝达斯克点点头，达斯克放下叉子准备比划。`
+			`	“在加夫里尔于西尔维达建立设施取得显著进展的同时，我正与一队异星语言学家合作，破译我们目前已收集到的数据。根据加夫里尔的建议，我们一直在重点研究电力分配系统。”`
+			branch "ssil vida emerald sword"
+				has "Sheragi Archaeology: Epilogue: done"
+			`	西尔维达的全息图出现在桌面上方，随即淡去，留下一个被线条网络包围的大型高亮物体。“正如加夫里尔告诉你的那样，空间站的主电源似乎是一个巨大的聚变反应堆。据我们目前所知，它的设计相当简单，尽管是专为完全自动化运行而建，且比人类建造的最大反应堆还要大。不幸的是，它已经耗尽了所有燃料，目前正通过提炼乏燃料来提取最后一点可用燃料。我们目前的估计是，它的发电量不到额定功率的百分之十。这个数值太低了，以至于它已经停止为空间站大部分系统供电。”他示意奇利亚。`
+			`	“根据我们的分析，反应堆似乎使用一种非常特定的同位素。是否真的需要这种特定的同位素，还是其他的也能用，尚不清楚，但目前我们倾向于提供完全匹配的燃料。虽然我们最终能够生产它，但这需要时间，而我们没有时间了。”西尔维达的示意图消失，取而代之的是一张星系图，聚焦于边缘星区与南方交界处的<system>。“我们的记录显示，最容易获取的矿床在<planet>。”奇利亚转向你。“你来自祖星空间，对那里的人最熟悉，我们希望你去那里，为反应堆运回58立方米处理过的燃料。你能做到吗？”`
+				goto "ssil vida continue"
+			label "ssil vida emerald sword"
+			`	西尔维达的全息图出现在桌面上方，随即淡去，留下一个被线条网络包围的大型高亮物体。“正如加夫里尔告诉你的那样，空间站的主电源似乎是一个巨大的聚变反应堆。根据我们的初步扫描，它似乎与你最近发现的谢拉吉反应堆相匹配，只是规模大得多。不幸的是，它已经耗尽了所有燃料，目前正通过提炼乏燃料来提取最后一点可用燃料。我们目前的估计是，它的发电量不到额定功率的百分之十。这个数值太低了，以至于它已经停止为空间站大部分系统供电。”他示意奇利亚。`
+			`	“根据我们的分析，反应堆似乎使用一种非常特定的同位素，似乎是谢拉吉偏爱的那种。是否真的需要这种特定的同位素，还是其他的也能用，尚不清楚，但目前我们倾向于提供完全匹配的燃料。虽然我们最终能够生产它，但这需要时间，而我们没有时间了。”西尔维达的示意图消失，取而代之的是一张星系图，聚焦于古代谢拉吉领土中心的<system>。“我们的记录显示，最容易获取的矿床在<planet>。”奇利亚转向你。“你在那一带活动频繁，因此对那里的人很熟悉，我们希望你去那里，为反应堆运回58立方米处理过的燃料。你能做到吗？”`
+			label "ssil vida continue"
+			choice
+				`	（同意。）`
+				`	（婉拒。）`
+					decline
+			`	四个人都显得很高兴，交换了一下眼神，似乎表示他们预料到了这个回答。泰莉带着感激的语气示意道：“我们感谢你愿意帮助我们探索这个奥秘，<first>。既然时间紧迫，现在正是向你展示一艘刚刚投入生产的新船的大好时机。”她站起身，示意你陪她去造船厂。`
+			`	在那里，蹲在<ship>旁边的是一艘你只能形容为捕食者的飞船：它线条修长流畅，展开的翼展如同羽毛，巨大的引擎阵列暗示着在同尺寸飞船中无与伦比的机动性。你走近时，看到几名遗民正在它周围工作。其中一人做了个手势，飞船展开一侧机翼，那名遗民伸手做了一些微小调整，然后后退。接着飞船做出一系列扭动动作，非常像一只猛禽在梳理羽毛。`
+			`	泰莉径直走到船头，飞船蹲伏下来，让她把手放在上面。“<first>船长，我想向你介绍游隼号。这是我们一个多世纪以来建造的第一艘新型主力战舰，是我和许多人数十年工作的成果。希望它是众多成功新船中的第一艘。”她停顿了一下继续说道，“起初，它们会被直接分配给特定的船长，但最终会正常开放征用。”`
+			choice
+				`	“看起来很棒。出发吧！”`
+					goto "lets fly"
+				`	“这是什么类型的船？”`
+			`	泰莉带着敬意比划着。“这就是我们所谓的活体飞船。”她皱眉看着你。“在你开始想象一堆肉和黏液组成的飞船之前我要说，它显然不是那样。”她用手沿着船身抚摸，显然非常光滑坚固。“活体飞船，我们这么称呼它们，是指具有足够自我意识和自我控制能力而被视为有生命的宇宙飞船。它们和其他飞船一样是制造出来的，也需要能量和燃料。同样，它们主要由与你熟悉的相似材料制成。但它们有意识。它们能够以伺服机构和传统位置报告无法精确控制的方式运动和弯曲。它们能感知每根触须的位置，就像大多数人能知道自己的手在哪里一样；而每个虫洞漩涡的波纹，对它们而言就像沙丘的顶峰对你我一样清晰可辨。”`
+			`	她转向你，调出一个显示屏，列出各种数据。“从技术角度来看，游隼级星舰被归类为中型战舰，沿袭了早期时代的快速攻击巡洋舰设计。虽然它没有我们所能安装的最厚装甲或护盾，但它以无与伦比的机动性和一个经过加固以抵御某些减速效果的神经网络弥补了这一点。此外，它是目前最大的内置隐形功能的生产型飞船。”`
+			`仿佛恰逢其时，飞船从视线中消失了。随着短暂的沙沙声和空气的呼呼声，飞船出现在你的另一侧。几名正在工作的遗民觉得有趣，然后转移位置继续他们的任务。泰莉也做了个有趣的手势，继续说道。“鉴于你最近与普卢姆的合作，游隼号是我们所谓的‘气体航行’星舰这一点可能与你有关；这意味着它不仅能在大气层中飞行，还能应对在气态巨行星深处和其他高压世界中发现的气压和极端条件。”`
+			label "lets fly"
+			`	泰莉微笑着继续说道。“你应该很快就能起飞，但奇利亚对这个任务还有一些最后的嘱咐。”`
+			`	她示意他，他走到前面。“鉴于祖星空间最近的局势，当局自然对大量精炼核燃料的运输持怀疑态度。同样，如果有人成功扫描了游隼号，那将极其麻烦。因此，你必须避免被扫描。”`
+			`	他轻敲通讯器。“我们已经在超空间通信系统中以‘太阳风物流有限公司’的名义下了材料订单。<planet>上的矿工将在太空港外的一个采矿点准备好装运的货物，地点足够远，可以避开标准的进出港扫描。”`
+			choice
+				`	“听起来不错。该走了。”`
+					goto departure
+				`	“那人们看到这艘船怎么办？”`
+			`	奇利亚咧嘴一笑。“对我们来说幸运的是，人类偏好的多样性对我们有利。虽然市售飞船可能只有寥寥数种，但宇宙飞船行业却出奇地多样且缺乏监管。因此，造船厂延续了最早车辆时代的传统：如果有人付得起钱，就有造船匠愿意建造。`
+			`	“在观察祖星空间的过程中，我们曾见过每一种曾在大众文化或媒体作品中出现的飞船的复制品在飞行。虽然许多仅能勉强进行行星际航行，但相当数量的飞船作为功能完备的星舰穿梭于超空间航线上。鉴于我们的飞船与某些作品中的飞船相似，我们并不担心被看到——只担心被扫描。”`
+			label departure
+			`	游隼号上打开了一个舱门，所有工人迅速完成手头工作，将设备收进舱内。“准备好了就起飞，船长！”一人从舱门口喊道。`
+				accept
+	on accept
+		set "remnant: dusk busy"
+		give ship Peregrine "Shadow Flight"
+		event "remnant: cognizance peregrine"
+	on decline
+		dialog
+			`你拒绝了一个重要的遗民任务，这将结束遗民剧情线。如果你并非有意如此，或许需要重新加载。`
+
+
+
+mission "Remnant: Cognizance 33"
+	landing
+	name "交付精炼燃料"
+	description "在<date>之前将精炼燃料运送到<destination>。"
+	illegal 0
+	stealth
+	source "Clink"
+	destination "Ssil Vida"
+	cargo "refined fuel" 58
+	deadline 19
+	blocked "要执行下一项遗民战役任务，您至少需要58单位的空闲货舱空间。"
+	to offer
+		has "Remnant: Cognizance 32: done"
+	on offer
+		event "remnant: remove hidden"
+		conversation
+			`你受到的接待正如<origin>的名声所预示的那样友好：没人来迎接你，也没人来帮忙装载货物。迎接你的只有板条箱堆旁一个孤零零的安全终端，以及一张要求船只装完货就立刻离港的告示。你用奇利亚发来的代码解锁了板条箱，装载好<ship>，准备前往<planet>。`
+			`	As you are completing your checks, your sensors alert you to the arrival of a small fleet that seems to be maintaining orbit over this area. It looks like you might have to take steps to avoid observers right away.`
+				accept
+	on enter "Kornephoros"
+		dialog `你的通信器传来一阵噼啪作响的广播：“我不知道你是谁，但这里有个悬赏，针对那些无隶属关系却大量采购武器级材料的人——我正打算拿了这笔赏金！”`
+	npc evade
+		government "Bounty Hunter"
+		personality waiting unconstrained surveillance
+		system "Kornephoros"
+		fleet
+			names "bounty hunter"
+			variant
+				"Vanguard (Missile)"
+				"Splinter" 2
+				"Quicksilver (Proton)" 3
+	on complete
+		payment 250000
+		event "remnant: ssil vida area unvisited"
+		event "remnant: ssil vida activation"
+		conversation
+			`当你联系<planet>确认卸货地点时，达斯克回复了你，指引你前往更靠近主反应堆的一个泊位。然而，当你打开舱门时，却看到加夫里尔和一群带着升降机的遗民正在等待。他们愉快地欢迎你，但显然急于尽快卸下处理过的燃料并将其运入空间站深处。最后一批货物离开飞船后，加夫里尔才放慢速度感谢你及时送达，但随即因时间紧迫而匆忙道歉并离开。他们临别时的姿态表明，你可以到控制室找达斯克谈谈。`
+
+
+
+mission "Remnant: Cognizance 34"
+	landing
+	name "观测波斯特维尔塔的变化"
+	description "外面发生了某些事，达斯克希望你去查看一下。"
+	source "Ssil Vida"
+	to offer
+		has "Remnant: Cognizance 33: done"
+	on offer
+		conversation
+			`控制站里，达斯克和一小组遗民正在几台控制台前忙碌工作。警报闪烁，迅速被处理，但新的警报又在别处响起。动作之多，感觉像是人数翻了一番。瞄一眼读数，你送来的燃料似乎正是时候：永恒电池因试图接管聚变反应堆而过载，他们的大部分努力都用于精心协调系统间的轮流停电，以维持最低限度的运行。`
+			`	加夫里尔突然出现在一个屏幕上，示意燃料注入过程已经开始，达斯克焦虑地扫描着一串读数。片刻静止后，读数突然开始攀升。遗民们迅速重新校准传感器以适应更大的电力处理量，读数继续将图表顶部推向更高。一个接一个区块，整排指示灯闪烁后熄灭。一两分钟后，最后一个显示屏不再指示电网中存在任何问题。`
+			`	达斯克转向你和团队，刚做出一个满意的姿势，突然一切都仿佛发生了侧倾。你几乎感到自己看到了一阵短暂的涟漪，但它在你聚焦之前就消失了。你留下一种事情已改变的感觉。同时，近程传感器和监控周围星系的设备亮起。有人从控制台抬起头来：“整个星系活过来了，达斯克！我们之前探测到的那些幽灵生命信号变得实质多了！”另一个人用简练快速的语气比划着：“而且出现了几个巨大的质量体。它们看起来是行星量级，但读数似乎表明它们有些更模糊的特性。”`
+			`	达斯克环顾四周，然后做了个手势：“<first>船长，请去调查一下外面发生了什么。好好看看周围，然后回来报告。”`
+				accept
+	on enter "Postverta"
+		set "remnant: saw changed postverta"
+		conversation
+			`正如遗民所说，这个星系似乎充满了生命。过去只有小行星和一个相当空旷的星系，现在到处都是生命迹象。当你躲闪着小行星时，你注意到大多数小行星上似乎都长着某种东西：植物。也许苔藓或真菌是更准确的词，尽管你相当确定现有的生命分类无法充分描述你在外面看到的景象。所有生命的突然出现更令人惊讶的是，你的传感器亮起，通知你它正在追踪几群虚空精灵。`
+			`	当你离开空间站，你继续发现到处都是生命和活动的迹象：在岩石间穿梭，沿着太阳风翱翔，在云层中捕猎。然而，不清楚的是它们从哪里来。唯一的线索可能是你的飞船仪器报告周围区域的环境能量突然激增。`
+	to complete
+		has "remnant: saw changed postverta"
+	on complete
+		clear "remnant: saw changed postverta"
+		conversation
+			`回到空间站，达斯克、加夫里尔和许多在站上的遗民在对接舱迎接了你。达斯克和其他几个人刚从 <origin> 的外壳上漫步回来，他们报告说看到虚空精灵从空间站附近经过。他们迅速从你的飞船传感器中提取数据，并将其投射到全息显示器上。所有人都围拢过来，聚精会神地查阅着数据和影像。他们站立着，凝视着，沉思着，而数据仍在从空间站持续不断地流入。`
+			`	毫无征兆地，你的脑海中似乎有什么东西“咔哒”一声接通了。突然间，数百场对话的嗡鸣声涌入你的思绪，伴随着一种透过数千双眼睛审视这个星系的短暂错觉。你感到一阵好奇，瞥见了 <origin> 曾经可能的模样——光洁如新，熠熠生辉。画面如同快进的视频般流转老化，经历了无数个轨道周期，空间站渐渐磨损，周围的天空也随之变幻。随后，画面定格在了似乎是现今的时刻。一种赞赏的感觉取代了好奇心，紧接着是 <ship> 离开空间站并同时朝十几个不同方向驶去的模糊影像，就仿佛看着它碎裂成了无数个幽灵。`
+			`	最后的画面是遗民称之为“烬核”的生物漂浮在太空中。这幅画面像你飞船的影像一样碎裂，分裂成多个自身的幽灵，并消失在一道能量裂隙中。好奇感再次回归，然后又是一声“咔哒”，你的思绪突然又回到了自己的掌控之中。`
+
+
+
+mission "Remnant: Cognizance 35"
+	landing
+	name "波斯特维尔塔星系巡视"
+	description "对附近星系进行一次巡视，然后返回 <origin>。"
+	source "Ssil Vida"
+	waypoint "Diespiter"
+	waypoint "Statina"
+	waypoint "Vaticanus"
+	waypoint "Egeria"
+	waypoint "Prosa"
+	to offer
+		has "Remnant: Cognizance 34: done"
+	on offer
+		conversation
+			`遗民们面露震惊之色，其中几人显得神情恍惚。不过，大多数人似乎应对这次精神侵入还算良好。达斯克急切地向你做着手势：“很高兴看到你恢复得这么快，<first>。我们会照看好这里的所有人——我们需要你在外面行动。去巡视周边的每一个星系，看看能否联系上任何一个遗民世界。我们的通讯器全部断连了，就连独立的备用设备也是如此。所以我们必须尽快恢复通讯。”他摇了摇头。“我喜欢结识新物种，但它们总能带来意外。”`
+				accept
+	on waypoint
+		dialog
+			`你已经成功巡视了附近的所有星系。是时候返回 <origin> 汇报了。`
+	on complete
+		conversation
+			`回到控制室，遗民们似乎恢复了镇定。他们在各工作站间快速穿梭，每一个传感器和工具都在满负荷运转。遗民们仿佛害怕一切随时都会消失一样。而你意识到，这真的有可能发生。你发现加夫里尔正小心翼翼地调试着一台控制台，当你走近时，他抬起了头：“看来‘余烬’指引你回来了。外面的世界怎么样？”`
+			`	当你描述你在周围星系的飞行经历时，他专注地听着，并在你提到导航系统报告无法连接到余烬废土的其他区域时点了点头。即便是跳跃引擎的性能预测也显示没有有效的跳跃点。`
+			`	“完全没有任何连接？”加夫里尔若有所思。“这其实说得通。”他向显示该区域的屏幕比划了一下。“就我们的传感器所能探测到的情况来看，这片余烬废土口袋区域之外的宇宙，简直就像是不存在了。”`
+			`	他迅速继续做着手势补充道：“当然，我们能看到外面的景象。但这感觉就像是透过一层极薄的薄膜在观察。”加夫里尔陷入了沉思。“目前的主流理论是，我们身处某种维度气泡之中。某种类似口袋次元的地方。但我们尚未就此达成共识。”`
+			choice
+				`	“我们经历了什么？大家看到的景象都一样吗？”`
+				`	“那些感受和画面是从哪里来的？”`
+			`	加夫里尔皱起眉头陷入沉思：“根据我们的初步调查，每个人的经历都略有不同。我们认为每个人基本都经历了同一个事件，但由于那是一系列印象、画面和感受，所以每个人捕捉到的侧重点各不相同。”`
+			`	他的手势变得自信起来：“这说得通，因为我们的人生经历塑造了我们的感知。不过，至于那到底是什么……”他停顿了一下，整理着思绪。“我们最合理的猜测是，这是我们与某种实体的首次接触。”想到这里，他咧嘴一笑。“我知道，这简直是一句废话。但不管怎样，达斯克认为这可能是一种独居的实体，因为尽管它能接触到我们的思想，却并没有使用词汇或特定的含义。正因如此，它是在利用内在感受而非语言来传达意义。”他瞥了一眼星系图。“不过，没有任何迹象表明它是从哪里来的。”`
+			choice
+				`	“我们怎么回去？”`
+					goto "cut power"
+				`	“远程通讯出什么事了？”`
+			`	“嗯，这是个好问题。我们一直在对其进行诊断，到目前为止，它们通过了所有的检查。系统安全机制、隔离机制、安全监控、防篡改机制、自毁系统、备份强化……”他摇了摇头，显得一筹莫展。`
+			`	“一切看起来都运转完美。唯一的问题是，核心部位的量子对似乎不再有配对的另一半了。从量子力学的角度来说，宇宙的其他部分简直就像是凭空消失了。”`
+			choice
+				`	“这似乎是个大麻烦。我们该怎么回去？”`
+					goto "cut power"
+				`	“我们会不会因为启动了这个空间站而毁灭了宇宙？”`
+			`	加夫里尔被逗乐了，微笑着比划道：“这当然是有可能的。然而，据我们所知，它以前也被启动过，但并没有毁灭宇宙，这一事实表明，它是将我们传送或者隔离了起来，而不是摧毁了其他的一切。”`
+			`	他对着通讯面板皱起了眉头：“尽管我所掌握的所有量子力学知识都不允许有东西能如此彻底地脱离宇宙。”随后他又露出了笑容：“但这正是科学的魅力所在！在宇宙中发现新事物，并借此告诉我们：我们自以为知道的规律并不是那么绝对的。”`
+			choice
+				`	“我觉得我们应该把重点放在怎么回去上。”`
+					goto "cut power"
+				`	“我们需要担心吗？”`
+			`	加夫里尔打了个中立的手势：“嗯，我当然很担心。如果我发现自己毁灭了全人类以及存在的所有事物，我一定会崩溃的。”他神情凝重，但随之又振作了起来。“但如果一切都已灰飞烟灭，那我也无能为力。因此，我将专注于学习我所能了解的一切，做必须做的事，并享受这样一个事实：宇宙莫名其妙地再次向我们揭示，我们全部知识的总和，只不过是用来帮助我们理解事物运作规律的一套入门隐喻罢了。”他的手势突然转变了语调。“说到这个，我们需要向其他人汇报我们的发现，这意味着我们必须离开这个地方。”`
+			label "cut power"
+			`	加夫里尔向面前的控制面板比划着：“我不能确信，但根据目前的情况，我怀疑如果我们手动引发一次停电，应该就能逆转将我们传送到这个领域的那个过程。”他急切地笑了笑：“我已经把一切都布置好了，空间站各处也都有人在待命。”他看起来胸有成竹：“我们认为，我们可以安全地减缓反应堆的运转，并以可控的方式切断这部分阵列的电力供应。这应该能重现最初的断电情况，只不过风险更低，对系统造成的损害也更小。”`
+			`	他带你来到主装卸区的一个面板前。“我知道，这上面写着‘任务板’。我挪用了我们任务列表的代码，临时拼凑出了这个大规模通知系统。”他觉得好笑地笑了笑：“当你准备好出发时，只要在面板上选择‘停用阵列’选项即可。这将会通知所有人并开始关机程序。”`
+			`	他递给你一枚数据晶体，然后又递给你一个大箱子。“这是包含了我们迄今为止所有数据的加密数据晶体。箱子里有几个备份套件，数据存储在多种不同的机制和加密方式中。我们不知道空间站被激活或停用时究竟会发生什么，因此以多种格式存储数据，能更有把握确保至少有一部分数据能完好无损地送达。”`
+			`	他退后了一步。“好了，我要回控制台了。准备好离开时发个信号就行。愿余烬照亮你的前路，<first> 船长。”`
+
+
+
+mission "Remnant: Cognizance 36"
+	job
+	repeat
+	name "停用西尔维达电源"
+	description "接受此任务以向所有人发出切断电力的信号。"
+	source "Ssil Vida"
+	to offer
+		has "Remnant: Cognizance 35: done"
+		has "remnant: ssil vida active"
+		not "remnant: tubfalet hunt"
+		not "Ka'het: Patir Mystery 14: offered"
+	on accept
+		event "remnant: ssil vida deactivation"
+		conversation
+			`伴随着一阵穿透你全身每一根纤维的战栗，你瞥见了一道涟漪，它让现实看起来就像是落下一滴雨水后的池塘水面。几乎还没等它完全展开，一切便又重归平静。你查看了传感器，看起来波斯特维尔塔再次回到了之前那副荒芜的模样。`
+	on enter Postverta
+		fail
+
+
+
+mission "Remnant: Cognizance 36 Patir 3"
+	job
+	repeat
+	name "停用西尔维达电源"
+	description "接受此任务以向所有人发出切断电力的信号。"
+	source "Ssil Vida"
+	to offer
+		has "Remnant: Cognizance 35: done"
+		has "remnant: ssil vida active"
+		not "remnant: tubfalet hunt"
+		has "Ka'het: Patir Mystery 14: offered"
+	on accept
+		event "remnant: ssil vida deactivation patir 3"
+		conversation
+			`伴随着一阵穿透你全身每一根纤维的战栗，你瞥见了一道涟漪，它让现实看起来就像是落下一滴雨水后的池塘水面。几乎还没等它完全展开，一切便又重归平静。你查看了传感器，看起来波斯特维尔塔再次回到了之前那副荒芜的模样。`
+	on enter Postverta
+		fail
+
+
+
+mission "Remnant: Cognizance 37"
+	job
+	repeat
+	name "激活西尔维达电源"
+	description "接受此任务以向所有人发出恢复电力的信号。"
+	source "Ssil Vida"
+	to offer
+		has "Remnant: Cognizance 35: done"
+		not "remnant: ssil vida active"
+		not "remnant: tubfalet hunt"
+		not "Ka'het: Patir Mystery 14: offered"
+	on accept
+		event "remnant: ssil vida activation"
+		conversation
+			`伴随着一阵穿透你全身每一根纤维的战栗，你瞥见了一道涟漪，它让现实看起来就像是落下一滴雨水后的池塘水面。几乎还没等它完全展开，一切便又重归平静。你查看了传感器，看起来波斯特维尔塔再次变得生机盎然。`
+	on enter Postverta
+		fail
+
+
+
+mission "Remnant: Cognizance 37 Patir 3"
+	job
+	repeat
+	name "激活西尔维达电源"
+	description "接受此任务以向所有人发出恢复电力的信号。"
+	source "Ssil Vida"
+	to offer
+		has "Remnant: Cognizance 35: done"
+		not "remnant: ssil vida active"
+		not "remnant: tubfalet hunt"
+		has "Ka'het: Patir Mystery 14: offered"
+	on accept
+		event "remnant: ssil vida activation patir 3"
+		conversation
+			`伴随着一阵穿透你全身每一根纤维的战栗，你瞥见了一道涟漪，它让现实看起来就像是落下一滴雨水后的池塘水面。几乎还没等它完全展开，一切便又重归平静。你查看了传感器，看起来波斯特维尔塔再次变得生机盎然。`
+	on enter Postverta
+		fail
+
+
+
+mission "Remnant: Cognizance 38"
+	landing
+	name "将数据带至 <planet>"
+	description "其余的遗民需要知道发生了什么。将这份数据带到 <destination> 交给他们。"
+	source "Ssil Vida"
+	destination "Viminal"
+	to offer
+		has "Remnant: Cognizance 35: done"
+	on offer
+		event "remnant: cognizance salvage expansion"
+	on complete
+		clear "remnant: dusk busy"
+		conversation
+			`当你降落时，一群遗民在你的飞船周围簇拥着，但只有一人迅速打着手势，询问和你一起去的团队其他成员是否安全。你点了点头，人群中泛起一阵宽慰的涟漪。“那么，到底发生了什么？”另一个人问道。`
+			choice
+				`	（解释发生的一切。）`
+					goto "cognizance explanation"
+				`	“我想我应该先把这些告诉执政官们。”`
+			`	周围的遗民们被逗乐了。“别担心，<first>。你说的每一句话都会传达到他们那里的。你越早告诉我们，我们就能越早开始为必要的行动做准备。”`
+			choice
+				`	（解释发生的一切。）`
+					goto "cognizance explanation"
+				`	“我以为执政官们是你们的领袖？”`
+			`	“他们确实承担着我们的执行职责。危急时刻要求我们具备瞬间做出决断的能力。但不要将做出高价值决策的权限与掌管一切混为一谈。一项决定的紧迫性越低，它就越有可能是我们所有人深入讨论的产物。同样，关于构成我们社会政策和价值观的决定，是由一个统一的整体决定的，而不是由任何个人决定的。”她停顿了一下，微笑着补充道：“诚然，考虑到你总是卷入一些小规模项目和突发事件中，我们的社会结构对你来说可能确实带有一种专制的表象。”`
+			choice
+				`	“好吧，我会解释一切的。”`
+					goto "cognizance explanation"
+				`	“你们怎么能这么容易就达成共识？”`
+			branch "cognizance untrusted"
+				has "remnant untrusted"
+			`	她带着一丝不确定的神情环顾四周，然后点了点头：“正如你肯定已经想到的那样，用手势交流确实有一些缺点。在处理某些任务时我们依然更偏好它，但在另一些场合下，做手势或者盯着别人打手势会显得很尴尬。虽然我们确实有一些不需要动手臂就能表达的词汇，但那些都非常有限。”`
+			`	“幸运的是，我们那些同伴最初的一项能力就与神经系统有关。我相信 Dawn 可能向你透露过一点，但并没有细说。”她苦笑了一下，随后另一位遗民接过了话头。`
+			`	“简单来说，我们可以在彼此之间形成强度不一的临时神经网络。在不需要言语或手势的情况下，我们眨眼间就能完成一整场对话。”`
+			`	他自信地比划着：“举个例子，一支遗民团队可以全体同时审阅某项实验传来的数据，各自得出分析结论，然后用短短几分钟的时间召开一场实质上的研讨会——在这期间，每个人都能用详实的数据和推理来充分阐述自己的想法与观点。”`
+			`	他的手势带上了一丝告诫的意味：“当然，加速到那种程度是需要费力气的，学会用这种方式来管理思绪并进行有效对话也是一个漫长的过程。但结果不言自明。”他朝众人做了一个夸张的手势。`
+			`	“一个好处是，在政策辩论中，每个人都能被深入倾听，包括核实数据和来源的真实性。这极大有助于减少基于不完整或错误数据做出的决策，并最大化我们任何人可获取的信息量。”`
+			action
+				set "remnant: cognizance neural communication explanation"
+			`	第三位遗民走上前来。“至于眼前的事情，这意味着我们中任何人越早听到你的报告，大家就越早都知道。”他们期待地看着你。`
+				goto "cognizance explanation"
+			label "cognizance untrusted"
+			`	遗民神秘地一笑。“一个社会总得有些秘密，不是吗？就只说我们的通讯网络非常高效吧。现在你只需知道，你越早汇报，大家就能越早利用这些信息。”他们停顿了一下，继续说道。“当然，这也包括执政官们。”`
+			choice
+				`	“好吧，我会解释发生了什么。”`
+				`	“好吧，你说服我了。”`
+			label "cognizance explanation"
+			`	当你解释在波斯特维尔塔及周边地区发生的一切时，遗民们专注地注视着你。你交出数据晶片后，一名遗民当场将其插入控制台，而另外两人带着装有其余晶片的箱子匆匆走向咨询台。`
+			`	当你的报告接近尾声时，一名遗民赞许地点了点头。“我们正在分发你的报告以及Dusk和Gavriil收集的数据。两份数据副本一致，并通过了初步验证，因此看起来它们没有受到你离开时的……偏移的影响。”`
+			`	他们环顾周围的遗民，你突然感到有一层完整的讨论在你周围进行。你看到Aeolus穿过人群走到前面，他以赞赏的姿态做着手势。“感谢你为此所做的一切，<first>。我们非常感谢你与我们一同承担的风险，希望我们继续共同探索。话虽如此，我猜我们还需要大量集体努力来确定下一步行动。”他环顾四周，然后对你眨了眨眼。“与此同时，我解锁了一些更稀有的科拉斯打捞物，包括获取捕获的‘olofezes。不算多，但或许能让你更容易地装备<ship>。”`
+
+
+
+mission "Remnant: Cognizance 39"
+	landing
+	invisible
+	non-blocking
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Cognizance 38: done"
+	on offer
+		event "remnant: cognizance calm" 5
+		fail

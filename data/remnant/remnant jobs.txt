@@ -1,0 +1,743 @@
+# Copyright (c) 2017 by Michael Zahniser
+# Copyright (c) 2018 by Zitchas
+# Copyright (c) 2022 by williaji
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Remnant: Bounty"
+	job
+	repeat
+	name "瘫痪的 <npc model> 丰饶星"
+	description "一艘受损的科拉斯飞船正潜伏在遗民领空。追踪并摧毁它，然后返回<planet>领取<payment>的赏金。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Defense 2: done"
+		or
+			not "remnant: ssil vida active"
+			not "flagship planet: Ssil Vida"
+		random < 60
+	npc kill
+		government "Korath"
+		personality coward target uninterested marked waiting
+		system
+			distance 1 2
+		fleet
+			names "korath"
+			cargo 3
+			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			variant
+				"Palavret (Crippled)"
+		dialog "你已经摧毁了科拉斯飞船。现在可以返回 <planet> 领取报酬。"
+	on visit
+		dialog phrase "generic bounty hunting on visit"
+	on complete
+		payment 300000
+		dialog "一位遗民军事领袖感谢你追捕了<npc>，并支付了约定的报酬<payment>。"
+
+
+
+mission "Remnant: Bounty 2"
+	job
+	repeat
+	name "棘手的<npc model>丰饶星"
+	description "一艘科拉斯飞船正在遗民领地内制造麻烦。追捕并摧毁它，然后返回<planet>领取<payment>的报酬。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Salvage 4: offered"
+		or
+			not "remnant: ssil vida active"
+			not "flagship planet: Ssil Vida"
+		random < 50
+	npc kill
+		government "Korath"
+		personality heroic vindictive target uninterested waiting marked
+		system
+			distance 1 2
+		fleet
+			names "korath"
+			cargo 3
+			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			variant
+				"Palavret (Hyperdrive)"
+		dialog "你已经摧毁了科拉斯飞船。现在可以返回 <planet> 领取报酬。"
+	on visit
+		dialog phrase "generic bounty hunting on visit"
+	on complete
+		payment 400000
+		dialog "一位遗民军事领袖感谢你追捕了科拉斯飞船<npc>，并支付了商定的报酬<payment>。"
+
+
+
+mission "Remnant: Broken Jump Drive job"
+	name "损坏的跳跃引擎运送"
+	description "<planet>上的研究人员需要另一台损坏的跃迁驱动器来继续他们的项目。"
+	job
+	repeat 4
+	to offer
+		has "Remnant: Broken Jump Drive 5: done"
+		or
+			not "remnant: ssil vida active"
+			not "flagship planet: Ssil Vida"
+			
+	source
+		government "Remnant"
+	destination
+		government "Remnant"
+		attributes outfitter
+		not attributes "remnant station"
+		not distance 0
+	on visit
+		dialog phrase "broken jump drive on visit"
+	on complete
+		outfit "Jump Drive (Broken)" -1
+		"remnant: broken jump drive count" ++
+		payment 300000
+		"reputation: Remnant" ++
+		"Remnant: Broken Jump Drive job: offered" --
+		dialog "研究团队迅速卸下损坏的跃迁驱动器，向你支付了<payment>，然后匆忙返回实验室。"
+
+
+
+mission "Remnant: Expanded Horizons Astral job"
+	job
+	repeat
+	name "前往<waypoints>的研究远征"
+	description "前往 <waypoints> 并携带研究实验室收集数据，然后返回 <destination>。"
+	source
+		government "Remnant"
+	waypoint
+		not distance 0
+		not attributes "pleiades"
+		not attributes "tangled shroud"
+		not attributes "twilight"
+		not attributes "outer limits"
+		not attributes "beyond patir"
+		visited
+	to offer
+		has "Remnant: Expanded Horizons Astral 2: done"
+		not "Ka'het: Patir Mystery 35: done"
+		random < 50
+	on offer
+		require "Research Laboratory"
+	on waypoint
+		dialog "你的科学家打开实验室，进行所需的观测。不久之后，他们将数据编译到一组数据晶体上，并通知你一切准备就绪，可以出发了。"
+	on complete
+		payment 500000
+		"reputation: Remnant" ++
+		dialog "当你着陆时，一名研究员迅速取回了包含已勘测系统信息的数据晶体，并将 <payment> 的后勤配额交给了你。"
+
+
+
+mission "Remnant: Expanded Horizons Astral job late"
+	job
+	repeat
+	name "前往<waypoints>的研究远征"
+	description "前往 <waypoints> 并携带研究实验室收集数据，然后返回 <destination>。"
+	source
+		government "Remnant"
+	waypoint
+		not distance 0
+		not attributes "pleiades"
+		not attributes "inaccessible"
+		not attributes "tangled shroud"
+		not attributes "twilight"
+		not attributes "outer limits"
+	to offer
+		has "Remnant: Expanded Horizons Astral 2: done"
+		has "Ka'het: Patir Mystery 35: done"
+		random < 50
+	on offer
+		require "Research Laboratory"
+	on waypoint
+		dialog "你的科学家打开实验室，进行所需的观测。不久之后，他们将数据编译到一组数据晶体上，并通知你一切准备就绪，可以出发了。"
+	on complete
+		payment 500000
+		"reputation: Remnant" ++
+		dialog "当你着陆时，一名研究员迅速取回了包含已勘测系统信息的数据晶体，并将 <payment> 的后勤配额交给了你。"
+
+
+
+mission "Remnant: Bounty 3"
+	job
+	repeat
+	name "受损的拉诺·埃雷克丰饶星"
+	description "一艘受损的科拉斯飞船正潜伏在遗民领地内。猎杀它，然后返回<planet>领取<payment>的报酬。"
+	source
+		government "Remnant"
+	to offer
+		# 0.9.13 Compatibility patch
+		or
+			has "Remnant: Cognizance 4: done"
+			has "Remnant: Cognizance 4: failed"
+		not "Remnant: Cognizance 4: aborted"
+		random < 40
+	npc kill
+		government "Korath"
+		personality heroic vindictive target uninterested waiting marked
+		system
+			distance 1 2
+		fleet
+			names "korath"
+			cargo 3
+			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			variant
+				"Rano'erek (Crippled)"
+		dialog "你已经摧毁了科拉斯飞船。现在可以返回 <planet> 领取报酬。"
+	on visit
+		dialog phrase "generic bounty hunting on visit"
+	on complete
+		payment 400000
+		dialog "一位遗民军事领袖感谢你追捕了科拉斯飞船<npc>，并支付了商定的报酬<payment>。"
+
+
+
+mission "Remnant: Bounty 4"
+	job
+	repeat
+	name "四处掠夺的拉诺·埃雷克丰饶星"
+	description "一艘科拉斯飞船正在遗民领地上掠夺。追捕它，然后返回 <planet> 领取你的报酬 <payment>。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Cognizance 14: done"
+		random < 30
+	npc kill
+		government "Korath"
+		personality heroic vindictive target uninterested waiting marked
+		system
+			distance 1 2
+		fleet
+			names "korath"
+			cargo 3
+			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			variant
+				"Rano'erek (Crippled)"
+		dialog "你已经摧毁了科拉斯飞船。现在可以返回 <planet> 领取报酬。"
+	on visit
+		dialog phrase "generic bounty hunting on visit"
+	on complete
+		payment 500000
+		dialog "一位遗民军事领袖感谢你追捕了科拉斯飞船<npc>，并支付了商定的报酬<payment>。"
+
+
+
+mission "Remnant: Bounty 5"
+	job
+	repeat
+	name "摧毁地面突击丰饶星"
+	description "一艘科拉斯飞船正在余烬荒原搜寻我们的前哨站。追踪并消灭它及其搭载的所有战斗机，然后返回 <planet> 领取 <payment> 的报酬。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Cognizance 29: done"
+		or
+			not "remnant: ssil vida active"
+			not "flagship planet: Ssil Vida"
+		random < 5
+	npc kill
+		government "Korath"
+		personality heroic vindictive target marked staying
+		system
+			attributes "ember waste"
+			not attributes "graveyard"
+			not attributes "twilight"
+		fleet
+			names "korath"
+			cargo 3
+			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			variant
+				"Rano'erek (Ground Assault)"
+				"'olofez" 4
+		dialog "你已经摧毁了科拉斯飞船及其战斗机。现在可以返回<planet>领取报酬了。"
+	on visit
+		dialog "你已登陆<planet>，但科拉斯飞船及其战斗机尚未全部消灭。在返回前追踪并摧毁它们。"
+	on complete
+		payment 400000
+		dialog "一位遗民军事领袖感谢你追踪并摧毁了科拉斯飞船<npc>及其战斗机，并支付给你约定的报酬<payment>。"
+
+
+
+mission "Remnant: Logistics Civil Engineering"
+	name "民用运输至<planet>"
+	description `<planet>上的工程师需要运送<cargo>。后勤调整值为<payment>。`
+	cargo "remnant civil" 20 4 .1
+	job
+	repeat
+	to offer
+		not "remnant: ssil vida active"
+		has "Remnant: Logistics 1: done"
+		random < 51
+	source
+		government "Remnant"
+		not planet "Ssil Vida"
+	destination
+		government "Remnant"
+		not distance 0
+		not planet "Ssil Vida"
+		not planet "Esquiline"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		dialog `一位项目工程师检查了 <cargo>，并批准了你<payment>的报酬。`
+		payment
+		payment 10000
+
+
+
+mission "Remnant: Logistics Industrial Delivery"
+	name "工业运输至<planet>"
+	description `<planet>上的项目团队需要运送<cargo>。后勤调整值为<payment>。`
+	cargo "remnant industrial" 20 4 .03
+	job
+	repeat
+	to offer
+		not "remnant: ssil vida active"
+		has "Remnant: Logistics 1: done"
+		"Remnant: Logistics Civil Engineering: done" >= 9
+		random < 76
+	source
+		government "Remnant"
+	destination
+		government "Remnant"
+		not distance 0
+		not planet "Ssil Vida"
+		not planet "Esquiline"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		dialog `一名项目技师检查了<cargo>，并批准了你<payment>的报酬。`
+		payment
+		payment 15000
+
+
+
+mission "Remnant: Logistics Outfitter Delivery"
+	name "运送零件至<planet>"
+	description `<planet>上的装备商维修团队需要交付<cargo>零件。后勤调整值为<payment>。`
+	cargo "remnant outfitter repair" 20 3 .04
+	job
+	repeat
+	to offer
+		not "remnant: ssil vida active"
+		has "Remnant: Logistics 1: done"
+		has "license: Remnant"
+		"Remnant: Logistics Industrial Delivery: done" >= 9
+		random < 30
+	source
+		government "Remnant"
+	destination
+		government "Remnant"
+		not distance 0
+		not planet "Ssil Vida"
+		not planet "Esquiline"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		dialog `一位维修技师检查了<cargo>部件，并授权支付<payment>的报酬。`
+		payment
+		payment 30000
+
+
+
+mission "Remnant: Logistics Salvage Delivery"
+	name "打捞物资运输至<planet>"
+	description `将最近打捞作业中获得的<cargo>部件运送到<planet>上的装备商处，以供研究、翻新或回收。后勤调整值为<payment>。`
+	cargo "remnant salvage" 5 4 .06
+	job
+	repeat
+	to offer
+		not "remnant: ssil vida active"
+		has "Remnant: Logistics 1: done"
+		has "license: Remnant Capital"
+		"Remnant: Logistics Outfitter Delivery: done" >= 9
+		random < 11
+	source
+		government "Remnant"
+	destination
+		government "Remnant"
+		not distance 0
+		not planet "Ssil Vida"
+		not planet "Esquiline"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		dialog `两名武装维修技师检查了<cargo>，并批准了你<payment>的报酬。`
+		payment 25000 300
+
+
+
+mission "Remnant: Rescue"
+	job
+	repeat
+	name "搜救：侦察舰"
+	description "<npc>在余烬荒原进行侦察任务时失踪了。找到他们并帮助他们返回<destination>。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Learn Sign Follow Up: offered"
+		random < 10
+	npc accompany save
+		system
+			attributes "ember waste"
+			not attributes "ka'het"
+			not attributes "graveyard"
+			not government "Remnant"
+			not near "Arculus" 3
+			near "Arculus" 30
+				"all wormholes"
+		personality derelict timid plunders
+		government "Remnant"
+		fleet
+			names "remnant"
+			variant
+				Starling
+			variant
+				Gull
+	on complete
+		"remnant: rescue missions" ++
+		payment 200000
+		dialog
+			`你的通讯器提示你获得了一笔<payment>的资源配额。`
+	on visit
+		dialog
+			`你已经返回，但<npc>仍然下落不明。`
+
+
+
+# The Rescue Dummy is meant to commit suicide as soon as possible on entering the randomized system.
+ship "Rescue Dummy"
+	"display name" "救援假人"
+	# sprite "ship/behemoth"
+	attributes
+		category "Game Mechanics"
+		"heat dissipation" 1
+		"hull" 1
+		"mass" 10
+		"drag" 1
+		"automaton" 1
+		"energy generation" 1
+		"thrust" 30
+		"turn" 30
+	outfits
+		"Suicide Gun"
+	gun 0 0
+
+outfit "Suicide Gun"
+	"display name" "自毁炮"
+	category "Guns"
+	thumbnail "outfit/unknown"
+	"gun ports" -1
+	weapon
+		velocity 100
+		lifetime 10
+		reload 1
+		"blast radius" 900
+		"shield damage" 0.01
+		"hull damage" 1
+
+
+
+mission "Remnant: Rescue 1B"
+	job
+	repeat
+	name "搜救：侦察舰"
+	description "<npc>在余烬荒原进行侦察任务时失踪了。找到他们并帮助他们返回<destination>。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Learn Sign Follow Up: offered"
+		random < 1
+	npc kill
+		system
+			attributes "ember waste"
+			not attributes "ka'het"
+			not attributes "graveyard"
+			not government "Remnant"
+			not near "Arculus" 3
+			near "Arculus" 30
+				"all wormholes"
+		personality staying heroic nemesis unconstrained
+		government "Test Dummy"
+		fleet
+			names "remnant"
+			variant
+				"Rescue Dummy"
+		dialog
+			`当你进入星系时，传感器探测到大量残骸。进一步分析证实了你最担心的事。<npc>已被摧毁。在接下来的几个小时里，你疯狂地搜寻着幸存者，心中的希望随着每一分钟的流逝而沉入谷底。`
+	on complete
+		"remnant: rescue missions" ++
+		payment 200000
+		dialog
+			`你降落了，心情沉重地报告说<npc>已全员遇难。遗民们对此消息感到悲痛，但仍向你表示感谢，并将你的资源分配额<payment>交给你。`
+	on visit
+		dialog
+			`你已经返回，但<npc>仍然下落不明。`
+
+
+
+mission "Remnant: Rescue 2"
+	job
+	repeat
+	name "搜救：回收"
+	description "<npc>在余烬荒原执行技术回收任务时失踪。找到他们并帮助他们返回<destination>。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Learn Sign Follow Up: offered"
+		random < 10
+	npc accompany save
+		system
+			attributes "ember waste"
+			not attributes "ka'het"
+			not attributes "graveyard"
+			not government "Remnant"
+			not near "Arculus" 3
+			near "Arculus" 30
+				"all wormholes"
+		personality derelict timid plunders
+		government "Remnant"
+		fleet
+			names "remnant"
+			variant 7
+				Gull
+			variant 3
+				Starling
+			variant 3
+				Pelican
+	on complete
+		"remnant: rescue missions" ++
+		payment 300000
+		dialog
+			`你的通讯器提示你获得了一笔<payment>的资源配额，并附有一条简短的致谢信息。`
+	on visit
+		dialog
+			`你已经返回，但<npc>仍然下落不明。`
+
+
+
+mission "Remnant: Rescue 2B"
+	job
+	repeat
+	name "搜救：回收"
+	description "<npc>在余烬荒原执行技术回收任务时失踪。找到他们并帮助他们返回<destination>。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Learn Sign Follow Up: offered"
+		random < 3
+	npc kill
+		system
+			attributes "ember waste"
+			not attributes "ka'het"
+			not attributes "graveyard"
+			not government "Remnant"
+			not near "Arculus" 3
+			near "Arculus" 30
+				"all wormholes"
+		personality staying heroic nemesis unconstrained
+		government "Test Dummy"
+		fleet
+			names "remnant"
+			variant
+				"Rescue Dummy"
+		dialog
+			`当你进入星系时，传感器探测到大量残骸。进一步分析证实了你最担心的事。<npc>已被摧毁。在接下来的几个小时里，你疯狂地搜寻着幸存者，心中的希望随着每一分钟的流逝而沉入谷底。`
+	on complete
+		"remnant: rescue missions" ++
+		payment 300000
+		dialog
+			`你降落了，心情沉重地报告说<npc>已全员遇难。遗民们对此消息感到悲痛，但仍向你表示感谢，并将你的资源分配额<payment>交给你。`
+	on visit
+		dialog
+			`你已经返回，但<npc>仍然下落不明。`
+
+
+
+mission "Remnant: Rescue 3"
+	job
+	repeat
+	name "搜救：补给船"
+	description "<npc>在余烬荒原执行补给任务时失踪了。找到他们并帮助他们返回<destination>。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Learn Sign Follow Up: offered"
+		random < 10
+	npc accompany save
+		system
+			attributes "ember waste"
+			not attributes "ka'het"
+			not attributes "graveyard"
+			not government "Remnant"
+			not near "Arculus" 3
+			near "Arculus" 30
+				"all wormholes"
+		personality derelict timid plunders
+		government "Remnant"
+		fleet
+			names "remnant"
+			variant 7
+				Pelican
+			variant 2
+				Gull
+	on complete
+		"remnant: rescue missions" ++
+		payment 300000
+		dialog
+			`你的通讯器提示你获得了一笔<payment>的资源配额，同时还有来自<npc>船长的一条致谢信息。`
+	on visit
+		dialog
+			`你已经返回，但<npc>仍然下落不明。`
+
+
+
+mission "Remnant: Rescue 3B"
+	job
+	repeat
+	name "搜救：补给船"
+	description "<npc>在余烬荒原执行补给任务时失踪了。找到他们并帮助他们返回<destination>。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Learn Sign Follow Up: offered"
+		random < 3
+	npc kill
+		system
+			attributes "ember waste"
+			not attributes "ka'het"
+			not attributes "graveyard"
+			not government "Remnant"
+			not near "Arculus" 3
+			near "Arculus" 30
+				"all wormholes"
+		personality staying heroic nemesis unconstrained
+		government "Test Dummy"
+		fleet
+			names "remnant"
+			variant
+				"Rescue Dummy"
+		dialog
+			`当你进入星系时，传感器探测到大量残骸。进一步分析证实了你最担心的事。<npc>已被摧毁。在接下来的几个小时里，你疯狂地搜寻着幸存者，心中的希望随着每一分钟的流逝而沉入谷底。`
+	on complete
+		"remnant: rescue missions" ++
+		payment 300000
+		dialog
+			`你降落了，心情沉重地报告说<npc>已全员遇难。遗民们对此消息感到悲痛，但仍向你表示感谢，并将你的资源分配额<payment>交给你。`
+	on visit
+		dialog
+			`你已经返回，但<npc>仍然下落不明。`
+
+
+
+mission "Remnant: Rescue 4"
+	job
+	repeat
+	name "遇险信号：墓场"
+	description "收到来自星冢中<npc>的求救信号。跟随遥测数据找到他们，并帮助他们安全返回<destination>。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Learn Sign Follow Up: offered"
+		has "First Contact: Ka'het: Remnant 1B: offered"
+		random < 10
+	npc accompany save
+		system
+			attributes "graveyard"
+			not government "Remnant"
+			near "Nona" 20
+				"only unrestricted wormholes"
+		personality escort derelict heroic plunders
+		government "Remnant"
+		fleet
+			names "remnant"
+			variant 8
+				Albatross
+			variant 2
+				Ibis
+	on complete
+		"remnant: rescue missions" ++
+		payment 500000
+		dialog
+			`着陆后，<npc>的船长在您的飞船旁迎接您，亲自感谢您从星冢救出他们，并留下了一句真诚的话：“愿余烬为您燃烧不息。”`
+			`	不久之后，您的通讯器通知您获得了一笔<payment>的资源配给。`
+	on visit
+		dialog
+			`您回来了，但<npc>却没有。`
+
+
+
+mission "Remnant: Rescue 5"
+	job
+	repeat
+	name "搜救：终点"
+	description "在终点附近侦察时，<npc>停止了报告。查明发生了什么，然后返回<destination>。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Learn Sign Follow Up: offered"
+		random < 10
+	npc accompany save
+		system
+			near "Terminus" 2
+		personality derelict timid plunders
+		government "Remnant"
+		fleet
+			names "remnant"
+			variant 6
+				Gull
+			variant 3
+				Starling
+	on complete
+		"remnant: rescue missions" ++
+		payment 500000
+		dialog
+			`没等您的通讯器通知您获得<payment>的资源配给，<npc>的船长就亲自感谢您将他们带回家，因为他们曾担心再也见不到余烬了。`
+	on visit
+		dialog
+			`您已经返回，但失踪的飞船仍无消息。`
+
+
+mission "Remnant: Disable 1"
+	job
+	repeat
+	name "瘫痪受损的达斯纳克·阿瓦沃吉"
+	description "一艘受损的达斯纳克·阿瓦沃吉被困在一个新开放的星系中，靠近波斯特维尔塔。该船上有大量平民，因此我们请求您仅将其瘫痪，以避免发生惨剧。一旦您返回<planet>，您将获得<payment>的后勤调整。"
+	source
+		government "Remnant"
+	to offer
+		has "Remnant: Will Not Someone Please Think Of The Children: done"
+		not "Remnant: Disable 1: aborted"
+		not "Remnant: Disable 1: failed"
+		random < 5
+	npc disable save
+		government "Korath"
+		personality heroic target marked staying disables plunders
+		system
+			near "Vaticanus" 1
+		fleet
+			names "korath"
+			variant
+				"Kas'lor Ik 582 (Stranded)"
+		dialog `你已经瘫痪了达斯纳克·阿瓦沃吉。该向<planet>汇报了。`
+	on visit
+		dialog `你已降落在<planet>，但陷住的达斯纳克·阿瓦沃吉尚未被瘫痪。找到它并将其瘫痪后再返回。`
+	on abort
+		dialog `遗民对你中止任务感到困惑，但他们告诉你他们会派其他人完成这项工作。他们表示今后会优先考虑其他团队来处理这些任务。`
+	on fail
+		"reputation: Remnant" -= 250
+		dialog `你未能在不摧毁达斯纳克·阿瓦沃吉的情况下将其禁用……遗民会不高兴的……`
+	on complete
+		"remnant: disable and save count" ++
+		payment 2000000
+		dialog "一位遗民军事长官感谢你瘫痪了达斯纳克·阿瓦沃吉<npc>，并给你商定的后勤调整<payment>。"

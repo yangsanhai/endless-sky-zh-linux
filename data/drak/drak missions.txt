@@ -1,0 +1,155 @@
+# Copyright (c) 2016 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Drak guarding Korath space"
+	invisible
+	non-blocking
+	transition
+	repeat
+	source
+		system "Fasitopfar" "Kasikfar" "Peresedersi"
+	destination "Earth"
+	to offer
+		not "Drak guarding Korath space: active"
+	to complete
+		never
+	npc save
+		government Drak
+		personality heroic vindictive staying frugal forbearing
+		system Fasitopfar
+		ship "Archon" "Kasiliri's Folly"
+	npc save
+		government Drak
+		personality heroic vindictive staying frugal forbearing
+		system Kasikfar
+		ship "Archon B" "Sword of Eden"
+	npc save
+		government Drak
+		personality heroic vindictive staying frugal forbearing
+		system Peresedersi
+		ship "Archon C" "Snows of Far Door Nai"
+
+mission "Drak guarding Sayaiban"
+	invisible
+	non-blocking
+	transition
+	repeat
+	source
+		system "Sayaiban"
+	destination "Earth"
+	to offer
+		not "Drak guarding Sayaiban: active"
+	to complete
+		never
+	npc save
+		government Drak
+		personality heroic vindictive staying frugal forbearing
+		system Sayaiban
+		ship "Archon" "Watchful Gravetender"
+	
+mission "Conversation on Sayaiban"
+	invisible
+	entering
+	source
+		system "Sayaiban"
+	destination "Earth"
+	on offer
+		log "Factions" "Archons" `执政官认为维护和平、防止灭绝是他们的职责。若无法阻止某个物种走向自我灭绝，他们仍会尽力保存该物种所创造的部分事物，作为对它们的纪念。`
+			`They are capable of communicating telepathically.`
+		conversation
+			`一个声音说道：“这个星系禁止进入。你应该离开。”`
+			`	片刻之后你才意识到，那个声音并非来自你的通讯设备。事实上，现在细想起来，你甚至不敢确定那究竟是真正听到了声音，还是仅仅出现在脑海中的某种念头。`
+			choice
+				`	（忽略它。）`
+				`	“我为什么要离开？”`
+					goto why
+				`	“你管不了我。”`
+					goto why
+			`	“你应该离开。”那个念头执拗地重复着。要么是你疯了，要么就是某个生物正在用心灵感应与你交流。`
+			choice
+				`	“我为什么要离开？”`
+				`	“你管不了我。”`
+			label why
+			`	你感觉仿佛有一个庞大而耐心的生物重重地叹了一口气。“人类，你最好不要无视执政官的警告。我在此是为了警告并劝离那些可能被盘踞在此星系的集群智慧所伤害的人。如果你在此逗留太久，你的飞船将被集群消化。”`
+			`	你想起“执政官”是德拉克飞船的称呼。`
+			choice
+				`	“‘消化’是什么意思？”`
+				`	"What is a 'swarm intelligence'?"`
+					goto swarm
+			`	“我的意思是，你的飞船将被拆解为各个组成部件。”在那个声音如此说的时候，你注意到你的护盾正检测到细微的能量爆发，仿佛正遭到无形武器的攻击。`
+			`	“这个集群是什么？”你问。`
+			label swarm
+			`	“自我复制的微型机器人，”那个声音回答。“这是由科拉斯创造的武器，是他们最后的重大可憎之物。如果你想把飞船送去喂给集群，我不会阻拦你，但即使没有你的协助，它们在这里也已经有了足够的原材料。”这个声音的语调——如果一个无实体的虚幻声音也能被说成有语调的话——带着几分讥讽。`
+			choice
+				`	"Okay, okay, I'll get out of here."`
+					goto end
+				`	“等等，我还有其他问题。”`
+			`	“嗯？”`
+			`	你问道：“既然集群这么危险，你为什么不直接摧毁它？”`
+			`	那个声音说道：“因为如果科拉斯人最终走向了自我灭绝，这个智慧体将是他们最后也最伟大的存世造物，我们会将其保留下来，作为对他们的活生生纪念。请不要在这里干预。”当那个声音说出“走向自我灭绝”这一词组时，这些话语中伴随着一种你无法名状的情绪。`
+			`	此外，你飞船周围的虚空开始闪烁起细小的火花，就像一群愤怒的萤火虫。`
+			choice
+				`	"Well, it's an honor to meet you. I'll be leaving now."`
+					goto end
+				`	“你为什么要关心他们会不会灭绝？”`
+			`	“我们的指令是维护和平并防止灭绝，”那个声音说道。和之前一样，“防止灭绝”这几个字在你的脑海中清晰地回响，仿佛被一种名状不出的情绪着重强调。“好了，别再问了，”那个声音说。`
+			label end
+			`	The presence inside your head seems to fall away, and you are left talking to thin air.`
+				decline
+
+mission "Drak guarding Void Sprites"
+	invisible
+	non-blocking
+	entering
+	repeat
+	source
+		system "Nenia"
+	destination "Earth"
+	to offer
+		not "Drak guarding Void Sprites: active"
+	to complete
+		never
+	npc save
+		government Drak
+		personality heroic vindictive staying frugal
+		system Nenia
+		ship "Archon (Cloaked)" "Sleeping Dragon"
+
+mission "Drak guarding Incipias space"
+	invisible
+	non-blocking
+	transition
+	repeat
+	source
+		near "Il'le" 10
+	destination "Earth"
+	to offer
+		not "Drak guarding Incipias space: active"
+	to complete
+		never
+	npc save
+		government "Drak (Incipias)"
+		personality forbearing frugal heroic vindictive
+		system "Il'le"
+		ship "Archon (Hyperdrive Cloaked)" "Guardian of Spring"
+
+# Mission for those who had a savefile prior to 0.9.15 with the old Archon missions
+mission "Archon Personality Compatibility Patch"
+	invisible
+	non-blocking
+	landing
+	on offer
+		fail "Drak guarding Korath space"
+		fail "Drak guarding Sayaiban"
+		fail "Drak guarding Void Sprites"
+		fail

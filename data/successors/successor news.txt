@@ -1,0 +1,286 @@
+# Copyright (c) 2024 by Daeridanii
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+
+news "high houses emissary"
+	to show
+		has "language: Successor"
+	location
+		attributes "successor"
+		attributes "wealthy"
+		not attributes "uninhabited"
+	name
+		word
+			"大家族使者"
+			"大家族官员"
+			"大家族特工"
+			"大家族使者"
+			"大家族官员"
+			"大家族特工"
+	message
+		word
+			`"`
+		word
+			"希望你在我们族人中度过的时光是愉快的。"
+			"外星人！你带来了这无尽星空远方的消息吗？"
+			"美丽的旅者，我听闻过你的名字。这漫长的旅途想必让你心事重重吧。"
+			"欢迎来到我们的星域，尊贵的外星人。很高兴能见到你。"
+		word
+			`"`
+
+
+news "port official"
+	to show
+		has "language: Successor"
+	location
+		attributes "successor"
+		not attributes "crime" "uninhabited"
+	name
+		word
+			"Port official"
+			"Port officer"
+	message
+		word
+			`"`
+		word
+			"诸家族欢迎你作为客人来到我们中间； "
+			"请与我们的族人和睦相处； "
+			"我已知晓你近日的到来； "
+			"尊敬的旅者，需要我提供帮助吗？ "
+			"我们尊贵的家族满怀喜悦地向你致意； "
+		word
+			"若有需要，我随时为你效劳。"
+			"今天相当忙碌，请长话短说。"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"如被要求，请接受扫描检查"
+			"所有交易均需缴纳税款"
+			"本区域的交易均受监控"
+			"若发现可疑情况，请立即报告"
+		word
+			"；港口的规章制度应该已经张贴出来了。"
+			" 依照我们的标准港口程序。"
+		word
+			`"`
+
+
+news "successor student"
+	to show
+		has "language: Successor"
+	location
+		attributes "successor"
+		attributes "education" "wealthy"
+		not attributes "uninhabited"
+	name
+		word
+			"学员"
+			"Successor student"
+	message
+		word
+			`"`
+		word
+			"我想，考试永远都不会有尽头，"
+			"我是不是忘了地理术语？"
+			"我是不是忘了化学试剂？"
+			"超空间力学让我头痛欲裂，"
+			"先驱者历史真是无聊，"
+			"等离子流动力学真烦人，"
+			"粒子动力学太痛苦了，"
+		word
+			" "
+		word
+			"我不知睡眠，不思饮食，连片刻的休息都没有"
+			"但愿我能在睡梦中学习"
+			"我都不知道自己是怎么保持清醒的"
+			"希望我能知道些更好的学习技巧"
+		word
+			"愿意砸多少钱。"
+			"而战！"
+		word
+			`"`
+
+
+news "successor merchant"
+	to show
+		has "language: Successor"
+	location
+		attributes "successor"
+		not attributes "uninhabited"
+	name
+		word
+			"Independent merchant"
+	message
+		word
+			`"`
+		word
+			"有兴趣买些 "
+		phrase
+			"successor commodities (2-syllable)"
+		word
+			"吗，高贵的旅者？"
+			"吗，精明的买家？"
+			"吗，高贵的船长？"
+			"吗，聪明的买家？"
+			"吗，新结交的朋友？"
+			"吗，考虑周全的买家？"
+			"吗，深思熟虑的船长？"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"我怀念曾经身为一名 "
+			"我怀念从前作为一名 "
+			"我仍时常想起当年身为一个 "
+			"你让我想起了当年身为一个 "
+		word
+			"领航星， "
+			"船长， "
+			"游侠， "
+		word
+			"但唉， "
+		word
+			"如今只愿留在地面。"
+			"从没有足够勇气留下。"
+			"我是个晕船的小淘气。"
+			"只有在地球我才感觉自在。"
+			"卖东西才是我该做的事。"
+			"我的家人需要我回去。"
+			"我并没有什么天赋。"
+		word
+			`"`
+	message
+		word
+			"一个 "
+		word
+			"咄咄逼人的 "
+			"和蔼可亲的 "
+			"紧张不安的 "
+			"鬼鬼祟祟的 "
+			"色彩鲜艳的 "
+			"衣着鲜艳的 "
+			"面无表情的 "
+		word
+			"商人 "
+			"交易商 "
+			"工匠 "
+			"继承者 "
+		word
+			"试图让你 "
+		word
+			"购买 "
+			"买 "
+		word
+			"一些 "
+		phrase
+			"successor commodities (2-syllable)"
+		word
+			"愿意砸多少钱。"
+
+
+news "high houses propaganda"
+	to show
+		has "language: Successor"
+	location
+		attributes "successor"
+		not attributes "quiet" "uninhabited"
+	name
+		word
+			"大家族广播"
+			"Government broadcast"
+			"Video screen"
+			"Official broadcast"
+	message
+		word
+			"一则广告中，一艘继承者战舰表演了多种娴熟战术动作，随后鼓励观众加入高塔家族的武装部队。"
+			"播放的广告中，一群继承者紧挨着站在工厂背景前，他们的皮肤都泛着愉快的绿色。随后旁白指出工资最近已经上调。"
+			"一段短视频展示了一座新太空港在繁荣的继承者星球表面的建设过程。数艘涂着庆典涂装的高塔家族战舰划过屏幕，清楚指示该感谢谁。"
+			`一位神情骄傲的继承者海军军官站在一艘威武的战舰前：“参军吧！”标题写道，“今天就去见识星辰！”`
+			`播放了几段短小场景：一群继承者挖掘废墟、实验室内部、宁静的田园景象。旁白说：“发掘我们的遗产；改善我们的生活。”精心装扮的高塔家族官员出现在每一个情景中，被描绘成支持性的监督者。`
+			"一则广告展示了一艘继承者战舰的流畅线条，其抛光装甲在阳光下闪闪发光。广告持续数分钟，从多个角度展示这艘舰船，同时播放着宏大配乐。"
+
+news "successor advertisements"
+	to show
+		has "language: Successor"
+	location
+		attributes "successor"
+		not attributes "quiet" "uninhabited"
+	name
+		word
+			"Advertisement" 2
+			"Video display"
+			"Commercial advertisement"
+	message
+		word
+			"一碗类似海带的条状食物在屏幕上舞蹈，各种调味料被洒在上面。约三十秒后，一名继承者正在吸食一些条状物，皮肤变成愉快的粉色。"
+			"日落时分，一簇小型休闲帆船出现在纯净的湖面上，继承者船员们或操控船只，或在水里快乐地嬉戏。底部字幕鼓励观众购买自己的帆船。"
+			"播放一则继承者脉冲激光的广告：它在干净明亮的工厂中被制造，安装到飞船上，从小行星中提取矿物。从未展示战斗场景。"
+			"播放的一则广告展示了各种诱人且昂贵的珠宝，它们由金、银和其他你无法辨认的奇特金属制成。多位模特将其缠绕在手臂或身体其他部位进行展示，随着镜头的移动，珠宝微微波动。"
+			"屏幕上播放一所继承者大学的广告，展示优雅的雕塑般的建筑在雨天的天空下从地面升起。"
+			"一片巨大的花卉植物正在生长出长长的闪亮金属丝线，农业机器人迅速收割它们。"
+			"一系列继承者模特的图像快速闪烁，很难看出他们到底在宣传什么。"
+			"播放一段短片，为当地音乐厅的演出做广告。舞台分为两部分：一部分在水下，另一部分在干燥区域。"
+			"港口视频屏幕上显示一款明亮多彩的互动游戏。它吸引了一小群年轻的继承者；他们似乎被迷住了。"
+			"画面展示了一种略似隐形眼镜的眼罩被佩戴在几位模特的眼睛上，并在佩戴后改变了眼睛的颜色和形状。"
+			"一家造船组织正在为克维尔德穿梭机打会员折扣广告。他们特意指出其运营得到了某个高塔家族的支持。"
+			"一位独立领航星在预录信息中简短宣传其快递服务，保证十吨以下包裹最快送达。"
+
+
+news "local news quiet"
+	to show
+		has "language: Successor"
+	location
+		attributes "successor"
+		attributes "quiet"
+		not attributes "station" "uninhabited"
+	name
+		word
+			"本地新闻报道"
+			"News report"
+			"News program"
+	message
+		word
+			"一段广播低调地列举了最近一次天气控制单元故障的细节，导致短暂疏散但无人受伤。一张照片显示数十名继承者聚集在海岸线上，远处有几艘飞船蜂拥而至。"
+			"一段静音广告播放着，展示了几座小型水下住宅的建筑渲染图，墙壁颜色和纹理从模拟木材变为模拟贝壳，甚至变为类似星舰外壳的暗色无定形金属。"
+			"一段简短的广播讨论了最近的雷暴，展示了当地人在此期间拍摄的几张闪电和雨水的彩色图片。"
+			"一则纯文本广播正在讨论最近的一场触觉艺术表演。随着你头部的移动，文本也会随之闪烁，这是翻译设备在尽最大努力将其转录下来。"
+			"一则广播播放了对当地一位花卉商的简短采访，对方正在展示其收集的活体金属植物。"
+			"屏幕上展示了一份正式文件，其旁边附有一列文字。这说明这是一项新的贸易法令，并列出了它对独立商人的影响。"
+			"一档关于水土流失控制与生态修复的简短节目正在播放，由一位面容疲惫、穿着朴素的继承者以毫无波澜的语调进行解说。"
+			"视频屏幕上播放的新闻报道被短暂中断，转而显示了一张太空港的通用地图。"
+
+
+news "station report"
+	to show
+		has "language: Successor"
+	location
+		attributes "successor"
+		attributes "station"
+		not attributes "uninhabited"
+	name
+		word
+			"Station Report"
+			"Announcement System"
+			"公共广播系统"
+	message
+		word
+			"一则公共广播澄清，空间站大气处理装置效率低下的问题已于昨夜得到解决。"
+			"一份列有行星穿梭机出发与到达时间的时刻表已更新，以反映地表的班次延误。"
+			"一幅图像展示了空间站的交互式地图，供访客查阅使用。"
+			"一则公共广播呼吁居民们节约用水。"

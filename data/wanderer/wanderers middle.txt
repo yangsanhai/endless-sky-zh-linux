@@ -1,0 +1,3618 @@
+# Copyright (c) 2016 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Wanderers: Pre-Colony"
+	landing
+	source "Spera Anatrusk"
+	to offer
+		has "event: wanderers: the eye opens"
+		not "event: wanderers: spera anatrusk colony"
+	on offer
+		conversation
+			`随着天眼完全打开，流浪者的飞船开始涌入这片太空区域。这颗荒凉的星球似乎引起了他们特别的兴趣，无人机正快速朝各个方向勘测，一个小型前哨站也开始成形。`
+			`	当你降落在定居点外围时，一名工人走向刚下船的你。“[问候，欢迎]，很高兴看到你对我们的探索表现出[兴趣，关注]。可惜，在这个我们知之甚少的世界里存在太多的[危险，风险]。这里将成为我们[探索，记录]这片新区域的跳板，但要确保前哨站的[安全，稳定]还需要一些时间。我建议你趁我们建立营地的这段时间，先在这些星系中[熟悉，定位]一下自己，之后再回来帮忙。当然，等我们[确认，建立]了安全之后，随时欢迎你再来，届时我们需要大量飞船来帮助修复这里许多已被毁坏的行星。”`
+				decline
+
+mission "Wanderers: Surveying 1"
+	landing
+	name "流浪者勘测"
+	description "流浪者要求你勘测科拉斯太空中附近的几颗行星，并在完成后将数据带回 <planet> 交给他们。"
+	autosave
+	source "Spera Anatrusk"
+	stopover "Desi Seledrak"
+	stopover "Sabira Eseskrai"
+	stopover "Seleptra Nak"
+	stopover "Elek Kartanu"
+	stopover "Sek Alarfarat"
+	stopover "Solima Skarati"
+	stopover "Kasichara Fet"
+	to offer
+		has "event: wanderers: spera anatrusk colony"
+	cargo "scientific equipment" 7
+	blocked "流浪者又有一个任务交给你，但你需要 <capacity> 空间来装载他们的科研设备。"
+	on offer
+		log `“天眼”虫洞已在流浪者太空开启，但虫洞另一侧的领土是科拉斯太空，这片区域被他们的内战摧残，至今仍充斥着自主战斗机器。尽管如此，流浪者们仍为能够再次开始治愈和修复受损世界的工作而兴奋不已。`
+		log "People" "Sobari Tele'ek" `特莱克成为了远征军的一员，这支远征军的组建是为了在天眼开启后探索其外的疆域。`
+		conversation
+			`流浪者已经开始在这里建立基地，每隔几分钟就有货船降落，带来更多的补给或人员。他们拥有相当数量的武器和战舰来牵制科拉斯自动机械，但大部分补给看起来像是科学工具，或者是用于改造行星的设备。`
+			`	你降落不久后，便被引去参加几位流浪者高级领袖的会议。你认出了军事指挥官索巴里·特莱克，但其他人对你来说都是陌生人。奇怪的是，除了成年人之外，会议中还有一个流浪者孩童，身高刚过一米，长着像椋鸟一样闪烁着彩虹色光泽的黑色羽毛。`
+			`	那孩子看到你时说道：“你好，船长。”令人惊讶的是，她说的竟是你的语言。流浪者正在教他们的孩子你们的语言，这让人感到鼓舞；也许几年后，你就不再需要翻译设备来与他们交谈了。`
+			`	特莱克问你：“你探索过天眼带我们来到的这个新[领地，责任]了吗？”`
+			choice
+				`	“是的，看起来这里的星球非常需要你们的照料。”`
+					goto care
+				`	“我在这里遭遇了充满敌意的自动无人机。你们留在原来的地方也许会更安全。”`
+					goto drones
+				`	“不，我还没有时间去探索。”`
+					goto next
+			
+			label care
+			`	“确实，”另一位流浪者说道，“这非常[令人兴奋，刺激]。”`
+				goto next
+			
+			label drones
+			`	“也许吧，”特莱克说，“但我们还没有找到与它们[沟通，讲理]的方法。也许它们攻击我们只是一场误解。”`
+				goto next
+			
+			label next
+			`	另一位流浪者开口说：“这片新领地充满了[前景，可能]，但我们人数仍然很少，不敢过于广泛地[探索，勘测]。人类，你拥有[特殊，独特]的旅行手段，或许能比我们更[安全？谨慎？]地探索。你愿意为我们去一些星球，帮助我们[衡量，辨别]需要做些什么来修复它们吗？”`
+			choice
+				`	“当然，我很乐意。”`
+					goto end
+				`	“你确定在这里不会被科拉斯的无人机威胁吗？”`
+			
+			`	“别担心，”特莱克说。“[抵抗，战斗]无羁亥族迫使我们开发了更强的战舰。我们已经做好了[装备，准备]来应对这个新威胁。”`
+			
+			label end
+			`	流浪者将大量科学设备装到你的船上，并解释如何使用。他们还标出了几个他们的长距离传感器探测到的星球，希望你能进一步调查。`
+				accept
+	on visit
+		dialog phrase "generic stopover on visit"
+
+
+
+mission "Wanderers: Surveying 2"
+	landing
+	name "流浪者勘测"
+	description "流浪者要求你勘测更多位于科·梅雷提无人机领地深处的星球，并将测量数据带回<planet>交给他们。"
+	autosave
+	source "Spera Anatrusk"
+	stopover "Esayaku Fen"
+	stopover "Aresepru Nat"
+	stopover "Korbatri Eska"
+	stopover "Fek Rembatu"
+	to offer
+		has "Wanderers: Surveying 1: done"
+	cargo "scientific equipment" 7
+	blocked "流浪者又有一个任务交给你，但你需要 <capacity> 空间来装载他们的科研设备。"
+	on offer
+		log "People" "Tema'a Iriket" `伊里凯特是一名专精于地形改造的流浪者，被选中调查天眼之外的世界，并为每个世界如何再次繁荣制定计划。相比于应对科拉斯战争机器的威胁，她对地形改造工作的兴趣浓厚得多。`
+		conversation
+			`当你降落时，一位名叫特玛阿·伊里凯特的流浪者迎接了你，并自报身份是地貌改造团队的负责人。她看到你关于附近行星的数据时显得很兴奋。“对于这些世界中的每一个，”她说，“我们都必须决定哪种[处理方式、策略]最能让它再次繁荣。即使某个世界靠近[危险、敌对]机器人的[领地、领域]，我们也可能能够从远处开始它的[疗愈、改造]。”`
+			choice
+				`	“我很惊讶你们种族这么急于开始地貌改造。我以为科拉斯自动体的威胁会是你们的优先要务。”`
+					goto drones
+				`	“有什么办法能帮你们进行地貌改造吗？”`
+					goto volunteer
+			
+			label drones
+			`	她说：“[疗愈、焕新]世界是我们热爱的事。战斗不是我们热爱的事。所以除非机器人变得更加[激进、威胁性]，我们宁愿不去寻求冲突。同时，能在它们控制的行星上做测量会很[有趣、激动人心]。你能为我们做这件事吗？”`
+				goto next
+			
+			label volunteer
+			`	“你主动提出我很[高兴、欣慰]，”她说。“我们现在最[有用、感兴趣]的是围绕这些恒星运行的行星的[气候？生态系统？]测量数据。”在本地星图上，她指出了几个星系。`
+			`	“那些都在科·梅雷提的领地深处，”你告诉她。`
+			`	“是的，”她说，“所以我正[希望、假设]请你去做测量。”`
+			
+			label next
+			choice
+				`	“当然，我很乐意这么做。”`
+				`	“这听起来非常危险。”`
+					goto danger
+
+			`	“太好了，”她说。“你完成后我会从你那里收集数据。”`
+				goto leaders
+
+			label danger
+			`	“我完全[信任、信赖]你的能力，”她说，然后在你进一步抗议之前就走开了。`
+			
+			label leaders
+			`	当你向流浪者领袖汇报时，他们还有其他几个请求要交给你。一位名叫埃鲁克特·伊西伊西的宇宙学家对科拉斯空间附近三处超新星遗迹的扫描数据感兴趣。而索巴里·特莱埃克希望你收集更多关于自动体的数据。“如果我们知道它们如何运作，”他说，“或许我们就能与它们[达成和平、交朋友]。也许你可以[登上、打捞]每个[派系？]的瘫痪无人机，把控制其[决策、智能]的[部件、组件]带给我们。”`
+			choice
+				`	“当然，我很乐意这么做。”`
+					goto end
+				`	“那些无人机很强大。我不确定我能瘫痪一架。”`
+			
+			`	“它们相遇时似乎很擅长互相瘫痪，”他说。“或者你可以[升级到、购买]我们的一艘[必要的？可叹的？]战舰。”`
+			label end
+			`	你带着一长串为流浪者完成的任务离开了会议。你希望他们能感激你提供的所有帮助。`
+				accept
+	
+	on visit
+		dialog phrase "generic stopover on visit"
+	on complete
+		conversation
+			`你将行星测量数据呈交给地貌改造主管特玛阿·伊里凯特。她对数据非常兴奋。“这么多世界，”她说，“每一个都有各自的[个性？特性？]。我们会进一步了解每一个世界，并发现如何与它们[合作、协作]以帮助它们[恢复、重生]。”`
+			`	她告诉你目前他们不再需要更多的扫描数据，但未来如果有新需求会通知你。`
+
+
+
+mission "Wanderers: Nova Remnants"
+	landing
+	name "新星遗迹"
+	description "一位名为埃鲁克特·伊西伊西的流浪者宇宙学家请求你访问附近几颗似乎是超新星遗迹的恒星，并对它们进行测量。"
+	source "Spera Anatrusk"
+	waypoint "Peresedersi"
+	on enter "Peresedersi"
+		dialog
+			"你启动飞船传感器，收集流浪者要求的这个星系恒星的数据。"
+	waypoint "Kasikfar"
+	on enter "Kasikfar"
+		dialog
+			"你启动飞船传感器，收集流浪者要求的这个星系恒星的数据。"
+	waypoint "Fasitopfar"
+	on enter "Fasitopfar"
+		dialog
+			"你启动飞船传感器，收集流浪者要求的这个星系恒星的数据。"
+	to offer
+		has "Wanderers: Surveying 1: done"
+	on visit
+		dialog phrase "generic waypoint on visit"
+	on complete
+		log "Factions" "Archons" `执政官们部分是生物体，部分是技术造物，还有一部分是人类语言无法描述的存在。它们极为强大。执政官以某种方式与德拉克有关联，却又独立于它们。`
+		conversation
+			`你联系了宇宙学家埃鲁克特·伊西伊西，并将你飞船对超新星遗迹的扫描副本交给了他。对你来说，扫描结果难以解读，但对他来说显然讲述了一个故事，而且不是一个令他高兴的故事：当他查看数据时，身体剧烈颤抖，瞳孔缩成针尖大小。`
+			`	“这些恒星死得[不合时宜，不自然]，”他说。“我想知道这些‘执政官’[存在，实体]扮演了什么角色。这些恒星的[失稳，毁灭]是科拉斯犯下的罪行，执政官以此惩罚他们？还是科拉斯犯了别的罪，执政官[撕裂，撕开]这些恒星作为惩罚？”`
+			choice
+				`	“你认为哪种可能性更大？”`
+				`	“你的种族以前遇到过执政官吗？”`
+			
+			`	他说：“我们最初定居这里时，有一位执政官[到访，出现]过这个世界。它承诺，如果我们伤害科拉斯幸存者的任何[派系？遗民？]，就会给予可怕的[报复，惩罚]，并警告我们注意[敌对，不受控制]的机器人无人机。我毫不怀疑它们能够[摧毁，撕裂]一颗恒星；它们是[不完全存在于这个宇宙？延伸入隐藏维度？]的存在。但是，那个与我们[交谈，沟通，互动]的执政官似乎并不[恶意，暴力]。”`
+			choice
+				`	“那么，执政官是生物？不是某种飞船？”`
+				`	“夸格说德拉克有意维护银河的和平。”`
+					goto quarg
+			
+			`	他说：“它们部分是[活着的，生物的]，部分是[建造的，技术的]，还有一部分是……”不管第三部分是什么，其词汇与人类语言相距太远，你的翻译设备甚至没尝试猜测如何表达。`
+			`	你告诉他：“夸格是一个和平的物种，它们说德拉克也是和平缔造者。所以也许我们不必过于担心它们的意图。”`
+
+			label quarg
+			`	他说：“即使是那样，[执行，维护]和平有时也需要使用[武力，暴力]。而且，夸格是否向你们[解释，透露]了德拉克是谁？执政官就是德拉克吗？还是它们是由德拉克[建造？创造？诞生？]的？执政官似乎不是[自然进化的物种？]。”`
+			`	他沉默地坐了一分钟，然后说：“和我们交谈的那个执政官说，‘我是一个执政官。’它没有说，‘我是德拉克。’你曾经和执政官[交谈，交流]过吗？它[称呼，命名]自己为德拉克吗？”`
+			choice
+				`	"恐怕不行。"`
+				`	“我认为它这么说过。”`
+				`	“我不记得了。”`
+
+			`	“有意思，”他说。他承诺会与你分享他获得的任何进一步信息，你感谢他花时间。`
+
+
+
+mission "Wanderers: Mereti Controller"
+	landing
+	name "科·梅雷提控制器"
+	description "登上一艘科·梅雷提无人机，找到控制其行动的部件，并将该部件带回<planet>交给流浪者。"
+	source "Spera Anatrusk"
+	to offer
+		has "Wanderers: Surveying 1: done"
+	on visit
+		dialog `你已返回<planet>，但尚未获得控制科·梅雷提无人机的部件。请离开并尝试登上其中一架无人机，掠夺一个部件。`
+	on complete
+		log `发现“科·梅雷提”无人机飞船由某种集体化、去中心化的人工智能控制，无明显弱点。`
+		outfit "Reasoning Node" -1
+		conversation
+			scene "outfit/reasoning node"
+			`你把从科·梅雷提无人机上回收的推理节点交给了一组流浪者科学家。几小时后，他们向你报告。“这是一个非常[稳健、冗余]的设计，”首席科学家说。“每个节点都有足够的[处理能力？智能？]来控制一台无人机，但它们也通过超空间网络[连接、互联]。因此，所有无人机相互[通信、商议]，能够作为集体做出[战略决策？]。”`
+			choice
+				`	“所以没有人指挥这些无人机？”`
+				`	“但如果失去通信网络，它们的智能就会大打折扣？”`
+					goto network
+			`	“看来并非如此，”他说。“考虑到无人机的数量以及其[计算设备？]的[复杂性、精密程度]，这个集体的智能不亚于我们种族曾经构建的任何[人工思维？]。”`
+				goto end
+			label network
+			`	“是的，”他说，“但网络非常[冗余？去中心化？]。它能迅速适应任何中断，除非是最[严重、灾难性]的那种。这是一个[优美？巧妙？]的设计，类似于[生命系统？]。”`
+			label end
+			`	他告诉你科学家们将继续研究推理节点，看看能否找出任何可资利用的弱点，但他听起来并不抱希望。这很可惜，因为对流浪者而言，科·梅雷提的威胁远比科·塞斯特更为直接。`
+
+
+
+mission "Wanderers: Sestor Controller"
+	landing
+	name "科·塞斯特控制器"
+	description "登上其中一架科·塞斯特无人机，找出控制其行动的部件，并将其带回<planet>上的流浪者那里。"
+	source "Spera Anatrusk"
+	to offer
+		has "Wanderers: Surveying 1: done"
+	on visit
+		dialog `你已经返回了 <planet>，但尚未获得控制科·塞斯特无人机的组件。请离开并尝试登上一架无人机以夺取一个。`
+	on complete
+		log `“科·塞斯特”无人机实际上全部由远程控制，推测是由人工智能或藏匿于其某颗行星上的科拉斯领袖操控。如果能找到控制中心，就有可能掌控整个科·塞斯特舰队。`
+		outfit "Control Transceiver" -1
+		conversation
+			scene "outfit/control transceiver"
+			`一队流浪者科学家正在检查你从科·塞斯特无人机上回收的控制收发器。“这是一个遥控器，”他们告诉你，“几乎没有[算力？自主性？]。飞船从某个其他来源接收[命令、指令]，并传回自身的[状态、观测]信息。”`
+			choice
+				`	“有没有办法追踪命令的来源？”`
+				`	“我们能不能干扰它们的通讯？让它们丧失行动能力？”`
+			`	“不行，”科学家说，“它使用的是[纠缠粒子？]。无法追踪，不可能[中断、干扰]，而且可以跨越任何距离[运作、通讯]。但如果我们能找到[控制中心？]，就能同时[接管、劫持]所有无人机。”`
+			`	“控制中心会是什么样子？”你问道。`
+			`	“可能是什么样都行，”科学家说，“也许是一台巨型计算机。也许是一个人工意识。也许是某个地下[掩体、居住点]，年迈的[战争指挥官、将军们]藏身其中，指挥他们那场[毫无意义、徒劳]的战争。但无论它是什么，它是一个单一的[弱点、焦点]，我们可以加以利用。”`
+
+
+
+event "wanderers: kaliptari battle begins"
+	system Kaliptari
+		fleet "Wanderer Flycatchers" 500
+
+event "wanderers: kaliptari battle ends"
+	system Kaliptari
+		add fleet "Large Quarg (Kor Efret)" 2000
+		add fleet "Small Kor Mereti" 8000
+		add fleet "Large Kor Mereti" 3600
+		add fleet "Wanderer Defense" 1000
+		add fleet "Wanderer Drones" 500
+
+mission "Wanderers: First Mereti Attack"
+	landing
+	name "保卫 <planet>"
+	description "<planet>上的流浪者基地正遭到科·梅雷提无人机的攻击。帮助流浪者击退它们，然后返回该星球。"
+	source "Spera Anatrusk"
+	to offer
+		has "Wanderers: Surveying 2: done"
+		has "Wanderers: Nova Remnants: done"
+		has "Wanderers: Mereti Controller: done"
+		has "Wanderers: Sestor Controller: done"
+	on offer
+		event "wanderers: kaliptari battle begins"
+		conversation
+			`当你刚刚结束最近一次会议，正走回飞船时，警报声突然响起。你看到许多流浪者跃向空中，飞快朝航天港飞去，那里的飞船已经开始纷纷起飞。（有趣的是，流浪者的警报声听起来更像鸭子叫，而不是人类常用的那种尖啸或嗡嗡声。）看来基地正遭受攻击。`
+			`	You return as quickly as possible to your ship and prepare to join the other defenders...`
+				launch
+	on visit
+		dialog `仍有科·梅雷提无人机在头顶盘旋。你应该帮助流浪者将它们驱离。`
+	npc evade
+		government "Kor Mereti"
+		system Kaliptari
+		personality staying heroic
+		fleet
+			names "kor mereti"
+			variant
+				"Model 512" 1
+				"Model 256" 1
+				"Model 128" 2
+				"Model 64" 3
+				"Model 32" 4
+				"Model 16" 6
+		dialog `随着最后一支科·梅雷提袭击部队被消灭，你收到了索巴里·泰勒埃克的消息。“请尽快到[基地、定居点]来与我们汇合，”他说，“我们得[商定、决定]一个策略来应对这些[机器人、无人机]，以免它们的攻击变得更糟。”`
+	npc
+		government "Wanderer"
+		system Kaliptari
+		personality staying heroic
+		fleet
+			names "wanderer"
+			variant
+				"Derecho"
+				"Tempest" 2
+				"Heavy Gust"
+				"Autumn Leaf" 1
+	npc
+		government "Wanderer"
+		system Kaliptari
+		personality heroic
+		fleet
+			names "wanderer"
+			variant
+				"Derecho"
+				"Tempest" 2
+				"Heavy Gust" 1
+				"Autumn Leaf" 3
+				"Summer Leaf" 2
+	on complete
+		event "wanderers: kaliptari battle ends"
+
+
+
+mission "Wanderers: Rek To Kor Efret"
+	landing
+	name "带雷克到<planet>"
+	description "将历经蜕变并已化身为新形态的雷克，带至<destination>的科·埃弗雷特处，尝试与之沟通。"
+	autosave
+	source "Spera Anatrusk"
+	destination "Setar Fort"
+	passengers 1
+	blocked "你需要留出一个乘客位，才能接受下一个流浪者任务。"
+	to offer
+		has "Wanderers: First Mereti Attack: done"
+	on offer
+		log `伊克塔特·雷克挺过了蜕变，但形态完全改变了。雷克现在为雌性，体型仅有流浪者孩童大小，她为自己取名“埃克塔西·雷克”，意为“沟通者”或“桥梁建造者”。`
+		log "People" "Iktat Rek" `雷克经历了蜕变，这是一个神秘的过程：当流浪者暴露于新刺激时，其身体会转化为一个全新的物种，同时保留该个体的记忆和人格。新的雷克是女性，并以“埃克塔西·雷克”为名。`
+		log "People" "Ektasi Rek" `埃克塔西·雷克是几千年来第一个经历蜕变的流浪者，蜕变为一个拥有全新能力的完全不同的物种。随着更多流浪者经历蜕变，流浪者整体将不得不决定这些变异中哪一种代表着他们种族在科拉斯空间生存和繁荣的最佳途径。`
+		conversation
+			`当你走进会议室时，索巴里·泰勒埃克正和那个之前来过这里、会说你的语言的流浪者孩童激烈争辩。那孩童说：“天眼将我们送到的并非[空寂、废弃]的世界，而是一处[有生命存在?]之地。要完成我们在此的[使命、工作]，我们必须与那些生灵协作，就像我们与待修复行星的[生态系统?性格?]协作一样。”`
+			`	“你[提议、打算]做什么，首生儿？”泰勒埃克问道。`
+			`	“我想去拜访那些[残存、幸存]的科拉斯人，”她说，“我要学习他们的[语言?观念?历史?]，向他们提供我们的[陪伴、援助]。”`
+			`	“不行，”泰勒埃克说，“我怎能[危及、拿你的生命冒险]？你太[珍贵、独一无二]，不能派去执行这样的[任务、使命]。”`
+			`	“你不能命令我，”她说。`
+			`	“在你[彻底成形?完整?]之前，我可以，”他说。`
+			choice
+				`	（打断争论，报告科·梅雷提的袭击事件。）`
+				`	（让他们继续争论。）`
+					goto continue
+
+			`	你开口打断，开始描述科·梅雷提的袭击如何被击退，但就在你说话时，那个流浪者孩童从座位上跳下来，蹦到长桌一端附近的位置蹲坐下来。“我命名我自己，”她轻声说道。`
+				goto name
+
+			label continue
+			`	那个流浪者孩童挺直身子（说实话，那高度仍然不怎么惊人），轻声说道：“我命名我自己。”`
+
+			label name
+			`	一瞬间，房间里其他所有交谈都停止了。根据伊克塔特·雷克曾告诉你的信息，流浪者孩童在为自己选择一个角色-名字的那一刻就会成年。“我命名我自己为[沟通者、使者、桥梁建造者]，”她说，“<last>船长会带我去[与和平的科拉斯人共同生活、加入他们]。”`
+			`	令你惊讶的是，泰勒埃克在最后警告她要小心之后，同意了让她离开。她边走边蹦跳地跟在你脚后，随你返回飞船；显然她不需要任何行李。`
+			choice
+				`	“很高兴能运送你。我该怎么称呼你？”`
+				`	“我很惊讶你父亲竟然允许你这么做。”`
+					goto father
+
+			`	她歪着头疑惑地看着你。“你不知道我是谁？”她说。现在你们离开了会议室，她又开始用你自己的语言跟你说话了。`
+			`	“不知道，”你说。`
+				goto rek
+
+			label father
+			`	她看起来很困惑。“泰勒埃克不是我父亲，”她说，“我是我自己的父亲。”现在你们离开了会议室，她又开始用你自己的语言跟你说话了。`
+			`	“什么意思？”你问道。`
+
+			label rek
+			`	“我们合作了这么久，你都没认出我？”她问，“我是埃克塔西·雷克·伊·雷克。”你花了一会儿才意识到她并不是声称自己是雷克的女儿，而是在声称自己是“来自雷克的雷克”。她就是雷克本人。或者显然，现在是“她本人”。外星生物学真是充满惊喜。`
+			choice
+				`	“雷克！你在蜕变中活下来了！为什么没人告诉我？”`
+				`	“等等，你现在是女性了？”`
+					goto female
+
+			`	她说：“天眼打开时情况有点混乱。”你不确定这是不是全部真相，或者雷克只是喜欢捉弄你，想看看你要多久才反应过来。`
+				goto end
+
+			label female
+			`	她笑了。“严格来说我甚至都不是之前的同种物种了。性别变化跟那比起来都算小事。”流浪者的面部表情很难读，但她似乎非常享受你困惑的样子。`
+
+			label end
+			`	雷克毫不费力地找到了舱铺区，在你准备前往<planet>的旅程时，她愉快地安顿了下来。`
+				accept
+	on visit
+		dialog `你降落在<planet>上，但意识到载有雷克的护卫还未进入星系。最好先起飞，等它到来。`
+
+
+
+mission "Wanderers: Quarg Assistance 1"
+	landing
+	name "夸格援助"
+	description "埃克塔西·雷克建议你去拜访夸格，询问他们能否帮忙抵御科·梅雷提对流浪者的攻击。"
+	autosave
+	source "Setar Fort"
+	destination "Kuwaru Efreti"
+	to offer
+		has "Wanderers: Rek To Kor Efret: done"
+	on offer
+		log "雷克的变形似乎赋予了她增强的理解其他语言的能力。她将与友好的科拉斯待一段时间，以学习如何与他们交流。"
+		log "People" "Ektasi Rek" `雷克的蜕变不仅赋予她理解异星语言的能力，还让她能够模仿其声音。`
+		conversation
+			`你和埃克塔西·雷克在科埃弗雷特太空港着陆后不久，一小群科拉斯人围了上来。毫无疑问，他们认出雷克是定居在他们原先领土上的新异族之一。但当雷克开始试图与他们交流时，他们被理解的渴望压倒了可能怀有的敌意。`
+			`	几分钟内，雷克就和他们玩起了一种游戏：她指着不同的物体，试图学习它们的名称，然后用这些名称造句：“这是一张桌子。雷克在桌子上。雷克站在桌子上。桌子在雷克下面。桌子的颜色是黑色的。桌子的颜色和雷克的颜色一样。”`
+			`	当雷克说出的内容他们认同时，科拉斯人会赞同地挥手；当她犯语法错误时，他们会发出嘶嘶声。新的词汇和新的词性来得太快，你只能抓住大致意思，但雷克却全神贯注地吸收着。她看上去如此开心、充满活力，很难相信她就是几个月前你在医疗中心告别的那个人。`
+			`	大约一小时后，雷克对那群科拉斯人说了些什么，然后走向你。`
+			choice
+				`	“你看起来进展神速啊！”`
+				`	“你现在想让我做什么？”`
+					goto end
+
+			`	她似乎非常自得。“我想这次蜕皮又给了我孩童般的思维可塑性，”她说，“这几乎和呼吸一样轻松。但要理解他们语言的微妙之处，以便能够传达任何重要信息，还需要一段时间。”有点令人不安的是，她的发声器官竟然能如此完美地再现嘶嘶作响的科拉斯语和你的人类语言，此外还有流浪者语言的喉音和击打音。而且还有亥族的语言，事实上也是如此。`
+			`	“那么，”你问道，“你在这儿学习语言的时候，我该做什么？”`
+
+			label end
+			`	她说：“我担心科·梅雷提会对我的族人发动又一次袭击。你觉得夸格会愿意帮忙保护我们吗？”`
+			`	你同意这值得一试。她建议你去拜访夸格的环世界，尝试找到有权派出防御舰队保卫流浪者定居点的人。`
+				accept
+
+
+
+mission "Wanderers: Quarg Assistance 2"
+	landing
+	name "夸格援助"
+	description "护送一支同意协助保护流浪者的夸格舰队返回<destination>。"
+	autosave
+	source "Kuwaru Efreti"
+	destination "Spera Anatrusk"
+	to offer
+		has "Wanderers: Quarg Assistance 1: done"
+	on offer
+		log "夸格（或者是夸格内部的某个派系，甚至只是一群自发行动的夸格个体）已经同意派遣三艘他们的战舰前往科拉斯空间，协助保卫流浪者的定居点。（又或者，他们派遣战舰是因为他们视流浪者为入侵者，想要监视他们。要弄清他们的真实意图并不容易。）"
+		log "Factions" "Wanderers" `据夸格所言，流浪者并非本星系的原生种族，而是从别处（很可能是被帕格）带到这里来的。`
+		conversation
+			`夸格一般不分享关于其领导层级如何运作的任何信息，如果这种层级真的存在的话，所以你为流浪者寻找帮助的最佳办法就是四处打听，直到找到合适的人。你拦下走廊里第一个路过的夸格。“那么，”它说，“人类旅者来拜访我们夸格了。我能如何提供协助？”`
+			`	“嗯，”你说，“我代表一个最近定居在某个废弃的科拉斯世界上的物种而来。希望你们能帮助保护他们。”`
+			`	它说：“是的，我们知道你们与永恒漂流的流浪者成为了朋友，他们是那令人难以忍受的帕格的朋友。但我们为什么要帮助他们？”`
+			choice
+				`	“流浪者知道如何修复行星生态系统。他们能让科拉斯的世界重新变得宜居。”`
+				`	“流浪者或许能帮助你们对付那些敌对的自动机器。”`
+					goto automata
+
+			`	“他们能让科拉斯人再次配得上居住那些世界吗？能让他们足够聪明，不再毁掉自己的家园吗？还是说这些河外闯入者的能力并没有那么强？”`
+				goto next
+
+			label automata
+			`	“他们的飞船和武器比我们强大吗？”夸格问道，“他们的智慧比我们更广博吗？或者他们的数量比我们更多？要知道我们有数万亿之众。这些河外闯入者能成就什么，是我们早在你们出现很久以前未曾尝试过的？”`
+
+			label next
+			`	当你不回应时，夸格继续说道：“这些流浪者并非本星系的原住民，因此我们没有义务去阻止他们灭绝。科拉斯人才是我们的看护对象和责任所在。所以我恳请你告诉我，这些外星人入侵他们支离破碎的领土，为什么对科拉斯人来说是件好事。”`
+			choice
+				`	“流浪者可以通过教导科拉斯人更好地照料他们的世界来提供帮助。”`
+				`	“流浪者不想永远留在这里；一旦那些世界修复完毕，他们就会离开。”`
+
+			`	夸格缓慢地眨了眨眼，它那奇异的眼睑横向移动，而非上下。然后它说：“我们将授予你三艘战舰，与你一同返回这些可憎的帕格的朋友们的定居地。它们将帮助阻止那带来死亡的机器。并且会监督流浪者，来判断他们是否如你所说的那般仁慈。”`
+			`	你在走廊里随便搭话的第一个夸格，竟然恰好是拥有派遣舰队权力的人，这极其奇怪，但质疑如此慷慨（尽管极其冗长）的提议是不礼貌的。你感谢了夸格，返回你的飞船。希望流浪者会为得到保护感到高兴，并且不会介意头顶有一支夸格舰队在审视他们的行动。`
+				accept
+	on visit
+		dialog `你已到达<planet>，但将一艘夸格战舰落在了后面。最好离开并等待它抵达。`
+	npc accompany save
+		government "Quarg (Kor Efret)"
+		personality escort
+		ship "Quarg Wardragon" "Elearu-quara"
+		ship "Quarg Wardragon" "Kumawar Kwarca"
+		ship "Quarg Wyvern" "Ahlimona Spod"
+
+
+
+mission "Wanderers: Quarg Defenders"
+	landing
+	invisible
+	non-blocking
+	source "Spera Anatrusk"
+	to offer
+		has "Wanderers: Quarg Assistance 2: done"
+	npc kill
+		government "Quarg (Kor Efret)"
+		personality staying uninterested heroic
+		ship "Quarg Wardragon" "Elearu-quara"
+		ship "Quarg Wardragon" "Kumawar Kwarca"
+		ship "Quarg Wyvern" "Ahlimona Spod"
+
+
+
+mission "Wanderers: Pug Assistance 1"
+	landing
+	name "帕格援助"
+	description "流浪者感激夸格的保护，但也希望<planet>上的帕格愿意派遣战舰保护他们。"
+	autosave
+	source "Spera Anatrusk"
+	destination "Vara Pug"
+	clearance
+	to offer
+		has "Wanderers: Quarg Assistance 2: done"
+	on offer
+		conversation
+			`当你带着三艘夸格战舰抵达流浪者定居点时，迎接你的是感激与担忧交织的情绪。资深领袖们坚持要立刻见你，你向他们解释了你如何将雷克送到科埃弗雷特空域，然后拜访夸格并请求援助。泰雷克问你：“这些夸格，他们对我们的【意图、倾向】是什么？他们是否明白我们寻求【治愈、更新】这些世界，而不是从科拉斯手中夺走它们？”`
+			choice
+				`	“夸格除非万不得已，否则会避免冲突。如果你们展现出和平的姿态，他们会逐渐信任你们。”`
+					goto peace
+				`	“我觉得夸格担心你们会取代幸存的科拉斯人。”`
+					goto displace
+				`	“夸格不信任你们，因为你们与帕格有关联。他们还声称你们并非本星系的原住民。”`
+					goto pug
+
+			label peace
+			`	“嗯，”泰雷克说，“如果他们真的【希望、期盼】这些世界再次变得【丰饶、宜居】，那我们最好的做法就是通过开始工作来证明我们的【价值、美德】。我们也是一个【耐心、稳健】的物种，我们明白要赢得另一方的【信任、善意】可能需要时间。”`
+				goto next
+
+			label displace
+			`	“我希望雷克能够【缓解、平息】那种恐惧，”泰雷克说。“如果我们能够【沟通、联系】上幸存的科拉斯人，他们很快就会发现我们的意图是【和平、光荣、仁慈】的。”`
+				goto next
+
+			label pug
+			`	泰雷克说：“这是【合理、可以理解】的想法。但等他们【得知、观察到】我们的目标只是让这些世界再次【繁荣、丰饶】时，我希望我们能【赢得、获得】他们的信任。”`
+
+			label next
+			`	“况且，”地形改造总监伊里凯特说，“我们只会在这一【空域、区域】停留很短的时间，不超过一两万【年】。所以我不【明白、理解】他们为什么如此【担忧、戒备】。”`
+			`	“不过，”泰雷克说，“我们中有不少人希望雷克没有【派、指示】你去访问夸格。天眼的守护者们曾让亥族【无法靠近、受阻】。他们肯定也能帮我们【击败、清除】这些敌对机器。他们送我们来这里肯定是为了世界的【愈合、重建】，而不是让我们在与一个【无情、冷酷】的敌人作战中丧命。”`
+			choice
+				`	“那或许值得一试。帕格充满了惊喜；他们可能拥有能轻易击败那些自动机器的技术。”`
+					goto end
+				`	“如果卷入两个自动机器派系间的交火已经很糟糕了，那么陷入帕格和夸格之间的战争岂不是更糟？”`
+
+			`	“他们都希望这片区域【最优、高效】，”泰雷克说。“也许并肩对抗共同的敌人能让帕格和夸格彼此【和解、讲和】。”`
+
+			label end
+			`	经过一番讨论，其他领袖们同意他们更倾向于向帕格求助，而不是仅仅依赖夸格的善意。他们请你再次穿过虫洞，前往那里的帕格世界，看看他们是否愿意提供帮助。`
+				accept
+
+
+
+mission "Wanderers: Pug Assistance 2"
+	landing
+	name "返回<planet>"
+	description "返回 <planet> 告诉那里的流浪者，帕格拒绝通过天眼派遣任何飞船来帮助他们防守。"
+	source "Vara Pug"
+	destination "Spera Anatrusk"
+	to offer
+		has "Wanderers: Pug Assistance 1: done"
+	on offer
+		log "拜访了帕格，询问他们是否愿意帮助流浪者对抗科拉斯自动机器。但帕格与夸格彼此不睦，因此帕格不愿进入科拉斯空间。"
+		log "Factions" "Archons" `原因不完全明确，但帕格人对阿空人怀有敌意，却又认为他们值得同情。`
+		log "Factions" "Pug" `帕格称，他们的种族被划分为多个独立的群体或“团队”，每个团队专注于与不同的智慧物种互动。他们将那些其他物种视为正在进行的“项目”。`
+		conversation
+			`你刚走下飞船，就被一群武装帕格围住了。其中一个说道：“也许我们沟通得还不够清楚，以至于你们人类的小脑袋无法理解——但我们对你这个人，以及和人类的任何进一步互动，都不感兴趣。”`
+			choice
+				`	“实际上，我是代表流浪者来的。”`
+					goto wanderers
+				`	“你为什么对我这么敌视？”`
+
+			`	另一个帕格说：“我们并不敌视，但我们的项目是流浪者，不是人类。你们人类有自己的帕格小组，如果他们允许的话，你尽管去烦他们。”`
+			choice
+				`	“嗯，其实我来找你们谈的就是流浪者的事。”`
+					goto wanderers
+				`	“你是说，攻击人类空间的那群帕格是另一个派系？”`
+
+			`	一名帕格说道：“不是派系不同，只是不同的团队，负责不同的项目。他们的任务是理解和对付人类，而不是我们。谢天谢地。”`
+			choice
+				`	“人类空间里的帕格现在已经离开了，所以再也没法‘烦’他们了。”`
+
+			`	“他们当然离开了，”一名帕格说道，语气中暗示着，如果你以为帕格已经停止干预人类事务，那可就太愚蠢了。`
+
+			label wanderers
+			`	你向帕格解释你是代表流浪者来的：天眼指引他们找到的那片空间区域充斥着危险的机器人自动机。他们回应道：“那里还充斥着可悲的阿克昂族和他们的宠物夸格。我们和他们的关系可没好到能说上话的地步。”`
+			`	另一个帕格补充道：“再准确一点说，我们和他们的关系属于‘互相炸飞’的范畴。”`
+			choice
+				`	“如果你们愿意的话，难道不能和他们和平相处吗？”`
+					goto peace
+				`	“阿克昂族为什么恨你们？”`
+					goto hate
+				`	“你们对阿克昂族知道些什么？”`
+					goto archons
+
+			label peace
+			`	一个帕格说：“老实说，根本不值得费那个劲。”`
+			`	另一个说：“阿克昂族的人生观太阴沉了，和他们聊天太压抑。”`
+				goto end
+
+			label hate
+			`	一个帕格说：“我们最近有过一次分歧。我们是对的，阿克昂族错了。他们还在生闷气呢。”`
+				goto end
+
+			label archons
+			`	一个帕格说：“我们知道他们被创造出来是为了调解和平、防止灭绝。我们也知道他们失败了——实际上失败了很多次。这让他们变得郁郁寡欢、令人沮丧。”`
+
+			label end
+			`	你和他们又聊了一会儿，但再也没能得到更多信息，也没能说服他们去帮助身处科拉斯空间的流浪者。你得向索巴里·特勒克报告：夸格舰队是他们唯一可能获得的外部援助了。`
+				accept
+
+
+
+mission "Wanderers: Mereti Observation"
+	landing
+	name "梅雷提观测"
+	description "在梅苏凯特观测科·梅雷提，持续足够长的时间，让流浪者设备收集他们的通讯数据。然后返回<planet>。"
+	autosave
+	source "Spera Anatrusk"
+	to offer
+		has "Wanderers: Pug Assistance 2: done"
+	cargo "communications recorder" 2
+	blocked "你需要<capacity>的空位才能接取流浪者的下一个任务。"
+	waypoint "Mesuket"
+	on offer
+		conversation
+			`在你返回后不久，索巴里·特勒克会见了你。你告诉他，由于夸格和阿克昂族的存在，帕格拒绝协助保卫身处科拉斯空间的流浪者。“那么我们必须找到我们自己的[道路/解决方案]了，”他说，“来吧，我有一队[科学家/工程师]想见你。”`
+			`	他带你来到另一个设施，一队流浪者围着一张桌子，上面摊开着拆解后的推理节点组件。首席科学家向她的团队介绍了你，然后说：“我们相信我们已经找到了一种方法来[拦截/监听]使用这些[设备/系统]的自动机的[网络流量？通信？]。我们需要有人前往它们[冲突/战争]最激烈的星系，对它们的通讯进行[记录/观察]。你能完成这项[任务/使命]吗？”`
+			choice
+				`	“当然，我很乐意这么做。”`
+					goto end
+				`	“听起来很冒险。”`
+
+			`	“确实，”她说，“但在避开危险方面，你非常[熟练/幸运]。”你犹豫了一下，还是同意替他们再承担一次危险的任务。`
+
+			label end
+			`	The scientists begin working to install the new equipment on your ship. As they do so, Tele'ek tells you, "We also hope to collect further [information, intelligence] on the combat capabilities and [tactics, decision making] of the drones. If their [network, communications] are not vulnerable, we must instead find a way to defeat them in battle." You agree to stay in the target system for long enough to observe some of the drones fighting each other.`
+				accept
+	on enter "Mesuket"
+		dialog `你进入目标星系，开始记录科·梅雷提无人机的通讯。收集流浪者所需的所有数据可能需要一些时间，但他们已设置好设备，会在收集完成时通知你。`
+	npc
+		government "Kor Sestor"
+		system "Mesuket"
+		personality staying heroic
+		fleet
+			names "kor sestor"
+			variant
+				"Kar Ik Vot 349"
+				"Met Par Tek 53" 3
+	npc
+		government "Kor Mereti"
+		system "Mesuket"
+		personality staying heroic
+		fleet
+			names "kor mereti"
+			variant
+				"Model 64"
+				"Model 32" 2
+				"Model 16" 5
+	timer 3600 3600
+		"pause when inactive"
+		"activation requirements"
+			system "Mesuket"
+		on timeup
+			dialog `流浪者的记录仪发出短促的鸣叫声，提示它已收集了足够的数据。是时候回到<planet>了。`
+	on visit
+		dialog `你已返回<planet>，但你收集的数据还不足以满足流浪者的需求。返回梅苏凯特，等待设备通知你数据收集完毕。`
+
+
+
+mission "Wanderers: Kor Efret 1"
+	landing
+	name "拜访<planet>"
+	description "拜访<planet>上的埃克塔西·雷克和科拉斯人，看看他们是否有能帮助瘫痪科·梅雷提自动机的信息。"
+	autosave
+	source "Spera Anatrusk"
+	destination "Setar Fort"
+	to offer
+		has "Wanderers: Mereti Observation: done"
+	on offer
+		log "流浪者认为，或许有可能用类似计算机病毒的东西感染科·梅雷提的通讯网络，从而接管那些无人机，或是彻底使其瘫痪。"
+		conversation
+			`你将通讯录音交给科学家团队，然后与特勒克会面了一会儿，讨论梅雷提无人机在战斗中可能存在的弱点。“当然，”他说，“如果我们能[颠覆/劫持]它们，而不是直接摧毁，那就更好了。否则，如果没有梅雷提无人机来[淘汰它们/牵制它们]，第二种无人机[派系/变体]就会趁机壮大。”`
+			`	大约一小时后，科学家们联系了特勒克。你回到他们的设施，首席科学家告诉你：“正如我们所[怀疑/推测]的那样。梅雷提无人机是作为一个统一的[集体智慧？整体意识？]的[组件/元素]在运作。我们将进一步[分析/解构]它们的协议，看看能否以某种方式[感染/破坏]它们的网络。”`
+			`	在你等待他们制定计划期间，特勒克建议你去拜访埃克塔西·雷克。如果她在与科拉斯幸存者的沟通上取得了进展，也许他们能帮助流浪者想出办法入侵梅雷提网络并控制那些无人机。`
+				accept
+
+
+
+mission "Wanderers: Kor Efret 2"
+	landing
+	name "科拉斯工程师"
+	description "<origin>上的科拉斯人将你引荐给了<planet>上的一队工程师，他们一直在努力尝试消灭那些自动机。"
+	autosave
+	source "Setar Fort"
+	destination "Laki Nemparu"
+	passengers 1
+	blocked "要接取这个任务，你需要为雷克腾出一个空铺位。"
+	to offer
+		has "Wanderers: Kor Efret 1: done"
+	on offer
+		conversation
+			`雷克见到你似乎很高兴，她比你离开时更加自信、充满活力。她向你介绍了几位科拉斯人，并用他们的语言与他们快速交谈着。`
+			choice
+				`	“雷克！你怎么这么快就学会了他们的语言？”`
+				`	“我来看看科拉斯人能否帮我们入侵科·梅雷提通讯网络，并夺取无人机的控制权。”`
+					goto help
+
+			`	她说：“看来蜕变不仅改变了我的发声器官，还改变了我的心智。现在任何语言对我来说都变得清晰易懂。这很奇怪，因为蜕变是一种随机突变；我对自己会变成什么样毫无发言权。然而，它却赋予了我与科拉斯人建立合作关系所需的恰当技能。”`
+			choice
+				`	“好吧，如果最终变成什么样真的只是碰运气，我很高兴你的新形态如此完美地适合你。”`
+				`	“我来看看科拉斯人能否帮我们入侵科·梅雷提通讯网络，并夺取无人机的控制权。”`
+					goto help
+
+			`	“我也很高兴，”她说，“这很奇怪。多年前，我以为如果我经历了蜕变，我会因为失去旧的身体和身份而怨恨。然而，在这具新身体里，我却感受到前所未有的自在。这是一份意想不到的礼物。不过现在，我能帮你什么忙呢？”你向她讲述了科学家们希望入侵梅雷提网络的事，并请她向科拉斯人提出这个想法。`
+
+			label help
+			`	雷克尽力向科拉斯人解释了你的建议。其中一人做出了回应，雷克翻译道：“她说在<planet>上有一队科拉斯工程师，五十年来一直在努力寻找摧毁自动机的方法。她说也许他们能协助我们。”`
+			`	你同意和雷克一起前往<planet>，看看工程师们能告诉你些什么。`
+				accept
+	on visit
+		dialog `你降落在<planet>上，但意识到载有雷克的护卫还未进入星系。最好先起飞，等它到来。`
+
+
+
+event "wanderers: kashikt battle begins"
+	system "Kashikt"
+		fleet "Kor Efret Home" 6000
+
+event "wanderers: kashikt battle ends"
+	system "Kashikt"
+		fleet "Quarg (Kor Efret)" 1000
+		fleet "Large Quarg (Kor Efret)" 2000
+		fleet "Kor Efret Home" 1000
+
+mission "Wanderers: Kor Efret 3"
+	landing
+	name "保卫 <planet>"
+	description "保卫这颗科·埃弗雷特世界，抵御科·梅雷提的突袭。希望如果你能坚持足够长的时间，会有更多援军到来。"
+	source "Laki Nemparu"
+	to offer
+		has "Wanderers: Kor Efret 2: done"
+	on offer
+		event "wanderers: kashikt battle begins"
+		conversation
+			`在雷克的帮助下，你联系上了那队科拉斯工程师，雷克向他们解释了流浪者入侵科·梅雷提网络的计划。她说话的速度比以前慢了，而且不得不一直停下来提问；显然对话中涉及了一些她尚不熟悉的技术术语。她解释完毕后，科拉斯人沉默了一分钟，然后其中一人非常大声地回答，几乎是在喊叫，同时朝你的方向挥动着手势，像是在把你推开。`
+			`	雷克说：“他说，‘你们当我们是白痴吗？你们以为我们没试过吗？’”科拉斯首领接着又说了一大段话，雷克犹豫着翻译道：“梅雷提的……意识？是不可能被颠覆的。它有一种类似于……免疫系统的东西？就像活的生物一样。任何侵入其网络的外来影响都会被隔离并分析。它不会成为……整体意识？……的一部分，除非被证明是有益的。”`
+			choice
+				`	“但也许流浪者能在科拉斯人失败的地方取得成功。”`
+				`	"What about the Kor Sestor? Do they have any hope of taking over those drones?"`
+					goto sestor
+
+			`	She says, "I'm sorry, <first>, but I'm not going to translate that. It would be an insult to the Korath, and they are very prickly when it comes to their honor. I wish you the best of luck, though."`
+				goto end
+
+			label sestor
+			`	雷克向科拉斯人问了一个问题，并翻译了他们的回答：“他们说没人知道是什么在控制科·塞斯特，但无论控制中心在哪里，肯定都守备森严。他们一直不愿冒着生命危险去探索塞斯特空间，但如果你觉得会有收获的话，你可以自由前往。”`
+
+			label end
+			`	The conversation is interrupted as alarm sirens begin to sound throughout the spaceport. One of the Korath says something to Rek, and they all begin running toward the landing pads. Rek says, "Another Kor Mereti attack. They have become more frequent, lately. You should join the defenders; fighting alongside them will help to gain their trust." You hurry back to your ship and take off...`
+				launch
+	on complete
+		event "wanderers: kashikt battle ends"
+	npc evade
+		government "Kor Mereti"
+		personality staying heroic
+		fleet
+			names "kor mereti"
+			variant
+				"Model 512" 2
+				"Model 256" 4
+				"Model 128" 7
+		dialog `科·梅雷提无人机已被消灭。你应该降落到这颗星球上，重新与雷克和科拉斯工程师们联系。`
+	npc
+		government "Kor Efret"
+		personality staying heroic
+		fleet
+			names "korath"
+			variant
+				"Echo-Galleon"
+				"Arch-Carrack" 2
+				"Charm-Shallop" 4
+	npc
+		government "Kor Efret"
+		personality heroic
+		fleet
+			names "korath"
+			variant
+				"Echo-Galleon"
+				"Arch-Carrack" 2
+				"Charm-Shallop" 4
+	npc
+		government "Quarg (Kor Efret)"
+		personality heroic staying entering
+		fleet
+			names "quarg"
+			variant
+				"Quarg Wardragon" 3
+	npc
+		government "Quarg (Kor Efret)"
+		personality heroic
+		system "Host"
+		fleet
+			names "quarg"
+			variant
+				"Quarg Wardragon" 2
+				"Quarg Wyvern" 3
+				"Quarg Hydra"
+	npc
+		government "Quarg (Kor Efret)"
+		personality heroic
+		system "Mesuket"
+		fleet
+			names "quarg"
+			variant
+				"Quarg Hydra" 2
+
+
+
+mission "Wanderers: Kor Efret 4"
+	landing
+	name "返回<planet>"
+	description "将埃克塔西·雷克送回<planet>，她将在那里继续她了解科拉斯语言与文化的工作。"
+	autosave
+	source "Laki Nemparu"
+	destination "Setar Fort"
+	passengers 1
+	blocked "要接取这个任务，你需要为雷克腾出一个空铺位。"
+	to offer
+		has "Wanderers: Kor Efret 3: done"
+	on offer
+		log "帮助防御了一个友好的科拉斯世界，抵御科·梅雷提无人机的攻击。那个世界上的科拉斯科学家们数十年来一直致力于寻找入侵科·梅雷提网络的方法，但他们认为这不可能实现。"
+		log "Factions" "Archons" `当科拉斯内战达到几乎导致自身灭绝的地步时，德拉克执政官介入，向幸存的科拉斯人下达最后通牒：他们要么放弃先进武器，在夸格的保护下和平生活，要么被放逐到银河系核心附近毫无生机的恒星系。选择放逐的人显然带走了建造跳跃引擎的秘密，这使他们得以劫掠其他种族并窃取其财物。`
+		conversation
+			`当你降落回该行星时，瑞克和几位科拉斯人在你的飞船旁迎接你。“他们想感谢你协助保卫他们的家园，”瑞克说，“并对之前轻视流浪者击败无人机的计划表示歉意。不过他们仍然认为侵入或破坏梅雷提网络是不可能的。”`
+			choice
+				`	“嗯，我想我应该把这个告诉流浪者领袖们。”`
+				`	“他们至少能告诉我们更多关于无人机来源的信息吗？”`
+
+			`	瑞克问了一个问题，然后翻译了回答。“曾经有一场内战，持续了数百年。科·梅雷提和科·塞斯特是两个敌对的帝国。科·埃弗雷特则是那些试图保持中立、不参与战斗的人。”`
+			`	她等科拉斯人继续讲述故事，然后说：“梅雷提和塞斯特各自建造了被编程为攻击对方的无人机舰队。他们还制造了许多其他武器，非常危险的武器。最终，大约一个世纪前，局势变得明朗：如果战争继续下去，将会吞噬并摧毁这两个帝国。执政官介入了，给了科·梅雷提和科·塞斯特的每个成员一个选择。”`
+			`	科拉斯人继续讲述故事。瑞克说：“选择是：放弃跳跃引擎，放弃先进的战争科技，加入科·埃弗雷特，在夸格的监管下生活。任何拒绝者都会被流放到靠近星系核心的毫无生机的星系。塞斯特和梅雷提被迫在流放中共同生活并互相依赖，对流放他们的执政官的愤怒使他们团结在一起。”`
+			choice
+				`	“他们开发了什么样的技术？”`
+				`	“他们说的‘放弃跳跃引擎’是什么意思？他们弄明白如何制造它们了吗？”`
+					goto jump
+
+			`	瑞克提问并翻译了回答。“他们说，他们不会通过描述父辈的行径来重温那份耻辱。但他们在那曾经的星球上，甚至在整个星系中留下的伤疤就是明证。无人机舰队也是如此，它们不断耗尽家园的资源，以继续一场它们的创造者早已放弃的战争。”`
+				goto end
+
+			label jump
+			`	瑞克提问并翻译了回答。“是的，流放者不愿放弃的一件事是制造跳跃引擎的知识，以便他们可以袭击附近的其他物种。不过……”她停顿了一下，听一位科拉斯人说了些别的。“他说，没有跳跃引擎，流放者的处境会好得多。制造过程很不稳定，一个错误的步骤就可能引发爆炸，摧毁正在建造引擎的飞船或空间站。”`
+
+			label end
+			`	瑞克告诉你，她想返回 <planet> 继续她在那里与科拉斯社群的工作。你同意在返回向泰勒克汇报之前先送她过去。`
+				accept
+	on visit
+		dialog `你降落在<planet>上，但意识到载有雷克的护卫还未进入星系。最好先起飞，等它到来。`
+
+
+
+mission "Wanderers: Kor Efret 5"
+	landing
+	name "返回<planet>"
+	description "返回 <planet> 并向索巴里·泰勒克报告：科拉斯认为梅雷提无人机网络无法被攻破。"
+	autosave
+	source "Setar Fort"
+	destination "Spera Anatrusk"
+	to offer
+		has "Wanderers: Kor Efret 4: done"
+	on offer
+		conversation
+			`你在<origin>上让埃克塔西·雷克下船，祝她在继续理解并与科拉斯交好的努力中好运。她显然急于重返工作。`
+			`	然后，你准备返回<planet>。索巴里·泰勒克听到科拉斯工程师们认为没有希望攻破科·梅雷提网络的消息，是不会高兴的。`
+				accept
+
+
+
+mission "Wanderers: Kor Mereti Hacking"
+	landing
+	name "科·梅雷提入侵"
+	description "测试一个流浪者认为可能能够入侵科·梅雷提网络并破坏它的设备。"
+	autosave
+	source "Spera Anatrusk"
+	waypoint "Mekislepti"
+	to offer
+		has "Wanderers: Kor Efret 5: done"
+	cargo "corrupted node" 2
+	blocked "你需要<capacity>才能接取下一个流浪者任务。"
+	on offer
+		conversation
+			`你原本以为流浪者听到科拉斯认为梅雷提整体意识太强大而无法被入侵或控制的消息后会灰心丧气。但当你到达时，通讯科学家们却因一项突破而兴奋不已：他们成功开发出一个程序，能让你为他们取来的那个推理节点样本听从他们的指令。他们请你将该设备带到某个科·梅雷提星系，并在那里的无人机上进行测试。`
+			`	与此同时，你忍不住注意到索巴里·泰勒克也出现了与伊克塔特·雷克蜕羽期开始时相同的羽毛稀疏、外表凌乱的迹象。你不确定是否该开口提及此事。`
+			choice
+				`	“泰勒克，你开始蜕羽了吗？”`
+				`	(Say nothing, and return to my ship.)`
+					goto end
+
+			`	“我想是的，”他说。“我过去一周的[食欲？热量摄入？]增加了一倍，你也看到了，我正在掉羽毛。这真是个[不方便、令人困扰]的时机。我现在明白雷克为什么试图[对抗、推迟]蜕羽期，而不是顺从它了。”`
+
+			label end
+			`	You aren't sure what you can say that would be helpful to him, so you return to your ship and prepare to travel to the Mekislepti system to test out the Kor Mereti hacking program.`
+				accept
+	on visit
+		dialog phrase "generic waypoint on visit"
+	on enter "Mekislepti"
+		dialog
+			`当你进入梅基斯莱普提星系时，一整队无人机迎面拦截。你几乎不敢抱希望，按下激活流浪者程序的按钮。仅仅一瞬，无人机的引擎停止运转，它们像失控般漂移。随即，它们带着新的意图，向你发起攻击。`
+			`	算了，值得一试。`
+	npc
+		government "Kor Mereti"
+		personality staying nemesis
+		system "Mekislepti"
+		fleet
+			names "kor mereti"
+			variant
+				"Model 64"
+				"Model 32" 3
+				"Model 16" 9
+
+
+
+mission "Wanderers: Mind 1"
+	landing
+	name "前往 <planet>"
+	description `前往<planet>上的流浪者人工智能实验室，在那里他们会给你一个他们构建的“人造思维”。`
+	autosave
+	source "Spera Anatrusk"
+	destination "Kort Kehai"
+	to offer
+		has "Wanderers: Kor Mereti Hacking: done"
+	on offer
+		log "测试了一个流浪者认为能够强行接入并控制科·梅雷提网络的装置。然而，实验彻底失败了。"
+		conversation
+			`你面见了流浪者领袖，告诉他们入侵科·梅雷提无人机的尝试失败了。他们似乎不确定接下来该怎么做。一些人想转而针对科·塞斯特；另一些人则想再给科学家们一次机会。`
+			`	特玛·伊里凯特问你：“你认为我们的[尝试、实验]为什么会失败？”`
+			choice
+				`	“科拉斯幸存者说梅雷提无人机有一种免疫系统，能让它们拒绝任何试图破坏或收编其网络的入侵。”`
+				`	“或许我们只是需要一个更复杂或更智能的程序，能够压倒梅雷提的防御。”`
+
+			`	她思索了片刻，然后说道：“在改造行星时，我们说每颗行星都有自己的[意志、身份]，试图[否决、压服]行星是行不通的。相反，我们必须与之[协作、合作]。或许我们也能以同样的方式对待这种[意识]。”`
+			`	一阵兴奋的骚动在流浪者中蔓延。终于，这是一个符合他们偏好行事方式的策略。“你是什么意思？”其中一个问道。`
+			`	伊里凯特说：“我们给它们一个我们用于[行星监控？]的[人工心智？]。让它[融入、成为]梅雷提统合意识的[一部分]。不是要[摧毁、颠覆]它，而是要与之达成[理解、合作]。”`
+			`	几位流浪者似乎对这个建议非常激动。特勒埃克说：“你要让他们获得一项[技术、资源]，使他们比以往更加[强大、能干]吗？”`
+			choice
+				`	“听起来这可能会奏效。如果你们的人工智能真的无意伤害它们，梅雷提或许能认识到这一点。”`
+				`	“我认为特勒埃克是对的。梅雷提无人机在没有接触到先进计算技术的情况下就已经非常危险了。”`
+
+			`	你试图发言，但流浪者们争论得如此热火朝天，以至于他们从亥族的共通语转回了自己的母语，你完全听不懂他们在说什么。辩论最终结束，特勒埃克说：“好吧，我们就试试这件事。不是因为这是[明智、确定]的行动路线，而是因为这[符合流浪者的价值观？]。”`
+			`	他们要求你再次穿越虫洞，前往<planet>上的人工智能实验室。`
+				accept
+
+
+
+mission "Wanderers: Mind 2"
+	landing
+	name "返回<planet>"
+	description `与名为梅托·帕阿雷特的流浪者和他建造的“人工心智”一同返回 <planet>。`
+	autosave
+	source "Kort Kehai"
+	destination "Spera Anatrusk"
+	to offer
+		has "Wanderers: Mind 1: done"
+	cargo "artificial mind" 2
+	passengers 1
+	blocked "要接受此任务，你需要<capacity>空余空间。"
+	on offer
+		log "流浪者有了一个新计划：试图通过将一个强大的流浪者人工智能连接到科·梅雷提网络，来颠覆甚至结交该网络。"
+		log "People" "Meto Pa'aret" `帕阿雷特运营着一个流浪者人工智能实验室。他负责将流浪者“人造心智”引入科·梅雷提集体中，以建立流浪者与科·梅雷提集体之间的联系。`
+		conversation
+			`在<origin>，一位名叫梅托·帕阿雷特的流浪者迎接了你。他解释说，自己负责人工智能实验室，并希望带着托付给你的“意识体”与你同行。“我们已经为这个新用途[改造、重构]了一个气候[模拟、预测]意识体，”他说，“它现在存储了历史与文化信息[库、数据库、资料库]，我们希望这些东西能帮助那个异星[意识、智能][理解、共情]我们，认识到我们的意图是[和平、坦诚]的。”`
+			choice
+				`	“你确定这样做明智吗？让科·梅雷提接触到这么多关于流浪者的信息？”`
+				`	“你觉得这成功的可能性有多大？”`
+					goto work
+
+			`	“这当然不明智，”他说，“但却是[正确的？合适的？]。”`
+				goto end
+
+			label work
+			`	他说：“现有[数据、信息]不足，甚至无法[尝试、冒险]猜测。但尽管如此，这仍然是目前最[有吸引力、令人满意]的[行动方案？]。”`
+
+			label end
+			`	这个“人工心智”原来是一台不比标准货箱大多少的计算机。帕阿雷特走在它旁边，一只翅膀搭在上面，像个过度保护孩子的家长，而流浪者工人们正将它装上你的飞船。显然，这件特殊的技术造物对流浪者来说非常珍贵。`
+				accept
+	on visit
+		dialog `你降落在<planet>上，但发现搭载着梅托·帕阿雷特和心智的护卫尚未进入该星系。最好起飞等待它到达。`
+
+
+
+mission "Wanderers: Mind 3"
+	landing
+	name "召集护卫"
+	description `准备就绪后，前往<planet>与护送舰队会合，尝试将流浪者人造心智连接到科·梅雷提网络。`
+	autosave
+	source "Spera Anatrusk"
+	destination "Vara K'chrai"
+	to offer
+		has "Wanderers: Mind 2: done"
+	on offer
+		conversation
+			`你不在的时候，流浪者们一直在科·梅雷提空间巡逻。特勒克告诉你：“我们已经[决定，推断]如果将心智物理地放置在他们的[家园，领地]中，它最有可能被梅雷提[集体意识]接受。我们的目标是将它安装在他们空间站的[船体，外壳]内。你将搭载执行此任务的[小队，突击队]，而我们的舰队将[保护，掩护]你。”`
+			`	他们需要一些时间来对心智进行必要的修改。与此同时，特勒克建议你应该为一场重大战斗做准备。“当你准备好时，”他说，“前往<planet>与将要陪同你前往梅雷提星系的舰队会合。”`
+				accept
+
+
+
+mission "Wanderers: Mind Escorts"
+	invisible
+	non-blocking
+	landing
+	source "Vara K'chrai"
+	to offer
+		has "Wanderers: Mind 3: done"
+	to fail
+		has "Wanderers: Mind 6: done"
+	npc kill
+		government "Wanderer"
+		personality escort heroic waiting
+		fleet
+			names "wanderer"
+			variant
+				"Hurricane" 2
+				"Derecho" 3
+				"Tempest" 4
+				"Heavy Gust" 2
+
+mission "Wanderers: Mind 4"
+	landing
+	name "返回<planet>"
+	description `护送流浪者舰队返回<planet>，并在那里准备渗透科·梅雷提空间站。`
+	source "Vara K'chrai"
+	destination "Spera Anatrusk"
+	to offer
+		has "Wanderers: Mind 3: done"
+	on offer
+		conversation
+			`一支流浪者舰队在此等候，准备参与将流浪者心智与科·梅雷提融合的行动。你注意到一些将与你同行的飞船采用了前所未见的新设计；流浪者的战争机器正在以惊人的速度持续升级。`
+				accept
+
+
+
+mission "Wanderers: Mind 5"
+	landing
+	name "安装心智"
+	description `一支流浪者舰队将会陪同你前往奇米塔普星系，将心智安装到那里的科拉斯空间站上。`
+	source "Spera Anatrusk"
+	destination "Rekat Moraski"
+	clearance
+	infiltrating
+	to offer
+		has "Wanderers: Mind 4: done"
+	cargo "artificial mind" 2
+	passengers 4
+	blocked "要接受此任务，你需要<capacity>空余空间。"
+	on offer
+		log "流浪者希望将他们的一个人工心智安装到科·梅雷提控制的空间站上。他们的理论是，如果这个心智物理上位于科·梅雷提空间站内，无人机会更有可能将其视为自身网络的一部分，而不是作为外部入侵者作出反应。"
+		conversation
+			`当你遇见梅托·帕阿雷特时，他告诉你：“我们给心智添加了一个[后门，保险]，这样如果[尝试？实验？]失败，我们可以远程关闭它或夺回控制权。所以我们可能会失去心智，但至少梅雷提不会[反过来用它，用它]来对付我们。”`
+			choice
+				`	“好了，我准备好试一试了！”`
+					goto end
+				`	“你认为心智开始尝试接入梅雷提网络时会发生什么？”`
+
+			`	帕阿雷特说：“心智被[接纳，整合]进它们的[意识？]可能需要一些时间。我们可能不会立刻知道是否[成功了？做对了？]。”`
+
+			label end
+			`	一队流浪者工程师登上了你的飞船，你准备将他们连同人造心智一起送往<system>星系的科·梅雷提空间站。`
+				accept
+	on visit
+		dialog `你降落在<planet>上，但发现搭载着流浪者工程师和心智的护卫尚未进入该星系。最好起飞等待它的到来。`
+	npc
+		government "Kor Mereti"
+		personality staying heroic
+		system Chimitarp
+		fleet
+			names "kor mereti"
+			variant
+				"Model 512" 1
+				"Model 256" 1
+				"Model 128" 2
+				"Model 64" 3
+				"Model 32" 5
+				"Model 16" 8
+
+
+
+event "wanderers: kor mereti friendly"
+	government "Kor Mereti"
+		"attitude toward"
+			"Wanderer" 1
+	government "Quarg (Kor Efret)"
+		"attitude toward"
+			"Kor Mereti" 0
+	government "Quarg"
+		"attitude toward"
+			"Kor Mereti" 0
+	government "Kor Efret"
+		"attitude toward"
+			"Kor Mereti" 0
+	"reputation: Kor Mereti" >?= 1
+	"reputation: Kor Mereti (Hostile)" = -1000
+	planet "Rekat Moraski"
+		"required reputation" 1000
+
+# A backwards compatibility event and mission for being able to speak with Kor Mereti ships.
+event "wanderers: kor mereti language"
+	government "Kor Mereti"
+		language "Wanderer"
+		"friendly hail" "friendly wanderer"
+		"friendly disabled hail" "friendly disabled wanderer"
+		"hostile hail" "hostile wanderer"
+		"hostile disabled hail" "hostile disabled wanderer"
+
+mission "Wanderers: Kor Mereti Language"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "Wanderers: Mind 5: done"
+	on offer
+		event "wanderers: kor mereti language"
+		fail
+
+mission "Wanderers: Mind 6"
+	landing
+	name "保卫心智"
+	description "击退仍在攻击流浪者的科·梅雷提无人机。尽量不要激怒那些似乎已倒戈的无人机。"
+	source "Rekat Moraski"
+	destination "Spera Anatrusk"
+	to offer
+		has "Wanderers: Mind 5: done"
+	on offer
+		event "wanderers: kor mereti friendly"
+		fail "Wanderers: Kor Mereti Quarg Attitude Patch"
+		conversation
+			`在流浪者舰队为你抵挡自动机群的间隙，你小心地驾驶飞船驶入一座废弃的对接舱。流浪者将心智安装在舱室后部的一个凹槽内，然后开始将金属板焊接在开口处，防止梅雷提无人机轻易接近心智并将其关闭或摧毁。与此同时，每隔几秒，舱内就会被舷外武器开火或爆炸飞船的闪光照亮。希望流浪者舰队能顶住无人机的攻势。`
+			`	工程师很快完成了工作，你返回飞船准备起飞。你刚一离开，原本似乎处于非激活状态的舱门便轰然关闭。飞船传感器探测到科拉斯船体修理无人机蜂拥而上，将舱门焊接固定，并在其上方层层堆叠新的船体材料。现在已再无可能返回舱室取回心智。与此同时，是时候重新投入战斗了……`
+				launch
+	on enter
+		dialog `这个星系一片混乱。大量梅雷提无人机聚集于此。有些在互相攻击，有些在攻击流浪者。而另一些，很遗憾，似乎盯上了你。你必须尽可能支撑住，同时设法与那些此刻似乎在保护你的无人机保持友好。`
+	npc disable
+		government "Kor Mereti (Hostile)"
+		personality staying heroic
+		fleet
+			names "kor mereti"
+			variant
+				"Model 512" 3
+				"Model 256" 4
+				"Model 128" 4
+				"Model 64" 5
+				"Model 32" 7
+				"Model 16" 12
+		dialog `最后一批敌对的科·梅雷提无人机已被摧毁；剩下的无人机没有攻击流浪者。目前还不完全清楚发生了什么，但希望回到<planet>的流浪者们能通过它们AI的后门连接获得一些信息。`
+	npc
+		government "Kor Mereti"
+		personality staying heroic
+		fleet
+			names "kor mereti"
+			variant
+				"Model 256" 1
+				"Model 128" 1
+				"Model 64" 3
+				"Model 32" 5
+				"Model 16" 10
+	on visit
+		dialog `你已降落在<planet>，但奇米塔普星系仍有敌对的科·梅雷提无人机。最好起飞并确保它们已被解决。`
+
+# For compatibility with saves that got the "wanderers: kor mereti peaceful" event
+# before the introduction of the "Quarg (Kor Efret)" government."
+mission "Wanderers: Kor Mereti Quarg Attitude Patch"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "event: wanderers: kor mereti friendly"
+	on offer
+		event "wanderers: kor mereti friendly"
+		fail
+
+
+
+event "wanderers: kor mereti transformation"
+	system Chimitarp
+		add fleet "Small Kor Mereti" 250
+		add fleet "Large Kor Mereti" 450
+	planet "Korbatri Eska"
+		add description `	Far from the ruined cities, the Kor Mereti have begun building a sort of village of their own: a sprawling complex of greenhouses containing a wide variety of plant samples.`
+
+mission "Wanderers: Mind 7"
+	landing
+	name "调查 <planet>"
+	description "前往<destination>，查明科·梅雷提在那里做什么，因为它们显然不再敌对。"
+	autosave
+	source "Spera Anatrusk"
+	destination "Korbatri Eska"
+	to offer
+		has "Wanderers: Mind 6: done"
+	on offer
+		event "wanderers: kor mereti transformation"
+		conversation
+			`回到<origin>的流浪者们正急切地想知道战斗的结果。帕阿雷特告诉你：“在心智[接触、融合]梅雷提不到一秒后，它就切断了[后门、故障保护]连接。因此我们对于心智在做什么、或者梅雷提是否[接受、欢迎]它没有任何[情报、可视性]。”`
+			choice
+				`	“大多数无人机开始站在我们一边战斗。这似乎是个好兆头。”`
+				`	“他们已经封锁了通往心智的入口。现在我们无法再取回它了。”`
+					goto mind
+
+			`	“确实，”帕阿雷特说，“但无论心智[造成、催化]何种[转变、变化]，都可能尚未完成。现在就相信我们已经[成功、选择正确]还为时过早。”`
+				goto next
+
+			label mind
+			`	“这真是[令人欣慰、令人鼓舞]，”帕阿雷特说，“如果它们将其视为[入侵者、敌人]的话，肯定会摧毁心智，而不是建造一个[巢穴、堡垒]来保护它。”`
+
+			label next
+			`	几分钟后，特勒克带着一些流浪者舰队的侦察船抵达。“无人机已经封锁了那个空间站的所有[入口、通道]，”他说，“它们[蜂拥、聚集]在周围，[保护性地、戒备地]。我们无法返回那里[发现、评估]内部正在发生什么。而且行星表面也有一些[活动、情况]。”`
+			choice
+				`	“什么样的活动？”`
+				`	“我想去调查一下。”`
+					goto end
+
+			`	“它们似乎在[搜索、寻找]资源来建造什么东西，”帕阿雷特说。“这很[奇怪、令人惊讶]；梅雷提无人机直到现在都忽略它们[星系、领地]中的行星。你是否[愿意、勇敢]将你的飞船降落在星球表面并进行调查？”你同意了。`
+
+			label end
+			`	流浪者们祝你一切好运，你准备返回<system>星系。希望当你降落在行星表面、暴露在外且相对缺乏防御时，梅雷提无人机不会再次变得敌对。`
+				accept
+
+
+
+mission "Wanderers: Mind 8"
+	landing
+	name "调查 <origin>"
+	description "向流浪者报告科·梅雷提无人机的新行为。"
+	autosave
+	source "Korbatri Eska"
+	destination "Spera Anatrusk"
+	to offer
+		has "Wanderers: Mind 7: done"
+	cargo "dead plant" 1
+	blocked "你需要1吨的货舱空间才能接收下一个任务。"
+	on offer
+		log "流浪者的计策成功了，却带来了意想不到的结果。科·梅雷提的无人机彻底地将流浪者心智吸收进了它们自身的意识中，以至于这些无人机现在相信它们自己就是流浪者。"
+		conversation
+			`当你降落时，你看到科·梅雷提无人机——它们直到最近还在忽略它们所控制行星的表面——现在正在<origin>上建造某种设施。阳光在崭新洁净的建筑上闪耀，但直到你离它只有几十米高时，你才意识到这个设施是什么。`
+			`	那是一座温室。`
+			`	设施内部是一排排形状大小各异的植物。就像梅雷提无人机本身一样，设施的布局随意而杂乱。接近穿梭机大小的无人机像蜜蜂一样嗡嗡地绕着它飞行，有些带着新鲜样本抵达，另一些则照料和浇灌植物。`
+			`	当你的飞船降落时，几架无人机靠近了，其中一架用洪亮的合成声音说道：“你就是那个帮助了我们[战斗，抵抗]好战的亥族的人类，”它说，“你是我们的朋友。”`
+			choice
+				`	“你是说我帮助了流浪者？我不记得无羁者进入过科拉斯空间或攻击过你们。”`
+				`	“是的，我是你们的朋友。”`
+					goto friend
+
+			`	无人机犹豫了一下，似乎有些困惑，然后说：“你在我们的旧领地帮助了我们[阻挡，抵抗]无羁者，为我们争取了足够长的时间让我们能进入天眼、蜕化，并取得我们的新[形态，本质]。”`
+				goto next
+
+			label friend
+			`	无人机说：“我们很感激你。你为我们[赢得了，争取了]足够的时间进入天眼、蜕化，并取得我们的新[形态，本质]。”`
+
+			label next
+			choice
+				`	“你们不是流浪者。你们是科拉斯创造的。”`
+					goto korath
+				`	“你是说你们是流浪者的新形态？”`
+
+			`	无人机重复道：“我们进入了天眼。我们取得了新形态。我们是流浪者在其新[居留，漂泊]之地所孕育的[孩子，后代]。”`
+				goto plant
+
+			label korath
+			`	无人机结结巴巴地说：“科拉斯。科拉斯……创造了我们的身体？是的，科拉斯创造了我们的身体。”听起来它像是在与别人对话，或者努力回忆什么。“是的，但流浪者……”它倾斜身体靠近你。用稍微不那么洪亮的声音（也许是尝试低语）说道：“流浪者创造了我们的灵魂。”`
+
+			label plant
+			`	当你还在消化无人机的陈述时，另一个无人机从温室设施飞出，携带一个方形的大金属盆。盆里装满土壤，土里种着一棵看起来非常干燥的小灌木，上面挂着几片枯叶。“我们把它弄坏了，”无人机说。“请修好它。”`
+			choice
+				`	“我觉得它死了。”`
+					goto end
+				`	（更仔细地观察这棵植物。）`
+
+			`	植物干枯脆弱，毫无生命迹象。“抱歉，”你说，“但我认为它死了。”`
+
+			label end
+			`	无人机说：“我们给它浇了水。但也许泥土[有毒，不健康]。或者光线太亮。人类修不好它，但我们的[父母？祖先？]知道怎么做。你能把它带给他们吗？”`
+			`	它们似乎因这棵死去的植物而心烦意乱，不愿提供更多关于它们自身的信息。尽管情况荒谬，你还是同意把植物带回流浪者那里，看看他们能否为它做点什么。`
+				accept
+	on visit
+		dialog `你已到达 <planet>，但携带死亡植物的护卫尚未抵达该星系。最好先离开并等待它。`
+
+
+
+mission "Wanderers: Mentors 1"
+	landing
+	name "拜访<planet>"
+	description "前往 <planet> 与一群渴望与科·梅雷提无人机合作的流浪者教授和科学家会合。"
+	autosave
+	source "Spera Anatrusk"
+	destination "Var' Kayi"
+	to offer
+		has "Wanderers: Mind 8: done"
+	on offer
+		log "流浪者们逐渐相信，在引入他们的心智之前，科·梅雷提网络实际上并非一个具有自我意识的实体，但现在它已凭自身意志成为了一个有知觉的存在。而且，这显然是一个对园艺有着浓厚兴趣的有知觉的存在。"
+		conversation
+			`当你返回时，他们更热衷于戳弄那株死去的植物，而不是听你汇报关于梅雷提无人机的见闻——这想必揭示了流浪者心理中某些有趣的方面。但一旦他们送出土壤样本等待分析结果，在结果返回前无事可做时，他们终于听你讲述了经历。`
+			`	“我们的目标是和它们交流，”Tele'ek 说道，“而不是[毁灭/抹除]它们的身份并用我们的取而代之。我们都做了些什么？”`
+			`	Meto Pa'aret 一直安静地听着，终于开口：“身份是思维为了[解释/合理化/赋予意义]自身存在而讲述的故事，”他说，“也许在我们的[介入/干预]之前，梅雷提拥有智能却没有故事，因此也就没有[自我意识/知觉]。”`
+			choice
+				`	“你是说我们无意中创造了一个有感知的物种？”`
+				`	“这会让梅雷提的威胁变小，还是变大？”`
+
+			`	你的问题被完全无视了，因为 Pa'aret 的评论让其他流浪者重新对那盆栽产生了兴趣。“非常结实的[构造/拼接]，”其中一个用爪子顺着花盆边缘划过，说道。`
+			`	“没错，”另一个说，“但为什么要用金属做[花盆？]会生锈的。”`
+			`	“它们[学会/弄明白了]花盆需要排水孔，”另一个看着花盆底部说。`
+			`	“对如此[年轻/不成熟]的物种来说，这作品非常出色，”Sobari Tele'ek 说，语气带着一丝自豪。`
+			choice
+				`	“抱歉打断一下，但你们有没有想过创造出一个新的有感知物种意味着什么？”`
+
+			`	他们都沉默了一会儿，然后 Pa'aret 说：“它们需要[导师/老师]。”`
+			`	地形改造主管 Tema'a Iriket 说：“我会请求 <planet> 立即派遣一支[专家/教授]团队。船长 <last>，你能前往那里并将他们安全护送穿过天眼、抵达科巴特里埃斯卡吗？”`
+			`	你同意了。当你离开房间返回飞船时，流浪者们切换到了自己的语言，开始了一场激烈的讨论。`
+				accept
+
+
+
+mission "Wanderers: Mentors 2"
+	landing
+	name "流浪者前往 <planet>"
+	description "护送这艘流浪者运输船安全抵达 <planet>，船上的科学家与教授们将在那里开始教导和指导科·梅雷提。"
+	autosave
+	source "Var' Kayi"
+	destination "Korbatri Eska"
+	to offer
+		has "Wanderers: Mentors 1: done"
+	on offer
+		conversation
+			`一支流浪者地形改造专家团队已经在 <origin> 集结。他们征用了一艘运输船，装满了各式各样的传感器、生物反应器、化学过滤器和其他科学设备。但很明显，没有一个人真正理解科·梅雷提那边的情况。团队负责人说：“我们要去见[有感知？觉醒？]的机器人？它们对[树叶，植物]感兴趣？有些星球需要[修复，治愈]？”`
+			`	你尽力回答他们的问题，但这显然是他们任何人都没有预料到的情况。也许甚至是他们的种族以前从未需要应对的情况，因为他们通常是在早已被原住民遗弃的太空区域工作。`
+			`	运输船准备跟随你返回 <planet>，希望在那里他们能获得更多问题的解答。`
+				accept
+	npc accompany save
+		government "Wanderer"
+		personality escort
+		ship "Riptide" "Green Talon"
+	on visit
+		dialog `你已抵达 <planet>，但把流浪者的飞船落在了后面。最好出发并等待它到达。`
+
+
+
+mission "Wanderers: Mentors 3"
+	landing
+	name "返回<planet>"
+	description "返回 <planet>，去看看流浪者领袖们下一步的计划。"
+	autosave
+	source "Korbatri Eska"
+	destination "Spera Anatrusk"
+	to offer
+		has "Wanderers: Mentors 2: done"
+	on offer
+		log "带领一群流浪者导师和教师来到科·梅雷提的某个世界，他们将在此寻求与无人机建立联系，帮助它们学会关爱生命，并加入到流浪者修复被毁星球的使命中。"
+		conversation
+			`上次你离开 <origin> 时，温室设施里只有不到十几栋建筑。现在它已发展到一座大型空间站的规模，包括一些高达数十层的塔楼。一些植物现在生长在露天平台上；另一些则生长在足以容纳成年树木的穹顶围场内。较大的穹顶内还有鸟类在飞翔，以及一些较大的陆地动物。一切都由闪亮的钢铁和玻璃建成，充满茂盛的植被；从高处俯瞰，设施就像散落的一把钻石和祖母绿。`
+			`	你护送的那艘运输船上满载教授和研究员，他们显然不习惯任何军事纪律，也不习惯生活在危险的太空区域：运输船一着陆，他们就飞向温室，甚至懒得等待他们所谓的负责人的指示。其中几位已经和无人机开始交谈，而其他人则在探索设施的不同房间，用爪子检查植物和探测土壤。`
+			`	团队的负责人看起来已经有点不知所措，飞过来和你交谈。“我们接下来[预期，请求]做什么？”他问道。`
+			choice
+				`	“帮助无人机学会照顾这个区域的行星。”`
+				`	“确保无人机仍然相信流浪者是站在它们一边的。”`
+					goto side
+				`	“也许看看无人机是否愿意与我们分享它们的技术？它们有令人印象深刻的武器。”`
+					goto weapons
+
+			`	他说：“我们会尽力这样做。但是，把[植物，生物]存放在金属盒子里，这不是流浪者的方式。我们寻求让世界回归[自然，原始]的状态，而不是在它们上面建立我们自己的[纪念物，建筑]。”`
+				goto end
+
+			label side
+			`	“很好，”他说，“我们会这样做。请返回 <planet>，看看我们的[领袖，长者]认为下一步应该做什么。”`
+				goto end
+
+			label weapons
+			`	他似乎对这个建议不太热情。“人类，”他说，“你的[优先事项，目标]和我们非常不同。比起它们破坏的能力，我对这些无人机用于[再生，创造]的可能性更[兴奋，感兴趣]。”`
+
+			label end
+			`	你返回自己的飞船。下次再回到这个世界时，看看还有什么变化，将会很有趣。`
+				accept
+	on complete
+		event "wanderers: hurricane mass production"
+		event "wanderers: desi seledrak" 24
+		conversation
+			`来自梅雷蒂无人机的危险似乎已经被消除，流浪者领袖们的心情轻松了许多。事实上，他们现在对萌生的梅雷蒂意识如此着迷，以至于似乎没有考虑科·塞斯特空间中更遥远的无人机威胁。相反，他们想专注于他们真正的使命：改造行星。`
+			`	索巴里·特勒克告诉你：“我们应该花时间享受这份[和平，喘息]。我们不需要立即[面对，处理]其他无人机。我们将着手在附近建立第二个[定居点，基地]。等基地[建成，设立]后，去那里找我们，我们再决定下一步的[行动，措施]。与此同时，我们最新的[战争，防御]舰正在我们的[主要，中心]世界生产，你可以购买一艘。”`
+
+
+
+mission "Wanderers: Tour 1"
+	landing
+	name "科·埃弗雷特外交"
+	description "访问位于 <planet> 的埃克塔西·雷克，看看科·埃弗雷特是否愿意前往 <origin> 进行外交访问。"
+	autosave
+	source "Desi Seledrak"
+	destination "Setar Fort"
+	to offer
+		has "event: wanderers: desi seledrak"
+	on offer
+		conversation
+			`大部分流浪者长老都已迁居到这颗星球，以便更深入地参与最新的地形改造工程——显然在他们看来，这比与无人机的战斗更有意义。在你听他们滔滔不绝地讲了近一个小时的土壤恢复、大气微粒和碳循环之后，你问他们接下来自己能帮上什么忙。`
+			`	泰玛·伊里凯特说：“我们应该采取进一步行动，[与科拉斯结交，与科拉斯合作]。也许你可以去一趟瑞克，[邀请，欢迎]她那些科拉斯朋友来[见证，考察]我们这里的工作？我们的希望是，下一个[定居点，项目]能成为[与他们的合作项目？]。”`
+			choice
+				`	“当然，我很乐意这么做。”`
+					accept
+				`	“那对付塞斯特无人机的事呢？”`
+			`	“以后会有[时间，机会]的，”伊里凯特说，“它们目前对我们来说并非[威胁，当务之急]。”`
+			`	你同意去拜访科·埃弗雷提，并邀请他们回到这里参观。`
+				accept
+
+
+
+mission "Wanderers: Tour 2"
+	landing
+	name "科·埃弗雷特外交"
+	description "护送一艘科埃弗雷特飞船返回 <planet> 进行外交访问。"
+	source "Setar Fort"
+	destination "Desi Seledrak"
+	to offer
+		has "Wanderers: Tour 1: done"
+	on offer
+		log "带领一些友好的科拉斯人在流浪者空间进行游览，向他们展示流浪者如何成功修复和照料被战争损坏的世界。"
+		conversation
+			`雷克不仅在科拉斯语学习上取得了惊人的进步，在赢得他们信任方面也是如此。他们在这里为她建造了一座流浪者风格的树屋居住，而且似乎她正在接待源源不断的新访客。“我能帮你什么？”她问道。`
+			choice
+				`	“<planet>上的流浪者想邀请一些科埃弗雷特领袖去访问他们。”`
+					goto visit
+				`	“你到目前为止对科拉斯有什么印象？”`
+			`	她说：“我们流浪者见过许多失败物种留下的废墟。这让我们非常困惑，为什么有些物种能够像我们一样过渡到一个强大、稳定、可持续的文明，而其他物种却陷入混乱。科埃弗雷特希望他们从废墟中建立起的是一个真正和平繁荣的社会。”`
+			label visit
+			`	你告诉她流浪者的邀请，她带你去拜访了一些科拉斯领袖。他们渴望了解更多关于流浪者的情况，但经过一番谈判后，他们明确表示更愿意乘坐自己的飞船旅行，并邀请雷克作为他们的客人，而不是作为你的乘客前往。`
+			choice
+				`	（同意护卫他们的飞船到<planet>。）`
+					accept
+				`	“我认为如果你们乘坐我的飞船旅行会更安全。”`
+			`	雷克与他们交谈了一会儿，然后向你解释道：“他们想掌控自己的旅程，而不是只作为外星飞船上的‘活货物’。听起来这关乎荣誉。”既然这似乎是唯一的选择，你同意让他们乘坐自己的飞船跟随你前往<planet>。`
+				accept
+	on visit
+		dialog `你已抵达<planet>，但科拉斯飞船尚未到达。最好先离开，等待它到达。`
+	npc accompany save
+		government "Kor Efret"
+		personality escort
+		ship "Echo-Galleon" "Asikimi Ko Cheska"
+
+
+
+mission "Wanderers: Tour 3"
+	landing
+	name "科埃弗雷特之旅"
+	description "护送一艘科埃弗雷特飞船至<planet>，让他们体验流浪者改造世界所能达到的效果。"
+	source "Desi Seledrak"
+	destination "Vara K'chrai"
+	to offer
+		has "Wanderers: Tour 2: done"
+	on offer
+		conversation
+			`科埃弗雷特的飞船降落在你的旁边，雷克带着他们的领袖来会见流浪者。他们几乎花了整整一天，由人在定居点内带领参观，提问并检查流浪者的地形改造设备。但最后，一位科拉斯领袖说：“还要多久我们才能看到这里的变化？还要多久才能清楚你们的计划会奏效？”`
+			`	当特玛阿·伊里凯特通过雷克翻译说那需要几个世纪时，那位领袖说：“你能带我们去一个你们已经完成工作的地方看看吗？”`
+			`	流浪者们讨论了一下，然后特莱克说：“他们应该[前往、去到] <planet>，看看我们在工作[顶峰、终点]所取得的成就。船长 <last>，你愿意[陪同、带领]他们去那里吗？”`
+			choice
+				`	“当然，我很乐意。”`
+					accept
+				`	“你确定让他们带着自己的飞船去你们的母星安全吗？”`
+			`	特莱克说：“如果我们不[选择、冒险]去信任他们，他们就永远没有[机会、动力]来证明自己值得信任。所以，我们要迈出[第一步、催化剂般的]那一步。”`
+			`	你同意护送科埃弗雷特的飞船穿过虫洞前往 <planet>。`
+				accept
+	on visit
+		dialog `你已抵达<planet>，但科拉斯飞船尚未到达。最好先离开，等待它到达。`
+	npc accompany save
+		government "Kor Efret"
+		personality escort
+		ship "Echo-Galleon" "Asikimi Ko Cheska"
+
+
+
+mission "Wanderers: Tour 4"
+	landing
+	name "科埃弗雷特之旅"
+	description "护卫一艘科埃弗雷特飞船前往<planet>，向他们展示流浪者农业世界的运作方式。"
+	source "Vara K'chrai"
+	destination "Vara Rakak"
+	to offer
+		has "Wanderers: Tour 3: done"
+	on offer
+		conversation
+			`科埃弗雷特人惊叹于<origin>这里的树顶村庄、高耸建筑和繁忙的太空港。但最触动他们的是城市外原生态的森林和山脉。在当地几位流浪者领袖的带领下，他们来到那里，站了足足半小时，只是望着风中摇曳的树木和头顶盘旋的飞鸟。几人发出奇怪的吠叫与哀鸣声，雷克告诉你，他们是在哭泣——哀悼自己的星球上，已经几乎找不到如此美丽且未受破坏的地方了。`
+			`	科拉斯人渴望看到更多这般自然美景，流浪者领袖便建议他们下一站前往<planet>，去看看流浪者如何建造农场，年复一年产出丰饶的作物，却不耗尽土壤。`
+				accept
+	on visit
+		dialog `你已抵达<planet>，但科拉斯飞船尚未到达。最好先离开，等待它到达。`
+	npc accompany save
+		government "Kor Efret"
+		personality escort
+		ship "Echo-Galleon" "Asikimi Ko Cheska"
+
+
+
+mission "Wanderers: Tour 5"
+	landing
+	name "科埃弗雷特之旅"
+	description "护送一艘科埃弗雷特飞船前往<planet>，那里流浪者正在与无羁者交战。"
+	source "Vara Rakak"
+	destination "Varu Tev'kei"
+	to offer
+		has "Wanderers: Tour 4: done"
+	on offer
+		conversation
+			`科拉斯人对这里的农场运作方式非常感兴趣。“我们正试图在我们的世界上学习如何做到这一点，”其中一人解释道，“但那里有枯萎病、干旱，以及因我们甚至无法理解的原因而歉收的作物。”这里的流浪者科学家们尽力解释他们如何保持作物和土壤的健康，雷克则努力将他们的技术术语翻译成科拉斯人能听懂的语言。`
+			`	参观结束后，雷克用你的语言对你说：“<first>，我觉得我们接下来应该带他们去看看<planet>。我们应该让他们看看与无羁者的战争。如果他们看到我们人数稀少、四面受敌，只有寥寥几个世界，他们会觉得我们没那么有威胁。”`
+			choice
+				`	“听起来是个好主意。”`
+					goto end
+				`	“如果他们觉得你们威胁小了，反而壮胆来攻击你们呢？”`
+			`	雷克说：“我们仍然数量更多、技术更先进。而且，因恐惧而引发的战争，并不比因侵略而引发的少。”`
+			label end
+			`	你同意护送科拉斯飞船前往<planet>。希望他们不会被无羁者的舰队炸成碎片；那将是一场外交灾难。`
+				accept
+	on visit
+		dialog `你已抵达<planet>，但科拉斯飞船尚未到达。最好先离开，等待它到达。`
+	npc accompany save
+		government "Kor Efret"
+		personality escort
+		ship "Echo-Galleon" "Asikimi Ko Cheska"
+	npc
+		system "Ap'arak"
+		government "Hai (Unfettered)"
+		personality staying heroic
+		fleet "Large Unfettered" 2
+
+
+
+mission "Wanderers: Tour 6"
+	landing
+	name "科埃弗雷特之旅"
+	description "护卫科埃弗雷特船只穿过天眼返回<planet>。"
+	source "Varu Tev'kei"
+	destination "Setar Fort"
+	to offer
+		has "Wanderers: Tour 5: done"
+	on offer
+		conversation
+			`科拉斯的飞船安全降落在<origin>。雷克向科拉斯人解释说，整个流浪者领地曾经被亥族控制，但亥族毁掉了这些世界并遗弃了它们。她告诉他们，现在流浪者已经完成了修复这些世界的工作，正在将它们归还给亥族。`
+			`	这个故事有点偏颇，科拉斯人表示怀疑。“如果你们帮了他们这么大的忙，”其中一个问道，“他们为什么还要攻击你们？”`
+			`	雷克解释说，亥族想在流浪者准备好归还之前就要回这些世界。同一个科拉斯人说：“那么，如果我们允许你们扩散到我们的世界，你们就不会在我们提出要求时将它们归还，而是要等到你们认为完工了才还？”`
+			`	雷克试图向他们保证，在他们自己的领土上，他们将与流浪者并肩工作和生活，共同控制他们的世界。不清楚他们是否相信她。“我们看够了，”同一个科拉斯人说，“我们现在就回我们的世界。”你同意护送他们穿过天眼，确保他们安全抵达<planet>。`
+				accept
+	on visit
+		dialog `你已抵达<planet>，但科拉斯飞船尚未到达。最好先离开，等待它到达。`
+	npc accompany save
+		government "Kor Efret"
+		personality escort
+		ship "Echo-Galleon" "Asikimi Ko Cheska"
+
+
+
+mission "Wanderers: Tour 7"
+	landing
+	name "返回<planet>"
+	description "带着雷克从科埃弗雷特外交巡访中获得的报告返回 <planet>。"
+	autosave
+	source "Setar Fort"
+	destination "Desi Seledrak"
+	to offer
+		has "Wanderers: Tour 6: done"
+	on offer
+		conversation
+			`你已安全护送科拉斯世界舰返回他们的家园。希望他们在旅途中看到的景象能让他们更渴望与流浪者成为朋友，而不是相反。雷克递给你一份书面报告，称这是外交任务的记录，并说道：“请把这个送到<planet>上的索巴里·特莱艾克手中。”`
+			choice
+				`	“好的，我会送到的。”`
+					accept
+				`	“你认为这次任务成功了吗？”`
+			`	“希望如此，”她说，“真正的考验在于我们未来如何对待科·埃弗雷提。显然，要赢得他们的信任还需要付出一些努力。”`
+			`	你回到船上，准备前往<planet>。`
+				accept
+
+
+
+mission "Wanderers: Sestor Scanning"
+	landing
+	name "扫描塞斯特行星"
+	description "扫描塞斯特空间中所有可居住的行星，以尝试找到自动机械控制中心的位置。"
+	autosave
+	source "Desi Seledrak"
+	to offer
+		has "Wanderers: Tour 7: done"
+	blocked "你需要<capacity>才能接取下一个任务。"
+	cargo "scanning equipment" 3
+	clearance
+	infiltrating
+	stopover "Sopi Lefarkata"
+	stopover "Keneska Fek"
+	stopover "Sasirka Gatru"
+	stopover "Sestor Ikfar"
+	stopover "Drekag Firask"
+	stopover "Firka Tesk"
+	on offer
+		log "同意穿越科·塞斯特空间，扫描行星以寻找远程控制科·塞斯特无人机的设施。"
+		conversation
+			`流浪者们急切地想知道你外交任务的结果，而雷克报告中的内容似乎鼓舞了他们。特莱克说：“如果我们也能[处理，消除]科·塞斯特无人机，整个科拉斯空间将对我们和科拉斯幸存者[开放，可用]。届时和平将不再有[障碍，阻隔]。”`
+			choice
+				`	“如果你将你的舰队与科·梅雷提联合，就能直接摧毁科·塞斯特无人机。”`
+				`	“如果科·塞斯特无人机是远程控制的，我们应该尝试找到控制站并接管它，或者摧毁它。”`
+					goto next
+
+			`	特玛阿·伊里凯特说：“以巨大的[毁灭，生命损失]为代价。这不可[接受，道德]。我们应该寻求一个更[微妙，优雅]的解决方案。”`
+
+			label next
+			`	经过一番讨论，流浪者们同意处理科·塞斯特无人机的最佳方法是试图找出它们的控制中心所在。“它们的通讯[无法追踪，无法探测]，”特莱克说，“但[控制中心，通讯枢纽]肯定防御严密。因此，通过[狩猎，搜索]一个防御严密的[地点，设施]，我们或许能找到它。”`
+			`	伊里凯特说：“我可以向<last>船长提供来自地形改造团队的[探测?]扫描仪和[探地雷达?]。这样的[设施, 装置]很可能位于地下深处。”`
+			`	流浪者们开始将扫描设备装载到你的飞船上，并要求你降落在科·塞斯特空间的每颗行星上收集测量数据。“把[数据, 结果]带回来给我们分析，”伊里凯特说。`
+				accept
+	on visit
+		dialog phrase "generic stopover on visit"
+	on stopover
+		dialog `这是流浪者要求你扫描的最后一颗科·塞斯特行星。是时候带着数据返回<planet>了。`
+
+
+
+event "wanderers: battle in solifar begins"
+	system Solifar
+		fleet "Wanderer Flycatchers" 400
+
+event "wanderers: battle in solifar ends"
+	system Solifar
+		fleet "Large Quarg (Kor Efret)" 3000
+		fleet "Wanderer Defense" 1800
+		fleet "Wanderer Drones" 700
+		fleet "Wanderer Flycatchers" 800
+
+mission "Wanderers: Sestor Attack"
+	landing
+	name "保卫 <planet>"
+	description "<planet>正遭到科·塞斯特舰队攻击。击退他们，然后返回星球，再决定下一步行动。"
+	source "Desi Seledrak"
+	to offer
+		has "Wanderers: Sestor Scanning: done"
+	on offer
+		conversation
+			`在你将扫描数据交给科学家几个小时后，你被叫去参加流浪者领袖的会议。“我们可能找到了那个[设施, 中心]，”泰莱克说，“但我们还不是[很确定, 很有把握]。确实有一颗行星上有地下[地堡, 要塞]，但它肯定在他们的战争期间遭到[损坏, 攻陷]了。”他调出该设施的全息投影，显示其中一部分已被攻破，有一条隧道从那里通到地面。`
+			choice
+				`	“你说得对，一旦设施被攻破，他们应该就不会继续使用了。”`
+				`	“有没有迹象表明，他们在损坏后试图重建？或者它仍在被使用？”`
+
+			`	伊里凯特走近全息投影端详。她调整了一些控制键，一层叠加显示以另一种颜色呈现。“科埃弗雷特说他们的[内战, 文明崩溃]在一个世纪前结束了，是吗？”她问道。你点点头。她绕着投影仔细查看，然后说：“[基岩？]中的这些[裂缝, 断裂]尚未被地下水[渗入, 浸透]。这损坏不是一个世纪前留下的。它最多发生在一个[月？]前。”`
+			choice
+				`	“会不会是住在那下面的人决定放弃并返回地面了？”`
+				`	“这是否意味着有人在我们之前占领了那个设施？”`
+
+			`	突然，你听到太空港传来警报声，一个信使冲进房间，他的爪子在地板上摩擦出尖锐的声音，滑行停下。“塞斯特无人机！”他说。“[庞大的, 压倒性的]舰队。需要所有[防御者, 战斗人员]立即出动。”`
+			`	You return to your ship and quickly fire up the engines...`
+				launch
+	on enter
+		dialog `这里确实有一支科·塞斯特舰队，但规模远没有信使所说的那么大。要么是信使夸大了，要么是部分舰队已经逃走了。`
+	on visit
+		dialog `头顶仍有科·塞斯特飞船。你应该起飞，重新投入战斗。`
+	on accept
+		event "wanderers: battle in solifar begins"
+	on complete
+		event "wanderers: battle in solifar ends"
+	npc evade
+		government "Kor Sestor"
+		personality staying heroic
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Trapper)"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Far Lek 14" 7
+				"Met Par Tek 53"
+				"Met Par Tek 53 (Sniper)"
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Defense)"
+				"Tek Far 78 - Osk (Close Quarters)"
+				"Far Osk 27" 7
+				"Met Par Tek 53"
+	npc evade
+		government "Kor Sestor"
+		personality entering heroic
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Tek Far 109"
+				"Tek Far 71 - Lek"
+				"Tek Far 78 - Osk"
+				"Far Lek 14" 17
+				"Far Osk 27" 13
+				"Met Par Tek 53 (Sniper)" 2
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Tek Far 109" 2
+				"Far Lek 14" 18
+				"Far Osk 27" 14
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Trapper)"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Far Lek 14" 7
+				"Tek Far 78 - Osk (Close Quarters)"
+				"Far Osk 27" 6
+	npc
+		government "Wanderer"
+		personality staying heroic
+		fleet
+			names "wanderer"
+			variant
+				"Hurricane (Turret)"
+				"Tempest"
+				"Derecho (Turret)"
+		fleet
+			names "wanderer"
+			variant
+				"Tempest (Heavy)"
+				"Heavy Gust"
+				"Strong Wind"
+		fleet
+			names "wanderer"
+			variant
+				"Autumn Leaf" 3
+	npc
+		government "Wanderer"
+		personality heroic
+		fleet
+			names "wanderer"
+			variant
+				"Autumn Leaf" 4
+		fleet
+			names "wanderer"
+			variant
+				"Hurricane (Tough)"
+				"Derecho"
+				"Tempest (Missile)" 2
+	npc
+		government "Kor Mereti"
+		personality heroic
+		system "Mekislepti"
+		fleet
+			names "kor mereti"
+			variant
+				"Model 512"
+				"Model 256"
+				"Model 64"
+	npc
+		government "Kor Mereti"
+		personality heroic staying
+		fleet
+			names "kor mereti"
+			variant
+				"Model 16" 2
+				
+
+
+
+event "wanderers: kor sestor are aimless"
+	fleet "Small Kor Sestor"
+		personality
+			timid
+			coward
+	fleet "Large Kor Sestor"
+		personality
+			timid
+			coward
+	system "Mesuket"
+		fleet "Large Kor Mereti" 900
+		fleet "Large Kor Sestor" 5000
+	system Eshkoshtar
+		remove fleet "Large Kor Sestor"
+	system Salipastart
+		remove fleet "Large Kor Sestor"
+	system Mekislepti
+		remove fleet "Large Kor Sestor"
+	system Similisti
+		remove fleet "Large Kor Sestor"
+	system Faronektu
+		remove fleet "Large Kor Sestor"
+	planet "Varu K'prai"
+		landscape land/beach1
+		add description `	There used to be a thriving spaceport here, but it has been razed to the ground by the Kor Sestor fleet.`
+		remove spaceport
+		remove outfitter
+		remove "required reputation"
+		remove tribute
+	planet Zenith
+		bribe 0
+		"required reputation" 1000
+	"reputation: Pirate" <?= -1
+	"unvisit planet" "Varu K'prai"
+
+mission "Wanderers: Sestor Search"
+	landing
+	name "寻找塞斯特舰队"
+	description "一支大型科·塞斯特舰队通过虫洞进入了流浪者空间。查明他们去了哪里，以及在那里做什么。"
+	autosave
+	source "Desi Seledrak"
+	to offer
+		has "Wanderers: Sestor Attack: done"
+	to complete
+		never
+	destination "Vara K'chrai"
+	on offer
+		log "似乎在流浪者之前，就有其他人找到了科·塞斯特的中央指挥部，并控制了科·塞斯特舰队。大部分科·塞斯特无人机穿过了天眼，进入了流浪者的旧领地，流浪者可能尚未做好迎战它们的准备。"
+		event "wanderers: kor sestor are aimless"
+		conversation
+			`你回到星球，原本以为流浪者们正在庆祝胜利，但领袖们带来了沉重的消息。“我们对抗的无人机只是舰队的[后卫？, 残部？]，”泰莱克说，“几十艘[主力舰？]穿过了这个星系，继续前行。这是它们的[航向, 目的地]。”在全息投影上，他调出一张星图，指向天眼所在的星系。那条通往流浪者空间的虫洞。`
+			`	泰莱克说：“我们能抽调的每一艘飞船都必须[追踪, 跟随]塞斯特无人机穿过天眼，希望我们能在它们对我们的人民造成[伤害, 毁灭]之前[定位, 找到]它们。”你或许应该加入他们。`
+				accept
+	on visit
+		dialog `你已返回<planet>，但仍未发现塞斯特舰队的去向。继续搜寻；让如此强大的敌对舰队自由游荡十分危险。`
+	to fail
+		has "wanderers: found the sestor fleet"
+	on enter "Aya'k'k"
+		dialog
+			`这里发生了一场激战。数艘流浪者飞船被烧毁的残骸漂浮在太空中，还有少量瘫痪的科·塞斯特飞船。与此同时，流浪者飞船正在瓦鲁克普莱的地表进行某种救援或疏散行动。但并没有发现科·塞斯特舰队主力的踪迹。`
+	npc
+		system "Aya'k'k"
+		government "Wanderer"
+		personality derelict uninterested
+		fleet "Wanderer Defense"
+		fleet "Wanderer Freight" 2
+	npc
+		system "Aya'k'k"
+		government "Kor Sestor"
+		personality derelict uninterested
+		fleet "Large Kor Sestor"
+	on enter "Alnilam"
+		set "wanderers: found the sestor fleet"
+		dialog
+			`相当多的科·塞斯特飞船正在环绕无政府主义世界天顶星的轨道上运行，你还在其地表探测到了更多。奇怪的是，这些科·塞斯特飞船并没有攻击当地的海盗和无政府主义舰队。`
+			`	那大概不是个好兆头。`
+
+
+
+mission "Wanderers: Sestor: Alnilam Fleet 1"
+	landing
+	invisible
+	non-blocking
+	destination "Farpoint"
+	to offer
+		has "Wanderers: Sestor Attack: done"
+	npc kill
+		government "Kor Sestor"
+		system Alnilam
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Defense)"
+				"Met Par Tek 53" 3
+
+
+
+mission "Wanderers: Sestor Search: Vara K'chrai"
+	landing
+	source "Vara K'chrai"
+	to offer
+		has "Wanderers: Sestor Search: active"
+	on offer
+		conversation
+			`瓦拉克奇莱太空港里的人们都还处于恐慌之中，因为他们目睹了科·塞斯特舰队飞越他们的星系。不过幸运的是，那些无人机并没有攻击这颗行星。事实上，它们甚至没有对当时在轨道上的流浪者飞船开火。流浪者的防御者们不想招惹一支他们可能无法战胜的舰队，因此也没有发动攻击。于是，科·塞斯特舰队和平地穿过了这个星系，继续前往……无论它们要去哪里。这里的任何人都还不知道那支舰队的目的地是何方。`
+				decline
+
+
+
+mission "Wanderers: Sestor Search: Varu Tev'kei"
+	landing
+	source "Varu Tev'kei"
+	to offer
+		has "Wanderers: Sestor Search: active"
+	on offer
+		conversation
+			`<planet>上的防御者已经听说了科·塞斯特入侵流浪者空间的消息，但他们告诉你，那支舰队并没有经过这个星系。而且在这里，他们显然过于担心无束者的威胁，根本无暇去想在第二条战线同时开战的事。`
+				decline
+
+
+
+mission "Wanderers: Sestor Search: Varu K'prai"
+	landing
+	source "Varu K'prai"
+	to offer
+		has "Wanderers: Sestor Search: active"
+	on offer
+		conversation
+			`<planet>上的整个太空港已被夷为平地。一队队流浪者正在废墟中仔细搜寻，以寻回那些遇难者的遗体。显然，科·塞斯特舰队摧毁了太空港，以及它们在这个星系中发现的每一艘流浪者飞船。随后它们占领了该星系数日，摧毁或驱赶了任何进入这个星系的侦察船。`
+			`	流浪者不知道接下来发生了什么，但那些无人机已经不在了。也许它们已经离开了流浪者空间。`
+				decline
+
+
+
+mission "Wanderers: Sestor Search: Human Spaceport"
+	landing
+	invisible
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "north"
+	to offer
+		has "Wanderers: Sestor Search: active"
+	on offer
+		conversation
+			`当你将飞船降落在一个空停机坪时，你注意到旁边一艘巨兽级飞船的船长正在检查他的飞船，这艘船的船身布满了弹孔。`
+			choice
+				`	（走近船长，试着打听发生了什么。）`
+					goto approach
+				`	（无视他。）`
+					decline
+			
+			label approach
+			`	你走向那艘巨兽级，看清了它的全貌——正如船尾所标注的，这艘船叫“黄金之心”号。飞船尾部受损严重，黑色的烧焦痕迹在船体上向前蔓延。你不禁注意到，船体上几处弹孔周围的金属平滑地向内弯曲，简直就像是穿甲弹烧穿或熔穿了飞船的装甲。巨兽级的船长从检查中抬起头。看到你，他说：“我们能活着逃离那场袭击真是太幸运了！”`
+			choice
+				`	“你的船怎么搞成这样？”`
+				`	“这艘美人是海盗袭击的受害者吗？”`
+				
+			`	“我也不是很确定，”船长说。“我们遭到了一支充满敌意的舰队的射击，我们的电脑无法识别它们。不过，它们看起来完全不像是普通的海盗船，而且它们装备的科技我以前见都没见过。”`
+			choice
+				`	“有多少艘船？它们长什么样？”`
+				`	“这场战斗发生在哪里？”`
+					goto where
+				`	“你应该庆幸自己还完好无损。”`
+					goto glad1
+					
+			`	“嗯，”飞行员说，“我们雇了一艘结实的利维坦作为前往远点星的护航。当我们要降落的时候，有两艘敌对飞船从西北方跃迁进来了，那是这片区域所有无政府主义殖民地的方向。那些飞船不大，但非常坚固：我们的四台重型激光炮塔甚至无法在它们的护盾上打出哪怕一个凹痕。它们三两下就干掉了那艘利维坦，也差点瘫痪了我们的船。幸亏我果断判断跃迁比降落更快。我们在大气层内跃迁出了星系，保住了飞船，但现在我欠了所有船员一屁股债，因为我没赶上加急交货的最后期限。货还是得送，却丢了一大笔奖金。”`
+			choice
+				`	“你今天能活着站在这里真是太幸运了。”`
+					goto glad
+				`	“谢谢你的情报。我觉得这些敌对飞船正是我在找的那些。”`
+					goto thanks
+					
+			label where
+			`	“嗯，”飞行员说，“我们当时正赶时间向远点星运送一大批货物，这时两艘敌对飞船从西北方跃迁进来了，那是这片区域所有无政府主义殖民地的方向。我不得不在大气层内让飞船跃迁，以防我们被它们那种奇怪的熔融武器撕成碎片。我立即向邻近的参宿六星系海军基地的接待员报告了这次袭击，但他们的服务器显示，在远点星之外没有任何不明飞船的日志，所以我猜它们在侦察完参宿一星系后就掉头了。我也真是倒霉，那些东西进入星系时刚好我在那里，结果让我错过了交货期限。货还是得送，却丢了一大笔奖金。”`
+			choice
+				`	“你今天能活着站在这里真是太幸运了。”`
+					goto glad
+				`	“谢谢你的情报。我觉得这些敌对飞船正是我在猎杀的那些。”`
+					goto thanks
+			
+			label glad1
+			`	“可不是嘛！袭击我们的飞船不大，但非常坚固：我们的四台重型激光炮塔甚至无法在它们的护盾上打出哪怕一个凹痕，”船长说。“我们在前往远点星的途中甚至雇佣了一艘结实的利维坦来保护我们免受海盗的袭击，但当这些敌对飞船从西北方跃迁进来时，它们三两下就干掉了我们的护航，也差点瘫痪了我们的船。我不得不在大气层内跃迁出星系来保住飞船，但现在我欠了所有船员一屁股债，因为我没赶上加急交货的最后期限。货还是得送，却丢了一大笔奖金。”`
+			choice
+				`	“你今天能活着站在这里真是太幸运了。”`
+					goto glad
+				`	“谢谢你的情报。我觉得这些敌对飞船正是我在找的那些。”`
+					goto thanks
+			
+			label thanks
+			`	“不客气，孩子，”船长说，尽管当他听到你甚至打算与如此强大的飞船战斗时，脸上露出了敬畏的神情。“记住，远点星的西北方。如果它们是某种无政府主义者，它们就会躲在上面的某个海盗星系里。在外面要照顾好自己；袭击我们的那些飞船非常危险。”说完，他向你道别。`
+				decline
+				
+			label glad
+			`	“是啊，要不是我们立刻跃迁，那些飞船早就把我们轰成渣了。”飞行员看着你，然后疑惑地问道，“嘿，你知道关于那些飞船的什么情报吗？”`
+			choice
+				`	“没错，攻击你们的是科拉斯飞船。”`
+				`	“也许吧。我总觉得它们就是我要追猎的外星飞船。”`
+				`	“我不想妄下结论。”`
+					goto no
+					
+			`	“外星人？”飞行员的脸涨得通红，双眼因愤怒而眯了起来。“你是说像那些可憎的松鼠一样吗？告诉我说它们很爱好和平，可当我继续往北走时，我的飞船差点被撕成碎片！”你试图告诉他亥族和科拉斯是不同的物种，但他显然不想再听下去了，于是你决定结束这段对话。`
+				goto end
+				
+			label no
+			`	飞行员似乎对你的回答感到失望，于是你决定结束这段对话。`
+				goto end
+				
+			label end
+			`	“谢谢你抽出时间，”你对船长说。`
+			`	船长再次冷静下来，说：“不客气。记住，远点星西北方向。如果他们是哪个派别的无政府主义者，就藏在那上面某个海盗星系里。在外多加小心；我们面对的可是危险的飞船。”说完，他向你告别。`
+				decline
+
+
+
+mission "Wanderers: Sestor Search: Human Hint"
+	landing
+	name "警告丹福斯上将"
+	description "尽快在 <planet> 与丹福斯上将见面，警告他科·塞斯特舰队可能带来的威胁。"
+	source
+		near "Alnitak" 1 100
+	destination "Farpoint"
+	to offer
+		has "wanderers: found the sestor fleet"
+		not "Wanderers: Sestor Search: Wanderer Hint: offered"
+		not "Wanderers: Sestor: Farpoint Attack 1: offered"
+	on offer
+		conversation
+			`你已定位到科·塞斯特舰队，就在参宿二星系。共和国海军或许装备不足，难以对抗如此强大的外星战舰，但他们可能是阻止外星势力全面入侵人类空间的唯一防线。你应尽快将此迫在眉睫的威胁告知丹福斯上将和誓约者。`
+				accept
+
+
+
+mission "Wanderers: Sestor Search: Wanderer Hint"
+	landing
+	name "警告丹福斯上将"
+	description "尽快在 <planet> 与丹福斯上将见面，警告他科·塞斯特舰队可能带来的威胁。"
+	source
+		government "Wanderer"
+	destination "Farpoint"
+	to offer
+		has "wanderers: found the sestor fleet"
+		not "Wanderers: Sestor Search: Human Hint: offered"
+		not "Wanderers: Sestor: Farpoint Attack 1: offered"
+	on offer
+		conversation
+			`你已定位到科·塞斯特舰队，就在参宿二星系。共和国海军或许装备不足，难以对抗如此强大的外星战舰，但他们可能是阻止外星势力全面入侵人类空间的唯一防线。你应尽快将此迫在眉睫的威胁告知丹福斯上将和誓约者。`
+				accept
+
+
+
+mission "Wanderers: Sestor: Farpoint Attack 1"
+	landing
+	name "保卫远点星"
+	description "远点星正遭到一支科·塞斯特舰队的攻击。击退他们，然后返回行星与丹福斯上将交谈。"
+	source "Farpoint"
+	to offer
+		has "wanderers: found the sestor fleet"
+	on offer
+		log "科·塞斯特舰队不知用了什么方法闯入了人类空间北部，也许是通过少量跳跃驱动器来回运输舰船，就像当年无羁者入侵者所做的那样。丹福斯上将表示，科拉斯舰船集结的那个星系中藏有一个秘密的阿尔法基地，因此他担心科·塞斯特无人机正处于阿尔法的控制之下。"
+		conversation
+			`当你准备降落时，你联系了丹福斯上将，请求尽快与他交谈。他在停机坪迎接你，并邀请你回到他的办公室。在那里，你向他解释了现在正集结在此处以北的一支庞大科·塞斯特舰队。他对你说：“过去几个月里，情报部门一直在追踪天顶星上一个隐藏的阿尔法基地，并计划设伏剿灭他们。现在你却告诉我，天顶星有科拉斯无人机守卫。这看起来不太可能是巧合。”`
+			choice
+				`	“科·塞斯特会不会和阿尔法人达成了某种协议？”`
+				`	"Maybe the Alphas gained control of the Kor Sestor fleet somehow?"`
+					goto next
+
+			`	“那就意味着控制塞斯特舰队的某些科拉斯人还活着，”他说，“有证据表明这是真的吗？”`
+
+			label next
+			`	你告诉他流浪者发现的地下掩体，以及有人最近要么从此处离开，要么从地表潜入的迹象。他说：“我们已经知道有一群阿尔法人曾活跃在那个区域。你和我前不久刚在那里和他们交过手，没能抓住他们。我敢打赌，他们逃走之后，不知怎么进入了科·塞斯特的地下掩体，并接管了无人机舰队的控制权。”`
+			`	It is not particularly surprising when, a few seconds after he says that, an alarm siren begins to sound...`
+				launch
+	on visit
+		dialog `头顶上仍有塞斯特战舰。你应该再次起飞，协助作战。`
+	npc evade
+		government "Kor Sestor"
+		personality heroic staying
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349"
+				"Tek Far 71 - Lek"
+				"Far Lek 14" 10
+				"Met Par Tek 53" 2
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Offense)"
+				"Tek Far 78 - Osk"
+				"Far Osk 27" 8
+				"Met Par Tek 53 (Sniper)"
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Defense)"
+				"Kar Ik Vot 349 (Trapper)"
+		dialog `科·塞斯特舰队已经被击退了。该降落了，看看丹福斯觉得你下一步该做什么。`
+	npc
+		government "Navy (Oathkeeper)"
+		personality heroic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Carrier (Mark II)"
+				"Lance" 8
+				"Combat Drone" 6
+				"Cruiser (Mark II)"
+				"Combat Drone" 4
+				"Frigate (Mark II)" 2
+				"Rainmaker (Mark II)" 2
+				"Gunboat (Mark II)" 2
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Combat Drone" 4
+				"Frigate"
+				"Rainmaker"
+	npc
+		government "Navy (Oathkeeper)"
+		personality heroic staying
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Carrier (Mark II)"
+				"Lance" 8
+				"Combat Drone" 6
+				"Cruiser (Mark II)"
+				"Combat Drone" 4
+				"Frigate (Mark II)" 2
+				"Rainmaker (Mark II)" 2
+				"Gunboat (Mark II)" 2
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Combat Drone" 4
+				"Frigate"
+				"Rainmaker"
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Carrier"
+				"Lance" 8
+				"Combat Drone" 6
+				"Frigate" 3
+
+
+
+mission "Wanderers: Sestor: Quarg Help 1"
+	landing
+	name "向夸格求助"
+	description "丹福斯上将请你前往 <planet>，询问夸格是否能提供一些飞船，以帮助你击退科·塞斯特舰队（现在想必已受阿尔法人的控制）。"
+	autosave
+	source "Farpoint"
+	destination "Alta Hai"
+	clearance
+	to offer
+		has "Wanderers: Sestor: Farpoint Attack 1: done"
+	on offer
+		conversation
+			`丹福斯上将看起来仍对刚才那场战斗中的杀戮与伤亡感到震惊。“请告诉我那就是全部的无人机舰队，”他说。`
+			`	你遗憾地摇了摇头。“他们有好几十艘主力舰，”你说，“那可能只是他们舰队的先锋。”`
+			`	丹福斯叹了口气。“在攻击上一个阿尔法基地时，我就领略过这些科拉斯飞船的强大，”他说，“我不确定能否抵挡住一整支这样的舰队。我们唯一的希望或许就是夸格。他们在亥族空间有一个环状世界。事实上，我们是不是把你的朋友伊莱亚斯留在那里了？”你点点头。“你应该立刻去那里，”丹福斯说，“希望你能及时带回援军。”`
+				accept
+
+
+
+mission "Wanderers: Sestor: Quarg Help 2"
+	landing
+	name "返回<planet>"
+	description "率领这支小规模夸格舰队返回 <planet>。"
+	source "Alta Hai"
+	destination "Farpoint"
+	cargo "medical supplies" 2
+	blocked "你需要 <capacity> 才能携带物资返回远点星。"
+	to offer
+		has "Wanderers: Sestor: Quarg Help 1: done"
+	on offer
+		conversation
+			`当你准备着陆时，你联系了夸格，发现伊莱亚斯·汉诺威确实还住在这里。你刚和空间站对接，他就来见你，你描述了情况。“这一定是报复，”他说，“他们想抹掉丹福斯和守誓者，以报复他把他们赶出阿瓦隆基地。”`
+			`	他离开去寻找帮助，大约十五分钟后回来。“我找了四艘志愿帮忙的夸格飞船，”他说，“听起来不多，但他们的船威力不小。另外，他们还提供了一些医疗物资，会装到你的船上。祝你好运，船长。”`
+			`	你感谢了他的帮助，然后赶紧启动飞船返回人类空间。希望丹福斯的基地在你离开期间还没有被攻陷。`
+				accept
+	on accept
+		log "招募了一些夸格战舰来协助保卫人类空间，抵御科·塞斯特无人机——这些无人机现在据信已被阿尔法控制。"
+	npc accompany save
+		government "Quarg (Hai)"
+		personality heroic waiting escort
+		ship "Quarg Wyvern" "Leukos-nikeseh"
+		ship "Quarg Wyvern" "Purros-machaira"
+		ship "Quarg Wyvern" "Melas-zugon"
+		ship "Quarg Wyvern" "Chloros-thanatos"
+	npc
+		government "Kor Sestor"
+		personality heroic staying
+		system "Alnitak"
+		fleet "Large Kor Sestor" 2
+	on visit
+		dialog `你已抵达 <planet>，但要么有一艘夸格战舰被落在后面，要么你那艘搭载着伊莱亚斯医疗物资的护卫舰尚未进入该星系。最好先离开等待。`
+
+
+
+mission "Wanderers: Sestor: Alnilam Fleet 2"
+	landing
+	invisible
+	non-blocking
+	source "Farpoint"
+	to offer
+		has "Wanderers: Sestor: Quarg Help 2: done"
+	npc kill
+		government "Kor Sestor"
+		system "Alnilam"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Defense)"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Far Lek 14" 10
+
+
+
+mission "Wanderers: Sestor: Bomb Zenith 1"
+	landing
+	name "运送装置到天顶星"
+	description "丹福斯上将要求你将此装置（推测为炸弹）投至 <destination> 上的阿尔法基地上方。"
+	source "Farpoint"
+	destination "Zenith"
+	clearance
+	infiltrating
+	to offer
+		has "Wanderers: Sestor: Quarg Help 2: done"
+	cargo "unknown device" 2
+	on offer
+		log "丹福斯认为他已找到控制无人机的阿尔法基地；若将该基地摧毁，无人机将变得漫无目标，易于击败。"
+		conversation
+			`丹福斯还活着，而且仍在抵抗阿尔法人控制的无人机。在指挥几名新兵卸下医疗物资后，他对你说：“我们一直在 <planet> 监视的阿尔法基地深埋在地下。我希望阿尔法人要么不知道我们已经发现了他们的基地位置，要么因为基地防御坚固而选择继续留在那里。如果无人机是从那里被控制的，端掉基地或许就能让它们全部失效。”`
+			choice
+				`	“你觉得你的部队能攻下那个基地吗？”`
+				`	“你有摧毁阿尔法人的计划吗？”`
+
+			`	丹福斯说：“那个基地在地下几公里深。在被塞斯特无人机守卫之前，我们还有机会。我们可以派遣几十艘运兵船，强行打进去——尽管会损失惨重。但现在，我怀疑我们的部队连地表都到不了。”`
+			`	他说话时，两名海军军官推着一辆悬浮推车靠近你的飞船，车上载着一样东西，看起来有点像改装过的台风鱼雷。他们向丹福斯敬礼，丹福斯吩咐道：“把它装上 <last> 船长的飞船。”然后他转向你。“我会给你阿尔法基地的坐标，”他说，“它位于极地大陆，深埋在冰层之下。幸运的是附近没有其他人类定居点。”`
+			`	他停顿了一下，仿佛在对自己即将下达的命令下决心，然后说道：“降落到那颗星球上，把装置扔到坐标点，然后赶紧离开那里。投放装置后，你有十五秒时间跑到至少一千公里以外。”`
+			choice
+				`	“等等，这是核弹？我还以为海军有原则，不会用这种东西。”`
+				`	“好吧，我照你说的做。”`
+					goto end
+
+			`	“把这该死的东西扔下去，然后赶紧撤，快。”他说。显然他不想再透露任何关于这件武器来源的信息。`
+
+			label end
+			`	警报声响起。“别留在这里掩护我们，”丹福斯说。“直接前往 <planet> 并投放装置。这可能是你拯救我们的唯一办法。”`
+				launch
+	on enter
+		dialog
+			`丹福斯说那设备可能是你唯一的机会，这不是开玩笑。星系里有将近十几艘塞斯特主力舰，还有无数小型飞船把海军撕成了碎片。`
+			`就连夸格的战舰面对这么庞大的敌方舰队也感到棘手。也许一支更强大的舰队能击败那些自动机械，但会是一场苦战。`
+	on visit
+		dialog `你正要把设备推出气闸舱，却意识到它落在了一艘护航舰上。最好先离开，等它进入星系。`
+	on complete
+		fail "Wanderers: Sestor: Farpoint Attack 2"
+	to fail
+		has "Wanderers: Sestor: Farpoint Attack 2: done"
+
+
+
+mission "Wanderers: Sestor: Farpoint Attack 2"
+	landing
+	invisible
+	non-blocking
+	source "Farpoint"
+	to offer
+		has "Wanderers: Sestor: Quarg Help 2: done"
+	on visit
+		dialog `丹福斯看到你的飞船降落，天空正被海军舰船的爆炸照亮。“你用炸弹了吗？”他问道。他的声音中明显带着紧张。你摇摇头。“那你到底在这里干什么？快上去把炸弹扔了！”`
+	npc
+		government "Quarg (Hai)"
+		personality heroic staying
+		ship "Quarg Wyvern" "Leukos-nikeseh"
+		ship "Quarg Wyvern" "Purros-machaira"
+		ship "Quarg Wyvern" "Melas-zugon"
+		ship "Quarg Wyvern" "Chloros-thanatos"
+	npc
+		government "Navy (Oathkeeper)"
+		personality heroic staying
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Carrier (Mark II)"
+				"Lance" 8
+				"Combat Drone" 6
+				"Cruiser (Mark II)"
+				"Combat Drone" 4
+				"Frigate (Mark II)" 2
+				"Rainmaker (Mark II)" 2
+				"Gunboat (Mark II)" 2
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Combat Drone" 4
+				"Frigate"
+				"Rainmaker"
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Carrier"
+				"Lance" 8
+				"Combat Drone" 6
+				"Cruiser"
+				"Combat Drone" 4
+				"Frigate" 2
+				"Rainmaker" 2
+				"Gunboat" 2
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser (Mark II)"
+				"Combat Drone" 4
+				"Frigate (Mark II)"
+				"Rainmaker (Mark II)"
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Carrier (Mark II)"
+				"Lance" 8
+				"Combat Drone" 6
+				"Frigate (Mark II)" 3
+	npc evade
+		government "Kor Sestor"
+		personality heroic staying
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349"
+				"Tek Far 71 - Lek"
+				"Far Lek 14" 10
+				"Met Par Tek 53" 2
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Defense)"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Far Lek 14" 8
+				"Met Par Tek 53 (Sniper)" 2
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Offense)"
+				"Tek Far 78 - Osk"
+				"Far Osk 27" 8
+				"Met Par Tek 53 (Sniper)"
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Trapper)"
+				"Tek Far 78 - Osk (Close Quarters)"
+				"Far Osk 27" 6
+				"Met Par Tek 53 (Sniper)"
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Defense)"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Far Lek 14" 8
+				"Tek Far 78 - Osk"
+				"Far Osk 27" 8
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Offense)"
+				"Tek Far 71 - Lek"
+				"Far Lek 14" 9
+				"Tek Far 78 - Osk (Close Quarters)"
+				"Far Osk 27" 7
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Trapper)"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Far Lek 14" 7
+				"Tek Far 78 - Osk (Close Quarters)"
+				"Far Osk 27" 6
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Defense)"
+				"Met Par Tek 53" 2
+				"Met Par Tek 53 (Sniper)"
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Offense)"
+				"Met Par Tek 53"
+				"Met Par Tek 53 (Sniper)" 2
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Trapper)"
+				"Met Par Tek 53 (Sniper)" 3
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Tek Far 109"
+				"Tek Far 71 - Lek"
+				"Tek Far 78 - Osk"
+				"Far Lek 14" 17
+				"Far Osk 27" 13
+				"Met Par Tek 53 (Sniper)" 2
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Tek Far 109"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Tek Far 78 - Osk (Close Quarters)"
+				"Far Lek 14" 17
+				"Far Osk 27" 13
+				"Met Par Tek 53" 2
+		dialog `没想到，所有攻击守誓者的科·塞斯特飞船都被摧毁了。也许你终究不必使用丹福斯的炸弹了。`
+
+
+
+mission "Wanderers: Sestor: Scattered Remnant"
+	landing
+	invisible
+	source "Zenith"
+	destination "Farpoint"
+	to offer
+		has "Wanderers: Sestor: Bomb Zenith 1: done"
+	npc kill
+		system "Alnitak"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349"
+				"Tek Far 71 - Lek"
+				"Far Lek 14" 10
+				"Met Par Tek 53" 2
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: alnitak clear"
+			unmark "Alnitak" "Wanderers: Sestor: Kill Southern Remnant"
+	npc kill
+		system "Canopus"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Defense)"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Far Lek 14" 8
+				"Met Par Tek 53 (Sniper)" 2
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: canopus clear"
+			unmark "Canopus" "Wanderers: Sestor: Kill Southern Remnant"
+	npc kill
+		system "Betelgeuse"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Offense)"
+				"Tek Far 78 - Osk"
+				"Far Osk 27" 8
+				"Met Par Tek 53 (Sniper)"
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Trapper)"
+				"Tek Far 78 - Osk (Close Quarters)"
+				"Far Osk 27" 6
+				"Met Par Tek 53 (Sniper)"
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: betelgeuse clear"
+			unmark "Betelgeuse" "Wanderers: Sestor: Kill Southern Remnant"
+	npc kill
+		system "Capella"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Defense)"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Far Lek 14" 8
+				"Tek Far 78 - Osk"
+				"Far Osk 27" 8
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: capella clear"
+			unmark "Capella" "Wanderers: Sestor: Kill Southern Remnant"
+	npc kill
+		system "Mebsuta"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Offense)"
+				"Tek Far 71 - Lek"
+				"Far Lek 14" 9
+				"Tek Far 78 - Osk (Close Quarters)"
+				"Far Osk 27" 7
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: mebsuta clear"
+			unmark "Mebsuta" "Wanderers: Sestor: Kill Southern Remnant"
+	npc kill
+		system "Rigel"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Trapper)"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Far Lek 14" 7
+				"Tek Far 78 - Osk (Close Quarters)"
+				"Far Osk 27" 6
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: rigel clear"
+			unmark "Rigel" "Wanderers: Sestor: Kill Southern Remnant"
+	npc kill
+		system "Castor"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Defense)"
+				"Met Par Tek 53" 2
+				"Met Par Tek 53 (Sniper)"
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: castor clear"
+			unmark "Castor" "Wanderers: Sestor: Kill Southern Remnant"
+	npc kill
+		system "Wazn"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Offense)"
+				"Met Par Tek 53"
+				"Met Par Tek 53 (Sniper)" 2
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: wazn clear"
+			unmark "Wazn" "Wanderers: Sestor: Kill Southern Remnant"
+	npc kill
+		system "Miaplacidus"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Trapper)"
+				"Met Par Tek 53 (Sniper)" 3
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: miaplacidus clear"
+			unmark "Miaplacidus" "Wanderers: Sestor: Kill Southern Remnant"
+	npc kill
+		system "Kursa"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Tek Far 109"
+				"Tek Far 71 - Lek"
+				"Tek Far 78 - Osk"
+				"Far Lek 14" 17
+				"Far Osk 27" 13
+				"Met Par Tek 53 (Sniper)" 2
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: kursa clear"
+			unmark "Kursa" "Wanderers: Sestor: Kill Southern Remnant"
+	npc kill
+		system "Saiph"
+		government "Kor Sestor"
+		personality heroic staying target
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Tek Far 109"
+				"Tek Far 71 - Lek (Close Quarters)"
+				"Tek Far 78 - Osk (Close Quarters)"
+				"Far Lek 14" 17
+				"Far Osk 27" 13
+				"Met Par Tek 53" 2
+		dialog `本星系所有科·塞斯特飞船已被消灭。`
+		on kill
+			set "wanderers: scattered remnant: saiph clear"
+			unmark "Saiph" "Wanderers: Sestor: Kill Southern Remnant"
+		
+
+
+event "bombed zenith"
+	government "Kor Sestor"
+		"attitude toward"
+			"Pirate" -.01
+	planet "Zenith"
+		description `天顶星是一个寒冷而不宜人的世界，浓雾终年不散，阳光难得一见，低洼地带每日被潮汐淹没，风暴难以预测且来势凶猛。然而，它作为定居地有一个主要优势：其距离足够遥远，共和国不对它施加任何控制。`
+		description `	这里的定居点从未超过勉强维生的村庄规模，生活在饥荒边缘，试图在这片冰封荒原中谋生。如今，许多村庄已经因为守誓者轰炸该星球以摧毁阿尔法基地后引发的大地震而崩溃。`
+		bribe .04
+		"required reputation" 0
+	system "Alnilam"
+		remove object "Zenith"
+			sprite planet/ocean7
+			distance 1776.59
+		add object "Zenith"
+			sprite "planet/zenith hot"
+			distance 1776.59
+			object
+				sprite planet/ice8
+				distance 136
+
+event "zenith cooling"
+	system "Alnilam"
+		remove object "Zenith"
+			sprite "planet/zenith hot"
+			distance 1776.59
+		add object "Zenith"
+			sprite "planet/zenith cold"
+			distance 1776.59
+			object
+				sprite planet/ice8
+				distance 136
+
+mission "Wanderers: Sestor: Bomb Zenith 2"
+	landing
+	name "返回<planet>"
+	description "你已经摧毁了天顶星上的阿尔法基地。返回远点星，看看你的干预是否帮助丹福斯在与科·塞斯特舰队的对决中占得上风。"
+	source "Zenith"
+	destination "Farpoint"
+	to offer
+		has "Wanderers: Sestor: Bomb Zenith 1: done"
+	on offer
+		log "在天顶星这个无政府主义星球上，向阿尔法基地投下了一种极具破坏力的炸弹。爆炸直接撕裂了行星地壳，穿透出一个窟窿。"
+		event "bombed zenith"
+		event "zenith cooling" 40
+		conversation
+			`你在他给的坐标处，将丹福斯给你的设备推出气闸，然后立刻将飞船的推进器开到最大，带你飞回轨道……`
+				launch
+	on enter
+		conversation
+			`丹福斯说起他给你的设备时那副语气，让你以为那是一颗核弹，但当你离开后几秒钟那场撼动 <origin> 的爆炸远不止核弹级别。爆炸的光芒比这个恒星系的太阳还要亮上许多倍。除非你的传感器在欺骗你，否则在 <origin> 南极附近现在出现了一个直通地幔的深坑。熔岩正在灌入那个空洞，整个行星的地壳都在随之移动和颤抖。`
+			`	你庆幸爆炸附近没有人类定居点，但你的传感器检测到压缩波正沿着整个行星表面传播，一遍又一遍地反弹，整个行星像一个钟一样鸣响。住在<origin>任何地方的人都会遭遇致命规模的地震。`
+			`	你只能希望这一切是值得的，并且那个控制站确实被摧毁了。`
+
+
+
+mission "Wanderers: Sestor: Kill Southern Remnant"
+	landing
+	name "摧毁科·塞斯特无人机"
+	description "当你摧毁阿尔法基地后，科·塞斯特无人机开始独立行动。它们正在攻击人类空间。协助海军摧毁这些无人机，然后返回<planet>。"
+	autosave
+	source "Farpoint"
+	to offer
+		has "Wanderers: Sestor: Bomb Zenith 2: done"
+	to complete
+		has "Wanderers: Sestor: Scattered Remnant: done"
+	mark "Alnitak"
+	mark "Betelgeuse"
+	mark "Canopus"
+	mark "Capella"
+	mark "Castor"
+	mark "Kursa"
+	mark "Mebsuta"
+	mark "Miaplacidus"
+	mark "Rigel"
+	mark "Saiph"
+	mark "Wazn"
+	on offer
+		conversation
+			branch "skip unmark alnitak"
+				not "wanderers: scattered remnant: alnitak clear"
+			action
+				unmark "Alnitak"
+			label "skip unmark alnitak"
+			branch "skip unmark betelgeuse"
+				not "wanderers: scattered remnant: betelgeuse clear"
+			action
+				unmark "Betelgeuse"
+			label "skip unmark betelgeuse"
+			branch "skip unmark canopus"
+				not "wanderers: scattered remnant: canopus clear"
+			action
+				unmark "Canopus"
+			label "skip unmark canopus"
+			branch "skip unmark capella"
+				not "wanderers: scattered remnant: capella clear"
+			action
+				unmark "Capella"
+			label "skip unmark capella"
+			branch "skip unmark castor"
+				not "wanderers: scattered remnant: castor clear"
+			action
+				unmark "Castor"
+			label "skip unmark castor"
+			branch "skip unmark kursa"
+				not "wanderers: scattered remnant: kursa clear"
+			action
+				unmark "Kursa"
+			label "skip unmark kursa"
+			branch "skip unmark mebsuta"
+				not "wanderers: scattered remnant: mebsuta clear"
+			action
+				unmark "Mebsuta"
+			label "skip unmark mebsuta"
+			branch "skip unmark miaplacidus"
+				not "wanderers: scattered remnant: miaplacidus clear"
+			action
+				unmark "Miaplacidus"
+			label "skip unmark miaplacidus"
+			branch "skip unmark rigel"
+				not "wanderers: scattered remnant: rigel clear"
+			action
+				unmark "Rigel"
+			label "skip unmark rigel"
+			branch "skip unmark saiph"
+				not "wanderers: scattered remnant: saiph clear"
+			action
+				unmark "Saiph"
+			label "skip unmark saiph"
+			branch "skip unmark wazn"
+				not "wanderers: scattered remnant: wazn clear"
+			action
+				unmark "Wazn"
+			label "skip unmark wazn"
+			`尽管科·塞斯特的无人机在上空盘旋，<planet>上的基地似乎幸存了下来。你与丹佛斯会面，告诉他你用他给的武器摧毁了阿尔法基地。`
+			`	他说道：“当你摧毁那个基地后，塞斯特无人机突然不再像一支统一舰队那样行动。少数留在了这里，但大多数已经散布到这片空间区域各处，我们收到报告说它们正在无差别攻击海军和民用船只。我自己的舰队受损严重，无力阻止它们，但其他海军基地正在派遣增援。你能加入他们，协助消灭这些无人机吗？”`
+			choice
+				`	“当然，我很乐意。”`
+					goto end
+				`	“当然可以。不过首先，你让我投放在天顶星上的那颗炸弹到底是什么东西？它把整个星球都炸裂开了。”`
+
+			`	丹佛斯叹了口气。“不幸的是，”他说，“我不能告诉你那是什么武器，或者我们如何获得的。现在整个共和国的新闻机构都在质疑我们使用如此可怕的武器。我希望我们能在不采取这种极端措施的情况下击败科·塞斯特舰队，但我们别无选择。”`
+
+			label end
+			`	丹佛斯给了你一张星系图，上面标注了有报告称科·塞斯特无人机攻击民用船只的星系。“这些，加上参宿二星系中任何幸存的无人机，就是所有我们能追踪到的自动机械了，”他说。“等你成功完全摧毁它们后，回到这里报告。我们不能冒险让某个地方军阀俘获它们。海军应该会派一些舰船协助你。”`
+				accept
+
+
+
+mission "Wanderers: Sestor: Remnant Visit"
+	landing
+	source "Farpoint"
+	to offer
+		has "Wanderers: Sestor: Kill Southern Remnant: active"
+		not "Wanderers: Sestor: Scattered Remnant: done"
+	on offer
+		conversation
+			`你向丹佛斯汇报，但他告诉你，人类空间仍有科·塞斯特无人机的报告。“你必须确保彻底摧毁它们，”他说，“我们不能冒风险让某个地方军阀捕获它们。”`
+				defer
+
+
+
+mission "Wanderers: Sestor: Drones in Alnilam Waypoint"
+	landing
+	source
+	name "参宿二无人机"
+	description "消灭参宿二星系中剩余的科·塞斯特舰队。"
+	waypoint "Alnilam"
+	to offer
+		has "Wanderers: Sestor: Scattered Remnant: done"
+		or
+			not "Wanderers: Sestor: Alnilam Fleet 1: done"
+			not "Wanderers: Sestor: Alnilam Fleet 2: done"
+	to complete
+		has "Wanderers: Sestor: Alnilam Fleet 1: done"
+		has "Wanderers: Sestor: Alnilam Fleet 2: done"
+
+
+
+mission "Wanderers: Sestor: Drones in Alnilam"
+	landing
+	invisible
+	source "Farpoint"
+	to offer
+		has "Wanderers: Sestor: Scattered Remnant: done"
+		or
+			not "Wanderers: Sestor: Alnilam Fleet 1: done"
+			not "Wanderers: Sestor: Alnilam Fleet 2: done"
+	to complete
+		has "Wanderers: Sestor: Alnilam Fleet 1: done"
+		has "Wanderers: Sestor: Alnilam Fleet 2: done"
+	waypoint "Alnilam"
+	on offer
+		conversation
+			`当你返回<planet>时，丹佛斯告诉你：“看来你已经处理了那些在共和国空间肆虐的科·塞斯特无人机中的最后一批，但我们还需要对付参宿二星系中的那支舰队。你觉得你能靠自己摧毁那支舰队吗？”`
+			choice
+				`	"Yes, I think I can manage it."`
+					defer
+				`	“你的飞船修好了吗？我需要一些支援。”`
+			`	He agrees to send some Oathkeeper ships with you to destroy the remaining drones, but it is clear that it pains him to risk the last few ships he has that are still spaceworthy.`
+				accept
+	on visit
+		dialog `你已返回<planet>，但参宿二内的塞斯特飞船尚未全部消灭。返回该星系，确保它们被全部摧毁。`
+	npc
+		government "Navy (Oathkeeper)"
+		personality heroic escort
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Carrier (Mark II)"
+				"Lance" 8
+				"Combat Drone" 6
+				"Cruiser (Mark II)"
+				"Combat Drone" 4
+				"Frigate (Mark II)" 2
+				"Rainmaker (Mark II)" 2
+				"Gunboat (Mark II)" 2
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Combat Drone" 4
+				"Frigate" 2
+				"Rainmaker" 4
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Carrier"
+				"Lance" 8
+				"Combat Drone" 6
+				"Frigate" 3
+				"Gunboat" 3
+
+
+
+mission "Wanderers: Sestor: Return to Wanderers"
+	landing
+	name "返回<planet>"
+	description "人类空间中的科·塞斯特无人机已被消灭。返回流浪者空间的<planet>，了解那里的情况。"
+	autosave
+	source "Farpoint"
+	destination "Desi Seledrak"
+	to offer
+		has "Wanderers: Sestor: Scattered Remnant: done"
+		has "Wanderers: Sestor: Alnilam Fleet 1: done"
+		has "Wanderers: Sestor: Alnilam Fleet 2: done"
+	on offer
+		fail "Wanderers: Sestor: Drones in Alnilam"
+		log "成功摧毁了阿尔法人带入人类空间的最后一批科·塞斯特无人机。丹佛斯和他的海军基地也幸存下来，但他担心为了消灭阿尔法人而在有人居住的星球上使用如此毁灭性武器所引发的政治后果。"
+		conversation
+			`当你告诉他最后一批科·塞斯特无人机已被摧毁时，丹佛斯如释重负地叹了口气。“感谢您的帮助，<last>船长，”他说，“既然这场战斗已经结束，我们在天顶星上所做的事引发的公关噩梦才刚刚开始。不过我们不需要您卷入其中；也许您应该返回流浪者空间，等这里的风波平息一些再说。”`
+				accept
+
+
+
+mission "Wanderers: Sestor Alt: Alnilam 1"
+	landing
+	name "摧毁剩余的无人机"
+	description "不要轰炸天顶星，而是摧毁参宿二星系中剩余的科·塞斯特无人机，然后返回远点星向丹佛斯上将报告。"
+	autosave
+	source "Farpoint"
+	waypoint "Alnilam"
+	to offer
+		not "event: bombed zenith"
+		has "Wanderers: Sestor: Farpoint Attack 2: done"
+		or
+			not "Wanderers: Sestor: Alnilam Fleet 1: done"
+			not "Wanderers: Sestor: Alnilam Fleet 2: done"
+	on offer
+		conversation
+			`丹佛斯对你能够消灭来袭的科·塞斯特舰队印象深刻。“我给你的武器是最后的手段，我自己都羞于使用它，”他说。“在我们有时间进行修理之前，我没有任何飞船可以给你，但如果你能靠自己摧毁参宿二星系中剩余的科·塞斯特飞船，就回到这里，我会派我的部队运输船和你一起去，用老办法摧毁阿尔法基地。”`
+				accept
+	to complete
+		has "Wanderers: Sestor: Alnilam Fleet 1: done"
+		has "Wanderers: Sestor: Alnilam Fleet 2: done"
+
+
+
+mission "Wanderers: Sestor Alt: Alnilam 2"
+	landing
+	name "攻击阿尔法基地"
+	description "带着这些誓约者巡洋舰前往<system>星系，消灭位于<planet>的阿尔法基地。"
+	source "Farpoint"
+	destination "Zenith"
+	clearance
+	to offer
+		not "event: bombed zenith"
+		has "Wanderers: Sestor: Farpoint Attack 2: done"
+		has "Wanderers: Sestor: Alnilam Fleet 1: done"
+		has "Wanderers: Sestor: Alnilam Fleet 2: done"
+	on offer
+		conversation
+			`你告诉丹佛斯，你已经摧毁了整个科·塞斯特舰队，不需要轰炸<planet>。他既印象深刻又很感激。“我会派一些运兵船和你一起去摧毁阿尔法基地，”他说。“这样摧毁风险更大，但至少<planet>上的平民不会受到伤害。”`
+			choice
+				`	“明白。我们直接前往<planet>。”`
+					goto end
+				`	“你是说那些无政府主义定居者？你愿意牺牲自己的士兵，就为了不通过轰炸他们的星球来伤害无政府主义者和海盗？”`
+
+			`	丹佛斯说：“如果我们在一个有人居住的星球上使用如此可怕的武器，即使那是个无政府主义星球，也会玷污海军的好名声。相比之下，损失一些海军将士的生命是可以接受的，而自愿参加这次任务的士兵愿意为这个事业冒生命危险。”`
+
+			label end
+			`	你回到自己的飞船，准备护送运兵船前往<planet>。`
+				accept
+	npc accompany save
+		government "Navy (Oathkeeper)"
+		personality escort
+		ship "Cruiser (Mark II)" "R.N.S. Dauntless"
+		ship "Cruiser (Mark II)" "R.N.S. Forthright"
+		ship "Cruiser (Mark II)" "R.N.S. Virtue"
+	on visit
+		dialog `你已抵达<planet>，但并非所有海军巡洋舰都已进入星系。最好先离开，等待它们到达，因为没有它们，你根本不可能进攻阿尔法基地。`
+
+
+
+mission "Wanderers: Sestor Alt: Alnilam 3"
+	landing
+	name "返回<planet>"
+	description "护送誓约者巡洋舰返回<destination>。"
+	source "Zenith"
+	destination "Farpoint"
+	to offer
+		has "Wanderers: Sestor Alt: Alnilam 2: done"
+	on offer
+		conversation
+			`丹佛斯的部队在阿尔法基地入口周围布置了防御圈。看来他们达成了奇袭效果：阿尔法人不知道海军已经找到了他们的基地，原本可能指望着有更充裕的时间撤离。运兵船载着混凝土搅拌机和采矿钻机；显然他们的计划是把阿尔法人封在地下，然后钻穿冰层和基岩，炸毁并掩埋这个掩体。`
+			`	当海军部队开始浇筑混凝土时，隧道那扇巨大的门猛地炸开，几十个阿尔法人——你从未见过这么多聚在一起的——蜂拥而出。但即使是这些超人般的士兵也无法抵挡数百名海军部队的集中火力。空气中充斥着爆炸、硝烟和雪粉，但据你所知，没有一个阿尔法人活着逃脱。`
+			`	战斗结束后，海军部队探查了掩体，希望能找到俘虏，但里面没有发现任何活人。他们封锁了入口，炸毁了掩体，然后准备和你一起返回<planet>。`
+				accept
+	npc accompany save
+		government "Navy (Oathkeeper)"
+		personality escort
+		ship "Cruiser (Mark II)" "R.N.S. Dauntless"
+		ship "Cruiser (Mark II)" "R.N.S. Forthright"
+		ship "Cruiser (Mark II)" "R.N.S. Virtue"
+	on visit
+		dialog `你已到达<planet>，但并非所有海军巡洋舰都已进入星系。最好先离开，等它们到达。`
+
+event "liberated zenith"
+	planet "Zenith"
+		bribe .04
+		"required reputation" 0
+
+mission "Wanderers: Sestor Alt: Zenith Patch"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "Wanderers: Sestor Alt: Alnilam 2: done"
+	on offer
+		event "liberated zenith"
+		fail
+
+
+
+mission "Wanderers: Sestor Alt: Return to Wanderers"
+	landing
+	name "返回<planet>"
+	description "人类空间中的科·塞斯特无人机已被消灭。返回流浪者空间的<planet>，了解那里的情况。"
+	autosave
+	source "Farpoint"
+	destination "Desi Seledrak"
+	to offer
+		has "Wanderers: Sestor Alt: Alnilam 3: done"
+	on offer
+		log "成功摧毁了科·塞斯特舰队，并清除了无政府世界天顶星上的阿尔法基地。他非常庆幸，无论那枚炸弹或超级武器是什么，最终都无需动用。"
+		conversation
+			`海军军官向丹佛斯汇报天顶星地表战斗的结果。“结束了，”他说。“<last>船长，感谢你的协助。如果没有你在，这场战斗的结果会截然不同。”`
+			`	既然科·塞斯特舰队已经被处理掉，你或许应该返回科拉斯空间，看看流浪者那边情况如何。`
+				accept
+
+
+
+mission "Wanderers: Sestor: Scan Drones"
+	landing
+	name "扫描剩余无人机"
+	description "在它们的一些星系中扫描剩余的科·塞斯特无人机，为流浪者收集数据，用以确定无人机仍以多快的速度被生产出来。"
+	autosave
+	source "Desi Seledrak"
+	to offer
+		or
+			has "Wanderers: Sestor: Return to Wanderers: done"
+			has "Wanderers: Sestor Alt: Return to Wanderers: done"
+	waypoint "Silikatakfar"
+	on enter "Silikatakfar"
+		dialog `你启动飞船传感器，记录本星系内科·塞斯特飞船的识别编号与标记。`
+	waypoint "Asikafarnut"
+	on enter "Asikafarnut"
+		dialog `你启动飞船传感器，记录本星系内科·塞斯特飞船的识别编号与标记。`
+	on offer
+		conversation
+			`你欣喜地发现，这里的流浪者殖民地已发展成一座小城；大约十万名流浪者已经通过天眼来到此处定居。索巴里·特莱克在太空港与你见面。他的羽毛脱落了一半——整张脸裸露而布满鳞片——但他没有像雷克那样日渐憔悴，反而体重增加了不少，现在他比你高出一大截。`
+			`	他告诉你：“我们梅雷提的[朋友，亲族]告诉我们，科·塞斯特最近变得不那么[好斗，好战]了。他们世界上的工厂仍在[生产，制造]无人机，但它们不再以[统一意志？目的？]行动。”`
+			choice
+				`	“你觉得它们够虚弱了，我们能摧毁它们吗？”`
+				`	“你觉得有什么办法能重新控制它们吗？”`
+					goto control
+			`	“可能吧，”他说，“但我们更希望如果可能的话，采取更[优雅，和平]的解决方案。你愿意再次[前往，观察]它们的星系，收集可能帮助我们学会控制或关闭它们的数据吗？”`
+				goto end
+			label control
+			`	“那是我们的[希望，愿望]，”他说。“或者，如果不行，至少我们可以[瘫痪，关闭]那些工厂。你愿意再次[前往，观察]它们的星系，收集关于无人机的[数据，测量值]吗？”`
+			label end
+			choice
+				`	“我很乐意。”`
+					goto data
+				`	“那科·梅雷提的无人机呢？它们一直保持和平吗？”`
+			`	“确实，”他说。“而且，它们给我们带来了很多[娱乐？新奇？]。你有空时应该去[拜访，探望]它们；它们很喜欢你。”`
+			label data
+			`	特莱克把你介绍给负责解决科·塞斯特工厂关闭问题的科学家团队。他们向你解释说，他们正在寻找无人机上的任何识别信息，包括船体的合金成分以及爆炸痕迹或其他老化迹象的普遍程度。这将使他们能够估算无人机的生产速度。`
+				accept
+	on visit
+		dialog phrase "generic waypoint on visit"
+	npc
+		system "Silikatakfar"
+		government "Kor Sestor"
+		personality heroic staying
+		ship "Kar Ik Vot 349" "07-134.2"
+		ship "Tek Far 78 - Osk" "07-894.0"
+		ship "Tek Far 71 - Lek" "07-554.3"
+		ship "Met Par Tek 53" "07-983.2"
+		ship "Met Par Tek 53" "07-992.1"
+		ship "Met Par Tek 53" "07-284.5"
+	npc
+		system "Asikafarnut"
+		government "Kor Sestor"
+		personality heroic staying
+		fleet "Large Kor Sestor"
+		ship "Kar Ik Vot 349 (Offense)" "07-546.2"
+		ship "Kar Ik Vot 349 (Trapper)" "07-321.8"
+		ship "Kar Ik Vot 349 (Defense)" "07-963.4"
+
+
+
+mission "Wanderers: Sestor: Exiles 1"
+	landing
+	name "接载蕾克"
+	description "在<planet>接上蕾克。她将协助你尝试与科拉斯流亡者展开外交谈判。"
+	autosave
+	source "Desi Seledrak"
+	destination "Setar Fort"
+	to offer
+		has "Wanderers: Sestor: Scan Drones: done"
+	on offer
+		log "科·塞斯特的无人机仍由自动化工厂生产，尽管无人操控，它们似乎只靠某种盲目自动驾驶运作。流浪者希望科拉斯流亡者能帮助他们关闭那座工厂。"
+		conversation
+			`你将扫描日志交给流浪者科学家。几小时后，你被召入领袖会议。索巴里·特莱克告诉你：“我们的科学家注意到，最近建造的无人机都有非常相似的[合金成分？]和识别编号。我们怀疑这意味着它们都在同一个世界上生产，甚至可能是在同一个[工厂，设施]。”`
+			`	他调出星图说：“根据你之前的地质扫描，我们[相信，推断]工厂就在这个世界——塞斯托伊克法尔上。要[摧毁，消除]这个设施很容易，但特玛阿·伊里凯特提出了不同的建议。”`
+			`	伊里凯特站起身说：“我提议，我们以此为[借口，理由]去拜访科拉斯的[流放者，放逐者]。给他们一个机会来[帮助，协助]我们终结他们引发的那场[灾祸，瘟疫]。通过与我们[结盟，并肩作战]，他们会逐渐视我们为[朋友，同仁]。”`
+			choice
+				`	“如果你们觉得自己能搞定，为什么还要把他们卷进来？”`
+				`	“等等，你们想向他们求助，只是为了让他们自我感觉良好？”`
+					goto good
+				`	“这听起来确实是个同时解决两个问题的好办法。”`
+					goto next
+			`	特莱克说：“流放者必须[感受到，意识到]他们在银河中失去了[能动性？重要性？]。如果我们为他们[植入，灌输]使命感和[价值，意义]，他们或许会变得[平和，明智]，就像科·梅雷提集体那样。”`
+				goto next
+			label good
+			`	特莱克说：“没有什么比[共同敌人？]更能[锻造，巩固]友谊。而且我们[感觉，感知，推测]流放者之所以从事[掠夺，海盗行为]，是因为他们的社会除了生存再无更高[目标，目的]。通过让他们参与这片土地的[恢复，治愈]，我们会赋予他们[能动性？重要性？]，他们就能自由地[变得平和，明智]。”`
+			label next
+			`	经过更多讨论后，流浪者领袖们达成共识，希望你和蕾克一起前往科拉斯流放者的领地，尝试与他们接触。这听起来是个非常乐观的计划，但话说回来，流浪者寻求友谊的方式对梅雷提无人机就非常奏效。`
+				accept
+
+
+
+mission "Wanderers: Sestor: Exiles 2"
+	landing
+	name "联系流放者"
+	description "进入科拉斯流亡者的领地。不要对他们开火。相反，在蕾克的帮助下，设法找到与他们交谈的方式，或一个他们愿意见你的地方。"
+	autosave
+	source "Setar Fort"
+	passengers 1
+	to offer
+		has "Wanderers: Sestor: Exiles 1: done"
+	to complete
+		never
+	on offer
+		conversation
+			`令人惊讶的是，蕾克对于外交计划的热情并没有其他流浪者领袖那么高。“我当然非常渴望与流放者建立联系，”她说，“但不能想当然地认为一个外星种族的思维方式与我们相同。这些科拉斯人因为无休止的、徒劳的战争而被流放。我不确信仅仅送上友谊和一点面子就能让他们变得和平。”`
+			choice
+				`	“你觉得我们应该取消任务，自己对付塞斯特吗？”`
+				`	“也许不该取消，但趁现在有机会，尝试争取和平不是更好吗？”`
+					goto better
+			`	“不，”蕾克说，“领袖们是对的，我们必须先给予信任，直到他们证明自己完全不值得信任。但如果他们更倾向于消灭你而非听我说话，你也不必惊讶。”`
+				goto end
+			label better
+			`	“这不仅更好，”蕾克说，“更是一种道德义务。我们与流放者的第一次接触必须表达信任，而非战争行为。但如果他们更倾向于消灭你而非听我说话，你也不必惊讶。”`
+			label end
+			`	蕾克在你的一个铺位间里安顿下来，你准备前往科拉斯流放者的领地。“我们必须设法赢得他们的信任，”她说，“所以不要向他们的任何飞船开火。相反，我们必须找到与他们交流的方式，或者找到一个他们愿意与我们和平会面的地点。”`
+				accept
+	on visit
+		dialog `你已返回<planet>，但尚未与科拉斯流亡者建立联系。前往银河系核心，寻找与他们取得联系的方式。`
+	npc save
+		government "Korath"
+		system "Kor Fel'tar"
+		personality heroic staying
+		fleet "Korath Home"
+	npc save
+		government "Korath"
+		system "Kor En'lakfar"
+		personality heroic staying
+		fleet "Korath Raid"
+	npc save
+		government "Korath"
+		system "Kor Men"
+		personality heroic staying
+		fleet "Korath Raid"
+	npc save
+		government "Korath"
+		system "Kor Ak'Mari"
+		personality heroic staying
+		fleet "Korath Raid"
+	npc save
+		government "Korath"
+		system "Kor Zena'i"
+		personality heroic staying
+		fleet "Korath Raid"
+	npc save
+		government "Korath"
+		system "Kor Tar'bei"
+		personality heroic staying
+		fleet "Korath Home"
+	npc save
+		government "Korath"
+		system "Kor Nor'peli"
+		personality heroic staying
+		fleet "Korath Home" 2
+		fleet "Korath Raid"
+
+
+
+event "wanderers: exiles peaceful"
+	"reputation: Korath" >?= 1
+	"reputation: Korath (Civilian)" >?= 1
+
+mission "Wanderers: Sestor: Exiles 3"
+	landing
+	name "与流放者的外交"
+	description "护送这三艘科拉斯流亡世界舰前往<planet>，与流浪者举行外交会面。"
+	source "Far'en Lai"
+	destination "Desi Seledrak"
+	passengers 1
+	to offer
+		has "Wanderers: Sestor: Exiles 2: active"
+	on offer
+		conversation
+			`科拉斯的飞船尾随你降落到行星表面，但没有开火。相反，它们在你飞船上方犹豫不决地盘旋了很久。你也没有开火，最终它们降落在你旁边的沙地上。气闸门打开，几个科拉斯人走出来，靠近你的飞船。他们似乎没有携带武器。也许他们对在这个世界上使用武器有着文化禁忌。`
+			choice
+				`	（出去见他们。）`
+				`	（趁现在还来得及，离开这个星球。）`
+					defer
+			`	当你和蕾克——两个明显不同种族的成员——并肩走下飞船时，科拉斯人似乎很惊讶。你接近时，他们低声交谈，然后当蕾克用他们的语言说话时，他们几乎惊讶得跳起来。`
+			`	他们和蕾克交谈了一会儿，然后蕾克解释说：“我告诉他们，我们希望能清除他们留下的那些自我复制战争机器的感染，让他们的领地重新适合居住。他们说，很高兴我们没有摧毁那些无人机，因为他们为自己的作品感到自豪。他们说他们有塞斯特工厂的指令码，可以关闭它们。但是，他们不会把指令码给我们；他们必须亲自去输入。”`
+			choice
+				`	“听起来很合理。”`
+					goto end
+				`	“他们要求什么回报？”`
+			`	蕾克说：“他们请求与我们的领导人会面，以制定互利互惠的贸易条款。这肯定是我们没有困难就能同意的。”`
+			label end
+			`	蕾克再次与科拉斯人交谈，然后告诉你：“他们说他们的三艘‘世界船’将与我们同行，去与流浪者领袖会面。如果他们能达成有利的条件，并且确信流浪者怀有和平意图，他们就会和我们一起前往塞斯特工厂世界，将其关闭。”`
+				accept
+	on accept
+		log "成功与科拉斯流亡者进行了沟通，方法是降落在他们领地内唯一一颗宜居行星上。（流亡者似乎对在那颗星球上使用武器有所禁忌。）流亡者同意派遣一些飞船协助关闭剩余的科·塞斯特工厂。"
+		fail "Wanderers: Sestor: Exiles 2"
+		event "wanderers: exiles peaceful"
+	npc accompany save
+		government "Korath"
+		personality escort
+		ship "Lor'kas Ik 577 (Jump)" "Seskerat Pratka"
+		ship "Ra'gru Ik 618" "Eskretakfakta"
+		ship "Kas'lor Ik 582 (Jump)" "Prekaprat Skata"
+	on visit
+		dialog `你已经到达<planet>，但缺少了些什么！要么你把一艘科拉斯飞船落在了后面，要么你的携带蕾克的护卫还没有进入星系。最好先离开，等待它到达。`
+
+
+
+mission "Wanderers: Sestor: Factory 1"
+	landing
+	name "关闭工厂"
+	description "护送这些科拉斯飞船前往<planet>，它们将在那里关闭剩余的科·塞斯特工厂。"
+	source "Desi Seledrak"
+	destination "Sestor Ikfar"
+	clearance
+	infiltrating
+	passengers 1
+	to offer
+		has "Wanderers: Sestor: Exiles 3: done"
+	on offer
+		conversation
+			`蕾克带着科拉斯人前来与流浪者领袖会面。会议结束后，她和泰莱艾克一同来找你。“那场会议真奇怪，”蕾克说，“感觉不像和平峰会，倒像是孩子们在模仿和平峰会，仿佛谈判和平是他们刚刚开始学习的技能。他们提出的条件也少得可怜；我本想给他们更多。但他们正在朝着和平社会迈出步伐，对此我们心存感激。”`
+			choice
+				`	“那么，我们现在怎么做？”`
+					goto next
+				`	“你确定他们真的想要和平吗？他们不是在耍花招？”`
+			`	蕾克说：“很难确定。他们的文化与科·埃弗雷特人截然不同；甚至他们的一些语言和手势对我来说都是陌生的。但迄今为止他们对我们的行为是和平的；我们必须希望这种和平能持续下去。”`
+			label next
+			`	泰莱艾克说：“你必须将那些[流放者，放逐者]的船只带到<planet>，并确保它们在[途中？]不被无人机摧毁。在那里，他们将[尝试，完成]他们的承诺，关闭工厂。你唯一的任务是[掩护，保护]他们，我们会派一些我们的战舰来[协助，陪同]你。”他用一只略显凌乱、略有变形的翅膀指向一些正在装载补给并准备战斗的流浪者船只。你注意到其中一些船上装备着一种你不认识的武器。`
+			choice
+				`	“那些船携带了新型武器吗？”`
+				`	“听起来不错。我们出发吧！”`
+					goto end
+			`	泰莱艾克似乎很高兴你注意到了。“确实如此。它们对船体装甲比护盾更[有效，有用]，[完美，适合]用于对付科·塞斯特的船只，与我们[现有，之前]的武器配合使用。”他停顿了一下，继续说道：“[希望如此，如果进展顺利]，它们不会派上太多用场，但会确保你[安全，成功]完成这项[任务，使命]，最终终结这场[灾祸，威胁]。不过，如果[需要，有必要]，我们会让它们[准备好，就绪]。”`
+			choice
+				`	“我能给我的船也弄一些吗？”`
+					goto buy
+				`	“在向科拉斯流亡者示好时展示这些新武器，这主意好吗？”`
+				`	“我期待看到它们的实战表现。我该去给我的飞船做出发准备了。”`
+					goto end
+			`	泰莱艾克向蕾克示意，蕾克说：“我也有类似的顾虑，但在这个情况下，我[认可，接受]好处大于可能的风险。”`
+			`	泰莱艾克解释说：“如果他们把这种武器视为对自己的[侵略？]迹象，那我也无能为力。他们的船只不如科·塞斯特的自动机器人那么[坚固，装甲厚重]，所以我们其他的技术如果用来对付他们，已经[足以，能够]造成[有效伤害，破坏]。如果他们[理性，聪明]，就会珍视这次[旅程，行动]中额外的保护。”`
+				goto end
+			label buy
+			`	“我们目前生产得不多，但很快就能在我们的装备商那里[买到，找到]。”`
+			label end
+			`	你和雷克向泰莱艾克道别，然后返回你的飞船，为前往<planet>的旅程做准备。`
+				accept
+	npc accompany save
+		government "Korath"
+		personality escort
+		ship "Lor'kas Ik 577 (Jump)" "Seskerat Pratka"
+		ship "Ra'gru Ik 618" "Eskretakfakta"
+		ship "Kas'lor Ik 582 (Jump)" "Prekaprat Skata"
+	on visit
+		dialog `你已经到达<planet>，但缺少了些什么！要么你把一艘科拉斯飞船落在了后面，要么你的携带蕾克的护卫还没有进入星系。最好先离开，等待它到达。`
+
+
+
+mission "Wanderers: Sestor: Factory Escorts"
+	landing
+	invisible
+	non-blocking
+	source "Desi Seledrak"
+	to offer
+		has "Wanderers: Sestor: Exiles 3: done"
+	npc kill
+		government "Wanderer"
+		personality escort heroic
+		fleet
+			names "wanderer"
+			variant
+				"Hurricane (Tough)"
+				"Hurricane (Moonbeam)"
+				"Derecho"
+				"Derecho (Moonbeam)" 2
+				"Tempest (Heavy)"
+				"Tempest (Moonbeam)" 2
+				"Tempest"
+				"Heavy Gust (Moonbeam)" 2
+
+
+
+event "wanderers: asikafarnut battle"
+	system "Asikafarnut"
+		fleet "Large Kor Mereti" 10000
+
+mission "Wanderers: Sestor: Factory 2"
+	landing
+	name "保卫 <planet>"
+	description "驱离科·塞斯特无人机，阻止它们干扰正在关闭工厂的科拉斯流放者。"
+	source "Sestor Ikfar"
+	clearance
+	infiltrating
+	passengers 1
+	to offer
+		has "Wanderers: Sestor: Factory 1: done"
+	on visit
+		dialog `头顶上还有科·塞斯特的无人机。你应该去击退它们，这样科拉斯流亡者在试图关闭工厂时就不会受到攻击。`
+	on offer
+		event "wanderers: asikafarnut battle"
+		conversation
+			`一旦进入大气层，那些无人机就停止了对科拉斯飞船的射击——这是个好兆头，大概意味着它们的指令代码生效了。当它们开始侦查制造中心时，流放者（通过雷克）告诉你，需要你返回轨道，阻止剩余的无人机攻击他们，直到他们能确保工厂彻底关闭；这可能需要他们花上一段时间来完成。`
+			`	You fire up your engines and blast off for one last battle against the Kor Sestor...`
+				launch
+	npc evade
+		government "Kor Sestor"
+		personality waiting staying heroic
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349"
+				"Tek Far 71 - Lek"
+				"Far Lek 14" 10
+				"Met Par Tek 53" 2
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Kar Ik Vot 349 (Offense)"
+				"Tek Far 78 - Osk"
+				"Far Osk 27" 8
+				"Met Par Tek 53 (Sniper)" 2
+		fleet
+			names "kor sestor"
+			fighters
+				names "kor sestor fighter"
+			variant
+				"Tek Far 109"
+				"Tek Far 71 - Lek"
+				"Tek Far 78 - Osk"
+				"Far Lek 14" 17
+				"Far Osk 27" 13
+
+
+
+event "wanderers: sestor shutdown"
+	system "Celeborim"
+		fleet "Small Kor Sestor" 2400
+		fleet "Large Kor Sestor" 10000
+	system "Makferuti"
+		fleet "Small Kor Sestor" 2400
+		fleet "Large Kor Sestor" 10000
+	system "Asikafarnut"
+		fleet "Large Kor Mereti" 3600
+		fleet "Small Kor Sestor" 1200
+		fleet "Large Kor Sestor" 6000
+	system "Sobarati"
+		fleet "Small Kor Sestor" 1600
+		fleet "Large Kor Sestor" 8000
+	system "Silikatakfar"
+		fleet "Large Kor Mereti" 1600
+		fleet "Small Kor Sestor" 3200
+		fleet "Large Kor Sestor" 4800
+	system "Ferukistek"
+		fleet "Large Kor Mereti" 2400
+		fleet "Small Kor Sestor" 8000
+		fleet "Large Kor Sestor" 10000
+	system "Eneremprukt"
+		fleet "Large Kor Mereti" 2000
+		fleet "Small Kor Sestor" 3200
+		fleet "Large Kor Sestor" 4800
+	system "Mesuket"
+		remove fleet "Large Kor Sestor"
+		add fleet "Large Kor Sestor" 10000
+
+mission "Wanderers: Sestor: Factory 3"
+	landing
+	name "返回<planet>"
+	description "返回<planet>，向流浪者报告：流放者们已关闭了科·塞斯特工厂（在此过程中可能还盗走了设备）。"
+	source "Sestor Ikfar"
+	destination "Desi Seledrak"
+	passengers 1
+	to offer
+		has "Wanderers: Sestor: Factory 2: done"
+	on offer
+		log "科拉斯流亡者履行了与流浪者的协议，关闭了最后一座科·塞斯特无人机工厂，尽管彻底清除现有无人机可能还需一些时日。"
+		fail "Wanderers: Sestor: Factory Escorts"
+		event "wanderers: sestor shutdown"
+		conversation
+			`降落时，科拉斯流亡者告知你，他们已经成功关闭了工厂。他们表示将自行返回领地；按照雷克的翻译，既然任务已完成，就不再需要你“护送”他们了。你祝他们好运，随后他们便离开了。`
+			`	工厂区确实已经停工：不再有机械的轰鸣声、电弧焊的火花，也没有烟囱向大气中喷吐蒸汽。实际上，你仔细观察后发现，他们不仅仅是关闭了工厂——还从中拆走了某些关键部件。`
+			`	雷克问道：“看上去他们成功了吗？”`
+			choice
+				`	“是的，工厂已经关闭了。”`
+					goto end
+				`	“看起来他们拆解了工厂，还带走了一些零件。”`
+			`	“哦，”雷克说，“这稍微有点不祥。但他们毕竟是拾荒者；也许只是不想让可用的机器白白生锈。”`
+			label end
+			`	此地已无事可做，你准备返回<planet>，向流浪者首领汇报。`
+				accept
+	on visit
+		dialog `你降落在<planet>上，但意识到载有雷克的护卫还未进入星系。最好先起飞，等它到来。`
+
+
+
+event "wanderers: exiles hostile"
+	"reputation: Korath" = -1000
+
+event "wanderers: exiles have drones"
+	fleet "Korath Home"
+		add variant 2
+			"Tek Far 71 - Lek"
+			"Far Lek 14" 6
+		add variant 2
+			"Tek Far 71 - Lek (Close Quarters)"
+			"Far Lek 14" 4
+		add variant 2
+			"Tek Far 78 - Osk (Close Quarters)"
+			"Far Osk 27" 5
+		add variant 2
+			"Tek Far 78 - Osk"
+			"Far Osk 27" 2
+		add variant 3
+			"Tek Far 109"
+			"Far Lek 14" 9
+			"Far Osk 27" 7
+		add variant 3
+			"Met Par Tek 53" 3
+		add variant 2
+			"Met Par Tek 53 (Sniper)" 3
+		add variant
+			"Kar Ik Vot 349"
+		add variant
+			"Kar Ik Vot 349 (Defense)"
+		add variant
+			"Kar Ik Vot 349 (Offense)"
+		add variant
+			"Kar Ik Vot 349 (Trapper)"
+		add variant 1
+			"Model 512"
+		add variant 2
+			"Model 512"
+			"Model 256"
+		add variant 2
+			"Model 256"
+		add variant 2
+			"Model 256"
+			"Model 64" 2
+		add variant 2
+			"Model 128" 2
+		add variant 2
+			"Model 64"
+			"Model 32" 3
+		add variant 3
+			"Model 64" 2
+			"Model 32" 3
+		add variant 4
+			"Model 32"
+			"Model 16" 5
+
+event "wanderers: sestor eliminated"
+	system "Celeborim"
+		government "Uninhabited"
+		fleet "Small Kor Mereti" 10000
+	system "Makferuti"
+		government "Uninhabited"
+		fleet "Small Kor Mereti" 10000
+	system "Asikafarnut"
+		government "Uninhabited"
+		fleet "Large Kor Mereti" 3600
+	system "Sobarati"
+		government "Uninhabited"
+		fleet "Small Kor Mereti" 10000
+	system "Silikatakfar"
+		government "Uninhabited"
+		fleet "Large Kor Mereti" 1600
+	system "Ferukistek"
+		government "Uninhabited"
+		fleet "Large Kor Mereti" 2400
+	system "Eneremprukt"
+		government "Uninhabited"
+		fleet "Large Kor Mereti" 2000
+	system "Mesuket"
+		remove fleet "Large Kor Sestor"
+
+event "wanderers: sabira eseskrai colony"
+	system "Skeruto"
+		government "Wanderer"
+		fleet "Large Quarg (Kor Efret)" 1000
+		fleet "Wanderer Defense" 1200
+		fleet "Wanderer Drones" 800
+		fleet "Kor Efret Home" 800
+	system "Furmeliki"
+		add fleet "Kor Efret Home" 800
+	planet "Sabira Eseskrai"
+		add attributes "wanderer"
+		description `很久以前，这颗行星曾是数个科拉斯石油采矿定居点的所在地，但如今仅存少数几栋最高建筑的顶部。其余一切已被沙暴掩埋。`
+		description `	由于近期气候变迁，沙漠再度开始收缩，当地植被逐年扩展，覆盖了越来越多的土地。流浪者们与科·埃弗雷提合作，在此建立了一处定居点，并着手加速荒地的复苏进程。`
+		spaceport `这座小定居点里居住着人数大致相当的柯拉特人和漫游者定居者。由于双方大多不会讲对方的语言，两个群体之间并不怎么混处，交流基本全凭手势与图画。虽然收效有限，但这至少是两个物种开启互相学习的良好开端。`
+
+mission "Wanderers: Sestor: Final: Patched"
+	landing
+	name "调查流放者"
+	description "访问科拉斯流亡者领地，寻找他们计划开始建造自己的战争无人机的任何迹象。"
+	source "Desi Seledrak"
+	to offer
+		has "Wanderers: Sestor: Factory 3: done"
+		not "Wanderers: Sestor: Final: offered"
+	to fail
+		has "Wanderers: Sestor: Final: offered"
+	waypoint "Kor Fel'tar"
+	on enter "Kor Fel'tar"
+		dialog `这个星系中有几架科·梅雷提和科·塞斯特的无人机，它们看起来并不友好。你应该向流浪者报告，流放者已经开始制造自己的无人机了。`
+	on offer
+		event "wanderers: exiles hostile" 4
+		conversation
+			`当你见到流浪者首领时，索巴里·特利克告诉你：“我们的[侦察员/观察员]传来消息，塞斯托无人机数量正在[减少/缩减]，很快就会消失殆尽。我们对您表示[感谢/感激]。但梅雷蒂告诉我们一个更令人担忧的[故事/说法]。”你注意到尽管他体型变大，但似乎难以直立，因此他的头大致与你同高。`
+			`	梅托·帕阿雷特说：“梅雷蒂[联系/沟通]了我，说他们的一座空间站被科拉斯流亡者[袭击/渗透]，一些[机械/设备]被盗。梅雷蒂没有[攻击/战斗]流亡者，因为他们认为他们是[朋友/盟友]。船长<last>，您能带雷克去拜访那些[流亡者/放逐者]并了解他们的计划吗？”`
+			choice
+				`	"Sure, I would be glad to."`
+					accept
+				`	“被盗的设备会不会让他们有能力建造自己的无人机舰队？”`
+			`	"That is what we are afraid of," says Tele'ek. You agree to travel to the territory of the exiles and see if there is any evidence that they are building war drones there.`
+				accept
+	npc
+		system "Kor Fel'tar"
+		government "Korath"
+		personality heroic staying
+		fleet
+			names "korath"
+			variant
+				"Model 32"
+				"Model 16" 3
+				"Tek Far 78 - Osk"
+				"Met Par Tek 53 (Sniper)" 2
+	on visit
+		dialog phrase "generic waypoint on visit"
+	on complete
+		log "发现科拉斯流放者在关闭科·塞斯特工厂时，还从工厂获取了足够的技术，得以开始自行生产战争无人机。流放者可能已变得比以往危险得多。"
+		log "Factions" "Wanderers" `天眼开启后，连接虫洞将流浪者领地与饱受摧残的科拉斯世界所在的空间区域连通。流浪者已在科拉斯星域建立了数个新殖民地，并开始向这片太空区域迁徙。他们与科·埃弗雷提建立了正式外交关系，并得以终结科·梅雷提与科·塞斯特之间的战争。`
+		log "Factions" "Korath" `流浪者开始在部分荒芜的科拉斯星系建立殖民地，并成功终结了科·梅雷提与科·塞斯特之间的战争。科埃弗雷提已开始重建自己的世界，并在流浪者的指导下进行这一努力。`
+		set "wanderers sestor done"
+		event "wanderers: exiles have drones" 20
+		event "wanderers: sabira eseskrai colony" 30
+		event "wanderers: sestor eliminated" 40
+		event "wanderers: sestor planets unrestricted" 40
+		event "wanderers taking jobs from kor efreti" 5
+		event "wanderers: moonbeam mass production" 5
+		conversation
+			`你告诉流浪者，科拉斯流亡者现在正在生产战争无人机。“这真是不幸，”索巴里·特利克说，“显然他们预料未来还会有冲突。”`
+			`	Tema'a Iriket说：“也许他们是害怕我们，只是想拥有保护自己的手段。重要的是这个区域的无人机已经被消灭，我们现在可以专注于真正的工作。”`
+			`	接着，对话转向了兴奋的讨论：他们会接下来定居在哪些世界，以及下一步与科·埃弗雷提和科·梅雷提集体建立关系应该采取什么步骤。流亡者可能在将来某个时候成为威胁，但目前流浪者渴望在天眼引领他们进入的这个新领域追求他们的和平使命。`
+
+# This patch mission is necessary for people who got the older version of the "Sestor: Final" mission without the patches integrated.
+mission "Wanderers: Sestor: Combined Patch 1"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "Wanderers: Sestor: Final: done"
+	to fail
+		has "Wanderers: Sestor: Final: Patched: offered"
+	on offer
+		set "wanderers sestor done"
+		event "wanderers: sestor planets unrestricted" 40
+		event "wanderers taking jobs from kor efreti" 5
+		event "wanderers: moonbeam mass production" 5
+		fail
+
+event "wanderers: sestor planets unrestricted"
+	planet "Drekag Firask"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+	planet "Sestor Ikfar"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+		description `这颗干燥炎热的星球几乎没有原生生命，但由于丰富的太阳能，非常适合科拉斯自动机械。在曾经科拉斯城市所在的地方，科·塞斯特建造了巨大的工厂，有些建筑物高度接近一千米。在其他地方，土地仍然未开发，现在工厂已经关闭，似乎这种情况会持续很长一段时间。`
+	planet "Devru Kaska"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+	planet "Sebra Skira"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+	planet "Keneska Fek"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+	planet "Sopi Lefarkata"
+		"required reputation" 0
+		remove spaceport
+		remove attributes sestor
+		description `这是一颗寒冷多山的世界，大部分海洋被冰层覆盖。山体侧面被挖出的寥寥几个巨大陨石坑，是这里曾经存在科拉斯定居点的唯一迹象。科·塞斯特机器人开始在山脉深处、免受轨道轰炸的洞穴中建造自己的定居点，但如今这些定居点已逐渐失修。在科·梅雷提上一轮攻击导致一处通道坍塌的地方，少数机器人聚集在一起，徒劳地试图将通道挖开。`
+
+event "wanderers taking jobs from kor efreti"
+	system "Sumprast"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Sevrelect"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Kashikt"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Dokdobaru"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Furmeliki"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Meftarkata"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Skeruto"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Kaliptari"
+		add fleet "Wanderer Kor Efret Traders" 1500
+	system "Solifar"
+		add fleet "Wanderer Kor Efret Traders" 1500

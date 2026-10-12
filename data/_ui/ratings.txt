@@ -1,0 +1,58 @@
+# Copyright (c) 2017 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+rating "combat"
+	"无害"
+	"基本无害"
+	"并非完全无能"
+	"勉强称职"
+	"略有威胁"
+	"颇具威慑"
+	"不可小觑"
+	"老练战士"
+	"受敬重的对手"
+	"不容忽视的力量"
+	"可怕的斗士"
+	"强劲的对手"
+	"恐怖战士"
+	"身经百战的战神"
+	"传奇敌人"
+	"嗜战狂人"
+	"嗜血至极"
+	"星系之恐怖"
+	"破坏力难以想象"
+	"大灭绝的执行者"
+	"种族灭绝狂魔"
+	"世界毁灭者"
+rating "cargo attractiveness"
+	"微不足道"
+	"收获寥寥"
+	"尚可的收获"
+	"有利可图"
+	"相当值钱"
+	"丰饶"
+	"丰厚"
+	"大量战利品"
+	"财富丰厚"
+	"难以估量的财富"
+rating "armament deterrence"
+	"待宰羔羊"
+	"武器极少"
+	"防御孱弱"
+	"略为脆弱"
+	"防护良好"
+	"相当危险"
+	"重装武装"
+	"严重威胁"
+	"致命火力"
+	"难以攻克"

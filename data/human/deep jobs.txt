@@ -1,0 +1,1234 @@
+# Copyright (c) 2014 by Michael Zahniser and Nate Graham
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+phrase "deep mystery cube pickup"
+	word
+		`按照指示，你`
+		`你`
+	word
+		` `
+	word
+		`打开了一个保险箱`
+		`打开了一个储物柜`
+	word
+		` `
+	word
+		`，它位于一座无标识的无人仓库中`
+		`，它就在你的降落点附近`
+	word
+		` `
+	word
+		`，并取走了那个神秘包裹。那是一个小巧的黑色方块，每边长约两厘米，分量出奇地沉重，表面没有任何标记。`
+	word
+		` `
+	word
+		`真古怪。` 2
+		`真蹊跷。` 2
+		`你隐约看到有个可疑的身影在盯着你，但也可能是你的错觉。`
+		`你无意中听到有人在描述你的外貌特征，却看不到声音来自何处，也听不出是在向谁汇报。`
+		`当你离开时，你与一个看起来很危险的人打了个照面。对方是在盯着你吗？大概只是巧合吧。`
+
+phrase "deep mystery cube dropoff payment"
+	word
+		`按照指示，你`
+	word
+		` `
+	word
+		`把这块神秘立方体放在距离航天港几公里外的路边。`
+		`把这块神秘立方体留在一座摇摇欲坠的木塔后面。`
+		`在降落航天港之前，把立方体埋在偏僻荒凉的地方。`
+		`把立方体交给你在行星表面看到的第一个女乞丐。她一言不发地收下，随后离开。`
+		`把立方体扔在一家仓库里。没有人过来取走它。`
+	word
+		``
+		`“这一定是合法的，不然他们也没法发布到任务板上。”你提醒自己。`
+	word
+		` `
+	word
+		`你的银行账户立刻收到通知，约定好的<payment>报酬已经到账。你好奇他们是怎么知道的。`
+
+phrase "deep mystery cube dropoff station payment"
+	word
+		`按照指示，你`
+	word
+		` `
+	word
+		`把神秘方块留在了你遇到的第二个物资柜里。`
+		`把神秘方块放进了一个拧开螺丝的通风口里。`
+		`把方块交给了你在空间站看到的第三对游客夫妻。他们二话不说就收下了。`
+		`把方块丢进了太空港里的一个铜制垃圾桶。`
+		`把方块扔进了洗衣通道里。`
+	word
+		``
+		`“这肯定是合法的，不然他们不可能发布到任务板上。”你提醒自己。`
+	word
+		` `
+	word
+		`你的银行账户立刻收到通知，约定好的 <payment> 报酬已经到账。你很好奇他们是怎么知道的。`
+
+mission "Mystery Cube Delivery Job Safe [0]"
+	job
+	repeat
+	name "奥秘星快递至<planet>"
+	description "将包裹运送到<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+	destination
+		distance 7 16
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Hai" "Quarg"
+		not attributes "station"
+	cargo "mystery package" 1
+	to offer
+		random < 30
+	on accept
+		dialog phrase "deep mystery cube pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		"mystery cube" ++
+		payment 5000 1000
+		dialog phrase "deep mystery cube dropoff payment"
+
+
+mission "Mystery Cube Delivery Job Safe [1]"
+	job
+	repeat
+	name "奥秘星快递至<planet>"
+	description "将包裹运送到<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+	destination
+		distance 9 20
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Hai" "Quarg"
+		not attributes "station"
+	cargo "mystery package" 1
+	to offer
+		random < 15
+	on accept
+		dialog phrase "deep mystery cube pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		"mystery cube" ++
+		payment 5000 1000
+		dialog phrase "deep mystery cube dropoff payment"
+
+mission "Mystery Cube Delivery Job [0]"
+	job
+	repeat
+	name "奥秘星快递至<planet>"
+	description "将包裹运送到<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+	destination
+		distance 7 16
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Hai" "Quarg"
+		not attributes "station"
+	cargo "mystery package" 1
+	to offer
+		random < 45
+		"combat rating" > 35
+	on accept
+		dialog phrase "deep mystery cube pickup"
+	npc
+		government "Bounty Hunter"
+		personality nemesis disables waiting plunders
+		system
+			distance 6 9
+		fleet "Bounty Hunters"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		"reputation: Deep Security" += 2
+		"mystery cube" ++
+		payment 5000 1000
+		dialog phrase "deep mystery cube dropoff payment"
+
+
+mission "Mystery Cube Delivery Job [1]"
+	job
+	repeat
+	name "奥秘星快递至<planet>"
+	description "将包裹运送到<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+	destination
+		distance 9 20
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Hai" "Quarg"
+		not attributes "station"
+	cargo "mystery package" 1
+	to offer
+		random < 30
+		"combat rating" > 35
+	on accept
+		dialog phrase "deep mystery cube pickup"
+	npc
+		government "Bounty Hunter"
+		personality nemesis disables waiting plunders
+		system
+			distance 6 9
+		fleet "Bounty Hunters"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		"reputation: Deep Security" += 2
+		"mystery cube" ++
+		payment 5000 1000
+		dialog phrase "deep mystery cube dropoff payment"
+
+
+mission "Mystery Cube Delivery Job [2]"
+	job
+	repeat
+	name "奥秘星快递至<planet>"
+	description "将包裹运送到<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+	destination
+		distance 9 20
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Hai" "Quarg"
+		not attributes "station"
+	cargo "mystery package" 1
+	to offer
+		random < 30
+		"combat rating" > 35
+	on accept
+		dialog phrase "deep mystery cube pickup"
+	npc
+		government "Bounty Hunter"
+		personality nemesis disables waiting plunders
+		system
+			distance 6 9
+		fleet "Bounty Hunters"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		"reputation: Deep Security" += 2
+		"mystery cube" ++
+		payment 5000 1000
+		dialog phrase "deep mystery cube dropoff payment"
+
+
+mission "Mystery Cube Delivery Job [3]"
+	job
+	repeat
+	name "奥秘星快递至<planet>"
+	description "将包裹运送到<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+	destination
+		distance 9 20
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Hai" "Quarg"
+		not attributes "station"
+	cargo "mystery package" 1
+	to offer
+		random < 30
+		"combat rating" > 35
+	on accept
+		dialog phrase "deep mystery cube pickup"
+	npc
+		government "Bounty Hunter"
+		personality nemesis disables waiting plunders
+		system
+			distance 6 9
+		fleet "Bounty Hunters"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		"reputation: Deep Security" += 2
+		"mystery cube" ++
+		payment 5000 1000
+		dialog phrase "deep mystery cube dropoff payment"
+
+
+mission "Mystery Cube Delivery Job Station"
+	job
+	repeat
+	name "奥秘星快递至<planet>"
+	description "将包裹运送到<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+	destination
+		distance 9 20
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Hai" "Quarg"
+		attributes "station"
+	cargo "mystery package" 1
+	to offer
+		random < 10
+		"combat rating" > 35
+	on accept
+		dialog phrase "deep mystery cube pickup"
+	npc
+		government "Bounty Hunter"
+		personality nemesis disables waiting plunders
+		system
+			distance 6 9
+		fleet "Bounty Hunters"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		"reputation: Deep Security" += 2
+		"mystery cube" ++
+		payment 5000 1000
+		dialog phrase "deep mystery cube dropoff station payment"
+
+
+mission "Mystery Cube Retrieval Job"
+	job
+	repeat
+	name "从<planet stopovers>取回奥秘星货物"
+	description "从<stopovers>取回包裹，然后返回<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+	stopover
+		distance 9 20
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Hai" "Quarg"
+		attributes "spaceport"
+		not attributes "station"
+	cargo "mystery package" 1
+	to offer
+		random < 30
+		"combat rating" > 35
+	npc
+		government "Bounty Hunter"
+		personality nemesis disables waiting plunders
+		system
+			distance 10 17
+		fleet "Bounty Hunters"
+	on stopover
+		dialog phrase "deep mystery cube pickup"
+	on visit
+		dialog phrase "generic missing stopover or cargo"
+	on complete
+		"reputation: Deep Security" += 2
+		"mystery cube" ++
+		payment 5000 1000
+		dialog phrase "deep mystery cube dropoff payment"
+
+
+mission "Transport scientists"
+	job
+	repeat
+	description "一个由<bunks>名科学家组成的团队需要前往<stopovers>上的设施分析一些研究笔记。送他们前往该处，然后将他们送回<planet>，报酬为<payment>。"
+	source
+		attributes "deep"
+	stopover
+		attributes "education" "research"
+		not attributes "uninhabited"
+		distance 2 50
+	passengers 3 4 .43
+	to offer
+		random < 15
+	on stopover
+		dialog "一路上，科学家们一直在兴高采烈地讨论着他们的研究成果。当他们前往一所著名的研究实验室去分析成果时，你乐得享受这片刻的清静。你开始为返回<planet>的旅程做准备。"
+	on visit
+		dialog phrase "generic missing stopover or passengers"
+	on complete
+		dialog "你向科学家们告别，收下了<payment>的报酬。"
+		payment
+		payment 30000
+
+
+mission "Transport science department"
+	job
+	repeat
+	description "一个拥有<bunks>名科学家的科研部门需要前往<stopovers>上的设施分析一些研究笔记。带他们前往该处，然后将他们送回<planet>，报酬为<payment>。"
+	source
+		attributes "deep"
+	stopover
+		attributes "education" "research"
+		not attributes "uninhabited"
+		distance 2 50
+	passengers 20 4 .1
+	to offer
+		random < "passenger space" - 30
+	on stopover
+		dialog "在整个航程中，科学家们一直在兴高采烈地分享和讨论着各自研究团队的成果。当他们前往一所著名的研究实验室分析成果时，你乐得享受这片刻的清静。你开始为返回<planet>的旅程做准备。"
+	on visit
+		dialog phrase "generic missing stopover or passengers"
+	on complete
+		dialog "你向科学家们告别，收下了<payment>的报酬。"
+		payment 180000 100
+
+
+mission "Escort science vessel"
+	job
+	repeat
+	description "<npc>号科研船的船员请求护卫至<stopovers>，他们计划在那里研究一些异常现象。护航他们前往该处，然后护航他们返回<planet>，报酬为<payment>。"
+	source
+		attributes "research"
+	stopover
+		attributes "education" "quarg" "pirate" "volcanic" "frontier" "dirt belt" "north" "south"
+		distance 6 50
+	to offer
+		random < 15
+		"combat rating" > 50
+	npc
+		government "Pirate"
+		personality nemesis waiting plunders
+		system
+			distance 2 3
+		fleet "pirate raid"
+	
+	npc accompany save
+		government "Merchant"
+		personality escort timid
+		fleet
+			names "deep science vessel"
+			variant
+				"Scout"
+			variant
+				"Bounder"
+			variant
+				"Star Queen"
+	on stopover
+		dialog "<npc>在你身旁着陆，一队队身穿洁白实验服、脚蹬专业靴子、戴着防护手套的科学家，携带着各式各样的奇异设备涌入测试场地。在他们进行测量时，你开始为返回<planet>的航程做准备。"
+	on visit
+		dialog "你已经到达<planet>，但必须等<npc>随你一同访问过<stopovers>并在本星与你汇合后，才能完成此任务。"
+	on complete
+		dialog "你向<npc>的船长告别，收下了<payment>的报酬。"
+		payment
+		payment 60000
+
+phrase "academic conference recording payment"
+	word
+		`你降落在<planet>，前往一所规模宏大的大学会议厅。凭着提供的通行凭证，你顺利进入会场，并在大厅后方架设好了录像设备。`
+	word
+		` `
+	word
+		`与会专家们的发言极具感染力，就科学与人文领域的各种前沿议题侃侃而谈。这段经历让你对人类在这片星空下的未来感到无比乐观。`
+	word
+		` `
+	word
+		`你将视频传输给位于<origin>的联系人，并收到了<payment>的报酬。`
+
+mission "Record academic conference"
+	job
+	repeat
+	description "为无法出席的教授录制在<destination>举办的学术会议。届时将提供通行证件和录音设备。报酬为<payment>。"
+	source
+		attributes "deep"
+	destination
+		attributes "education" "research" "quarg" "wealthy" "paradise"
+		distance 4 10
+	cargo "recording equipment" 1
+	to offer
+		random < 15
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		dialog phrase "academic conference recording payment"
+		payment 5000 1000
+
+
+phrase "secure package pickup"
+	word
+		`按照指示，你`
+		`你`
+	word
+		` `
+	word
+		`在安全行李柜台取走了包裹，`
+		`在安保前台接收了包裹，`
+	word
+		` `
+	word
+		`地点位于太空港偏僻之处。`
+		`地点就在你的着陆点附近。`
+	word
+		` `
+	word
+		`那是一个大箱子，放在带有内置安全锁的反重力推车上。`
+		`那是一个小箱子，带有复杂的电子密码锁。`
+		`那是一个包裹得严严实实的软包，捏一下就会发出令人不安的声音。`
+
+phrase "secure package dropoff payment"
+	word
+		`按照指示，你将包裹送到了`
+	word
+		` `
+	word
+		`一家科技公司的接待前台。`
+		`一名面露倦意的太空港安保官手中。`
+		`一家布置精美的奇珍店。`
+		`一名便衣警官手上，对方仅进行了最简单的身份核查便将包裹收下。`
+		`一位在长椅上等待的老妇人手中。`
+		`另一位在码头等候的船长手中。`
+	word
+		` `
+	word
+		`你的银行账户立刻收到通知，事先约定的 <payment> 报酬已经到账。`
+
+
+mission "Secure Transport Job (Secret) [0]"
+	job
+	repeat
+	name "安全运送至<planet>"
+	description "将一份安全物资包裹运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		not planet "Valhalla"
+		not attributes "station"
+	cargo "secure package" 1
+	to offer
+		random < 25
+		not "deep security reveal"
+		"reputation: Deep Security" >= 0
+		"reputation: Deep Security" >= "secure deep package" * -3
+	on accept
+		dialog phrase "secure package pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 3
+	on complete
+		payment 3000 750
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "secure package dropoff payment"
+
+mission "Secure Transport Job (Secret) [1]"
+	job
+	repeat
+	name "安全运送至<planet>"
+	description "将一份安全物资包裹运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		not planet "Valhalla"
+		not attributes "station"
+	cargo "secure package" 1
+	to offer
+		random < 20
+		not "deep security reveal"
+		"reputation: Deep Security" >= 0
+		"reputation: Deep Security" >= "secure deep package" * -3
+	on accept
+		dialog phrase "secure package pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 3
+	on complete
+		payment 3000 750
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "secure package dropoff payment"
+
+mission "Secure Transport Job (Secret) [2]"
+	job
+	repeat
+	name "安全运送至<planet>"
+	description "将一份安全物资包裹运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		not planet "Valhalla"
+		not attributes "station"
+	cargo "secure package" 1
+	to offer
+		random < 20
+		not "deep security reveal"
+		"reputation: Deep Security" >= 0
+		"reputation: Deep Security" >= "secure deep package" * -3
+	on accept
+		dialog phrase "secure package pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 3
+	on complete
+		payment 3000 750
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "secure package dropoff payment"
+
+mission "Secure Transport Job (Secret) [3]"
+	job
+	repeat
+	name "安全运送至<planet>"
+	description "将一份安全物资包裹运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		not planet "Valhalla"
+		not attributes "station"
+	cargo "secure package" 1
+	to offer
+		random < 20
+		not "deep security reveal"
+		"reputation: Deep Security" >= 0
+		"reputation: Deep Security" >= "secure deep package" * -3
+	on accept
+		dialog phrase "secure package pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 3
+	on complete
+		payment 3000 750
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "secure package dropoff payment"
+
+mission "Secure Transport Job (Secret) [4]"
+	job
+	repeat
+	name "安全运送至<planet>"
+	description "将一份安全物资包裹运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		not planet "Valhalla"
+		not attributes "station"
+	cargo "secure package" 1
+	to offer
+		random < 20
+		not "deep security reveal"
+		"reputation: Deep Security" >= 0
+		"reputation: Deep Security" >= "secure deep package" * -3
+	on accept
+		dialog phrase "secure package pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 3
+	on complete
+		payment 3000 750
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "secure package dropoff payment"
+
+
+mission "Deep Security Package Reveal"
+	minor
+	invisible
+	source
+		attributes "deep"
+		not attributes "station"
+	to offer
+		"reputation: Deep Security" >= 40
+		"secure deep package" >= 20
+		"mystery cube" >= 5
+		not "deep security reveal"
+		or
+			not "chosen sides"
+			has "main plot completed"
+	on offer
+		log "Minor People" "Agent Wayde" `星渊安保后勤部门的一名年轻特工。在你向他伸出援手后，他为你作保，让你获得了更多的工作机会。`
+		conversation
+			`当你转身离开太空港的一处小吃摊时，一名身穿运动服、相当年轻的男子向你招手，示意你过去坐到主街一侧的长椅上。`
+			choice
+				`	（走过去。）`
+					goto bench
+				`	（继续走。）`
+			`	当你打算无视他并继续走时，他迅速吹了一声清脆的口哨，并朝你晃了一下星渊安保的徽章。他随即挥了挥手，摆出一副友好的样子来掩人耳目，但很明显，他是不会轻易让你走掉的。`
+			label bench
+			`	当你走近长椅时，他说：“你好，船长。请坐，请允许我占用你一点时间。”`
+			`	他的举动显得有些刻意，像是事先排练过一般，但他在提出请求时显得十分真诚且笃定。`
+			choice
+				`	“好吧。你是谁？”`
+					goto who
+				`	“抱歉，我现在很忙。”`
+			`	“说白了，我是特地来感谢你的，如果这能让你安心的话。”他说。`
+			choice
+				`	“哦。什么事？”（坐下。）`
+				`	“抱歉，下次吧。”`
+					decline
+			label who
+			`	当你坐下时，那名男子朝你笑了笑，接着一边继续留意过路的行人，一边说道：“我叫韦德，不介意的话也可以叫我韦德特工。不过不用太在意这个头衔，我……呃，我在星渊安保的后勤部门工作。你最近运送了大量安全包裹，其中有好几批是我的。”`
+			choice
+				`	“只要给报酬就行。”`
+					goto "blind acceptance"
+				`	“啊，是的。”`
+					goto "blind acceptance"
+				`	“所有的安全包裹都属于星渊安保吗？”`
+			`	“噢，不，很多科技公司和富人也使用同样的安全包裹运输渠道。不过我们确实会监控所有的渠道，以确保我们自己的渠道不会因为某些不明智……或者非法的行为而遭到破坏。”他耸了耸肩，带着打量的目光看着你。`
+			label "blind acceptance"
+			`	“嗯，我查看了你的记录，看来你为星渊做了不少事，而且口碑很好。我们喜欢保留一份飞行员名单，以便在需要紧急或谨慎运送物品时联系他们，看来你符合条件。总之，你已经通过了背景调查。`
+			`	“总之，我获得了授权，可以为你提供一个加入该名单的一次性机会。别担心，我现在不要求你做任何事。”`
+			`	他暂时收回了环顾行人的目光，直视着你。“那么，你有兴趣吗？”`
+			choice
+				`	“我愿意帮忙。”`
+					goto agree
+				`	“抱歉，但我不想牵扯太深。”`
+					decline
+				`	“你说了两次‘总之’。”`
+			`	他的表情微微抽搐了一下，但还是笑呵呵地继续说道：“呃，好眼力。不过我刚才的问题依然有效。”`
+			choice
+				`	“我愿意帮忙。”`
+					goto agree
+				`	“抱歉，但我不想牵扯太深。”`
+					decline
+			label agree
+			`	“太好了，”他说着站起身来伸了个腰，仿佛在为这场友好的交谈作结。他转过身来对你微笑道：“我一回办公室就把你加到名单里。你的ID也可以让你看到哪些包裹具体是属于我们星渊安保的。哦，再次感谢！”`
+			action
+				set "deep security reveal"
+			`	韦德特工似乎朝你的方向微微敬了个礼，又或者只是抬了抬那顶不存在的帽子。“祝你今天愉快，船长。我很期待未来能与你共事。”`
+			`	他利落地一甩头发，把挡在眼前的刘海拨开，然后小跑着离去，在拐弯消失前朝你的方向最后挥了挥手。`
+				decline
+
+
+mission "Secure Transport Job (Basic) [0]"
+	job
+	repeat
+	name "安全运送至<planet>"
+	description "将一份安全物资包裹运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		not planet "Valhalla"
+		not attributes "station"
+	cargo "secure package" 1
+	to offer
+		random < 50
+		has "deep security reveal"
+		"reputation: Deep Security" >= 0
+		"reputation: Deep Security" >= "secure deep package" * -3
+	on accept
+		dialog phrase "secure package pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 3
+	on complete
+		payment 3000 750
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "secure package dropoff payment"
+
+mission "Secure Transport Job (Basic) [1]"
+	job
+	repeat
+	name "安全运送至<planet>"
+	description "将一份安全物资包裹运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		not planet "Valhalla"
+		not attributes "station"
+	cargo "secure package" 1
+	to offer
+		random < 50
+		has "deep security reveal"
+		"reputation: Deep Security" >= 0
+		"reputation: Deep Security" >= "secure deep package" * -3
+	on accept
+		dialog phrase "secure package pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 3
+	on complete
+		payment 3000 750
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "secure package dropoff payment"
+
+mission "Secure Transport Job (Deep Security) [0]"
+	job
+	repeat
+	name "星渊安保运送至<planet>"
+	description "将一个星渊安保包裹运送至<destination>。报酬为<payment>。"
+	cargo "deep security package" 1
+	to offer
+		random < 20
+		has "deep security reveal"
+		"reputation: Deep Security" >= 40
+		"secure deep package" >= 20
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		not planet "Valhalla"
+		not attributes "station"
+	on accept
+		dialog phrase "secure package pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 5
+	on complete
+		payment 5000 1000
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "secure package dropoff payment"
+
+mission "Secure Transport Job (Deep Security) [1]"
+	job
+	repeat
+	name "星渊安保运送至<planet>"
+	description "将一个星渊安保包裹运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		not planet "Valhalla"
+		not attributes "station"
+	cargo "deep security package" 1
+	to offer
+		random < 20
+		has "deep security reveal"
+		"reputation: Deep Security" >= 40
+		"secure deep package" >= 20
+	on accept
+		dialog phrase "secure package pickup"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 5
+	on complete
+		payment 5000 1000
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "secure package dropoff payment"
+
+
+mission "Deep Consultants"
+	minor
+	name "运送顾问至<planet>"
+	description "朱莉和她的助手错过了她们的交通工具，需要在<date>之前抵达<destination>以参加几场重要的商务会议。"
+	source
+		attributes "deep"
+		attributes "urban"
+		not attributes "station" "moon"
+		not planet "Valhalla"
+	destination "Valhalla"
+	deadline 2 1
+	passengers 2
+	to offer
+		"reputation: Deep Security" >= 60
+		"secure deep package" >= 30
+		has "deep security reveal"
+		or
+			not "chosen sides"
+			has "main plot completed"
+	on offer
+		conversation
+			`当你在太空港漫步时，一位气喘吁吁的年轻女子突然拦住了你。“拜托了，船长，”她喘着粗气说，“真高兴我赶上您了。”`
+			`	深吸了一口气后，她挺直了身子，朝不远处的某人指了指。“船长，很抱歉打扰，但我的同事朱莉和我急需搭乘紧急交通工具。您能帮帮我们吗？”`
+			`	在她继续平复呼吸时，年长些的同事拖着行李匆匆赶来。`
+			choice
+				`	“当然，很乐意帮忙。”`
+					goto sure
+				`	“你们要去哪？”`
+				`	“为什么这么急？”`
+				`	“你是谁？”`
+			`	朱莉伸出手以示问候。“抱歉，我们正式认识一下。我叫朱莉·吉拉尔。我和助手因为公务耽搁，错过了预订的客船。我们急需前往瓦尔哈拉参加几个重要的商务会议，但不幸的是，接下来的整整五天里所有的班次都订满了，我的雇主可无法接受这种事情。”`
+			choice
+				`	“当然，很乐意帮忙。”`
+					goto sure
+				`	“你的雇主是谁？”`
+			`	朱莉偷偷瞥了一眼附近的人。“嗯，其实我有几个雇主，但目前来说，间接是星渊安保。”`
+			`	她稍微凑近了一些，压低声音。“我们能查阅他们的紧急可信飞行员名单。给你的报酬会很丰厚。”`
+			choice
+				`	“当然，很乐意帮忙。”`
+					goto sure
+				`	“抱歉，但我现在真的帮不了你们。”`
+					decline
+			label sure
+			`	“那就在前面带路吧，”朱莉说。你指向自己的飞船，两位女士便动身登船。`
+				accept
+	on complete
+		log "Minor People" "Julie Gillar" `一位曾与星渊安保合作的顾问。她曾向你请求紧急运送，并教你如何为日后的顾问提供服务。`
+		payment 350000
+		set "deep security consultants"
+		conversation
+			`朱莉和她的助理在整个航程中都是模范乘客。在她准备下船时，她对你的帮助表示感谢。除了将<payment>转入你的账户外，她还帮你修改了在本地太空港机构的任务板偏好设置，以便你能够承接与星渊安保合作的商务旅客的委托。`
+			`	“谢谢你，<last>船长，你帮了大忙。不过，平时还是多留意一下这附近的太空港。星渊安保是出了名地喜欢超时滞留我们。这里经常会有顾问被困住，急需快速离星。”`
+
+
+phrase "stranded consultant pickup"
+	word
+		`按照住宿要求，你`
+		`虽然通知仓促，你还是`
+	word
+		` `
+	word
+		`在酒店下榻处接到了<passengers>`
+		`从安保站接走了<passengers>`
+		`从乌烟瘴气的酒吧里捞出了<passengers>`
+		`从几位盛气凌人的同伴手中解救了<passengers>`
+	word
+		` `
+	word
+		`，当时他们位于太空港偏僻安静的一角，`
+		`，当时他们位于城镇的另一侧，`
+		`，当时他们位于太空港外喧闹的街区，`
+	word
+		` `
+	word
+		`并护送他们登船。`
+
+phrase "stranded consultant dropoff payment"
+	word
+		`当你将顾问们送达目的地时，他们向你表示了感谢。`
+	word
+		` `
+	word
+		`事后你才发现，他们在你的一间舱室里留下一双脏靴子。`
+		`事后，你发现飞船门把头上挂着一条遗落的领带。`
+		`稍后，你在船上发现了一些揉皱的文件，明智地看也没看就扔进了飞船的焚化炉。`
+	word
+		` `
+	word
+		`不久后，你的银行账户收到通知，约定的款项 <payment> 已到账。`
+
+
+mission "Transport Consultants (Deep Security) [0]"
+	job
+	repeat
+	name "运送星渊安保顾问"
+	description "将行程被星渊安保打乱的<fare>运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		attributes "urban"
+		not attributes "station"
+	passengers 1 8
+	to offer
+		random < 20
+		has "deep security consultants"
+		"reputation: Deep Security" >= 60
+		"secure deep package" >= 30
+	on accept
+		dialog phrase "stranded consultant pickup"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 7
+	on complete
+		payment 10000 300
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "stranded consultant dropoff payment"
+
+mission "Transport Consultants (Deep Security) [1]"
+	job
+	repeat
+	name "运送星渊安保顾问"
+	description "将行程被星渊安保打乱的<fare>运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+		not attributes "station"
+	destination
+		distance 2 7
+		attributes "deep"
+		attributes "urban"
+		not attributes "station"
+	passengers 1 8
+	to offer
+		random < 20
+		has "deep security consultants"
+		"reputation: Deep Security" >= 60
+		"secure deep package" >= 30
+	on accept
+		dialog phrase "stranded consultant pickup"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 7
+	on complete
+		payment 10000 300
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "stranded consultant dropoff payment"
+
+
+mission "Urgent Deep Sec Package"
+	minor
+	repeat
+	name "星渊安保紧急递送"
+	description "在<date>前将星渊安保的包裹送达<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+	destination
+		distance 6 7
+		attributes "deep"
+		not planet "Valhalla"
+		not attributes "station"
+	deadline 1 1
+	cargo "deep security package" 1
+	to offer
+		random < 3
+		has "deep security reveal"
+		"reputation: Deep Security" >= 40
+		"secure deep package" >= 20
+	on offer
+		dialog `当你漫步在太空港时，一名男子朝你走来，并亮出了一张星渊安保的身份证明。“您好，<last>船长。我们需要有人在<date>前将这件物品送达<destination>，请务必走最直接的航线。”`
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 7
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 30000 1000
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "secure package dropoff payment"
+
+mission "Urgent Deep Sec Consultants [0]"
+	minor
+	repeat
+	name "紧急运送星渊安保顾问"
+	description "在<date>之前，将<bunks>名星渊安保顾问运送至<destination>。报酬为<payment>。"
+	source
+		attributes "deep"
+	destination
+		distance 6 7
+		attributes "deep"
+		attributes "urban"
+		not attributes "station"
+	deadline 1 1
+	passengers 2 6
+	to offer
+		random < 1
+		has "deep security consultants"
+		"reputation: Deep Security" >= 60
+		"secure deep package" >= 30
+	on offer
+		dialog `当你穿过太空港时，一名神色匆忙的男子走近你，表示包括他在内的<bunks>名星渊安保顾问急需在<date>前被送往<destination>，期间不容许任何中途停留。`
+	on visit
+		dialog phrase "generic passenger on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 9
+	on complete
+		payment 60000 300
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "stranded consultant dropoff payment"
+
+mission "Urgent Deep Sec Consultants [1]"
+	repeat
+	minor
+	name "紧急运送星渊安保顾问"
+	description "在<date>之前，将<bunks>名星渊安保顾问运送至<destination>。报酬为<payment>。"
+	source
+		near "Epsilon Leonis" 3 4
+		attributes "deep"
+		not attributes "station"
+	destination "Valhalla"
+	deadline 1 1
+	passengers 2 6
+	to offer
+		random < 3
+		has "deep security consultants"
+		"reputation: Deep Security" >= 60
+		"secure deep package" >= 30
+	on offer
+		dialog `当你穿过太空港时，一名神色匆忙的男子走近你，表示包括他在内的<bunks>名星渊安保顾问急需在<date>前被送往<destination>，期间不容许任何中途停留。`
+	on visit
+		dialog phrase "generic passenger on visit"
+	on abort
+		# No penalty for aborting.
+	on fail
+		"secure deep package" -= 9
+	on complete
+		payment 60000 300
+		"reputation: Deep Security" += 1
+		"secure deep package" ++
+		dialog phrase "stranded consultant dropoff payment"
+
+
+mission "Lionheart Shipment [0]"
+	name "运送至<planet>的货物"
+	description "将<cargo>运送至<destination>，这里是因先进及实验性设计而闻名的狮心工业总部。报酬为<payment>。"
+	cargo "weapons" 5 2 .1
+	job
+	repeat
+	to offer
+		random < 10
+		has "landing access: Valhalla"
+	source
+		near "Epsilon Leonis" 2 10
+		attributes factory
+	destination Valhalla
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 0 160
+		dialog phrase "generic cargo delivery payment"
+
+mission "Lionheart Shipment [1]"
+	name "运送至<planet>的货物"
+	description "将<cargo>运送至<destination>，这里是因先进及实验性设计而闻名的狮心工业总部。报酬为<payment>。"
+	cargo "Ship Alloys" 5 2 .1
+	job
+	repeat
+	to offer
+		random < 10
+		has "landing access: Valhalla"
+	source
+		near "Epsilon Leonis" 2 10
+		attributes factory research
+	destination Valhalla
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 0 160
+		dialog phrase "generic cargo delivery payment"
+
+mission "Lionheart Shipment [2]"
+	name "运送至<planet>的货物"
+	description "将<cargo>运送至<destination>，这里是因先进及实验性设计而闻名的狮心工业总部。报酬为<payment>。"
+	cargo "Ship Systems" 5 2 .1
+	job
+	repeat
+	to offer
+		random < 10
+		has "landing access: Valhalla"
+	source
+		near "Epsilon Leonis" 2 10
+		attributes factory mining
+	destination Valhalla
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 0 160
+		dialog phrase "generic cargo delivery payment"
+
+mission "Deep Sky Shipment [0]"
+	name "运送至<planet>的货物"
+	description "将<cargo>运送至<destination>，这里是生产尖端网络增强设备、武器和星舰装备的深空工业总部。报酬为<payment>。"
+	cargo Metal 5 2 .1
+	job
+	repeat
+	to offer
+		random < 10
+		has "landing access: Asgard"
+	source
+		near Naos 2 15
+		attributes factory
+	destination Asgard
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 0 160
+		dialog phrase "generic cargo delivery payment"
+
+mission "Deep Sky Shipment [1]"
+	name "运送至<planet>的货物"
+	description "将<cargo>运送至<destination>，这里是生产尖端网络增强设备、武器和星舰装备的深空工业总部。报酬为<payment>。"
+	cargo Electronics 5 2 .1
+	job
+	repeat
+	to offer
+		random < 10
+		has "landing access: Asgard"
+	source
+		near Naos 2 15
+		attributes factory research
+	destination Asgard
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 0 160
+		dialog phrase "generic cargo delivery payment"
+
+mission "Deep Hovercraft Racer Transport"
+	name "运送赛车手至<planet>"
+	description "在<date>前，将一名驾驶员及其气垫船送达<destination>以参加比赛。"
+	passengers 1
+	cargo "Deep hovercraft" 1
+	job
+	repeat
+	deadline
+	deadline 8
+	to offer
+		random < 6
+		has "landing access: Sunracer"
+	source
+		attributes "deep"
+	destination Sunracer
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment
+		payment 11000
+		dialog `你送达了驾驶员和气垫船，并收到了<payment>的报酬。`
+
+mission "Deep Hovercraft Large Racer Transport"
+	name "运送车队至<planet>"
+	description "在<date>前，将这支由<passengers>人组成的赛车队及他们的<cargo>送达<destination>以参加比赛。"
+	passengers 50 100 .9
+	cargo "Deep hovercraft" 50
+	job
+	repeat
+	deadline
+	deadline 8
+	to offer
+		random < 1
+		has "landing access: Sunracer"
+	source
+		attributes "deep"
+	destination Sunracer
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment
+		payment 23000
+		dialog `你送达了赛车队和他们的气垫船，并收到了<payment>的报酬。`

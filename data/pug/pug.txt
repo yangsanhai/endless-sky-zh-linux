@@ -1,0 +1,259 @@
+# Copyright (c) 2015 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+phrase "pug"
+	word
+		"Pak"
+		"Mug"
+		"Prot"
+		"Dor"
+		"Mek"
+		"Cam"
+		"Yot"
+		"Quim"
+		"Tsoop"
+		"Froid"
+		"Groip"
+		"Ploort"
+		"Schmar"
+		"Klar"
+		"Brek"
+	word
+		" " 3
+		" Kim "
+		" Wor "
+		" Moof "
+		" Plat "
+		" Del "
+		" Ben "
+		" Gred "
+		" Klort "
+		" Rep "
+		" For "
+		"一艘"
+		" io "
+		" el "
+	word
+		"Glorf"
+		"Florp"
+		"Marg"
+		"Graw"
+		"Ged"
+		"Peg"
+		"Plog"
+		"Hort"
+		"Noor"
+		"Joop"
+		"Drap"
+		"Loit"
+		"Sol"
+		"Wan"
+
+phrase "friendly pug"
+	word
+		"我们"
+		"帕格"
+		"我们的使命是"
+		"我们的天职是"
+		"我们一族将"
+		"我们旨在"
+		"我们唯愿"
+	word
+		" "
+	word
+		"带来"
+		"促进"
+		"推进"
+		"确保"
+		"缔造"
+		"培育"
+		"激发"
+		"支持"
+		"维护"
+		"协助带来"
+		"助力于"
+		"致力于"
+		"促成"
+	word
+		" "
+	word
+		"和平"
+		"治愈"
+		"正义"
+		"自由"
+		"冲突的平息"
+		"暴力的消弭"
+		"战火的平息"
+		"繁荣"
+		"和解"
+		"友谊"
+		"团结"
+		"暴力的终结"
+	word
+		"愿意砸多少钱。"
+		"在星系之中。"
+		"在整个宇宙之中。"
+		"在所有智慧生命之中。"
+
+phrase "friendly disabled pug"
+	word
+		"我们不过是宏大整体的一部分"
+		"属于我们的时刻已至"
+		"我们虽已被击败，但伟业仍在继续"
+	word
+		"; "
+	word
+		"听凭我们消亡吧"
+		"抛下我们继续战斗"
+		"不必为我们担忧"
+	word
+		"愿意砸多少钱。"
+
+phrase "hostile pug"
+	word
+		"你"
+	word
+		" "
+	word
+		"犯下了"
+		"正在犯下"
+		"犯下了"
+		"犯下了"
+		"正在犯下"
+		"选择了"
+		"正在做出"
+		"正在延续"
+	word
+		" "
+	word
+		"令人遗憾的"
+		"情有可原的"
+		"不幸的"
+		"严重的"
+		"重大的"
+		"极端的"
+		"不明智的"
+		"荒谬的"
+		"愚蠢的"
+		"蠢笨的"
+		"疯狂的"
+		"荒谬至极的"
+		"不智的"
+		"糟糕的"
+	word
+		" "
+	word
+		"错误"
+		"失误"
+		"判断失误"
+		"选择"
+		"决定"
+		"大错"
+		"误判"
+		"失策"
+		"过错"
+		"恶行"
+	word
+		"愿意砸多少钱。"
+
+
+
+fleet "Small Pug"
+	government "Pug"
+	names "pug"
+	cargo 1
+	personality
+		heroic
+	variant 1
+		"Pug Zibruka"
+	variant 2
+		"Pug Zibruka" 2
+	variant 2
+		"Pug Enfolta"
+	variant 1
+		"Pug Enfolta"
+		"Pug Zibruka"
+
+fleet "Large Pug"
+	government "Pug"
+	names "pug"
+	cargo 1
+	personality
+		heroic
+	variant 1
+		"Pug Enfolta"
+		"Pug Zibruka" 2
+	variant 1
+		"Pug Enfolta" 2
+	variant 1
+		"Pug Zibruka" 5
+	variant 2
+		"Pug Maboro"
+		"Pug Zibruka" 2
+	variant 3
+		"Pug Maboro"
+		"Pug Enfolta"
+		"Pug Zibruka"
+	variant 2
+		"Pug Maboro"
+		"Pug Enfolta" 2
+	variant 1
+		"Pug Maboro"
+		"Pug Enfolta"
+		"Pug Zibruka" 2
+
+
+
+fleet "Small Pug (Wanderer)"
+	government "Pug (Wanderer)"
+	names "pug"
+	cargo 1
+	personality
+		heroic
+	variant 1
+		"Pug Zibruka"
+	variant 2
+		"Pug Zibruka" 2
+	variant 2
+		"Pug Enfolta"
+	variant 1
+		"Pug Enfolta"
+		"Pug Zibruka"
+
+fleet "Large Pug (Wanderer)"
+	government "Pug (Wanderer)"
+	names "pug"
+	cargo 1
+	personality
+		heroic
+	variant 1
+		"Pug Enfolta"
+		"Pug Zibruka" 2
+	variant 1
+		"Pug Enfolta" 2
+	variant 1
+		"Pug Zibruka" 5
+	variant 2
+		"Pug Maboro"
+		"Pug Zibruka" 2
+	variant 3
+		"Pug Maboro"
+		"Pug Enfolta"
+		"Pug Zibruka"
+	variant 2
+		"Pug Maboro"
+		"Pug Enfolta" 2
+	variant 1
+		"Pug Maboro"
+		"Pug Enfolta"
+		"Pug Zibruka" 2

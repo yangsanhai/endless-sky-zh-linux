@@ -1,0 +1,384 @@
+# Copyright (c) 2020 by Zitchas
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+
+phrase "00-07"
+	word
+		"00"
+		"01"
+		"02"
+		"03"
+		"04"
+		"05"
+		"06"
+		"07"
+
+
+
+phrase "0-F"
+	word
+		"0"
+		"1"
+		"2"
+		"3"
+		"4"
+		"5"
+		"6"
+		"7"
+		"8"
+		"9"
+		"一个"
+		"B"
+		"C"
+		"D"
+		"E"
+		"F"
+
+
+
+phrase "00-1F"
+	word
+		"0"
+		"1"
+	phrase
+		"0-F"
+
+
+
+phrase "A group of"
+	word
+		"一个 "
+	word
+		"pair"
+		"couple"
+		"pack"
+		"squad"
+		"team"
+		"family"
+		"group"
+		"gathering"
+		"small group"
+		"medium group"
+		"large group"
+	word
+		"属于"
+
+
+
+phrase "Indeterminate"
+	word
+		"几个"
+		"Several"
+		"一帮"
+		"Lots of"
+		"Many"
+	word
+		" "
+
+
+
+phrase "Amount of Remnant"
+	phrase
+		"A group of"
+		"Indeterminate"
+	word
+		"遗民"
+
+
+news "remnant security advisory"
+	location
+		government "Remnant"
+	name
+		word
+			"System Security"
+			"Local"
+			"System"
+			"Defense"
+		word
+			" "
+		word
+			"警告"
+			"Status"
+			"Threats"
+	message
+		word
+			`"`
+		word
+			"科拉斯舰队来袭，预计到达时间： "
+		word
+			"${00-07} 天"
+		word
+			" "
+		phrase
+			"00-1F"
+		word
+			" 小时后。威胁等级 Sierra-"
+		word
+			"2"
+			"3"
+		phrase
+			"0-F"
+		word
+			"愿意砸多少钱。"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"科拉斯飞船来袭，预计到达时间： "
+		word
+			"${00-07} 天"
+		word
+			" "
+		phrase
+			"00-1F"
+		word
+			" 小时后。威胁等级 Sierra-"
+		word
+			"4"
+			"5"
+		phrase
+			"0-F"
+		word
+			"愿意砸多少钱。"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"巡逻队"
+			"打捞"
+			"哨兵"
+			"攻击"
+			"侦察"
+			"护卫"
+			"诱饵"
+		word
+			" "
+		word
+			"编队"
+			"利爪"
+			"联队"
+		word
+			" "
+		phrase
+			"0-F"
+		phrase
+			"0-F"
+		phrase
+			"0-F"
+		word
+			" "
+		word
+			"准备"
+			"就绪"
+			"待命"
+			"等待"
+		word
+			" "
+		word
+			"离开"
+			"发射"
+			"战斗"
+		word
+			"愿意砸多少钱。"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"打捞船注意，立即报告轨道位置，科拉斯飞船即将来袭。"
+			"当前威胁等级无变化。"
+			"保持正常安全状态。"
+			"建议所有离港飞船武器系统保持热机状态。"
+			"建议所有离港飞船注意附近可能有敌对目标。"
+			"提醒：更新敌我识别设置并验证密钥。"
+			"提醒：每次启动时验证选择性敌我识别广播功能。"
+		word
+			`"`
+
+
+
+news "remnant incomprehensible"
+	location
+		government "Remnant"
+	name
+		word
+			"Spaceport"
+			"Loading dock"
+			"Cafeteria"
+			"Landing pad"
+			"Landing dock"
+			"Spaceport alley"
+			"Spaceport hallway"
+	message
+		phrase
+			"Amount of Remnant"
+		word
+			" 示意 "
+			" 手势 "
+		word
+			"快速地"
+			"冷静地"
+			"悠闲地"
+			"缓慢地"
+			"从容地"
+			"小心地"
+			"精确地"
+			"尖锐地"
+			"轻快地"
+			"一扫而过地"
+			"密集地"
+			"细致地"
+			"详细地"
+			"模糊地"
+			"轻快地"
+			"匆忙地"
+			"仓促地"
+			"突然地"
+			"自发地"
+		word
+			" 向 "
+		word
+			"互相"
+			"另一位遗民"
+			"其他遗民"
+			"在问讯处的一位遗民"
+			"一位码头工人"
+			"你无法看见的某物或某人"
+		word
+			". "
+		word
+			"你无法 "
+		word
+			"辨认出"
+			"推测出"
+			"理解"
+			"领会"
+		word
+			" 他们在 "
+		word
+			"说什么"
+			"交流什么"
+			"表达什么"
+			"讨论什么"
+		word
+			"愿意砸多少钱。"
+
+
+
+news "remnant cafeteria"
+	location
+		government "Remnant"
+	name
+		word
+			"Spaceport"
+			"Cafeteria"
+			"Dining room"
+			"Buffet"
+			"Mess"
+			"Canteen"
+			"Kitchen"
+		
+	message
+		phrase
+			"Amount of Remnant"
+		word
+			" "
+		word
+			"从厨房窗口取走堆满食物的托盘"
+			"似乎正一起享用丰盛的一餐"
+			"正在大餐的残羹旁放松"
+			"正对着丰盛的餐食互相打手势"
+			"正一边吃大餐一边阅读报告"
+			"正一边吃大餐一边查看全息投影"
+		word
+			"愿意砸多少钱。"
+
+
+
+news "remnant comprehensible"
+	location
+		government "Remnant"
+	to show
+		has "remnant: sign studies complete"
+	name
+		word
+			"Spaceport"
+			"Loading dock"
+			"Cafeteria"
+			"Landing pad"
+			"Landing dock"
+			"Spaceport alley"
+			"Spaceport hallway"
+	message
+		phrase
+			"Amount of Remnant"
+		word
+			" 示意 "
+			" 手势 "
+		word
+			"快速地"
+			"冷静地"
+			"悠闲地"
+			"缓慢地"
+			"从容地"
+			"小心地"
+			"精确地"
+			"尖锐地"
+			"轻快地"
+			"一扫而过地"
+			"密集地"
+			"细致地"
+			"详细地"
+			"模糊地"
+			"轻快地"
+			"匆忙地"
+			"仓促地"
+			"突然地"
+			"自发地"
+		word
+			" 向 "
+		word
+			"互相"
+			"另一位遗民"
+			"其他遗民"
+			"在问讯处的一位遗民"
+			"一位码头工人"
+			"你无法看见的某物或某人"
+		word
+			". "
+		word
+			"从这个角度， "
+			"当他们不面对你时， "
+		word
+			"你所能 "
+			"你所能 "
+		word
+			"辨认出"
+			"捕捉到"
+			"看到"
+			"辨别出"
+		word
+			" 是他们在 "
+		word
+			"讨论最近的一次打捞行动"
+			"制定午餐计划"
+			"争论引擎效率"
+			"闲聊关于一位来自余烬废土之外的访客"
+		word
+			"愿意砸多少钱。"

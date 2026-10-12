@@ -1,0 +1,1841 @@
+# Copyright (c) 2017 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+
+ship "Albatross"
+	"display name" "信天翁"
+	plural "信天翁级"
+	sprite "ship/albatross"
+	thumbnail "thumbnail/albatross"
+	"administrative cost" 7
+	attributes
+		category "Heavy Warship"
+		licenses
+			"Remnant Capital"
+		cost 20250000
+		"shields" 34200
+		"hull" 12600
+		"required crew" 44
+		"bunks" 75
+		"cargo space" 124
+		"mass" 1443
+		"drag" 14.2
+		"heat dissipation" 0.37
+		"fuel capacity" 600
+		"ramscoop" 2.75
+		"outfit space" 672
+		"weapon capacity" 236
+		"engine capacity" 142
+		"shield generation" 5.2
+		"shield energy" 4.6
+		"hull repair rate" 1.5
+		"hull energy" 1.2
+		"outfit scan power" 18
+		"outfit scan efficiency" 24
+		"tactical scan power" 39
+		weapon
+			"blast radius" 360
+			"shield damage" 3600
+			"hull damage" 1800
+			"hit force" 5400
+	outfits
+		"Inhibitor Cannon" 6
+		"Thrasher Turret" 2
+		"Point Defense Turret"
+
+		"Aeon Cell"
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Thermoelectric Cooler" 3
+		"Quantum Key Stone"
+
+		"Smelter-Class Thruster"
+		"Smelter-Class Steering"
+		"Scram Drive"
+
+	engine -28 155 .8
+	engine 28 155 .8
+	engine 0 184 .9
+	gun 0 -190
+	gun -9 -177 "Inhibitor Cannon"
+	gun 9 -177 "Inhibitor Cannon"
+	gun -14 -162 "Inhibitor Cannon"
+	gun 14 -162 "Inhibitor Cannon"
+	gun -18 -144 "Inhibitor Cannon"
+	gun 18 -144 "Inhibitor Cannon"
+	turret -23 -34 "Thrasher Turret"
+	turret 23 -34 "Thrasher Turret"
+	turret -74 62
+	turret 74 62
+	turret 0 77 "Point Defense Turret"
+	leak "remnant leak" 30 10
+	leak "remnant leak sparkle" 30 10
+	explode "small explosion" 30
+	explode "medium explosion" 60
+	explode "large explosion" 40
+	explode "huge explosion" 10
+	"final explode" "final explosion large" 1
+	description "离开人类空间后，遗民很快意识到，如果被阿尔法人或其他不友好的势力发现，他们必须建造自己的船坞来自卫。利用新发现的复合材料，他们建造了与人类空间所见截然不同的飞船。"
+
+ship "Albatross" "Albatross (Sniper)"
+	outfits
+		"Inhibitor Cannon" 5
+		"EMP Torpedo Bay" 2
+		"Point Defense Turret" 3
+		"EMP Torpedo" 66
+		"EMP Torpedo Storage Bay" 3
+
+		"Aeon Cell"
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Thermoelectric Cooler" 3
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Outfits Expansion"
+		"Tuning Rifle" 57
+
+		"Forge-Class Thruster"
+		"Crucible-Class Thruster"
+		"Smelter-Class Steering"
+		"Scram Drive"
+
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "EMP Torpedo Bay"
+	gun "EMP Torpedo Bay"
+
+	turret "Point Defense Turret"
+	turret "Point Defense Turret"
+	turret
+	turret
+	turret "Point Defense Turret"
+
+ship "Albatross" "Albatross (Turret)"
+	outfits
+		"Thrasher Turret" 4
+		"Point Defense Turret"
+
+		"Aeon Cell"
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Thermoelectric Cooler"
+		"Quantum Key Stone"
+		"Outfits Expansion" 2
+		"Tuning Rifle" 49
+
+		"Smelter-Class Thruster"
+		"Smelter-Class Steering"
+		"Scram Drive"
+
+	turret "Thrasher Turret"
+	turret "Thrasher Turret"
+	turret "Thrasher Turret"
+	turret "Thrasher Turret"
+	turret "Point Defense Turret"
+
+ship "Albatross" "Albatross (Heavy)"
+	outfits
+		"Inhibitor Cannon" 3
+		"Thrasher Cannon" 4
+		"Thrasher Turret" 3
+
+		"Aeon Cell"
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor" 2
+		"Thermoelectric Cooler" 3
+		"Quantum Key Stone"
+		"Outfits Expansion" 4
+		"Tuning Rifle" 65
+
+		"Forge-Class Thruster"
+		"Crucible-Class Thruster"
+		"Smelter-Class Steering"
+		"Forge-Class Steering"
+		"Scram Drive"
+
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	turret "Thrasher Turret"
+	turret "Thrasher Turret"
+	turret
+	turret
+	turret "Thrasher Turret"
+
+ship "Albatross" "Albatross (Shield)"
+	outfits
+		"Point Defense Turret" 4
+		"Thrasher Turret"
+
+		"Aeon Cell"
+		"Millennium Cell"
+		"Thermoelectric Cooler" 2
+		"Quantum Key Stone"
+		"Outfits Expansion" 6
+		"Systems Core (Large)" 3
+		"Small Heat Shunt" 1
+		"Large Heat Shunt" 1
+		
+		"Tuning Rifle" 75
+
+		"Crucible-Class Thruster"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+	turret "Thrasher Turret"
+	turret "Point Defense Turret"
+	turret "Point Defense Turret"
+	turret "Point Defense Turret"
+	turret "Point Defense Turret"
+
+ship "Albatross" "Albatross (Ember Shield)"
+	outfits
+		"Thrasher Turret" 2
+
+		"Aeon Cell"
+		"Millennium Cell"
+		"Crystal Capacitor" 2
+		"Quantum Key Stone"
+		"Emergency Ramscoop"
+		"Outfits Expansion" 6
+		"Systems Core (Large)" 4
+		"Large Heat Shunt"
+		"Thermoelectric Cooler"
+		
+		"Tuning Rifle" 47
+
+		"Crucible-Class Thruster"
+		"Crucible-Class Steering"
+		"Hyperdrive"
+
+	turret "Thrasher Turret"
+	turret "Thrasher Turret"
+	turret
+	turret
+	turret
+
+ship "Albatross" "Albatross (Sniper II)"
+	outfits
+		"Inhibitor Cannon" 5
+		"Teciimach Bay" 2
+		"Point Defense Turret" 3
+		"EMP Torpedo" 76
+		"EMP Torpedo Storage Bay" 3
+
+		"Aeon Cell"
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Thermoelectric Cooler" 3
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Outfits Expansion"
+		"Tuning Rifle" 57
+
+		"Forge-Class Thruster"
+		"Crucible-Class Thruster"
+		"Smelter-Class Steering"
+		"Scram Drive"
+
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Teciimach Bay"
+	gun "Teciimach Bay"
+
+	turret "Point Defense Turret"
+	turret "Point Defense Turret"
+	turret
+	turret
+	turret "Point Defense Turret"
+
+
+ship "Modified Dromedary"
+	"display name" "改装型单峰驼"
+	plural "改装单峰驼级"
+	sprite "ship/modified dromedary"
+	thumbnail "thumbnail/modified dromedary"
+	"administrative cost" 7
+	attributes
+		licenses
+			"Remnant Capital"
+		category "Utility"
+		"cost" 57600000
+		"shields" 15100
+		"hull" 9600
+		"required crew" 95
+		"bunks" 300
+		"mass" 2366
+		"drag" 28.7
+		"heat dissipation" .22
+		"fuel capacity" 900
+		"cargo space" 550
+		"outfit space" 740
+		"weapon capacity" 270
+		"engine capacity" 195
+		"solar collection" 1.1
+		"outfit scan power" 18
+		"outfit scan efficiency" 48
+		"tactical scan power" 39
+		"asteroid scan power" 42
+		"atmosphere scan" 100
+		weapon
+			"blast radius" 260
+			"shield damage" 2600
+			"hull damage" 1300
+			"hit force" 3900
+	outfits
+		"Thrasher Turret" 2
+		"Point Defense Turret" 2
+
+		"Aeon Cell"
+		"Crystal Capacitor" 2
+		"Thermoelectric Cooler" 3
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Tuning Rifle" 95
+
+		"Smelter-Class Thruster"
+		"Smelter-Class Steering"
+		"Hyperdrive"
+		"Scram Drive"
+
+	engine 32.5 207
+	engine 3 207
+	engine -27.5 207
+	gun 65 -111
+		angle 40
+	gun -72 -97.5
+		angle 320
+	gun -66.5 61
+		angle 270
+	gun 78 64
+		angle 90
+	turret 10 -136.5 "Thrasher Turret"
+	turret -21.5 -57.5 "Point Defense Turret"
+	turret 51 101
+	turret -63.5 120 "Thrasher Turret"
+	turret 52.5 143 "Point Defense Turret"
+	bay "Fighter" -51 -54 under
+		"launch effect" "human internal"
+	bay "Fighter" 47 -40 under
+		"launch effect" "human internal"
+	leak "leak" 30 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "small explosion" 25
+	explode "medium explosion" 35
+	explode "large explosion" 45
+	explode "huge explosion" 30
+	"final explode" "final explosion large"
+	description `第谷环形山合作社的单峰驼级飞船是早期时代最重要的殖民船之一，那时海盗尚未猖獗，城市船也无需加强战斗能力。这些飞船配备了大规模水培系统、大型工程设备，以及数百个密集排列的“休眠舱”，用于批量运输人员。`
+	description "	由于遗民没有“单峰驼”级的蓝图，只有那艘高度改装过的“破碎之光”号作为参考，因此这艘船实际上是那艘特定飞船的纪念版复制品。正因如此，它将原舰奇特而杂糅的改装风格与遗民的新系统结合在了一起。"
+	description "	不幸的是，由于他们缺乏通常用来支持大型建造项目的制造设施，其成本将比原本在月球上建造时高出很多。"
+
+
+ship "Modified Dromedary" "Modified Dromedary Ghost"
+	sprite "ship/modified dromedary ghost"
+	thumbnail "thumbnail/modified dromedary wreck"
+	"uncapturable"
+	"never disabled"
+	add attributes
+		"shields" -10000
+		"hull" -5000
+		"automaton" 1
+		inscrutable 1
+		"quantum keystone" 1
+		"burn protection" 100
+		"corrosion protection" 100
+		"discharge protection" 1
+		"disruption protection" 100
+		"energy protection" 1
+		"force protection" 100
+		"fuel protection" 100
+		"heat protection" 100
+		"hull protection" 100
+		"ion protection" 1
+		"scramble protection" 1
+		"leak protection" 100
+		"piercing protection" 100
+		"shield protection" 100
+		"slowing protection" 1
+	outfits
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Large Radar Jammer"
+		"Ramscoop"
+		"NDR-114 Android" 100
+		"Laser Rifle" 100
+		
+		"X4700 Ion Thruster"
+		"X5200 Ion Steering"
+		"Hyperdrive"
+		
+
+ship "Modified Dromedary" "Modified Dromedary Specter"
+	sprite "ship/modified dromedary specter"
+	thumbnail "thumbnail/modified dromedary wreck"
+	"uncapturable"
+	"never disabled"
+	add attributes
+		"shields" -10000
+		"hull" -5000
+		"automaton" 1
+		inscrutable 1
+		"quantum keystone" 1
+		"burn protection" 100
+		"corrosion protection" 100
+		"discharge protection" 1
+		"disruption protection" 100
+		"energy protection" 1
+		"force protection" 100
+		"heat protection" 100
+		"fuel protection" 100
+		"hull protection" 100
+		"ion protection" 1
+		"scramble protection" 1
+		"leak protection" 100
+		"piercing protection" 100
+		"shield protection" 100
+		"slowing protection" 1
+	outfits
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Large Radar Jammer"
+		"Ramscoop"
+		"NDR-114 Android" 100
+		"Laser Rifle" 15
+		
+		"X4700 Ion Thruster"
+		"X5200 Ion Steering"
+		"Hyperdrive"
+
+
+ship "Modified Dromedary" "Modified Dromedary Wreck"
+	sprite "ship/modified dromedary wreck"
+	thumbnail "thumbnail/modified dromedary wreck"
+	"uncapturable"
+	"never disabled"
+	attributes
+	add attributes
+		"shields" -10000
+		"hull" -5000
+		"quantum keystone" 1
+		"burn protection" 100
+		"heat protection" 1
+		"discharge protection" 1
+		"energy protection" 1
+		"hull protection" 1
+		"ion protection" 1
+		"scramble protection" 1
+		"slowing protection" 1
+	outfits
+		"Laser Turret" 2
+		"Quad Blaster Turret"
+		"Anti-Missile Turret" 2
+		
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Large Radar Jammer"
+		"Ramscoop"
+		"NDR-114 Android" 100
+		"Laser Rifle" 150
+		
+		"X4700 Ion Thruster"
+		"X5200 Ion Steering"
+		"Hyperdrive"
+	turret "Laser Turret"
+	turret "Anti-Missile Turret"
+	turret "Quad Blaster Turret"
+	turret "Laser Turret"
+	turret "Anti-Missile Turret"
+	description `第谷环形山合作社的单峰驼级飞船是早期时代最重要的殖民船之一，那时海盗尚未猖獗，城市船也无需加强战斗能力。这些飞船配备了大规模水培系统、大型工程设备，以及数百个密集排列的“休眠舱”，用于批量运输人员。`
+	description "	这是一艘残骸。曾可容纳数百人的飞船现已没有可用的环境系统，昔日翠绿的水培穹顶支离破碎，舰船大部分结构似乎已被摧毁。船体上遍布烧灼痕迹、奇怪的刮痕和扭曲变形的构件。只有少数机器人仍在顽强地继续工作，勉强维持着部分功能的运作。"
+
+
+
+ship "Gull"
+	"display name" "海鸥"
+	sprite "ship/gull"
+	thumbnail "thumbnail/gull"
+	"administrative cost" 2
+	attributes
+		category "Light Freighter"
+		licenses
+			Remnant
+		cost 9500000
+		"shields" 6500
+		"hull" 2500
+		"required crew" 3
+		"bunks" 20
+		"mass" 416
+		"drag" 7.5
+		"heat dissipation" 0.56
+		"fuel capacity" 600
+		"ramscoop" 1.75
+		"cargo space" 175
+		"outfit space" 311
+		"weapon capacity" 83
+		"engine capacity" 101
+		"shield generation" 1.6
+		"shield energy" 1.1
+		"hull repair rate" 0.7
+		"hull energy" 0.5
+		"cloak" .02
+		"cloaked shield permeability" 1
+		"cloaking energy" 5
+		"cloaking fuel" .1
+		"cloaked communication" 1
+		"outfit scan power" 12
+		"outfit scan efficiency" 20
+		"tactical scan power" 26
+		weapon
+			"blast radius" 80
+			"shield damage" 800
+			"hull damage" 400
+			"hit force" 1200
+	outfits
+		"Inhibitor Cannon" 1
+		"Point Defense Turret"
+
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 3
+
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+	engine -12 70 0.7
+	engine 12 70 0.7
+	engine 0 78 1
+	gun 0 -96 "Inhibitor Cannon"
+	gun -7 -94
+	gun 7 -94
+	turret 0 26 "Point Defense Turret"
+	leak "remnant leak" 30 7
+	leak "remnant leak sparkle" 30 7
+	explode "tiny explosion" 40
+	explode "small explosion" 20
+	explode "medium explosion" 10
+	"final explode" "final explosion small" 1
+	description "如果说椋鸟号是第一艘成功利用异星遗迹技术的飞船，那么海鸥号则是最新的成果。当前科拉斯活动的加剧使搜集资源变成一项高风险任务，迫使遗民开发出一款专用货船，用于从偏远地点运输货物，同时避免暴露自身位置给敌对外星人。"
+	description "	海鸥级很快便证明了自己的价值，让椋鸟舰队得以重返风险更高的活动，而由海鸥级接管危险的护航航线。如今，它已成为遗民领土外资源行动的主要力量。"
+	description "	隐形技术已集成至海鸥号的船壳之中；无法拆除或转移至其他舰船。"
+
+ship "Gull" "Gull (Sniper)"
+	outfits
+		"Inhibitor Cannon" 3
+		"Point Defense Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Salvage Scanner" 2
+		"Outfits Expansion"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 4
+
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+ship "Gull" "Gull (Support)"
+	outfits
+		"EMP Torpedo Bay"
+		"Inhibitor Cannon" 2
+		"Point Defense Turret"
+		"EMP Torpedo" 27
+		"EMP Torpedo Storage Bay"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Salvage Scanner" 2
+		"Outfits Expansion" 2
+		"Tuning Rifle" 3
+
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+ship "Gull" "Gull (Support II)"
+	outfits
+		"Teciimach Bay"
+		"Inhibitor Cannon" 2
+		"Point Defense Turret"
+		"EMP Torpedo" 32
+		"EMP Torpedo Storage Bay"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Salvage Scanner" 2
+		"Outfits Expansion" 2
+		"Tuning Rifle" 3
+
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+ship "Gull" "Gull (Cargo)"
+	outfits
+		"Cargo Expansion" 4
+
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 3
+
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+ship "Gull" "Gull (Bunks)"
+	outfits
+		"Bunk Room" 4
+
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 3
+
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+
+
+ship "Heron"
+	"display name" "苍鹭"
+	sprite "ship/heron"
+	"administrative cost" 30
+	attributes
+		category "Superheavy"
+		licenses
+			"Remnant Capital"
+		"cost" 256375000
+		"shields" 250500
+		"hull" 250500
+		"required crew" 1000
+		"bunks" 3000
+		"mass" 15725
+		"drag" 62.5
+		"heat dissipation" .32
+		"fuel capacity" 2500
+		"ramscoop" 10.75
+		"cargo space" 1110
+		"outfit space" 2200
+		"weapon capacity" 560
+		"engine capacity" 800
+		"shield generation" 15
+		"shield energy" 1.8
+		"hull repair rate" 15
+		"hull energy" 0.75
+		"cloak" .05
+		"cloaked shield permeability" 1
+		"cloaking energy" 3
+		"cloaking fuel" .05
+		"cloaked communication" 1
+		"gaslining" 1
+		"atmosphere scan" 100
+		"outfit scan power" 175
+		"outfit scan efficiency" 120
+		"tactical scan power" 350
+		"force protection" 1
+		"heat protection" 1.5
+		"ion resistance" 0.3
+		"scramble resistance" 0.3
+		"slowing resistance" 3
+		"remnant node" 11
+		"spinal mount" 1
+		weapon
+			"blast radius" 140
+			"shield damage" 1400
+			"hull damage" 700
+			"hit force" 2100
+	outfits
+		"Ember Tear"
+		"Inhibitor Turret" 6
+		"Point Defense Turret" 3
+
+		"Aeon Cell" 4
+		"Crystal Capacitor" 10
+		"Emergency Ramscoop" 10
+		"Large Heat Shunt" 5
+		"Quantum Key Stone"
+		"Salvage Scanner" 5
+		"Thermoelectric Cooler" 5
+		
+		"Bellows-Class Afterburner" 3
+		"Smelter-Class Thruster" 4
+		"Smelter-Class Steering" 5
+		"Hyperdrive"
+		"Jump Drive"
+		"Scram Drive"
+		
+	engine -111 307.5
+	engine 112 307.5
+	engine -86 289 1.5
+	engine 86 289 1.5
+	engine -52 274 1.5
+	engine 52 274 1.5
+	engine 0 328 1.5
+	gun 0 -325 "Ember Tear"
+	gun -23.5 -302.5
+	gun 23.5 -302.5
+	turret 0 -240.5 "Point Defense Turret"
+	turret -34.5 -134.5 "Inhibitor Turret"
+	turret 34.5 -134.5 "Inhibitor Turret"
+	turret -53 -17.5 "Inhibitor Turret"
+	turret 53 -17.5 "Inhibitor Turret"
+	turret 0 0 "Point Defense Turret"
+	turret -123.5 125.5 "Inhibitor Turret"
+	turret 123.5 125.5 "Inhibitor Turret"
+	turret 0 250 "Point Defense Turret"
+	bay "Drone" -124 -122.5
+		"launch effect" "remnant internal"
+	bay "Drone" 124 -122.5
+		"launch effect" "remnant internal"
+	bay "Drone" -176 -50.5
+		"launch effect" "remnant internal"
+	bay "Drone" 176 -50.5
+		"launch effect" "remnant internal"
+	bay "Drone" -148.5 4
+		"launch effect" "remnant internal"
+	bay "Drone" 148.5 4
+		"launch effect" "remnant internal"
+	bay "Drone" -56 -150
+		"launch effect" "remnant internal"
+	bay "Drone" 56 -150
+		"launch effect" "remnant internal"
+	bay "Drone" -37 -121.5
+		"launch effect" "remnant internal"
+	bay "Drone" 37 -121.5
+		"launch effect" "remnant internal"
+	bay "Drone" -33.5 -99
+		"launch effect" "remnant internal"
+	bay "Drone" 33.5 -99
+		"launch effect" "remnant internal"
+	bay "Drone" -27 -81
+		"launch effect" "remnant internal"
+	bay "Drone" 27 -81
+		"launch effect" "remnant internal"
+	bay "Drone" -24 -49.5
+		"launch effect" "remnant internal"
+	bay "Drone" 24 -49.5
+		"launch effect" "remnant internal"
+	bay "Drone" -40 -3
+		"launch effect" "remnant internal"
+	bay "Drone" 40 -3
+		"launch effect" "remnant internal"
+	bay "Drone" -28 22.5
+		"launch effect" "remnant internal"
+	bay "Drone" 28 22.5
+		"launch effect" "remnant internal"
+	bay "Drone" -77.5 71.5
+		"launch effect" "remnant internal"
+	bay "Drone" 77.5 71.5
+		"launch effect" "remnant internal"
+	bay "Drone" -89.5 114
+		"launch effect" "remnant internal"
+	bay "Drone" 89.5 114
+		"launch effect" "remnant internal"
+	bay "Drone" -138.5 152.5
+		"launch effect" "remnant internal"
+	bay "Drone" 138.5 152.5
+		"launch effect" "remnant internal"
+	bay "Drone" -171 165.5
+		"launch effect" "remnant internal"
+	bay "Drone" 171 165.5
+		"launch effect" "remnant internal"
+	bay "Drone" -190.5 197.5
+		"launch effect" "remnant internal"
+	bay "Drone" 190.5 197.5
+		"launch effect" "remnant internal"
+	bay "Drone" -105 229.5
+		"launch effect" "remnant internal"
+	bay "Drone" 105 229.5
+		"launch effect" "remnant internal"
+	bay "Fighter" -31 70.5
+		"launch effect" "remnant internal"
+	bay "Fighter" 31 70.5
+		"launch effect" "remnant internal"
+	bay "Fighter" -40 190
+		"launch effect" "remnant internal"
+	bay "Fighter" 40 190
+		"launch effect" "remnant internal"
+	explode "small explosion" 40
+	explode "medium explosion" 30
+	explode "large explosion" 20
+	explode "huge explosion" 5
+	"final explode" "final explosion large"
+	description "鹭级是遗民最终的手段：逃亡。这些移动星港被设计成疏散舰队的核心单位，当遗民在其母星系被逼至毁灭边缘时启用。这些巨舰能够搬运巨量资源，既可在太空又可在陆地运作，并能持续升级以充分利用最新的技术革新。"
+	description "	现存为数不多的几艘鹭级飞船是严密守护的秘密，它们体现了遗民的核心战术：速度、隐蔽与生存。鉴于其数量极其稀少，这些飞船从不供遗民船长自行调度，而始终在执政官的权威与指令下运作。"
+
+
+
+ship "Ibis"
+	"display name" "朱鹭"
+	plural "朱鹭"
+	sprite "ship/ibis"
+	thumbnail "thumbnail/ibis"
+	"administrative cost" 4
+	attributes
+		category "Medium Warship"
+		licenses
+			Remnant
+		"cost" 11627000
+		"shields" 14400
+		"hull" 6200
+		"required crew" 16
+		"bunks" 36
+		"mass" 700
+		"drag" 7.4
+		"heat dissipation" 0.49
+		"fuel capacity" 700
+		"ramscoop" 2.75
+		"cargo space" 103
+		"outfit space" 427
+		"weapon capacity" 147
+		"engine capacity" 109
+		"shield generation" 3.5
+		"shield energy" 3.1
+		"hull repair rate" 1.2
+		"hull energy" 0.95
+		"outfit scan power" 18
+		"outfit scan efficiency" 20
+		"tactical scan power" 39
+		weapon
+			"blast radius" 240
+			"shield damage" 2400
+			"hull damage" 1200
+			"hit force" 3000
+	outfits
+		"Inhibitor Cannon" 3
+		"Point Defense Turret"
+		"Thrasher Turret"
+		
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor" 2
+		"Emergency Ramscoop"
+		"Thermoelectric Cooler" 2
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Tuning Rifle" 20
+		
+		"Forge-Class Thruster"
+		"Forge-Class Steering" 2
+		"Scram Drive"
+		
+	bay "Drone" 0 30 over
+		"launch effect" "remnant external"
+	bay "Drone" -34 68 over
+		"launch effect" "remnant external"
+	bay "Drone" 0 81 over
+		"launch effect" "remnant external"
+	bay "Drone" 34 68 over
+		"launch effect" "remnant external"
+	bay "Fighter" -25 10 under
+		"launch effect" "remnant external"
+	bay "Fighter" 25 10 under
+		"launch effect" "remnant external"
+	engine -16.5 120 0.7
+	engine 0 116.5 1
+	engine 16.5 120 0.7
+	gun 0 -135.5 "Inhibitor Cannon"
+	gun 15.5 -102 "Inhibitor Cannon"
+	gun -15.5 -102 "Inhibitor Cannon"
+	turret 0 -62
+	turret 0 -20.5 "Point Defense Turret"
+	turret 0 58.5 "Thrasher Turret"
+	leak "remnant leak" 20 7
+	leak "remnant leak sparkle" 30 10
+	explode "tiny explosion" 10
+	explode "small explosion" 25
+	explode "medium explosion" 25
+	explode "large explosion" 10
+	"final explode" "final explosion medium"
+	description "朱鹭级是一种多用途母舰，可作为移动采矿平台、为鹈鹕级舰队提供护卫的护航舰，以及使用燕鸥级进行掩护的战斗平台。它能部署一支支援单位编队，由两艘海燕级和四艘燕鸥级组成。"
+	description "	在遗民意识到阿尔法人的入侵可能并不像最初认为的那样迫在眉睫后，朱鹭级在信天翁星设计完成后不久便被设计出来，旨在扩大资源收集的范围。"
+
+
+
+ship "Merganser"
+	"display name" "秋沙鸭"
+	sprite "ship/merganser"
+	thumbnail "thumbnail/merganser"
+	"administrative cost" 1
+	attributes
+		category "Interceptor"
+		licenses
+			Remnant
+		"cost" 4830000
+		"shields" 3500
+		"hull" 3000
+		"required crew" 1
+		"bunks" 3
+		"cargo space" 11
+		"fuel capacity" 600
+		"ramscoop" 1.75
+		"mass" 130
+		"drag" 1.7
+		"heat dissipation" .75
+		"gaslining" 1
+		"outfit space" 181
+		"weapon capacity" 60
+		"engine capacity" 64
+		"shield generation" 1.4
+		"shield energy" 1.2
+		"hull repair rate" 0.9
+		"hull energy" 0.6
+		"cloak" .03
+		"cloaked shield permeability" 1
+		"cloaking energy" 4
+		"cloaking fuel" .075
+		"cloaked communication" 1
+		"atmosphere scan" 100
+		"outfit scan power" 12
+		"outfit scan efficiency" 12
+		"tactical scan power" 26
+		"ion resistance" 0.06
+		"scramble resistance" 0.06
+		"thrust" 7.5
+		"turn" 90.0
+		"reverse thrust" 7.5
+		"thrusting energy" 0.75
+		"thrusting heat" 0.7
+		"turning energy" 0.15
+		"turning heat" 0.2
+		"reverse thrusting energy" 0.75
+		"reverse thrusting heat" 0.7
+		"flare sprite" "effect/remnant flare/small"
+			"frame rate" 5
+		"flare sound" "plasma tiny"
+		"steering flare sprite" "effect/remnant flare/small"
+			"frame rate" 5
+		"steering flare sound" "plasma tiny"
+		"reverse flare sprite" "effect/remnant flare/small"
+			"frame rate" 5
+		"reverse flare sound" "plasma tiny"
+		
+		weapon
+			"blast radius" 10
+			"shield damage" 100
+			"hull damage" 150
+			"hit force" 250
+	outfits
+		"Inhibitor Cannon" 2
+		
+		"Millennium Cell" 2
+		"Crystal Capacitor"
+		"Small Heat Shunt"
+		"Quantum Key Stone"
+		
+		"Crucible-Class Thruster"
+		"Crucible-Class Steering"
+		"Bellows-Class Afterburner"
+		"Hyperdrive"
+		
+	gun 0 -48.5
+	gun -6 -41 "Inhibitor Cannon"
+	gun 6 -41 "Inhibitor Cannon"
+	turret 0 0
+	engine 0 45
+	engine -10 49
+	engine 10 49
+	explode "tiny explosion" 30
+	explode "small explosion" 20
+	description "秋沙鸭级是遗民认为第一艘真正具有生命的量产飞船，其在推理测试中的表现与海豚相当。按照遗民的标准，这些截击机被视为短程作战用，设计用于巡逻气态巨行星的高层大气，并利用其决定性的速度优势，对邻近星系中的威胁进行游击攻击。"
+	description "	隐形技术已集成在秋沙鸭号的船体中；无法移除或转移到其他船上。"
+
+
+ship "Merganser" "Merganser (II)"
+	outfits
+		"Inhibitor Cannon" 2
+		"Teciimach Pod"
+		"EMP Torpedo" 3
+		
+		"Millennium Cell" 2
+		"Crystal Capacitor"
+		"Small Heat Shunt"
+		"Quantum Key Stone"
+		
+		"Crucible-Class Thruster"
+		"Crucible-Class Steering"
+		"Bellows-Class Afterburner"
+		"Hyperdrive"
+		
+	gun 0 -48.5 "Teciimach Pod"
+	gun -6 -41 "Inhibitor Cannon"
+	gun 6 -41 "Inhibitor Cannon"
+	turret 0 0
+
+
+
+ship "Pelican"
+	"display name" "鹈鹕"
+	sprite "ship/pelican"
+	thumbnail "thumbnail/pelican"
+	"administrative cost" 4
+	attributes
+		category "Heavy Freighter"
+		licenses
+			"Remnant Capital"
+		cost 9900000
+		"shields" 11300
+		"hull" 5700
+		"required crew" 14
+		"bunks" 35
+		"cargo space" 302
+		"mass" 640
+		"drag" 10.1
+		"heat dissipation" 0.5
+		"fuel capacity" 600
+		"ramscoop" 2.75
+		"outfit space" 480
+		"weapon capacity" 157
+		"engine capacity" 144
+		"shield generation" 2.7
+		"shield energy" 1.8
+		"hull repair rate" 1
+		"hull energy" 0.75
+		"outfit scan power" 12
+		"outfit scan efficiency" 12
+		"tactical scan power" 26
+		weapon
+			"blast radius" 160
+			"shield damage" 1600
+			"hull damage" 800
+			"hit force" 2400
+	outfits
+		"Thrasher Turret"
+		"Point Defense Turret" 2
+
+		"Aeon Cell"
+		"Crystal Capacitor" 2
+		"Thermoelectric Cooler" 3
+		"Emergency Ramscoop"
+		"Quantum Key Stone"
+		"Tuning Rifle" 15
+
+		"Smelter-Class Thruster"
+		"Smelter-Class Steering"
+		"Scram Drive"
+
+	engine 22 92 0.7
+	engine -22 92 0.7
+	engine 0 114 1.1
+	gun 8 -135
+	gun -8 -135
+	turret 0 -67 "Thrasher Turret"
+	turret 56 35 "Point Defense Turret"
+	turret -56 35 "Point Defense Turret"
+	leak "remnant leak" 20 8
+	leak "remnant leak sparkle" 30 12
+	explode "small explosion" 15
+	explode "medium explosion" 30
+	explode "large explosion" 20
+	explode "huge explosion" 5
+	"final explode" "final explosion large" 1
+	description "鹈鹕级的设计紧密依据遗民在余烬废土中发现的原生半有机材料。尽管它们并非严格意义上的生物，但其内部机制与构造方式与生物体高度相似，以至于常被视作活物。这种类生命特征的关键之一，是它们天生具备的感知能力，类似于较不先进的飞船进行详细扫描时所需的传感器套件。这些飞船是遗民大规模打捞作业的骨干力量，也是其快速物流配送网络的核心。"
+
+ship "Pelican" "Pelican (Heavy Lift)"
+	outfits
+		"Small Heat Shunt" 2
+		"Cargo Expansion" 5
+		"Scram Drive"
+		"Smelter-Class Thruster"
+		"Crystal Capacitor" 2
+		"Quantum Key Stone"
+		"Smelter-Class Steering"
+		"Tuning Rifle" 15
+		"Emergency Ramscoop" 5
+		"Aeon Cell"
+
+
+
+ship "Penguin"
+	"display name" "企鹅"
+	sprite "ship/penguin/penguin"
+		"frame rate" 3
+	thumbnail "thumbnail/penguin"
+	"administrative cost" 1
+	attributes
+		category "Transport"
+		licenses
+			Remnant
+		cost 2530000
+		"shields" 3000
+		"hull" 1500
+		"required crew" 1
+		"bunks" 3
+		"mass" 89
+		"drag" 1.37
+		"heat dissipation" 0.88
+		"fuel capacity" 800
+		"energy capacity" 300
+		"ramscoop" 1.25
+		"cargo space" 19
+		"outfit space" 109
+		"weapon capacity" 33
+		"engine capacity" 54
+		"shield generation" 1
+		"shield energy" 0.5
+		"hull repair rate" 2
+		"hull energy" 1.0
+		"gaslining" 1
+		"cloak" .03
+		"cloaked shield permeability" 1
+		"cloaking energy" 3
+		"cloaking fuel" .05
+		"cloaked communication" 1
+		"cloaked scanning" 1
+		"outfit scan power" 50
+		"outfit scan efficiency" 36
+		"tactical scan power" 50
+		"atmosphere scan" 100
+		"ion protection" 0.25
+		"scramble protection" 0.25
+		"ion resistance" 0.05
+		"scramble resistance" 0.05
+		"thrust" 6.3
+		"thrusting energy" 0.6
+		"thrusting heat" 0.55
+		"turn" 120.0
+		"turning energy" 0.22
+		"turning heat" 0.24
+		"reverse thrust" 6.3
+		"reverse thrusting energy" 0.55
+		"reverse thrusting heat" 0.55
+		"energy generation" 0.6
+		"heat generation" 1
+		"flare sprite" "effect/remnant flare/small"
+			"frame rate" 5
+		"flare sound" "plasma tiny"
+		"steering flare sprite" "effect/remnant flare/small"
+			"frame rate" 5
+		"steering flare sound" "plasma tiny"
+		"reverse flare sprite" "effect/remnant flare/small"
+			"frame rate" 5
+		"reverse flare sound" "plasma tiny"
+		"remnant node" 1
+		weapon
+			"blast radius" 20
+			"shield damage" 260
+			"hull damage" 160
+			"hit force" 800
+	outfits
+		"Millennium Cell"
+		"Emergency Ramscoop"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 1
+		
+		"Crucible-Class Thruster"
+		"Crucible-Class Steering"
+		"Hyperdrive"
+	
+	engine 0 30
+	"reverse engine" -11 -17
+		zoom 0.25
+		angle 350
+	"reverse engine" 11 -17
+		zoom 0.25
+		angle 10
+	"steering engine" -11 -17
+		"zoom" 0.15
+		"angle" 90
+		under
+		right
+	"steering engine" 11 -17
+		"zoom" 0.15
+		"angle" 270
+		under
+		left
+	"steering engine" -11 17
+		"zoom" 0.15
+		"angle" 90
+		under
+		left
+	"steering engine" 11 17
+		"zoom" 0.15
+		"angle" 270
+		under
+		right
+	gun 0 -33
+	turret 0 5.5
+	leak "remnant leak sparkle" 30 2
+	explode "tiny explosion" 8
+	explode "small explosion" 7
+	description "受到与虚空精灵近距离接触的启发以及异星生物学复兴的推动，企鹅级作为一款原型船被设计出来，肩负着测试新型星舰技术与探索余烬废土中危险星球的双重职责。这艘船的一大特色在于它真实地拥有生命，并且具备接近自我意识的心智。"
+	description "	隐身技术被整合进企鹅级的船壳中，无法移除或转移至其他飞船。"
+	
+	
+	
+ship "Peregrine"
+	"display name" "游隼"
+	sprite "ship/peregrine/peregrine"
+		"frame rate" 3
+		"rewind"
+	thumbnail "thumbnail/peregrine"
+	"administrative cost" 4
+	attributes
+		category "Medium Warship"
+		licenses
+			"Remnant Capital"
+		"cost" 41627000
+		"shields" 15400
+		"hull" 8600
+		"required crew" 9
+		"bunks" 25
+		"mass" 801
+		"drag" 6.5
+		"heat dissipation" 0.57
+		"fuel capacity" 900
+		"ramscoop" 3.25
+		"cargo space" 59
+		"outfit space" 522
+		"weapon capacity" 220
+		"engine capacity" 171
+		"shield generation" 3.9
+		"shield energy" 3.0
+		"hull repair rate" 1.5
+		"hull energy" 0.90
+		"cloak" .03
+		"cloaked shield permeability" 1
+		"cloaking energy" 4
+		"cloaking fuel" .075
+		"cloaked communication" 1
+		"gaslining" 1
+		"outfit scan power" 18
+		"outfit scan efficiency" 22
+		"tactical scan power" 50
+		"ion resistance" .15
+		"scrambling resistance" .15
+		"remnant node" 5
+		weapon
+			"blast radius" 240
+			"shield damage" 2400
+			"hull damage" 1200
+			"hit force" 3000
+	outfits
+		"Thrasher Cannon" 4
+		"EMP Torpedo Bay" 1
+		"Point Defense Turret"
+		"Thrasher Turret"
+		"EMP Torpedo" 15
+		
+		"Aeon Cell"
+		"Crystal Capacitor" 2
+		"Thermoelectric Cooler" 2
+		"Small Heat Shunt"
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Tuning Rifle" 11
+		
+		"Bellows-Class Afterburner"
+		"Smelter-Class Thruster"
+		"Smelter-Class Steering"
+		"Scram Drive"
+		
+	gun 0 -133.5 "EMP Torpedo Bay"
+	gun -12.5 -105 "Thrasher Cannon"
+	gun 12.5 -105 "Thrasher Cannon"
+	gun -17.5 -83 "Thrasher Cannon"
+	gun 17.5 -83 "Thrasher Cannon"
+	turret 0 -44 "Point Defense Turret"
+	turret 0 21 "Thrasher Turret"
+	engine 0 120.5 1.5
+	engine -26 126 1.1
+	engine 25 123.5 1.1
+	leak "leak" 50 50
+	leak "flame" 50 80
+	leak "big leak" 90 30
+	explode "tiny explosion" 10
+	explode "small explosion" 25
+	explode "medium explosion" 25
+	explode "large explosion" 10
+	"final explode" "final explosion medium"
+	description "游隼级是泰利基于近期实验中获得的新见解以及对虚空精灵的重新研究而设计的第一艘主力战舰。自上一代战舰建造以来，它凝聚了超过一个世纪的发展历程，是新一代遗民飞船的先驱。"
+	description "	游隼级的设计沿袭了古老地球快速攻击巡洋舰的构型。它从其同名生物——地球上最快的自驱生物——汲取灵感，专为迅猛打击而生。在战斗最初几秒，它能迅速逼近敌舰，倾泻毁灭性的弹幕。"
+	description "	隐形技术已整合进游隼号的船体结构中；无法拆除或转移至其他飞船。"
+	
+ship "Peregrine" "Peregrine (II)"
+	outfits
+		"Thrasher Cannon" 4
+		"Teciimach Bay"
+		"Point Defense Turret"
+		"Thrasher Turret"
+		"EMP Torpedo" 20
+		
+		"Aeon Cell"
+		"Crystal Capacitor" 2
+		"Thermoelectric Cooler" 2
+		"Small Heat Shunt"
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Tuning Rifle" 11
+		
+		"Bellows-Class Afterburner"
+		"Smelter-Class Thruster"
+		"Smelter-Class Steering"
+		"Scram Drive"
+		
+	gun 0 -133.5 "Teciimach Bay"
+	gun -12.5 -105 "Thrasher Cannon"
+	gun 12.5 -105 "Thrasher Cannon"
+	gun -17.5 -83 "Thrasher Cannon"
+	gun 17.5 -83 "Thrasher Cannon"
+	turret 0 -44 "Point Defense Turret"
+	turret 0 21 "Thrasher Turret"
+
+
+
+ship "Petrel"
+	"display name" "海燕"
+	sprite "ship/petrel"
+	thumbnail "thumbnail/petrel"
+	"administrative cost" 0
+	attributes
+		category "Fighter"
+		licenses
+			Remnant
+		"cost" 1141000
+		"shields" 1000
+		"hull" 2500
+		"cargo space" 15
+		"fuel capacity" 100
+		"ramscoop" 1.25
+		"required crew" 2
+		"bunks" 3
+		"mass" 68
+		"drag" 1.7
+		"heat dissipation" .73
+		"outfit space" 133
+		"weapon capacity" 33
+		"engine capacity" 34
+		"shield generation" 0.36
+		"shield energy" 0.24
+		"hull repair rate" 0.82
+		"hull energy" 0.54
+		"gaslining" 1
+		"outfit scan power" 10
+		"outfit scan efficiency" 14
+		"tactical scan power" 20
+		"asteroid scan power" 30
+		weapon
+			"blast radius" 15
+			"shield damage" 150
+			"hull damage" 200
+			"hit force" 350
+	outfits
+		"Inhibitor Cannon" 2
+		
+		"Millennium Cell" 2
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		
+		"Anvil-Class Engine"
+		
+	gun 0 -38.5
+	gun -10.5 -24 "Inhibitor Cannon"
+	gun 10.5 -24 "Inhibitor Cannon"
+	turret 0 2.5
+	engine 0 41.5
+	leak "remnant leak sparkle" 20 3
+	explode "tiny explosion" 30
+	explode "small explosion" 20
+	description "海燕级是一种多用途采矿/编队领航战斗机，设计用于在高风险环境中为轻型燕鸥级编队提供支援。该舰的设计最初源自一种在城市建筑与自然地形间穿梭的机动炮台，但被证明易于改装为航天器。"
+	description "	遗民不愿从他们相对稀少的人口基数中牺牲飞行员和船员。因此，他们的战斗机配备了中程武器，旨在从远处打击敌人。"
+	description "	战斗机默认不配备超空间引擎。除非你的舰队中拥有带战斗机机库的飞船，否则无法携带战斗机。"
+
+
+
+ship "Puffin"
+	"display name" "海鹦"
+	sprite "ship/puffin"
+	thumbnail "thumbnail/puffin"
+	"administrative cost" 1
+	attributes
+		category Transport
+		licenses
+			Remnant
+		cost 530000
+		"shields" 800
+		"hull" 1500
+		"required crew" 1
+		"bunks" 2
+		"mass" 46
+		"drag" 1.33
+		"heat dissipation" 0.86
+		"fuel capacity" 700
+		"energy capacity" 150
+		"ramscoop" 1.25
+		"cargo space" 8
+		"outfit space" 80
+		"engine capacity" 26
+		"shield generation" 0.6
+		"shield energy" 0.4
+		"hull repair rate" 1.2
+		"hull energy" 0.9
+		"gaslining" 1
+		"cooling" 1
+		"active cooling" 8
+		"cooling energy" .4
+		"outfit scan power" 24
+		"outfit scan efficiency" 28
+		"tactical scan power" 52
+		"atmosphere scan" 100
+		"ion protection" 0.25
+		"scramble protection" 0.25
+		"ion resistance" 0.05
+		"scramble resistance" 0.05
+	outfits
+		"Millennium Cell"
+		"Emergency Ramscoop"
+		"Quantum Key Stone"
+		
+		"Anvil-Class Engine"
+		"Hyperdrive"
+		
+	engine 0 30
+	leak "remnant leak sparkle" 20 2
+	explode "tiny explosion" 8
+	explode "small explosion" 7
+	description "数个世纪前，遗民建造了这些飞船，用于探索附近气态巨行星的高层大气。执政官对遗民的研究方法提出异议，导致研究未能完成。剩余的海鹦级飞船在仓库中尘封了数个世纪，遗民一直在等待，看执政官的怒火是否会平息。"
+
+
+
+ship "Smew"
+	"display name" "白秋沙鸭"
+	sprite "ship/smew"
+	thumbnail "thumbnail/smew"
+	"administrative cost" 0
+	attributes
+		category "Fighter"
+		licenses
+			Remnant
+		"cost" 971000
+		"shields" 1200
+		"hull" 2800
+		"required crew" 1
+		"bunks" 8
+		"mass" 56.5
+		"drag" 1.84
+		"heat dissipation" .62
+		"fuel capacity" 100
+		"cargo space" 70
+		"outfit space" 80
+		"weapon capacity" 10
+		"engine capacity" 46
+		"energy capacity" 3000
+		"ion resistance" 0.002
+		"scramble resistance" 0.002
+		"ramscoop" 1.55
+		"shield generation" 0.48
+		"shield energy" 0.32
+		"hull repair rate" 0.9
+		"hull energy" 0.58
+		"outfit scan power" 14
+		"outfit scan efficiency" 20
+		"tactical scan power" 28
+		"asteroid scan power" 50
+		weapon
+			"blast radius" 24
+			"shield damage" 130
+			"hull damage" 175
+			"hit force" 315
+	outfits
+		"Millennium Cell"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		
+		"Anvil-Class Engine"
+
+	engine 0 48.5
+	gun 0 -47.5
+	leak "remnant leak sparkle" 22 3
+	explode "tiny explosion" 35
+	explode "small explosion" 24
+	description "遗民长期以来倾向于采取避免让船员直接陷入危险的行动方式；尽管他们的燕鸥级飞船正是这一理念的相当有效的成果，但遗民仍需面对一个事实：最终，他们的一艘载人飞船可能会严重受损而无法安全撤离。为此，他们开发了斑头鸭级；尽管武装相当薄弱，但斑头鸭级在同等大小的飞船中能够运载相当数量的货物和乘客，并且足够坚固，能够在此过程中承受敌人的一些火力。"
+	description "	虽然最初设计为救生艇，但这种出奇灵活的货船与战斗机混合体却在采矿舰队中得到了广泛运用，用以弥补朱鹭级那原本可怜的货舱容量。由于各个舰队对其用途需求不同，斑头鸭级传统上在出售时会预留相当多的自由空间：足以安装一门小型武器、升级引擎或额外支持系统。"
+	description "	战斗机默认不配备超空间引擎。除非你的舰队中拥有带战斗机机库的飞船，否则无法携带战斗机。"
+
+ship "Smew" "Smew (Miner)"
+	outfits
+		"Thrasher Cannon"
+		
+		"Millennium Cell"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		
+		"Anvil-Class Engine"
+
+ship "Smew" "Smew (Runabout)"
+	outfits
+		"Millennium Cell"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		
+		"Anvil-Class Engine"
+		"Hyperdrive"
+
+ship "Smew" "Smew (Teciimach Ferry)"
+	outfits
+		"EMP Torpedo" 3
+		"Teciimach Pod"
+		
+		"Millennium Cell"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		
+		"Anvil-Class Engine"
+
+
+
+ship "Starling"
+	"display name" "椋鸟"
+	sprite "ship/starling"
+	thumbnail "thumbnail/starling"
+	"administrative cost" 3
+	attributes
+		category "Light Warship"
+		licenses
+			Remnant
+		cost 8800000
+		"shields" 8800
+		"hull" 4900
+		"required crew" 6
+		"bunks" 15
+		"mass" 387
+		"drag" 4.6
+		"heat dissipation" 0.59
+		"fuel capacity" 900
+		"ramscoop" 1.75
+		"cargo space" 36
+		"outfit space" 316
+		"weapon capacity" 83
+		"engine capacity" 94
+		"shield generation" 1.8
+		"shield energy" 1.2
+		"hull repair rate" 0.8
+		"hull energy" 0.6
+		"cloak" .02
+		"cloaked shield permeability" 1
+		"cloaking energy" 5
+		"cloaking fuel" .1
+		"cloaked communication" 1
+		"outfit scan power" 12
+		"outfit scan efficiency" 20
+		"tactical scan power" 26
+		weapon
+			"blast radius" 80
+			"shield damage" 800
+			"hull damage" 400
+			"hit force" 1200
+	outfits
+		"Inhibitor Cannon" 3
+		"Point Defense Turret"
+		
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		"Thermoelectric Cooler"
+		
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Crucible-Class Steering"
+		"Hyperdrive"
+
+	engine -16 82 0.7
+	engine 16 82 0.7
+	engine 0 90 1
+	gun 0 -99 "Inhibitor Cannon"
+	gun -12 -72 "Inhibitor Cannon"
+	gun 12 -72 "Inhibitor Cannon"
+	gun -18 -49
+	gun 18 -49
+	turret 0 2 "Point Defense Turret"
+	leak "remnant leak" 30 4
+	leak "remnant leak sparkle" 30 10
+	explode "tiny explosion" 40
+	explode "small explosion" 20
+	explode "medium explosion" 10
+	"final explode" "final explosion small" 1
+	description "遗民在余烬废土被遗弃的世界中发现的最奇异也最有用的东西之一是一种外星隐形技术。他们设计的侦察船能在需要时隐形，以在未被发现的情况下探索外星领地……或者在从那些外星人那里偷到特别有价值的东西后匆忙逃离。"
+	description "	隐身技术嵌入了椋鸟号的船体；无法拆除或转移至其他飞船。"
+
+ship "Starling" "Starling (Heavy)"
+	outfits
+		"Thrasher Cannon" 5
+		"Point Defense Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 10
+
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+ship "Starling" "Starling (Sniper)"
+	outfits
+		"EMP Torpedo Bay"
+		"Inhibitor Cannon" 4
+		"EMP Torpedo" 27
+		"EMP Torpedo Storage Bay"
+
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Outfits Expansion"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 9
+
+		"Forge-Class Thruster"
+		"Smelter-Class Steering"
+		"Hyperdrive"
+
+	gun "EMP Torpedo Bay"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+
+ship "Starling" "Starling (Hunter)"
+	outfits
+		"Inhibitor Cannon" 2
+		"Thrasher Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Emergency Ramscoop"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 11
+
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+	gun
+	gun "Inhibitor Cannon"
+	gun "Inhibitor Cannon"
+	gun
+	gun
+
+ship "Starling" "Starling (Thrasher)"
+	outfits
+		"Thrasher Cannon" 3
+		"Thrasher Turret"
+
+		"Epoch Cell"
+		"Millennium Cell"
+		"Crystal Capacitor"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		"Tuning Rifle" 8
+
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Hyperdrive"
+
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	gun "Thrasher Cannon"
+	gun
+	gun
+
+
+
+ship "Swan"
+	"display name" "天鹅"
+	sprite "ship/swan/swan"
+		"frame rate" 3
+		"rewind"
+	thumbnail "thumbnail/swan"
+	"administrative cost" 7
+	attributes
+		category "Utility"
+		licenses
+			"Remnant Capital"
+		cost 29660000
+		"shields" 30700
+		"hull" 13100
+		"required crew" 38
+		"bunks" 68
+		"cargo space" 106
+		"mass" 1813
+		"drag" 15.1
+		"heat dissipation" 0.32
+		"fuel capacity" 6400
+		"ramscoop" 6.5
+		"outfit space" 678
+		"weapon capacity" 242
+		"engine capacity" 157
+		"shield generation" 4.8
+		"shield energy" 3.9
+		"hull repair rate" 1.3
+		"hull energy" .8
+		"outfit scan power" 15
+		"outfit scan efficiency" 16
+		"tactical scan power" 32
+		"ion resistance" .15
+		"scrambling resistance" .15
+		weapon
+			"blast radius" 430
+			"shield damage" 4300
+			"hull damage" 2150
+			"hit force" 6450
+	outfits
+		"Inhibitor Cannon" 2
+		"Teciimach Bay"
+		"Inhibitor Turret" 3
+		"Point Defense Turret" 2
+		"EMP Torpedo" 20
+		
+		"Aeon Cell"
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Scram Drive"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		
+		"Smelter-Class Thruster"
+		"Smelter-Class Steering"
+
+	engine 0 190 1
+	engine -27 181.5 0.7
+	engine 27 181.5 0.7
+	gun 0 -195 "Teciimach Bay"
+	gun -12 -178 "Inhibitor Cannon"
+	gun 12 -178 "Inhibitor Cannon"
+	turret 0 -27.5 "Inhibitor Turret"
+	turret 0 158.5 "Inhibitor Turret"
+	turret 0 -74.5 "Inhibitor Turret"
+	turret -116 70.5 "Point Defense Turret"
+	turret 116 70.5 "Point Defense Turret"
+	bay "Drone" -66.5 71.5 under
+		"launch effect" "remnant external"
+	bay "Drone" 66.5 71.5 under
+		"launch effect" "remnant external"
+	bay "Drone" -106.5 63.5 under
+		"launch effect" "remnant external"
+	bay "Drone" 106.5 63.5 under
+		"launch effect" "remnant external"
+	leak "remnant leak" 40 10
+	leak "remnant leak sparkle" 60 20
+	explode "small explosion" 20
+	explode "medium explosion" 50
+	explode "large explosion" 50
+	explode "huge explosion" 15
+	"final explode" "final explosion large" 1
+	description "随着更强大的冲压式收集器的出现，对庞大推进剂物流网络的需求几乎消失殆尽。天鹅号不幸地以燃料运输舰的身份诞生；因此，它只能作为一些布满灰尘的文件夹中的详细图纸留存下来。最终，在其概念被提出几十年后，对这种飞船的需求变得显而易见，生产终于得以开始。"
+	description "	除了燃料储存能力之外，天鹅号本身也是一艘有趣的战舰。在其燃料翼下方增加了四个无人机机库，每个都比它们通常搭载的燕鸥型要大不少。除此之外，尽管护盾防护远不如信天翁星号，但其武器配置已接近后者：本质上，这是遗民建造的最大的支援舰。"
+
+
+
+ship "Tern"
+	"display name" "燕鸥"
+	sprite "ship/tern"
+	thumbnail "thumbnail/tern"
+	"administrative cost" 0
+	attributes
+		category "Drone"
+		licenses
+			Remnant
+		"cost" 860000
+		"shields" 500
+		"hull" 2500
+		"automaton" 1
+		"crew equivalent" 1
+		"cargo space" 5
+		"mass" 32
+		"drag" 1.0
+		"heat dissipation" .9
+		"fuel capacity" 50
+		"energy capacity" 500
+		"ramscoop" 1.25
+		"outfit space" 76
+		"weapon capacity" 16
+		"engine capacity" 26
+		"shield generation" 0.25
+		"shield energy" 0.16
+		"hull repair rate" 0.55
+		"hull energy" 0.37
+		"gaslining" 1
+		"outfit scan power" 10
+		"outfit scan efficiency" 12
+		"tactical scan power" 20
+		"atmosphere scan" 100
+		"asteroid scan power" 30
+		weapon
+			"blast radius" 10
+			"shield damage" 100
+			"hull damage" 150
+			"hit force" 250
+	outfits
+		"Inhibitor Cannon"
+		
+		"Millennium Cell"
+		"Quantum Key Stone"
+		"Thermoelectric Cooler"
+		
+		"Anvil-Class Engine"
+		
+	gun 0 -22 "Inhibitor Cannon"
+	engine -5 20.5
+	engine 5 20.5
+	leak "remnant leak sparkle" 30 2
+	explode "tiny explosion" 30
+	explode "small explosion" 20
+	description "燕鸥号是一种小型、耐用的无人机，专为潜入附近气态巨行星的大气层采集宝贵资源而开发。当敌人入侵遗民空间时，这些有着厚重外壳的飞船在被征用为警戒舰时，也能发挥出令人惊讶的效能。"
+	description "	与大多数星际文明不同，遗民没有足够的人口来驾驶战斗机编队并承受可能的大量伤亡。因此，他们在本土星系中频繁使用这些耐用的无人机来执行类似的掩护任务，让有人驾驶飞船能够专注于更专门的工作。"
+	description "	无人机出厂时未配备超空间引擎。除非你的舰队中有一艘搭载无人机舱的飞船，否则无法携带无人机。"

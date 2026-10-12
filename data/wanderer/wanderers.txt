@@ -1,0 +1,1094 @@
+# Copyright (c) 2015 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Ship names:
+phrase "wanderer"
+	word
+		"Iyik'"
+		"Ai'"
+		"Yek'"
+		"K'ch'"
+		"Rei'"
+		"Vek'"
+		"Sa'"
+		"Ik'k'"
+		"Kach'"
+		"Vori'"
+		"Vek'"
+		"Sach'"
+		"Kri'"
+	word
+		"cach"
+		"sek"
+		"esei"
+		"ai"
+		"key"
+		"ik"
+		"kur"
+		"ar"
+		"cha"
+		"rek"
+		"rai"
+		"sek"
+
+
+fleet "Wanderer Freight"
+	government "Wanderer"
+	names "wanderer"
+	cargo 3
+	personality
+		appeasing timid
+	variant
+		"Deep River 0"
+	variant
+		"Deep River 1"
+	variant
+		"Deep River 2"
+	variant
+		"Deep River 3"
+	variant
+		"Deep River 4"
+	variant
+		"Deep River"
+	variant
+		"Deep River 0"
+		"Summer Leaf" 2
+	variant
+		"Deep River 1"
+		"Summer Leaf" 1
+	variant
+		"Deep River 2"
+		"Summer Leaf" 2
+	variant
+		"Deep River 3"
+		"Summer Leaf" 1
+	variant
+		"Deep River 4"
+		"Summer Leaf" 2
+	variant
+		"Deep River"
+		"Summer Leaf" 3
+
+fleet "Wanderer Drones"
+	government "Wanderer"
+	names "wanderer"
+	personality
+		surveillance
+	variant 4
+		"Earth Shaper"
+	variant 2
+		"Earth Shaper" 2
+	variant
+		"Earth Shaper" 3
+
+fleet "Wanderer Defense"
+	government "Wanderer"
+	names "wanderer"
+	personality
+		heroic opportunistic
+	variant 3
+		"Strong Wind"
+		"Summer Leaf" 2
+	variant
+		"Summer Leaf" 5
+	variant 2
+		"Strong Wind" 2
+	variant 2
+		"Strong Wind"
+		"Summer Leaf"
+	variant
+		"Strong Wind"
+		"Summer Leaf" 3
+	variant
+		"Strong Wind" 3
+
+fleet "Wanderer Flycatchers"
+	government "Wanderer"
+	names "wanderer"
+	personality
+		swarming
+		heroic
+	variant
+		"Flycatcher" 5
+	variant
+		"Flycatcher" 4
+	variant
+		"Flycatcher" 3
+	variant
+		"Flycatcher" 2
+
+fleet "Wanderer Kor Efret Traders"
+	government "Wanderer"
+	names "wanderer"
+	cargo 3
+	personality
+		timid
+	variant
+		"Deep River"
+	variant 6
+		"Summer Leaf" 2
+		"Strong Wind"
+	variant 2
+		"Summer Leaf"
+	variant 4
+		"Strong Wind"
+	variant 2
+		"Tempest"
+	variant
+		"Tempest (Moonbeam)"
+	variant 3
+		"Autumn Leaf"
+	variant
+		"Autumn Leaf (Heavy)"
+		"Autumn Leaf"
+
+shipyard "Wanderer Basics"
+	"Earth Shaper"
+	"Summer Leaf"
+
+shipyard "Wanderer Advanced"
+	"Earth Shaper"
+	"Summer Leaf"
+	"Strong Wind"
+	"Deep River"
+
+outfitter "Wanderer Basics"
+	"Thunderhead Missile"
+	"Small Biochemical Cell"
+	"Large Biochemical Cell"
+	"Yellow Sun Reactor"
+	"Type 1 Radiant Thruster"
+	"Type 2 Radiant Thruster"
+	"Type 3 Radiant Thruster"
+	"Type 1 Radiant Steering"
+	"Type 2 Radiant Steering"
+	"Type 3 Radiant Steering"
+	"Bright Cloud Shielding"
+	"Fuel Pod"
+	"Wanderer Ramscoop"
+	"Cargo Expansion"
+	"Outfits Expansion"
+	"Small Bunk Room"
+	"Local Map"
+	"Hyperdrive"
+
+outfitter "Wanderer Advanced"
+	"Sunbeam"
+	"Thunderhead Missile"
+	"Thunderhead Launcher"
+	"Thunderhead Storage Array"
+	"Small Biochemical Cell"
+	"Large Biochemical Cell"
+	"Yellow Sun Reactor"
+	"White Sun Reactor"
+	"Type 1 Radiant Thruster"
+	"Type 2 Radiant Thruster"
+	"Type 3 Radiant Thruster"
+	"Type 4 Radiant Thruster"
+	"Type 1 Radiant Steering"
+	"Type 2 Radiant Steering"
+	"Type 3 Radiant Steering"
+	"Type 4 Radiant Steering"
+	"Bright Cloud Shielding"
+	"Dark Storm Shielding"
+	"Fuel Pod"
+	"Wanderer Ramscoop"
+	"Cargo Expansion"
+	"Outfits Expansion"
+	"Small Bunk Room"
+	"Bunk Room"
+	"Local Map"
+	"Hyperdrive"
+
+
+# Hails:
+phrase "wanderer untranslated"
+	word
+		"Ayek"
+		"V'"
+		"Ik"
+		"I'"
+		"Ai'"
+		"Kek"
+		"Tek"
+		"Rei'"
+		"Vorek"
+		"Isk"
+		"Scha'"
+		"Kera'"
+		"Tai'"
+	word
+		"evar"
+		"eska"
+		"eteka"
+		"i'atai"
+		"ik'lek"
+		"ivar"
+		"erei"
+		"ai"
+		"ek"
+		"ik"
+		"eyek"
+		"u"
+		"uk"
+		"urek"
+	word
+		"'i "
+		"'i'ai "
+		"'ak iy "
+		"'urek esek "
+		" iy "
+		" esek "
+		" ek "
+		" v'"
+		" va'"
+		"'a iy cha'"
+		" " 3
+	word
+		"akai'"
+		"ar"
+		"ek"
+		"skak"
+		"isk"
+		"tesk"
+		"chik"
+		"chu'"
+		"lak"
+		"tel"
+		"te'"
+		"ke'"
+		"le'"
+		"yech"
+	word
+		"ar"
+		"eru"
+		"eska"
+		"i'i"
+		"i'ai"
+		"eru"
+		"eleka"
+		"eka"
+		"achi"
+		"a'a"
+		"u'ei"
+		"u'ai"
+	word
+		"'ei ek "
+		"'elek iy "
+		"'rei "
+		"'ket "
+		"'ret "
+		"'sai "
+		" sek "
+		" iy "
+		" salek "
+		" " 2
+	word
+		"reku'"
+		"sarka'"
+		"cha'"
+		"erek"
+		"krech"
+		"rek"
+		"kik"
+		"tik"
+		"vek"
+		"k'"
+		"ch'"
+		"s'"
+	word
+		"er"
+		"elek"
+		"kar"
+		"kurei"
+		"ai"
+		"i"
+		"i'ai"
+		"i'lek"
+		"a'uk"
+		"echa"
+	word
+		"愿意砸多少钱。" 3
+		"'i."
+		"'ai."
+		" eku."
+		" sat."
+		"'i sek."
+		"'ar."
+		" kar."
+		" esek'cha."
+
+phrase "friendly wanderer"
+	word
+		"我们是"
+		"这片领地属于"
+		"你正做客于"
+	word
+		"流浪者——"
+		"这"
+	word
+		"修复"
+		"还原"
+		"疗愈"
+		"重塑"
+		"改造"
+		"复兴"
+		"守护"
+		"焕新"
+		"拓殖"
+		"关爱"
+	word
+		"那些"
+	word
+		"受损的"
+		"残破的"
+		"受摧残的"
+		"荒废的"
+		"死寂的"
+		"无生机的"
+		"破败的"
+		"被吞噬的"
+		"受剥削的"
+		"受污染的"
+		"遭毁灭的"
+		"被遗弃的"
+	word
+		"世界"
+		"星球"
+		"土地"
+		"家园"
+		"生态系统"
+		"生物圈"
+	word
+		"愿意砸多少钱。"
+
+phrase "friendly wanderer"
+	word
+		"你是"
+	word
+		"一位受欢迎的"
+		"一位受尊重的"
+	word
+		"访客"
+		"宾客"
+	word
+		"，于"
+		"，在"
+	word
+		"我们之中"
+		"我们族人之中"
+		"流浪者之中"
+	word
+		"里，"
+		" - "
+	word
+		"只要"
+		"只要"
+		"前提是"
+	word
+		"你尊重我们的习俗"
+		"你尊重我们的世界"
+		"你尊重我们的生态系统"
+		"你展现出对我们习俗的尊重"
+		"你展现出对我们世界的尊重"
+		"你展现出对我们生态系统的尊重"
+		"你遵循可持续的生存方式"
+		"你的索取不超过所需"
+		"你不造成伤害"
+		"你怀着和平而来"
+	word
+		"愿意砸多少钱。"
+
+phrase "friendly wanderer"
+	word
+		"我们的本意是"
+		"我们的意图是"
+		"我们的计划是"
+		"我们的到来是"
+	word
+		"为了"
+		"仅为了"
+		"只为了"
+		"纯粹为了"
+	word
+		"修复"
+		"恢复"
+		"治愈"
+		"重塑"
+		"焕新"
+		"复苏"
+		"照料"
+		"注入生机与希望于"
+		"医治"
+	word
+		"那些已被"
+		"那些被他人"
+		"那些被先前之人"
+	word
+		"伤害的一切"
+		"破坏的一切"
+		"摧残的一切"
+		"挥霍的一切"
+		"杀害的一切"
+		"变为荒芜的一切"
+		"毁灭的一切"
+		"吞噬的一切"
+		"榨取的一切"
+		"毒害的一切"
+		"摧毁的一切"
+	word
+		"愿意砸多少钱。"
+		
+phrase "friendly wanderer"
+	word
+		"漫游者的"
+		"我们的"
+		"这些"
+	word
+		"世界"
+		"星球"
+		"地方"
+		"家园"
+		"生态系统"
+		"生物圈"
+	word
+		"开放给"
+		"敞开给"
+		"欢迎"
+	word
+		"任何人"
+		"任何人"
+		"任何生灵"
+		"任何生命"
+		"任何[身份？意识？实体？]"
+	word
+		" "
+		"，只要他们"
+		"，只要他们"
+		"，只要他们"
+		"，[前提是，只要]他们"
+	word
+		"愿意"
+		"希望"
+		"想要"
+		"打算"
+		"寻求"
+		"意图"
+		"计划"
+	word
+		"帮助"
+	word
+		"我们"
+		"我们"
+		""
+	word
+		"[修理，修复]"
+		"恢复"
+		"疗愈"
+		"[塑造，重塑]"
+		"[改造，更新]"
+		"重获新生"
+		"照料"
+		"注入[生机，希望]"
+		"[治愈，医治]"
+	word
+		"它们。"
+
+phrase "friendly disabled wanderer"
+	word
+		"[访客, 旅人]"
+		"客人"
+	word
+		"里，"
+	word
+		"我们的工作正面临[危险, 危机]"
+		"我们遭到了[袭击, 攻击]"
+		"我们已[受损, 瘫痪]"
+	word
+		". "
+		"! "
+	word
+		"我们需要被[修复, 维修]"
+		"援助我们"
+		"为我们而战"
+	word
+		"，拜托了"
+		"，我们恳求你"
+		"" 3
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+phrase "hostile wanderer"
+	word
+		"我们并不想"
+		"我们不想"
+		"我们不愿"
+		"我们绝非乐意去"
+	word
+		"伤害你"
+		"毁灭你"
+		"杀害你"
+		"终结你"
+		"诉诸暴力"
+	word
+		"里，"
+	word
+		"但我们必须"
+		"但我们会"
+	word
+		"守护"
+		"捍卫"
+		"保卫"
+		"维护"
+	word
+		"我们的"
+	word
+		"领地"
+		"领地与责任"
+		"世界"
+		"行星"
+		"家园"
+		"生态系统"
+		"生物圈"
+		"族人"
+		"天职与使命"
+		"生存方式"
+	word
+		"愿意砸多少钱。"
+		
+phrase "hostile wanderer"
+	word
+		"你的"
+	word
+		"所作所为"
+		"行径"
+		"罪行"
+	word
+		"乃是"
+	word
+		"[consumers, devourers]的勾当"
+		"毁灭者的勾当"
+		"[murderers, exploiters]的勾当"
+		"厚颜无耻之举"
+		"不可饶恕之举"
+		"违背自然之举"
+	word
+		". "
+	word
+		"你绝不会"
+		"你休想"
+		"绝不能让你"
+	word
+		"得逞"
+		"成功"
+		"赢得胜利"
+		"继续下去"
+		"存留下来"
+	word
+		"愿意砸多少钱。"
+		
+phrase "hostile wanderer"
+	word
+		"你"
+		"[凶手、剥削者]"
+	word
+		"无法立足于"
+		"不应存在于"
+		"不被接纳于"
+	word
+		"此处"
+		"我们的[星域、领土]"
+		"我们之中"
+	word
+		". "
+	word
+		"离开"
+		"速速离开"
+		"自行退去"
+	word
+		"里，"
+	word
+		"以便我们继续我们的[使命、工作]"
+		"我们便不会追击你"
+		"我们便放你一条生路"
+		"否则我们将毁灭你"
+		"否则我们将被迫杀死你"
+		"否则我们将被迫[终结、消灭]你"
+		"且永远不要再回来"
+		"并去领悟[智慧、平衡]"
+	word
+		"愿意砸多少钱。"
+		
+phrase "hostile disabled wanderer"
+	word
+		"现在还不算晚，"
+		"现在还有时间，"
+		"你依然有机会，"
+	word
+		"选择"
+	word
+		"离开"
+		"和平离开"
+		"投降"
+		"罢手"
+		"作出[弥补, 赔偿]"
+		"为你的罪行作出[弥补, 赔偿]"
+		"挽回与我们的关系"
+		"领悟[智慧, 平衡]"
+		"结束这场暴力"
+		"终止这场破坏"
+		"阻止这一切"
+	word
+		"愿意砸多少钱。"
+		
+phrase "hostile disabled wanderer"
+	word
+		"我们"
+		"长者们"
+	word
+		"不该信任你，"
+		"错信了你，"
+		"绝不该欢迎你，"
+	word
+		"异类"
+		"人类"
+		"凶手"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+		
+phrase "hostile disabled wanderer"
+	word
+		"我们的同胞"
+		"我们的孩子"
+		"我们"
+	word
+		"不该遭受这种"
+		"不应当承受这种"
+	word
+		"暴力"
+		"背叛"
+		"伤害"
+	word
+		". "
+	word
+		"你必须"
+		"请"
+	word
+		"停手"
+		"住手"
+		"停止这一切"
+		"离开"
+		"离去"
+		"退去"
+		"手下留情"
+	word
+		"愿意砸多少钱。"
+
+event "wanderers: first tech increase"
+	system "Ik'kara'ka"
+		add fleet "Wanderer Flycatchers" 400
+	system "Chy'chra"
+		add fleet "Wanderer Flycatchers" 300
+	system "Prakacha'a"
+		remove fleet "Unfettered Tribute"
+	system "Sich'ka'ara"
+		add fleet "Wanderer Flycatchers" 600
+	system "Chirr'ay'akai"
+		add fleet "Wanderer Flycatchers" 800
+	system "Kiro'ku"
+		add fleet "Wanderer Flycatchers" 1000
+	system "Ap'arak"
+		add fleet "Wanderer Flycatchers" 1200
+	fleet "Wanderer Defense"
+		add variant 2
+			"Autumn Leaf" 2
+		add variant 2
+			"Strong Wind"
+			"Autumn Leaf" 2
+		add variant
+			"Strong Wind"
+			"Autumn Leaf"
+			"Summer Leaf"
+		add variant
+			"Autumn Leaf"
+			"Summer Leaf" 2
+		add variant 2
+			"Autumn Leaf"
+			"Summer Leaf"
+	shipyard "Wanderer Basics"
+		"Flycatcher"
+	shipyard "Wanderer Advanced"
+		"Flycatcher"
+		"Autumn Leaf"
+	outfitter "Wanderer Basics"
+		"Wanderer Anti-Missile"
+	outfitter "Wanderer Advanced"
+		"Wanderer Anti-Missile"
+		"Sunbeam Turret"
+		"Dual Sunbeam Turret"
+
+event "wanderers: unfettered invasion starts"
+	system "Ik'kara'ka"
+		fleet "Wanderer Freight" 1200
+		fleet "Wanderer Drones" 900
+		fleet "Wanderer Defense" 200
+		fleet "Wanderer Flycatchers" 200
+		fleet "Small Unfettered" 1200
+		fleet "Large Unfettered" 500
+	system "Chy'chra"
+		government "Hai (Unfettered)"
+		fleet "Wanderer Defense" 3000
+		fleet "Unfettered Raid" 1000
+		fleet "Small Unfettered" 400
+		fleet "Large Unfettered" 400
+	system "Prakacha'a"
+		fleet "Wanderer Freight" 900
+		fleet "Wanderer Drones" 800
+		fleet "Wanderer Defense" 200
+		fleet "Small Unfettered" 1800
+		fleet "Large Unfettered" 800
+	system "Ehma Ti"
+		remove fleet "Unfettered Tribute"
+	system "Sich'ka'ara"
+		add fleet "Wanderer Defense" 500
+		add fleet "Wanderer Flycatchers" 600
+		add fleet "Large Unfettered" 1200
+	system "Chirr'ay'akai"
+		add fleet "Wanderer Defense" 500
+		add fleet "Wanderer Flycatchers" 480
+		add fleet "Large Unfettered" 1200
+	"reputation: Hai (Unfettered)" <?= -100
+	government "Hai (Unfettered)"
+		"attitude toward"
+			"Wanderer" -.01
+	planet "Varu K'est"
+		attributes "unfettered"
+		description `Varu K'est 是一颗荒凉古老的星球，遍布干旱高原和深邃蜿蜒的峡谷，降雨稀少，仅能支撑最耐旱的灌木生长。在无羁者入侵之前，留在这里的唯一流浪者定居点是他们为保卫边疆而设立的军事基地。如今，这里已成为数量不断增长的无羁者定居点的家园，其中包括许多平民，他们来到这里只为有机会生活在一个不那么拥挤和污染的世界。`
+		spaceport `无羁者正利用他们手中仅有的少量跃迁引擎，将越来越多的族人摆渡至漫游者空间。每当一批船队抵达太空港，技术人员就会小心翼翼地从除少数几艘之外的所有飞船上拆卸下跃迁引擎。随后，几艘守卫森严、具备跃迁能力的飞船便携带着这些拆下的备用跃迁引擎返回无羁者空间，继续用来接送更多的船只与人口。`
+		shipyard clear
+		outfitter clear
+		tribute clear
+	planet "Varu Mer'ek"
+		add attributes "evacuation"
+
+event "wanderers: heavy gust mass production"
+	shipyard "Wanderer Advanced"
+		"Heavy Gust"
+	fleet "Wanderer Defense"
+		add variant 2
+			"Heavy Gust"
+			"Autumn Leaf"
+		add variant 3
+			"Heavy Gust"
+			"Autumn Leaf" 2
+		add variant 2
+			"Heavy Gust" 2
+		add variant 1
+			"Heavy Gust" 3
+		add variant 1
+			"Strong Wind"
+			"Heavy Gust"
+		remove variant
+			"Strong Wind"
+			"Summer Leaf"
+		remove variant
+			"Strong Wind"
+			"Summer Leaf" 3
+
+event "wanderers: riptide mass production"
+	fleet "Wanderer Freight"
+		add variant 3
+			"Riptide"
+		add variant
+			"Riptide"
+			"Tempest"
+		add variant
+			"Riptide"
+			"Strong Wind"
+			"Autumn Leaf"
+		add variant
+			"Riptide"
+			"Summer Leaf" 2
+	shipyard "Wanderer Advanced"
+		"Riptide"
+
+event "wanderers: tempest mass production"
+	fleet "Wanderer Defense"
+		add variant 6
+			"Tempest"
+			"Summer Leaf"
+			"Autumn Leaf"
+		add variant 3
+			"Tempest (Heavy)"
+			"Heavy Gust"
+		add variant 1
+			"Tempest (Heavy)"
+			"Strong Wind"
+		add variant 1
+			"Tempest (Heavy)"
+			"Tempest"
+			"Tempest (Missile)"
+		add variant 2
+			"Tempest (Heavy)"
+			"Tempest"
+		add variant 1
+			"Tempest (Missile)" 2
+		add variant 2
+			"Autumn Leaf" 3
+		add variant 1
+			"Summer Leaf" 4
+		remove variant
+			"Summer Leaf" 5
+		remove variant
+			"Autumn Leaf" 2
+		remove variant
+			"Strong Wind"
+			"Autumn Leaf" 2
+		remove variant
+			"Autumn Leaf"
+			"Summer Leaf"
+	shipyard "Wanderer Advanced"
+		"Tempest"
+	outfitter "Wanderer Advanced"
+		"Red Sun Reactor"
+
+event "wanderers: more systems lost"
+	system "Ka'pru"
+		government "Hai (Unfettered)"
+		fleet "Large Unfettered" 2000
+		fleet "Small Unfettered" 1000
+	system "Kiro'ku"
+		government "Hai (Unfettered)"
+		fleet "Large Unfettered" 1200
+		fleet "Small Unfettered" 800
+	system "Sich'ka'ara"
+		government "Hai (Unfettered)"
+		fleet "Large Unfettered" 400
+		fleet "Small Unfettered" 400
+		fleet "Wanderer Defense" 600
+	planet "Vara Ke'stai"
+		attributes "unfettered" "farming"
+		description `流浪者们花了数年时间才使这颗沙漠世界焕发生机：种植耐寒的灌木和仙人掌，最终将沙地转变为能够保持水分的土壤。在一些地区，尤其是靠近两极的地方，沙漠已经让位于茂密的森林，但在赤道附近仍有大片干燥贫瘠的沙地，偶尔被狭窄河流蜿蜒于沙丘之间的绿色地带所打破。`
+		description `	既然无羁者已经掌控了这颗行星，沙漠再次覆盖它恐怕只是时间问题了。`
+		spaceport `太空港坐落于靠近该行星北极的一座森林村落中。着陆坪是铺设在附近空地上的一组巨大的独石台基。然而除了地面上的几座大型仓库外，整个村庄全由树屋构成。尽管这些树屋与亥族的建筑风格大相径庭，但无羁者居住其中似乎颇感惬意，目前尚未大兴土木建造属于自己的设施。`
+		outfitter clear
+		tribute clear
+	planet "Var' Kar'i'i"
+		attributes "unfettered" "urban" "farming"
+		description `在所有被无羁者占领的星球中，这一个无疑是流浪者最怀念的：一颗森林茂密的星球，曾经是无数小村庄乃至几座城市的家园。无羁者显然在尽力照料这里的农田，但他们采用的是永续农业系统，严重依赖维持微妙的生态平衡，而非机械和农药。`
+		spaceport `大批无羁者定居者已经抵达这里，并开始建立一座太空港村落，集市、酒馆和军营一应俱全。对于那些一生都生活在生态破碎世界的无羁者而言，这颗星球无异于一座人间天堂。`
+		outfitter clear
+		shipyard clear
+		tribute clear
+	planet "Vara Ke'sok"
+		attributes "unfettered" "fishing"
+		description `这个世界表面几乎全是海洋。流浪者的定居点建在巨大的漂浮藻类垫上，有些垫子有小城市那么大。一些漂浮村庄装有引擎，可以缓慢地从星球表面一处移动到另一处，当地唯一的产业是捕鱼和海藻养殖。`
+		spaceport `承载太空港的巨型藻筏厚度恐怕至少有十几米，但其柔韧性足以随下方涌动的海浪起伏弯折，导致各幢建筑相对相邻结构略微升降或倾斜。如今这颗星球已被无羁者攻占，几乎所有建筑都空置着；看来亥族人并不怎么热衷于在这座水上世界定居，因而大多仅将其作为军事基地使用。`
+		remove tribute
+
+planet "The Eye"
+	spaceport ""
+	wormhole "The Eye"
+
+wormhole "The Eye"
+	mappable
+	link Sabriset Sko'karak
+	link Sko'karak Sabriset
+
+event "wanderers: the eye begins to open"
+	system Sko'karak
+		fleet "Wanderer Defense" 500
+		add object
+			sprite planet/wisp
+			distance 2331.95
+
+event "wanderers: the eye opens"
+	unvisit Sabriset
+	system Sabriset
+		add fleet "Wanderer Defense" 1200
+		add fleet "Wanderer Drones" 600
+		add fleet "Wanderer Freight" 4000
+		add object "The Eye"
+			sprite planet/wormhole
+			distance 2022.87
+	system Sepriaptu
+		add fleet "Wanderer Defense" 1600
+		add fleet "Wanderer Drones" 800
+	system Kaliptari
+		fleet "Large Quarg (Kor Efret)" 2000
+		fleet "Small Kor Mereti" 8000
+		fleet "Large Kor Mereti" 3600
+		fleet "Wanderer Defense" 1000
+		fleet "Wanderer Drones" 500
+	system Solifar
+		fleet "Large Quarg (Kor Efret)" 3000
+		fleet "Wanderer Defense" 1800
+		fleet "Wanderer Drones" 700
+	system Fornarep
+		fleet "Large Quarg (Kor Efret)" 1000
+		fleet "Small Kor Mereti" 7000
+		fleet "Large Kor Mereti" 4000
+	system Skeruto
+		fleet "Large Quarg (Kor Efret)" 1000
+	system Mekislepti
+		add fleet "Small Kor Mereti" 4000
+		add fleet "Large Kor Mereti" 12000
+		add fleet "Wanderer Drones" 2000
+	unvisit Sko'karak
+	system Sko'karak
+		add fleet "Wanderer Drones" 400
+		add fleet "Wanderer Freight" 2000
+		remove object
+			sprite planet/wisp
+			distance 2331.95
+		add object "The Eye"
+			sprite planet/wormhole
+			distance 2331.95
+	system Kaliptari
+		government "Wanderer"
+
+event "wanderers: derecho mass production"
+	fleet "Wanderer Defense"
+		add variant 4
+			"Derecho"
+			"Tempest"
+		add variant 3
+			"Derecho (Turret)"
+			"Tempest (Missile)"
+		add variant 2
+			"Derecho (Tough)"
+			"Tempest (Heavy)"
+		add variant 4
+			"Derecho"
+			"Heavy Gust"
+			"Strong Wind"
+		add variant 3
+			"Derecho (Tough)"
+			"Autumn Leaf"
+			"Summer Leaf" 2
+		add variant 2
+			"Derecho (Turret)"
+			"Tempest (Heavy)"
+			"Tempest"
+	shipyard "Wanderer Advanced"
+		"Derecho"
+	outfitter "Wanderer Advanced"
+		"Blue Sun Reactor"
+		"Wanderer Heat Sink"
+
+event "wanderers: spera anatrusk colony"
+	system Ap'arak
+		remove fleet "Large Unfettered"
+		add fleet "Large Unfettered" 8000
+	system Kaliptari
+		government "Wanderer"
+	planet "Spera Anatrusk"
+		attributes "wanderer"
+		add description `	Hidden deep in a canyon, the Wanderers have begun establishing a military base here.`
+		spaceport `流浪者在这座峡谷松软的砂岩崖壁上开凿出了机库与洞穴，并着手建造一座军事基地。他们可以在这里储备物资并维修舰船，同时权衡着该如何妥善应对他们在柯拉特空间所面临的全新挑战。`
+		spaceport `	奇妙的是，他们居然还抽出空闲，在靠近峡谷底部的一处台地上开辟了一座大花园，在那里进行引种实验，以探明哪些植物物种能在这片干旱环境中茁壮成长。漫游者对理解并改造本土生态的执着，着实异乎寻常。`
+		outfitter "Wanderer Basics"
+		tribute 600
+			threshold 1200
+			fleet "Wanderer Defense" 2
+
+event "wanderers: hurricane mass production"
+	fleet "Wanderer Defense"
+		add variant 5
+			"Hurricane"
+		add variant 2
+			"Hurricane (Turret)"
+		add variant 2
+			"Hurricane (Tough)"
+		add variant 3
+			"Hurricane"
+			"Derecho"
+			"Tempest"
+		add variant 2
+			"Hurricane"
+			"Tempest" 2
+		add variant 3
+			"Hurricane (Turret)"
+			"Derecho (Turret)"
+			"Tempest (Heavy)"
+		add variant 2
+			"Hurricane (Tough)"
+			"Tempest (Missile)" 2
+		add variant 2
+			"Hurricane"
+			"Heavy Gust" 2
+	shipyard "Wanderer Advanced"
+		"Hurricane"
+
+event "wanderers: desi seledrak"
+	system "Solifar"
+		government "Wanderer"
+	planet "Desi Seledrak"
+		attributes "wanderer"
+		description `从该星球主要大陆上一片数十座火山群中升起的煤灰和火山灰柱，给行星蒙上厚厚云层，遮蔽了阳光。几座科拉斯城市的废墟以及周围清理过的土地形成的几何网格显示，这里曾经是一个农业世界，但现在很少有植物能够存活，从两极开始，高达千米的冰川正在缓慢蔓延。`
+		description `	在梅雷蒂无人机的帮助下，流浪者们在此建立了工厂，源源不断地排放二氧化碳和甲烷以提升大气温度。几十年后，冰川或许会开始消融。`
+		spaceport `这座奇特的定居点是由流浪者与梅雷蒂雄机各自建造了一半。街道的布局杂乱无章，他们到处都栽种了一排排树木与灌木：部分置于温室之内，部分更耐寒的树种则露天栽种。虽然定居点靠近赤道，但这里依然算不上特别温暖。`
+		tribute 500
+			threshold 1100
+			fleet "Wanderer Defense" 2
+
+event "wanderers: moonbeam mass production"
+	fleet "Wanderer Defense"
+		add variant 3
+			"Hurricane (Moonbeam)"
+		add variant
+			"Hurricane (Moonbeam)"
+			"Derecho (Moonbeam)"
+		add variant 3
+			"Derecho (Moonbeam)"
+			"Tempest (Moonbeam)" 2
+		add variant 5
+			"Tempest"
+			"Autumn Leaf (Heavy)"
+			"Autumn Leaf"
+		add variant
+			"Derecho"
+			"Autumn Leaf (Heavy)" 2
+		add variant 2
+			"Heavy Gust"
+			"Heavy Gust (Moonbeam)" 2
+	outfitter "Wanderer Advanced"
+		"Moonbeam"
+		"Moonbeam Turret"
+
+event "wanderer tribute patch"
+	planet "Varu K'est"
+		tribute clear
+	planet "Vara Ke'stai"
+		tribute clear
+	planet "Var' Kar'i'i"
+		tribute clear
+	planet "Spera Anatrusk"
+		tribute 600
+			threshold 1200
+			fleet "Wanderer Defense" 2
+	planet "Desi Seledrak"
+		tribute 500
+			threshold 1100
+			fleet "Wanderer Defense" 2
+
+mission "Wanderer Tribute Patch"
+	invisible
+	landing
+	to offer
+		has "event: wanderers: desi seledrak"
+	on offer
+		event "wanderer tribute patch"
+		fail

@@ -1,0 +1,340 @@
+# Copyright (c) 2017 by Michael Zahniser
+# Copyright (c) 2018 by Nate Graham
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Frontier delivery [0]"
+	name "边境运送至<planet>"
+	job
+	repeat
+	description `将<cargo>运送至边境世界<destination>。边境星系海盗猖獗，请做好自卫准备。报酬为<payment>。`
+	cargo random 5 2 .1
+	to offer
+		random < 30
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+		not attributes "frontier"
+	destination
+		not government "Pirate"
+		distance 2 10
+		attributes "frontier"
+	npc
+		government "Pirate"
+		personality nemesis harvests plunders
+			confusion 30
+		system destination
+		fleet "Small Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis staying harvests plunders
+			confusion 30
+		system destination
+		fleet "Small Northern Pirates" 2
+	on complete
+		payment 4000 180
+		dialog phrase "generic cargo delivery payment"
+
+
+mission "Frontier delivery [1]"
+	name "边境运送至<planet>"
+	job
+	repeat
+	description `将<cargo>运送至边境世界<destination>。边境星系海盗猖獗，请做好自卫准备。报酬为<payment>。`
+	cargo random 25 2 .05
+	to offer
+		random < 25
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+		not attributes "frontier"
+	destination
+		not government "Pirate"
+		distance 2 10
+		attributes "frontier"
+	npc
+		government "Pirate"
+		personality nemesis harvests plunders
+			confusion 20
+		system destination
+		fleet "Small Northern Pirates" 2
+	npc
+		government "Pirate"
+		personality nemesis staying harvests plunders
+			confusion 20
+		system destination
+		fleet "Small Northern Pirates" 3
+	on complete
+		payment 4000 180
+		dialog phrase "generic cargo delivery payment"
+
+
+mission "Frontier delivery [2]"
+	name "边境运送至<planet>"
+	job
+	repeat
+	description `将<cargo>运送至边境世界<destination>。边境星系海盗猖獗，请做好自卫准备。报酬为<payment>。`
+	cargo random 40 2 .02
+	to offer
+		random < 20
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+		not attributes "frontier"
+	destination
+		not government "Pirate"
+		distance 2 10
+		attributes "frontier"
+	npc
+		government "Pirate"
+		personality nemesis harvests plunders
+		system destination
+		fleet "Large Northern Pirates"
+	npc
+		government "Pirate"
+		personality nemesis staying harvests plunders
+		system destination
+		fleet "Small Northern Pirates"
+		fleet "Large Northern Pirates"
+	on complete
+		payment 4000 180
+		dialog phrase "generic cargo delivery payment"
+
+
+mission "Frontier Emigration [0]"
+	name "移居至<planet>"
+	job
+	repeat
+	description "这些<bunks>名乘客终于攒够了钱，准备在<destination>开始新生活，他们愿意支付<payment>让你运送他们。"
+	passengers 2 10 .9
+	to offer
+		random < 30
+	source
+		not government "Pirate"
+		attributes "frontier"
+		not planet "Shangri-La"
+	destination
+		distance 2 10
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+		not attributes "frontier"
+	on complete
+		payment 3000 140
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Frontier Emigration [1]"
+	name "移居至<planet>"
+	job
+	repeat
+	description "这些<bunks>名乘客终于攒够了钱，准备在<destination>开始新生活，他们愿意支付<payment>让你运送他们。"
+	passengers 4 10 .8
+	to offer
+		random < 25
+	source
+		not government "Pirate"
+		attributes "frontier"
+		not planet "Shangri-La"
+	destination
+		distance 2 10
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+		not attributes "frontier"
+	on complete
+		payment 3000 140
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Frontier Emigration [2]"
+	name "移居至<planet>"
+	job
+	repeat
+	description "这些<bunks>名乘客终于攒够了钱，准备在<destination>开始新生活，他们愿意支付<payment>让你运送他们。"
+	passengers 6 10 .7
+	to offer
+		random < 20
+	source
+		not government "Pirate"
+		attributes "frontier"
+		not planet "Shangri-La"
+	destination
+		distance 2 10
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+		not attributes "frontier"
+	on complete
+		payment 3000 140
+		dialog phrase "generic passenger dropoff payment"
+
+
+mission "Disaster Relief"
+	name "前往<planet>的灾后救援"
+	job
+	repeat
+	description "在边境世界<destination>的一个殖民地发生了灾难。请在<date>之前将<cargo>运送到该星球，以获得<payment>。"
+	cargo "disaster relief supplies" 25 2 .05
+	deadline
+	to offer
+		random < 10
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+		not attributes "frontier"
+	destination
+		not government "Pirate"
+		distance 2 10
+		attributes "frontier"
+		not planet "Shangri-La"
+	on complete
+		payment 10000 160
+		dialog "你交付了<commodity>货物，并领到了<payment>报酬。一群来自<planet>的市民向你致谢并与你道别。"
+
+
+mission "Instruct Novice Pilot"
+	job
+	repeat
+	description "一名新手飞行员向一位经验丰富的船长寻求指导，并要求护卫前往<stopovers>。之后，返回<origin>，你将获得<payment>的报酬。"
+	to offer
+		random < 5
+		"combat rating" > 100
+	source
+		government "Republic" "Free Worlds" "Neutral" "Independent"
+		attributes "frontier" "dirt belt" "rim" "north" "south" "mining" "farming"
+	stopover
+		not government "Pirate"
+		attributes "frontier"
+		attributes "outfitter"
+		attributes "spaceport"
+		distance 3 7
+	on stopover
+		dialog "平稳降落后，你带着学生穿过太空港中尤为混乱的区域，这里满地垃圾、游荡着流浪汉，还有昏暗的小巷。你详细讲解了如何防扒手、远离酒吧斗殴，以及在装备店识破糟糕交易的门道。在银河系这个阴暗角落逗留几小时后，你们俩都急着返回<origin>。"
+	on visit
+		dialog "你已返回<planet>，但忘记先护送<npc>前往<stopovers>了！最好先过去一趟。"
+	on complete
+		payment 75000
+		dialog "你的学生感谢你的指导，以及亲身带领见识银河系某些险恶地带。你收到了<payment>的酬金。"
+	npc
+		government "Pirate"
+		personality nemesis waiting
+		fleet "Small Northern Pirates"
+		system
+			distance 3 7
+	npc accompany save
+		government "Merchant"
+		personality escort heroic vindictive
+		fleet
+			names "civilian"
+			variant
+				"Sparrow"
+			variant
+				"Star Barge"
+			variant
+				"Shuttle"
+			variant
+				"Heavy Shuttle"
+
+
+mission "Small Pirate gambling"
+	invisible
+	minor
+	to offer
+		random < 3
+		"reputation: Pirate" < 0
+		"combat rating" < 200
+		credits > 14357
+	source
+		attributes "dirt belt" "south" "rim" "pirate" "frontier"
+	deadline 1
+	on offer
+		conversation
+			`你在灯光昏暗的太空港酒吧里喝着酒，注意到一群穿着深红皮衣的年轻人正蹲在暗角赌博。酒保警惕地盯着他们。其中一人举起酒杯朝你招手，示意你加入他们的牌局。`
+			choice
+				`	(Join their game.)`
+					goto gamble
+				`	(Ignore them and leave quickly.)`
+					defer
+
+			label gamble
+			`	你走到桌旁。仔细一看，他们极有可能是海盗——没有一个人看起来超过19岁，全都纹着吓人的纹身，佩戴着危险的随身武器。几轮牌之后，很明显他们在作弊，而且几乎毫不掩饰。`
+			branch "good luck" "bad luck"
+				random < 30
+
+			label "good luck"
+			action
+				payment 23974
+			`	Fortunately, you're able to outsmart them anyway and win the game, winding up with a sizable pile of credit chips. They don't look too happy about it, but do not bother you as you quickly leave. You thank your lucky stars: you're nearly 25,000 credits richer and still in one piece after a face-to-face encounter with pirates.`
+				accept
+
+			label "bad luck"
+			`	你开始大把输钱，已经损失超过10,000信用点了。`
+			choice
+				`	(Call them out on their cheating.)`
+					goto call
+				`	(Say nothing and continue playing.)`
+					goto lose
+
+			label lose
+			action
+				payment -14357
+			`	You grit your teeth and lose hand after hand before the game finally ends. The pirates gloat over their "winnings" of almost 15,000 credits as you leave.`
+				decline
+
+			label call
+			`	你当面质问他们公然作弊，这时长相最凶恶的一个冲你咆哮：“我们只是在这儿玩个游戏，懂吗？识相的话就闭上你的大嘴！我们随时能让场面变得很难看。”`
+			`	暴徒们威胁地盯着你，开始伸手掏枪。`
+			choice
+				`	(Shoot first!)`
+					goto shoot
+				`	(Grab the pot and run!)`
+					goto run
+				`	(Let them fleece me.)`
+					goto lose
+
+			label shoot
+			branch "shoot and die" "shoot and run"
+				random < 30
+
+			label "shoot and die"
+			`	Unfortunately, they're faster than you. Your mutilated corpse hits the floor with a wet thump.`
+				die
+
+			label "shoot and run"
+			action
+				payment 23974
+			`	庆幸自己从不空手下船，你的手飞快摸向大腿上的手枪。你拔出武器朝刚才威胁你的海盗开火。子弹在他胸口正中开了个洞，他瘫倒在地。震惊的同伙惊恐地摸索武器，但你打了他们一个措手不及，又迅速撂倒一人，然后决定是时候逃跑了。你在出门时顺手抓起了桌上的一些信用点！`
+			`	You dash toward the hangar bay and blast off in a hurry. You quickly count your spoils and see that you're nearly 25,000 credits richer! Halfway out of the atmosphere, the remaining two pirates hurl obscenities over the comms from their own ships, which are in hot pursuit.`
+				launch
+
+			label run
+			branch "grab and die" "grab and run"
+				random < 30
+
+			label "grab and die"
+			`	You grab the pot and make a break for it! The ruffians howl and draw their guns. Dodging gunfire, you run towards the door and get halfway there before one of the slugs finds its mark. You fall to the floor in pain, watching a pool of your own blood expand around you. You try to struggle to your feet, but the toughest-looking pirate kicks you to the ground and finishes you off with another shot.`
+				die
+
+			label "grab and run"
+			action
+				payment 23974
+			`	你抓起赌注拔腿就跑！歹徒们嚎叫着拔出了枪。你呈Z字形朝门口跑去，子弹从身边飞过，在墙上打出碎片。你回头瞥了一眼，正好看到酒保用一把巨型霰弹枪把一名歹徒轰成了肉酱。剩下的三个人紧追不舍。`
+			`	You dash toward the hangar bay and blast off in a hurry. You quickly count your spoils and see that you're nearly 25,000 credits richer! Halfway out of the atmosphere, you receive a message from the port authorities warning you that while they apprehended two of the pirates, the remaining two made it to their ships and are in hot pursuit.`
+				launch
+
+	to complete
+		never
+
+	npc
+		personality launching heroic plunders vindictive nemesis
+			confusion 20
+		government "Pirate"
+		fleet
+			names "pirate"
+			variant
+				"Sparrow" 2
+			variant
+				"Wasp" 2
+			variant
+				"Wasp"
+				"Sparrow"
