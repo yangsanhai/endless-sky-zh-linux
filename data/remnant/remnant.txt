@@ -1,0 +1,1062 @@
+# Copyright (c) 2017 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+fleet "Small Remnant"
+	government "Remnant"
+	names "remnant"
+	cargo 2
+	commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+	outfitters "Korath Exiles Remnant Donations" "Ka'het"
+	personality
+		disables heroic plunders appeasing secretive
+	variant 8
+		"Starling"
+	variant 6
+		"Starling (Heavy)"
+	variant 5
+		"Starling (Sniper)"
+	variant 4
+		"Starling (Hunter)"
+	variant 3
+		"Starling (Thrasher)"
+	variant 1
+		"Starling (Sniper)" 2
+	variant 1
+		"Albatross"
+	variant 1
+		"Albatross (Sniper)"
+	variant 1
+		"Albatross (Turret)"
+	variant 1
+		"Albatross (Heavy)"
+	variant 4
+		"Ibis"
+		"Petrel" 2
+		"Tern" 4
+	variant 4
+		"Ibis"
+		"Smew (Miner)" 2
+		"Tern" 4
+
+fleet "Large Remnant"
+	government "Remnant"
+	names "remnant"
+	cargo 2
+	commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+	outfitters "Korath Exiles Remnant Donations" "Ka'het"
+	personality
+		disables heroic plunders appeasing secretive
+	variant 6
+		"Albatross"
+		"Starling" 2
+	variant 6
+		"Albatross (Sniper)"
+		"Starling (Sniper)" 2
+	variant 6
+		"Albatross (Turret)"
+		"Starling (Thrasher)" 2
+	variant 6
+		"Albatross (Heavy)"
+		"Starling (Heavy)" 2
+	variant 3
+		"Albatross"
+		"Starling (Hunter)" 2
+	variant 3
+		"Albatross (Sniper)"
+		"Starling (Hunter)" 2
+	variant 2
+		"Albatross"
+		"Albatross (Sniper)"
+	variant 2
+		"Albatross (Heavy)"
+		"Albatross (Turret)"
+	variant 2
+		"Albatross"
+		"Starling"
+		"Ibis"
+		"Petrel" 2
+		"Tern" 4
+	variant 2
+		"Albatross"
+		"Ibis" 2
+		"Tern" 8
+		"Petrel" 4
+	variant 4
+		"Ibis"
+		"Petrel" 2
+		"Tern" 4
+		"Starling" 4
+	variant 4
+		"Ibis" 3
+		"Petrel" 6
+		"Tern" 12
+		
+
+fleet "Remnant Transport"
+	government "Remnant"
+	names "remnant"
+	cargo 2
+	commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+	outfitters "Korath Exiles Remnant Donations" "Ka'het"
+	personality
+		disables plunders coward appeasing mining harvests secretive
+	variant 10
+		"Gull"
+	variant 5
+		"Gull (Sniper)"
+	variant 4
+		"Gull (Support)"
+	variant 5
+		"Gull (Cargo)"
+	variant 5
+		"Gull (Bunks)"
+	variant 10
+		"Pelican"
+	variant 10
+		"Pelican"
+		"Gull" 2
+	variant 8
+		"Pelican"
+		"Starling" 2
+	variant 6
+		"Pelican"
+		"Gull" 2
+		"Starling" 2
+	variant 2
+		"Pelican" 3
+		"Albatross (Heavy)"
+	variant 2
+		"Pelican" 2
+		"Starling (Thrasher)" 2
+		"Starling (Sniper)"
+	variant 2
+		"Pelican"
+		"Starling (Hunter)" 2
+	variant 2
+		"Pelican"
+		"Ibis"
+		"Petrel" 2
+		"Tern" 4
+	variant 1
+		"Pelican"
+		"Gull" 2
+		"Ibis" 2
+		"Petrel" 4
+		"Tern" 8
+	
+
+fleet "Remnant Home Guard"
+	government "Remnant"
+	names "remnant"
+	cargo 2
+	commodities "Food" "Metal" "Plastic" "Heavy Metals"
+	outfitters "Korath Exiles Remnant Donations" "Ka'het"
+	personality
+		disables plunders appeasing mining harvests surveillance secretive
+	variant 20
+		"Tern" 1
+	variant 10
+		"Tern" 2
+	variant 10
+		"Smew" 1
+	variant 5
+		"Tern" 3
+	variant 5
+		"Petrel" 1
+		"Tern" 2
+	variant 5
+		"Petrel" 2
+		"Tern" 4
+	variant 3
+		"Smew (Miner)" 2
+	variant 2
+		"Smew (Runabout)"
+
+fleet "Remnant Decoy Defense"
+	government "Remnant"
+	names "remnant"
+	personality
+		staying heroic unconstrained
+	variant 10
+		"Albatross (Shield)"
+
+fleet "Light Remnant Defense"
+	government "Remnant"
+	names "remnant"
+	personality
+		staying heroic unconstrained
+	variant 10
+		"Starling" 2
+		"Starling (Heavy)" 2
+		"Starling (Sniper)" 2
+		"Starling (Hunter)" 2
+		"Starling (Thrasher)" 2
+	variant 10
+		"Starling (Heavy)" 4
+		"Starling (Sniper)" 6
+	variant 10
+		"Starling" 10
+	variant 10
+		"Starling (Heavy)" 10
+	variant 10
+		"Starling (Sniper)" 10
+	variant 10
+		"Starling (Heavy)" 5
+		"Starling (Hunter)" 5
+	variant 4
+		"Ibis" 5
+		"Tern" 20
+		"Petrel" 10
+
+fleet "Heavy Remnant Defense"
+	government "Remnant"
+	names "remnant"
+	personality
+		staying heroic unconstrained
+	variant 6
+		"Albatross (Shield)"
+		"Albatross" 3
+		"Starling" 6
+	variant 6
+		"Albatross (Shield)"
+		"Albatross (Sniper)" 3
+		"Starling (Sniper)" 6
+	variant 6
+		"Albatross (Turret)" 3
+		"Starling (Thrasher)" 6
+	variant 6
+		"Albatross (Heavy)" 3
+		"Starling (Heavy)" 6
+	variant 3
+		"Albatross" 3
+		"Starling (Hunter)" 6
+	variant 3
+		"Albatross (Sniper)" 3
+		"Starling (Hunter)" 6
+	variant 2
+		"Albatross" 3
+		"Albatross (Sniper)" 6
+	variant 2
+		"Albatross (Shield)"
+		"Albatross (Heavy)" 2
+		"Albatross (Turret)"
+	variant 4
+		"Albatross"
+		"Ibis" 4
+		"Petrel" 8
+		"Tern" 16
+
+phrase "remnant"
+	word
+		"Great"
+		"Tall"
+		"Dusky"
+		"Late"
+		"Frozen"
+		"Sunlit"
+		"冷静"
+		"Dread"
+		"Low"
+		"Sharp"
+		"Long"
+		"Weary"
+		"Elder"
+		"Young"
+		"Red"
+		"Green"
+		"New"
+		"Far"
+		"Ancient"
+		"Serene"
+		"Eternal"
+		"Gray"
+		"Starlit"
+		"Moonlit"
+		"Infinite"
+		"笃定的"
+		"White"
+		"Black"
+		"精明的"
+		"Wide"
+		"Hidden"
+		"Misty"
+		"阴影"
+		"Dark"
+	word
+		" "
+	word
+		"Hill"
+		"Song"
+		"Wonder"
+		"Journey"
+		"Fortress"
+		"Breeze"
+		"Road"
+		"Season"
+		"天空"
+		"Ocean"
+		"Ember"
+		"Spire"
+		"City"
+		"Memory"
+		"Thread"
+		"Lattice"
+		"Anchor"
+		"Beam"
+		"Forest"
+		"Mountain"
+		"Glen"
+		"Stronghold"
+		"Dream"
+		"Wind"
+		"Storm"
+		"Holdfast"
+		"Sea"
+		"Tower"
+		"Redoubt"
+		"Pillar"
+		"Matrix"
+	word
+		" "
+	word
+		"Dancing"
+		"Leaping"
+		"Plunging"
+		"Falling"
+		"Afire"
+		"Aglow"
+		"Nearby"
+		"Yonder"
+		"Spoken"
+		"Awakened"
+		"Remade"
+		"Begun"
+		"Ended"
+		"Found"
+		"Resting"
+		"Lost"
+		"Changed"
+		"Alive"
+		"Restored"
+		"Preserved"
+		"Renewed"
+		"Reborn"
+		"Ascended"
+		"Ascending"
+		"Soaring"
+		"持久的"
+		"Everlasting"
+		"Persevering"
+		"Discovering"
+		"Discovered"
+
+phrase "remnant uncontacted"
+	word
+		"（他们向你发来一段呼叫，内容是你无法理解的手语。）"
+		"（你听到一首短歌，大意是扫描他们将被视为敌对行为。）"
+		`“如果你重视人类的延续，就不要扫描我们的舰船。”一个带有奇特韵律的声音说道。`
+		`“如果你重视你自身的存续，就不要扫描我们的舰船。”那个声音说话的语调宛如吟唱。`
+		`“我们非常看重自身的隐私，若遭遇扫描将以致命武力反击。”那个声音带有奇特的韵律。`
+		`“不要扫描我们的舰船，”有人向你吟唱道。`
+
+phrase "remnant uncontacted"
+	word
+		"我正在"
+		"我们正在"
+	word
+		" "
+	word
+		"注视"
+		"观察"
+		"分析"
+		"监视"
+	word
+		" "
+	word
+		"你"
+		"你的举动"
+		"你的行为"
+	word
+		"愿意砸多少钱。"
+
+phrase "remnant uncontacted hostile"
+	word
+		"去吃太空尘埃吧"
+		"该上路了"
+		"做你最后的祈祷吧"
+		"离开这片星域"
+	word
+		"里，"
+	word
+		"敌舰"
+		"海盗"
+		"阿尔法"
+	word
+		"而战！"
+
+phrase "remnant uncontacted hostile"
+	word
+		"我"
+		"我的朋友"
+		"我的战友"
+		"我的直觉"
+	word
+		" "
+	word
+		"是对的"
+		"没看错"
+		"早就料到了"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+	word
+		"你"
+	word
+		"怀有敌意"
+		"来意不善"
+		"是个阿尔法"
+	word
+		"而战！"
+
+phrase "remnant uncontacted hostile"
+	word
+		"（他们向你发来一段你无法理解的手语呼叫，而且看起来并不友好。）"
+		"（他们打手势的速度太快，以至于你的呼叫接收器无法完全解析。）"
+		"（看来这里并不欢迎你。）"
+
+phrase "remnant friendly"
+	phrase
+		"remnant greetings"
+		"remnant preparations"
+		"remnant no scan"
+		"remnant secrecy"
+		"remnant outfit recommendations"
+		"remnant alien inquiry"
+		"remnant friendly cautions"
+
+phrase "remnant trusting"
+	phrase
+		"remnant greetings"
+		"remnant preparations"
+		"remnant scan"
+		"remnant secrecy"
+		"remnant outfit recommendations (trusted)"
+		"remnant alien inquiry"
+		"remnant friendly cautions"
+
+phrase "remnant greetings"
+	word
+		"向你致意"
+		"Hello there"
+		"向你致敬"
+	word
+		"里，"
+		" "
+	word
+		"朋友"
+		"同志"
+		"是同胞"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+phrase "remnant preparations"
+	word
+		"我差点就没命了，就在"
+		"几艘敌舰袭击了我的飞船，就在"
+		"我的任务一度险象环生，就在"
+		"我们遭遇了紧急突发状况，就在"
+		"一群柯拉特袭击者曾盘踞于此，就在"
+		"我们面临着生死考验，就在"
+	word
+		" "
+	word
+		"上周"
+		"上个月"
+		"去年"
+	word
+		". "
+		"! "
+	word
+		"所幸"
+		"幸运的是"
+		"奇迹般地"
+	word
+		"里，"
+	word
+		"我"
+		"我的船长"
+		"我们"
+	word
+		" "
+	word
+		"对此早有准备"
+		"对此早有防备"
+	word
+		"，提前装备了"
+	word
+		"隐形功能"
+		"秘密武器"
+		"高速引擎"
+		"每个遗民都应具备的保命底牌"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+phrase "remnant no scan"
+	word
+		"请"
+	word
+		" "
+	word
+		"不要"
+		"尽量不要"
+	word
+		" "
+	word
+		"扫描"
+	word
+		" "
+	word
+		"我们。"
+		"我们的舰船。"
+
+phrase "remnant no scan"
+	word
+		"粗心的扫描会付出生命代价。"
+		"未经请求的扫描不受欢迎。"
+		"扫描是需要赢得的特权。"
+
+phrase "remnant scan"
+	word
+		"如能麻烦"
+		"要是能请"
+	word
+		" "
+	word
+		"您"
+	word
+		" "
+	word
+		"扫描"
+		"查看"
+		"留意"
+		"检查"
+	word
+		" "
+	word
+		"我的飞船。"
+		"我们的飞船。"
+		"余烬废土的一切。"
+
+phrase "remnant scan"
+	word
+		"进行"
+		"执行"
+		"开展"
+	word
+		" "
+	word
+		"传感器扫描"
+		"全面扫描"
+		"例行检查"
+		"雷达扫查"
+	word
+		" "
+	word
+		"以排查"
+	word
+		" "
+	word
+		"偷渡者"
+		"附着寄生物"
+		"不明物体"
+		"安全隐患"
+		"敌对实体"
+	word
+		" "
+	word
+		"在我的飞船上"
+		"在我们的飞船上"
+		"在所有飞船上"
+	word
+		" "
+	word
+		"是"
+		"可以说是"
+	word
+		" "
+	word
+		"很有帮助的。"
+		"非常实用的。"
+		"保障安全的必要之举。"
+		"非常值得赞赏的。"
+		"一项良好的预防措施。"
+
+phrase "remnant secrecy"
+	word
+		"祸从口出。"
+		"轻言丧命。"
+		"守口如瓶。"
+		"只要没人知道我们在这，就没人能锁定我们。"
+		"他们无法追猎自己不知道存在的东西。"
+		"请将关于我们的信息保密。"
+		"保密是最好的防御。"
+		"若有人问起，就说这里空无一人。"
+		"若有人问起，就说这里毫无值得关注之物。"
+
+phrase "remnant outfit recommendations"
+	word
+		"如果"
+	word
+		" "
+	word
+		"你有"
+		"执政官给予了你"
+		"我们的长老允许你"
+		"我们的政府授予了你"
+	word
+		" "
+	word
+		"执照"
+		"许可证"
+		"购买我们装备的权限"
+	word
+		"里，"
+	word
+		"我"
+		"我们的专家"
+		"我们的老兵"
+		"我的朋友们"
+	word
+		" "
+	word
+		"会建议"
+		"会推荐"
+	word
+		" "
+	word
+		"购买"
+		"装备"
+		"入手"
+		"安装"
+		"为你的船只装配"
+	word
+		" "
+	phrase
+		"remnant inhibitor cannon"
+		"remnant thrasher cannon"
+		"remnant emp torpedo bay"
+		"remnant salvage scanner"
+	word
+		" "
+	word
+		"它们是最棒的！"
+		"你绝对应该试试！"
+		"绝对比你们星域里的装备要好。"
+
+phrase "remnant outfit recommendations (trusted)"
+	word
+		"既然"
+	word
+		" "
+	word
+		"你拥有"
+		"执政官给予了你"
+		"我们的长老准许你拥有"
+		"我们的政府授予了你"
+	word
+		" "
+	word
+		"许可证"
+		"通行证"
+		"装备我们装置的权限"
+	word
+		"里，"
+	word
+		"我"
+		"我们的专家"
+		"我们的老兵"
+		"我的朋友们"
+		"我们"
+	word
+		" "
+	word
+		"建议"
+		"推荐"
+	word
+		" "
+	word
+		"装备"
+		"获取"
+		"安装"
+		"为你的飞船装备"
+	word
+		" "
+	phrase
+		"remnant inhibitor cannon"
+		"remnant thrasher cannon"
+		"remnant emp torpedo bay"
+		"remnant salvage scanner"
+	word
+		" "
+	word
+		"它们是最好的！"
+		"你绝对应该试试！"
+		"绝对比祖星空间的那些装置要好。"
+
+phrase "remnant inhibitor cannon"
+	word
+		"几门"
+		"那些"
+		"我们的"
+	word
+		"抑制炮。"
+	word
+		"它们"
+		"这些武器"
+	word
+		" "
+	word
+		"能够"
+		"将会"
+	word
+		" "
+	word
+		"干扰"
+		"瘫痪"
+		"减缓"
+	word
+		" "
+	word
+		"敌人的推进器"
+		"目标的转向系统"
+		"任何舰船的引擎"
+	word
+		" "
+	word
+		"并防止其逃跑"
+		"让它们毫无还手之力"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+phrase "remnant thrasher cannon"
+	word
+		"几门"
+		"数门"
+		"一些"
+	word
+		" "
+	word
+		"痛击炮"
+		"痛击炮"
+		"痛击炮塔"
+	word
+		". "
+	word
+		"相比"
+		"若拿来对比"
+	word
+		"你的爆能炮，"
+	word
+		"它们的发热效率更高"
+		"使用我们的加农炮能造成更高的伤害"
+		"它们可能消耗更多能量，但在发热和伤害表现上更好"
+		"我们的加农炮可能更贵，但伤害更高"
+		"它们体积更大，但能造成更高伤害且发热更少"
+		"它们的威力绝对不容小觑"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+phrase "remnant emp torpedo bay"
+	word
+		"电磁脉冲鱼雷发射器。"
+	word
+		"只需一击，它"
+		"发射一枚"
+		"单枚鱼雷"
+	word
+		" "
+	word
+		"就能"
+		"就可以"
+	word
+		" "
+	word
+		"干扰"
+		"瘫痪"
+		"耗尽"
+	word
+		" "
+	word
+		"敌方的系统"
+		"目标的电池"
+		"敌人的护盾"
+		"目标的引擎"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+phrase "remnant salvage scanner"
+	word
+		"一两个"
+		"一打"
+		"一些"
+	word
+		"回收扫描器。"
+	word
+		"它们将装备扫描器与战术扫描器合二为一"
+		"与分体式版本相比，我们的扫描器性能要强大得多"
+		"它们的探测距离比你的装备扫描器更远"
+		"这些宝贝扫描速度极快"
+		"它们是打劫搜刮的必备神器"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+phrase "remnant alien inquiry"
+	word
+		"你听说过"
+		"你知道"
+		"你了解"
+	word
+		"有关"
+	word
+		"那"
+		"那些"
+	word
+		" "
+	word
+		"夸格"
+		"帕格"
+		"亥族"
+		"位于我们星域极西方向的联盟"
+	word
+		"的消息吗？ "
+	phrase
+		"remnant friendly (aliens!)"
+		"remnant friendly (aliens?)"
+	replace
+		"those Coalition" "that Coalition"
+
+phrase "remnant friendly (aliens!)"
+	word
+		"它们看起来很强"
+		"它们看起来很弱"
+		"也许我们应该接触一下它们"
+		"我觉得它们很危险"
+		"我觉得它们挺友善的"
+		"我觉得我们可以信任它们"
+		"我想掠夺它们的科技"
+		"我想要它们的飞船"
+		"我还没有见过它们"
+		"不知道长官们是不是早已知道它们了"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+phrase "remnant friendly (aliens?)"
+	word
+		"它们强大吗"
+		"它们弱小吗"
+		"它们友好吗"
+		"它们富有敌意吗"
+		"它们实力如何"
+		"捕获它们舰船的几率有多大"
+		"你们的政府接触过它们吗"
+		"值得设法弄到它们的科技吗"
+	word
+		"吗？"
+
+phrase "remnant friendly cautions"
+	word
+		"要多加小心"
+		"要时刻警惕"
+		"要严加防范"
+	word
+		"那些"
+	word
+		"这个星系里的阿尔法人"
+		"你们星域里的海盗"
+		"科拉斯掠夺者"
+		"科拉斯人"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+	word
+		" "
+	word
+		"你可不想白白送命"
+		"遭遇他们会非常危险"
+		"随时备好武器，以防万一遭遇他们"
+		"我们有能够隐形的飞船，万一你与他们对峙陷入困境可以用得上"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+phrase "remnant hostile"
+	word
+		"(它由极其复杂的符号组成，任何普通人类都无法理解，但看起来它们似乎并不喜欢你。)"
+
+phrase "remnant hostile"
+	word
+		"看来，"
+		"似乎"
+		"在我看来，"
+	word
+		"你"
+	word
+		"无异于"
+		"非常类似于"
+		"就像是"
+	word
+		" "
+	word
+		"阿尔法人"
+		"科拉特人"
+	word
+		". "
+	word
+		"真遗憾"
+		"愿你在烈焰中化为灰烬"
+		"你暗算了我们"
+		"你对我们撒了谎"
+		"你辜负了我们的信任"
+	word
+		"愿意砸多少钱。"
+		
+phrase "remnant hostile"
+	word
+		"我"
+		"我们"
+	word
+		"以为"
+	phrase
+		"remnant hostile (we were)"
+		"remnant hostile (you were)"
+	word
+		". "
+	word
+		"你为什么要这么做"
+		"你疯了吗"
+		"是我伤到你了吗"
+	word
+		"吗？"
+
+phrase "remnant hostile (we were)"
+	word
+		"我们"
+	word
+		"是朋友"
+		"是战友"
+		"是同胞"
+		"关系很好"
+		"是队友"
+		"是盟友"
+
+phrase "remnant hostile (you were)"
+	word
+		"你"
+	word
+		"不像阿尔法人"
+		"不像海盗"
+		"没有敌意"
+		"很友好"
+		"是个好人"
+		"是队友"
+		"是盟友"
+
+
+
+shipyard "Remnant"
+	"Starling"
+	"Gull"
+	"Albatross"
+	"Ibis"
+	"Pelican"
+	"Petrel"
+	"Smew"
+	"Tern"
+
+shipyard "Remnant Puffin"
+	"Puffin"
+
+shipyard "Remnant Salvage Ships"
+	"'olofez"
+
+
+
+outfitter "Remnant"
+	"Inhibitor Cannon"
+	"Thrasher Cannon"
+	"Thrasher Turret"
+	"Point Defense Turret"
+	"Crystal Capacitor"
+	"Millennium Cell"
+	"Epoch Cell"
+	"Aeon Cell"
+	"Thermoelectric Cooler"
+	"EMP Torpedo"
+	"EMP Torpedo Bay"
+	"EMP Torpedo Storage Bay"
+	"Emergency Ramscoop"
+	"Quantum Key Stone"
+	"Anvil-Class Engine"
+	"Crucible-Class Thruster"
+	"Forge-Class Thruster"
+	"Smelter-Class Thruster"
+	"Crucible-Class Steering"
+	"Forge-Class Steering"
+	"Smelter-Class Steering"
+	"Outfits Expansion"
+	"Cargo Expansion"
+	"Small Bunk Room"
+	"Bunk Room"
+	"Local Map"
+	"Hyperdrive"
+	"Scram Drive"
+	"Fuel Pod"
+	"Cargo Scanner"
+	"Outfit Scanner"
+	"Tuning Rifle"
+	"Salvage Scanner"
+
+outfitter "Remnant Core"
+	"Crystal Capacitor"
+	"Millennium Cell"
+	"Thermoelectric Cooler"
+	"Emergency Ramscoop"
+	"Quantum Key Stone"
+	"Anvil-Class Engine"
+	"Crucible-Class Thruster"
+	"Crucible-Class Steering"
+	"Hyperdrive"
+	"Fuel Pod"
+	"Tuning Rifle"
+	"Salvage Scanner"
+	"EMP Torpedo"
+
+outfitter "Remnant Salvage"
+	"Generator (Furnace Class)"
+	"Small Heat Shunt"
+	"Systems Core (Small)"
+	"Thruster (Asteroid Class)"
+	"Thruster (Planetary Class)"
+	"Steering (Asteroid Class)"
+	"Steering (Planetary Class)"
+	"Fire-Lance"
+
+outfitter "Void Sprite Parts"
+	"Void Sprite Parts"

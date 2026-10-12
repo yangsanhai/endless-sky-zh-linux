@@ -1,0 +1,2692 @@
+# Copyright (c) 2015 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "First Contact: Hai"
+	landing
+	source
+		government "Hai"
+		not attributes "uninhabited"
+	on offer
+		conversation
+			branch unfettered
+				has "First Contact: Unfettered: offered"
+			`这颗星球上居住着一种外星种族，它们的外貌像是巨大而聪明的松鼠。然而，太空港最令人惊讶的并非外星人本身，而是人类商人和其他平民穿行于它们其间，显然已经把这里当成了家。你想找个人问问这里的情况吗？`
+			choice
+				`	（当然。）`
+					goto sure1
+				`	（现在还不想。）`
+					defer
+
+			label sure1
+			`	你走向一位正忙着与一个外星人讨价还价的人类商人。看到你走近，他们中断了谈话，那个人类打手势示意你过去。“你看上去完全摸不着头脑，”他说，“头一次掉进兔子洞吗？”`
+			`	你点了点头。那个外星人伸出爪子与你握手。“欢迎来到亥族空间，”他们说，“我们是爱好和平的种族，你可以自由地拜访我们，甚至在我们中间生活。我们的世界为所有人提供了丰饶的物产。”`
+				goto next
+			
+			label unfettered
+			`这里的亥族似乎比你之前遇到的更友好、更平易近人。然而更令人惊讶的是，人类商人和其他平民穿行于它们其间，显然已经把这里当成了家。你想找个人问问这里的情况吗？`
+			choice
+				`	（当然。）`
+					goto sure2
+				`	（现在还不想。）`
+					defer
+
+			label sure2
+			`	你走向一位正忙着与一个亥族讨价还价的人类商人。看到你走近，他们中断了谈话，那个人类打手势示意你过去。“你看上去迷路了，”他说，“头一次掉进兔子洞吗？”`
+			`	“不，实际上我在北边见过亥族，”你回答道。商人听到这话显得有些担忧，但那个亥族只是叹了口气。`
+			`	“啊，你见过我们那些迷途的兄弟姐妹了。希望他们没有给你带来太多麻烦，因为他们走上了歧途，”他们说，“欢迎来到亥族空间。不同于你之前遇到的那些，我们其余的人都是爱好和平的种族，你可以自由地拜访我们，甚至在我们中间生活。我们的世界为所有人提供了丰饶的物产。”`
+			
+			label next
+			`	你飞快地瞥了人类商人一眼，以观察他的神情，想知道这些外星人是否真的如此温和，但他的表情平静而从容。“没错，”他说，“看看你周围。这些建筑已经矗立了数千年。亥族的社会如此先进，以至于他们几乎不需要什么资源来维持它。”`
+			branch wormhole
+				has "wormhole alpha found"
+			choice
+				`	“人类是怎么到达这里的？他们用了跳跃引擎吗？”`
+			`	人类商人挑了挑眉。“我可不了解什么跳跃引擎。不过如果你还不知道的话，亥族空间里有一条虫洞，连接到人类空间一个偏僻的角落。别费心思去琢磨它为什么存在以及怎么来的了，因为连亥族自己都不知道。”`
+			label wormhole
+			choice
+				`	“你为什么允许人类在这里定居？”`
+				`	“你们允许人类在这里定居，想要什么作为回报？”`
+			
+			`	“人类是一个年轻的物种，”那名亥族说道，“充满活力，充满新想法。而亥族已经老了，我们所做的一切都是在重复过去。人类度假时，会去天气完美、终日阳光明媚的世界；而我们亥族度假时，则会去暴风雨最猛烈的世界，去寻找不可预知与变化。人类是如此奇特，与人类交谈就像是一次短暂的度假。”他们笑了笑，你瞥见了它那巨大的门牙。根据你对异星生物学的了解，你猜测亥族是草食动物，但你无法确定。`
+			branch hostile
+				has "First Contact: Unfettered: offered"
+			choice
+				`	“那么，只要我想，我就可以游历你们的整片领地吗？”`
+					goto travel
+				`	“为什么人类星域那边的人不知道你们在这里？”`
+					goto human
+			
+			label hostile
+			choice
+				`	“如果你们的族人爱好和平，那北方的亥族为什么如此充满敌意？”`
+					goto why
+				`	“为什么人类星域那边的人不知道你们在这里？”`
+			
+			label human
+			`	人类商人笑了起来。“大概是因为我们大多数人来这里，都是为了逃避人类星域的混乱和纷争。我们最不希望看到这些破事也跟到这儿来。我不是说你不能把虫洞的事告诉别人，但如果我是你，我也不会到处去宣扬。在离开之前，先好好在亥族星域逛逛吧；你会发现我们能从他们身上学到很多东西。”`
+			branch question
+				has "First Contact: Unfettered: offered"
+			`	“那么我可以在你们的领地内随心所欲地旅行吗？”你问那名亥族。`
+			
+			label travel
+			`	“可以，”他们说，“但要小心。北方是一些误入歧途的叛逆亥族的领地：他们是强盗和海盗，靠掠夺我们其他人的财物为生。如果你在他们中间穿行，将无法保证安全。”`
+			`	“还有，”那名人类补充道，“我听到传闻说，‘无羁’亥族正设法让降落在他们星球上的人类船长为他们做些差事。我倒没什么兴趣去弄清那些差事究竟是什么，但如果你看到什么可疑的事情，可能就是这回事。”`
+				goto end
+			
+			label question
+			`	“如果你们的族人爱好和平，那北方的亥族为什么如此充满敌意？”你问那名亥族。`
+			
+			label why
+			`	“我还年轻，我们‘无羁’同胞的起源远在我出生之前，”他们回答道，“如果你想了解更多，去问问比我年长得多的人也许才是明智之举。”`
+			
+			label end
+			`	你们又聊了一会儿，但除了得知他们有几个世界甚至愿意向人类出售亥族科技外，你并没有获得更多信息。你感谢他们两人停下来与你交谈，那名亥族回应道：“我们总是很高兴欢迎新朋友。愿和平常驻你心，直到我们再次相遇。”`
+				decline
+	on decline
+		log "Factions" "Hai" `亥族是一种体型巨大、智力发达的啮齿类动物，生活在人类星域以北。他们允许任何发现其领地的人类与他们共同生活，并与之进行贸易，购买他们的科技。`
+
+mission "Discovered Hai Space"
+	landing
+	invisible
+	non-blocking
+	source
+		government "Hai" "Hai (Unfettered)"
+	on offer
+		event "label hai space"
+		fail
+
+event "label hai space"
+	galaxy "label hai"
+		sprite "label/hai"
+
+mission "Discovered Wormhole Alpha"
+	invisible
+	non-blocking
+	entering
+	source
+		system "Ultima Thule"
+	destination "Earth"
+	on offer
+		set "wormhole alpha found"
+		fail
+
+
+
+mission "Assisting Hai"
+	assisting
+	repeat
+	to offer
+		random < 19
+	source
+		government "Hai" "Hai Merchant" "Hai Merchant (Human)"
+		not attributes "automaton"
+	on offer
+		payment 30000
+		conversation "assisting merchant hazardous"
+	destination "Hai-home"
+
+
+
+mission "Ask the Hai about the Unfettered"
+	landing
+	source
+		government "Hai"
+		not attributes "uninhabited"
+	to offer
+		has "First Contact: Hai: offered"
+		has "First Contact: Unfettered: offered"
+	on offer
+		conversation
+			`无羁亥族自称是“真正的亥族”，似乎认为其他亥族在压迫他们；但你之前交谈过的另一名亥族却说，无羁亥族只是被误导了。你想在这里找个人，听听更完整的内情吗？`
+			choice
+				`	（是的。）`
+				`	（否。）`
+					decline
+			`	你找到了一名面容年迈的亥族，他正坐在长椅上看着星舰起降。当你走近时，他说道：“你好，人类。”`
+			choice
+				`	“你好。我遇到过一些无羁亥族。你能跟我说说他们的事情吗？”`
+				`	“你好。能告诉我，你们为什么与生活在北方的其他亥族处于交战状态吗？”`
+					goto war
+			`	他说：“啊，我们在北方那些任性的兄弟姐妹。你肯定已经见过我们社会的模样：安全、稳定、可预知、有条不紊。这对我们大多数人来说都很合适。但总有些……”`
+				goto raids
+			label war
+			`	他说：“我不会称之为战争。我们不对他们进行袭击。我们只有在他们进攻时才会防卫。而且，我们还向他们提供食物和其它生活必需品。他们并不是我们的敌人，只是些与社会格格不入的人。你肯定已经见过我们社会的模样：安全、稳定、可预知、有条不紊。这对我们大多数人来说都很合适。但总有些……”`
+			label raids
+			`	他顿了顿。“不，我这样说有失公允。我重新讲吧。几百年前，在我还年轻的时候，我们的领地遭到了来自东方的外星人袭击，他们开着巨大的战舰，劫掠我们的世界。在那个年代，有一些足够勇敢的亥族，冒着生命危险来保护我们。袭击持续了数十年，然后突然停止了。`
+			`	“大多数与入侵者作战的人都很高兴能重回平凡的生活，但对另一些人来说，没有了战争的刺激与混乱，生活似乎变得平淡且毫无意义。他们在北方的星系建立了殖民地，彼此内讧，糟蹋土地，而且人口不断增长。如今，他们的世界已无法养活所有人，他们便入侵我们，并编造故事将自己的失败归咎于我们。”`
+			choice
+				`	“难道他们不该因为保护你们免受劫掠者的侵害，而得到感激吗？”`
+				`	“他们说德拉克改造了亥族，使其变得不那么好斗。这是真的吗？”`
+					goto drak
+				`	“我想知道的就这些。谢谢。”`
+					decline
+			`	“他们过去受过感激，而且现在也依然理应如此。我们的社会总会有需要他们的时候，只是在当下，这种需求并没有那么迫切。既没有新的边疆供他们探索，也没有值得他们面对的挑战。而且我们担心如果他们冒险南下并掌控了虫洞会发生什么，因此我们必须强迫他们留在原地。”`
+			choice
+				`	“他们说德拉克改造了亥族，使其变得不那么好斗。这是真的吗？”`
+				`	“我想知道的就这些。谢谢。”`
+					decline
+			label drak
+			`	他说：“不，那是他们编造的谎言，说什么亥族命中注定要成为银河的主宰，但德拉克和夸格阻挠了我们。这个故事根本不是真的。我们在虫洞那一边的文明，是因为内讧和愚蠢的治理而覆灭的。在废墟中，我们研究、思考、争论，并最终确信：我们要么以稳定与和平统治一小片领地，要么占领更多世界但陷入永无休止的动荡。我们选择了稳定，并放弃了那些世界。”`
+			choice
+				`	“所以你并不认为德拉克是把我们都关在笼子里？”`
+				`	“我想知道的就这些。谢谢。”`
+					decline
+			`	他思索了一会儿，然后说道：“有时我们生火做饭。大火会烧掉许多木柴，火苗窜得极高，狂野炽热，根本没法把饭烧好。随后木柴化为木炭，没有火焰也没有烟雾，只是缓慢地燃烧；而当你把炭火聚拢起来，正适合用来烤肉或者烘焙面包。或许每个物种在学会‘缓慢燃烧’之前，都必须消耗许多世界和资源，而德拉克的智慧就在于默许它们这样做。但当它们像我们一样找到了平衡，就不再需要那么庞大的空间了。”`
+			`	你感谢他抽出时间与你交谈，然后与他道别。`
+				decline
+
+
+
+mission "Hai Waypoint Warning"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "hai space start"
+	to complete
+		never
+	on enter "Waypoint"
+		fail
+		conversation
+			`当 <ship> 脱离超空间时，你的仪表盘上亮起了一整排警告灯。原因显而易见；即使隔着如此遥远的距离，虫洞的光芒依然清澈如水晶，将周围的一切都染上了一层淡紫色。漩涡的旋臂看似在迟缓地旋转，但你很清楚，一旦靠近，构成它的那些能量带的移动速度必定会比你飞船的最高速度快上几个数量级。`
+			`	你的观光被加密频道上传来的一声呼叫打断。你接通了呼叫，迎面而来的是一句你依稀能够辨认出的亥语简短问候。`
+			choice
+				`	“你能再说一遍吗？”`
+				`	“抱歉，我不会说亥语。”`
+			`	你收到了一阵爽朗的笑声作为回复。“我的错，朋友，”呼叫你的那名亥族说道。“以前在亥族星域长大的人都懂得亥语，但我想现在已经不尽然了，毕竟有了绿水星之类的地方。`
+			`	“总之，言归正传。你可能已经听过上百遍了，但还是有必要重申一下：除非你确定对方已经知情，否则绝不要谈论亥族、亥族星域或任何亥族科技。懂了吗？”`
+			choice
+				`	“明白。”`
+					goto easy
+				`	“我为什么必须说谎？”`
+			`	那名亥族再次笑了起来，这次显得有些紧张。“你知道吗，外面有些人确实能面不改色地把你说的那番话说出口。”`
+			choice
+				`	"Alright, I'll be on my way."`
+					goto easy
+				`	“我是认真的。”`
+			`	虽然你无法通过通信器看到与你交谈的对手，但你觉得他现在一定在揉着自己的鼻梁。“几十年前，你很难找到会考虑泄露亥族存在秘密的船长。但到了今天，感觉连亥族自己都在大肆宣扬要将其公之于众，全然不顾这会带来多大的动荡。`
+			`	“但这不仅仅是为了保护亥族星域。有些势力有充足的动机和能力，去抹除任何试图在人类星域制造混乱的苗头，其中就包括任何想要曝光未知智慧种族存在的人。`
+			`	"Anyway, stay safe out there." The hail cuts off.`
+				decline
+			label easy
+			`	“很高兴听到你这么说。回头见，船长。”呼叫切断了。`
+	npc
+		government Hai
+		personality staying uninterested
+		system "Waypoint"
+		fleet
+			names "hai"
+			variant
+				"Lightning Bug"
+
+
+
+mission "Hai Sympathizer Warning"
+	invisible
+	source
+		government "Hai"
+		not attributes "uninhabited" "retirement"
+	to offer
+		"reputation: Hai Merchant (Sympathizers)" < 0
+		not "warned about hai merchant politics"
+		not "hai space start"
+	on offer
+		log `交火结束后，一名亥族商人在空间港酒吧主动找我谈话。他警告我亥族商人之间存在着派系纷争，并且若在与无羁者交战时将同情他们的人卷入交火，会惹来大麻烦。我还了解到，作为一名外族人，一旦涉及亥族公民的死亡，即使以“自卫”为由也无法洗脱嫌疑。`
+		set "warned about hai merchant politics"
+		conversation
+			`当你坐在空间港酒吧里等待所点的食物时，一名亥族人毫不客气地拉开你对面的椅子坐了下来。他看起来像是个商人，而且显然见识过不少风雨。他在开口前眯起眼睛打量着你：“你就是 <last> 船长，对吧？”`
+			choice
+				`	“正是在下。”`
+					goto acknowledge
+				`	“我想你认错船长了。”`
+			`	他将一个设备拍在桌上，一个展现出你面容的小型全息投影随即弹出，并开始缓缓旋转。“不，我想我没有认错。”`
+			label acknowledge
+			`	他叹了口气。“你一直在和无缚者交战，你要知道，有些亥族对此不太高兴。他们视你为插手亥族内政的外人。这其中有些人被我们商人称为‘同情者’，如果看到像你这样在对待无缚者时开起火来没完没了的人，他们可能会有些忘乎所以，朝你开上几枪。”`
+			`	他朝身旁的太空港挥了挥手。“你可能已经注意到降落有些困难了。你看，因为很多人不喜欢外人插手他们不该管的事，如果你碰巧还击并意外摧毁了同情者的飞船，当局可不在乎是谁先开的枪。这种舆论倾向非常普遍，足以确保如果你击落一名同情者，其待遇与击落任何其他亥族商人没有任何区别。安保部队也会一视同仁。`
+			`	“至于我们商人，那就是另一回事了。这一直是我们内部激烈争论的话题，如果你击落了跟他们吵过架的人，有些人倒不会那么生气。不过，每个人在各方都有朋友，所以你还是得当心。同情者可能会在任何地方一看到你就气得向你开火，但事实很简单：如果你对任何一个亥族人进行反击，都会惹恼某些人，从而对你产生不利影响。即使那个亥族是同情者，即使是他们先开的枪。”`
+			`	他非常严肃地看着你，确保你听进去了。`
+			branch "low reputation"
+				"reputation: Hai" < 1
+			choice
+				`	“我明白了，谢谢你的警告。”`
+					goto end
+				`	“凭什么我自卫反击同情者还要惹麻烦？”`
+					goto defending
+			label "low reputation"
+			choice
+				`	“我明白我得罪了一些人。”`
+					goto trouble
+				`	“我自卫反击同情者怎么会惹麻烦？”`
+			label defending
+			action
+				set "hai symp warn: explained trouble"
+			`	他耸耸肩。“你最好不要把人类的道德标准强加给亥族。简单的事实是，他们是公民，而你不是。`
+			`	“一旦有报告称你摧毁了亥族公民的飞船，当地的安保人员就会介入并调查事情的来龙去脉。如果他们认定是你的错，那就是你的错，除非你能上诉到法庭。然而，你并不是公民，所以安保机构可以轻易地把你定性为海盗，从一开始就断绝你通过法庭申诉的途径。就算你成功上诉了，可你是个船长，你的生计在太空。为了走完申诉的法庭程序，你得被停飞好几个月。`
+			`	“不管你认为这合理与否，现实就是如此。在与无缚者交手时，你必须谨慎克制你的火力，并维护好你的名声。”`
+			
+			label trouble
+			branch "less trouble"
+				"reputation: Hai" >= 1
+				"reputation: Hai (Wormhole Access)" >= 1
+				"reputation: Hai Merchant" >= 1
+				"reputation: Hai Merchant (Human)" >= 1
+			# At least one other group besides the Sympathizers are upset.
+			branch "explained trouble"
+				has "hai symp warn: explained trouble"
+			`	“你给自己惹上麻烦了，船长。”`
+			label "explained trouble"
+			action
+				"reputation: Hai" >?= 1
+				"reputation: Hai (Wormhole Access)" = "reputation: Hai"
+				"reputation: Hai Merchant" >?= 1
+				"reputation: Hai Merchant (Human)" >?= 1
+			`	他把一个数据盘滑到你面前。“算你走运，这次我碰巧目击了过程，并替你辩解说你当时不知道自己卷入了什么麻烦。这个数据盘里有安保报告文件，记录着你已收到一次警告……你自己留底吧，亥族安保那边肯定已经建档了。以后可就不会再有警告了。”`
+				goto end
+			label "less trouble"
+			# Only the Sympathizers are upset.
+			`	“到目前为止，你还算走运。亥族安保评估了你的过往记录，认定你近期的行为在你所处的敌对局势中尚属可容忍的合理反应……”他把一个数据盘滑到你面前。“不过，这是针对你的案卷副本，记录着你已收到口头警告。如果你接下来继续惹恼亥族安保，他们可就不会再发什么警告了。”`
+			
+			label end
+			`	女服务员端着你点的食物走了过来，商人站起身。“祝你好运，船长。如果你遇到麻烦，我建议你接些给无缚者运送救援物资的差事，前提是你能保证不开火把活干完……”`
+			`	他点点头，留下你独自用餐。`
+				decline
+	on decline
+		clear "hai symp warn: explained trouble"
+
+
+
+mission "Returning Home"
+	description "带艾略特回到他在<destination>的家。艾略特在十几岁时离家出走，已经有将近六年没见过家人了。"
+	minor
+	source
+		government "Hai"
+		not planet "Allhome"
+		not attributes "station"
+	destination
+		attributes "dirt belt"
+		attributes "farming"
+	passengers 1
+	to offer
+		random < 40
+	on offer
+		conversation
+			branch insider
+				has "start: hai"
+			`你在<origin>的集市上被一个人类拦了下来。他脱下帽子问道：“你是从外面来的，对吧？”`
+			choice
+				`	“是的，我是。”`
+					goto outsider
+				`	“你说的‘外面’是什么意思？”`
+			
+			`	“亥族领空之外。你看起来跟住在这里的大多数人类不太一样，除非有什么我不知道的时尚新潮流。”`
+			choice
+				`	“哦，对。我确实是从外面来的。”`
+					goto outsider
+			
+			label insider
+			`你在<origin>的集市上被一个人类拦了下来。他脱下帽子问道：“你该不会正好是位从外面来的船长吧？”`
+			choice
+				`	“不，我在这里长大。”`
+				`	“怎么？你要去哪里吗？”`
+					goto somewhere
+			
+			`	他叹了口气。“果不其然。通常光看衣着就能看出谁不是本地人。”`
+			`	那人想了想。“对你来说，跑一趟人类空间会太麻烦吗？”`
+			choice
+				`	“我很乐意带你过去。”`
+				`	“抱歉，不行。你得另找一位船长了。”`
+					goto decline
+			
+			label outsider
+			`	“太好了。我叫艾略特。”你向艾略特作了自我介绍，并与他握了握手。`
+				goto offer
+			
+			label somewhere
+			`	“是的。我叫艾略特。”你向艾略特作了自我介绍，并与他握了握手。`
+			
+			label offer
+			`	“你能带我去<destination>吗？”艾略特问道。`
+			`	“那可是在泥壤带的另一端啊，”你说。“你为什么想去那么远的地方？”`
+			`	艾略特低头看了看地面，深吸了一口气，双手攥紧了帽子。“其实，我并不是一辈子都住在这儿。我出生在<planet>的一个贫穷农户家庭。我的大部分时间都花在农活上，而我对此深恶痛绝。终于有一天，我实在受够了这一切，便离家出走了。`
+			`	“我从家里逃到了太空港城市，偷偷溜进了一艘货船的货舱。我在里面待了整整三周，期间船长一次也没打开过货舱。也算我运气好，那艘货船运的是食物，所以我吃喝不愁。`
+			`	“等货舱门终于打开时，我拼命往外跑，但一看到一群亥族人，我又吓得缩了回去。我当时完全不知道自己身在何处，但从那以后我就一直住在这里。那年我才十三岁，距今快有五年了。”`
+			`	艾略特又低头看着地面，抹了抹眼角的泪水。`
+			choice
+				`	“好吧，我带你去<planet>。”`
+					goto accept
+				`	“这么说，你终于想回家了？”`
+				`	“抱歉，我没法带你去那么远的地方。”`
+					goto decline
+			
+			`	“是的。最近我一直在想这件事。我想再见见我的家人。”`
+			choice
+				`	“好吧，我带你去<planet>。”`
+					goto accept
+				`	“抱歉，我没法带你去那么远的地方。”`
+			
+			label decline
+			`	“我明白了，”艾略特说。“我会试着找别人帮忙的。再见，<first>。”`
+				decline
+			
+			label accept
+			`	你领着艾略特登上飞船，带他去了一间卧舱。安顿好艾略特后，你不禁有些怀疑，他的家人现在是否还留在<planet>。`
+				accept
+			
+	on visit
+		dialog `你寻找艾略特，却发现他居然搭乘了你的一艘护卫舰！最好先离港起航，在这个星系中等待你的护卫舰抵达。`
+	on complete
+		payment 45000
+		conversation
+			`艾略特感谢你带他来到<planet>，并将<payment>付给了你。他在太空港外拦下了一辆出租车，但在上车前，他转身朝你望来。`
+			`	“你想跟我一起来吗？我很想让你见见我的家人。如果他们知道我是怎么回来的，一定会很想见你。”`
+			choice
+				`	“抱歉，我还有别的地方要去。祝你好运。”`
+				`	“当然。我都陪你走到这儿了。”`
+					goto sure
+			
+			`	“我理解。再次谢谢你，<first>。我永远欠你一个人情。”`
+			`	艾略特上了出租车，车子朝太空港城市外那片看似无边无际的农田驶去。`
+				decline
+			
+			label sure
+			`	在将近三小时的车程中，车窗外几乎全是山丘与农田，偶尔能看到零星的建筑或野生动物。当出租车沿着车道驶近那栋房子时，艾略特有些发抖。“我在想，他们现在是不是还住在这里，”他紧张地说。`
+			`	出租车停下后，屋里没有任何人出来。你和艾略特朝前门走去，一位端着马克杯咖啡的中年妇女开了门，脸上满是困惑。`
+			`	“有什么事吗？”那女人问道。`
+			`	艾略特转头看向你，脸上洋溢着灿烂的笑容。“当然可以，妈妈，”他转而对她说。女人的脸上瞬间绽放出喜悦的光芒，她兴奋得又蹦又跳，杯子里的咖啡都洒了出来。`
+			`	“哦，艾略特，我真不敢相信！”艾略特的妈妈放下杯子，冲出门去拥抱他。“杰克逊！莎拉！艾比！肖恩！维克托！艾略特在这儿！”艾略特的全家人都从屋里迎了出来，争先恐后地询问他这些年去了哪里、过得怎么样、为什么要离开。`
+			`	艾略特把你介绍给他的家人，他们对你把艾略特送回家表示由衷的感谢。维克托在艾略特离开时只有七岁，现在已经十二岁了。他连珠炮似地向你提问关于当飞行员的事，有时你还没来得及回答上一个问题，他就已经问起了下一个。`
+			`	“你要回太空港吗，<first>？”出租车司机从车道那边喊道，“我得尽快赶回城里。”`
+			`	你向艾略特和他的家人道别。“再次感谢你，<first>，”艾略特说，“我永远欠你一个人情。”`
+
+
+
+mission "Unwanted Cargo Trigger"
+	invisible
+	non-blocking
+	landing
+	source
+		government "Hai"
+		not attributes "uninhabited"
+	to offer
+		random < 1
+		"cargo space" > 0
+	on offer
+		event "hai in cargo" 14
+		fail
+
+event "hai in cargo"
+
+mission "Unwanted Cargo"
+	minor
+	landing
+	description "将一个藏在你货舱里的亥族孩子送回<destination>。"
+	source
+		not government "Hai" "Hai (Unfettered)"
+		not near "Heia Due" 0 100
+	destination "Allhome"
+	to offer
+		has "event: hai in cargo"
+	on offer
+		conversation
+			`当你着陆时，飞船上的“检查货舱”指示灯开始闪烁，这意味着在飞行中可能有个货箱松脱了。你关闭飞船引擎，走向货舱。`
+			`	你检查了货舱里的每一个货箱，但没发现任何异样。就在你决定离开时，一个较小的货箱突然开始前后摇晃起来。`
+			branch translator
+				has "language: Hai"
+				
+			`	你听到货箱里传来一个声音，但那不是你听得懂的语言。那个声音仍在说着，你认出那是亥族语。`
+			choice
+				`	（打开箱子。）`
+			`	你打开箱子，和里面的一名亥族孩子撞了个面对面。你不确定这孩子有多大，但他的体型看起来和人类一岁左右的婴儿差不多。他试图和你交流，但一看到你满脸困惑的表情，便开始哇哇大哭起来。`
+			choice
+				`	“别哭，小家伙。”`
+					goto cry
+				`	（抱起这个亥族孩子。）`
+				
+			`	当你试图抱起他时，这孩子乱挥着小手，让你根本无处下手。在静静等待了几分钟后，他终于平静下来，最后在箱子里睡着了。`
+				goto end
+			
+			label cry
+			`	这孩子哭得比刚才还要大声。静静等待了几分钟后，他终于平静下来，最后在箱子里睡着了。`
+				goto end
+			
+			label translator
+			`	你听到箱子里传来一个声音，令人惊讶的是，你的亥族语翻译器开始播放：“放我出去！我要回家！”`
+			choice
+				`	（打开箱子。）`
+			`	你打开箱子，与一名亥族孩子四目相对。你不确定他有多大，但他的体型看起来和人类一岁左右的婴儿差不多。“我要妈妈！”他哭喊着，眼眶里开始泛起泪水。`
+			choice
+				`	“你妈妈在哪里？”`
+				`	“别哭，小家伙。”`
+			`	当你的翻译设备用亥族语对他说话时，这孩子显得有些吃惊。“带我回家！”他冲你大喊。你试图查明他的家在哪里，但他只顾着哭喊找妈妈，根本提供不了任何有用的信息。`
+			
+			label end
+			`	这孩子一定是你身处亥族星域时，不知怎么溜进你的货舱里的。把一个亥族孩子丢在这个世界上绝对是个糟糕的主意。也许<destination>上有人能把这孩子送回他家人身边。`
+				accept
+			
+	on complete
+		payment 50000
+		dialog `你联系了<planet>的太空港当局，询问他们是否在寻找一名失踪的亥族孩子。原来他的家人万分焦急，已经悬赏了<payment>寻找他们的儿子。一名亥族太空港工作人员从你的飞船上接走了孩子，并为你能帮这家人找回孩子而向你致谢。`
+
+
+
+mission "Expanding Business [1]"
+	name "有趣的提议"
+	description "与商人戴维·特纳一同前往<destination>，那里有一支货船队正等待护航。"
+	minor
+	source "Greenwater"
+	destination "Allhome"
+	to offer
+		has "First Contact: Hai: offered"
+		has "main plot completed"
+	on offer
+		conversation
+			`走在<origin>太空港中，你发现所见之人里几乎有一半是人类，这与其他亥族世界大不相同——在其他亥族世界上，亥族人口所占的比例要高得多。一名身穿商务西装的人在街对面呼唤着你的名字，朝你走来。`
+
+			`	“<last>船长，人类的英雄之一！我一看到你就认出你来了。我真想亲自感谢你为人类所做的一切。”`
+			choice
+				`	“很高兴我的付出能得到认可。”`
+					goto boast
+				`	“不用客气，我只是尽我所能帮点忙而已。”`
+					goto downplay
+				`	“有什么我可以帮你的吗，先生？”`
+
+			`	“应该用尊称称呼你的是我，所以请千万别叫我先生，船长。”`
+				goto proposition
+
+			label boast
+			`	“像你这样声名显赫的大人物，无论走到哪里都该获得赞美和尊重！看来这年头的人们是越来越不懂得尊重为何物了。”`
+				goto proposition
+
+			label downplay
+			`	“不必自谦，船长！你把人类从那场外星天灾中拯救出来，简直是做了一件功德无量的大事。”`
+
+			label proposition
+			`	“我叫戴维·约瑟夫·特纳，风险投资家、企业家，也是天堂世界颇具名气的商人。”特纳从口袋里掏出一张名片递给你。名片上有他的联系方式、一个在马提尼上的地址，还特意用烫金字样炫耀着他那超过三十亿信用点的净资产。`
+			`	“你可能没听说过我，但我可是久仰你的大名，而且我想向你提个建议。”特纳转过身，指向太空港里熙熙攘攘的人群。“看到这里的这些人类了吗？其中大约每四人中就有一人是在虫洞另一侧爆发战争后才来到这里的。自从海军进入河中星系，听闻过亥族名号的船长们便成群结队地涌向这里，希望能躲避战争带来的麻烦。虽然有些船长在战争结束后回去了，但大多数人都留了下来。这其中蕴含着巨大的商机。”`
+			branch rich
+				"net worth" >= 4000000000
+			
+			choice
+				`	“什么样的商机？”`
+					goto opportunity
+				`	“抱歉，我没时间谈这个。”`
+					goto walk
+			
+			label rich
+			choice
+				`	“什么样的商机？”`
+					goto opportunity
+				`	“你的身价也就三十亿信用点？我为什么不自己去干这笔生意？”`
+				`	“抱歉，我没时间谈这个。”`
+					goto walk
+			
+			`	“虽然你的身价确实可能比我高，<last>船长，但你毕竟不是做生意的。我有人脉和商业手腕，但像你这样的名头永远是一块极好的敲门砖。”`
+				goto opportunity
+			
+			label walk
+			`	你试图转开，但特纳拉住你的胳膊拦下了你，继续说了下去。`
+			
+			label opportunity
+			`	“请听我解释。前往亥族的路途极其危险，这一点你很清楚。战争期间，我听过许多商人试图前往亥族的故事，但由于海军分身乏术，这些商人成了在极北星系活动的海盗的盘中餐。现在很多商人虽然到了这里，却被困住了。他们在来的路上几乎耗尽了所有弹药，如今在返程时根本没有防卫能力。在这片星域的人类船长中，人类弹药已经成了稀缺商品，这正是一个等待被垄断的庞大市场。”`
+			`	“我希望你，人类的英雄<last>船长，能帮助我在<origin>合伙开设一家装备商，为这些陷入绝境的商人雪中送炭，向他们供应急需的弹药，以及他们想为旧船添置的装备。我已经获得了亥族政府在此建造装备商的批文，再有你这块金字招牌做背书，利润绝对不可估量。作为这家装备商的创始成员，你自然也能分得丰厚的回报。”`
+			choice
+				`	“这听起来是个不错的主意。你需要我做什么？”`
+					goto interested
+				`	“抱歉，我对你的提议不感兴趣。”`
+			
+			`	“别急着拒绝，船长！你只需要帮忙把几艘货船从<planet>护送到追随者星，然后再护送回这里。就这么点简单的差事，你就能赚到下半辈子衣食无忧的财富，甚至可能足够你养活一支庞大的舰队！”`
+			choice
+				`	“再说一次，我没兴趣。再见。”`
+				`	“好吧，你说动我了。”`
+					goto interested
+			
+			`	“好吧，我尽力了，船长，”特纳得意地笑了笑。“那我就只能回天堂世界去开拓其他生意了。”他递给你另一张名片，眨了眨眼。“再见，<last>船长。如果有什么需要，你知道去哪儿找我。也许以后咱们能一起做这笔买卖呢。”`
+				decline
+			
+			label interested
+			`	“太棒了，船长！我会先回自己的飞船上安顿好。货运船队已经在<destination>等着我们了。到了那里，我们就动身前往追随者星装运物资。”`
+				accept
+				
+	npc accompany save
+		personality escort
+		government "Merchant"
+		ship "Star Queen (Hai)" "Chryso Vasilia"
+	
+	on visit
+		dialog `你已抵达<planet>，但你把特纳落在了后面。请等特纳的飞船到达后再降落。`
+	
+	on complete
+		dialog `当你到达<planet>时，货船已准备就绪。"现在我们只需护送这批货船前往星宿一星系的追随者星，再完好无损地返回，"特纳喊道，跳回他的星后号。`
+
+
+
+mission "Expanding Business [2]"
+	landing
+	name "有趣的提议"
+	description "护送货船前往<destination>，它们将在那里为绿水星的装备商运载物资。"
+	destination "Follower"
+	to offer
+		has "Expanding Business [1]: done"
+	
+	npc accompany save
+		personality escort
+		government "Merchant"
+		ship "Star Queen (Hai)" "Chryso Vasilia"
+	npc accompany save
+		personality escort
+		government "Merchant"
+		fleet
+			names "civilian"
+			variant
+				"Bulk Freighter (Hai)" 3
+	
+	npc
+		personality staying
+		government "Pirate"
+		system "Ultima Thule"
+		fleet "Small Northern Pirates"
+	npc
+		personality staying
+		government "Pirate"
+		system "Rajak"
+		fleet "Large Northern Pirates"
+	npc
+		personality staying
+		government "Pirate"
+		system destination
+		fleet "Large Northern Pirates"
+	
+	on visit
+		dialog `你已抵达<planet>，但你把你本该护送的其中一艘飞船落在了后面。请等特纳的飞船和所有散货船到达后再降落。`
+
+
+
+mission "Expanding Business [3]"
+	landing
+	name "有趣的提议"
+	description "护送特纳的飞船前往<destination>，以便他能与一位老朋友交谈。"
+	destination "Rust"
+	to offer
+		has "Expanding Business [2]: done"
+	on offer
+		conversation
+			`特纳在舷梯完全落地前就从他的星后号上跳了下来，显然迫不及待地想推进这个项目。`
+			`	特纳向你走来，低声咒骂着。"来这的路上有帮下三滥的海盗找麻烦。这就是我所说的，如果能在亥族星域设立装备商就能解决的麻烦。要不是我的散货船装了导弹，真不知道会发生什么。当然，要不是你也在那儿保护它们，后果也是一样。"`
+			`	特纳和空间港当局谈了一会儿，很快必要的货物就装载到了货船上。当货船装满货物后，它们甚至没等你有时间返回自己的飞船，就直接起飞了。`
+			`	"补充完弹药后，它们自己就能回绿水星了，"当你看着货船飞走时，特纳在你身后说道。"我让他们尽可能快点出发。至于你和我，我需要你护送我前往<destination>。我收到那里一位老朋友发来的消息，想跟我聊聊。"`
+				accept
+				
+	npc accompany save
+		personality escort
+		government "Merchant"
+		ship "Star Queen (Hai)" "Chryso Vasilia"
+		
+	on visit
+		dialog `你已抵达<planet>，但你把特纳落在了后面。请等特纳的飞船到达后再降落。`
+
+
+
+mission "Expanding Business [4]"
+	landing
+	name "有趣的提议"
+	description "护送特纳返回<destination>以监督装备商的建设。"
+	destination "Greenwater"
+	to offer
+		has "Expanding Business [3]: done"
+	on offer
+		conversation
+			`特纳将飞船降落在左辖赛博公司大楼外。"你在这里等我一下，我去和我的朋友爱德华谈谈。只要几分钟就好。"`
+			`	几个小时后，特纳提着一个黑色手提箱回来了。"抱歉，花的时间比我预想的要长。现​​在，我们回<destination>吧。"`
+				accept
+	
+	npc accompany save
+		personality escort
+		government "Merchant"
+		ship "Star Queen (Hai)" "Chryso Vasilia"
+	
+	on visit
+		dialog `你已抵达<planet>，但你把特纳落在了后面。请等特纳的飞船到达后再降落。`
+	
+	on complete
+		event "outfitter on greenwater" 95
+		log "People" "David Turner" `他是一位头脑敏锐的企业家，在亥族星域创建人类装备商的过程中起到了关键作用，让商人们能够武装自己，以应对返回人类星域的危险旅程。`
+		conversation
+			`当你终于抵达<planet>时，装备店的建造已经开始。建筑工人们已经在空间港附近打好了装备店的地基，占用了公园的大片区域。`
+			`	"为了把装备店建在离空间港这么近的地方，我花了一大笔钱，"特纳对你说，"但最后一切都是值得的。装备店大约三个月后就能完工。当你发现自己口袋里每天多出两千信用点时，就知道它建成了。"`
+			`	特纳拍了拍你的肩膀。"在那之前玩得开心，<last>船长。去忙着拯救银河系吧。"`
+
+event "outfitter on greenwater"
+	planet "Greenwater"
+		outfitter "Basic Outfits"
+		outfitter "Ammo North"
+		outfitter "Ammo South"
+
+mission "Expanding Business: outfitter complete"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "event: outfitter on greenwater"
+	on offer
+		"salary: Turner Incorporated" = 2000
+		event "request for a shipyard" 270
+		fail
+
+event "request for a shipyard"
+
+
+
+mission "Expanding Business [5]"
+	landing
+	name "新提案"
+	description "在<destination>与大卫·特纳会面，商谈一项新提案。"
+	source
+		government "Hai"
+	destination "Greenwater"
+	to offer
+		has "event: request for a shipyard"
+	on offer
+		dialog `当你降落时，收到了一封来自大卫·特纳的信息。"你好，船长。希望你对在装备商那儿分到的红利感到满意。我有一个新提案要给你，因为我已经买下了装备店周围公园的其余部分。如果你想听听看，请到<destination>来见我。"`
+
+
+
+mission "Expanding Business [6]"
+	landing
+	name "新提案"
+	description "护送货船前往<destination>，以运载建造船厂所需的物资。"
+	destination "Sunracer"
+	to offer
+		has "Expanding Business [5]: done"
+	on offer
+		conversation
+			`特纳在城市富人区一家人类经营的高档餐厅与你见面，这里的环境很容易让人联想到在天堂星球上能见到的景象。"我们已经很久没有聊过了，<last>船长。都有一年多了，"他说。"你每天口袋里多出来的额外收入，感觉如何，<last>船长？"`
+			choice
+				`	"是的。这对支付船员薪水帮了大忙。"`
+					goto salaries
+				`	"每天两千信用点对我来说不算什么。"`
+			
+			`	"我猜对于像你这样的英雄来说，每天两千信用点确实不算什么。毕竟飞船开销很大。那么，每天四千信用点听起来如何？"`
+				goto choice
+			
+			label salaries
+			`	"听到你这么说我很高兴，<last>船长。我年轻时也是个船长，很不习惯每天为船员薪水发愁。也许把金额翻倍能帮上更大的忙。"`
+			
+			label choice
+			choice
+				`	"我是要涨薪了吗？"`
+				`	"这是你新提案的一部分吗？"`
+					goto proposition
+			
+			`	"你也可以这么说，"特纳抿了一口杯中的酒后说道。"`
+			
+			label proposition
+			`	"在<origin>建立一家销售人类商品的装备店，绝对是我有生以来最棒的点子，<last>船长。但最近我想到了一个更棒的主意。你看，在亥族星域里飞来飞去的大多数人类，开的都是几十年历史的老旧飞船。亥族飞船对人类来说简直是天价。亥族卖一艘蚜虫要将近一百五十万信用点！这意味着人类对飞船的需求极其旺盛，<last>船长。你明白我的意思了吗？你再看看我们人类卖的飞船，比如星舟，价格只要蚜虫的四分之一，性能却几乎不比它差，你应该就能看出其中的门道了。"`
+			choice
+				`	"你需要我再次帮你护送货船吗？"`
+				`	"你想建一个销售人类飞船的船厂吗？"`
+			
+			`	"没错，船长。目前，在这里出生的人类唯一能实际买到飞船的途径，就是认识一个准备退休的船长。即便是那样，人类飞船的价格也是虫洞对面的两倍以上。你可能会想，他们直接买张客票过去买一艘人类飞船不就行了，但那边的银行根本不承认这边的信用记录。这简直荒谬，<last>船长！"`
+			`	"我已经和当地的亥族政府打点好了。装备店旁边剩余的公园土地现在已经归我所有，我打算用它来建造船厂。我也和巨秒公司取得了联系，买下了在<planet>制造他们的飞船以及销售他们部分装备的授权许可。我的货船已经在空间港随时待命了。你只需要护送它们前往<destination>再回来，六七个月后船厂建好，你就能得到丰厚的回报。你怎么看，<last>船长？你想再次成为数百万人心目中的英雄吗？"`
+			choice
+				`	"好啊，听起来这是个非常棒的主意。"`
+					goto accept
+				`	"我没兴趣再跟你合作了，特纳。"`
+			
+			`	特纳对你的回答面露冷笑。"明白了，<last>船长。那么从现在起，我将停发你的薪水，每天给自己省下两千信用点。我先告辞了。"`
+			choice
+				`	"再见。"`
+					decline
+				`	"等等！我改变主意了。我会帮你的。"`
+			
+			label accept
+			`	"明智的决定，<last>船长。我们在外面碰头，然后把船送走。"`
+				accept
+			
+	on decline
+		clear "salary: Turner Incorporated"
+	
+	npc accompany save
+		personality escort
+		government "Merchant"
+		ship "Star Queen (Hai)" "Chryso Vasilia"
+	npc accompany save
+		personality escort
+		government "Merchant"
+		fleet
+			names "civilian"
+			variant
+				"Bulk Freighter (Hai)" 3
+	
+	npc
+		personality staying
+		government "Pirate"
+		system "Ultima Thule"
+		fleet "Small Northern Pirates"
+	npc
+		personality staying
+		government "Pirate"
+		system "Rajak"
+		fleet "Large Northern Pirates"
+	npc
+		personality staying
+		government "Pirate"
+		system destination
+		fleet "Large Northern Pirates"
+		
+	on visit
+		dialog `你已抵达<planet>，但你把你本该护送的其中一艘飞船落在了后面。请等特纳的飞船和所有散货船到达后再降落。`
+
+	on complete
+		dialog `散货船顺利装满了补给。当一名空间港的工作人员询问特纳这些物资将运往何处时，他回答道："这些只是为了扩展我在……呃，荣耀星上的一项商业投资。"`
+
+
+
+mission "Expanding Business [7]"
+	landing
+	name "新提案"
+	description "护送货船返回<destination>以开始建造船厂。"
+	destination "Greenwater"
+	to offer
+		has "Expanding Business [6]: done"
+	
+	npc accompany save
+		personality escort
+		government "Merchant"
+		ship "Star Queen (Hai)" "Chryso Vasilia"
+	npc accompany save
+		personality escort
+		government "Merchant"
+		fleet
+			names "civilian"
+			variant
+				"Bulk Freighter (Hai)" 3
+	
+	npc
+		personality staying
+		government "Pirate"
+		system "Cardax"
+		fleet "Small Northern Pirates"
+	npc
+		personality staying
+		government "Pirate"
+		system "Rajak"
+		fleet "Large Northern Pirates"
+		
+	on visit
+		dialog `你已抵达<planet>，但你把你本该护送的其中一艘飞船落在了后面。请等特纳的飞船和所有散货船到达后再降落。`
+
+	on complete
+		event "shipyard on greenwater" 180
+		conversation
+			`	货船卸下物资后，船厂的建设工作几乎立即开始，首先被拆除的是公园的其余部分。一群神色沮丧的人群聚集在一起观看拆除，但特纳向你保证，城市里还有很多其他的公园可供他们去。`
+			`	"这必将成就一番伟业，<last>船长，"特纳说道。"你只需知道，自己也是其中的一份子。当你发现每天自己口袋里多出四千信用点时，你就知道船厂建成了。在那之前，再见，<last>船长。"`
+
+event "shipyard on greenwater"
+	planet "Greenwater"
+		shipyard "Basic Ships"
+		shipyard "Syndicate Basics"
+		shipyard "Megaparsec Basics"
+		shipyard "Megaparsec Advanced"
+		outfitter "Common Outfits"
+		outfitter "Syndicate Advanced"
+		outfitter "Lovelace Basics"
+	fleet "Small Human Merchants (Hai)"
+		add variant 20
+			"Sparrow"
+		add variant 20
+			"Star Barge"
+		add variant 20
+			"Shuttle"
+		add variant 5
+			"Freighter"
+			"Wasp" 2
+		add variant 10
+			"Freighter"
+			"Shuttle" 2
+			"Quicksilver"
+		add variant 15
+			"Bounder"
+			"Wasp" 2
+		add variant 5
+			"Manta"
+		add variant 5
+			"Freighter" 2
+			"Manta"
+	fleet "Large Human Merchants (Hai)"
+		add variant 6
+			"Freighter (Proton)" 2
+			"Quicksilver" 2
+		add variant 6
+			"Freighter" 4
+			"Quicksilver" 2
+			"Splinter" 1
+		add variant 3
+			"Freighter" 4
+			"Quicksilver" 2
+			"Splinter (Laser)" 1
+		add variant 3
+			"Freighter" 4
+			"Quicksilver" 2
+			"Splinter (Proton)" 1
+
+mission "Expanding Business: shipyard complete"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "event: shipyard on greenwater"
+	on offer
+		"salary: Turner Incorporated" = 4000
+		fail
+
+
+
+mission "Hiding in Plain Sight"
+	description "在<date>之前，将亚瑟和他的亥族朋友基鲁送到<destination>参加游戏大会。"
+	minor
+	source
+		government "Hai"
+		not attributes "station"
+	destination "Vinci"
+	passengers 2
+	deadline 30
+	to offer
+		random < 30
+		has "First Contact: Hai: offered"
+	on offer
+		conversation
+			`当你在一家同时供应亥族和人类美食的空间港自助餐厅用餐时，一个人类少年和一个亥族人向你走来。"你好。你知道怎么去<destination>吗？"那个亥族人问道。`
+			choice
+				`	"我知道。你们为什么想去那儿？"`
+				`	"我不知道。你得去问问别人了。"`
+					decline
+			`	那个人类少年回答道："<date>在<planet>上有一场针对一款名为《无尽边疆》游戏的大型展会。展会上有规模庞大的角色扮演（Cosplay）活动，我觉得基鲁去那里再合适不过了。"`
+				goto return
+			label return
+			`	"如果你送我们前往<planet>，亚瑟和我可以支付你<payment>，"基鲁说道。"另外，我们也可以自己找到回亥族星域的路。"`
+			choice
+				`	"好吧，我可以带你们去。"`
+					accept
+				`	“抱歉，你们得找别人带你们了。”`
+					decline
+					
+	on visit
+		dialog `你寻找亚瑟和基鲁，但发现他们搭上了你的一艘护航船！最好起飞并等待你的护航船抵达该星系。`
+	on complete
+		payment 75000
+		dialog `亚瑟和基鲁付给你<payment>，随后跑向了会议中心。当他们跑开时，你注意到基鲁吸引了人群中的不少目光，但似乎没有人怀疑他其实是一个真正的外星人。`
+		log "Minor People" "Arthur and Kiru" `他们分别为人类和亥族，均未穿着角色扮演服饰便参加了芬奇角色扮演大会，因而大受关注。`
+
+
+
+mission "Hai Honeymoon"
+	description "将安纳雅和图哈带到<destination>度过他们的蜜月。"
+	minor
+	source "Skyfarm"
+	destination "Featherweight"
+	passengers 2
+	to offer
+		random < 60
+		has "First Contact: Hai: offered"
+	on offer
+		conversation
+			`你在<origin>的太空港里蹦蹦跳跳，努力适应这颗卫星的低重力。这时，一位身材高挑的人类女性和一位同样高大、显然完全适应了<origin>重力的亥族男性朝你走了过来。`
+			`	“船长，你看起来需要点帮助啊，”那女人轻笑着说。`
+			choice
+				`	“别担心。我差不多快适应了。”`
+				`	“也许有一点吧。”`
+			`	“看着船长们离开他们那舒适的飞船总是很有趣，”那位亥族说道。`
+			`	“至少他们在努力尝试，图哈，”女人说。`
+			choice
+				`	“两位有什么需要帮忙的吗？”`
+				`	“有什么我能帮上忙的，还是说你们只打算这么一直盯着我？”`
+			`	“其实，确实有一件事，”女子说道。“我叫安纳雅，这是我的丈夫图哈。你怎么称呼？”`
+			choice
+				`	“我叫<first> <last>。”`
+				`	“等等，你丈夫？”`
+					goto husband
+			
+			`	“很高兴见到你，<last>船长，”图哈对你说。`
+				goto next
+			
+			label husband
+			`	“怎么，你以前没见过跨种族夫妻？”图哈语气中带着一丝嘲讽地问。`
+			
+			label next
+			`	“我们上周结婚了，希望能去<destination>度蜜月。我知道带图哈去人类星域是有风险的，但<planet>是一个人烟稀少的星球，我有个朋友在山里有一栋房子，远离人烟，不会被任何人看见。”`
+			`	“那位朋友也能安排我们返回<origin>，”图哈补充道。“你愿意送我们过去吗？”`
+			choice
+				`	“当然。”`
+					accept
+				`	“抱歉，我不能去离这儿那么远的地方。”`
+					decline
+					
+	on visit
+		dialog `你寻找安纳雅和图哈，但发现他们搭上了你的一艘护航船！最好起飞并等待你的护航船抵达该星系。`
+	on complete
+		payment 100000
+		dialog `为了避免在可能被看见的太空港降落，你尽可能在靠近他们住处的地方放下了安纳雅和图哈。那栋房子还在几公里外，但他们向你保证他们可以自己走过去。他们付给你<payment>，并感谢你送他们到这么远。`
+		log "Minor People" "Anaya and Touhar" `一对亥族与人类的跨种族夫妇，你曾将他们送往人类星域的轻羽星度过隐秘的蜜月。`
+
+
+
+mission "Pirate Troubles [0]"
+	name "保卫<system>"
+	description "一大群海盗闯入了亥族星域，正在该星系中肆虐。帮助亥族击退他们。"
+	source
+		near "Waypoint" 2
+		government "Hai"
+	to offer
+		has "First Contact: Unfettered: offered"
+		"combat rating" > 1100
+		random < 10
+	on offer
+		conversation
+			`和平的太空港内突然警笛大作。你看到一些亥族和少数人类跑向他们的飞船，并迅速升空进入轨道。看来这个星系正遭受攻击，但无羁亥族从来没有到过这么靠南的地方。太空港的扬声器里开始大声广播：“一支由无羁人类组成的庞大舰队已经进入星系并开始发动袭击！请求所有具备战斗能力的飞行员协助保卫我们的领空。这里不欢迎这些破坏和谐的敌人。”`
+			branch unfettered
+				has "Unfettered: Jump Drive Source: offered"
+			`	You find the phrase "unfettered humans" odd, but guess that they may be referring to pirates. The Hai will probably be very gracious if you help, but this could also be an easy way to get yourself killed, especially if a group of pirates is bold enough to attack the Hai.`
+				goto choice
+
+			label unfettered
+			`	听到“无羁人类”这个词，你的心猛地一沉——上一次你听到这个说法，还是无羁亥族用它来指代阿尔法人。如果真的是阿尔法人在攻击亥族，那么出手相助应该是个好主意。`
+			label choice
+			choice
+				`	（加入防御舰队。）`
+					launch
+				`	(Stay here until the fight is over.)`
+					decline
+	npc
+		government "Hai"
+		personality staying
+		fleet "Large Hai"
+	npc
+		government "Merchant"
+		personality staying
+		fleet "Large Human Merchants (Hai)"
+	npc evade
+		government "Pirate"
+		personality staying
+		fleet
+			names "pirate"
+			variant
+				"Leviathan" 2
+				"Mule" 2
+				"Firebird"
+				"Headhunter" 3
+				"Raven" 3
+
+
+
+mission "Pirate Troubles [1]"
+	landing
+	name "无羁人类"
+	description `追踪海盗团伙“疤军团”的头目，并“说服”他们停止袭击亥族星域，然后返回<destination>告知亥族。`
+	source
+		government "Hai"
+	destination "Hai-home"
+	clearance
+	to offer
+		has "Pirate Troubles [0]: done"
+	on offer
+		"reputation: Hai" += 20
+		"reputation: Hai (Wormhole Access)" += 20
+		"reputation: Hai Merchant" += 20
+		"reputation: Hai Merchant (Human)" += 20
+		"reputation: Hai Merchant (Sympathizers)" += 20
+		conversation
+			`战斗已经结束，但太空港似乎仍比平时更为忙碌。许多飞船从周围星系跃迁而来，协助救治伤员并修复受损设施。几个小时过去，骚动渐渐平息，一位亥族长老朝你走来。“我们从这里的人类那里听说，你在你的同胞中被视为一名身经百战的战士。你能否用你高超的战斗技巧，协助我们解决这个难题？”`
+			choice
+				`	“我很乐意帮忙。我能做些什么？”`
+					goto explain
+				`	“什么问题？”`
+			`	“我了解到你刚刚协助保卫了这个星系，击退了人类海盗。这就是需要解决的难题。`
+			label explain
+			`	“人类对我们星域的袭击非常罕见，但最近我们遭遇的袭击愈发频繁。并非所有袭击都像这次一样无功而返。在最近这次袭击中，我们抓获了一名试图乘逃生舱逃跑的敌方船员，他向我们供出，一个自称‘疤军团’的团伙发现了我们的领土，最近的几起袭击都是他们所为。`
+			`	“不幸的是，他不肯透露这个团伙的据点或是其头目是谁，所以我们对此无能为力。不过，许多在我们这里和平生活的人类告诉我们，你或许能帮上忙。”`
+			choice
+				`	“我会看看我能做些什么。”`
+					goto yes
+				`	“你想让我去追剿‘疤军团’，阻止他们袭击你们吗？”`
+				`	“抱歉，我没兴趣。”`
+					decline
+			`	“我们明白，这些人类很可能只是一时误入歧途。如果可能的话，我们希望你能和平解决此事，但持续袭击所造成的伤亡是不可接受的。”`
+			choice
+				`	“我会看看我能做些什么。”`
+					goto yes
+				`	“抱歉，但我对此不感兴趣。”`
+					decline
+			label yes
+			`	“谢谢你。在事情解决后，请返回<destination>。”`
+				accept
+	on visit
+		dialog "你已经返回了<planet>，但还没有找到疤军团的下落。或许你该去通往亥族星域的虫洞附近，在那些海盗星球的太空港里四处打听一下。"
+	to complete
+		or
+			has "accepted scar's legion tribute"
+			has "defeated scar's legion"
+
+
+
+mission "Pirate Troubles [1]: Farpoint"
+	landing
+	invisible
+	source "Farpoint"
+	to offer
+		has "Pirate Troubles [1]: active"
+	on offer
+		conversation
+			`你前往<origin>上的海军前哨站，询问那里的军官是否有关于“疤军团”的情报。在对你进行了背景调查以确保你并无恶意之后，一名军官递给你一份档案副本，里面包含了海军掌握的所有关于该团伙的信息。“这里面没有机密内容，你可以自己留着，”军官说道。`
+			`	你回到自己的飞船并仔细翻阅了这些文件。这个帮派的首领名叫‘伤疤’（并不让人感到意外），他在自立门户之前曾是另一个海盗团伙的重要成员。海军估计他们的人数只有几千人，主要在极北地区进行小规模犯罪，并没能掀起多大风浪，但这些档案全都是几年前的了。显然，如果‘疤军团’如今已经强大到敢去攻击亥族，那在这些文件上次更新之后的这段时间里，他们肯定发生了某些变化。`
+				decline
+
+
+
+mission "Pirate Troubles [1]: Freedom or Zenith"
+	landing
+	invisible
+	source
+		planet "Freedom" "Zenith"
+	to offer
+		has "Pirate Troubles [1]: active"
+	on offer
+		payment -5000
+		conversation
+			`你在<origin>的太空港里四处转悠，寻找可能知道“疤军团”下落的人。一个自称是中间人的家伙承诺只要付钱就能提供情报，但当你把她要的那几枚信用点递过去后，她却攥着枪拔腿就跑，以此警告你别跟过去。或许附近其他海盗星球上能有人给你提供真正有用的情报。`
+				decline
+
+
+
+mission "Pirate Troubles [1]: Haven"
+	landing
+	invisible
+	source "Haven"
+	to offer
+		has "Pirate Troubles [1]: active"
+	on offer
+		payment -100
+		"scar's legion information" ++
+		conversation
+			`你在<origin>太空港的一间破旧小酒吧里点了杯酒，试着与酒保闲聊，希望能套出关于“疤军团”的消息。起初他有些戒备，但渐渐地对你热络了起来。酒吧里的其他几位顾客也凑过来加入了闲聊。幸运的是，并没有人因为你打听“疤军团”而动怒。其中一位顾客挑明，“疤军团”在这个星球上没有朋友——“至少现在没有了。”`
+			`	一两个小时后，你离开了酒吧。回到飞船上，你写下了所有还能记住的信息。这个帮派以前只在极北地区活动，直到他们得罪了某支更大的海盗势力，才在几年前被迫逃离了那片区域。据其中一名海盗猜测，他们逃往了核心星域。`
+			`	另一个人提到，那个帮派的首领过去总是念叨着要在无人星系建一个谁也找不到的基地。“他老是念叨着要掏空一颗小行星来当藏身处。我猜他只是吸自己帮派贩卖的环世界碎屑吸高了。”`
+				decline
+
+
+
+mission "Pirate Troubles [1]: Stormhold"
+	landing
+	invisible
+	source "Stormhold"
+	to offer
+		has "Pirate Troubles [1]: active"
+	on offer
+		"scar's legion information" ++
+		conversation
+			`你很快就找到了解疤军团情况的人。你遇到了一个声称会“免费”提供情报的人。`
+			`	“疤军团这几个月来一直是我心头之患。前阵子毁了我的船，从那以后就一直给我惹麻烦。如果你打算解决掉他们，那我就把你需要知道的一切都告诉你。”`
+			`	那个海盗告诉你，他不知道疤军团的基地在哪里，但他提到他们经常在远北地区的无人星系活动。“那外面除了冰冷的岩石和气态巨行星什么都没有，但既然他们花那么多时间在外面，肯定是在其中某颗冰冻行星上建了某种基地。”`
+				decline
+
+
+
+event "scar's hideout"
+	system "Danoa"
+		object
+			sprite star/m3
+		object
+			sprite planet/desert7-b
+			distance 168.64
+		object
+			sprite planet/fog0-b
+			distance 693.93
+			object
+				sprite planet/mercury
+				distance 174
+		object
+			sprite planet/gas6
+			distance 2069.42
+			object
+				sprite planet/lava1-b
+				distance 293
+			object
+				sprite planet/rock0-b
+				distance 440
+			object
+				sprite planet/lava2-b
+				distance 607
+			object "Scar's Hideout"
+				sprite "planet/asteroid base"
+				distance 809
+
+planet "Scar's Hideout"
+	attributes uninhabited
+	landscape land/loc1
+	description "伤疤藏身处是一颗被掏空的小行星，是疤军团的主要行动基地。他们在此袭扰所有穿行于极北星区无人星系的旅行者。最近，该帮派发现了通往亥族空间的虫洞，这让他们开始四处惹事，受害者已不仅是那些倒霉的商人。"
+	spaceport "伤疤藏身处的空间港是一个开凿在小行星核心的巨大机库，只能通过顶部的一扇防爆门进出。从机库的规模来看，你猜测整颗小行星足有三分之一被掏空，仅仅用来建造这个空间港。"
+	security 0
+	government "Scar's Legion"
+
+mission "Pirate Troubles [2]"
+	landing
+	name "疤军团"
+	description "你已拼凑出足够的信息，得知疤军团的藏身处位于极北星区地区的四个星系之一。在这些星系中搜寻该帮派的藏身处并与他们对峙。"
+	waypoint "Danoa"
+	waypoint "Rajak"
+	waypoint "Sumar"
+	waypoint "Hassaleh"
+	to offer
+		"scar's legion information" >= 2
+	on offer
+		event "scar's hideout"
+		conversation
+			`在拜访了多个海盗星球并打听疤军团的消息后，你确信自己已经知道了他们的藏身之处。`
+			`	你知道疤军团的首领过去常常念叨着想要一个被掏空的小行星作基地。你也知道疤军团最近在远北地区的无人星系中非常活跃。你得出结论，该帮派的藏身处很可能是一颗小行星，位于靠近通往亥族虫洞的某几个星系之中。你在地图上标记了 <waypoints>，并准备去与他们对峙。`
+				accept
+	to complete
+		never
+	to fail
+		has "Pirate Troubles [3]: offered"
+
+
+
+event "battle against scar's legion"
+	system "Danoa"
+		fleet "Human Miners" 1600
+
+event "battle against scar's legion over"
+	system "Danoa"
+		fleet "Small Northern Merchants" 15000
+		fleet "Small Northern Pirates" 5000
+		fleet "Large Northern Pirates" 16000
+		fleet "Large Republic" 30000
+		fleet "Human Miners" 1600
+
+mission "Pirate Troubles [3]"
+	landing
+	name "疤军团"
+	description "拒绝了贡品后，疤军团的首领向你发起了生死决斗。击败 Keloid，然后返回 <destination>。"
+	source "Scar's Hideout"
+	destination "Hai-home"
+	clearance
+	to offer
+		has "event: scar's hideout"
+	on offer
+		conversation
+			`你找到了伤疤藏身处，那是一颗环绕气态巨行星运行的巨型小行星。当你飞过小行星表面时，发现了一扇敞开的防爆门。他们这显然是在邀请你进去。你颇感意外，一伙海盗竟然能够建造出这样的基地，毕竟打造这般规模的设施需要海量的材料和时间。`
+			`	穿过防爆门后，大门在你身后关闭，让你陷入了完全的黑暗之中。突然，你的飞船周围亮起了排排泛光灯。刺眼的强光让你无法看清光线之外的任何人，但你怀疑此时正有许多武器对准了你的飞船。`
+			`	“你是谁？想干什么？”一个声音从扬声器中隆隆传来。你按下按钮，激活了飞船的外部扬声器。`
+			choice
+				`	“我是 <first> <last>，代表亥族前来谈判。”`
+					goto negotiate
+				`	“我是 <first> <last>，是来端掉这伙人的。”`
+			`	那个声音大笑起来。“可惜啊，你正好闯进了马蜂窝。开火，弟兄们！”`
+				goto die
+
+			label negotiate
+			`	那个声音大笑起来。“啊，没错。那帮松鼠。看来他们已经受够了我们对他们星系的洗劫。弟兄们！”`
+			`	泛光灯熄灭，显露出一个巨大的房间，里面恐怕有数百名海盗，正用各种尺寸的枪械瞄准着你的飞船。一步走错，你就完蛋了。“请吧，船长。走出你的飞船。”`
+			choice
+				`	（服从命令。）`
+					goto comply
+				`	（试图逃脱。）`
+			`	你启动了飞船引擎试图逃走。泛光灯突然再次亮起。`
+
+			label die
+			`	你甚至还没来得及反应，数十道激光和倾泻的弹雨就从泛光灯后方呼啸而来。你试图拉升飞船，在受损严重到动弹不得之前径直穿过顶部逃脱，但紧接着你发现数枚火箭正朝你的驾驶舱直飞而来。伴随着火箭击碎你面前的玻璃，你瞬间毙命。`
+				die
+
+			label comply
+			`	你走下飞船，一个高个子男人从海盗群中走上前来，他脸颊上横着一道伤疤，想必就是这伙人的头目。`
+			choice
+				`	“亥族要求你们停止袭击他们的星系。”`
+					goto negotiations
+				`	“你一定是伤疤。”`
+			`	“不，伤疤早就死了。”头目说道。`
+			choice
+				`	“哦，那这么说，你就是‘结痂’了？”`
+				`	“亥族要求你们停止袭击他们的星系。”`
+					goto negotiations
+			`	头目拉下脸来。“说话要是再不放干净点，我就割了你的舌头。”`
+			`	你后退一步。“亥族要求你们停止袭击他们的星系，”你说道，极力避免自己被捅刀子。`
+
+			label negotiations
+			`	“也许我们会停手，”头目微笑着说。“不过有一个条件。我们要一次性拿到一批亥族的各种武器和技术，而且这批货要尽可能多。我见过那些外星人的货船，大得很。装满两三艘船，我们就考虑把注意力转到别处去。”`
+			choice
+				`	“好吧。我去见见亥族，看看他们能提供什么。”`
+					goto tribute
+				`	“恐怕我不能答应。”`
+			`	海盗人群中顿时爆发出一阵嘈杂的嘲笑与嘘声。头目举起一只拳头，人群安静下来。“好吧，那我恐怕这可行不通。”`
+			`	头目沉默着来回踱步了片刻。“好吧，如果我们得不到我们想要的东西，那就只得继续攻击了。这也意味着你在这里毫无用处。”`
+			`	头目转向人群。“来场决斗怎么样？至死方休！”人群中爆发出热烈的欢呼。头目转回身看着你。“我们只在这个星系内决斗。就你和我。如果你胆敢逃跑，我的人就会追杀你。这听起来如何？”你正要回答，但还没来得及开口，头目就拔出枪对准了你。“跑吧。”`
+				launch
+
+			label tribute
+			`	“太棒了！”海盗说道，屋里的其他海盗也跟着欢呼起来。“不过动作快点。可别让我们久等。”防爆门重新打开，你回到飞船，立即动身离开。`
+				flee
+
+	on decline
+		set "accepted scar's legion tribute"
+	on accept
+		event "battle against scar's legion"
+
+	npc kill
+		government "Scar's Legion (Killable)"
+		personality nemesis
+		ship "Leviathan (Hai Weapons)" "Keloid"
+		dialog "你已经击败了疤军团的首领。旁观决斗的那些海盗现在还没有攻击你，但你杀了他们的首领，他们调转枪口对准你恐怕只是时间问题。在那种情况发生之前，你最好赶紧前往 <destination>。"
+
+	npc
+		government "Scar's Legion"
+		personality nemesis
+		fleet "Small Northern Pirates"
+		fleet "Large Northern Pirates" 4
+
+	on enter
+	on enter
+		"reputation: Scar's Legion" = -1000
+
+	on visit
+		dialog phrase "generic bounty hunting on visit"
+
+	on complete
+		set "defeated scar's legion"
+		event "battle against scar's legion over"
+
+
+
+mission "Pirate Troubles [4]"
+	landing
+	name "海盗贡品"
+	description "护送三艘装载有亥族武器和技术的亥族货船前往 <stopovers>，然后护送它们返回 <destination>。"
+	source "Hai-home"
+	stopover "Scar's Hideout"
+	clearance
+	to offer
+		or
+			has "defeated scar's legion"
+			has "accepted scar's legion tribute"
+	on offer
+		"reputation: Hai" += 20
+		"reputation: Hai (Wormhole Access)" += 20
+		"reputation: Hai Merchant" += 20
+		"reputation: Hai Merchant (Human)" += 20
+		"reputation: Hai Merchant (Sympathizers)" += 20
+		payment 2500000
+		conversation
+			`在 <origin> 着陆后，由于你协助保卫他们的星系并帮助追踪罪犯，亥族当局给予了你 <payment>。随后你被带到长老议会——即亥族选举产生的统治机构——去向他们说明疤军团的情况。“请告诉我们发生了什么，”其中一位长老说道。`
+			branch defeated
+				has "defeated scar's legion"
+
+			`	“他们要求你们在三艘大型货船上装载各种武器和技术送给他们。只有这样，他们才会停止袭击你们。”`
+			`	“一个简单的请求，”长老说。“只比‘不受约束者’对我们的要求多一点。我们马上装载三艘地蝽。”`
+			`	“谁能保证他们不会用我们自己的武器来对付我们呢？”另一位长老插嘴道。“这笔交易只会伤害我们。”`
+			choice
+				`	“无法保证他们不会再次发动袭击，但他们承诺会把注意力转向别处。”`
+					goto guarantee
+				`	“如果你们需要的话，我可以折返回去消灭他们。”`
+			`	“不，”长老说。“如果他们要求的只是技术，我们并不想把这些人类置于死地。”`
+
+			label guarantee
+			`	“我认为更严重的问题是，这将会如何影响我们在虫洞另一端的人类朋友，”一位长老说。“如果这些海盗不再袭击我们，那他们会转而去袭击谁？我们岂不是沦为了某场遥远战争的军火商？”`
+			`	“我们会告知共和国海军，我们是为了自身安全才向这些海盗提供我们的技术。他们过去有能力应对我们的技术，我相信他们现在同样应付得来。拜托了， <first>，护送货船去海盗那里，好让他们别再来打扰我们。”`
+				accept
+
+			label defeated
+			`	“我击败了疤军团的首领。他们现在应该不会再给你们惹麻烦了。”`
+			`	一位长老皱起眉头。“你是冷血地杀死了他们的首领，还是出于自卫？”`
+			choice
+				`	“他们要求你们交出武器和技术作为贡品，但我拒绝了，所以他们袭击了我。”`
+					goto refused
+				`	“他们不愿意谈判，我被迫自卫。”`
+			`	“这非常不幸，”另一位长老说道。“但我很高兴听到他们不会再造成我们族人更多的伤亡了。”`
+				goto end
+
+			label refused
+			`	“这非常不幸，”另一位长老说道。“如果他们一开始就好言相求，我们本来愿意提供他们所需的技术。”`
+			`	“与其通过成为他们的武器贩子来增强他们，不如直接消除威胁，”第一位长老说道。“这些海盗本来可能用我们自己的技术攻击我们，更糟的是，用它们攻击其他人类，让我们成为这场屠杀的同谋。”`
+
+			label end
+			`	长老们感谢你在此次事件中提供的协助，随后送你启程。`
+				decline
+
+	on decline
+		"reputation: Hai" += 40
+		"reputation: Hai (Wormhole Access)" += 40
+		"reputation: Hai Merchant" += 40
+		"reputation: Hai Merchant (Human)" += 40
+		"reputation: Hai Merchant (Sympathizers)" += 40
+
+	npc accompany save
+		government "Hai (Wormhole Access)"
+		personality escort
+		fleet
+			names "hai"
+			cargo 10
+			variant
+				"Geocoris" 3
+
+	on stopover
+		dialog `你带领亥族货船穿过防爆门。尽管货船体型巨大，它们依然全部停入小行星的太空港，甚至还绰绰有余，足以证明这座基地的建设投入之大。疤军团的海盗们将亥族科技全部从货船上卸下。最后一只货箱搬完后，货船迅速从小行星起飞。`
+
+	on visit
+		dialog phrase "generic arrived-without-npc dialog"
+
+	on complete
+		"reputation: Hai" += 40
+		"reputation: Hai (Wormhole Access)" += 40
+		"reputation: Hai Merchant" += 40
+		"reputation: Hai Merchant (Human)" += 40
+		"reputation: Hai Merchant (Sympathizers)" += 40
+		payment 500000
+		dialog `随着货船安全返回，亥族人感谢你解决了与疤军团的争端，并交给你<payment>作为酬谢。`
+
+
+
+mission "Nanachi 1"
+	name "护送娜娜奇前往 <planet>"
+	description "帮助刚买下自己第一艘飞船的亥族人娜娜奇，在<date>前将一份普通的货物运送到<destination>。"
+	minor
+	source "Giverstone"
+	destination "Cloudfire"
+	deadline 2 1
+	to offer
+		random < 15
+		"net worth" > 20000000
+		"combat rating" > 1200
+		has "First Contact: Hai: offered"
+	on offer
+		conversation
+			`当你穿过太空港时，你注意到一名神色忧虑的亥族人，正盯着当地的任务板，接着又看看手里拿着的某种文件。`
+			choice
+				`	（走近那名亥族人。）`
+				`	（不予理会。）`
+					decline
+			`	那名亥族人被吓了一跳，但很快冷静下来。“抱歉，你吓了我一跳。我刚买了第一艘飞船，想找点活干，但跟我谈过话的人没有一个愿意信任新手船长。我真的不知道该怎么办了，我辛苦工作了很久才符合这笔贷款的资格，但时间快不够了，再这样下去我根本还不清贷款。”`
+			`	原来她手里拿的是银行贷款文件，和你买第一艘飞船时签的贷款合同有点像。你已经从当初的新手走到今天，深知作为星舰船长起步有多难；你或许能说服这里的人，给这位年轻的亥族人提供一份简单的货运任务。`
+			choice
+				`	“如果你愿意，我可以帮你找份工作。”`
+					goto "positive1"
+				`	“我也经历过那种日子；相信我，一切都会好起来的。祝你好运，早日找到工作。”`
+			`	她神色黯然地点了点头表示理解，继续在任务板和手里的文件之间来回张望。`
+			choice
+				`	（还是帮她一把。）`
+					goto "positive1"
+				`	（不管她，继续赶路。）`
+					decline
+			label "positive1"
+			`	她的耳朵微微一颤，原本沮丧的眼睛亮了起来，几乎要高兴得跳起来。“太感谢您了，船长！我叫娜娜奇，我保证绝不会惹任何麻烦，只要做几趟简单的任务，我肯定能靠自己撑下去的！”`
+			`	你向娜娜奇作了自我介绍，并握了握她的爪子。“能带我去看看你的飞船吗？这样我才能帮你寻找最适合它的任务，”你问道。`
+			`	她犹豫了一下，但还是带你走向她的飞船。你原以为会是一艘亥族的小飞船，但出乎意料的是，她领你去看的是一艘相当破旧的重型穿梭机，就停靠在你自己的飞船旁边。`
+			`	“你贷款买了一艘人类的飞船？”你问。`
+			`	她低头看着地面，似乎有些羞愧。“要想符合贷款购买哪怕是一艘‘蚜虫’的资格，对我来说也需要花上太长时间，不过最近我遇到了一位想要卖掉旧飞船的人类商人。虽然过程很困难，但我还是说服了他直接卖给我，而不是去船厂销售处。我付了全价，但即使是买这一艘，我也必须申请所能拿到的最大额度的贷款。它的货舱虽然不大，但比我们最小的飞船拥有更多床位，希望这能派上用场。”`
+			choice
+				`	“看看太空港里有没有人需要搭船离开这颗星球。”`
+				`	“我们再仔细看看任务板，也许会有小一点的任务冒出来。”`
+			`	结果发现这件事没你想象的那么简单。太空港里几乎空无一人，只有偶尔路过的工人和醉醺醺的船员。除了几个前往人类空间的危险小任务外，任务板上全是大宗的矿石运输任务。最后，当你们开始在停机区边缘搜寻时，你注意到一名苦恼的人类商人站在几个板条箱旁。你上前询问，他解释说自己的飞船出了故障，无法将他那批先进的外科手术设备送达 <destination>。“真是糟透了！离目的地星球只剩一次跃迁，导航系统却突然决定罢工！我根本不可能在截止日期前赶到了！”`
+			`	“我的朋友娜娜奇可以帮你送过去。反正我们也要去那里，多这几个货箱没什么影响。”你说道，尽量让自己的语气听起来很有说服力。`
+			`	一开始，他好像很高兴你们愿意帮忙，但当娜娜奇提到她驾驶的是一艘重型穿梭机时， he 皱起了眉头，又看了看货物。“‘无束者’的袭击让 <planet> 急需大量的医疗物资，说实话，我不放心让这么脆弱的飞船载着这批设备进入危险区域，它可能瞬间就会被轰成碎片，”他说。这位船长扫视了一圈空荡的太空港，似乎在寻找其他船长，最后他终于转向娜娜奇说，“但事到如今也没得挑了。好吧，这批货就交给你送过去了，但请务必万分小心。”`
+				accept
+	npc accompany save
+		personality escort timid
+		government "Hai"
+		ship "Heavy Shuttle" "Acorn Chaser"
+	on visit
+		dialog `你已经抵达 <planet>，但你把娜娜奇的飞船落在后面了！最好先起飞并在此星系内等待她到达。`
+	on complete
+		conversation
+			`她的飞船着陆后不久，你与娜娜奇碰了面。她正竭力掩饰首次踏上另一颗星球的兴奋，特别是正呆呆地望着几艘亥族军舰。“怎么样，第一次超空间跳跃感觉如何？”你问道，试图让她回过神来。`
+			`	“哦……呃，我想我一时半会儿还习惯不了那种感觉。我吐得厉害，幸好这次不是载客的任务。我一直梦想着能踏上其他世界，探索并了解关于它们的一切。很高兴我终于做到了。”`
+			`	你帮她把货箱搬出货舱并联系了客户。娜娜奇分到的报酬很少，因为客户把大部分资金都转给了把这趟活转让给她的那位商人，但这丝毫不影响她因拿到第一笔酬金而兴奋不已。`
+			`	“那么，想去太空港自己试着接个任务吗？要是你还搞不定的话，我会再帮你。”你说道。`
+			`	“给我一两个小时探索一下。老家那边的船坞有点小。我从来没什么机会近距离看看盾甲虫，这里有很多正在维修的。我就去仔细瞧瞧它们，我保证很快回来。”`
+			`	你们俩约定几小时后在太空港碰面；也许这次她能自己应付好。`
+
+
+
+mission "Nanachi 2"
+	name "护送娜娜奇前往 <planet>"
+	description "带娜娜奇和她的乘客前往 <destination>。"
+	source "Cloudfire"
+	destination "Hai-home"
+	clearance
+	to offer
+		has "Nanachi 1: done"
+	on offer
+		conversation
+			`你在太空港与娜娜奇碰面，给了她一些说服别人雇佣她的建议，并告诉她如果还是找不到活干，你就在附近。你看着她在太空港里转悠，试着去接触几群人类甚至其他亥族人，但都无济于事。也许是因为这个世界战火不断，人们都忙于军事活动，无暇关照一个新手飞行员。好在，她设法引起了刚从餐厅出来的一家亥族人的注意，他们带着多得离谱的行李，很可能是寻找顺风船回家的游客。一切似乎进展顺利，直到那对父母脸上露出了担忧的神色。看样子如果你不插手，他们可能就要走开了。`
+			`	你走上前去帮她，并仔细打量这家人：一对亥族夫妇抱着一个婴儿，还有三个较大的孩子，他们没怎么帮父亲扛那堆多得离谱的行李。`
+			choice
+				`	“嘿，怎么回事？”`
+				`	“有什么我可以帮上忙的吗？”`
+			`	你作了自我介绍，那对父母告诉你，他们在这里度假，现在需要搭便船返回 <destination>。“请别见怪，但娜娜奇船长告诉我们，她的飞船是你们人类的飞船，是叫重型穿梭机对吧？床位虽然够我们住，但我们那几个儿子在来这里的路上坐亥族飞船时就已经闹腾得够呛了。我们担心，由于他们不习惯人类飞船的居住环境，可能会给她添太多麻烦。”`
+			`	你向他们保证行程会非常短暂，而且飞船的内部结构与亥族飞船有一些相似之处，他们这才终于同意搭乘她的飞船。谈妥报酬后，你俩帮着这家人把行李搬上娜娜奇的飞船。趁那家人专注于交谈时，你悄悄询问娜娜奇，她之前遇到的那些人到底是怎么回事。`
+			`	“他们似乎都愿意给我活干，但我因为开口索要更多报酬而搞砸了。我真的很想尽快还清债务，所以可能有些操之过急了。”她试图装作若无其事，但很明显，她为失去了这么多潜在的工作机会而感到难堪。到达她的飞船后，你查看了 <system> 星系的商品物价。你决定让娜娜奇多买些重金属带到那边出售，帮她多赚点利润。`
+				accept
+	npc accompany save
+		personality escort timid
+		government "Hai"
+		ship "Heavy Shuttle" "Acorn Chaser"
+	on visit
+		dialog `你已经抵达 <planet>，但你把娜娜奇的飞船落在后面了！最好先起飞并在此星系内等待她到达。`
+	on complete
+		conversation
+			`你帮这家人收拾好所有行李，与他们道别。可他们刚消失在走廊尽头，娜娜奇就重重叹了口气。“我真是自不量力。那些孩子老想玩飞船的操控台，还有一个在玩捉迷藏时试图爬进通风管道。我根本没法休息，得一直盯着他们，免得他们不小心把自己的行李扔进太空去。”`
+			`	“你要不要先睡一觉再去找下一个任务？”你问道，希望她别把自己累垮。`
+			`	“嗯，我确实需要好好睡一觉。抱歉又要让您等了，船长<last>。我先休息一下，看看附近有没有地方能放松，过会儿再到太空港与您会合。”`
+
+
+
+mission "Nanachi 3"
+	name "与娜娜奇一同运送香料"
+	description "陪同娜娜奇前往 <stopovers>，在 <date> 之前为在 <destination> 举办的节日取回一些夸格香料。"
+	source "Hai-home"
+	stopover "Alta Hai"
+	destination "Allhome"
+	deadline 14
+	to offer
+		has "Nanachi 2: done"
+	on offer
+		conversation
+			`你给娜娜奇发了条消息，两人在太空港碰了面。你还在往任务板走，她就问了起来：“在家乡时我听人说，人类的人口比亥族多得多，他们的母星人口甚至超过亥族故土。真有那么多人类星球都有这么大的太空港吗？”你给她列举了几个人口极度稠密的人类行星，还提到有些星球虽然人口比这颗星少，却拥有规模惊人的太空港。`
+			`	你跟她讲述着你拜访过的许多不同星球的故事，她似乎对地球特别感兴趣。“我在众家星之类星球的视频里见过一点人类建筑，但实在想象不出你们的首都该是什么样。另一个种族数万年的历史，听起来比我听过的那些亥族故土地标还要激动人心。船长，你说，等到有一天我们不需要再对人类隐瞒行踪了，我能去地球看看，亲眼见见你们首都的美丽吗？”看她对人类知之释少的样子，她不清楚地球如今的状况倒也不奇怪。`
+			choice
+				`	“我其实从没去过地球，所以没法告诉你那里是什么样。”`
+					goto avoid
+				`	“地球是个美丽的地方，你要是能去看看就好了。”`
+					goto fake
+				`	“地球其实没那么值得去。那里的大部分居民但凡有机会都想离开。”`
+					goto truth
+			label avoid
+			`	“噢，抱歉，我不该假定你什么都知道。毕竟你是星舰船长，又不是历史学家，我以后有机会再问别人吧，”娜娜奇说。`
+				goto board
+			label fake
+			`	你开始编造关于地球天空如何美丽的故事。你描绘着生机勃勃的森林，并尽力回忆着古老的文明与遗迹。看样子她相信了你，你的谎言暂时满足了她的好奇心。不过，如果有朝一日亥族被允许在人类星域自由活动，她无疑会大失所望。`
+				goto board
+			label truth
+			`	她困惑地看着你，似乎想理解你的意思，于是你向她解释：“尽管人类在过去的几个世纪里取得了巨大进步，但地球却在很大程度上被忽视了。大部分土地都变成了城市，多年来又逐渐退化为贫民窟。如果你有机会去拜访，去博物馆或纪念碑看一看倒还行，但即便如此，街上也有许多小偷游荡，晚上出门非常危险。很多出生在那里的人整天只想着怎么离开。”`
+			`	你继续跟她讲着人类诞生地所面临的问题，她先前了解这颗星球的热情也渐渐消退。“你们的祖先怎么能让自己的家园变成这样？”`
+			branch unfettered
+				has "Ask the Hai about the Unfettered: offered"
+			choice
+				`	“长远规划从来不是人类整体的强项。”`
+					goto end
+			
+			label unfettered
+			choice
+				`	“我想这跟‘无羁者’对待他们星球的方式也没太大区别。”`
+			`	娜娜奇一脸困惑，于是你继续阐述这个想法：“他们指望很快就能拥有新世界，所以将当前世界的衰败视为可接受的损失。人类在长期规划以及防范不利事件方面同样存在问题。”`
+				goto end
+			label end
+			`	“我明白了……”她说。“我只是觉得听听另一个像亥族故土这样的大星球会很有趣。抱歉问起这个，船长，提起这事肯定让你不太愉快吧。”`
+			`	虽然你确信即便在亥族星域也存在社会不平等，但她大概无法想象一个物种的母星会糟糕到这种地步——毕竟亥族甚至会定期向无羁者提供援助。`
+				goto board
+			label board
+			`	你们俩走到任务板前，开始寻找适合娜娜奇飞船的工作。`
+			choice
+				`	“那么，你介意我帮帮忙吗？我知道刚开始几次看任务板可能会觉得一头雾水。”`
+				`	“你觉得这次需要我帮忙吗？”`
+			`	“谢谢，但这次我得靠自己。我保证不会再因为贪心搞砸了。”她独自走向任务板，很明显在这里找活容易多了；她刚和一位柜台工作人员说上两句，就收到了长长一串适合小型飞船的工作清单。她显然依然非常疲惫，但这似乎让她开心了一点——毕竟这还是她第一次在没有你帮忙的情况下自己接到工作。`
+			`	你本以为她会快速挑一两个任务然后返回飞船，但她却一件件仔细浏览着，反复核对每一项任务的信息，似乎有什么地方让他有些困扰。`
+			`	“怎么了？是在两个不同的工作之间拿不定主意吗？”你问道。`
+			`	“这些任务看起来都很简单，我甚至可以一次接好几个，但问题是它们的报酬实在太低了。”她从口袋里掏出几张折损的纸递给你看——那是她的贷款文件。“家乡的银行只肯给我刚够买这艘飞船的钱，而且必须是短期贷款。在你来帮我之前我已经耽搁了两天，如果不赶紧找份报酬更高的工作，我连利息都要付不起了。”`
+			`	你正琢磨着如何从现有任务中榨出最大收益，忽然感觉有人拍了拍你的肩膀。你转身看到一个亥族人和一对人类情侣站在一起。那对情侣自我介绍叫泽维尔和瓦内莎，他们是和亥族朋友纳兰西亚一起来的。“我们无意中听到了你们的对话，愿意为一份工作额外多付点报酬。我们是一个团体的成员，正在众家星组织一场盛大的节日庆典，以庆祝人类与亥族的友谊。我们刚刚冒出一个临时的想法：希望能弄到一些夸格香料。”`
+			`	纳纳奇在听到他们的谈话时来了精神。“我保证能在两周内把香料送到<planet>。我不会让你们失望的！”`
+			`	“太好了，”纳兰西亚说。他告诉娜娜奇他们不会同行；他们已经有了去众家星的交通工具，还要在这里多待一会儿来宣传这次活动。“拿到香料后，你们直接来众家星找我们就行。一路平安！”`
+				accept
+	on stopover
+		dialog
+			`在你们两人降落前不久，一名太空港的工作人员联系了娜娜奇，确保香料已准备好装上她的飞船。你协助工人们和娜娜奇确认一切就绪，准备动身前往众家星。`
+	npc accompany save
+		personality escort timid
+		government "Hai"
+		ship "Heavy Shuttle" "Acorn Chaser"
+	on visit
+		dialog `你已经抵达<planet>，但尚未完成任务！要么你把娜娜奇的飞船落在后面了，要么你还没有去过<stopovers>。`
+	on complete
+		conversation
+			`众家星的泊位区比平时繁忙得多。许多船长正在协助工人打开集装箱，里面装满了来自人类星域的食物、衣物、书籍、电影，甚至还有一些动物标本。你终于见到了节庆的组织者们，他们似乎对能弄到这些异域调料感到非常兴奋，并邀请你们俩去太空港的酒吧喝一杯。`
+
+
+
+mission "Nanachi 4"
+	name "保护娜娜奇"
+	description "护送娜娜奇的飞船前往<stopovers>，保护她免受先前袭击前往亥族星域之船队的海盗舰队的威胁，并在<date>之前返回<destination>。"
+	source "Allhome"
+	stopover "Prime"
+	deadline 17
+	to offer
+		has "Nanachi 3: done"
+	on offer
+		conversation
+			`酒吧和码头一样繁忙。这里的许多船长想必都为这次节日运送了物资。“<last>船长，娜娜奇船长！”纳兰西亚喊道，招呼你们俩过去和大家同坐一桌。你了解到，他们是受到了亥族自己的“三月节”的启发，想要把人类文化的一些片段带到亥族星域。`
+			`	“他们现在还无法亲自前往我们的星球体验这些，所以我们想着把这些带去给他们！”瓦内莎说道。`
+			`	“要拉到足够的赞助非常困难，但经过多年的努力，我们甚至设法把一些著名的艺术珍品运到了这里，其中有些甚至可以追溯到欧洲文艺复兴时期！”泽维尔补充道。`
+			`	随后话题转移到了你这个船长身上，你描述了买下第一艘飞船后的旅程，以及你是如何遇到娜娜奇的。你正打算为大家再点一轮酒，一个头发花白的老人突然闯入酒吧，高声喊道：“艺术品运输船队遭到袭击了！货轮设法逃脱，但它们现在被困在了中枢星，海盗还在外面游荡，在往返虫洞的航线上巡逻！”`
+			`	泽维尔震惊地站起身来。“怎么会？我们可是有一艘利维坦为他们护航的啊！”`
+			`	门旁的老人顺过气后回答道：“那些海盗肯定是打劫了返航的飞船，夺取了亥族科技。货轮船长说他们把护航舰撕成了碎片！”恐慌在其他船长中间蔓延开来，与你同桌的伙伴们也陷入了焦虑与痛苦之中。`
+			choice
+				`	“那些艺术品真那么值钱吗？”`
+				`	“难道不能把节日推迟，等处理完海盗再说吗？”`
+			`	泽维尔跌坐回桌边，用双手抱住头。“那些画作和雕塑是我们最核心的卖点！价值上百亿！要等海军注意到那里的海盗并确保航线安全、好让船队过来的话，少说也得几个月。可艺术展三周后就要开幕了！”`
+			`	就在大家苦思对策时，娜娜奇开口了：“我去吧。我驾驶的是人类飞船，如果只是需要将货物从一艘船转移到另一艘，我可以迅速撤离。没人会注意到曾有亥族人去过那里的。”`
+			`	“你疯了吗？”瓦内莎说，“既然他们能击沉那艘利维坦，你连一秒都撑不住！况且我们的船队速度极快。连他们都中招了，你想甩掉海盗的可能性几乎为零！”`
+			`	“<last>船长，”娜娜奇转向你。“我知道你已经帮了我很多，远比其他人所愿意付出的多得多，我真的很感激。但你愿意再帮我最后一次，陪我去那颗星球，再一起飞回来吗？”`
+			`	可以肯定，一支能如此轻易击毁利维坦的海盗舰队必然极其强大，这也意味着此行会极度危险。你确信如果娜娜奇独自前往中枢星，那她无异于自寻死路。`
+			choice
+				`	“好吧，我会确保我们安全抵达中枢星，并且平安返回。”`
+				`	“不行，我之前答应帮你寻找和处理一些简单的工作，但我不能冒险独自去对抗那样的一支舰队。”`
+					decline
+			`	她对你连声致谢，并承诺会尽快付清你所有的费用。组织者们显得有些犹豫，但鉴于在场的其他船长里没有一个打算伸出援手，他们最终还是同意了让你们两位前往中枢星运回货物。`
+			`	就在娜娜奇准备奔向太空港时，瓦内莎一把拉住了她的手臂。“记住，如果你们在<day>之前无法赶回来，也不用太担心，我们能够理解。我相信即使没有这些主要的展品，我们也能想出其他备选方案来让庆典顺利举行。”`
+			`	你正要离开酒吧时，泽维尔把你拉到一边，低声叮嘱道：“<last>，我知道你只是想帮这姑娘，但千万别为此送了命。如果遇到那些海盗，别和他们死磕，直接冲向中枢星。”`
+				accept
+	npc
+		personality nemesis waiting
+		government "Pirate"
+		system "Betelgeuse"
+		ship "Marauder Firebird (Hai)" "Nut King Call"
+		ship "Marauder Splinter (Hai)" "The Nutcracker"
+		ship "Marauder Quicksilver (Hai)" "Hazelnut's Bane"
+		ship "Marauder Bounder (Hai)" "Rodent Hunter"
+	npc accompany save
+		personality escort timid
+		government "Hai (Wormhole Access)"
+		ship "Heavy Shuttle" "Acorn Chaser"
+	on visit
+		dialog `你已经抵达<planet>，但尚未完成任务！要么你把娜娜奇的飞船落在后面了，要么你还没有去过<stopovers>。`
+	on stopover
+		conversation
+			`当你进入星系时，运输队的队长给你发了消息，让你降落在中枢星一个偏远隐蔽的区域，他们已经在那里为所有的货物交接做好了准备。他们为你们的飞船加满了燃料，并催促你们尽快返回。“如果需要补给或者去装备商那里买些什么，娜娜奇船长可以和我们一起躲在这里，但请动作快点。”`
+	on complete
+		event "Nanachi: payment" 180
+		log "Minor People" "Nanachi" `一位年轻的亥族商船船长，在职业生涯初期举步维艰。她的命运在克服重重困难、按时将一批珍贵的人类艺术品送达亥族节日主办方手中后迎来了转机。`
+		conversation
+			`在众家星降落后，节庆筹备小组给了你和娜娜奇一个温暖的拥抱。“我们先前承诺要举办一场展出人类星域各处珍贵艺术品的展览，并为此卖出了几万张门票。要是没有这些展品，整个节庆活动就彻底泡汤了，我们在赞助商那里也会面临大麻烦，”纳兰西亚解释道。`
+			`	当货物被紧急送往展览场地时，娜娜奇给你看了她作为报酬收到的芯片以及银行账户余额：这笔最后的款项让她彻底还清了贷款。“船长，”她说话有些困难，并试图遮住脸，仿佛在擦拭眼泪。“我永远无法好好地感谢你，要不是你，我可能还迷失在那个太空港里，最终不得不回去做矿工。现在我会努力工作的；我会攒钱把所有费用都还给你！”她拥抱了你，并像在电影里看到的那样向你鞠躬，仿佛是在模仿那个手势。你们最终互道再见，各自返回飞船。`
+
+event "Nanachi: payment"
+
+
+
+mission "Nanachi: Payment"
+	landing
+	source
+		government "Hai"
+		not planet "Darkwaste"
+	to offer
+		has "event: Nanachi: payment"
+	on offer
+		payment 700000
+		event "Nanachi: Update" 720
+		conversation
+			`你刚着陆不久，就收到了娜娜奇——那个你曾帮助起步的年轻亥族飞行员——发来的讯息。“尊敬的<last>船长，希望您一切安好！如我所承诺，自从我们分别后，我一直努力工作攒钱，以报答您对我的慷慨相助。我已将<payment>汇给您。衷心感谢您助我实现梦想。”`
+				decline
+
+event "Nanachi: Update"
+
+
+
+mission "Nanachi Meeting"
+	landing
+	source
+		government "Hai"
+		not planet "Darkwaste"
+	to offer
+		has "event: Nanachi: Update"
+		random > 30
+	on offer
+		outfit "Shield Beetle Pendant"
+		conversation
+			`你离开飞船，正穿过对接区，注意到一个亥族人向你跑来并挥手示意。等对方走近，你认出那是娜娜奇，多年前你帮助过的那位亥族飞行员。`
+			`	“我刚要回到我的船员那里，就看到你从飞船里出来了。我知道这儿有家不错的小吃吧，咱们去那儿吧！”还没等你打招呼，她已经把你拽进店里，并给你们俩点了一些饮料。她向你诉说着她这几年当船长的经历。她早已卖掉了她的旧船，现在正驾驶着一艘“地蝽”，在亥族空间运送大量货物。你也将自己自上次见面以来的生活、冒险经历以及你的成长向她倾诉。你们聊个不停，故事交换了几个小时，直到小吃吧准备打烊。`
+			`	你感谢她请你喝饮料，并准备与她道别。`
+			`	“噢，等等，船长，在你走之前，让我送给你一样东西，”就在你正要朝飞船走去时，她说道。她从口袋里拿出了一个小吊坠。`
+			scene `outfit/crystal pendant`
+			`	“在故乡赐石星，在采矿工作之余，我有一个爱好，就是把小石头雕刻成飞船模型。我想着要是能再见到你，做个送给你也挺不错的。我制作它所用的，就是我们用来作为飞船好运符的同类石头。”她把吊坠递给你，它被雕刻成了一只亥族盾甲虫。其做工极其精湛，不同的表面纹理代表了盾甲虫不同的部位。“我希望它能让你的旅途变得更顺利，就像你当初帮我开启我的旅途那样。再次感谢你，船长！”你们两人就此告别，各自返回飞船。`
+				decline
+
+
+
+mission "Strider Alt Start"
+	landing
+	name "无羁者新型舰船"
+	description "萨亚里大使已将“避日蛛”级舰船的研发进展告知长老议会。议会希望与您在<destination>会面，以听取更多详情。"
+	source
+		government "Hai"
+		not planet "Hai-home"
+		not attributes "uninhabited" "station"
+	destination "Hai-home"
+	clearance
+	to offer
+		has "Wanderers Evacuation 1: offered"
+		not "Wanderers Solifuge Recon 3: offered"
+		or
+			has "Wanderers Solifuge Recon 2: done"
+			has "Wanderers Pond Strider Recon 2: done"
+	on offer
+		dialog `你降落完毕后，一名身着正式制服的亥族人走上前来。“您好，船长<last>。萨亚里大使已向长老议会传信，称我们的无羁同胞建造了一艘威力强大的新舰船。议会邀请您前往<planet>；萨亚里说您曾与这些舰船交过手，长老们对您的专业经验很感兴趣。”`
+	on complete
+		conversation "solifuge conversation"
+
+
+
+mission "Strider 0"
+	landing
+	name "船体修复技术"
+	description "亥族正在研制一款无人机母舰以对抗无羁者的“避日蛛”，但该舰的设计师仍在研发船体修复技术以提升其作战效能。请在方便时前往 <planet> 协助亥族完善这项技术。"
+	destination "Hai-home"
+	clearance
+	to offer
+		or
+			has "Wanderers Solifuge Recon 3: done"
+			has "Strider Alt Start: done"
+	to fail
+		has "Strider 1: offered"
+	to complete
+		never
+
+
+
+mission "Strider 1"
+	landing
+	name "船体修复技术"
+	description "亥族正在研制一艘无人机母舰来对抗无羁者的“避日蛛”，但该舰的创造者仍在开发船体修复技术以提升其在战斗中的效能。前往<planet>与负责谈判该技术的代表团会面。"
+	source "Hai-home"
+	destination "Allhome"
+	to offer
+		has "Strider 0: active"
+	on offer
+		conversation
+			branch "know both"
+				has "license: Remnant"
+				has "license: Coalition"
+			
+			branch "know coalition"
+				has "license: Coalition"
+			
+			branch "know remnant"
+				has "license: Remnant"
+			
+			`你回到了 <origin>，但你还没有获得任何船体修复技术。探索银河，赢得某个拥有船体修复技术的异星势力的信任，然后再回来。`
+				defer
+			
+			label "know both"
+			`你回到了 <origin> 帮助亥族研发船体修复技术。奥森的父亲问你是否认识拥有船体修复技术的外星种族，你已遇到了拥有能修复船体的装备的联盟，以及拥有能自我修复的飞船的遗民。你愿意向长老们介绍其中一方吗？`
+			choice
+				`	（是的。）`
+					goto start
+				`	（现在还不想。）`
+					defer
+			
+			label "know coalition"
+			`你回到了 <origin> 帮助亥族研发船体修复技术。奥森的父亲问你是否认识拥有船体修复技术的外星种族，你已遇到了拥有能修复船体的装备的联盟。你愿意向长老们介绍联盟吗？`
+			choice
+				`	（是的。）`
+					goto start
+				`	（现在还不想。）`
+					defer
+			
+			label "know remnant"
+			`你回到了 <origin> 帮助亥族研发船体修复技术。奥森的父亲问你是否认识拥有船体修复技术的外星种族，你已遇到了拥有能自我修复的飞船的遗民。你愿意向长老们介绍遗民吗？`
+			choice
+				`	（是的。）`
+				`	（现在还不想。）`
+					defer
+			
+			label start
+			`	你告知长老们，你发现了一个可能帮助他们研发船体修复技术的群体，他们随之邀请你前往议事厅。“您好，<last>船长，”在你步入议事厅时，其中一位长老对你说道。“在寻找船体修复技术的过程中，你给我们带来了什么消息吗？”`
+			branch "tell both"
+				has "license: Remnant"
+				has "license: Coalition"
+			
+			branch "tell remnant"
+				has "license: Remnant"
+			
+			branch "tell coalition"
+				has "license: Coalition"
+			
+			label "tell both"
+			choice
+				`	“在远离这里的地方，有一个由三个异星种族组成、被称为‘联盟’的势力，他们拥有能在飞行中修复飞船的装备。”`
+					goto coalition
+				`	“在远离这里的地方，有一群被称为‘遗民’的人类，他们拥有能自我修复的飞船。”`
+					goto remnant
+			
+			label "tell remnant"
+			choice
+				`	“在远离这里的地方，有一群被称为‘遗民’的人类，他们拥有能自我修复的飞船。”`
+					goto remnant
+			
+			label "tell coalition"
+			choice
+				`	“在远离这里的地方，有一个由三个异星种族组成、被称为‘联盟’的势力，他们拥有能在飞行中修复飞船的装备。”`
+					goto coalition
+			
+			label remnant
+			action
+				set "strider: remnant"
+			`	“一群拥有船体修复技术的人类？”一位长老困惑地问道。“我们竟然从未听说过这些人，真是令人惊讶。他们在共和国里很有名吗？”`
+			`	“不，”你解释道。“他们是一个隐居的群体，绝大多数人类都对他们一无所知。如果有外星人前去拜访，他们大概不会表现得很友善。”`
+				goto end
+			
+			label coalition
+			action
+				set "strider: coalition"
+			`	“由三个外星种族组成的联合体？”一位长老露出困惑的神情问道。“在银河系中，这样的群体可不常见。”`
+			
+			label end
+			`	“我们会组建一个代表团由你护送，前往你提到的那些人那里。他们会在 <destination> 等你，”另一位长老说道。“你可以按照你认为合适的方式引导他们与该群体接触。我们相信你完全有能力处理好这件事。”`
+				accept
+
+
+
+mission "Strider: Remnant 1"
+	landing
+	name "联系遗民"
+	description "将消息从亥族送到 <stopovers>，以安排遗民与亥族会面，然后返回 <destination>。"
+	source "Allhome"
+	stopover "Viminal"
+	to offer
+		has "strider: remnant"
+	on offer
+		conversation
+			`你在太空港找到了即将前往遗民处谈判的亥族代表团，他们此行是为了获取船体修复技术。代表团团长自我介绍为雅什莉大使。“我听说我们要穿越银河系走很远的路。愿我们一路平安。”`
+			`	代表团开始走向你的飞船，但你拦住了他们。`
+			choice
+				`	“等等！这群人对陌生人的态度可不太好。要不我先去安排一次会面？”`
+				`	“别急。遗民非常看重保密，我还没跟他们谈过这个情况。让我先安排一次会面吧。”`
+			`	亥族人面面相觑，低声交谈了几句，随后雅什莉大使开口道：“你了解这群人，知道怎样给他们留下最好的第一印象。”她停下来对另一个亥族人耳语了几句，那人随即跑开了。大使转过身来对你说：“我会写一封信给你，信中将包含对亥族的简短介绍、我们希望与他们会面的原因，以及建立外交关系的邀请。”`
+			`	片刻之后，跑开的那个亥族人拿着一封密封的信封回来了，并把它递给了大使。她转向你：“就是这个了。请替我们把它带给那些隐居的人类。我们会在这里静候你归来。”`
+			`	“没问题，”你接过信封后回答。代表团与你道别，祝你一路平安，随后便离开了。`
+				accept
+	on stopover
+		conversation
+			`环顾太空港，你一时不知该找谁谈这样的外交请求。最后，你走向太空港问讯处询问。你把信递给柜台的工作人员，对方看完了信，请你在食堂稍作等候，他们会去寻找能处理亥族请求的人。`
+			`	在观察了遗民们边吃饭边用手势比划交流一个小时后，一个长相中性的遗民走向了你的桌子。你试图猜测其年龄，但虽然看着不显年轻，倒也说不上特别苍老。`
+			`	“您好，<first>船长，”这位陌生人用手势示意道。“我叫雷恩，我的同事说你带来了另一个势力的请求。据我所知，他们想要获取在飞行中修复船体的手法。是这样吗？”`
+			choice
+				`	“是的。亥族希望能够改进他们正在研发的一艘新型母舰，使其能修复无人机。”`
+				`	“是的。亥族希望能够修复他们舰船的船体，以便在与敌人交战时占据上风。”`
+			`	“这么说，亥族是想提升他们的军事技术？我猜，这是为了应对与无羁者之间那场旷日持久的战争？”`
+			choice
+				`	“是的，虽说他们自己并不这么认为。”`
+				`	“那并不是战争，而是一种防卫行动。”`
+			`	雷恩显得有些忍俊不禁。“不管他们怎么称呼它，战争终归是同样血腥的。不过言归正传，他们又是怎么知道我们的存在，并提出这种请求的呢？”`
+			choice
+				`	“他们当时正在物色拥有修复技术的人，我说我能帮他们找到。”`
+				`	“他们问我是否认识懂飞行中修复技术的人，我说我认识一群人类研究员。”`
+			`	“看来他们实际上并不知道我们的存在。这很好。”雷恩若有所思地闭目沉思了片刻，接着说道。“去接上那几位亥族外交官，但先别告诉他们你们要去哪儿。把他们带到轸宿一星系中‘隐秘星’的这组坐标。那是一个地处荒无人烟之所的碰头点，我们在那里便可交谈。我们会准备好可能对他们有所帮助的东西恭候——只要他们付得起我们的要价。”`
+
+
+
+mission "Strider: Remnant 2"
+	landing
+	name "会见遗民"
+	description "运送雅什莉大使及其代表团前往 <destination>，尝试从遗民那里获取船体修复技术。"
+	source "Allhome"
+	destination "Covert"
+	infiltrating
+	passengers 3
+	blocked "前往会见遗民的亥族代表团需要3个铺位，但你的飞船没有足够空间！请腾出空间后再来。"
+	to offer
+		has "Strider: Remnant 1: done"
+	on offer
+		conversation
+			`你发消息给雅什莉大使，告知她已安排好与遗民的会面。“这真是个好消息。我们稍后便会在太空港与你会合。”`
+			`	没过多久，代表团抵达了你的飞船。“在我们出发前，在与这群人碰面之前，有什么是需要我们先了解的吗？”雅什莉问道。`
+			choice
+				`	“遗民只是一群人类，所以没有什么特别需要了解的。”`
+					goto end
+				`	“遗民同意在<planet>与你会面，那是一个危险的海盗世界，所以不要离飞船太远。”`
+			`	“哦，”雅诗丽惊讶地叫道。“这些遗民也是危险人物吗？”`
+			`	“不，他们很友善，”你向她保证。“他们只是不想在自己的地盘上会面。”`
+			label end
+			`	代表团感谢你提供的信息，随后登上了你的飞船。你设定了前往<destination>的航线。希望遗民愿意与这个他们刚结识的外星种族分享技术。`
+				accept
+	on visit
+		dialog `代表团成员似乎搭载在尚未抵达本星系的护航舰船上。起飞并等待他们吧。`
+
+
+
+mission "Strider: Remnant 3"
+	landing
+	name "获取技术"
+	description "代表团已成功从遗民处获取船体修复技术。返回<destination>，以便亥族开始为他们的新飞船研发此项技术。"
+	source "Covert"
+	destination "Hai-home"
+	clearance
+	passengers 3
+	cargo "repair technology" 12
+	blocked "你需要<capacity>才能将亥族代表团和修复技术送回<planet>。"
+	to offer
+		has "Strider: Remnant 2: done"
+	on offer
+		log `帮助亥族与遗民取得联系，以学习如何制造飞行中的船体修复技术。亥族获得了一份遗民关于科拉斯系统核心的研究资料，以及若干样本。`
+		conversation
+			`在指定的坐标处，设有一个小型营地，隐约让人联想到沙漠商人的前哨站。除了拴在水槽旁的几头骆驼外，这里看起来空无一人。当你在营地旁着陆时，代表团小心翼翼地走了出来。“是这里吗？”一位亥族有些担忧地问道。`
+			`	在你回答之前，几名遗民从帐篷中走了出来，你注意到雷恩就在他们之中。“欢迎来到我们的营地，各位代表，”雷恩吟诵道，“<first>船长带来了你们的信件，我们请他带你们来这里。要进来坐坐吗？”他们指向最大的帐篷。雅诗丽大使虽然感到惊讶，但还是同意了，亥族代表们迈步走入。雷恩示意你跟上，其余的遗民开始在营地周围巡逻。`
+			`	雷恩向亥族代表们提供了食物和水，然后坐在地上的垫子上。亥族代表们礼貌地谢绝了食物，接着与雷恩一同在垫子上坐下。雅诗丽大使开口道：“我们代表亥族而来，我们居住在离这里很远的地方。我们的一些兄弟姐妹开始对我们诉诸暴力，并且最近建造了一艘可能会给我们带来麻烦的新飞船。作为回应，我们也建造了自己的飞船，但我们仍然需要一种能够在飞行中修复飞船船体的技术，好让我们获得优势。<last>船长告诉我们，你们拥有这种技术，飞船船体能够自我修复。”`
+			`	“我们的飞船确实能够自我修复，”雷恩回答道，“但这项技术我们无法分享。这种特性源自建造飞船的金属的固有属性——而这些金属的供应量非常稀少。”雅诗丽对这一进展感到担忧；或许这趟旅程要徒劳无功了。`
+			choice
+				`	“那么，就没有什么办法能帮帮他们吗？”`
+				`	“一定还有什么我们可以做的。”`
+			`	“不用担心，我们还有别的办法。几十年来，我们一直在与来自核心星区的科拉斯掠夺者作战，并掠夺他们。他们的飞船上配有能够利用微型机器人修复船体的装备。虽然我们无法轻易复制这些机器人，但可以为你们提供我们的研究成果和一些供你们使用的样品。”`
+			`	“我们也遇到过这些科拉斯，”雅诗丽回应道，“不过我们当时并没有获取他们的技术。这可能对我们大有帮助。”`
+			`	“不过，我们希望用此交换一样东西：一份你们的天文记录副本。银河系的历史对我们来说一直是个谜，我们想要多了解一些。”`
+			`	雅诗丽大使若有所思，随后点了点头。“历史天文数据具有科学价值，而学习如何在飞行中修复我们的飞船也同样如此。这看起来是一笔公平的交易。我们应该很快就能把数据准备好给你们。我们只需要借用一下<first>船长的飞船，以此连接超空间通信中继。”雅诗丽朝代表团的另一位成员示意，那人便匆匆跑向你的飞船。`
+			`	“我想会有大量的数据需要传输，”雷恩说，“让我们来打发一下时间吧。”`
+			`	雅诗丽大使与雷恩开始进行外交式的寒暄。在一群职业外交官与一个伪装成游牧沙漠商人的隐秘团体之间，这种话术上的交锋显得颇为奇特。`
+			`	“在等待的这段时间，我很好奇你当初是怎么遇到这些遗民的，船长，”雅诗丽说道。`
+			choice
+				`	“我大部分时间都在探索银河系。有时候你会偶然发现一些有趣的东西。”`
+				`	“嗯，和我想象中大多数人找到你们的方式一样——就是漫无目的地四处游荡。”`
+			`	雅诗丽点点头。“这确实可以理解。”`
+			``
+			`	交谈了一个小时后，大使的助手带回了一个大容量数据盘并交给了她。遗民们也拿出了他们的数据芯片，双方正式交换了数据。在接到一个暗号后，另一名遗民拉开帐篷的一侧，一队人抬进来一段配有几个微型机器人的系统核心部件。“外面还有更多这样的设备在等着，但这个是给你们检查的样品。使用我们提供的说明，你们应该可以毫无问题地掌握这项技术。”他们在控制台上操作了几下，那些微型机器人立刻活跃起来，将一小堆零件拼装成了一艘模型飞船。`
+			`	“感谢与我们达成合作，”雅诗丽大使说道，“你们已经赢得了亥族的友谊。”她鞠了一躬，遗民们也回以流畅而优雅的礼节，随后迅速扛起科拉斯设备。随着代表团登船，他们将所有物资装上了<ship>，随后你便启程返回<planet>。`
+			`	As you take off, a final glance at your exterior cameras shows the Remnant have already almost finished packing up their encampment onto the camels. As one tent comes down, it reveals an anti-aircraft artillery cannon installed on a sled. Despite the rustic appearance they portrayed, the Remnant certainly took their security seriously. There is still no ship visible, but you suspect that a Starling or Gull is undoubtedly hiding nearby.`
+				accept
+
+
+
+mission "Strider: Coalition 1"
+	landing
+	name "联络联盟"
+	description "护送雅诗丽大使及其代表团前往<destination>，尝试从联盟获取船体修复技术。"
+	source "Allhome"
+	destination "Ring of Friendship"
+	passengers 3
+	blocked "亥族前往联盟的代表团需要3个铺位，但你目前的可用空间不足！等你有空余铺位时再回来接他们吧。"
+	to offer
+		has "strider: coalition"
+	on offer
+		conversation
+			`你在太空港里找到了正在等候你的亥族代表团，他们此行将前往联盟商讨获取船体修复技术的事宜。代表团团长自我介绍为雅诗丽大使。“我听说我们即将进行一场横跨银河的漫长旅行。愿我们一路平安。”`
+			`	“在会见联盟之前，有什么是我们应该先了解的吗？”代表团的另一位成员问道。`
+			choice
+				`	“联盟是由三个和谐共处的物种组成的，就像这里的人类和亥族一样。他们应该会很乐意结识新的外星种族。”`
+					goto normal
+				`	“联盟憎恨夸格，并在数千年前与他们开战，以此将他们赶出自己的星域。”`
+			`	“这非常令人担忧，”雅诗丽说道，代表团的另外两名成员也点头表示赞同。“希望夸格在亥族星域的存在不会给他们带来麻烦。”雅诗丽思索了片刻，“又或许，我们可以利用这个情报来为我们谋取优势。”`
+			label normal
+			`	代表团收拾好行装登上了你的飞船，接着你设定了前往<destination>的航线。希望联盟会愿意与这个初次见面的外星种族分享技术。`
+				accept
+	on visit
+		dialog `代表团成员似乎搭载在尚未抵达本星系的护航舰船上。起飞并等待他们吧。`
+
+
+
+mission "Strider: Coalition 2"
+	landing
+	name "获取技术"
+	description "代表团已成功从联盟处获取船体修复技术。返回<destination>，以便亥族能开始为他们的新飞船研发该技术。"
+	source "Ring of Friendship"
+	destination "Hai-home"
+	clearance
+	passengers 3
+	cargo "repair technology" 12
+	blocked "你需要<capacity>才能将亥族代表团和修复技术送回<planet>。"
+	to offer
+		has "Strider: Coalition 1: done"
+	on offer
+		log `帮助亥族与联盟取得联系，以学习如何制造飞行中的船体修复技术。亥族获得了联盟修复模块的设计图以及若干样本。`
+		conversation
+			`着陆之前，你通知日权会你将带外星使节来与他们会面。果不其然，当你着陆时，一个日权会代表团已经在等候了。他们向你简短致意，但显然对你带到他们政府中心的这些陌生而新奇的生命更感兴趣。`
+			`	亥族代表团一时被联盟物种不寻常的说话方式搞糊涂了，但很快便回过神来。随后，日权会成员开始向亥族讲述他们的故事，内容与你初次遇见他们时所听到的一样，其中也包括对夸格的警告。当双方代表团都在交谈时，一名日权会特工向你走来，问道：“值此珍贵的相遇，出于何种目的你带这些人来，船长？”`
+			choice
+				`	“他们需要你们的帮助。”`
+				`	“他们来此是为了寻求技术。”`
+			`	你开始向他们讲述亥族及其与“无羁者”的冲突，但在你解释的过程中，你听到与亥族交谈的日权会成员中传来一阵巨大的集体惊呼声。一位日权会代表团成员向你走来：“船长<last>，友好地告诉我们关于他们的领土与社会，你的朋友雅诗丽已经。真实的，是吗，在靠近亥族星域的地方，一个环世界夸格建造了？”`
+			`	其他人在将翻译设备切换为非人类语言后，似乎自己开始进行热烈的交谈。雅诗丽和其他亥族也转向你，神情有些困惑，等待着你替他们作出回应。`
+			choice
+				`	“夸格确实在那里，但他们不插手亥族的事务，亥族也不干涉他们的事情。”`
+					goto business
+				`	“是的，夸格在那里拥有一整个建有完整环世界的星系，许多亥族、甚至还有一些人类也居住在其中。”`
+			`	日权会成员们彼此快速用本族语交谈着，转眼之间，周围就围上了几十名其他特工。其中一名头戴金色头环的年长萨里德说道：“告诉我们更多关于这环世界的事，你们必须，亥族朋友。随我们同行，愿意吗？”`
+			`	还没等亥族代表团回答，他们便不由分说地把代表们带往了环世界的一个禁区，唯独把你留在了原地。大约一个小时后，亥族代表们被送了回来，脸上大多写满了倦容。`
+			`	“早知道他们会盘问我们关于环世界的工程设计和内部运作，我真该带个工程师一起来的，”雅什利低声对你说。`
+			
+			label business
+			`	日权者们再次警告亥族要对夸格保持警惕，随后终于让亥族解释他们此行的目的。`
+			`	代表团看起来还是有些不知所措，仿佛仍在消化那位日权者刚才告诉他们的一切历史，但雅什利保持着镇定，开口说道：“我们代表生活在遥远彼方的亥族人民而来。我们的一些同胞对我们诉诸暴力，最近还建造了一艘可能会给我们带来麻烦的新型飞船。作为应对，我们也建造了属于自己的飞船，但我们仍然需要能够在飞行中修复船体的技术，好让我们获得优势。<last> 船长告诉我们，你们拥有这项技术。”`
+			`	“要说这种技术，我们的确开发过，”一位阿拉奇特工回答。“由数十个小型修复机器人及它们的控制中心组成的，便是这类装备。”`
+			choice
+				`	“那么你们愿意将其中一套装备赠送或出售给亥族吗？”`
+				`	“你们愿意与亥族分享这些装备的量产方法吗？”`
+			`	“深涉我们修复模块设计的，正是Chamgar家族，”同一位阿拉奇人说道。“联络他们在本环的代表，我们会去办的。”`
+			`	“你们想要什么回报吗？”雅什利问特工。`
+			`	“作为回报，我们一无所求。帮助你们突破夸格加诸你们的限制，这本身便是足够的回报了，”阿拉奇人回答。雅什利看起来有些困惑，但没有再追问下去。`
+			`	不久之后，代表Chamgar家族的一群阿拉奇人抵达。他们让亥族描述了其飞船，并利用这些信息为亥族飞船优化了修复模块。接着，他们准备了一份蓝图副本，将存有船体修复模块及船体行走机器人示意图的数据芯片递交给亥族。随后，几名工人将一个装有两套小型模块的箱子搬上你的飞船，供亥族作为样品。雅什利感谢了联盟的慷慨，随后登上你的飞船，准备返回 <destination>。`
+				accept
+
+
+# For compatibility
+event "pond strider mass production"
+
+# The mission to ensure the Pond Strider is properly added to the new Hai shipyards.
+mission "Pond Strider Patch for v2"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "event: pond strider mass production"
+	on offer
+		event "pond strider mass production v2"
+		fail
+
+
+event "pond strider mass production v2"
+	shipyard "Mon Ki i'Hiya Basics"
+		add "Flea"
+	shipyard "Mon Ki i'Hiya Advanced"
+		add "Pond Strider"
+	outfitter "Hai Basics"
+		"Railgun Slug"
+	outfitter "Hai Intermediate"
+		"Railgun"
+		"Railgun Slug"
+		"Railgun Slug Rack"
+		`"Baellie" Atomic Engines`
+	outfitter "Hai Advanced"
+		"Railgun"
+		"Railgun Slug"
+		"Railgun Slug Rack"
+		`"Baellie" Atomic Engines`
+	fleet "Large Hai"
+		add variant 1
+			"Geocoris"
+			"Pond Strider (Tracker)"
+			"Pond Strider (Railgun)"
+			"Flea" 16
+		add variant 1
+			"Shield Beetle (Tracker)"
+			"Pond Strider (Tracker)"
+			"Flea" 8
+			"Lightning Bug" 2
+		add variant 1
+			"Pond Strider"
+			"Flea (Pulse)" 8
+			"Lightning Bug" 2
+			"Water Bug" 2
+		add variant 2
+			"Pond Strider (Ion)" 2
+			"Flea" 16
+		add variant 2
+			"Pond Strider"
+			"Flea" 8
+			"Centipede" 2
+		add variant 3
+			"Shield Beetle (Pulse)"
+			"Pond Strider (Pulse)"
+			"Flea (Pulse)" 8
+
+mission "Strider 3"
+	landing
+	source "Hai-home"
+	to offer
+		or
+			has "Strider: Coalition 2: done"
+			has "Strider: Remnant 3: done"
+	on offer
+		event "pond strider mass production v2" 30 90
+		conversation
+			`你着陆时，雅什利联系了长老们，告知他们你已获得船体修复技术。他们同意与奥森一同在太空港与你见面。在你降落后，一群太空港工人开始从你的货舱卸载样品。`
+			`	你离开飞船时，看到亥族长老们和奥森正朝这边走来。雅什利大使和亥族代表团上前迎接他们。`
+			branch coalition
+				has "Strider: Coalition 2: done"
+			
+			`	“希望遗民待你不错，”一位长老说道。`
+			`	“他们是个有趣的族群。虽然深居简出，不怎么愿意透露太多关于他们族人的事，但在我们提供了一份历史天文数据副本之后，他们还是非常乐意帮忙的。”`
+				goto next
+			
+			label coalition
+			`	“希望联盟待你不错，”一位长老说道。`
+			`	“他们是个有趣的群体。对结识新朋友非常热情，尽管在夸格这个话题上十分敏感。”`
+			
+			label next
+			`	雅什利随后将数据副本递给奥森。“你会用得着的，”她说。`
+			`	“我当然会喜欢，”奥森回答。“太空港的工人已经把货物发往我的船厂了。我会立即开始着手将它应用到水黾上。”`
+			choice
+				`	“水黾？”`
+				`	“希望你用它玩得开心。”`
+					goto fun
+			
+			`	“是的。这是我们为这艘船定下的名字，它的搭载无人机将被命名为‘跳蚤’。”`
+			`	“光是想到这个我就觉得浑身发痒，”一位长老开玩笑说。`
+				goto end
+			
+			label fun
+			`	“当你热爱自己的工作时，很难不乐在其中。”`
+			
+			label end
+			`	奥森正要跑开，但一位长老拦住了他。“你能给我们估算一下，应用这些数据需要多长时间吗？”`
+			`	“噢，是的，”奥森说。“要让一切运转起来可能需要几个月的时间。运气好的话，最少也要一个月。”`
+			`	“这很好。这些飞船越早投入使用越好。”`
+			`	奥森再次准备跑开，但这次他停下了脚步，转向你。“谢谢你，船长。没有这些信息，我可能要花上几年时间才能完成这个项目。”你点头回应，奥森终于跑回了他的船厂。`
+			`	“我也想向你表达谢意，”雅什利说。“我已经有一段时间没能离开我们的星域了。去往新地方、结识新朋友总是令人兴奋。”雅什利向你鞠躬，你亦躬身回礼。`
+			`	“我们同样需要向你表达感激，”一位长老说道。“能有你这样一位亥族之友真是太好了。不过，我们就不多留你了。愿你在冒险中一路平安。”`
+				decline
+
+
+
+mission "Strider notification"
+	invisible
+	landing
+	source
+		government "Hai"
+	to offer
+		has "event: pond strider mass production"
+	on offer
+		conversation
+			scene `thumbnail/hai pond strider`
+			`在 <planet> 着陆后，你收到来自奥森的消息：“你好，<last> 船长！希望你一切安好。我想再次感谢你在水黾设计上提供的帮助，并通知你，我们已经成功将你提供的船体修复技术融入水黾的设计中，现在已开始大规模生产这种飞船。你可能还会感兴趣的是，我们为水黾的无人机‘跳蚤’开发了新型武器。不过我就不提前剧透了。下次你顺路拜访亥族故土时，不妨去船坞看一眼。”`
+				decline
+
+
+
+mission "Hai Film Crew 1"
+	minor
+	name "亥族摄制组前往 <planet>"
+	description "将一支电影摄制组从 <origin> 送往 <destination>，以便他们能在那里拍摄一部恐怖片。报酬为 <payment>。"
+	cargo "film equipment" 50
+	passengers 80
+	source
+		attributes hai
+		attributes urban
+		not attributes "uninhabited" "station"
+	destination "Darkrest"
+	to offer
+		random < 30
+		has "First Contact: Hai: offered"
+	on offer
+		conversation
+			`有人迅速拍了拍你的肩膀，打消了你原本想安静游览这座太空港的念头。你转过身，发现一个即便以他们种族标准也显得格外矮小的亥族女子正仰头看着你。`
+			`	“你是位飞船船长，对吧？想不想参与创造电影历史？”她问道。`
+			choice
+				`	“我不怎么热衷电影。算了。”`
+					decline
+				`	“当然，需要我做什么？”`
+				`	“什么意思？”`
+			`	“我叫利基特，是一个独立电影制作组的导演。我们需要你运送 <bunks> 名工作人员和 <tons> 摄影器材到 <planet>，大约一个月后再把我们接回来。我们可以支付你 <payment>，但参与这样一个雄心勃勃的项目所获得的无形回报将是无价的。”`
+			choice
+				`	“为什么要在 <planet> 拍摄？那不是个废弃的空间站吗？”`
+					to display
+						has "visited planet: Darkrest"
+				`	“去 <planet> 拍摄有什么特别之处吗？”`
+					to display
+						not "visited planet: Darkrest"
+				`	“行，我可以带你们去。”`
+					goto accept
+				`	“我不往那边去。你得找别的船长了。”`
+					decline
+			`	“啊，你一定不太了解 <planet>。围绕着那个空间站有许多传说，最著名的就是有幽灵和怪物在其通道中游荡。我们想利用 <planet> 给大众留下的印象来作为我们恐怖片的背景。这有点类似于人类把电影背景设在‘闹鬼’的森林里。别担心，我们会带够吃一个月的食物。”`
+			choice
+				`	“为什么人们会觉得它闹鬼？”`
+				`	“好吧，那我可以带你们去。”`
+					goto accept
+				`	“我不往那边去。你得找别的船长了。”`
+					decline
+			`	“当年空间站还在使用时，其中一个舱门发生了神秘故障，导致氧气从气闸泄露了出去。船上有数百人窒息而死。时至今日，依然没人知道事故的起因，而传说也就由此而生了。”`
+			choice
+				`	“你凭什么觉得我会把飞船停在一个闹鬼的空间站？”`
+				`	“好吧，那我可以带你们去。”`
+					goto accept
+				`	“我不往那边去。你得找别的船长了。”`
+					decline
+			`	“利基特笑了起来。“当然不是真的闹鬼，那不过是故事罢了。你觉得我会把整个剧组和他们所有昂贵的设备送到一个真正危险的地方吗？”`
+			choice
+				`	“好吧，那我可以带你们去。”`
+				`	“我不往那边去。你得找别的船长了。”`
+					decline
+			label accept
+			`	“太好了！我会告诉剧组人员去哪里找你。”`
+				accept
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		event "hai film crew" 30
+		payment 100000 50
+		conversation
+			`你一抵达 <planet>，就帮乘客卸下所有的摄影器材。随着道具从飞船上被搬下，它们看起来越来越精细复杂；你注意到有无数橡胶断肢、机械怪物和一罐罐的假血被搬到片场。当你忙完后，利基特向你走来。`
+			choice
+				`	“对了，你的电影到底是讲什么的？”`
+				`	“那我得走了。”`
+					goto going
+			`	“我不想剧透，但这是一部心理恐怖片，探讨孤独的本质，以及必死命运投在我们人生之上的阴影。”她继续阐述着更多哲学主题，看似和电影本身越来越没有什么关系，直到她注意到你的眼神早已发直。`
+			`	“好吧，不管怎样，谢谢你的帮助，船长。一个月后拍完我会联系你的，”利基特说。`
+				accept
+			label going
+			`	“谢谢你的帮助，船长。一个月后拍完我会联系你的，”利基特说。`
+
+
+
+event "hai film crew"
+
+
+
+mission "Hai Film Crew 2"
+	landing
+	name "在<planet>接上亥族摄制组"
+	description "前往<destination>接回你之前运送过去的摄制组。"
+	source
+		near "Ya Hai" 0 100
+	destination "Darkrest"
+	to offer
+		has "event: hai film crew"
+	on offer
+		dialog
+			`你的飞船一降落，你就接到了一个语音通话。尽管对方没有自报家门，但你很快就认出这是一个月前你带到幽暗长眠的电影导演利基特的声音。`
+			`	“<last>船长！很高兴再次见到你！我们在这里的拍摄已经完成，需要搭你的船离开这里。一会儿见。”你还没来得及开口，她就挂断了。`
+
+
+
+mission "Hai Film Crew 3"
+	landing
+	name "亥族摄制组前往 <planet>"
+	description "将利基特的摄制组送回他们位于<destination>的工作室，以便他们能处理在<origin>拍摄的胶片。报酬为<payment>。"
+	cargo "film equipment" 30
+	passengers 80
+	blocked "你已抵达<origin>，但承接下一个任务需要<capacity>。请在腾出所需空间后返回此处。"
+	source "Darkrest"
+	destination
+		attributes hai
+		attributes urban
+	to offer
+		has "Hai Film Crew 2: done"
+	on offer
+		conversation
+			`当你降落在幽暗长眠时，第一眼注意到的就是一片狼藉。片场就像被龙卷风袭击过，而你不记得利基特描述这部电影时提到过任何自然灾害。`
+			`	“我管这叫可控的混乱，”利基特说着，不知何时出现在你身旁。“我们正在清理所有东西，确保没落下什么，老规矩了。”`
+			`	花了好几个小时才把所有东西装上船。完成后，唯一能证明有人来过此地的迹象就是空间站表面一尘不染了。`
+			`	“好了，船长。我们得去<planet>，这样我们才能在工作室剪辑原始素材。终于能回到行星上而不是这个铁罐子里了，感觉真好。”她顿了顿，好像在努力回忆台词。“哦对了，到了之后我会付你<payment>。我们走吧。”`
+				accept
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 100000 50
+		conversation
+			`当你在<planet>降落时，利基特提着一大罐假血朝你走来。“谢了，船长。留意一下影院里我的电影，你一看就知道。”货物卸完后，她兴奋地几乎飞奔而去，无疑是想尽快赶到工作室。你注意到<payment>已经存入你的账户。`
+
+
+
+mission "Station Exploration 1"
+	minor
+	name "护送学生到<planet>"
+	description "带一群亥族和人类学生前往<destination>，探索废弃的空间站。他们承诺付给你<payment>。"
+	passengers 5
+	"apparent payment" 8000
+	source "Greenwater"
+	destination "Darkrest"
+	to offer
+		random < 30
+		has "First Contact: Hai: offered"
+	on offer
+		conversation
+			`一个晴朗的下午，你独自悠闲地漫步在太空港，不知怎么的，你发现自己被一群年轻的人类和亥族围住了。`
+			`	“你是飞船船长对吧？能带我们去<planet>吗？”一个亥族说道，仿佛这句台词他已经练习了很久。`
+			`	他旁边的人类轻轻推了他一下。“别忘了说回程的事，塔格里普，除非你想被困在那里。”`
+			choice
+				`	“你们想去<planet>干什么？那不是个废弃空间站吗？”`
+					goto question
+					to display
+						has "visited planet: Darkrest"
+				`	“你们为什么想去<planet>？”`
+					goto "question 1"
+					to display
+						not "visited planet: Darkrest"
+				`	“行，我可以带你们去再接回来。”`
+					goto accept
+				`	“你们能付我多少钱？”`
+				`	“抱歉，我现在忙着呢。去找别的船长吧。”`
+					decline
+			`	这群人开始局促不安地挪动脚步。“呃，我们还在上学，所以手头有点紧……但我们会付钱的！”塔格里普停顿了一下，瞥了朋友一眼，几乎是用耳语般的声音说，“<payment>行吗？”`
+			choice
+				`	“话说回来，你们干嘛要花钱去<planet>？那地方不是废弃了吗？”`
+					to display
+						has "visited planet: Darkrest"
+				`	“你们为什么想去<planet>？”`
+					goto "question 1"
+					to display
+						not "visited planet: Darkrest"
+				`	“行吧，我现在不缺钱。”`
+					goto accept
+				`	“不行，这也太低了。找别人吧。”`
+					decline
+			label question
+			`	“嗯，这正是我们想去那里的原因，”另一个亥族说道，“我们宿舍有人说<planet>闹鬼，我们想去戳穿他的鬼话。”`
+				goto continue
+			label "question 1"
+			`	“我们宿舍有人说<planet>闹鬼，”另一个亥族说道，“我们想去戳穿他的鬼话。”`
+			label continue
+			`	“我们打算花一个下午四处看看，”一个人类学生咧嘴笑着说，“等我们逛完了就通知你，然后就可以离开。”`
+			`	后面一个矮个子的亥族插话道：“我带了几台相机去探险！”但其他人都没理他。`
+			choice
+				`	“这事儿合法吗？”`
+				`	“你们去哪儿度假不关我的事。上船吧。”`
+					goto accept
+			`	学生们面面相觑，显然这是他们第一次认真考虑这个问题。“我们听说其他人去那里都没出什么事，只要……低调点就行，”一个学生说道，试图让你和他的同学都安心。另一个人提到好像听说进去需要许可证，但很快就被其他人嘘声制止了。`
+			choice
+				`	“我可不想为了这事惹上麻烦。找别人吧。”`
+					decline
+				`	“如果有人问起来，我就说我不知道需要许可证。上船吧。”`
+			label accept
+			`	学生们争先恐后地上了飞船。当他们在铺位上安顿下来时，你听到他们正在猜测在<planet>会有什么发现。`
+				accept
+	on visit
+		dialog `你寻找你正在运送的那群学生，却发现他们搭上了你的一艘护航舰！最好起飞离港，在这个星系等待你的护航舰抵达。`
+
+
+
+mission "Station Exploration 2"
+	landing
+	name "送学生回<planet>"
+	description "带一群亥族和人类同学返回<destination>。"
+	passengers 5
+	source "Darkrest"
+	destination "Greenwater"
+	to offer
+		has "Station Exploration 1: done"
+	on offer
+		payment 8000
+		conversation
+			`你的乘客们在旅途中主要就是在讲鬼故事，以及从飞船昏暗的角落里跳出来吓唬彼此。尽管有些烦人，你还是有惊无险地在空间站降落了。你的乘客在匆忙付给你<payment>后，几乎是蹦跳着下了飞船。`
+			`	在飞船里消磨了几个小时后，广播里突然传来一阵严肃的亥族语播报，把你着实吓了一跳。你随后注意到乘客们正一脸惊恐地朝你的飞船跑来。你猜他们是想尽快用掉你承诺的回程；不过，现在和他们撇清关系或许能让你免于招惹执法部门的麻烦。`
+			choice
+				`	（等我的乘客。）`
+					goto wait
+				`	（开溜。）`
+			`	就在你的乘客们快要跑到飞船前，你起飞了。当你操纵飞船驶离空间站时，他们的嚎哭声很快就被引擎的轰鸣声淹没了。`
+				flee
+			label wait
+			`	整个空间站笼罩在刺眼的橙色灯光中，洪亮的广播声仍在持续播放。你的乘客们面色通红地冲回飞船，用各种语言互相大声嚷嚷着；他们一通过气闸，你就在更糟的事情发生前起飞了。`
+				launch
+	on visit
+		dialog `你寻找你正在运送的那群学生，却发现他们搭上了你的一艘护航舰！最好起飞离港，在这个星系等待你的护航舰抵达。`
+	on complete
+		conversation
+			`降落时，你在<planet>上被当地警察拦住了。`
+			`	“是<last>船长吗？”一名亥族警官说道，“能跟我来一下吗？”`
+			choice
+				`	“我有麻烦了吗？”`
+					goto normal
+				`	“我是无辜的！”`
+					goto normal
+				`	（逃跑。）`
+			`	你刚一转身逃跑，就感到肋部一阵剧痛，随后意识逐渐模糊。`
+			`	你抬起头，发现自己躺在刚才站过的地方。上方是那个要求你跟他走的警官，他正挥手示意另一名手持脉冲步枪的警官离开。显然你昏迷的时间并不长。`
+			label normal
+			`	“我们只是想告诉你发生了什么，”警官说道。他带你离开你的乘客——他们正由一名医疗员检查是否有任何伤势——然后让你在附近的桌子旁坐下。`
+			`	“我想你现在应该能看出来，你的乘客并不是幽暗长眠的‘特许访客’。不过他们没破坏任何东西——你听到的那条播报只是警告未经训练的人不要碰电脑系统，但显然吓到了你的乘客，让他们逃跑了。他们不会有麻烦，因为只要不搞破坏，在空间站里闲逛并不违反法律，但通常这样做的人会先获得许可。”他苦笑了一下，“省得我们处理这种假警报。”`
+			choice
+				`	“所以，我到底有没有麻烦？”`
+					goto trouble
+				`	“我的乘客没事吧？”`
+			`	“嗯，他们没事。我们在这里基本只是确保他们没有伤到自己。不过我想他们的父母知道这事后不太会高兴。`
+			label trouble
+			`	“单纯把付费乘客送到他们想去的地方并不违法。你的乘客都是成年人了，知道自己会面临什么，你也没有故意纵容他们违法。你没事。”`
+			`	警官站起身。“不过下次，带一群大学生去‘抓鬼’之前，最好三思。”他笑着离开了。`
+
+
+
+mission "Station Exploration Abandon Ship"
+	invisible
+	landing
+	source
+		attributes "hai"
+		not attributes "uninhabited"
+	to offer
+		has "Station Exploration 2: declined"
+	on offer
+		fine 70000
+		conversation
+			`降落后，你在<origin>上被当地警方拦下。你看到自己的乘客正从另一艘亥族飞船上下来，他们有的满脸通红地哭着，但似乎没有受伤。`
+			`	“是<last>船长吗？”一名亥族警官说道，“能跟我来一下吗？”`
+			choice
+				`	“我有麻烦了吗？”`
+					goto questions
+				`	“我是无辜的！”`
+					goto normal
+				`	（逃跑。）`
+			`	你刚一转身逃跑，就感到肋部一阵剧痛，随后意识逐渐模糊。`
+			`	你抬起头，发现自己躺在刚才站过的地方。上方是那个要求你跟他走的警官，他正挥手示意另一名手持脉冲步枪的警官离开。显然你昏迷的时间并不长。`
+				goto normal
+			label questions
+			`	你明显能看出这位警官对你的问题没什么耐心。他带着你离开你的乘客，他们正在接受医务人员的检查，看有无受伤。`
+				goto fine
+			label normal
+			`	你明显能看出这位警官对你的把戏没什么耐心。他带着你离开你的乘客，他们正在接受医务人员的检查，看有无受伤。`
+			label fine
+			`	“你因在未提前告知的情况下抛弃乘客，被处以<fine>罚款。你没有受到更严重的惩罚已经算走运了。”他又因你危害乘客安全而训斥了你一顿，然后气冲冲地走开了。`
+
+mission "Hai Pilgrimage"
+	name "亥族精神领袖前往<planet>"
+	description "带一位亥族精神领袖前往<destination>。他会付给你<payment>。"
+	minor
+	clearance "你通报了所载乘客，当局随即准许降落。"
+	source
+		government "Hai"
+		not attributes "uninhabited" "station"
+		not planet "Darkmetal" "Dustmaker" "Stonebreak" "Skyfarm"
+	destination
+		attributes "unfettered"
+	passengers 1
+	to offer
+		random < 10
+		has "ship attribute: quantum keystone"
+		has "First Contact: Hai: offered"
+	on offer
+		conversation
+			`今天<origin>上的雾气异常浓重；空气中饱含水汽，让你连身前几步远的地方都看不清。也许正因如此，当你转过身，发现一个亥族就站在你身旁时，你着实被吓了一跳。他离你如此之近，你甚至能看到他胡须上的露珠，而且你立刻注意到了他身上佩戴的显眼珠宝。从他佝偻的身姿和口鼻周围的白毛来判断，他看起来相当年迈。`
+			branch pendant
+				has "outfit: Shield Beetle Pendant"
+			branch normal
+				has "outfit: Quantum Keystone"
+			branch remnant
+				has "outfit: Quantum Key Stone"
+			branch huh
+				has "outfit: Tree Skeleton Key Stone"
+			label normal
+			`	“我看得出来，你比这里的大多数人类都要明智，”他指着你的飞船说道。舱门敞开着，你的基石显眼地展示在任何潜在的旅客面前。“你携带着对抗太空风暴的护盾。无论别人怎么说，都切莫动摇。”他停顿了一下，喘了口气。“好了，说点俗世的事吧。我叫哈里克。你愿意并且能够带我去<destination>吗？我出<payment>。”`
+				goto choice
+			label remnant
+			`	“你携带的这块基石真奇怪，人类，”他指着你的飞船说道。舱门敞开着，你的基石显眼地展示给任何潜在的旅客。他走近细看。“非常不寻常。也没有合适的底座——肯定是人类的设计。”他叹了口气。“好吧，至少基石本身看起来是真的。也只能凑合用了。”他转向你。“你携带着对抗太空风暴的护盾。别听旁人怎么说。如果你的族人也拥有基石，那么我希望他们也能明智地认识到它的力量，并学会更敬畏地对待它们。好了，说点俗世的事吧。我叫哈里克。你愿意并且能够带我去<destination>吗？我出<payment>。”`
+				goto choice
+			label pendant
+			`	“你这设计真是独一无二，船长，”他指着你的飞船说道。舱门敞开着，纳娜奇的挂坠显眼地展示给任何潜在的旅客。“我猜是别人送的礼物吧？你很幸运，有人关照你。你携带着对抗太空风暴的护盾。别听旁人怎么说。”他停顿了一下，喘了口气。“好了，说点俗世的事吧。我叫哈里克。你愿意并且能够带我去<destination>吗？我出<payment>。”`
+				goto choice
+			label huh
+			`	“我从没见过像……你带的这个东西，”他指着你的飞船说道。舱门敞开着，树骨钥石显眼地展示给任何潜在的旅客。这位亥族的声音里带着不止一点厌恶。“我希望你没有做过什么会让你后悔的事。”`
+			`	他凑近看了看。“这东西似乎是用和基石相同的材料制成的，但对我来说完全陌生。你是从哪弄到的，我完全不知道。好吧，至少材料本身看着是真的。也只能凑合用了。”他叹了口气，转向你。“我怀疑不管你从谁那里弄到的，他们现在肯定不开心这东西离开了他们的手。如果我是你，我会对基石表现出更多的尊重。”他停顿了一下，喘了口气。“好了，说点俗世的事吧。我叫哈里克。你愿意并且能够带我去<destination>吗？我出<payment>。”`
+			label choice
+			choice
+				`	“我可以带你去。”`
+					goto agree
+				`	“你为什么想去<destination>？那不是无羁者星球吗？”`
+					goto ask
+					to display
+						or
+							has "visited system: Wah Ki"
+							has "Wanderers: Translation Machine: offered"
+							has "First Contact: Unfettered: offered"
+				`	“我不会去那里。你找别人吧。”`
+					decline
+			label ask
+			`	这位亥族停顿了一下，好像不确定该说什么。“我的教诲和预言在我们北方的同胞中更受……赏识。”`
+			choice
+				`	“教诲？”`
+				`	“好的，我带你去。”`
+					goto agree
+				`	“无羁者的空间对我来说太危险了。你得找别人。”`
+					goto dangerous
+			label teachings
+			`	哈里克的脸上浮现出难以捉摸的表情。“啊，请原谅我的无礼——你可能不知道我是谁。这该怎么解释呢……你们人类中间也有传道者和智者，对吧？我类似那样的角色。现在，你愿意带我去<destination>吗？”`
+			choice
+				`	“所以你要去向无羁者布道？”`
+				`	“我可以带你去。”`
+					goto agree
+				`	“无羁者的空间对我来说太危险了。你得找别人。”`
+					goto dangerous
+			`	“这么说太简化了，但我很难向一个人类解释清楚。”他转过身，望向雾气中。“银河系正在发生不祥的事件，我必须警告其他人我预见的动荡。无羁者渴望动荡，所以他们自然更容易相信我。”他苦笑了一下。`
+			choice
+				`	"好吧，我可以带你们去。"`
+					goto agree
+				`	“抱歉，但整件事对我来说有点太奇怪了。”`
+					goto strange
+				`	“无羁者的空间对我来说太危险了。你得找别人。”`
+			label dangerous
+			`	他哼了一声。“危险？我都快300岁了，却并不害怕去无羁者的空间走一趟。”他走开了，显然很失望。`
+				decline
+			label strange
+			`	他叹了口气。“没关系。我不指望你能理解。”他走开了，消失在迷雾中。`
+				decline
+			label agree
+			`	“太好了。乘坐人类飞船抵达会是我旅程中一个吉祥的开始，但没多少人类船长会在穿越太空时采取恰当的预防措施。我很高兴看到你至少有些头脑。”他压低了声音。`
+			`	“既然你看起来是位值得信赖的船长，我就告诉你一些我见过的事吧。很多年前，我曾保卫我们的星空，抵御科拉斯的袭击。有一天，我们措手不及，遭遇了一支庞大舰队的袭击。我巡逻小组里的每一艘船都被摧毁了，除了我们的——那是唯一装有基石的一艘。在与科拉斯作战的那段时间里，我学到了两件事：古老的传说是真的，以及我们作为一个物种所享受的稳定正在终结。银河系的变化是不可避免的，而且这些变化很快就要到了。”他开始走向你的飞船。“不过我们暂时不谈这个。我还有事要办。”`
+				accept
+
+	on visit
+		dialog `你寻找哈里克，却发现他搭上了你的一艘护航舰！最好现在出发，等待你的护航舰到达这个星系。`
+	on complete
+		payment 20000
+		"reputation: Hai (Unfettered)" += 100
+		conversation
+			`哈里克对于抵达 <planet> 后的计划守口如瓶。你最多只能从他那里听到更多关于他过去作为军事飞行员的故事。你降落之后，哈里克跳下船，动作之快令人惊讶——完全不像他这个年纪的人。`
+			`“谢谢你，船长，陪我走完了这趟旅程。很抱歉没能向你透露更多关于我的事；我所做的工作并不是能随便对任何打听的人类透露的。”他递给你<payment>然后走开了。周围的无羁者似乎对他的出现感到敬畏，因此也对你敬而远之。`
+		log "Minor People" "Hareek" `一个年迈的亥族人，自称能预见未来。将他送到了无羁者的空间，以便他在那里传播他的信息。他在无羁者之中似乎颇受尊敬。`
+
+
+
+mission "Acorn Delights: Part 1"
+	minor
+	name "阿努的橡子"
+	description "将伊雅带到<destination>，把<cargo>交给她失踪的孙女。"
+	source "Allhome"
+	destination "Stonebreak"
+	passengers 1
+	cargo "acorn cookies" 3
+	to offer
+		random < 35
+		has "First Contact: Unfettered: offered"
+	on offer
+		conversation
+			`当你经过太空港的一家厨房用品店时，一位衣着凌乱、满脸担忧的年长亥族女性看向了你。她招手示意你过去。`
+			choice
+				`	（看看她有什么事。）`
+				`	（无视她。）`
+					decline
+			`	“我叫伊雅，我在找我失踪的孙女阿努。她刚从医学院毕业，我本来要给她三吨饼干，但她不见了！请帮我找到她。”她柔和的声音中带着比其他亥族人更明显的吱喳声调。而且她在某些词前会犹豫，像是拿不准该用什么冠词，这让她的说话节奏有些特别。`
+				goto "actual questions"
+			label questions
+			`	“所以，请带我去找我的孙女吧。”`
+			label "actual questions"
+			choice
+				`	“三吨饼干！？”`
+					goto tons
+					to display
+						not "acorn delights: three tons"
+				`	“她不见了？”`
+					goto gone
+					to display
+						not "acorn delights: gone"
+				`	“为什么不找当局帮忙？”`
+					goto authorities
+					to display
+						not "acorn delights: authorities"
+				`	“你的朋友们不能帮你找她吗？”`
+					goto friends
+					to display
+						not "acorn delights: friends"
+				`	“我们去找她吧！”`
+					goto accept
+				`	“我还有别的事要做。”`
+					decline
+			label tons
+			action
+				set "acorn delights: three tons"
+			`	“额，我……我不知道……我一担心就会下厨，而阿努已经失踪三个月了！我把整整三吨饼干都密封了，应该能放个一两年。也许她会和朋友们分享？她有许多朋友！成吨的朋友！他们都想念她，但没有一个人愿意帮忙……”`
+				goto questions
+			label gone
+			action
+				set "acorn delights: gone"
+			`	“四个月前，阿努在霜痕星的医学院顺利毕业，成绩名列前茅！亥族故土的一家知名医院急需一位新的创伤外科医生，说她再合适不过。她接受了这个职位，并说她会先休个几周的假。”`
+			`	“一个月后，她告诉他们自己不去了，从此就再也没有人听到过她的消息。”`
+				goto questions
+			label authorities
+			action
+				set "acorn delights: authorities"
+			`	“我向中央医疗局打听过，他们告诉我，她已经获得了在亥族星域及更远地方行医的许可。但自从拿到许可后，他们就再也没有收到过她的消息。按规定她必须向局里登记新药，所以他们本该有她的消息。”`
+			`	“警局的人告诉我，还有其他几个人也报案说阿努失踪了，但他们拒绝透露任何其他细节。他们说我必须去问军方，但军方什么也不肯告诉我。”`
+			`	“也许她卷入了什么机密？或者是非法勾当？不，她绝不会那么做的。她究竟在哪儿？”`
+				goto questions
+			label friends
+			action
+				set "acorn delights: friends"
+			`	“我几乎没有什么朋友，更没人有心思去找一个可能身在天涯海角的失踪亥族。我的顾客们同样不想插手，而她的家人也已经都过世了。”`
+				goto questions
+			label accept
+			`	“她过去总是念叨着要给看不起病的人提供免费治疗。小时候，她母亲常带她去碎石星，在当地的收容所帮忙。我们就从那里开始吧。”`
+				accept
+	on visit
+		dialog "“你忘了伊伊亚，或是她那堆积如山的饼干。也许它们正在你的某艘护航船上？”"
+
+mission "Acorn Delights: Part 2"
+	landing
+	name "阿努的橡子"
+	description "将伊雅带到<destination>，把<cargo>交给她失踪的孙女。"
+	source "Stonebreak"
+	destination "Cloudfire"
+	passengers 1
+	cargo "acorn cookies" 3
+	to offer
+		has "Acorn Delights: Part 1: done"
+	on offer
+		log "“接载了一位名叫伊伊亚的亥族女士前往碎石星，以协助寻找她的孙女阿努。”"
+		conversation
+			`“你花了几个小时载着伊伊亚在碎石星的庞大社区之间穿梭飞行。她排查了每一个流浪者收容所、志愿病房、妇女庇护所和低收入医院。结果都是一样的：多年来都没人见过阿努，尽管有些人还记得她小时候、在她母亲离开之前，那个活泼伶俐的小女孩。”`
+			`	“在一阵令人沮丧的绝望后，伊伊亚的耳朵突然竖了起来，说道：“既然她显然不在这儿，那我们就去<destination>瞧瞧吧——她可能是参军了。””，`
+				accept
+	on visit
+		dialog "“你忘了伊伊亚，或是她那堆积如山的饼干。也许它们正在你的某艘护航船上？”"
+
+mission "Acorn Delights: Part 3"
+	landing
+	name "阿努的橡子"
+	description "将伊雅带到<destination>，把<cargo>交给她失踪的孙女。"
+	clearance `“听到伊伊亚的名字后，暗幕的飞行调度员兴奋地回应道：“‘橡子美味’！”接着你便获得了着陆许可。”`
+	source "Cloudfire"
+	destination "Darkcloak"
+	passengers 1
+	cargo "acorn cookies" 3
+	to offer
+		has "Acorn Delights: Part 2: done"
+	on offer
+		conversation
+			`“伊伊亚带你来到访客办公室，要求面见云火星的军事指挥官。在遭到拒绝后，伊伊亚大吵大闹；在她折腾了一个小时后，他们终于同意让她与指挥官谈谈。”`
+			`	“几分钟后，她垂头丧气地走了回来，你领着她回到了<ship>。”`
+			`	““他们说她不为他们工作。我觉得他们肯定知道她人在哪里，但却什么都不肯告诉我。””`
+			`	““还有一个地方我们可以试试，但我想你不会喜欢的。她可能加入了无羁亥族。””`
+			label questions
+			choice
+				`	““你怎么不早说？””`
+					goto mention
+				`	““一个医生怎么会跑去加入一群好战分子？””`
+					goto warmonger
+				`	““作为受人尊敬的<first> <last>船长，我说，咱们去找她吧！””`
+					goto accept
+				`	““我很乐意帮忙。””`
+					goto accept
+				`	““无羁亥族的星域对我来说太危险了。你得另找一位船长。””`
+					decline
+			label mention
+			`	““我之前是担心会把你吓跑。人类害怕我们的飞船，而无羁者都是致命的战士。此外，去其他地方的可能性更大一些。她母亲家族过去有很多人都加入了无羁者，但我怎么也没想到这种事会发生在她的身上。””`
+				goto questions
+			label warmonger
+			`	““阿努一直同情无羁亥族的事业。不是他们那无谓的战争——她讨厌那个——但她敬佩他们追求进步的动力和变革的天赋。她父亲那边的家人曾极力试图打消她这些念头，我们本以为成功了，但……也许……””`
+			`	““去给无羁亥族当创伤外科医生？不知道她是不是提前好几年就计划好了？””`
+				goto questions
+			label accept
+			`	““如果阿努去了什么地方，那一定是暗幕。无羁者最大的医院就在那里。许多突袭负伤归来的士兵都在暗幕疗伤。创伤外科医生在那儿可有得忙了。””`
+				accept
+	on visit
+		dialog "“你忘了伊伊亚，或是她那堆积如山的饼干。也许它们正在你的某艘护航船上？”"
+
+mission "Acorn Delights: Part 4"
+	landing
+	name "“橡子美味”"
+	description "“带领伊伊亚前往<destination>，去办完有关“橡子美味”店铺的一些文件手续。”"
+	source "Darkcloak"
+	destination "Allhome"
+	passengers 1
+	to offer
+		has "Acorn Delights: Part 3: done"
+	on offer
+		payment 3000
+		log "“终于找到了阿努。原来她加入了无羁者。我现在应该带伊伊亚前往<destination>了。”"
+		conversation
+			`“你被从停机坪引至附近的一家医院，在屋里伊伊亚终于设法传达了你们的来意。附近几名无羁亥族用他们自己的语言低声嘀咕着，当他们看着伊伊亚时，你不断听到亥族语里“饼干”这个词。一路上，你注意到一种破败与先进机械并存的奇异反差。与他们南方的同胞不同，无羁者似乎更看重功能与进步，而非美感与舒适。”`
+			`	“当你往医院主楼的高处走去时，不禁对这里的先进程度感到惊讶。尽管无羁者做好了战死沙场的准备，但他们似乎非常看重幸存者的生命。也许这家医院的目的就是让他们迅速康复，以便能够尽快重返战场。”`
+			`	“你来到了一个满是私人办公室的高层楼面。伊伊亚逐个敲门，当发现屋里的无羁者不是她要找的人时便连声道歉，直到你们终于走到了最后一间办公室。”`
+			`	“伊伊亚推开门，跑向屋里的那名亥族——阿努。她们开始用亥族语交谈起来，随后才想起你也在房间里。”`
+			`	““阿努，拜托了，我们用人类的语言说吧。<first>大老远陪着我过来，至少得让船长听明白发生了什么事。””`
+			`	“接着话题转向了阿努的新职业。”`
+			`	““阿努，你为什么到这里来？无羁者恨我们。””`
+			`	““奶奶，他们倒不是特别恨我们。他们恨的是我们如今的样子：轻浮浮躁、因循守旧、狂妄自大。我们的种族正因平庸而慢性死亡，逐渐消逝在历史长河中。大多数无羁者认为战争是我们唯一的救赎。”`
+			`	““我们总把他们当成没脑子的野蛮人，但他们根本不是！他们同样有科学家、医生、音乐家和作家。我们的资源虽然令他们望尘莫及，但他们用着仅有的资源依旧生机勃勃。很快，无羁者就会占领更多的星球，拥有几乎无限的资源。匮乏时代将会终结，他们将有能力自主选择未来。”`
+			`	““如果有足够多的善良之人加入无羁者，我们就能改变他们的想法，引导他们走上一条更具建设性的道路。而他们会需要优秀的医生。””`
+			`	““可是——”伊伊亚反驳道。”`
+			choice
+				`	““阿努说得对，无羁者是一个高尚的群体。我建议加入他们。””`
+				`	““根本没有什么正当理由去加入无羁者。除了杀害无辜的亥族同胞，他们还做过什么？””`
+					goto "don't join"
+			label "join unfettered"
+			`	““这个……我真的不知道……””`
+			choice
+				`	“算了，你说得对。加入无羁者终究是个坏主意。”`
+				`	“我支持他们的武力。无羁者是光荣的。”`
+					goto "really join"
+			label "don't join"
+			`	“抱歉，阿努，但我真的觉得船长<first>说得对。我不是那种会对一个自己挨饿却还在描绘浪漫图景的群体友好的人。而且，我怀疑在这里怎么养活两口之家；光是坚果就很贵了，更别提饼干。这里的医院工作收入也有限。”`
+			`	“船长，你能带我回<planet>吗？我想签表格，并在我的橡果美食工厂里给你一些股份。同时，这是<payment>，作为你到目前为止所做一切的报酬。”`
+			choice
+				`	“我很乐意带你回去。”`
+				`	“我会带你回去，但我注意到你还没提到我们大老远跑这一趟的目的。”`
+			`	伊伊亚对她的孙女笑了笑。“走之前，我刚想起有件礼物要给你。”她带着你和阿努回到<ship>。“船长，能打开货舱，让我们进去吗？”阿努看到里面堆了几吨的橡果饼干，惊讶不已。“谢谢你，奶奶！”`
+			choice
+				`	“我们该走了。”`
+			`	伊伊亚转向你说：“你说得对，我们该走了。非常感谢你让我们团聚。”她给了阿努最后一个拥抱，然后登上了你的飞船。`
+				accept
+
+			label "really join"
+			action
+				set "acorn delights: eeeya joined"
+			`	“当然，我不是在双关，”阿努笑了。伊伊亚也笑了笑，说：“船长，在正式加入无羁者之前，我还需要在正常的亥族空间里卖掉工厂。”`
+			choice
+				`	“没问题。我很乐意带你回去。”`
+					accept
+				`	“你怎么这么快就改变主意了？”`
+			`	“嗯，就算没有你的意见，我很可能也会加入无羁者——正如我之前所说，我儿子全家都过世了；而阿努的家在这里。阿努，我给你准备了一个惊喜，还在船长的飞船上：3吨橡果饼干！还有<first>，你能带我回<planet>吗？好让我把工厂卖掉。”`
+				accept
+	on visit
+		dialog "“你忘了伊伊亚，或是她那堆积如山的饼干。也许它们正在你的某艘护航船上？”"
+
+mission "Acorn Delights: Part 5"
+	landing
+	name "伊伊亚至阿努"
+	description "将伊伊亚带往<destination>，以加入无羁者并与她的孙女团聚。"
+	clearance `暗幕飞行管制员听说伊伊亚要加入无羁者，便允许你着陆。`
+	source "Allhome"
+	destination "Darkcloak"
+	passengers 1
+	to offer
+		has "Acorn Delights: Part 4: done"
+	on offer
+		conversation
+			branch uhai
+				has "acorn delights: eeeya joined"
+			action
+				"salary: Acorn Delights" = 100
+				log "Minor People" "Eeeya and Anoo" `帮助经营名为“橡子美味”曲奇饼店的伊亚找到了她失踪的孙女阿诺。经过漫长的旅程，我们找到了她——她跑去帮助无羁者，担任一名创伤外科医生。伊亚对加入无羁者不感兴趣，于是将她带回了家，而我因为自己的努力获得了相当于一百信用点薪水的股份作为报酬。`
+			`伊伊亚立刻下了船，去查看橡果饼干店。几分钟后，她带着让你签字的文件回来了。`
+			`	“这些文件会为你提供我公司大约二十分之一的股份；你每天能收到一百信用点。”在你签字时，她继续说道。“我只想再次感谢你帮我找到阿努。这对我来说意义重大。”你确认股份已转入你的账户后，伊伊亚便离开了。`
+				decline
+			label uhai
+			`伊伊亚去出售橡果美食店，而你则向太空港安保报到。很快，她回来了。“嗯，有个亥族花了三千万信用点买下了那个小地方。不知道他为什么觉得值这么多——我可不觉得值。但我不会去跟那个疯疯癫癫的家伙争辩。”找到了阿努，她现在看起来开心多了。“你准备好了，我随时可以出发。”`
+				accept
+	on complete
+		payment 500000
+		log "Minor People" "Eeeya and Anoo" `帮助了经营“橡果美食”饼干店的伊伊亚寻找她失踪的孙女阿努。经过漫长的旅程，我们找到了她——她去了北边，作为创伤外科医生帮助无羁者。我把伊伊亚带回<origin>以便她卖掉店铺，但现在这两个亥族都一起留在了<destination>。我的努力总共换来了五十万信用点的报酬。`
+		conversation
+			`伊伊亚动身去医院，在付给你五十万信用点并第三次向你道谢之后离去。`
+	on visit
+		dialog "伊伊亚不在此星系。也许她在你的某艘护卫舰上？"

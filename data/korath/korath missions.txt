@@ -1,0 +1,580 @@
+# Copyright (c) 2016 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "First Contact: Korati Efreti"
+	landing
+	source "Korati Efreti"
+	to offer
+		not "Wanderers: Rek To Kor Efret: offered"
+	on offer
+		conversation
+			`你降落时，几位居住在此的科拉斯人向你打招呼，双手举至胸前，掌心朝向你。其中一人说了句听起来像是「Humani efreti, naskoor amasavarkta.」的话。显然他们没人会说你的语言，但他们显得很友好，并愿意与你进行交易。`
+				decline
+
+mission "First Contact: Laki Nemparu"
+	landing
+	source "Laki Nemparu"
+	to offer
+		not "Wanderers: Rek To Kor Efret: offered"
+	on offer
+		conversation
+			`你降落时，空间港里的几个科拉斯人向你打招呼，他们举起双手，手心朝向你。其中一个说了句什么，听起来像是「Humani efreti, naskoor amasavarkta.」显然他们都不会说你的语言，但看起来友好且愿意和你交易。`
+				decline
+
+mission "First Contact: Karek Fornati"
+	landing
+	source "Karek Fornati"
+	to offer
+		not "Wanderers: Rek To Kor Efret: offered"
+	on offer
+		conversation
+			`你降落时，空间港里的几个科拉斯人向你打招呼，他们举起双手，手心朝向你。其中一个说了句什么，听起来像是「Humani efreti, naskoor amasavarkta.」显然他们都不会说你的语言，但看起来友好且愿意和你交易。`
+				decline
+
+mission "First Contact: Setar Fort"
+	landing
+	source "Setar Fort"
+	to offer
+		not "Wanderers: Rek To Kor Efret: offered"
+	on offer
+		conversation
+			`你降落时，空间港里的几个科拉斯人向你打招呼，他们举起双手，手心朝向你。其中一个说了句什么，听起来像是「Humani efreti, naskoor amasavarkta.」显然他们都不会说你的语言，但看起来友好且愿意和你交易。`
+				decline
+
+mission "Discovered Korath Space"
+	landing
+	invisible
+	non-blocking
+	source
+		attributes "efret"
+	on offer
+		event "label korath space"
+		log "Factions" "Korath" `科拉斯是类爬行双足外星人，他们的领地几乎全部沦为废墟：城市被摧毁，整个星球被一场惨烈的内战所伤。数个科拉斯派系幸存下来。「科·埃弗雷提」生活在夸格环状世界的庇护下，并与夸格保持和平关系。其他科拉斯人则流亡于银河核心附近，一直袭击人类世界以窃取食物和补给。而在科拉斯空间更深处，两支名为科·梅雷提和科·塞斯特的庞大自动战斗无人机军队陷入了一场无休止的争斗。它们会攻击任何进入其空间区域的访客，包括夸格。`
+		fail
+
+event "label korath space"
+	galaxy "label korath"
+		sprite "label/korath"
+		
+mission "Setar Fort Heating"
+	name "运往<planet>的补给"
+	description "将从流浪者处取得的<cargo>运送至<destination>上的科·埃弗雷提。报酬为<payment>。"
+	minor
+	cargo "heating supplies" 30
+	source
+		government "Wanderer"
+		near "Kaliptari" 100
+	destination "Setar Fort"
+	to offer
+		has "wanderers sestor done"
+		random < 60
+	on offer
+		conversation
+			`当你在太空港探索时，一位素未谋面的流浪者挥手拦下你。它说：「您是<last>船长，对吗？」`
+			choice
+				`	「是的，我就是。」`
+				`	「正是在下。」`
+			`	「见到您真是[欣慰，高兴]，船长。我们听说过您在我们迁移至此的援助，我[认为，猜想]您曾在科拉斯星球待过一段时间。您是否有兴趣将<tons>的[物资，援助]送到<planet>？我可以支付您<payment>。」`
+			choice
+				`	「我接了。装货吧，我准备好出发。」`
+					goto agree
+				`	「只有<payment>？就我要运的货物量来说，这报酬出奇地低。」`
+					goto payment
+				`	「我具体要运什么？」`
+				`	「抱歉，我现在太忙了，接不了其他活儿。」`
+					goto decline
+			
+			`	「您肯定知道，<planet>很冷——对大多数种族来说都难以忍受。根据我们的[研究，情报]，该星球正在加速[进入，滑向]冰河期。科·埃弗雷提没有有效手段阻止这一过程，而他们的[骄傲，荣誉]意味着除非别无选择，否则不会接受我们的地形改造援助。不过，他们愿意出钱购买设备来缓解这种[下降，转变]。您的[物资，援助]将包括保暖衣物、温室建材、[保温材料，避难所]以及其他供科拉斯使用的技术。报酬虽然[不幸地，遗憾地]很低，但这已是科拉斯人能提供的全部。`
+			`	「我原本打算自己跑这一趟，但我的飞船因为某个部件故障遇到了[故障，麻烦]。我需要有人代我去。」`
+			choice
+				`	「我很乐意，何况这是为了善举。欢迎把货装到我的船上。」`
+					goto agree
+				`	「抱歉，我现在太忙了，接不了其他活儿。」`
+					goto decline
+			
+			label payment
+			`	流浪者微微颤抖，仿佛它原本希望您别问那个问题。「呃……是的，确实很低。科·埃弗雷提其余的报酬都用于[购买，获取]这批物资了，看来他们无法支付比现在更多的钱了。考虑到他们的处境，我们认为接受较低的报酬是[合理的，正当的]，因为这批货物是一批用来帮助应对<planet>气候变冷的[装备集，设备组合]，没有它们科·埃弗雷提可能……[灭绝? 消亡?]。」`
+			choice
+				`	「我理解，钱也不是大问题。我只是好奇。装到我的船上吧，我准备出发。」`
+					goto agree
+				`	「哦。好吧，那我也破例一次。装货吧，我准备出发。」`
+					goto agree
+				`	「抱歉，只给<payment>我跑不了这趟。你得找别人了。」`
+			
+			label decline
+			`	流浪者听到你的回答后显得有些泄气。「哦。我明白了。谢谢您抽时间，<last>船长，」它说完，便走开去寻找另一位飞行员。`
+				decline
+			
+			label agree
+			`	流浪者听到你的回答很高兴。「太棒了！我会确保物资[立即，很快]装到您的船上。谢谢您，船长。」它快步走向附近的一群流浪者，开始发号施令。那群人散开，几分钟内他们就在你的飞船边装载物资。`
+				accept
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 5000
+		conversation
+			`当你抵达<planet>时，一群科拉斯人正等着卸货。你试图模仿他们的问候手势——双手举起，掌心朝向众人。他们露出惊讶的表情，但发出赞同的嘶嘶声。`
+			`	很快，所有物资都搬下了船。科拉斯人向你做了一个感激的手势，然后就在太空港中央开始拆包。已经有一群人围在设备旁。看来这些物资在这里会得到很好的利用。当你回到船上时，看到那位给你这份工作的流浪者已将<payment>的报酬转给了你。`
+			
+mission "Korath Family to Ringworld"
+	name "科拉斯人前往<planet>"
+	description "一家<bunks>口人的科拉斯家庭付给你<payment>，请你将他们送到位于<destination>的夸格环状世界。"
+	minor
+	passengers 3
+	source "Laki Nemparu"
+	destination "Kuwaru Efreti"
+	to offer
+		random < 60
+	on offer
+		conversation
+			`拉基内姆帕鲁的烟雾浓重到白昼最亮的时候都让你觉得像是黄昏。这里的一切如此肮脏，以至于大多数科拉斯人的肤色看起来都比其他星球的人深几个色号。几分钟内，一层薄薄的烟灰也附着在你的皮肤上。`
+			`	当你观察四周时，一名科·埃弗雷提人向你走来，身后跟着两个同伴，其中一个按体型看可能是孩子，另一个佝偻着身子拄着拐杖——大概是老人。领头的那个用科拉斯语说话，很快便意识到你完全听不懂。这名科·埃弗雷提人停下来深吸了一口气，结果吸入了太多烟尘爆发出一阵咳嗽。花了将近一分钟才缓过来。`
+			`	那个科拉斯人指着天空说：「<planet>，<planet>」，同时指向身边的那两个科拉斯人。他们把500信用点塞到你手里，继续用科拉斯语嘟囔着。<planet>是科拉斯空间里那个夸格环世界的名字。他们肯定想去那里。500信用点对于任何运输工作来说都低得惊人，但从他们的外表来看，他们也付不起更多了。你愿意带他们去<planet>吗？`
+			choice
+				`	（是的。）`
+				`	（愿意，并把信用点还给他们。）`
+					goto free
+				`	（否。）`
+					goto heartless
+			`	你把信用点装进口袋，示意他们跟你去飞船。当科拉斯人意识到你同意了，他们松了一口气，飞快地比划着表示感谢。你带他们去看床铺……还有淋浴。`
+				accept
+			
+			label free
+			`	当你还回信用点时，科拉斯人肩膀耷拉下来，但看到你指向飞船时，他们的失望变成了惊讶。当他们发现你拒绝收钱时，他们挺起胸膛又把信用点塞回你手里。他们不接受拒绝，于是你只好把信用点装进口袋，带他们上飞船。你带他们去看床铺……还有淋浴。`
+				accept
+			
+			label heartless
+			`	你把信用点还给了科拉斯人，他们的肩膀耷拉下来。你看着那三人消失在浓雾中，直到看不见为止。你忍不住感到有点内疚。`
+				decline
+	on accept
+		payment 500
+	on complete
+		conversation
+			`你很享受飞船上的新同伴。那个孩子教你一个游戏：轮流把球扔到墙上。你花了一两个小时在货舱里陪他们玩。`
+			`	到达后，你决定陪这家人进入太空港。在停泊区附近等着另外两个科拉斯人，一个成年人和一个老人，你运送的那三人冲过去迎接他们。欢聚平息后，最初请求你运送的那个科拉斯人转向一个附近的夸格人说了些什么。夸格人回应后转向你。`
+			`	「这位最骄傲的伙伴声称他曾敬重地对待我的翻译欠债，并要求我优先使用他的提议。我倾向于愉快地同意他的请求。」这个夸格人似乎对你的语言掌握得不太好，但你大致能理解他在说什么。「这位同志说：『我万分感谢你让我的家人团聚，这是对咱们友谊的命运般服务。』他还补充说，如果没有你，这群人根本不可能聚在这里。就这些。」`
+			choice
+				`	「告诉他完全不成问题。」`
+				`	「告诉他他有一个美好的家庭，我很高兴帮忙。」`
+			`	夸格人点点头，转身翻译。科拉斯人用双掌朝向你，做着一个宽大的圆形动作回应。「这表示最真诚的感谢。他感谢你的善意祝福，并祝你旅途愉快，」夸格人说。你表示明白，感谢夸格人（大致）的翻译服务，然后回到飞船上。`
+		
+mission "Korath Livestock"
+	name "运往<planet>的牲畜"
+	description "运送<bunks>名科拉斯农民及其<cargo>至<destination>。他们已支付了商定的 10,000 信用点中的一部分。"
+	minor
+	passengers 7
+	cargo "livestock and supplies" 40
+	source "Setar Fort"
+	destination "Karek Fornati"
+	to offer
+		random < 65
+	on offer
+		conversation
+			`一个穿着好几层羊毛状织物的科·埃弗雷提人朝你走来。它把两只手掌朝向你，然后示意你跟着它进一条小巷。你觉得它不会构成威胁，但小心点总没坏处。`
+			choice
+				`	（跟着进入小巷。）`
+				`	（安全起见，离开。）`
+					decline
+			`	那个科拉斯人在建筑物间穿行，朝着城市一个废弃区深处走去。它拐过一个弯，一阵冷风扑面而来，随即从拐角处传来一声响亮得吓人的咩叫。`
+			choice
+				`	（转过拐角。）`
+				`	（转身试图跑回太空港。）`
+			`	你听到身后有脚步声，转身一看。三个身形高大的科拉斯人穿着类似的厚重衣服，从附近一扇门里走出，正朝你走来。咩叫声又响起来，你再次转身，只见最初那个科·埃弗雷提人已经从拐角处回来了。你之前任何脱身的机会现在都没了。`
+			`	前面那个科拉斯人转身往回走，你身后的科拉斯人发出嘶嘶声并示意你向前。看来你应该跟着。你打起精神转过拐角，看到了……动物？`
+			`	锈蚀的建筑让位给一个巨大的废弃广场，整个空间被一大群牲畜和物资占据。它们让你想起羊，但体型大约五倍大，有六条腿，毛色是各种棕黑色。每只都披着厚实的毛皮，身上还额外盖着一条用它们自己的羊毛状织物做的毯子。正是这些科拉斯人身上穿的那种材料。尽管有额外毯子，这些“羊”还是挤成小群，看上去冷得不舒服。每当冷风扫过广场，它们就偶尔大声咩叫。幸好，这些科·埃弗雷提人看起来是农民，不是劫匪。这一定是太空港附近唯一能让他们把整群牲畜聚在一起的地方了。`
+			`	那个带你来这里的人——看起来也是头领——示意你过去。它打开了一张纸质地图——在星际旅行时代这很罕见。你一看，发现不是本地地图，而是太空图；似乎显示的是周边星系。科拉斯人指着其中一个星系，停顿一下，朝牲畜和物资堆比划了一圈，然后手指划向另一个星系，说了些什么，听起来大致像<planet>。“<planet>？”你确认道，科拉斯人发出嘶嘶声表示赞同。看来它们想要运输到那里。你估计这些牲畜和物资大约占<tons>空间，队伍里有<bunks>个科拉斯农民。`
+			`	它从口袋里掏出一叠200克雷迪特放在地上，然后用粉笔在周围画了一个圆圈。接着又画了四个圈子，在总共五个小圆圈外面画一个大圆圈，然后又画了九个大圆圈。你最好的猜测是，它出价10000克雷迪特作为运费。`
+			choice
+				`	（同意运送它们。）`
+				`	（拒绝这趟活。）`
+					decline
+			`	你指着地图上的<planet>，再指向自己，表示同意。等它明白你答应了，那个科拉斯人把掌心朝向你，做了个画圈的动作。你带其中一人回你的飞船，其余人留下来准备牲畜。到达后，它立刻开始在地上铺防水布，撒上一层稻草。过了一段时间，你注意到一只“羊”从一条小巷里出来，由一个留在后面的农夫牵着。它后面跟着另一只动物，然后又一只。牲畜队伍，中间穿插着维持秩序的农夫，接下来一个小时缓慢地进入你的机库。`
+			`	当它们进入你温控的飞船时，农夫们取下“羊”身上厚重的羊毛状毯子，自己也脱掉大部分外层衣物。其中一人把整堆织物拿到附近一个商贩那里换成了克雷迪特，其他人则回去搬广场上剩下的物资。到夜幕降临时，所有东西和所有人都装上了船。那个把衣服卖给商人的科拉斯人把整叠4100克雷迪特交给你。希望剩下的钱到<planet>后能拿到。`
+				accept
+	on accept
+		payment 4100
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		payment 5900
+		conversation
+			`这些动物在船上出奇地舒适，但科拉斯人却很难受。仅一次跃迁的行程中，它们频繁进出洗手间，显然它们谁都没进过超空间。等太空晕过去后，它们忙着把动物身上羊毛状的毛剃下来收集起来。`
+			`	当你着陆并打开货舱门，露出<planet>炎热的世界时，动物们兴奋地骚动起来。它们看起来比之前任何时候都更有活力，以至于科拉斯人在让它们下船时有些难以控制住整群。这个星球的缓慢荒漠化确实令人担忧，但似乎为这些动物提供了比塞塔尔堡寒冷气温更健康的环境。所有东西都卸下船后，一个科拉斯人把羊毛拿到另一个商贩那里再次卖掉，然后回来递给你5900克雷迪特。加上出发前给你的4100克雷迪特，你收到了承诺的全部10000克雷迪特。它举起双手，掌心朝向你，然后离开去和其他农民会合了。`
+
+phrase "kor efret small package offer"
+	word
+		`一名柯拉特人`
+		`一名柯埃弗雷特人`
+		`一名当地人`
+	word
+		` `
+	word
+		`用手势表示希望你`
+		`用手势请求你`
+	word
+		` `
+	word
+		`把一个小货箱`
+		`把一个包裹`
+		`把一单重量不足一吨的货物`
+		`把一个盒子`
+	word
+		` `
+	word
+		`送到<destination>，报酬为<payment>。`
+	word
+		` `
+	word
+		`这应该不会占用你船上的多少空间。`
+		`它小到可以塞在你的座椅下方。`
+		`这件物品小到你可以直接拿在手里。`
+		`它足够小，不会占用任何货舱空间。`
+
+mission "Small Scale Delivery"
+	name "包裹至 <planet>"
+	repeat
+	description "为科·埃弗雷提人运送一件小件货物到 <destination>，报酬为 <payment>。"
+	minor
+	to offer
+		has "wanderers sestor done"
+		random < 10
+	source
+		government "Kor Efret"
+	destination
+		government "Kor Efret"
+		distance 1 8
+	on offer
+		dialog phrase "kor efret small package offer"
+	on complete
+		payment 1000
+		dialog `你在空间港发现一个科拉斯人，似乎一直在等你。他们摊开手掌向你致意，然后伸出双手，仿佛在等待接收包裹。你递上小件货物，他们则付给你一笔小额报酬：<payment>。`
+
+
+substitutions
+	"<EDC-ship>" "Esketari"
+
+mission "Efreti: Distress Call 1"
+	minor
+	landing
+	name "来自<EDC-ship>的求救信号"
+	description "夸格要求你回应埃弗雷提飞船<EDC-ship>的求救信号，该飞船坠毁在<destination>上。有40名幸存者需要救援。"
+	source "Karek Fornati"
+	destination "Seleptra Nak"
+
+	to offer
+		not "event: wanderers: kor mereti friendly"
+		has "First Contact: Karek Fornati: offered"
+		has "First Contact: Hai: offered"
+		has "visited system: Fah Soom"
+		random < 30
+		"combat rating" > 250
+		
+	on offer
+		conversation
+			`在埃弗雷提空间航行时，偶尔闪过夸格飞船的蓝色光芒并不稀奇。通常这就是你能看到的那些神秘外星人的全部。但今天，当你着陆时，却收到了其中一艘的紧急通讯。`
+			`	“向你致敬，<ship>的船长。命运未卜的遇难者需要你竭尽全力，否则许多家庭将哀悼亡者。梅雷蒂无人机在埃弗雷提飞船<EDC-ship>逃脱之前，于<planet>附近将其截获。四十名科拉斯人仍然活着，等待救援。”`
+			choice
+				`	“我马上过去。”`
+					accept
+				`	“夸格人不能去救援吗？”`
+					goto quarg
+				`	“我不在乎科拉斯人。”`
+					goto careless
+			
+			label quarg
+			`	“我们击败了梅雷蒂，但<EDC-ship>在着陆时超出了我们的活动范围。没有坚固的护板，我们在重力大的星球上寸步难行。人类可以在库瓦鲁·埃弗雷提派出远征队之前许多天抵达那里。”`
+			choice
+				`	“那我去帮他们。”`
+					accept
+				`	“我不会为科拉斯人冒险搭上我的船。”`
+					goto careless
+
+			label careless
+			`	夸格人沉默了一段时间。最终它回应道：“生命在浩瀚的宇宙中稀有而珍贵。去看看科拉斯世界的景象，便知当人不在乎他人苦难时会剩下什么。”`
+				decline
+
+
+mission "Efreti: Distress Call 2"
+	landing
+	name "送回<EDC-ship>的幸存者"
+	description "将<EDC-ship>的<bunks>名幸存者运送至<planet>。"
+	source "Seleptra Nak"
+	destination "Laki Nemparu"
+	passengers 40
+	blocked `看向被击落的<EDC-ship>，你突然意识到你忘了带上撤离人员所需的<bunks>铺位。`
+	to offer
+		has "Efreti: Distress Call 1: done"
+	on offer
+		conversation
+			`你花了一些时间才找到<EDC-ship>。你本以为会有什么信标，但要么是他们在保持无线电静默以免引来梅雷蒂，要么就是没有幸存者。当你设法打开舱门时，发现自己正对着一把热能步枪。`
+			`	那个科拉斯人朝你喊了些什么，你双手掌心向前摊开。他踉跄后退了几步，但武器仍然对准你。你慢慢掏出通讯器，播放了一段之前收到的夸格信号录音。一听到夸格的声音，他变得激动起来，放下了步枪。他反复问着「<planet>？」你点点头，再次摊开手掌。`
+			`	他带你进入飞船，对着一个通讯设备大喊，声音通过飞船各处的扬声器广播出来。你穿过引擎区时只能匆匆扫视，但显然他们正依靠应急电源运行，几处看起来重要的系统已被摧毁。生活区成了一个临时医院。你没看到尸体，但这里的科拉斯人远比你预期中驾驶这样一艘飞船所需的船员要少。显然所有幸存的船员都不同程度受伤，超过一半人失去行动能力或昏迷不醒。即使飞船还能航行，也没有足够的人手来驾驶它。`
+			`	你迅速清点了幸存者人数，并向你的向导示意你可以带走所有人。他模仿你点头的动作，向你摊开手掌，然后快速画圈。你认为他同意了，并且想赶紧行动。你叫来自己的船员帮忙，幸存者们被转移到了<ship>上。几个小时后，你们准备出发了。`
+				to display
+					"flagship crew" > 1
+				accept
+			`	你迅速清点了幸存者人数，并向你的向导示意你可以带走所有人。他模仿你点头的动作，向你摊开手掌，然后快速画圈。你认为他同意了，并且想赶紧行动。没有船员帮忙，你花了几个小时才把幸存者转移到<ship>上。`
+				accept
+	npc
+		government "Kor Mereti"
+		personality staying
+		system "Seketra"
+		to spawn
+			random < 30
+		fleet "Small Kor Mereti"
+	on complete
+		payment 300000
+		conversation
+			`你一降落就有医疗队等候着，疏散伤员花了好几个小时。医生或急救人员蜂拥而上，进行分诊、治疗并准备转运。三名在飞行途中死亡的伤员受到了尊重，被抬下了<ship>。`
+			`	当你抵达太空港时，你发现了夸格发来的留言：“勇敢的人类！我们无比感谢你帮助了这些被困的科拉斯人。科拉斯人一直为失去自己的世界而哀悼，并且时常挺身冒险。他们在废墟中尽力回收可用之物，寻找那些有一天也许能重新居住的世界。对年轻人来说，这给予了他们希望，但有时他们会被捕获，而埃弗雷提人也会由此铭记为何他们拥挤地生活在这寥寥几颗恒星周围。”`
+			`	你的通讯器通知你收到了<payment>的付款。`
+
+
+mission "Efreti: Distress Call 3"
+	landing
+	name "回收<EDC-ship>阵亡船员"
+	description "回收在 <destination> 上死亡的 <EDC-ship> 船员的遗体，并将他们送回 <origin>。"
+	source "Laki Nemparu"
+	destination "Seleptra Nak"
+	cargo "efreti coffins" 13
+
+	to offer
+		has "Efreti: Distress Call 2: done"
+
+	on offer
+		conversation
+			`你正要离开，一群科拉斯人有些犹豫地走向你。他们身着比你所见过的多数科拉斯人都要精致的服饰，显然不是在太空港干活时会穿的衣服。当他们做出传统的问候手势，而你也予以回礼时，你既好奇他们想要什么，又好奇他们会如何开口。`
+			`	其中一个从口袋里取出一只小盒，拿出一个黑色装置，看上去像三个连在一起的三角形。他对它嘶嘶了几声，装置便从他手中升起。周围的空气开始闪烁，随后出现了一个真人大小的夸格全息影像。`
+			`	“向你致意，远游者，”夸格低沉地说。“这些科拉斯之友是你帮助过的部族的王子们。他们虽为生者感激，却无法尽情哀悼逝者。他们恳请你返回<planet>，将他们的失散者带回<origin>。”`
+			choice
+				`	“我会带他们回家。”`
+					goto home
+				`	“只要他们付钱，我就干。”`
+					goto pay
+				`	“我不会为了死人让我的飞船去冒险。”`
+			`	当夸格翻译你的话时，那个首领明显地瘫软下去。两个年轻的科拉斯人扶住他，一行人转身离去。`
+				decline
+
+			label home
+			`	你之前没察觉到这群人有多紧张，直到你的话传到他们耳中，你看到他们放松下来才明白。他们对你的回答似乎如释重负。`
+				goto title
+
+			label pay
+			`	那群人很快放松下来，你看到一阵宽慰和自豪的涟漪在他们中间传开。`
+
+			label title
+			`	首领转过身来直接对你说话。即使在你等待翻译时，他的目光也从未从你身上移开。“埃弗雷提的船员们都有家人，孩子们通过跟父母一起工作学习。对有些家庭来说，三代人都失去了。我们不会试图打捞那艘船，因为没人忍心再去驾驶它。我们授予你打捞<EDC-ship>的所有权，带着我们的哀伤远离此地。”`
+				accept
+	npc
+		government "Kor Mereti"
+		personality staying
+		system "Seketra"
+		to spawn
+			random < 30
+		fleet "Small Kor Mereti"
+
+mission "Efreti: Distress Call 4"
+	landing
+	name "回收<EDC-ship>的阵亡者"
+	description "将已故的<EDC-ship>船员的遗体送回<planet>。"
+	source "Seleptra Nak"
+	destination "Karek Fornati"
+	cargo "efreti deceased" 13
+	to offer
+		has "Efreti: Distress Call 3: done"
+	on offer
+		conversation
+			`找到<EDC-ship>后，你与船员穿着环境防护服进入其中。坠毁已过去数日，科拉斯飞船运行温度极高。穿着防护服做这事会很不好受，但若不穿，恐怕根本无法完成。`
+				to display
+					"flagship crew" > 1
+			`找到<EDC-ship>后，你穿着环境防护服进入其中。坠毁已过去数日，科拉斯飞船运行温度极高。穿着防护服做这事会很不好受，若不穿则无法完成，更何况没有船员协助你。`
+				to display
+					"flagship crew" == 1
+
+			`	你的工程师正用外部空气更换舱内环境，其余船员则收集遗体，放入科拉斯提供的纤维质、略似卵形的棺椁中。当你将它们移至货舱时，发现这些棺椁堆叠起来就如同一窝蛋。`
+				to display
+					"flagship crew" > 2
+			`	你的船员同伴正用外部空气更换舱内环境，你则收集遗体，放入科拉斯提供的纤维质、略似卵形的棺椁中。当你将它们移至货舱时，发现这些棺椁堆叠起来就如同一窝蛋。`
+				to display
+					"flagship crew" == 2
+			`	你逐一收集遗体，放入科拉斯提供的纤维质、略似卵形的棺椁中。当你将它们移至货舱时，发现这些棺椁堆叠起来就如同一窝蛋。用外部空气更换舱内环境花了好一阵，气味才变得可以忍受。`
+				to display
+					"flagship crew" < 2
+
+			`	回到科拉斯飞船，你小心地收集在居住区能找到的所有私人物品，装箱待运。你无从知晓照片中的那些科拉斯人此刻是正在安全康复，还是躺在你的货舱里。`
+
+			`	船员们做最后一次清扫，移走残骸，既是为了日后评估修理，也是确保没有遗漏任何人，或他们的身体部分。你尽可能清洁消毒，然后返回飞船，启程前往<destination>。`
+				to display
+					"flagship crew" > 1
+			`	作为预防措施，你进行最后一次清扫，移走残骸，既是为了日后评估修理，也是确保没有遗漏任何人，或他们的身体部分。你尽可能清洁消毒，然后返回飞船，启程前往<destination>。`
+				to display
+					"flagship crew" <= 1
+			branch accept
+	npc
+		government "Kor Mereti"
+		personality staying
+		system "Seketra"
+		to spawn
+			random < 30
+		fleet "Small Kor Mereti"
+	on complete
+		conversation
+			`你降落时，一大群人从太空港涌出。工人们花了一些时间设置路障、清理通道，让运输车能够靠近你的货舱。当你打开舱门时，一队穿制服的人员正式迎接你，你与他们一同清点棺椁数量。随后，你向他们展示装有遗物的箱子，他们小心翼翼地处理。一名军官向你表示感谢，并交给你一张数据芯片，那东西隐约让你想起了许可证。`
+			`	人群一直很沉寂，但当第一具棺椁离开你的飞船时，他们爆发出嘈杂的吠叫声。一些科拉斯人试图冲上前，但被其他人拦住，大概是他们的家人。`
+			`	你不想打扰他们的悲痛，便返回飞船，将收到的数据芯片插入系统。不幸的是，信息是外星语言，所以你把它放到一边，开始制定打捞<EDC-ship>的计划。整理了一下关于该飞船和其搭载船员人数的笔记，很明显，你需要至少搭载66名可以与你交流的额外船员，才能打捞这艘船。想到的最近且有很多人类语言使用者的星系，是亥族空间中的绿水星。`
+
+mission "Efreti: Distress Call 5"
+	name "<EDC-ship>打捞队"
+	description "在<destination>雇佣一支<bunks>人的打捞队，打捞埃弗雷特飞船<EDC-ship>。"
+	source "Karek Fornati"
+	destination "Greenwater"
+	landing
+	passengers 66
+	blocked `你需要<bunks>个空余铺位来搭载打捞队。`
+	
+	to offer
+		has "Efreti: Distress Call 4: done"
+	
+	on complete
+		conversation
+			`许多故事提到过喜欢变化和刺激的亥族，但他们的热情似乎已经消逝了。那些入侵了他们的物种仍令人心生恐惧。没有哪个亥族有勇气去打捞一艘在梅雷蒂族与塞斯托尔族的交火中被困的飞船。`
+			`	幸好，有很多人类愿意为了合适的报酬去冒险，哪怕他们在亥族空间已经过着舒适的生活。你带领新船员们找到他们的铺位，并准备打捞那艘<EDC-ship>。`
+
+ship "Charm-Shallop" "Charm-Shallop (Distressed)"
+	outfits
+		"Digger Mining Beam" 2
+		"Fuel Processor"
+		"Generator (Furnace Class)"
+		"Large Heat Shunt"
+		"Plasma Core"
+		"Scram Drive"
+		"Small Heat Shunt"
+		"Steering (Planetary Class)"
+		"Thermal Repeater Rifle" 19
+		"Thruster (Lunar Class)"
+		"Warder Anti-Missile"
+	gun 0 -118 "Digger Mining Beam"
+	gun -16.5 -114.5 "Digger Mining Beam"
+	gun 16.5 -114.5
+	turret 0 -35 "Warder Anti-Missile"
+	turret 0 97
+
+mission "Efreti: Distress Call 6"
+	landing
+	name "打捞<EDC-ship>"
+	description "打捞<EDC-ship>并将其归还给<planet>以获得所有权。"
+	source "Greenwater"
+	destination "Seleptra Nak"
+	passengers 66
+	blocked "你需要能携带额外<bunks>名船员才能打捞这艘船。当你有足够的船员容量时再回到这里。"
+
+	to offer
+		has "Efreti: Distress Call 5: done"
+
+
+mission "Efreti: Distress Call 6 Ships"
+	landing
+	invisible
+	non-blocking
+	source "Greenwater"
+	to offer
+		has "Efreti: Distress Call 5: done"
+	to accept
+		has "Efreti: Distress Call 6: active"
+	to fail
+		or
+			has "Efreti: Distress Call 7: failed"
+			has "Efreti: Distress Call 7: aborted"
+			has "Efreti: Distress Call 7: done"
+	npc kill
+		government "Kor Mereti"
+		personality staying
+		system "Seketra"
+		fleet "Small Kor Mereti" 2
+
+
+mission "Efreti: Distress Call 7"
+	landing
+	name "打捞<EDC-ship>"
+	description "打捞<EDC-ship>并将其归还给<planet>以获得所有权。"
+	source "Seleptra Nak"
+	destination "Karek Fornati"
+	to offer
+		has "Efreti: Distress Call 6: done"
+	on offer
+		conversation
+			`多亏了你船员的努力，船内的大气环境被调整到了人类可承受的标准，虽然感觉有点像在热带。随着打捞工作的继续，你和船员开始熟悉这艘船。它坚固的船体看起来适于太空航行，但这艘船几乎没有武器，电池系统无法修复，护盾再生也不可能。如果梅雷蒂族发动攻击，<EDC-ship>撑不了多久。`
+			choice
+				`	（驾驶<EDC-ship>回家。）`
+					goto runforit
+				`	（弃船。）`
+					goto abandon
+			
+			label abandon
+			action
+				fail
+			`	你的船员将科拉斯飞船遗弃，任凭环境侵蚀，成为他们文明废墟中又一个悲剧故事。`
+				flee
+			
+			label runforit
+			`	借助<ship>，你设法启动了护盾，至少目前如此。你在<EDC-ship>上的船员已各就各位，准备在前往<destination>的途中躲避梅雷蒂族的巡逻队。`
+				launch
+	on visit
+		dialog "你到达了，但注意到<EDC-ship>并不在这里。你必须把它带到这里来完成打捞任务。"
+
+	npc accompany save
+		government "Kor Efret"
+		personality timid escort
+		ship "Charm-Shallop (Distressed)" "Esketari"
+
+	on complete
+		conversation
+			action
+				give ship "Charm-Shallop (Distressed)" "Esketari"
+			`这一次，你降落时并没有人群等候；相反，地勤人员看到这艘船时似乎很惊讶。你花了一些时间安排额外的维修，而当你完成时，<EDC-ship>附近已经搭起了一座凉亭，不时有一小群科拉斯人驻足。`
+			choice
+				`	（去看看。）`
+				`	（我还有事要忙。）`
+					decline
+				
+			`	帐篷比你预想的要大。后面有一群科拉斯人像合唱团一样排列着，但站得异常静止。一个穿着某种长袍的科拉斯人站在一张桌子旁，桌上堆满了甜点和几杯浓稠的饮品。当你走近时，你意识到那个“合唱团”是由全息投影构成的。你快速心算了一下，猜测这些就是在船上死去的科拉斯人；这大概是某种纪念仪式。穿长袍的科拉斯人向你打招呼，并把一个杯子塞到你手里。`
+			choice
+				`	（喝下它。）`
+					goto drink
+				`	（做出喝的动作。）`
+			`	要么是埃弗雷特人没有注意到你的把戏，要么是他们太礼貌而不说出来。他们把甜点塞给你，你便收下了。你看到太空港的几组人也遵循同样的仪式，不过其中有些人走到“合唱团”前对他们说了些什么。当你吃完食物后，你告辞并返回你的飞船。`
+				goto end
+			label drink
+			`	这饮品是发酵的，带着酸甜口味，让你的嘴唇和口腔产生刺痛感，最终变得麻木。然后科拉斯人把甜点塞给你，你谦逊地接受了。太空港的几组人也遵循同样的仪式，不过其中有些人走到“合唱团”前对他们说了些什么。当你吃完食物后，你告辞并返回你的飞船。`
+			label end
+
+mission "Efreti: Distress Call 8"
+	landing
+	invisible
+	source
+		attributes quarg
+	to offer
+		has "Efreti: Distress Call 7: done"
+	on offer
+		conversation
+			`过去夸格曾为你翻译过科拉斯语。你有一枚帮助埃弗雷特人打捞<EDC-ship>时得到的数据芯片。你想让夸格告诉你芯片里写了什么吗？`
+			choice
+				`	（请求夸格翻译数据芯片。）`
+				`	（也许下次吧。）`
+					defer
+				`	（我不在乎上面写了什么。）`
+					decline
+			
+			`	你走向空港里的一位夸格，请求帮助解读数据芯片。它停下脚步向你示意，但没有说话。在你提出请求后它停顿片刻，然后伸出手来。它接过数据芯片，把它插入某个通讯器，缓缓对自己点了点头，然后把芯片还给了你。`
+			`	你回到飞船，再次将芯片插入系统，这次显示两个文件：一份是科拉斯语，一份是你的语言。打开属于你语言的那份文件，上面写着：“<EDC-ship>是一艘悲伤之船，带来代代传唱的回忆中的巨大痛苦。爱是许多灵魂中的空洞。要知道<first> <last>虽非埃弗雷特之躯，但内心是真正的埃弗雷特人。<EDC-ship>属于他们，用以拯救生命、保存记忆。”`
+			`	你小心地将芯片存放在安全的地方。`

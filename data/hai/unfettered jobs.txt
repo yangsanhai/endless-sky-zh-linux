@@ -1,0 +1,366 @@
+# Copyright (c) 2014 by Michael Zahniser
+# Copyright (c) 2022 by Hurleveur
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+phrase "unfettered tribute payment dialog"
+	word
+		`你将贡品交给无缚者，他们付给你<payment>。`
+
+phrase "unfettered tribute pickup dialog"
+	word
+		`当你告知亥族你是来为无羁者接收贡品时，他们以令人惊讶的速度和愉快将货物装上了你的飞船。`
+		`亥族码头工人将给无羁者的贡品装上你的飞船。其中一人对你说：“谢谢你。这总比看着我们的同胞挨饿要好。”`
+		`当亥族将贡品装上你的飞船时，其中一人说：“告诉我们的兄弟姐妹们，只要他们肯悔改，随时欢迎回家。”`
+
+mission "Unfettered Tribute 1"
+	name "来自<planet stopovers>的亥族贡品"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们允许你带着其他亥族的贡品着陆。"
+	description "从<stopovers>收集<tons>吨食物作为贡品，并送往位于<destination>的无羁者处。你将分得<payment>作为你的那份报酬。"
+	to offer
+		has "Unfettered Jump Drive 2: offered"
+		random < 80
+	cargo "food (tribute)" 25 2 .05
+	on complete
+		payment 5000 1600
+		dialog phrase "unfettered tribute payment dialog"
+	source
+		attributes "unfettered"
+	stopover
+		distance 3 4
+		attributes "hai"
+		attributes "spaceport"
+	on visit
+		dialog phrase "generic missing stopover or cargo"
+	on stopover
+		dialog phrase "unfettered tribute pickup dialog"
+
+mission "Unfettered Tribute 2"
+	name "来自<planet stopovers>的亥族贡品"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们允许你带着其他亥族的贡品着陆。"
+	description "从<stopovers>收集<tons>吨食物作为贡品，并送往位于<destination>的无羁者处。你将分得<payment>作为你的那份报酬。"
+	to offer
+		has "Unfettered Jump Drive 2: offered"
+		random < 60
+	cargo "food (tribute)" 35 2 .05
+	on complete
+		payment 7000 2000
+		dialog phrase "unfettered tribute payment dialog"
+	source
+		attributes "unfettered"
+	stopover
+		distance 4 5
+		attributes "hai"
+		attributes "spaceport"
+	on visit
+		dialog phrase "generic missing stopover or cargo"
+	on stopover
+		dialog phrase "unfettered tribute pickup dialog"
+
+mission "Unfettered Tribute 3"
+	name "来自<planet stopovers>的亥族贡品"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们允许你带着其他亥族的贡品着陆。"
+	description "从<stopovers>收集<tons>吨食物作为贡品，并送往位于<destination>的无羁者处。你将分得<payment>作为你的那份报酬。"
+	to offer
+		has "Unfettered Jump Drive 2: offered"
+		random < 40
+	cargo "food (tribute)" 45 2 .05
+	on complete
+		payment 9000 2400
+		dialog phrase "unfettered tribute payment dialog"
+	source
+		attributes "unfettered"
+	stopover
+		distance 5 6
+		attributes "hai"
+		attributes "spaceport"
+	on visit
+		dialog phrase "generic missing stopover or cargo"
+	on stopover
+		dialog phrase "unfettered tribute pickup dialog"
+
+
+mission "Unfettered Jump Drive 4"
+	job
+	repeat
+	name "出售跳跃引擎"
+	description "在旗舰或货舱中交换一个跃迁引擎以换取资金或武器，前提是有装备商可用。"
+	source
+		attributes "unfettered"
+	to offer
+		has "Unfettered Jump Drive 3: offered"
+		not "event: wanderers: unfettered invasion starts"
+	to fail
+		has "Unfettered Jump Drive 4: active"
+	to accept
+		or
+			has "outfit (flagship installed): Jump Drive"
+			has "outfit (cargo): Jump Drive"
+	on accept
+		conversation
+			branch "want outfits"
+				not "unfettered: money for drives"
+				has "Unfettered Jump Drive Trading: offered"
+				has "flagship planet: Darkcloak"
+			label money
+			action
+				payment 1000000
+			`和往常一样，无羁者非常乐意支付你一百万信用点来购买跃迁引擎，但与他们交谈并不能让你获得任何额外信息。`
+				goto trade
+
+			label "want outfits"
+			`无羁者用武器交换跃迁引擎的常规交易仍然有效。`
+			choice
+				`	（拿走两门三脉冲碎裂炮。）`
+				`	（换成资金。）`
+					goto money
+			action
+				outfit "Tripulse Shredder" 2
+			`	两门碎裂炮已被装上你的飞船，用以交换你的跃迁引擎。`
+
+			label trade
+			branch spareJD
+				"outfit (cargo): Jump Drive" + "outfit (flagship installed): Hyperdrive" + "outfit (flagship installed): Scram Drive" + "outfit (flagship installed): Jump Drive" > 1
+			action
+				outfit "Hyperdrive" 1
+			label spareJD
+			action
+				outfit "Jump Drive" -1
+				"reputation: Hai (Unfettered)" >?= 40
+
+
+phrase "unfettered mining payment dialog"
+	word
+		"那群"
+		"那群"
+	word
+		"正在卸载"
+	word
+		"你开采的材料的无羁亥人"
+		"你采集的材料的无羁亥人"
+		"你带来的材料的无羁亥人"
+	word
+		"显得"
+		"看起来"
+	word
+		"相当满意。"
+		"兴致勃勃。"
+		"心满意足。"
+		"十分高兴。"
+	word
+		`“照这样干下去，我们很快就能造出新飞船了！`
+		`“有了这些，我们就能修复飞船了！`
+	word
+		`有些舰长拿小行星做打靶练习，但又觉得打一个不会反击的对手太无聊、太容易了，”`
+		`像你这样有耐心去采集小行星的舰长可不多。大部分人都想从敌舰上抢夺资源，但这样干显然更安全，”`
+	word
+		"其中一人向你说道，"
+	word
+		"一边交给你"
+		"随后为你结算"
+	word
+		" <payment> 的报酬。"
+
+phrase "unfettered mining payment dialog"
+	word
+		`当地的自由者卸下你装载的矿物，一人走过来给你<payment>作为报酬。"有些自由者拿这些陨石练靶，但很少有人把宝贵材料带回来，"他说。`
+		`一群自由者默默卸下你开采的材料。完成后，其中一人给了你<payment>。`
+		`当地的自由者收下矿物，高兴地递给你<payment>。`
+
+phrase "unfettered mining payment dialog"
+	word
+		"负责卸下物资的无羁者首领向你走来。"
+		"矿石卸下后，一名无羁者向你走来，神情谦卑而诚恳。"
+	word
+		` "`
+	word
+		`这能让我们修缮房屋、医院，甚至是学校。对此，我向你致以最深切的谢意。`
+		`谢谢你，船长。我们对这些物资——以及任何其他帮助——的需求，远超我们愿意承认的程度。`
+	word
+		`" `
+	word
+		"随后，他们交给你<payment>。"
+
+mission "Unfettered Silicon Asteroid Mining"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们准许你着陆并交付矿物。"
+	name "从小行星采集硅"
+	description "开采并收集50吨硅，然后将矿石运往<destination>以换取<payment>。可在瓦·尤特的小行星带中开采到硅。"
+	source "Darkcloak"
+	to offer
+		random < 40
+		"cargo space" > 35
+	on complete
+		payment 60000
+		dialog phrase "unfettered mining payment dialog"
+		outfit "Silicon" -50
+
+mission "Unfettered Silicon Asteroid Mining 2"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们准许你着陆并交付矿物。"
+	name "从小行星采集硅"
+	description "开采并收集100吨硅，然后将矿物运至<destination>以换取<payment>。可在瓦·尤特的小行星带中开采到硅。"
+	source "Darkcloak"
+	to offer
+		random < 10
+		"cargo space" > 80
+	on complete
+		payment 150000
+		dialog phrase "unfettered mining payment dialog"
+		outfit "Silicon" -100
+
+
+mission "Unfettered Silver Asteroid Mining"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们准许你着陆并交付矿物。"
+	name "从小行星采集白银"
+	description "开采并收集15吨白银，然后将矿物带回<destination>以换取<payment>。可在艾玛·提的小行星带中开采到白银。"
+	source
+		attributes "unfettered"
+		not planet "Warfeed"
+	destination "Darkcloak"
+	to offer
+		random < 40
+	on complete
+		payment 225000
+		dialog phrase "unfettered mining payment dialog"
+		outfit "Silver" -15
+
+mission "Unfettered Silver Asteroid Mining 2"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们准许你着陆并交付矿物。"
+	name "从小行星采集白银"
+	description "开采并收集30吨白银，然后将矿物送往<destination>以换取<payment>。可在艾玛·提的小行星带中开采到白银。"
+	source
+		attributes "unfettered"
+		not planet "Warfeed"
+	destination "Darkcloak"
+	to offer
+		random < 10
+		"cargo space" > 25
+	on complete
+		payment 500000
+		dialog phrase "unfettered mining payment dialog"
+		outfit "Silver" -30
+
+
+mission "Unfettered Lead Asteroid Mining"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们准许你着陆并交付矿物。"
+	name "从小行星采集铅"
+	description "开采并收集35吨铅，然后将矿物运至<destination>以换取<payment>。可在瓦·尤特的小行星带中开采到铅。"
+	source
+		attributes "unfettered"
+		not planet "Warfeed"
+	destination "Darkcloak"
+	to offer
+		random < 40
+		"cargo space" > 30
+	on complete
+		payment 95000
+		dialog phrase "unfettered mining payment dialog"
+		outfit "Lead" -35
+
+mission "Unfettered Lead Asteroid Mining 2"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们准许你着陆并交付矿物。"
+	name "从小行星采集铅"
+	description "开采并收集70吨铅，然后将矿物运至<destination>以换取<payment>。可在瓦·尤特的小行星带中开采到铅。"
+	source
+		attributes "unfettered"
+		not planet "Warfeed"
+	destination "Darkcloak"
+	to offer
+		random < 10
+		"cargo space" > 55
+	on complete
+		payment 210000
+		dialog phrase "unfettered mining payment dialog"
+		outfit "Lead" -70
+
+
+phrase "unfettered medicals pickup dialog"
+	word
+		`和往常一样，亥族很乐意为你提供所需的医疗物资。“告诉我们的兄弟姐妹们要坚强，”一名亥族一边把物资装上你的飞船一边说道。`
+		`亥族理解情况的紧迫性，没有浪费时间多言。他们把物资装上你的飞船，并祝你一路平安。`
+		`他们毫无犹豫地提供医疗物资。“我们更愿意确保兄弟姐妹们没有需求；我们自己的需求可以晚些再说，”一名亥族在把物资装上你的飞船后说道。`
+
+phrase "unfettered medicals payment dialog"
+	word
+		"当地的卫生专家松了一口气，因为你及时运回了所需的医疗物资，并为此付给你<payment>。"
+		"这里的自由者们似乎都很忙碌，你必须等待才能将医疗物资卸货到当地医院。过了一会儿，一名当地工人给了你<payment>，并告诉你把货物放到指定地点。"
+		`你带着医疗物资抵达时，一名看上去急需它们的当地卫生专家迎接了你。"来得正是时候。再晚一点，后果可能不堪设想。"他一边说，一边递给你<payment>。`
+
+mission "Unfettered Small Medicals Rush"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们允许你带着急需的医疗物资着陆。"
+	name "来自<planet stopovers>的医疗物资急运"
+	description "位于<destination>的无羁者医院急需物资补给。请从<stopovers>收集<tons>吨医疗物资，并在<date>之前迅速送达无羁者处，以换取<payment>报酬。"
+	deadline 4 1
+	cargo "medical supplies" 10 2 .05
+	source
+		attributes "unfettered"
+	stopover
+		distance 5 7
+		government "Hai"
+		attributes "spaceport"
+	destination "Darkcloak"
+	to offer
+		random < 20 + "Unfettered Jump Drive 2: offered" * 10
+		"reputation: Hai (Unfettered)" >= 0
+	on visit
+		dialog phrase "generic missing stopover or cargo"
+	on stopover
+		dialog phrase "unfettered medicals pickup dialog"
+	on complete
+		payment 8000 2000
+		dialog phrase "unfettered medicals payment dialog"
+
+
+mission "Unfettered Big Medicals Rush"
+	job
+	repeat
+	clearance "在向无羁者说明你的来意后，他们允许你带着急需的医疗物资着陆。"
+	name "来自<planet stopovers>的医疗补给"
+	description "位于<destination>的无羁者医院急需大量物资补给。请从<stopovers>收集<tons>吨医疗物资，并在<date>之前送达无羁者处，以换取<payment>。"
+	deadline 10 1
+	cargo "medicals" 35 2 .05
+	source
+		attributes "unfettered"
+	stopover
+		distance 5 7
+		government "Hai"
+		attributes "spaceport"
+	to offer
+		"reputation: Hai (Unfettered)" >= 0
+		has "Unfettered Jump Drive 3: offered"
+		random < 20
+	on visit
+		dialog phrase "generic missing stopover or cargo"
+	on stopover
+		dialog phrase "unfettered medicals pickup dialog"
+	on complete
+		payment 8000 2800
+		dialog phrase "unfettered medicals payment dialog"

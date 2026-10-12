@@ -1,0 +1,603 @@
+# Copyright (c) 2014 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+# Engines
+
+outfit "Small Graviton Thruster"
+	"display name" "小型引力子推进器"
+	category "Engines"
+	series "Engines"
+	index 91011
+	"cost" 12000000
+	thumbnail "outfit/small quarg thruster"
+	"mass" 50
+	"outfit space" -50
+	"engine capacity" -50
+	"thrust" 80
+	"thrusting energy" 5.6
+	"thrusting heat" 1.5
+	"reverse thrust" 40
+	"reverse thrusting energy" 2.8
+	"reverse thrusting heat" .75
+	"force protection" 0.1
+	"inertia reduction" 0.1
+	"flare sprite" "effect/graviton flare/graviton flare"
+		"frame rate" 5
+		"scale" .75
+	description "夸格的推进器具体工作原理尚不为人知，但即使这套小型引擎的驱动机构所消耗的能量也比某些人类战舰的总功率还高。所有这些能量最终去了哪里，完全是个谜。"
+	description "	这些引擎还具有奇特的能力，似乎违反了人类所理解的物理定律。装备它们的飞船在自身动力下加速比预期更快，同时受到外部力量的冲击也更小。"
+
+outfit "Small Graviton Steering"
+	"display name" "小型引力子转向器"
+	category "Engines"
+	series "Engines"
+	index 91010
+	"cost" 9000000
+	thumbnail "outfit/small quarg steering"
+	"mass" 30
+	"outfit space" -30
+	"engine capacity" -30
+	"turn" 1200
+	"turning energy" 2.4
+	"turning heat" .75
+	"force protection" 0.1
+	"inertia reduction" 0.1
+	description "尽管体积小巧，这些夸格转向引擎能让飞船在极小空间内完成转向。据传，与人类转向推进器不同，夸格并不在意这些引擎安装在船体的何处——即便直接装配在飞船质心所在的轴线上，也能产生相同的旋转力矩。"
+	description "	这些引擎还具有奇怪的能力，似乎违反了人类所理解的物理定律。搭载这些引擎的飞船，其自身动力下的加速度比预期更快，同时受到的外力冲击也更小。"
+
+
+outfit "Medium Graviton Thruster"
+	"display name" "中型引力子推进器"
+	category "Engines"
+	series "Engines"
+	index 91021
+	"cost" 20000000
+	thumbnail "outfit/medium quarg thruster"
+	"mass" 70
+	"outfit space" -70
+	"engine capacity" -70
+	"thrust" 120
+	"thrusting energy" 8
+	"thrusting heat" 2
+	"reverse thrust" 60
+	"reverse thrusting energy" 4
+	"reverse thrusting heat" 1
+	"force protection" 0.15
+	"inertia reduction" 0.15
+	"flare sprite" "effect/graviton flare/graviton flare"
+		"frame rate" 5
+	description "夸格推进器体型小巧却动力强劲，且废热极少，代价是消耗惊人能量。其产生推力的机理尚未探明，但据传夸格飞船经过时，会扰乱星系中每一座引力波天线。"
+	description "	这些引擎还具有奇怪的能力，似乎违反了人类所理解的物理定律。搭载这些引擎的飞船，其自身动力下的加速度比预期更快，同时受到的外力冲击也更小。"
+
+
+outfit "Medium Graviton Steering"
+	"display name" "中型引力子转向器"
+	category "Engines"
+	series "Engines"
+	index 91020
+	"cost" 16000000
+	thumbnail "outfit/medium quarg steering"
+	"mass" 50
+	"outfit space" -50
+	"engine capacity" -50
+	"turn" 2400
+	"turning energy" 4
+	"turning heat" 1
+	"force protection" 0.15
+	"inertia reduction" 0.15
+	description "据传闻，一些夸格飞船的转向引擎安装在内部，无需外部推进器。它们类似于陀螺仪，能从任何位置调整飞船方向，但不同于陀螺仪，它们似乎永不饱和或锁定。"
+	description "	这些引擎还具有奇怪的能力，似乎违反了人类所理解的物理定律。搭载这些引擎的飞船，其自身动力下的加速度比预期更快，同时受到的外力冲击也更小。"
+
+
+outfit "Large Graviton Thruster"
+	"display name" "大型引力子推进器"
+	category "Engines"
+	series "Engines"
+	index 91031
+	"cost" 32000000
+	thumbnail "outfit/large quarg thruster"
+	"mass" 100
+	"outfit space" -100
+	"engine capacity" -100
+	"thrust" 185
+	"thrusting energy" 12
+	"thrusting heat" 3
+	"reverse thrust" 92.5
+	"reverse thrusting energy" 6
+	"reverse thrusting heat" 1.5
+	"force protection" 0.2
+	"inertia reduction" 0.2
+	"flare sprite" "effect/graviton flare/graviton flare"
+		"frame rate" 5
+		"scale" 1.25
+	description "这套夸格大型推进器既强大又隐蔽，不会留下明亮的尾迹，也不发出任何可探测的辐射，仅散发出微弱的紫色光芒。与之形成鲜明对比的是，这些引擎消耗的能量极其惊人，足以供应整个空间站运行。"
+	description "	这些引擎还具有奇怪的能力，似乎违反了人类所理解的物理定律。搭载这些引擎的飞船，其自身动力下的加速度比预期更快，同时受到的外力冲击也更小。"
+
+
+outfit "Large Graviton Steering"
+	"display name" "大型引力子转向器"
+	category "Engines"
+	series "Engines"
+	index 91030
+	"cost" 25000000
+	thumbnail "outfit/large quarg steering"
+	"mass" 70
+	"outfit space" -70
+	"engine capacity" -70
+	"turn" 3600
+	"turning energy" 6
+	"turning heat" 1.5
+	"force protection" 0.2
+	"inertia reduction" 0.2
+	description "夸格飞船以其快速而精确的转向能力而闻名，仿佛是由一只神之手在引导，而非人类转向推进器闪烁的尾焰。根据对其运作方式的一些猜测，这或许更接近真相而非虚言。"
+	description "	这些引擎还具有奇怪的能力，似乎违反了人类所理解的物理定律。搭载这些引擎的飞船，其自身动力下的加速度比预期更快，同时受到的外力冲击也更小。"
+
+# Power
+
+outfit "Quantum Vacuum Battery"
+	"display name" "量子真空电池"
+	category "Power"
+	series "Batteries"
+	index 91010
+	cost 3000000
+	thumbnail "outfit/quarg quantum battery"
+	"mass" 50
+	"outfit space" -50
+	"energy capacity" 60000
+	"active cooling" 25
+	"cooling energy" 1.25
+	description "首批接触夸格的人类工程师对其技术的能量密度深感震惊。这种夸格电池存储的能量足以夷平一座小城，据传能量存储在无数微小极板之间的负量子真空压强中。当能量从中被抽取时，电池会自行冷却，这似乎违背了人类对热力学的理解。"
+
+
+outfit "Antimatter Core"
+	"display name" "反物质核心"
+	category "Power"
+	series "Generators"
+	index 91010
+	cost 20000000
+	thumbnail "outfit/quarg antimatter core"
+	"mass" 50
+	"outfit space" -50
+	"energy generation" 12
+	"heat generation" 10
+	description "尽管与一千年前相比，人类如今已能生产相当可观的反物质，但相较于夸格的产能仍相形见绌——夸格能生产出足以让民用飞船也配备极为紧凑的反物质核心。这款装置以简洁优雅的封装释放出巨大能量，同时产生的废热却少得惊人。"
+
+
+outfit "Singularity Core"
+	"display name" "奇点核心"
+	category "Power"
+	series "Generators"
+	index 91020
+	cost 50000000
+	thumbnail "outfit/quarg singularity core"
+	"mass" 400
+	"outfit space" -80
+	"energy generation" 23.5
+	"heat generation" 22.5
+	"inertia reduction" 0.15
+	description "据夸格人仅有的模糊暗示，这些发生器内含一个微小黑洞，在摄入微量质量时喷射出辐射。这个黑洞小到足以通过霍金辐射输出惊人能量，且随着黑洞缩小能量反而增大，这意味着奇点核心内的黑洞确实是微观级别的。"
+	description "	科学家和阴谋论者进一步的胡乱猜测声称，夸格能够以某种方式欺骗物理定律本身，使这个黑洞的重量远低于本该有的数值，将其质量从小卫星级别降低到一艘飞船有希望移动的程度。"
+
+
+outfit "Quasar Core"
+	"display name" "类星体核心"
+	category "Power"
+	series "Generators"
+	index 91030
+	cost 100000000
+	thumbnail "outfit/quarg quasar core"
+	"mass" 600
+	"outfit space" -120
+	"energy generation" 37.5
+	"heat generation" 35
+	"inertia reduction" 0.15
+	description "这种更大的发电机与奇点核心相似，但更为强大。关于其确切功能知之甚少，但仅凭其名称，有人推测类星体核心的输出提升是由于其核心的黑洞被注入了足够质量以形成一个小型吸积盘，物质在坠向事件视界并被压缩到难以想象的程度时释放出光和热。"
+	description "	虽然此过程比单纯捕获黑洞所释放的霍金辐射低效得多，但这台发电机惊人的功率密度表明，这种取舍是值得的。"
+
+
+# Systems
+
+outfit "Aspis Shield Generator"
+	"display name" "阿斯庇斯护盾发生器"
+	category "Systems"
+	series "Shields"
+	index 91010
+	cost 5000000
+	thumbnail "outfit/quarg aspis shield generator"
+	"mass" 40
+	"outfit space" -40
+	"shield generation" 4
+	"shield energy" 2
+	"disruption protection" .2
+	"piercing protection" .4
+	description "即使是夸格护盾生成器最小的型号，其防御能力也远超人类通常认为足够的标准。"
+
+
+outfit "Ancile Shield Generator"
+	"display name" "安喀勒护盾发生器"
+	category "Systems"
+	series "Shields"
+	index 91020
+	cost 7500000
+	thumbnail "outfit/quarg ancile shield generator"
+	"mass" 55
+	"outfit space" -55
+	"shield generation" 6.25
+	"shield energy" 3.125
+	"disruption protection" .3
+	"piercing protection" .6
+	description "除了能够比任何其他同体积的技术更快、更高效地恢复护盾外，夸格护盾发生器还能为专门用于完全绕过护盾的武器提供卓越的防护。"
+
+
+outfit "Aegis Shield Generator"
+	"display name" "神盾护盾发生器"
+	category "Systems"
+	series "Shields"
+	index 91030
+	cost 12500000
+	thumbnail "outfit/quarg aegis shield generator"
+	"mass" 80
+	"outfit space" -80
+	"shield generation" 10
+	"shield energy" 5
+	"disruption protection" .5
+	"piercing protection" 1
+	description "第一批遇见夸格的人类认为他们的技术如同魔法，时至今日仍有许多人这么觉得。这台夸格护盾发生器的工作原理对人类而言完全未知，却能提供惊人的防护力，而夸格也无意透露其背后的秘密。"
+
+
+outfit "Peripheral Repair Hub"
+	"display name" "外围维修中枢"
+	category "Systems"
+	series "Repair"
+	index 91010
+	cost 2000000
+	thumbnail "outfit/quarg peripheral repair hub"
+	"mass" 25
+	"outfit space" -25
+	"fuel generation" 0.025
+	"hull repair rate" 1
+	"hull energy" .5
+	description "夸格所使用的维修系统以近乎违背现实的方式运作，以某种方式收集物质并将其注入舰船船体与燃料系统。这提供了维持太空航行核心要素——耐久性、寿命，以及最重要的生存能力——所必需的基础维护。"
+
+
+outfit "Central Repair Hub"
+	"display name" "中央维修中心"
+	category "Systems"
+	series "Repair"
+	index 91020
+	cost 5000000
+	thumbnail "outfit/quarg central repair hub"
+	"mass" 55
+	"outfit space" -55
+	"fuel generation" 0.07
+	"hull repair rate" 2.5
+	"hull energy" 1.25
+	description "以一种人类难以察觉的方式，该系统收集太空中的环境物质，并通过一个由导线和管道组成的大型中枢集线器将其回馈给飞船。积累的物质随后被用于修复船体及补充燃料储备。"
+
+
+# Weapons
+
+outfit "Skydagger"
+	"display name" "空刃"
+	category "Turrets"
+	series "Turrets"
+	index 91010
+	cost 8500000
+	thumbnail "outfit/quarg skydagger"
+	"mass" 25
+	"outfit space" -25
+	"weapon capacity" -25
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/skydagger"
+			"frame rate" 1
+		"hardpoint sprite" "hardpoint/quarg skydagger"
+		"hardpoint offset" 7
+		sound "skydagger"
+		"hit effect" "skylance impact"
+		"inaccuracy" .6
+		"turret turn" 3.1
+		"velocity" 350
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 4
+		"firing heat" .5
+		"shield damage" 7.5
+		"hull damage" 6
+		"ion damage" .05
+		"scrambling damage" .05
+	description "在不需要压倒性火力的情况下，这些光束武器被用来替代更强力的武器，仅为非战斗人员提供防御。不过，它们仍然是不可轻视的威胁。"
+
+outfit "Skylance"
+	"display name" "天矛"
+	category "Turrets"
+	series "Turrets"
+	index 91020
+	cost 18000000
+	thumbnail "outfit/quarg skylance"
+	"mass" 50
+	"outfit space" -50
+	"weapon capacity" -50
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/skylance"
+			"frame rate" 1
+		"hardpoint sprite" "hardpoint/quarg skylance"
+		"hardpoint offset" 10
+		sound "skylance"
+		"hit effect" "skylance impact"
+		"inaccuracy" .4
+		"turret turn" 2.6
+		"velocity" 500
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 8
+		"firing heat" 1
+		"shield damage" 15
+		"hull damage" 12
+		"ion damage" .1
+		"scrambling damage" .1
+	description "尽管在夸格武器库中最古老且最不具特色，但这些威力巨大的光束武器仍令所有胆敢反抗者胆战心惊。其设计比人类自身更恒久，「天矛」是一件优雅的武器，来自一个更为文明的时代。"
+
+effect "skylance impact"
+	sprite "effect/skylance impact"
+		"no repeat"
+		"frame rate" 12
+	"lifetime" 10
+	"random angle" 180
+	"velocity scale" 0.
+
+
+outfit "Stratospear"
+	"display name" "平流矛"
+	category "Turrets"
+	series "Anti-Missile"
+	index 91010
+	cost 9000000
+	thumbnail "outfit/quarg stratospear"
+	"mass" 40
+	"outfit space" -40
+	"weapon capacity" -40
+	"turret mounts" -1
+	weapon
+		"hit effect" "quarg anti-missile"
+		"hardpoint sprite" "hardpoint/quarg anti missile"
+		"hardpoint offset" 4
+		"anti-missile" 25
+		"velocity" 500
+		"lifetime" 1
+		"reload" 10
+		"firing energy" 40
+	description "能够直接匹敌夸格能量武器威力的存在虽属罕见，但一些愚昧的年轻种族仍试图使用基于导弹的核武器来对抗夸格，寄希望于其破坏力能够拉平差距。这些夸格反导弹防御系统发射精准能量束，往往令此类希望破灭——它们能在远距离拦截飞行物，确保唯有最强大的导弹才可能接近夸格舰船。"
+
+effect "quarg anti-missile"
+	sprite "effect/quarg anti missile"
+		"no repeat"
+		"frame rate" 3
+	sound "quarg anti-missile"
+	"sound category" "anti-missile"
+	"lifetime" 21
+	"velocity scale" 1
+
+
+outfit "Elysian Ranseur"
+	"display name" "埃律西昂长矛"
+	category Guns
+	series "Guns"
+	index 91010
+	cost 40000000
+	mass 65
+	thumbnail "outfit/quarg ranseur"
+	"gun ports" -1
+	"outfit space" -65
+	"weapon capacity" -65
+	weapon
+		sound "ranseur"
+		"fire effect" "ranseur"
+		"hit effect" "jump drive"
+		"hit effect" "disruptor impact" 10
+		lifetime 1
+		reload 100
+		velocity 600
+		"firing energy" 900
+		"firing heat" 30
+		"shield damage" 2100
+		"hull damage" 1500
+		"hit force" 600
+		"penetration count" 5
+	description "这件武器背后的技术复杂到无法理解，它产生扭曲时空本身的能量脉冲。强大的引力脉冲被强行穿过折叠空间，轻松穿透多个目标，并对沿途目标造成致命打击。这件武器如何做到这一切，只有夸格人知晓。"
+
+
+effect "ranseur"
+	sprite effect/ranseur
+		"frame rate" 30
+		"no repeat"
+	lifetime 11
+
+
+outfit "Celestial Culverin"
+	"display name" "天界长炮"
+	category Guns
+	series "Guns"
+	index 91020
+	cost 22000000
+	mass 45
+	thumbnail "outfit/quarg culverin"
+	"gun ports" -1
+	"outfit space" -45
+	"weapon capacity" -45
+	weapon
+		sprite projectile/culverin
+			"frame rate" 60
+			"random start frame"
+			rewind
+		sound "culverin"
+		"hit effect" "culverin hit" 20
+		"die effect" "culverin die"
+		lifetime 110
+		reload 36
+		"homing"
+			"leading"
+			"throttle control"
+		velocity 10
+		acceleration 0.6
+		drag 0.05
+		turn 60
+		inaccuracy 12
+		"stream"
+		tracking .7
+		"firing energy" 180
+		"firing heat" 22.5
+		"shield damage" 300
+		"hull damage" 225
+		"slowing damage" 4.5
+		"fuel damage" 9
+		"missile strength" 600
+	description "此武器以难以理解的方式纠缠时空，产生减缓目标速度的引力。仿佛命中注定，弹丸会导向目标，干扰其燃料系统。这种近乎无法规避的效用，使该武器能够封锁夸格更遥远的敌人。"
+
+effect "culverin hit"
+	sprite "effect/skylance impact"
+		"frame rate" 30
+		"no repeat"
+	lifetime 2
+	"random lifetime" 4
+	"velocity scale" 0
+	"random angle" 180
+	"random velocity" 8
+
+effect "culverin die"
+	sprite "effect/jump drive"
+		"frame rate" 30
+		"no repeat"
+	lifetime 5
+	"velocity scale" 0.4
+
+
+outfit "Astral Ribault"
+	"display name" "星界里博炮"
+	category "Turrets"
+	series "Turrets"
+	index 91030
+	cost 15000000
+	thumbnail "outfit/quarg ribault"
+	"mass" 35
+	"outfit space" -35
+	"weapon capacity" -35
+	"required crew" 1
+	"turret mounts" -1
+	weapon
+		sprite "projectile/ribault"
+		"hardpoint sprite" "hardpoint/quarg ribault"
+		"hardpoint offset" 10.
+		"fire effect" "ribault flare"
+		"hit effect" "electron impact"
+		sound "ribault"
+		"inaccuracy" 13
+		"turret turn" 2.5
+		"velocity" 13
+		"reload" 17
+		"burst reload" 2
+		"burst count" 19
+		"firing energy" 80
+		"firing heat" 5
+		"submunition" "ribault unguided" 2
+	description "该炮塔快速发射的弹幕覆盖范围广阔、射程遥远，释放出一阵负能量粒子风暴。吸引力将这些粒子导向目标，对紧邻范围内的敌人造成极高伤害，同时让试图逃离的敌人仍处于夸格的可及范围之内。"
+
+outfit "ribault unguided"
+	"display name" "里博无制导"
+	weapon
+		sprite "projectile/ribault"
+		"hit effect" "ribault impact"
+		"inaccuracy" 11
+		"lifetime" 20
+		"submunition" "ribault guided"
+
+outfit "ribault guided"
+	"display name" "里博制导"
+	weapon
+		sprite "projectile/ribault"
+			"frame rate" 10
+			"random start frame"
+		"hit effect" "ribault impact"
+		"inaccuracy" 11
+		"lifetime" 30
+		"fade out" 7
+		"turn" 5
+		"homing"
+			"leading"
+			"throttle control"
+		"tracking" .6
+		"acceleration" 1
+		"drag" .1
+		"hit force" -120
+		"shield damage" 100
+		"hull damage" 35
+
+effect "ribault flare"
+	sprite "effect/distancer"
+		"frame rate" 1.2
+	"lifetime" 0
+	"velocity scale" .1
+
+effect "ribault impact"
+	sprite "effect/electron impact"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 5
+	"random angle" 2
+	"random spin" 1
+	"velocity scale" -.003
+
+
+outfit "Slipstream Projector"
+	"display name" "滑流投射器"
+	category "Guns"
+	series "Guns"
+	index 91030
+	cost 18000000
+	thumbnail "outfit/unknown"
+	"mass" 200
+	"outfit space" -200
+	"weapon capacity" -200
+	"gun ports" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/slipstream projector/slipstream"
+			"frame rate" 20
+		sound "slipstream projector"
+		"inaccuracy" .1
+		"velocity" 500
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 30
+		"firing heat" 2
+		"hit force" -400
+		"shield damage" 30
+		"penetration count" 100
+	description "尽管引力子技术的具体运作方式仍是一个谜，但众所周知，该装置以一种奇妙的方式操纵重力，甚至能让庞大的环世界建筑结构屈从于其意志。虽然这股力量不足以破坏精密的构造，但其负能量却能在极短时间内撕裂飞船的护盾。"
+
+
+# Special
+
+outfit "Phalanx System"
+	"display name" "方阵系统"
+	category "Hand to Hand"
+	series "Fortifications"
+	index 91010
+	thumbnail "outfit/quarg countermeasures"
+	"capture defense" 36
+	"unplunderable" 1
+	description "出于对其技术可能被盗用和滥用的极度谨慎，夸格的舰船配备了特殊的反登舰系统，其强度堪称过度杀伤。由于没有人愿意被夸格发现持有偷来的技术，这些系统在公开市场上几乎毫无价值。"

@@ -1,0 +1,374 @@
+# Copyright (c) 2023 by RisingLeaf (https://github.com/RisingLeaf)
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Ship names:
+phrase "hicemus military"
+	word
+		"HIC "
+	phrase
+		"latin name"
+	word
+		"en #"
+	phrase
+		"hex color"
+
+phrase "incipias civilian"
+	phrase
+		"vocal consonant (capitalized)" 5
+		"consonant vocal (capitalized)" 10
+	word
+		"'"
+	phrase
+		"latin name"
+	word
+		"ius"
+		"ias"
+		"ium"
+		"iam"
+	word
+		" #"
+	phrase
+		"hex color"
+
+phrase "latin name"
+	phrase
+		"vocal consonant (capitalized)" 5
+		"consonant vocal (capitalized)" 10
+	phrase
+		"vocal consonant" 10
+		"consonant vocal" 5
+	phrase
+		"vocal consonant" 5
+		"consonant vocal" 10
+
+phrase "vocal consonant"
+	phrase
+		"vocal"
+	phrase
+		"incipias consonant"
+
+phrase "consonant vocal"
+	phrase
+		"incipias consonant"
+	phrase
+		"vocal"
+
+phrase "vocal consonant (capitalized)"
+	phrase
+		"vocal (capitalized)"
+	phrase
+		"incipias consonant"
+
+phrase "consonant vocal (capitalized)"
+	phrase
+		"incipias consonant (capitalized)"
+	phrase
+		"vocal"
+
+phrase "vocal"
+	word
+		"一"
+		"e"
+		"i"
+		"o"
+		"u"
+
+phrase "vocal (capitalized)"
+	word
+		"一个"
+		"E"
+		"我"
+		"O"
+		"U"
+
+phrase "incipias consonant"
+	word
+		"b"
+		"d"
+		"g"
+		"k"
+		"l"
+		"m"
+		"n"
+		"r"
+		"s"
+		"t"
+
+phrase "incipias consonant (capitalized)"
+	word
+		"B"
+		"D"
+		"G"
+		"K"
+		"L"
+		"M"
+		"N"
+		"R"
+		"S"
+		"T"
+
+phrase "hex color"
+	phrase
+		"hex digit"
+	phrase
+		"hex digit"
+	phrase
+		"hex digit"
+	phrase
+		"hex digit"
+	phrase
+		"hex digit"
+	phrase
+		"hex digit"
+
+phrase "hex digit"
+	word
+		"0"
+		"1"
+		"2"
+		"3"
+		"4"
+		"5"
+		"6"
+		"7"
+		"8"
+		"9"
+		"一"
+		"b"
+		"c"
+		"d"
+		"e"
+		"f"
+
+fleet "Hicemus Standard Surveilance"
+	government "Hicemus"
+	names "hicemus military"
+	cargo 0
+	personality
+		heroic vindictive
+	variant 10
+		"Nimbus"
+	variant 4
+		"Nimbus" 2
+	variant 4
+		"Venta"
+
+fleet "Incipias Standard Mining"
+	government "Incipias Civilian"
+	names "incipias civilian"
+	cargo 0
+	personality
+		timid mining harvests coward
+	variant 5
+		"Nimbus (Mining)"
+	variant 5
+		"Nimbo Stratus"
+	variant 4
+		"Nimbo Stratus" 2
+	variant 1
+		"Nimbo Stratus"
+		"Nimbus (Mining)"
+
+fleet "Incipias Standard Trade"
+	government "Incipias Civilian"
+	names "incipias civilian"
+	cargo 50
+	personality
+		confusion 40
+		timid appeasing
+	variant 5
+		"Nimbo Cirrus"
+	variant 1
+		"Nimbus (Civilian)"
+	variant 4
+		"Nimbo Cirrus" 2
+	variant 3
+		"Gero"
+	variant 2
+		"Gero" 2
+	variant 2
+		"Gero"
+		"Nimbo Cirrus"
+	variant 1
+		"Nimbo Cirrus" 2
+		"Nimbus (Civilian)"
+
+outfitter "Hicemus"
+	"Plasma Discharger"
+	"Stagnation Beam"
+	"Horizon Grappler"
+	"Gas-Class Shield"
+	"Liquid-Class Shield"
+	"Metallic Hydrogen Cell"
+	"Cloud Piercer"
+
+	"MH Blue-Class Thruster"
+	"MH Blue-Class Steering"
+	"MH Green-Class Thruster"
+	"MH Green-Class Steering"
+	"MH Red-Class Thruster"
+	"MH Red-Class Steering"
+
+shipyard "Hicemus"
+	"Nimbo Cirrus"
+	"Nimbo Stratus"
+	"Nimbus"
+	"Gero"
+
+news "Incipias common"
+	location
+		government "Conlatio" "Hicemus"
+	name
+		word
+			"Incipias Captain"
+			"因西庇亚斯船员"
+	message
+		phrase
+			"incipias common hard defined"
+			"incipias common praise"
+
+phrase "incipias common"
+	phrase
+		"incipias common hard defined" 1
+		"incipias common praise" 5
+		"incipias common interest" 3
+		"incipias common advise" 3
+
+phrase "incipias common hard defined"
+	word
+		"你说你离开了这个母星系？总有一天，我也会去看看其他的母星系。"
+		"从前的那段时间开飞船更有意思。如今，很多人都有了飞船。"
+		"我刚续签了我的船员执照。政府管得很严。"
+		"没有什么比切换到涡轮模式，飞过我们起源之家的景观云层更令人兴奋的了。"
+		"上一次在技术研究理解上取得重大知识突破已经有一段时间了。政府向我们保证他们正在研究点什么，但我猜他们根本不知道该怎么办。"
+		"不久前我见过一个带着裂纹泄漏的等离子放电器。那艘船外面看起来挺好，里面却是一片火海。"
+		"我从没见过像你们这样的物种。为什么你们不像我们一样漂浮？"
+		"不久前我在执行一次采矿任务时，看到一艘政府船丢下了一个小盒子。那个盒子朝一个方向加速得非常快，然后伴随着一道闪光消失了。"
+
+phrase "incipias common praise"
+	word
+		"These technologies"
+		"These ships"
+		"These death-weapons"
+		"These engines"
+		"These life-shields"
+	word
+		" "
+	word
+		"of yours"
+		"你拥有"
+		"你所安装的"
+		"of your kind"
+	word
+		" "
+	word
+		"非常令人赞叹。"
+		"非常高效。"
+		"看起来非常美观。"
+		"似乎以极高的效率运转着。"
+
+phrase "incipias common interest"
+	word
+		"What "
+	word
+		"你见识过什么"
+		"happened to you"
+		"你遭遇了什么"
+		"wonders lie"
+	word
+		" "
+	word
+		"在我们的星系家园之外"
+		"in the stars"
+		"在远离安全港湾之处"
+		"在我们的航行边界之外"
+	word
+		"的消息吗？ "
+	word
+		"你为之惊叹了吗？"
+		"那令人恐惧吗？"
+		"那很危险吗？"
+
+phrase "incipias common advise"
+	word
+		"看看"
+		"Look at"
+		"Pay attention to"
+		"光芒"
+	word
+		" my "
+	word
+		"advice"
+		"wisdom"
+		"call"
+		"祝愿"
+	word
+		"：切勿 "
+	word
+		"在我们行星家园上开动引擎"
+		"乱摆弄等离子放电器"
+		"违抗政府"
+		"把武器用于采矿之外的用途" 2
+	word
+		"；那会招致死难之悲。"
+
+
+news "Hicemus official"
+	location
+		government "Hicemus"
+	name
+		word
+			"希切姆斯警官"
+			"Hicemus Executive"
+			"Hicemus Inspector"
+	message
+		word
+			"我们前进、进化、超越。无人能挡。"
+			"你们见过、了解我们的新引擎吗？它们比以往任何引擎都高效得多。"
+			"我们的技术无可匹敌。无人能质疑我们的权威。"
+			"只要我们存在，就会不断进步、变革。"
+			"太空旅行新时代的起始、曙光，近在咫尺。"
+
+
+phrase "incipias friendly disabled"
+	word
+		"朋友"
+		"Known-stranger"
+		"Fellow captain"
+	word
+		", I am "
+		", we are "
+	word
+		"in a dangerous-tense situation"
+		"in trouble"
+		"in need of repair-assistance"
+		"unable to fly"
+		"濒临毫无用处的境地"
+	word
+		"愿意砸多少钱。"
+	word
+		" 能否请你 "
+	word
+		"assist me"
+		"save me"
+		"展现一次卓越的功绩成就"
+	word
+		"吗？"
+
+phrase "incipias hostile disabled"
+	word
+		"你真的要毁掉我们的未来吗？"
+		"你的荣誉何在？"
+		"如果像你这样的人更多，我们的文明会变成什么样？"
+		"停止你的混乱暴行！"
+		"难道你不珍视未来的生命吗？"

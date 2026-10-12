@@ -1,0 +1,489 @@
+# Copyright (c) 2014-2015 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Kestrel Testing"
+	name "战舰测试"
+	description "前往<waypoints>星系，攻击并瘫痪一艘由河鼓三公司正在测试的原型战舰。不要摧毁该飞船，否则你将失去报酬和购买它的机会。"
+	source "Wayfarer"
+	waypoint "Umbral"
+	# The Kestrel is a secret that can only be unlocked after completing the rest of the game. Combat rating is used to track gameplay progression.
+	# After finding the Kestrel once, the threshold is lowered so players can use the ship during the human campaign on a later playthrough.
+	# Any requests to reduce the requirements will be rejected.
+	to offer
+		or
+			"combat rating" > 6000
+			and
+				"combat rating" > 2000
+				has "global: unlocked kestrel"
+	
+	on offer
+		conversation
+			`当你在太空港的酒吧闲逛时，一个男人认出了你。“<first> <last>！”他说，“很荣幸见到你。你在战斗中的事迹广为人知。”他端起酒杯，走过来坐在你旁边。“我叫查尔斯·阿蒂诺达，”他说，“是河鼓三公司的首席星舰设计师。话说，你愿意帮我们测试一艘新战舰吗？”`
+			choice
+				`	“详细说说。”`
+				`	“抱歉，我现在没时间。”`
+					defer
+			`	“嗯，”他说，“故事是这样的。七年前，正值个人危机深重的时刻，我辞去了河鼓三的工作，背着一包换洗衣物、一壶水和几盒应急口粮就踏上了流浪银河的旅程。边缘世界的一个无政府公社收留了我。在那里待了一个月后，村里长老察觉到我内心的挣扎，邀请我参加他们的汗屋幻象追寻仪式。我陷入出神状态，意识穿越了无数宇宙，见到了各种奇异景象——一把光剑，一轮蓝日，还有……”他顿了顿，“……一只威尔士柯基犬在入侵电脑？有些部分实在难以理解。”`
+			choice
+				`	“有意思。”`
+					goto continue
+				`	“这次幻象追寻里有没有涉及违禁药物？”`
+			`	他无视了你的问题。“但我还见到了另一件事，”他说。`
+				goto kestrel
+			label continue
+			`	“但我还见到了另一件事，”他说。`
+			label kestrel
+			`	他沉默良久，然后说道：“我看见一艘暗色飞船，比我设计过的任何舰船都更优雅、更精致，正在与一艘外壳斑驳红色的外星舰船交战。看到那艘船时，我就知道必须建造一艘类似的。我搭车回到旅人星，央求重回旧职，然后开始工作。七年后，这艘船几乎完工了。它出色地通过了所有非破坏性测试，只差实战测试。而还有谁比大名鼎鼎的战士，<first> <last>更适合与它战斗呢？”`
+			choice
+				`	“我很乐意。”`
+					goto test
+				`	“我能得到什么回报？”`
+			`	“丰厚的报酬，”他说，“以及购买首批量产飞船的权利，如果你愿意的话。”`
+			`	“听起来很公平，”你说。`
+			label test
+			`	“太好了，”他说，“我需要你在几份表格上签字。比如死亡免责声明，以及允许我们在宣传材料中使用你姓名和肖像的许可。你知道的，都是些常规的法律手续。”`
+			choice
+				`	“没问题。我该去哪里和这艘船交战？”`
+				`	“抱歉，我想我不能同意。”`
+					decline
+			`	“我们大部分的星舰测试都在<waypoints>星系进行，”他说，“测试船非常显眼。前往那里，在不摧毁它的前提下使其瘫痪，然后返回这里，告诉我们你发现的任何弱点或改进建议。如果你摧毁或偷走它，自然就拿不到报酬。”`
+				accept
+	
+	npc disable save
+		government "Test Dummy"
+		personality disables staying nemesis heroic
+		system "Umbral"
+		ship "Unknown Ship Type" "Tarazed Prototype"
+	
+	on complete
+		payment 2000000
+		"global: unlocked kestrel" ++
+		conversation
+			`你降落不久后，阿蒂诺达便来找你。“看来你活下来了，”他说，“战斗很艰难吗？”`
+			choice
+				`	“是的，你造了一艘令人印象深刻的飞船。”`
+					goto yes
+				`	“不，我恐怕没费什么力气就把它解决了。”`
+					goto no
+			
+			label yes
+			`	“很高兴听到你这么说，”他说，“现在，在开始量产这艘飞船之前，我们还有机会做一些微调。你建议进行哪些改动？”`
+				goto changes
+			
+			label no
+			`	“好吧，”他说，“毕竟你是大名鼎鼎的<first> <last>，我想任何单艘战舰对你来说都算不上什么威胁。现在，在开始量产这艘飞船之前，我们还有机会做一些微调。你建议进行哪些改动？”`
+				goto changes
+			
+			label changes
+			choice
+				`	“充足的武器空间永远是我的首要考虑。”`
+					goto weapons
+				`	“你应该确保它有足够的空间来安装任何引擎。”`
+					goto engines
+				`	“也许你该着手改进它的护盾和船体。”`
+					goto shields
+				`	“我觉得这么大的飞船应该有更多的战斗机泊位。”`
+					goto bays
+			
+			label weapons
+			action
+				set "kestrel: more weapons"
+			`	“很好，”他说，“我们会看看能不能扩大武器容量，这样一来哪怕是最大的武器也能装得下。”`
+				goto name
+			
+			label engines
+			action
+				set "kestrel: more engines"
+			`	“很好，”他说，“我们会看看能不能把引擎容量扩得足够大，这样一来哪怕是最大的引擎也能装得下。”`
+				goto name
+			
+			label shields
+			action
+				set "kestrel: more shields"
+			`	“好的，”他说，“我们会专注于强化船体和护盾矩阵。”`
+				goto name
+			
+			label bays
+			action
+				set "kestrel: more bays"
+			`	“很好，”他说，“我们会看看能不能在船体中增设更多的战斗机泊位。”`
+				goto name
+			
+			label name
+			`	“这艘飞船有型号名称了吗？”你问。`
+			`	“还没有，”他说，“你有什么建议吗？”`
+			choice
+				`	“幽魂。”`
+					goto wraith
+				`	“灰鹅。”`
+					goto goose
+			
+			label wraith
+			`	“这名字也不算太差，”他说，“不过在河鼓三，我们通常以动物来命名舰船。还有别的想法吗？”`
+			choice
+				`	“恐狼。”`
+					goto wolf
+				`	“红隼。”`
+					goto kestrel
+			
+			label goose
+			`	“它飞行时确实有点像只鹅，”他说，“但这名字可一点都不吓人。你有什么更可怕的点子吗？”`
+			choice
+				`	“收割者。”`
+					goto reaper
+				`	“红隼。”`
+					goto kestrel
+			
+			label wolf
+			`	“不错，”他说，“但我们其他的舰船——猎鹰、鱼鹰、鹰——都是鸟类。也许起个鸟名？”`
+			choice
+				`	“灰鹅。”`
+					goto goose
+				`	“红隼。”`
+					goto kestrel
+			
+			label reaper
+			`	“我不知道，”他说，“那名字听起来有点太夸张了。还有其他建议吗？”`
+			choice
+				`	“幽魂。”`
+					goto wraith
+				`	“红隼。”`
+					goto kestrel
+			
+			label kestrel
+			`	当你说出“红隼”这个词时，他猛地一颤，仿佛被电击了一般。“对，”他说，“就是它！我们就用这个名字。谢谢你，船长。红隼上市后我会第一时间通知你，我们会在最终设计修改中考虑你的建议。”他付给你两百万信用点，并祝你未来一切顺利。`
+
+
+
+mission "Kestrel: More Weapons"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "kestrel: more weapons"
+	on offer
+		event "kestrel available: more weapons" 50
+		fail
+
+
+
+mission "Kestrel: More Engines"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "kestrel: more engines"
+	on offer
+		event "kestrel available: more engines" 50
+		fail
+
+
+
+mission "Kestrel: More Shields"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "kestrel: more shields"
+	on offer
+		event "kestrel available: more shields" 50
+		fail
+
+
+
+mission "Kestrel: More Bays"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "kestrel: more bays"
+	on offer
+		event "kestrel available: more bays" 50
+		fail
+
+
+
+mission "Kestrel Available"
+	landing
+	source
+		near "Tarazed" 100
+	to offer
+		has "kestrel available"
+	destination "Wayfarer"
+	on offer
+		conversation
+			branch engines
+				has "kestrel: more engines"
+			
+			branch shields
+				has "kestrel: more shields"
+			
+			branch bays
+				has "kestrel: more bays"
+			
+			scene "thumbnail/kestrelw"
+			``
+				goto message
+			
+			label engines
+			scene "thumbnail/kestrele"
+			``
+				goto message
+			
+			label shields
+			scene "thumbnail/kestrels"
+			``
+				goto message
+				
+			label bays
+			scene "thumbnail/kestrelc"
+			``
+			label message
+			`你收到了来自河鼓三公司飞船设计师查尔斯·阿蒂诺达的一条消息：“<last>船长，我们很高兴通知您，我们最新的战舰现在已经在旅人星上市了。我们在最终设计中充分考虑了您的所有反馈。再次感谢！”`
+				decline
+
+
+shipyard "Kestrel"
+
+event "kestrel available: more weapons"
+	set "kestrel available"
+	shipyard "Kestrel"
+		"Kestrel (More Weapons)"
+	planet Wayfarer
+		add shipyard "Kestrel"
+event "kestrel available: more engines"
+	set "kestrel available"
+	shipyard "Kestrel"
+		"Kestrel (More Engines)"
+	planet Wayfarer
+		add shipyard "Kestrel"
+event "kestrel available: more shields"
+	set "kestrel available"
+	shipyard "Kestrel"
+		"Kestrel (More Shields)"
+	planet Wayfarer
+		add shipyard "Kestrel"
+event "kestrel available: more bays"
+	set "kestrel available"
+	shipyard "Kestrel"
+		"Kestrel (More Bays)"
+	planet Wayfarer
+		add shipyard "Kestrel"
+
+
+ship "Unknown Ship Type"
+	"display name" "未知船型"
+	sprite "ship/kestrel"
+	thumbnail "thumbnail/kestrel"
+	"administrative cost" 7
+	attributes
+		category "Heavy Warship"
+		"cost" 14700000
+		"shields" 19400
+		"hull" 7200
+		"required crew" 64
+		"bunks" 128
+		"mass" 2135
+		"drag" 20.9
+		"heat dissipation" .32
+		"fuel capacity" 500
+		"cargo space" 120
+		"outfit space" 810
+		"weapon capacity" 390
+		"engine capacity" 210
+		weapon
+			"blast radius" 260
+			"shield damage" 2600
+			"hull damage" 1300
+			"hit force" 3900
+	outfits
+		"Particle Cannon" 4
+		"Torpedo Launcher" 2
+		"Torpedo" 60
+		"Heavy Laser Turret" 4
+		
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Liquid Nitrogen Cooler"
+		"Tactical Scanner" 2
+		
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Hyperdrive"
+	engine 13 170
+	engine -13 170
+	gun -73.5 46 "Torpedo Launcher"
+	gun 73.5 46 "Torpedo Launcher"
+	gun -51 49.5 "Particle Cannon"
+	gun 51 49.5 "Particle Cannon"
+	gun -29.5 52 "Particle Cannon"
+	gun 29.5 52 "Particle Cannon"
+	turret -8 -10.5 "Heavy Laser Turret"
+	turret 8 -10.5 "Heavy Laser Turret"
+	turret -20.5 9 "Heavy Laser Turret"
+	turret 20.5 9 "Heavy Laser Turret"
+	explode "small explosion" 25
+	explode "medium explosion" 35
+	explode "large explosion" 45
+	explode "huge explosion" 30
+	"final explode" "final explosion large"
+
+
+ship "Kestrel"
+	"display name" "红隼"
+	sprite "ship/kestrel"
+	thumbnail "thumbnail/kestrel"
+	"administrative cost" 7
+	attributes
+		category "Heavy Warship"
+		"cost" 14700000
+		"shields" 19400
+		"hull" 7200
+		"required crew" 64
+		"bunks" 128
+		"mass" 2135
+		"drag" 20.9
+		"heat dissipation" .32
+		"fuel capacity" 500
+		"cargo space" 120
+		"outfit space" 810
+		"weapon capacity" 390
+		"engine capacity" 210
+		weapon
+			"blast radius" 260
+			"shield damage" 2600
+			"hull damage" 1300
+			"hit force" 3900
+	outfits
+		"Particle Cannon" 4
+		"Torpedo Launcher" 2
+		"Torpedo" 60
+		"Heavy Laser Turret" 4
+		
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Liquid Nitrogen Cooler"
+		"Tactical Scanner" 2
+		
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Hyperdrive"
+	engine 13 170
+	engine -13 170
+	gun -73.5 46 "Torpedo Launcher"
+	gun 73.5 46 "Torpedo Launcher"
+	gun -51 49.5 "Particle Cannon"
+	gun 51 49.5 "Particle Cannon"
+	gun -29.5 52 "Particle Cannon"
+	gun 29.5 52 "Particle Cannon"
+	turret -8 -10.5 "Heavy Laser Turret"
+	turret 8 -10.5 "Heavy Laser Turret"
+	turret -20.5 9 "Heavy Laser Turret"
+	turret 20.5 9 "Heavy Laser Turret"
+	bay "Fighter" -46 106 under
+		"launch effect" "human internal"
+	bay "Fighter" 46 106 under
+		"launch effect" "human internal"
+	explode "small explosion" 25
+	explode "medium explosion" 35
+	explode "large explosion" 45
+	explode "huge explosion" 30
+	"final explode" "final explosion large"
+	description "数年前，河鼓三的首席飞船设计师为寻求精神上的重生而造访了一座汗蒸小屋，在恍惚中游历至一个与我们截然不同的现实。在那里，他见到了一艘奇异而优雅的星舰幻象。带着重燃的使命感重返工作后，他耗费了接下来的七年时光，将红隼号变为了现实。"
+
+
+ship "Kestrel" "Kestrel (More Engines)"
+	sprite "ship/kestrele"
+	thumbnail "thumbnail/kestrele"
+	add attributes
+		"drag" -1.9
+		"fuel capacity" 100
+		"engine capacity" 30
+	engine 13 170
+	engine -13 170
+	engine 24.5 160 0.4
+	engine -24.5 160 0.4
+
+ship "Kestrel" "Kestrel (More Shields)"
+	sprite "ship/kestrels"
+	thumbnail "thumbnail/kestrels"
+	add attributes
+		"shields" 3000
+		"hull" 1500
+		"heat dissipation" .032
+
+ship "Kestrel" "Kestrel (More Weapons)"
+	sprite "ship/kestrelw"
+	thumbnail "thumbnail/kestrelw"
+	add attributes
+		"weapon capacity" 40
+	gun -76.5 49
+	gun 76.5 49
+	gun -73.5 46 "Torpedo Launcher"
+	gun 73.5 46 "Torpedo Launcher"
+	gun -55.5 52.5
+	gun 55.5 52.5
+	gun -51 49.5 "Particle Cannon"
+	gun 51 49.5 "Particle Cannon"
+	gun -33 55
+	gun 33 55
+	gun -29.5 52 "Particle Cannon"
+	gun 29.5 52 "Particle Cannon"
+	turret -8 -10.5 "Heavy Laser Turret"
+	turret 8 -10.5 "Heavy Laser Turret"
+	turret -20.5 9 "Heavy Laser Turret"
+	turret 20.5 9 "Heavy Laser Turret"
+
+ship "Kestrel" "Kestrel (More Bays)"
+	sprite "ship/kestrelc"
+	thumbnail "thumbnail/kestrelc"
+	add attributes
+		"mass" 60
+		"weapon capacity" -20
+	outfits
+		"Particle Cannon" 2
+		"Torpedo Launcher" 2
+		"Torpedo" 60
+		"Heavy Laser Turret" 4
+		
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Liquid Nitrogen Cooler"
+		"Tactical Scanner" 2
+		
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Hyperdrive"
+	gun -73.5 46 "Torpedo Launcher"
+	gun 73.5 46 "Torpedo Launcher"
+	gun -29.5 52 "Particle Cannon"
+	gun 29.5 52 "Particle Cannon"
+	turret -8 -10.5 "Heavy Laser Turret"
+	turret 8 -10.5 "Heavy Laser Turret"
+	turret -20.5 9 "Heavy Laser Turret"
+	turret 20.5 9 "Heavy Laser Turret"
+	bay "Fighter" -46 106
+		"launch effect" "human internal"
+	bay "Fighter" 46 106
+		"launch effect" "human internal"
+	bay "Fighter" -62 78
+		"launch effect" "human internal"
+	bay "Fighter" 62 78
+		"launch effect" "human internal"
+	bay "Fighter" -56 70
+		"launch effect" "human internal"
+	bay "Fighter" 56 70
+		"launch effect" "human internal"

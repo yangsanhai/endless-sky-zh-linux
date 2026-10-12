@@ -1,0 +1,1785 @@
+# Copyright (c) 2016 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Fleet management:
+tip "parked"
+	`（停泊）`
+
+
+
+# Outfit and ship attributes:
+tip "acceleration:"
+	`这艘飞船的加速快慢。飞船质量越大（包括所载货物或战斗机的质量），加速就越慢。`
+
+tip "acceleration multiplier:"
+	`按给定系数修正飞船的加速度。`
+
+tip "active cooling:"
+	`满功率运行时的每秒冷却量。主动冷却需要消耗能量，但如果你的热量较低，它将以更低的冷却速率和更少的能耗运行。冷却量与你飞船的温度成正比，只有接近过热时才能达到满额水平。`
+
+tip "afterburner energy:"
+	`发射此加力燃烧器时每秒消耗的能量。`
+
+tip "afterburner shields:"
+	`发射此加力燃烧器时每秒对飞船造成的护盾伤害。`
+
+tip "afterburner hull:"
+	`发射此加力燃烧器时每秒对飞船造成的船体伤害。`
+
+tip "afterburner fuel:"
+	`发射此加力燃烧器时每秒消耗的燃料。`
+
+tip "afterburner discharge:"
+	`发射此加力燃烧器时每秒累积的护盾放电量。`
+
+tip "afterburner corrosion:"
+	`发射此加力燃烧器时每秒累积的船体腐蚀量。`
+
+tip "afterburner ion:"
+	`发射此加力燃烧器时每秒累积的电离量。`
+
+tip "afterburner scramble:"
+	`发射此加力燃烧器时每秒累积的干扰量。`
+
+tip "afterburner leakage:"
+	`发射此加力燃烧器时每秒累积的燃料泄漏量。`
+
+tip "afterburner burn:"
+	`发射此加力燃烧器时每秒累积的放热反应量。`
+
+tip "afterburner slowing:"
+	`发射此加力燃烧器时每秒累积的引擎干扰量。`
+
+tip "afterburner disruption:"
+	`发射此加力燃烧器时每秒累积的护盾干扰量。`
+
+tip "afterburner heat:"
+	`发射此加力燃烧器时每秒产生的热量。`
+
+tip "afterburner thrust:"
+	`此加力燃烧器产生的推力。`
+
+tip "asteroid scan power:"
+	`允许扫描小行星。此小行星扫描仪的扫描范围与此数值的平方根成正比。`
+
+tip "atmosphere scan:"
+	`你的飞船无法进行此类扫描，但此装备可能对某些任务有用。`
+
+tip "automaton:"
+	`拥有此属性的飞船无需任何船员即可运行，即使装有通常需要额外船员的装备也一样。不过在此状态下，你无法将其用作旗舰。`
+
+tip "bunks:"
+	`你的飞船可容纳的人数（乘客或船员）。`
+
+tip "burn protection:"
+	`提供的燃烧伤害防护。按给定系数提高飞船在热量升至与无防护飞船相同时所能承受的燃烧伤害量。`
+
+tip "burn resistance:"
+	`每秒抵御的燃烧伤害。`
+
+tip "burn resistance energy:"
+	`抵御燃烧伤害时每秒消耗的能量。`
+
+tip "burn resistance fuel:"
+	`抵御燃烧伤害时每秒消耗的燃料。`
+
+tip "burn resistance heat:"
+	`抵御燃烧伤害时每秒产生的热量。`
+
+tip "capture attack:"
+	`提高一名船员在攻击并夺取其他飞船时的"力量"。每名船员一次只能使用一件武器，但他们会选用威力最高的武器。`
+
+tip "capture defense:"
+	`提高一名船员在抵御夺取本舰的进攻时的"力量"。每名船员一次只能使用一件武器，但他们会选用威力最高的武器。`
+
+tip "cargo:"
+	`这艘飞船当前载货量（以吨计），以及其最大载货量。`
+
+tip "cargo scan:"
+	`允许在不超过此距离内扫描目标飞船的货物。`
+
+tip "cargo scan power:"
+	`允许扫描目标飞船的货物。此货物扫描仪的扫描范围与此数值的平方根成正比。`
+
+tip "cargo scan speed:"
+	`决定执行一次货物扫描所需的时间。数值越高，扫描越快。`
+
+tip "cargo scan efficiency:"
+	`此货物扫描仪的最高速度与此数值的平方根成正比。实际扫描速度会受多种因素影响。距离更远或货舱更大的目标需要更长时间才能扫描完成。`
+
+tip "cargo scan opacity:"
+	`增加其他飞船扫描本舰货物所需的时间。数值为 1 时，对扫描时间的影响相当于货物扫描空间增加 1 吨。`
+
+tip "cargo space:"
+	`这艘飞船可运载的货物吨数（商品、任务货物和掠夺来的装备）。`
+
+tip "cargo space needed:"
+	`此装备占用的货舱空间（吨）。`
+
+tip "cloak:"
+	`此装备可让你的飞船隐形。该数值表示完全启动或解除隐形所需的时间。隐形时飞船无法开火，除非拥有相关的"隐形开火"属性。`
+
+tip "cloak by mass:"
+	`此装备可让你的飞船隐形。该数值表示质量为 1000 的飞船完全启动或解除隐形所需的时间。飞船质量越大，隐形运作越慢；质量越小，隐形运作越快。隐形时飞船无法开火，除非拥有相关的"隐形开火"属性。`
+
+tip "cloaking energy:"
+	`隐形时每秒消耗的能量。`
+
+tip "cloaking fuel:"
+	`隐形时每秒消耗的燃料。`
+	
+tip "cloaking heat:"
+	`隐形时每秒产生的热量。`
+
+tip "cloaking shields:"
+	`隐形时每秒消耗的护盾。`
+
+tip "cloaking shield delay:"
+	`此飞船在隐形时无法恢复护盾，其护盾恢复会有一段延迟，隐形时间越长，延迟越久。`
+
+tip "cloaking hull:"
+	`隐形时每秒消耗的船体。`
+
+tip "cloaking repair delay:"
+	`此飞船在隐形时无法修复船体，其船体修复会有一段延迟，隐形时间越长，延迟越久。`
+
+tip "cloak hull protection:"
+	`隐形生效时提供的对造成船体伤害武器的防护。按给定系数提高飞船在能量损失与无防护飞船相同时所能承受的船体伤害量。`
+
+tip "cloak shield protection:"
+	`隐形生效时提供的对造成护盾伤害武器的防护。按给定系数提高飞船在能量损失与无防护飞船相同时所能承受的护盾伤害量。`
+
+tip "cloak phasing:"
+	`隐形时武器无法影响此飞船，会直接穿过。`
+
+tip "cloaked firing:"
+	`此装置在隐藏你方面效率极高，你可以在隐形过程中开火，并因此损失相应量的隐形成效，随后再次进入隐形。负值意味着开火完全不会妨碍隐形。`
+
+tip "cloak hull threshold:"
+	`如果你的船体低于此数值（以 0 到 1 之间的 % 表示），隐形装置将无法继续运作。`
+
+tip "cooling:"
+	`每秒散发的热量。当飞船自带的散热能力不足以避免过热时使用。`
+
+tip "cooling energy:"
+	`主动冷却满功率运行时（因为飞船温度接近过热阈值）每秒消耗的能量。`
+
+tip "cooling inefficiency:"
+	`对飞船冷却能力的干扰。冷却效率为 5 时，其冷却系统只能发挥约 75% 的效果；效率为 10 时只能发挥 30%。`
+
+tip "corrosion protection:"
+	`提供的腐蚀伤害防护。按给定系数提高飞船在船体损失与无防护飞船相同时所能承受的腐蚀伤害量。`
+
+tip "corrosion resistance:"
+	`每秒抵御的腐蚀伤害。`
+
+tip "corrosion resistance energy:"
+	`抵御腐蚀伤害时每秒消耗的能量。`
+
+tip "corrosion resistance fuel:"
+	`抵御腐蚀伤害时每秒消耗的燃料。`
+
+tip "corrosion resistance heat:"
+	`抵御腐蚀伤害时每秒产生的热量。`
+
+tip "cost:"
+	`价格，以星币计。如果你今天卖出过任何二手（折旧）物品，可以用当初的卖出价买回来。`
+
+tip "fleet cost:"
+	`这艘飞船占用多少舰队容量。你的旗舰和停泊的护航舰不计入容量。降落后你可以超出容量，但一旦超容将无法起飞。`
+
+tip "discharge protection:"
+	`提供的护盾放电伤害防护。按给定系数提高飞船在护盾损失与无防护飞船相同时所能承受的放电伤害量。`
+
+tip "discharge resistance:"
+	`此飞船每秒可抵御的护盾放电伤害量。`
+
+tip "discharge resistance energy:"
+	`抵御放电伤害时每秒消耗的能量。`
+
+tip "discharge resistance fuel:"
+	`抵御放电伤害时每秒消耗的燃料。`
+
+tip "discharge resistance heat:"
+	`抵御放电伤害时每秒产生的热量。`
+
+tip "disruption protection:"
+	`提供的护盾破坏伤害防护。按给定系数提高飞船在护盾受破坏程度与无防护飞船相同时所能承受的破坏伤害量。`
+
+tip "disruption resistance:"
+	`每秒抵御的护盾破坏伤害。`
+
+tip "disruption resistance energy:"
+	`抵御破坏伤害时每秒消耗的能量。`
+
+tip "disruption resistance fuel:"
+	`抵御破坏伤害时每秒消耗的燃料。`
+
+tip "disruption resistance heat:"
+	`抵御破坏伤害时每秒产生的热量。`
+
+tip "drag:"
+	`限制飞船的最高速度。`
+	
+tip "drag reduction:"
+	`降低阻力。按给定系数提高飞船的最高速度。`
+
+tip "drone bays:"
+	`此飞船可搭载的"无人机"类别飞船数量。`
+
+tip "energy capacity:"
+	`此装备为飞船能量上限增加的能量。这让你可以暂时使用超过发电机输出功率的能量。`
+
+tip "energy consumption:"
+	`飞行过程中每秒消耗的能量。`
+	
+tip "energy generation:"
+	`每秒产生的能量。如果你的飞船装有光束武器以外的武器，你很可能还需要电池来储存能量。`
+
+tip "engine capacity needed:"
+	`此装备占用的引擎空间（吨）。`
+
+tip "    engine capacity:"
+	`此飞船可容纳的引擎吨数。（要安装引擎，你还必须有足够的装备总空间可用。）`
+
+tip "energy protection:"
+	`提供的能量伤害防护。按给定系数提高飞船在能量损失与无防护飞船相同时所能承受的能量伤害量。`
+
+tip "fighter bays:"
+	`此飞船可搭载的"战斗机"类别飞船数量。`
+
+tip "flotsam chance:"
+	`当安装此装备的飞船被摧毁时，此装备作为漂浮残骸掉落的几率。`
+
+tip "force protection:"
+	`提供的对武器击中冲击力的防护。按给定系数提高飞船在位移与无防护飞船相同时所能承受的外力。`
+
+tip "fuel:"
+	`此飞船当前的燃料量。一次普通的超空间引擎跃迁消耗 100 燃料。`
+
+tip "fuel capacity:"
+	`此飞船可储存的燃料量。一次普通的超空间引擎跃迁消耗 100 燃料。在有居民的星球降落后，燃料会免费补满。`
+
+tip "fuel consumption:"
+	`飞行过程中每秒消耗的燃料。`
+	
+tip "fuel energy:"
+	`消耗燃料时每秒产生的能量。`
+	
+tip "fuel generation:"
+	`每秒产生的燃料。`
+	
+tip "fuel heat:"
+	`消耗燃料时每秒产生的热量。`
+
+tip "fuel protection:"
+	`提供的燃料伤害防护。按给定系数提高飞船在燃料损失与无防护飞船相同时所能承受的燃料伤害量。`
+
+tip "gun ports needed:"
+	`此武器占用一个炮位。火炮始终朝正前方射击；炮塔则朝你当前选定目标的方向射击。`
+
+tip "gun ports free:"
+	`此飞船可容纳的火炮数量。这包括大多数朝正前方发射的导弹和副武器。`
+
+tip "heat dissipation:"
+	`此飞船散发多余热量的效率。`
+
+tip "heat generation:"
+	`每秒产生的热量。热量产生可以通过"冷却"装备抵消。如果飞船超出最大热量，就必须暂时停机来散热。`
+
+tip "heat protection:"
+	`提供的热量伤害防护。按给定系数提高飞船在热量升至与无防护飞船相同时所能承受的热量伤害量。`
+
+tip "heat capacity:"
+	`提高此飞船在过热前所能承受的最大热量。数值为 1 时，对飞船最大热量的影响相当于 1 吨质量，但不包含质量对移动的影响。`
+
+tip "hull (repair):"
+	`船体总强度和每秒修复量。最小的飞船在船体强度降至约 45% 以下时瘫痪，而超大型飞船在接近 10% 时才会瘫痪。`
+
+tip "hull:"
+	`船体总强度。船体强度越高的飞船，在被瘫痪前能承受的伤害占其总强度的比例越大；最小的飞船在船体强度降至约 45% 以下时瘫痪，而超大型飞船在接近 10% 时才会瘫痪。`
+
+tip "hull energy:"
+	`修复船体时每秒消耗的能量。`
+
+tip "delayed hull energy:"
+	`修复延迟期结束后，修复船体时每秒额外消耗的能量。`
+
+tip "hull energy multiplier:"
+	`按给定系数修正修复船体所消耗的能量。`
+
+tip "hull fuel:"
+	`修复船体时每秒消耗的燃料。`
+
+tip "delayed hull fuel:"
+	`修复延迟期结束后，修复船体时每秒额外消耗的燃料。`
+
+tip "hull fuel multiplier:"
+	`按给定系数修正修复船体所消耗的燃料。`
+
+tip "hull heat:"
+	`修复船体时每秒产生的热量。`
+
+tip "delayed hull heat:"
+	`修复延迟期结束后，修复船体时每秒额外产生的热量。`
+
+tip "hull heat multiplier:"
+	`按给定系数修正修复船体所产生的热量。`
+
+tip "hull multiplier:"
+	`按给定系数修正飞船的船体总强度。`
+
+tip "hull repair rate:"
+	`每秒可修复的船体强度。修复通常消耗能量，也可能产生热量。`
+
+tip "delayed hull repair rate:"
+	`修复延迟期结束后，每秒可额外修复的船体强度。`
+
+tip "repair delay:"
+	`船体受损后，需要多少秒才会开始额外的船体修复。`
+
+tip "disabled repair delay:"
+	`飞船瘫痪后，需要多少秒才会开始船体修复。`
+	
+tip "disabled recovery time:"
+	`瘫痪的飞船自我修复所需的秒数。`
+	
+tip "disabled recovery energy:"
+	`瘫痪的飞船自我修复所需的能量消耗。`
+
+tip "disabled recovery fuel:"
+	`瘫痪的飞船自我修复所需的燃料消耗。`
+	
+tip "disabled recovery heat:"
+	`瘫痪的飞船自我修复时产生的热量。`
+
+tip "disabled recovery ionization:"
+	`瘫痪的飞船自我修复时施加的电离伤害。`
+
+tip "disabled recovery scrambling:"
+	`瘫痪的飞船自我修复时施加的干扰伤害。`
+
+tip "disabled recovery disruption:"
+	`瘫痪的飞船自我修复时施加的破坏伤害。`
+
+tip "disabled recovery slowing:"
+	`瘫痪的飞船自我修复时施加的减速伤害。`
+
+tip "disabled recovery discharge:"
+	`瘫痪的飞船自我修复时施加的放电伤害。`
+
+tip "disabled recovery corrosion:"
+	`瘫痪的飞船自我修复时施加的腐蚀伤害。`
+
+tip "disabled recovery leak:"
+	`瘫痪的飞船自我修复时施加的泄漏伤害。`
+	
+tip "disabled recovery burning:"
+	`瘫痪的飞船自我修复时施加的燃烧伤害。`
+
+tip "absolute threshold:"
+	`飞船瘫痪时所处的剩余船体强度。此属性优先于其他改变瘫痪阈值的属性。`
+
+tip "hull threshold:"
+	`修正飞船瘫痪时的船体强度数值。`
+
+tip "threshold percentage:"
+	`修正飞船瘫痪时剩余船体强度的百分比。`
+
+tip "hull protection:"
+	`提供的直接船体伤害防护。按给定系数提高飞船在船体损失与无防护飞船相同时所能承受的船体伤害量。`
+
+tip "hull repair multiplier:"
+	`按给定系数修正每秒修复的船体强度。`
+
+tip "cloaked repair multiplier:"
+	`隐形装置生效时，按给定系数修正每秒修复的船体强度。`
+
+tip "illegal:"
+	`携带此装备可能被罚款的星币数额。`
+
+tip "income:"
+	`拥有此装备时每天获得的星币数额，即使它并未投入使用。`
+	
+tip "inertia reduction:"
+	`降低飞船的有效质量。按给定系数提高飞船的加速快慢。`
+
+tip "ion protection:"
+	`提供的电离伤害防护。按给定系数修正飞船在能量损失与无防护飞船相同时所能承受的电离伤害量。`
+
+tip "scramble protection:"
+	`提供的武器干扰伤害防护。按给定系数提高飞船在武器受干扰程度与无防护飞船相同时所能承受的干扰伤害量。`
+
+tip "ion resistance:"
+	`每秒抵御的电离伤害。`
+
+tip "ion resistance energy:"
+	`抵御电离伤害时每秒消耗的能量。`
+
+tip "ion resistance fuel:"
+	`抵御电离伤害时每秒消耗的燃料。`
+
+tip "ion resistance heat:"
+	`抵御电离伤害时每秒产生的热量。`
+
+tip "landing speed:"
+	`此飞船降落或穿越虫洞时表现出的速度。`
+
+tip "scramble resistance:"
+	`每秒抵御的干扰伤害。`
+
+tip "scramble resistance energy:"
+	`抵御干扰伤害时每秒消耗的能量。`
+
+tip "scramble resistance fuel:"
+	`抵御干扰伤害时每秒消耗的燃料。`
+
+tip "scramble resistance heat:"
+	`抵御干扰伤害时每秒产生的热量。`
+
+tip "jump speed:"
+	`飞船进行跃迁时的最高速度。`
+
+tip "hyperdrive fuel:"
+	`使用此超空间引擎在星系间跃迁时消耗的燃料。`
+
+tip "jump drive fuel:"
+	`使用此跃迁引擎在星系间跃迁时消耗的燃料。`
+
+tip "jump range:"
+	`此引擎可跃迁的最大距离。`
+
+tip "jump mass cost:"
+	`跃迁时每 100 吨质量消耗的燃料。与跃迁燃料叠加。`
+
+tip "jump base mass:"
+	`修正飞船质量对跃迁质量消耗的影响。质量低于此值的飞船跃迁消耗将低于基础跃迁燃料成本，而质量高于此值的飞船跃迁消耗更高。`
+
+tip "leak protection:"
+	`提供的泄漏伤害防护。按给定系数提高飞船在燃料损失与无防护飞船相同时所能承受的泄漏伤害量。`
+
+tip "leak resistance:"
+	`每秒抵御的泄漏伤害。`
+
+tip "leak resistance energy:"
+	`抵御泄漏伤害时每秒消耗的能量。`
+
+tip "leak resistance fuel:"
+	`抵御泄漏伤害时每秒消耗的燃料。`
+
+tip "leak resistance heat:"
+	`抵御泄漏伤害时每秒产生的热量。`
+
+tip "maintenance costs:"
+	`每天维护此装备所需的星币。即使飞船已停泊或装备存放在货舱中，你仍需支付其维护费用。`
+
+tip "map:"
+	`此星图包含的星系数量。`
+
+tip "mass with no cargo:"
+	`此飞船在未载货、未搭载战斗机时的质量。货物会增加质量，从而降低加速度和转向速率，并提高过热前的最大热量。`
+
+tip "mass:"
+	`质量，以吨计。飞船质量决定其转向和加速的快慢，以及过热前的最大热量。`
+
+tip "max speed:"
+	`此飞船使用推进器时的最高速度。不包括加力燃烧器的效果，除非没有安装普通推进器。`
+
+tip "movement:"
+	`此飞船加速和转向的快慢。`
+
+tip "movement (full - no cargo):"
+	`此飞船在货舱满载与空载时的加速和转向快慢。`
+
+tip "operating costs:"
+	`此装备投入使用期间每天维护所需的星币。`
+
+tip "operating income:"
+	`此装备投入使用期间每天获得的星币。`
+
+tip "outfit scan:"
+	`允许在不超过此距离内扫描目标飞船的装备。`
+
+tip "outfit scan power:"
+	`允许扫描目标飞船的装备。此装备扫描仪的扫描范围与此数值的平方根成正比。`
+
+tip "outfit scan speed:"
+	`决定执行一次装备扫描所需的时间。数值越高，扫描越快。`
+
+tip "outfit scan efficiency:"
+	`此装备扫描仪的最高速度与此数值的平方根成正比。实际扫描速度会受多种因素影响。距离更远或装备容量更大的目标需要更长时间才能扫描完成。`
+
+tip "outfit scan opacity:"
+	`增加其他飞船扫描本舰装备所需的时间。数值为 1 时，对扫描时间的影响相当于装备空间增加 1 吨。`
+
+tip "outfit space added:"
+	`此装备提供的通用空间（吨）。`
+
+tip "outfit space needed:"
+	`此装备占用的通用空间（吨）。部分装备还会占用武器空间或引擎空间。`
+
+tip "outfit space free:"
+	`此飞船可用于装备的空间（吨），包括武器和引擎。`
+
+tip "overheat damage rate:"
+	`过热时每秒承受的船体伤害。过热伤害随飞船超出过热阈值的程度而增加。`
+
+tip "overheat damage threshold:"
+	`提高过热后开始受到过热伤害的百分比阈值。`
+
+tip "optical jamming:"
+	`降低光学制导导弹追踪你飞船的能力，对大型飞船尤其有用。安装的光学干扰装置越多，导弹被干扰的距离越远，被干扰的导弹随机飞偏的几率也越大。`
+
+tip "piercing:"
+	`当目标护盾仍然有效时，此武器伤害穿透到船体的百分比。`
+
+tip "piercing protection:"
+	`提供的对穿透类武器的防护。按给定系数提高使相同比例的武器伤害绕过飞船护盾所需的穿透量。`
+
+tip "piercing resistance:"
+	`对所有来袭弹丸抵御的穿透伤害，防止伤害越过护盾泄漏到船体。`
+
+tip "radar jamming:"
+	`降低雷达制导导弹追踪你飞船的能力。安装的雷达干扰装置越多，导弹被干扰的距离越远，被干扰的导弹随机飞偏的几率也越大。`
+
+tip "ramscoop:"
+	`通过收集恒星风补充燃料。越靠近恒星，冲压收集器效率越高。如果你安装多个冲压收集器，每增加一个的效果都会递减：要达到单个冲压收集器两倍的补充速率，需要四个冲压收集器。`
+
+tip "required crew / bunks:"
+	`操作此飞船所需的船员人数，以及可用的铺位总数。多余的铺位可用于搭载乘客或额外船员。`
+
+tip "required crew:"
+	`按此数值改变此飞船所需的船员人数。`
+
+tip "mandatory crew:"
+	`按此数值改变此飞船所需的船员人数。必需的船员无法由自动化替代。`
+
+tip "reverse thrust:"
+	`引擎产生的反向推力。反向推力让飞船无需掉头即可减速。`
+
+tip "reverse thrusting energy:"
+	`发射反向推进器时每秒消耗的能量。`
+
+tip "reverse thrusting heat:"
+	`发射反向推进器时每秒产生的热量。`
+
+tip "reverse thrusting shields:"
+	`发射反向推进器时每秒对飞船造成的护盾伤害。`
+
+tip "reverse thrusting hull:"
+	`发射反向推进器时每秒对飞船造成的船体伤害。`
+
+tip "reverse thrusting fuel:"
+	`发射反向推进器时每秒消耗的燃料。`
+
+tip "reverse thrusting discharge:"
+	`发射反向推进器时每秒累积的护盾放电量。`
+
+tip "reverse thrusting corrosion:"
+	`发射反向推进器时每秒累积的船体腐蚀量。`
+
+tip "reverse thrusting ion:"
+	`发射反向推进器时每秒累积的电离量。`
+
+tip "reverse thrusting scramble:"
+	`发射反向推进器时每秒累积的干扰量。`
+
+tip "reverse thrusting leakage:"
+	`发射反向推进器时每秒累积的燃料泄漏量。`
+
+tip "reverse thrusting burn:"
+	`发射反向推进器时每秒累积的放热反应量。`
+
+tip "reverse thrusting slowing:"
+	`使用反推推进器时每秒累积的引擎干扰。`
+
+tip "reverse thrusting disruption:"
+	`使用反推推进器时每秒累积的护盾干扰。`
+
+tip "scan interference:"
+	`舰船携带非法装备或货物时躲避侦测的能力。干扰值为 1 时能阻挡 50% 的扫描尝试，3 时阻挡 75%，9 时阻挡 90%。`
+
+tip "scram drive:"
+	`让你无需停船即可跃迁，只要你的速度方向与跃迁方向的偏差在此范围内。`
+
+tip "self destruct:"
+	`你试图登舰或夺取该舰时，它自毁的概率。`
+
+tip "sells for:"
+	`这件装备的出售价格，单位为信用点。装备和舰船会随时间贬值（转售价值下降），而掠夺所得的物品一开始就已完全贬值。`
+
+tip "shield energy:"
+	`充能护盾时每秒消耗的能量。`
+
+tip "delayed shield energy:"
+	`护盾延迟期结束后充能护盾时每秒额外消耗的能量。`
+
+tip "shield energy multiplier:"
+	`按给定系数修正充能护盾所消耗的能量。`
+
+tip "shield fuel:"
+	`充能护盾时每秒消耗的燃料。`
+
+tip "delayed shield fuel:"
+	`护盾延迟期结束后充能护盾时每秒额外消耗的燃料。`
+
+tip "shield fuel multiplier:"
+	`按给定系数修正充能护盾所消耗的燃料。`
+
+tip "shield heat:"
+	`充能护盾时每秒产生的热量。`
+
+tip "delayed shield heat:"
+	`护盾延迟期结束后充能护盾时每秒额外产生的热量。`
+
+tip "shield heat multiplier:"
+	`按给定系数修正充能护盾所产生的热量。`
+
+tip "shield generation:"
+	`每秒恢复的护盾值。充能护盾通常消耗能量，也可能产生热量。`
+
+tip "delayed shield generation:"
+	`护盾延迟期结束后每秒额外恢复的护盾值。`
+
+tip "shield generation multiplier:"
+	`按给定系数修正每秒恢复的护盾值。`
+
+tip "cloaked regen multiplier:"
+	`隐形装置启动时，按给定系数修正每秒恢复的护盾值。`
+
+tip "high shield permeability:"
+	`护盾全满时，此百分比的来袭伤害会绕过护盾，直接作用于船体。`
+
+tip "low shield permeability:"
+	`护盾接近耗尽时，此百分比的来袭伤害会绕过护盾，直接作用于船体。`
+
+tip "cloaked shield permeability:"
+	`你处于隐形状态时，此百分比的来袭伤害会绕过护盾，直接作用于船体。`
+
+tip "shields (charge):"
+	`护盾总强度和每秒恢复速度。`
+
+tip "shields:"
+	`护盾总强度。大多数武器在护盾耗尽前无法伤害你的船体。某些武器效果（如热量伤害）在护盾失效后会变得更严重。`
+
+tip "shield multiplier:"
+	`按给定系数修正舰船的护盾总强度。`
+
+tip "shield delay:"
+	`受到护盾伤害后，需要多少秒才会开始额外恢复护盾。`
+
+tip "depleted shield delay:"
+	`护盾耗尽后，需要多少秒才会开始额外恢复护盾。`
+
+tip "shield protection:"
+	`对护盾伤害的防护。按给定系数提高舰船在损失与无防护舰船相同护盾前所能承受的护盾伤害量。`
+
+tip "silent jumps:"
+	`防止舰船在进入或离开星系时发出超空间引擎或跃迁引擎的声音。`
+
+tip "silent scans:"
+	`防止舰船发出扫描声音。`
+
+tip "slowing protection:"
+	`对减速伤害的防护。按给定系数提高舰船在被减速到与无防护舰船相同程度前所能承受的减速伤害量。`
+
+tip "slowing resistance:"
+	`每秒抵抗的减速伤害。`
+
+tip "slowing resistance energy:"
+	`抵抗减速伤害时每秒消耗的能量。`
+
+tip "slowing resistance fuel:"
+	`抵抗减速伤害时每秒消耗的燃料。`
+
+tip "slowing resistance heat:"
+	`抵抗减速伤害时每秒产生的热量。`
+
+tip "solar collection:"
+	`产生的能量取决于该舰与星系中心恒星的距离。`
+
+tip "solar heat:"
+	`产生的热量取决于该舰与星系中心恒星的距离。`
+
+tip "strategic scan power:"
+	`战略扫描仪让你在目标处于范围内时查看其相对你的距离、最大火炮射程、最大炮塔射程、当前速度、最大加速度和转向速度。范围与该数值的平方根成正比。`
+
+tip "tactical scan power:"
+	`战术扫描仪让你在目标处于范围内时查看其船员编制、燃料、热量和能量水平。范围与该数值的平方根成正比。`
+
+tip "acceleration scan power:"
+	`机动扫描仪让你在目标处于范围内时查看其当前最大加速度。范围与该数值的平方根成正比。`
+
+tip "crew scan power:"
+	`船员扫描仪让你在目标处于范围内时查看其船员编制。范围与该数值的平方根成正比。`
+
+tip "energy scan power:"
+	`能量扫描仪让你在目标处于范围内时查看其能量水平。范围与该数值的平方根成正比。`
+
+tip "fuel scan power:"
+	`燃料扫描仪让你在目标处于范围内时查看其燃料水平。范围与该数值的平方根成正比。`
+
+tip "maneuver scan power:"
+	`机动扫描仪让你在目标处于范围内时查看其当前最大转向速度。范围与该数值的平方根成正比。`
+
+tip "mobility scan power:"
+	`机动扫描仪让你在目标处于范围内时查看其当前速度和最大加速度。范围与该数值的平方根成正比。`
+
+tip "range finder power:"
+	`测距仪让你查看从你的舰船中心到当前目标中心的距离。没有范围限制。`
+
+tip "thermal scan power:"
+	`热扫描仪让你在目标处于范围内时查看其热量水平。范围与该数值的平方根成正比。`
+
+tip "velocity scan power:"
+	`机动扫描仪让你在目标处于范围内时查看其当前速度。范围与该数值的平方根成正比。`
+
+tip "weapon scan power:"
+	`武器扫描仪让你在目标处于扫描范围内时查看其武器的最大射程。具体来说，它会显示火炮挂点上所有武器的最远射程，以及炮塔挂点上所有武器的最远射程。这些射程包含武器偏移量，因此显示的是从其舰船中心起射弹能到达的最大距离。扫描范围与该数值的平方根成正比。`
+
+
+tip "thrust:"
+	`引擎产生的推力。推力越高，舰船的加速度和最高速度越大。舰船质量越大，达到相同加速度所需的推力就越多。`
+
+tip "thrusting energy:"
+	`启动推进器时每秒消耗的能量。`
+
+tip "thrusting heat:"
+	`启动推进器时每秒产生的热量。`
+
+tip "thrusting shields:"
+	`启动推进器时该舰每秒受到的护盾伤害。`
+
+tip "thrusting hull:"
+	`启动推进器时该舰每秒受到的船体伤害。`
+
+tip "thrusting fuel:"
+	`启动推进器时每秒消耗的燃料。`
+
+tip "thrusting discharge:"
+	`启动推进器时每秒累积的护盾放电。`
+
+tip "thrusting corrosion:"
+	`启动推进器时每秒累积的船体腐蚀。`
+
+tip "thrusting ion:"
+	`启动推进器时每秒累积的电离。`
+
+tip "thrusting scramble:"
+	`启动推进器时每秒累积的扰乱。`
+
+tip "thrusting leakage:"
+	`启动推进器时每秒累积的燃料泄漏。`
+
+tip "thrusting burn:"
+	`启动推进器时每秒累积的放热反应。`
+
+tip "thrusting slowing:"
+	`启动推进器时每秒累积的引擎干扰。`
+
+tip "thrusting disruption:"
+	`启动推进器时每秒累积的护盾干扰。`
+
+tip "turn:"
+	`引擎产生的转向力。舰船质量越大，达到相同转向速率所需的转向力就越多。`
+
+tip "turning:"
+	`转向速率，单位为度/秒。舰船质量越大（包括其携带的货物或战机质量），转向越慢。`
+
+tip "turn multiplier:"
+	`按给定系数修正舰船的转向速率。`
+
+tip "turning energy:"
+	`转向时每秒消耗的能量。`
+
+tip "turning heat:"
+	`转向时每秒产生的热量。`
+
+tip "turning shields:"
+	`转向时该舰每秒受到的护盾伤害。`
+
+tip "turning hull:"
+	`转向时该舰每秒受到的船体伤害。`
+
+tip "turning fuel:"
+	`转向时每秒消耗的燃料。`
+
+tip "turning discharge:"
+	`转向时每秒累积的护盾放电。`
+
+tip "turning corrosion:"
+	`转向时每秒累积的船体腐蚀。`
+
+tip "turning ion:"
+	`转向时每秒累积的电离。`
+
+tip "turning scramble:"
+	`转向时每秒累积的扰乱。`
+
+tip "turning leakage:"
+	`转向时每秒累积的燃料泄漏。`
+
+tip "turning burn:"
+	`转向时每秒累积的放热反应。`
+
+tip "turning slowing:"
+	`转向时每秒累积的引擎干扰。`
+
+tip "turning disruption:"
+	`转向时每秒累积的护盾干扰。`
+
+tip "turret mounts needed:"
+	`该武器可朝任意方向开火，并追踪你当前选定的目标。它会占用你舰船的一个炮塔挂点。`
+
+tip "turret mounts free:"
+	`该舰可安装多少门炮塔。炮塔朝当前选定目标的方向开火，而不像火炮那样只能朝正前方射击。`
+
+tip "weapon capacity needed:"
+	`这件装备占用的武器空间（吨）。`
+
+tip "    weapon capacity:"
+	`该舰可容纳的武器吨位。（要安装武器，你还必须有足够的可用装备总空间。）`
+
+tip "scan brightness:"
+	`修正这件非法装备在货物扫描中出现的可能性。亮度越高，越容易被扫描发现。扫描亮度为 5 的装备被扫到的概率与 5 吨的装备相当。`
+
+tip "scan concealment:"
+	`在货物扫描中隐藏等量的非法货物，使你不会因携带它们而被罚款。扫描隐匿值为 10 可使最多 10 吨非法货物不出现在货物扫描中。`
+
+
+
+# Shop Tips:
+tip "outfitter: b"
+	`从装备商处购买并安装到当前选定的舰船上。按住 Shift、Ctrl 或 Alt 可一次购买 5、20 或 500 件。同时按住多个按键可买更多。`
+
+tip "outfitter: s"
+	`按顺序从货物、仓库或当前选定的舰船上出售。按住 Shift、Ctrl 或 Alt 可一次出售 5、20 或 500 件。同时按住多个按键可卖更多。`
+
+tip "outfitter: i"
+	`按顺序从货物或仓库安装到当前选定的舰船上。按住 Shift、Ctrl 或 Alt 可一次安装 5、20 或 500 件。同时按住多个按键可装更多。`
+
+tip "outfitter: u"
+	`按顺序从当前选定的舰船或货物中卸下装备，或将其移入仓库。按住 Shift、Ctrl 或 Alt 可一次卸下 5、20 或 500 件。同时按住多个按键可卸更多。`
+
+tip "outfitter: c"
+	`尽可能将该装备从行星仓库转移到货物中。否则就从装备商处购买。按住 Shift、Ctrl 或 Alt 可一次购买或移动 5、20 或 500 件。同时按住多个按键可处理更多。`
+
+tip "outfitter: r"
+	`按顺序将该装备从货物或当前选定的舰船中移入行星仓库。按住 Shift、Ctrl 或 Alt 可一次存放 5、20 或 500 件。同时按住多个按键可存更多。`
+
+tip "shipyard: b"
+	`购买此舰。按住 Shift、Ctrl 或 Alt 可一次购买 5、20 或 500 艘。同时按住多个按键可买更多。`
+
+tip "shipyard: s"
+	`出售选定的舰船及其装备。`
+
+tip "shipyard: r"
+	`出售选定舰船的船体，但将其装备保留在仓库中。`
+
+
+
+# Sale labels:
+tip "empty hull:"
+	`舰船本身在不安装任何装备时的售价。`
+
+tip "  + outfits:"
+	`该舰所有装备的售价总和。`
+
+
+
+# Ship heat and energy summary fields:
+tip "idle:"
+	`该舰空闲时（即未开火、未转向、未推进）产生的能量和热量。`
+
+tip "moving:"
+	`该舰转向并推进时消耗的能量和产生的热量。这是在“空闲”数值之外的额外部分。`
+
+tip "firing:"
+	`该舰全部武器开火时消耗的能量和产生的热量。这是在“空闲”数值之外的额外部分。`
+
+tip "shields / hull:"
+	`该舰同时充能护盾并修理船体时消耗的能量和产生的热量。这是在“空闲”数值之外的额外部分。`
+
+tip "repairing hull:"
+	`该舰修理船体时消耗的能量和产生的热量。这是在“空闲”数值之外的额外部分。`
+
+tip "charging shields:"
+	`该舰充能护盾时消耗的能量和产生的热量。这是在“空闲”数值之外的额外部分。`
+
+tip "net change:"
+	`上述各项能量与热量数值的总和。代表所有系统同时开启时的最坏情况。`
+
+tip "max:"
+	`能量存储容量以及热量产生的最大安全水平。能量容量让舰船可以临时抽取比其产生量更多的能量。热量上限是你的热量产生速率不致使舰船最终过热的最大值。`
+
+
+
+# Outfit categories:
+tip "Guns:"
+	`固定安装（朝舰首方向开火）且无需弹药的武器。`
+
+tip "Turrets:"
+	`可朝任意方向开火并追踪你当前选定目标的武器。`
+
+tip "Secondary Weapons:"
+	`需要弹药的武器（弹药需单独购买）。`
+
+tip "Ammunition:"
+	`作为其他武器弹药使用的装备。要发射这种弹药，你需要对应类型的发射器。`
+
+tip "Systems:"
+	`占用通用空间（而非为引擎或武器预留的空间）的装备。`
+
+tip "Power:"
+	`提供能量或储存所产生能量的装备。`
+
+tip "Engines:"
+	`推进器和转向系统，影响舰船的移动速度。`
+
+tip "Hand to Hand:"
+	`你的船员在试图夺取舰船时使用的武器。`
+
+tip "Special:"
+	`可购买或出售，但不能安装到舰船上的物品。`
+
+
+
+# Weapon attributes:
+tip "ammo:"
+	`该武器开火时消耗的装备类型。`
+
+tip "ammo usage:"
+	`该武器开火时消耗的弹药数量。`
+
+tip "range:"
+	`该武器的总射程。`
+
+tip "velocity:"
+	`该武器发射的射弹的初速度。某些武器的射弹在飞行中会从该初速度开始加速或减速。`
+
+tip "dropoff modifier:"
+	`当该武器的射弹达到最大衰减距离后，作用于其伤害的倍率。`
+
+tip "dropoff range:"
+	`该武器伤害从 100% 递减到所显示衰减系数的起止距离区间。`
+
+tip "shield damage / second:"
+	`每秒造成的护盾伤害。`
+
+tip "hull damage / second:"
+	`每秒造成的船体伤害。`
+
+tip "minable damage / second:"
+	`每秒造成的可开采伤害。`
+
+tip "fuel damage / second:"
+	`该武器命中时目标每秒损失的燃料。目标护盾开启时效果减半。负值表示增加燃料。`
+
+tip "heat damage / second:"
+	`每秒使目标热量增加此数值。目标护盾开启时效果减半。`
+
+tip "energy damage / second:"
+	`每秒使目标能量减少此数值。目标护盾开启时效果减半。`
+
+tip "ion damage / second:"
+	`减少目标的能量。目标护盾开启时效果减半。电离会随时间逐渐消退。`
+
+tip "scrambling damage / second:"
+	`提高目标武器失灵的概率。目标护盾开启时效果减半。扰乱会随时间逐渐消退。`
+
+tip "slowing damage / second:"
+	`降低目标的转向速率、加速度和最高速度。目标护盾开启时效果减半。减速会随时间逐渐消退。`
+
+tip "disruption damage / second:"
+	`让武器伤害在护盾开启时也能“穿透”到船体。护盾干扰会随时间消退，且当伤害穿透护盾而非干扰护盾时，继续叠加护盾干扰会变得更难。`
+
+tip "discharge damage / second:"
+	`该武器每秒持续造成的护盾伤害。`
+
+tip "corrosion damage / second:"
+	`该武器每秒持续造成的船体伤害。`
+
+tip "leak damage / second:"
+	`该武器每秒持续造成的燃料伤害。`
+
+tip "burn damage / second:"
+	`该武器每秒持续造成的热量伤害。`
+
+tip "% shield damage / second:"
+	`每秒造成的护盾伤害，以目标护盾总强度的百分比表示。`
+
+tip "% hull damage / second:"
+	`每秒造成的船体伤害，以目标船体总强度的百分比表示。`
+
+tip "% minable damage / second:"
+	`每秒造成的可开采伤害，以目标总耐久度的百分比表示。`
+
+tip "% fuel damage / second:"
+	`每秒造成的燃料损失，以目标燃料总容量的百分比表示。目标护盾开启时效果减半。`
+
+tip "% heat damage / second:"
+	`每秒使目标热量按其最大热量容量的此百分比增加。目标护盾开启时效果减半。`
+
+tip "% energy damage / second:"
+	`每秒使目标能量按其能量容量的此百分比减少。目标护盾开启时效果减半。`
+
+tip "firing energy / second:"
+	`每秒消耗的能量。`
+
+tip "firing heat / second:"
+	`每秒产生的热量。`
+
+tip "firing fuel / second:"
+	`每秒消耗的燃料。`
+
+tip "firing hull / second:"
+	`你的舰船每秒受到的船体伤害。`
+
+tip "firing shields / second:"
+	`你的舰船每秒受到的护盾伤害。`
+
+tip "firing ion / second:"
+	`该武器开火后的一段时间内降低能量水平。`
+
+tip "firing scramble / second:"
+	`该武器开火后的一段时间内提高武器失灵的概率。`
+
+tip "firing slowing / second:"
+	`该武器开火时降低舰船的转向速率、加速度和最高速度。减速会随时间消退。`
+
+tip "firing disruption / second:"
+	`发射该武器后扰乱舰船的护盾，使敌对武器的伤害在护盾开启时也能“穿透”到船体。护盾干扰会随时间消退，但对自己施加干扰时，不会因护盾变得更易穿透而降低效果。`
+
+tip "firing discharge / second:"
+	`该武器开火后的一段时间内降低护盾。`
+
+tip "firing corrosion / second:"
+	`该武器开火后的一段时间内降低船体。`
+
+tip "firing leak / second:"
+	`该武器开火后的一段时间内降低燃料。`
+
+tip "firing burn / second:"
+	`该武器开火后的一段时间内提高热量。`
+
+tip "% firing energy / second:"
+	`每秒消耗的能量，以你的能量总容量的百分比表示。`
+
+tip "% firing heat / second:"
+	`每秒使你的热量按最大热量容量的此百分比增加。`
+
+tip "% firing fuel / second:"
+	`每秒使用或损失的燃料，以舰船燃料总量的百分比表示。`
+
+tip "% firing hull / second:"
+	`你的舰船每秒受到的船体伤害，以你的船体总强度的百分比表示。`
+
+tip "% firing shields / second:"
+	`你的舰船每秒受到的护盾伤害，以你的护盾总强度的百分比表示。`
+
+tip "shots / second:"
+	`该武器每秒发射的射弹数。若舰船每秒的能量产生量高于武器每秒开火耗能，持续开火的武器便无需电池。某些持续开火武器只在部分时间内开火，此时舰船的能量产生量必须高于武器开火耗能除以开火时间占比，才无需电池。`
+
+tip "turret turn rate:"
+	`该炮塔每秒可转动的角度。`
+
+tip "turret turn multiplier:"
+	`按给定系数修正该舰的炮塔转向速率。`
+
+tip "arc:"
+	`该武器提供防护的角度范围，单位为度。`
+
+tip "homing type:"
+	`该射弹追踪目标的方式。设为 “direct” 的射弹会径直飞向目标，设为 “leading” 的射弹则会计算提前量。`
+
+tip "tracking:"
+	`该射弹维持目标锁定的能力。`
+
+tip "optical tracking:"
+	`该射弹维持光学目标锁定的能力，取决于目标的大小；会受到任何潜在光学干扰设备的不利影响。`
+
+tip "infrared tracking:"
+	`该射弹维持红外目标锁定的能力，取决于目标舰船的热量和它与导弹的距离；红外制导导弹离目标越近越精准。`
+
+tip "radar tracking:"
+	`该射弹维持雷达目标锁定的能力；会受到目标舰船雷达干扰设备的不利影响。`
+
+tip "shield damage / shot:"
+	`每次射击造成的护盾伤害。`
+
+tip "hull damage / shot:"
+	`每次射击造成的船体伤害。`
+
+tip "minable damage / shot:"
+	`每次射击对可开采物体造成的伤害，替代船体伤害。`
+
+tip "fuel damage / shot:"
+	`该武器命中时目标每次射击损失的燃料。目标护盾开启时效果减半。负值表示增加燃料。`
+
+tip "heat damage / shot:"
+	`每次射击使目标舰船的热量增加此数值。目标护盾开启时效果减半。`
+
+tip "energy damage / shot:"
+	`每次射击使目标舰船的能量减少此数值。目标护盾开启时效果减半。`
+
+tip "ion damage / shot:"
+	`每次射击使目标的电离增加此数值。目标护盾开启时效果减半。电离会降低目标能量，并随时间逐渐消退。`
+
+tip "scrambling damage / shot:"
+	`提高目标武器失灵的概率。目标护盾开启时效果减半。扰乱会随时间逐渐消退。`
+
+tip "slowing damage / shot:"
+	`降低目标的转向速率、加速度和最高速度。目标护盾开启时效果减半。减速会随时间逐渐消退。`
+
+tip "disruption damage / shot:"
+	`让武器伤害在护盾开启时也能“穿透”到船体。护盾干扰会随时间消退，且当伤害穿透护盾而非干扰护盾时，继续叠加护盾干扰会变得更难。`
+
+tip "discharge damage / shot:"
+	`该武器每次射击持续造成的护盾伤害。`
+
+tip "corrosion damage / shot:"
+	`该武器每次射击持续造成的船体伤害。`
+
+tip "leak damage / shot:"
+	`该武器每次射击持续造成的燃料伤害。`
+
+tip "burn damage / shot:"
+	`该武器每次射击持续造成的热量伤害。`
+
+tip "% shield damage / shot:"
+	`每次射击造成的护盾伤害，以目标护盾总强度的百分比表示。`
+
+tip "% hull damage / shot:"
+	`每次射击造成的船体伤害，以目标船体总强度的百分比表示。`
+
+tip "% minable damage / shot:"
+	`对目标总耐久度造成百分比的可开采伤害，替代相对船体伤害。`
+
+tip "% fuel damage / shot:"
+	`每次射击造成的燃料损失，以目标燃料总容量的百分比表示。目标护盾开启时效果减半。`
+
+tip "% heat damage / shot:"
+	`每次射击使目标舰船的热量按其最大热量容量的此百分比增加。目标护盾开启时效果减半。`
+
+tip "% energy damage / shot:"
+	`每次射击使目标舰船的能量按其能量容量的此百分比减少。目标护盾开启时效果减半。`
+
+tip "firing energy / shot:"
+	`每次射击消耗的能量。若舰船电池中储存的能量低于此数值，武器将无法开火。`
+
+tip "firing heat / shot:"
+	`每次射击产生的热量。`
+
+tip "firing fuel / shot:"
+	`每次射击消耗的燃料。`
+
+tip "firing hull / shot:"
+	`你的舰船每次射击受到的船体伤害。`
+
+tip "firing shields / shot:"
+	`你的舰船每次射击受到的护盾伤害。`
+
+tip "firing ion / shot:"
+	`减少舰船的能量。电离会随时间逐渐消退。`
+
+tip "firing scramble / shot:"
+	`该武器开火后的一段时间内提高武器失灵的概率。`
+
+tip "firing slowing / shot:"
+	`降低舰船的转向速率、加速度和最高速度。减速会随时间消退。`
+
+tip "firing disruption / shot:"
+	`让武器伤害在护盾开启时也能“穿透”到舰船船体。护盾干扰会随时间消退，但对自己施加干扰时，不会因护盾变得更易穿透而降低效果。`
+
+tip "firing discharge / shot:"
+	`该武器每次射击使你自己的舰船持续受到的护盾伤害。`
+
+tip "firing corrosion / shot:"
+	`该武器每次射击使你自己的舰船持续受到的船体伤害。`
+
+tip "firing leak / shot:"
+	`每次射击使你自己的舰船持续受到的燃料伤害。`
+
+tip "firing burn / shot:"
+	`每次射击使你自己的舰船持续受到的热量伤害。`
+
+tip "% firing energy / shot:"
+	`每次射击消耗的能量，以舰船能量总容量的百分比表示。`
+
+tip "% firing heat / shot:"
+	`每次射击产生的热量，以舰船最大热量容量的百分比表示。`
+
+tip "% firing fuel / shot:"
+	`每次射击使用或损失的燃料，以舰船燃料总量的百分比表示。`
+
+tip "% firing hull / shot:"
+	`你的舰船每次射击受到的船体伤害，以你的船体总强度的百分比表示。`
+
+tip "% firing shields / shot:"
+	`你的舰船每次射击受到的护盾伤害，以你的护盾总强度的百分比表示。`
+
+tip "inaccuracy:"
+	`该武器的最大误差，单位为度。数值为 1 表示武器瞄准最多偏离目标 1 度。`
+
+tip "blast radius:"
+	`该武器命中目标时，此距离内的一切（包括友方舰船）都会受到伤害。`
+
+tip "missile strength:"
+	`该射弹对反导弹射击的抗性。`
+
+tip "anti-missile:"
+	`反导弹射击的威力。数值越高，越容易摧毁更强的射弹。`
+
+tip "tractor beam:"
+	`该武器将漂浮物拉向自身的基础速度。越重的漂浮物越难拉动。`
+
+tip "mining precision:"
+	`衡量该武器在采矿时避免损伤有价值材料的能力。正精度会提高产出，负精度则降低产出。有些可开采物体比其他更坚硬，因此更不容易受产出变化的影响。`
+
+
+
+# Flight checks:
+tip "no bunks!"
+	`该舰需要船员才能运作，但没有床铺。`
+
+tip "overheating!"
+	`该舰的装备产生的热量过多，一起飞就会过热。你必须增加散热或移除部分产热的装备。`
+
+tip "no energy!"
+	`该舰没有任何能量来源为其系统供电。你必须安装某种发电机。`
+
+tip "no fuel!"
+	`该舰的燃料不足以提供能量为其系统供电。你必须增加燃料容量。`
+
+tip "no thruster!"
+	`该舰无法移动。你必须安装推进器。`
+
+tip "no steering!"
+	`该舰无法转向。你必须安装转向系统。`
+
+tip "insufficient bunks?"
+	`该舰的床铺不足以容纳船员。它可能随时变得无法响应。`
+
+tip "insufficient heat?"
+	`该舰在空闲时温度过低，无法使用部分引擎。如果没有其他产热方式，它的移动能力可能受到影响。`
+
+tip "afterburner only?"
+	`该舰唯一的推进器是加力燃烧器。如果加力燃烧器耗尽燃料，它可能无法移动。`
+
+tip "reverse only?"
+	`该舰有反推推进器但没有前向推进器。操纵起来可能非常困难。`
+
+tip "battery only?"
+	`这艘飞船无法产生能量。一旦电池耗尽，可能会被困住而无法移动。`
+
+tip "limited thrust?"
+	`这艘飞船的能量供应不足以让推进器全功率运转，其最高速度和加速度都会降低。`
+
+tip "limited turn?"
+	`这艘飞船的能量供应不足以让转向系统全功率运转，其转向速率会降低。`
+
+tip "solar power?"
+	`这艘飞船完全依靠太阳能驱动。如果飞到离恒星系中心太远的地方，机动会变得困难，因为引擎只能获得所需功率的一小部分。`
+
+tip "fuel?"
+	`这艘飞船消耗燃料，但燃料舱容量不足。如果起飞，会立刻耗尽燃料。`
+
+tip "no hyperdrive?"
+	`这艘飞船没有超空间引擎。如果起飞，将无法离开这个恒星系。`
+
+tip "no fuel?"
+	`这艘飞船的燃料容量不足以进行超空间跳跃。如果起飞，将无法离开这个恒星系。`
+
+tip "no bays?"
+	`没有足够的停机位来搭载这艘飞船。如果起飞，将无法离开这个恒星系。`
+
+tip "insufficient energy to fire?"
+	`这艘飞船的能量储备不足，无法发射已安装的武器。`
+
+
+
+# Boolean attributes:
+tip "This outfit is considered an atrocity."
+	`扫描违禁品的政府若在太空中发现你持有该物品，会向你发起攻击；若在着陆时被发现，则会逮捕你。`
+
+
+
+# Controls
+tip "Forward thrust"
+	`让你的旗舰向前加速。`
+
+tip "Turn left"
+	`让你的旗舰向左转。`
+
+tip "Turn right"
+	`让你的旗舰向右转。`
+
+tip "Reverse"
+	`让旗舰转向与当前飞行方向相反的方向。如果安装了反推器，则向后加速。`
+	`配合 <shift>，让你的飞船停下。`
+
+tip "Fire afterburner"
+	`启动旗舰的后燃器（若已安装）。`
+
+tip "Auto steer"
+	`如果"自动瞄准"设置处于关闭状态，按住此键时启用自动瞄准。`
+
+tip "Land on planet / station"
+	`降落到选中的行星。如果没有选中行星，会自动选择一颗行星降落；若低速飞行，则尝试降落到你正上方的行星。如果已经选中行星，连按两次会切换到下一颗行星。`
+
+tip "Initiate hyperspace jump"
+	`启动超空间跳跃以执行当前航行计划。如果没有航行计划，则朝与当前朝向最接近的方向跳跃。按住时，命令护航舰准备跳跃，松开时才真正跳跃。`
+	`配合 <shift>，你的舰队会在计划中每个星系的所有飞船都准备好后才跳跃，而不必在每个星系都按住该键。`
+
+tip "View star map"
+	`打开星图面板。`
+
+tip "View player info"
+	`打开玩家信息面板。`
+
+tip "Select nearest hostile ship"
+	`选中最近的敌对飞船。`
+	`配合 <shift>，选中最近的飞船，无论敌友。`
+
+tip "Select next ship"
+	`选中星系中下一艘非护航舰飞船，循环遍历所有飞船。`
+	`配合 <shift>，在护航舰之间循环切换。`
+
+tip "Talk to selected ship"
+	`向选中的飞船或行星呼叫。如果同时选中了飞船和行星，则呼叫飞船。`
+	`配合 <shift>，呼叫行星。`
+
+tip "Board selected ship"
+	`登上选中的飞船。如果没有可登舰的飞船被选中，则根据"登舰目标优先级"设置选择一艘飞船。`
+	`配合 <shift>，选择一艘护航舰登舰。`
+
+tip "Select nearest asteroid"
+	`根据"目标小行星依据"设置选中最近的小行星。`
+
+tip "Scan selected ship"
+	`扫描选中的飞船（需安装装备扫描仪或货舱扫描仪）。`
+
+tip "Fire primary weapon"
+	`发射旗舰的所有主武器。"自动开火"设置下只会发射位于目标射程内的武器。`
+
+tip "Toggle turret tracking"
+	`在"专注"和"机会"之间切换"炮塔锁定"设置。详见"设置"标签页中"炮塔锁定"设置的提示说明。`
+
+tip "Select secondary weapon"
+	`切换到旗舰的下一件副武器。逐一循环完所有副武器后，会一次选中全部副武器，然后再切换到不选任何武器。`
+
+tip "Fire secondary weapon"
+	`发射旗舰选中的副武器。`
+
+tip "Toggle cloaking device"
+	`启动或关闭舰队的隐身装置（若已安装）。`
+
+tip "Turret aim override (hold)"
+	`按住此键时炮塔会瞄准光标方向。如果启用了"用鼠标瞄准炮塔"设置，则效果相反。`
+
+tip "Mouse turning (hold)"
+	`按住此键时旗舰会朝鼠标方向转向。若想让鼠标转向始终生效，请启用"用鼠标操控飞船"设置；若该设置已启用，按住此键则会关闭鼠标转向。`
+
+tip "Show main menu"
+	`打开主菜单。`
+
+tip "Toggle fullscreen"
+	`切换游戏是否处于全屏模式。`
+
+tip "Toggle fast-forward"
+	`切换 3 倍速快进。快进可能会被"快进中断"设置自动关闭。如果该键设为 caps-lock，则将依据 caps-lock 状态决定快进状态。`
+
+tip "Pause"
+	`暂停游戏时间。你仍然可以选中飞船、下达命令并与菜单交互。`
+
+tip "Show help"
+	`显示与当前界面面板和情境相关的帮助对话框。使用"重新激活首次帮助"设置中的同一批帮助对话框，即使之前已经出现过也会强制显示。`
+
+tip "View message log"
+	`打开日志面板，其中包含自当前飞行员载入以来收到的状态消息和其他飞船的呼叫。`
+
+tip "Toggle performance info"
+	`切换"显示 CPU / GPU 负载"设置。`
+
+tip "Deploy / recall fighters"
+	`部署或召回舰队中搭载的飞船（如战斗机、无人机）。需要有剩余空间可容纳这些搭载飞船的母舰。`
+
+tip "Fleet: Fight my target"
+	`命令整个舰队集中火力攻击选中的目标。如果只选中了部分护航舰，则只向这些护航舰下达命令。也可以右键点击敌对飞船来下达此命令。`
+
+tip "Fleet: Toggle hold fire"
+	`命令舰队停止开火，除非之后它们被指定了具体攻击目标。如果只选中了部分护航舰，则只向这些护航舰下达命令。`
+
+tip "Fleet: Gather around me"
+	`命令舰队在你的旗舰周围集结。如果只选中了部分护航舰，则只向这些护航舰下达命令。你也可以右键点击友方飞船，命令护航舰在另一艘飞船周围集结。`
+	`配合 <shift>，更改舰队的编队阵型。`
+
+tip "Fleet: Hold position"
+	`命令舰队保持在当前位置。如果只选中了部分护航舰，则只向这些护航舰下达命令。也可以右键点击空白区域来下达此命令。`
+
+tip "Fleet: Toggle ammo usage"
+	`切换"护航舰消耗弹药"设置。`
+
+tip "Fleet: Harvest flotsam"
+	`命令舰队收集附近的漂浮物（如掉落的货物）。"漂浮物收集"设置必须允许护航舰拾取漂浮物才能进行收集。`
+
+tip "Fleet: Scan my target"
+	`命令舰队扫描目标。需要护航舰安装货舱扫描仪或装备扫描仪。如果只选中了部分护航舰，则只向这些护航舰下达命令。`
+
+
+
+# Settings
+tip "Main zoom factor"
+	`增大主缩放系数（界面与游戏画面的大小）。若缩放超出屏幕限制，则回到 100。`
+
+tip "View zoom factor"
+	`增大飞行时游戏视角的缩放系数。也可以用 + 和 - 键以及滚轮更改。`
+
+tip "Screen mode"
+	`切换游戏为窗口模式或全屏模式。也可通过"切换全屏"控制项切换。`
+
+tip "VSync"
+	`在关闭、开启和自适应之间切换垂直同步（前提是你的电脑支持）。`
+
+tip "Camera acceleration"
+	`决定加速时屏幕中心相对于旗舰的位置。`
+	`- "关闭"：镜头固定在旗舰上。`
+	`- "开启"：镜头拖在后方。`
+	`- "反向"：镜头冲到前方。`
+
+tip "Show CPU / GPU load"
+	`在屏幕顶部显示 CPU 负载、GPU 负载和虚拟内存占用。CPU 和 GPU 负载分别以计算或绘制每帧所需的时间表示。百分比表示计算或绘制每帧所需时间相对于目标帧率的比例，GPU 的目标为 60 帧/秒，CPU 的目标为 60 刻/秒（启用快进时为 180 刻/秒）。负载 >100% 意味着游戏的运行速度会低于目标帧率。`
+
+tip "Render motion blur"
+	`切换是否为所有移动物体渲染动态模糊。`
+
+tip "Reduce large graphics"
+	`将超大图像（像素数 >= 100 万的图像）或所有图形缩小到原来尺寸的一半。界面精灵图除外。（不建议在高分辨率显示器上使用，但可用于释放内存。需要重启游戏。）`
+
+tip "Defer loading images"
+	`延迟加载某些图像，使其在需要时才加载，而不是在游戏首次打开时加载。这会缩短启动时间并降低显存占用，但精灵图加载时可能会出现突然弹入。建议显存较低的系统使用。（需要重启游戏。）`
+
+tip "Draw background haze"
+	`飞行时绘制背景雾霭。`
+
+tip "Draw starfield"
+	`飞行时绘制背景星空。`
+
+tip "Fixed starfield zoom"
+	`以固定缩放级别绘制背景星空，而不是随视角缩放级别变化。`
+
+tip "Parallax background"
+	`为背景物体（包括雾霭和星空）添加视差效果。`
+	`- "精细"：三层视差。`
+	`- "快速"：一层视差。`
+	`- "关闭"：无视差。`
+
+tip "Animate main menu background"
+	`在主菜单中让背景星空和雾霭动起来。`
+
+tip "Show hyperspace flash"
+	`在星系之间超空间跳跃时产生白色闪光。`
+
+tip "Extended jump effects"
+	`在星系之间跳跃时为背景添加额外的动态模糊。中等和强烈选项用于控制该效果的强度。`
+
+tip "Ship outlines in shops"
+	`控制船坞或装备店中舰队飞船图标的显示方式。`
+	`- "精细"：对所有飞船应用索贝尔滤镜。对于大型舰队和/或低性能电脑可能造成较高的 GPU 负载。`
+	`- "快速"：只使用飞船的精灵图。`
+
+tip "Ship outlines in HUD"
+	`控制 HUD 中旗舰和目标飞船图标的显示方式。`
+	`- "精细"：对精灵图应用索贝尔滤镜。在非常老旧或低性能的电脑上，某些飞船可能造成较高的 GPU 负载。`
+	`- "快速"：只使用飞船的精灵图。`
+
+tip "Cloaked ship outlines"
+	`控制隐身护航舰的显示方式。`
+	`- "精细"：使飞船变为半透明并添加红色轮廓。`
+	`- "快速"：直接将飞船变为红色。`
+
+tip "Texture filtering"
+	`选择采样纹理时使用的插值方式。（需要重启游戏。）`
+	`- "线性"：产生更平滑、更柔和的图像。`
+	`- "最近邻"：产生更锐利、更块状的图像`
+
+tip "Show status overlays"
+	`飞行时在所有飞船上方显示状态浮层。状态浮层显示飞船的护盾和船体。`
+	`- "关闭"：浮层从不出现。`
+	`- "始终开启"：浮层始终出现。`
+	`- "受损"：仅对已受到伤害的飞船显示浮层。`
+	`- "受击时"：对刚刚受到伤害的飞船短暂显示浮层。`
+	`- "--"：此设置按飞船类别细分，见下方子设置。`
+
+tip "   Show flagship overlay"
+	`飞行时在你的旗舰上方显示状态浮层。`
+
+tip "   Show escort overlays"
+	`飞行时在你的护航舰上方显示状态浮层。`
+
+tip "   Show enemy overlays"
+	`飞行时在敌对飞船上方显示状态浮层。`
+
+tip "   Show neutral overlays"
+	`飞行时在友方和中立飞船上方显示状态浮层。`
+
+tip "Show missile overlays"
+	`在敌对导弹上显示浮层。浮层表示导弹的危险程度，相对于旗舰生命值威力越大的导弹显示越强烈。`
+
+tip "Turret overlays"
+	`在旗舰带有盲区的炮塔上显示浮层。设为"仅盲区"时，只在盲区阻挡炮塔射击时显示浮层。`
+
+tip "Show asteroid scanner overlay"
+	`如果旗舰安装了小行星扫描仪，则为附近的小行星显示浮层。`
+
+tip "Highlight ships"
+	`控制飞行时是否高亮显示飞船。`
+	`- "旗舰"：为你的旗舰应用绿色高亮。`
+	`- "拥有的飞船"：你的旗舰以及所有你拥有的护航舰都会被高亮。`
+	`- "全部"：所有飞船都会带有与雷达上颜色一致的高亮。`
+
+tip "Rotate flagship in HUD"
+	`让 HUD 中旗舰图标的朝向与旗舰的实际朝向一致。`
+
+tip "Show planet labels"
+	`在附近可着陆的行星和空间站上显示浮层。`
+
+tip "Show mini-map"
+	`控制附近星系小地图的显示。`
+	`- "关闭"：从不显示小地图。`
+	`- "跳跃时"：仅在启动超空间跳跃时显示小地图。`
+	`- "始终开启"：飞行时始终显示小地图。`
+
+tip "Clickable radar display"
+	`启用通过星系内雷达小地图向护航舰下达命令的功能。`
+
+tip "Alert indicator"
+	`控制敌对飞船进入你当前星系时触发的提示。`
+	`- "关闭"：不触发任何提示。`
+	`- "声音"：播放警报声。`
+	`- "视觉"：在星系内雷达旁显示警示图标。`
+	`- "两者"：同时触发声音和视觉提示。`
+
+tip "Extra fleet status messages"
+	`显示有关舰队中护航舰的额外状态消息，例如船员不足或收集漂浮物时。`
+
+tip "Control ship with mouse"
+	`启用后，旗舰会始终朝鼠标方向转向。若要通过按键激活鼠标转向，请参阅"鼠标转向（按住）"控制项。`
+
+tip "Aim turrets with mouse"
+	`启用后，炮塔会瞄准鼠标位置。请参阅"炮塔瞄准覆盖（按住）"按键绑定，以通过按住某个键来切换。`
+
+tip "Automatic aiming"
+	`自动让飞船朝向目标，以瞄准固定武器。`
+
+tip "Automatic firing"
+	`当敌人在武器射程内时，自动发射主武器。`
+
+tip "Turret tracking"
+	`舰队炮塔攻击敌对目标时所采用的策略。`
+	`- "专注"：所有炮塔攻击同一个目标。`
+	`- "机会"：炮塔会瞄准其最容易对准的飞船，从而可同时应对多个敌人。`
+
+tip "Target asteroid based on"
+	`"选择最近的小行星"控制项选择小行星时使用的策略。`
+	`- "就近"：选择最近的小行星。`
+	`- "价值"：选择价值最高的小行星。`
+
+tip "Boarding target priority"
+	`"登上选中飞船"控制项在你没有选中目标时选择飞船所使用的策略。`
+	`- "就近"：选择最近的飞船。`
+	`- "价值"：选择价值最高的飞船；如果你没有扫描过该飞船的装备，价值为估算值。`
+	`- "混合"：按价值除以到飞船的距离来计算。`
+
+tip "Escorts expend ammo"
+	`护航舰决定何时发射副武器所使用的策略。可通过"舰队：切换弹药使用"控制项切换。`
+	`- "从不"：护航舰永不使用副武器。`
+	`- "节省"：护航舰仅在其生命值较低，或星系中的敌人强于你的舰队和友军时，才会发射副武器。`
+	`- "始终"：护航舰开火时始终使用副武器。`
+
+tip "Flotsam collection"
+	`控制你的哪些飞船可以拾取漂浮物（漂浮在太空中的货物）。飞船与漂浮物重叠时会自动拾取。`
+	`- "关闭"：你的飞船永不拾取漂浮物。`
+	`- "仅旗舰"：只有你的旗舰会拾取漂浮物。`
+	`- "仅护航舰"：只有你的护航舰会拾取漂浮物。`
+	`- "开启"：你的整个舰队都会拾取漂浮物。`
+
+tip "Repair fighters in"
+	`舰队中搭载飞船（如战斗机、无人机）停靠在母舰上时进行维修所使用的策略。`
+	`- "依次"：将生命值最高的飞船修满后再修下一艘。`
+	`- "并行"：始终维修生命值最低的飞船，使所有飞船一同提升生命值。`
+
+tip "Fighters transfer cargo"
+	`战斗机停靠时会把携带的货物转移给母舰。`
+
+tip "Rehire extra crew when lost"
+	`若你在飞行中损失了额外（非必需）船员，则每次着陆时自动重新雇佣。`
+
+tip "Automatically unpark flagship"
+	`自动取消停泊被拖到飞船列表首位的飞船，并将其设为你的旗舰。`
+
+tip "Prioritize flagship use"
+	`起飞时在你的飞船之间分配货物和乘客时，优先考虑旗舰而非护航舰。（当旗舰空间不足时，部分任务货物或乘客仍可能被转移到你的其他飞船上。）`
+
+tip "Deadline blink by distance"
+	`对于紧急任务，用截止日期减去到目的地的距离，以决定地图标记闪烁的快慢。`
+
+tip "Hide unexplored map regions"
+	`在银河中尚未探索的区域覆盖一层暗幕。随着你探索星系，暗幕会逐渐揭开。`
+
+tip "Show escort systems on map"
+	`如果你有护航舰，会在星图上标出有护航舰所在的星系。`
+
+tip "Show stored outfits on map"
+	`如果你在行星上存放了装备，会在星图上标出有存放装备的星系。`
+
+tip "Always underline shortcuts"
+	`始终为所有按钮的快捷键加下划线。如果此设置关闭，在任何面板中按住 alt 键也会显示按钮快捷键的下划线。`
+
+tip "Reactivate first-time help"
+	`重新激活首次帮助对话框。`
+
+tip "Interrupt fast-forward"
+	`每次着陆时，或飞行中出现对话、对话框或其他面板时，关闭快进。`
+
+tip "Sell outfits without outfitter"
+	`在贸易面板中，控制"出售装备"按钮是否允许在没有可回购装备的装备店时也能出售装备。`
+
+tip "Confirm selling outfits"
+	`在贸易面板中，控制是否确认出售货舱中的所有装备。`
+
+tip "Confirm selling minables"
+	`在贸易面板中，控制是否确认出售可能已拾取的矿物、特殊物品和其他漂浮物。`
+
+tip "Landing zoom"
+	`在你着陆和起飞时应用电影式的拉近拉远缩放。`
+
+tip "Scroll speed"
+	`可滚动面板中的滚动速度。`
+
+tip "Tooltip activation time"
+	`需要将鼠标悬停在物品上多长时间才会显示其提示。`
+
+tip "Date format"
+	`游戏中日期的显示格式。`
+
+tip "Parenthesize trade profits"
+	`切换在港口地图模式中是否在潜在盈亏两侧显示括号。`
+
+tip "Notify on destination"
+	`控制当你进入有任务要求必须着陆的行星的星系时触发的提示。`
+	`- "关闭"：不给出任何提示。`
+	`- "消息"：显示一条消息，列出你必须着陆的行星。`
+	`- "两者"：显示消息并播放提示音。`
+
+tip "Save message log"
+	`将消息日志保存到飞行员文件中，这样关闭游戏或重新载入存档时不会丢失。这会增大存档文件并可能延长载入时间。已存储的日志历史可在消息日志面板中清除。`
+
+tip "Text alignment"
+	`设置整个界面中段落的水平文本对齐方式。`
+	`- "左"：左对齐。`
+	`- "右"：右对齐。`
+	`- "居中"：居中对齐。`
+	`- "两端对齐"：在单词之间添加额外间距，以同时对齐左右边距。`
+
+tip "Block screen saver"
+	`游戏打开时你的显示器是否可以进行调暗、关闭或切换到屏幕保护程序。`
+
+tip "Auto refill ammo"
+	`控制你进入装备店时的弹药补充行为。`
+	`- "始终"：只要有足够的信用点，就会自动补充弹药。`
+	`- "免费时"：仅在不需要花费任何费用时自动补充弹药，例如货舱或存放处还有备用弹药。`
+	`- "询问"：进入装备店时会提示你补充任何缺少的弹药。`
+	`- "从不"：你始终需要手动补充弹药。`
+
+tip "Title bar theme"
+	`选择标题栏主题，或保留"系统默认"以使用系统设置。（适用于 Windows 10 或更新版本；在 Windows 10 上，必须调整游戏窗口大小或重启游戏才能使更改生效。）`
+
+tip "Window rounding"
+	`控制窗口圆角的外观。（适用于 Windows 11。）`
+
+tip "Tribute confirmation"
+	`当你试图向行星索要贡品时是否显示确认对话框。`
+	`- "关闭"：从不询问确认。`
+	`- "仅友方"：仅对与你友好的行星球要确认。`
+	`- "始终"：始终询问确认。`
+
+
+
+# Gamerules
+tip "Minimum value"
+	`装备或飞船相对于其全价所能贬值到的最低价值。所有掠夺、缴获或获赠的物品都从此价值开始，而所有购买的物品从 100% 价值开始，然后根据其他贬值游戏规则逐渐贬值至此价值。`
+
+tip "Grace period"
+	`新购买的装备或飞船开始贬值前必须经过的天数。这让你有一小段时间可以试用物品，如果决定不喜欢，可以按全价卖回。`
+
+tip "Maximum age"
+	`宽限期结束后，装备或飞船完全贬值所需经过的天数。`
+
+tip "Daily depreciation"
+	`物品的可贬值价值逐日保留的百分比。仅影响贬值计算中的指数项。如果设为 100%，物品仍会线性贬值。`
+
+tip "Spawn attempt period"
+	`游戏平均等待多少帧才尝试生成一艘人物飞船。游戏每帧会在 0 到该值减一之间随机取一个数。（一秒有 60 帧。）如果取到 0，则进行一次人物飞船生成尝试。换言之，数值越大，人物飞船的生成频率越低。`
+
+tip "No spawn weight"
+	`进行一次人物飞船生成尝试时，该尝试失败几率的"权重"。每艘人物飞船都有一个决定其生成几率的"权重"。单艘人物飞船生成的几率为其权重除以所有人物飞船权重之和加上此数值。也就是说，生成尝试失败的几率为这个数除以同一个和。`
+
+tip "NPC max mining time"
+	`随机生成且具有"采矿"性格的 NPC 会在当前星系采矿这么多帧，然后才决定做其他事。设定此上限是为了让玩家能通过 NPC 飞船了解如何采矿，又不至于把星系中的可采小行星采光。此限制不适用于由任务生成的采矿飞船。`
+
+tip "Universal frugal threshold"
+	`具有"节省"性格的飞船，仅当其生命值（护盾 + 船体 - 被击瘫时的船体水平）处在该百分比或以下时，或星系中的敌人明显强于它们时，才会使用消耗弹药或燃料的武器。`
+
+tip "Universal ramscoop"
+	`决定是否在所有飞船上启用"通用冲压式燃料收集器"。无论飞船是否安装了真正的冲压式燃料收集器，它都会为每艘飞船提供极少量燃料。其强度衰减比普通冲压式燃料收集器快得多，需要尽可能靠近恒星才能获得实际的燃料收益。启用此项可避免在燃料耗尽、且所在星系没有可获取燃料的 NPC 生成时，需要重新载入存档。`
+
+tip "Minimum arrival distance"
+	`所有星系的最小抵达距离。对超空间引擎和跳跃引擎行驶均适用。如果该星系定义了大于此值的抵达距离，则改用星系定义的值。如果此游戏规则为"（未设置）"，则始终使用星系定义的值。`
+
+tip "Minimum departure distance"
+	`所有星系的最小出发距离。只有当飞船距星系中心的距离大于出发距离时，才能跳出该星系。如果某个星系定义了大于此值的出发距离，则改用星系定义的值。`
+
+tip "Fleet multiplier"
+	`星系内随机舰队生成的全局生成率倍率。`
+
+tip "Lock gamerules"
+	`控制创建飞行员后是否可以更改游戏规则。如果为真，该飞行员的主菜单中不会出现游戏规则按钮。如果你对现有飞行员将其设为真，离开后将无法再回到此菜单。`
+
+tip "Fighter crossfire immunity"
+	`控制哪些搭载飞船（战斗机和无人机）在被击瘫时，除非被直接指定为目标，否则不会被弹射物击中。战斗机和无人机是脆弱的飞船，玩家可能难以或繁琐地补充，因此此游戏规则可在不提升其战斗力的前提下提高其生存能力。被击瘫的搭载飞船仍可能被爆炸击中，无论是来自武器还是飞船爆炸。`
+	`- "无"：没有搭载飞船受影响。`
+	`- "玩家"：只有玩家拥有的飞船受影响。`
+	`- "全部"：所有搭载飞船都受影响。`
+
+tip "Universal ammo stocking"
+	`控制你已安装或位于货舱中的大部分副武器的弹药是否可在任意装备店购买，即使该装备店通常不出售该类弹药。当此规则为真时，每件副武器的描述会指明它是否可在任何地方补货。`
+
+tip "Spawn raid fleets"
+	`控制劫掠舰队是否能够生成。劫掠舰队是敌对舰队，如果你的舰队货物吸引力远高于其威慑力，它们就可能在某些星系生成。（也就是说，如果你有大量货舱空间却没有足够的火力来保卫它。）如果此规则启用，你舰队的劫掠舰队生成几率可在玩家信息面板中查看。`
+
+tip "Fleet size limitation"
+	`决定玩家是否只能同时拥有有限数量的护航舰。如果启用，你的旗舰、停泊的飞船和搭载飞船（战斗机和无人机）不计入舰队容量，并且当容量已达上限时，你将无法缴获会使你超出容量的飞船，也无法从行星起飞。`
+	`- "无"：你可以拥有任意数量的护航舰。`
+	`- "飞船上限"：你最多只能指挥一定数量的护航舰。`
+	`- "船员上限"：你现役护航舰的基础船员需求总和不得超过某个限定值。`
+	`- "行政上限"：该上限与每艘飞船都有的"行政成本"挂钩，飞船越大成本越高。`
+
+tip "Default max escort count"
+	`如果舰队规模限制为"飞船上限"，则这是你同时可拥有的护航舰默认最大数量。此值可能通过剧情事件提升。对现有飞行员更改此值不会生效。`
+
+tip "Default max escort crew"
+	`如果舰队规模限制为"船员上限"，则这是你同时可拥有的所有护航舰基础必需船员（即不含炮塔等装备额外增加的必需船员）总和的默认上限。自动化飞船会使用等效船员值。此值可能通过剧情事件提升。对现有飞行员更改此值不会生效。`
+
+tip `默认行政上限`
+	`如果舰队规模限制为"行政上限"，则这是默认的最大行政容量。每艘飞船都有各自的行政成本，会计入你的容量。此值可能通过剧情事件提升。对现有飞行员更改此值不会生效。`

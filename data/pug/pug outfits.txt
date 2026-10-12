@@ -1,0 +1,395 @@
+# Copyright (c) 2015 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+outfit "Pug Zapper"
+	"display name" "巴格电击炮"
+	category "Guns"
+	series "Guns"
+	index 90020
+	cost 290000
+	thumbnail "outfit/pug zapper"
+	"mass" 25
+	"outfit space" -25
+	"weapon capacity" -25
+	"gun ports" -1
+	weapon
+		sprite "projectile/lightning"
+			"frame rate" 60
+			"random start frame"
+			"delay" 6
+		sound "zapper"
+		"hit effect" "zapper impact"
+		"inaccuracy" .3
+		"velocity" 320
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 2.7
+		"firing heat" 1.4
+		"shield damage" 3.7
+		"hull damage" 2.9
+	description "这是一种强大的光束武器，其威力甚至超过人类已开发出的最先进能量光束。帕格舰船集成了发电装置，能产生驱动此类武器所需的大量能量。"
+
+outfit "Pug Zapper Turret"
+	"display name" "巴格电击碉塔"
+	category "Turrets"
+	series "Turrets"
+	index 90010
+	cost 860000
+	thumbnail "outfit/pug zapper turret"
+	"mass" 66
+	"outfit space" -66
+	"weapon capacity" -66
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/lightning"
+			"frame rate" 60
+			"random start frame"
+		"hardpoint sprite" "hardpoint/pug zapper turret"
+		"hardpoint offset" 7.
+		sound "zapper"
+		"hit effect" "zapper impact"
+		"inaccuracy" .3
+		"turret turn" 1.6
+		"velocity" 320
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 5.4
+		"firing heat" 2.8
+		"shield damage" 7.4
+		"hull damage" 5.8
+	description "安装在炮塔上后，这种帕格武器变得更具毁灭性。然而，其能量需求超出了大多数人类飞船所能承受的范围。"
+
+effect "zapper impact"
+	sprite "effect/zapper impact"
+		"frame rate" 60
+		"random start frame"
+	"lifetime" 2
+	"random angle" 360
+	"random spin" 1
+	"velocity scale" 0.
+
+outfit "Pug Seeker"
+	"display name" "巴格追踪弹"
+	category "Guns"
+	series "Guns"
+	index 90010
+	cost 540000
+	thumbnail "outfit/pug seeker"
+	"mass" 34
+	"outfit space" -34
+	"weapon capacity" -34
+	"gun ports" -1
+	weapon
+		sprite "projectile/seeker"
+			"frame rate" 20
+			"random start frame"
+		sound "seeker"
+		"hit effect" "seeker impact"
+		"die effect" "seeker impact"
+		"inaccuracy" 2
+		"velocity" 13
+		"lifetime" 200
+		"reload" 10
+		"firing energy" 25
+		"firing heat" 20
+		"acceleration" 1.3
+		"drag" .1
+		"turn" 4
+		"homing"
+			"leading"
+			"throttle control"
+		"tracking" .5
+		"shield damage" 24
+		"hull damage" 13
+		"hit force" 3
+		"missile strength" 10
+	description "你完全不清楚这种武器的运作原理。它无需弹药，但其发射的能量弹能够自动追踪目标飞船。"
+
+effect "seeker impact"
+	sprite "effect/seeker impact"
+		"no repeat"
+		"frame rate" 10
+	"lifetime" 31
+	"random angle" 360
+	"random spin" 360
+	"velocity scale" 0.
+
+
+outfit "Pug Anti-Missile"
+	"display name" "巴格反导"
+	category "Turrets"
+	series "Anti-Missile"
+	index 90010
+	cost 350000
+	thumbnail "outfit/pug anti-missile"
+	"mass" 41
+	"outfit space" -41
+	"weapon capacity" -41
+	"turret mounts" -1
+	weapon
+		"hardpoint sprite" "hardpoint/pug anti-missile"
+		"hardpoint offset" 6.
+		"hit effect" "pug anti-missile"
+		"anti-missile" 5
+		"velocity" 200
+		"lifetime" 1
+		"reload" 2
+		"firing energy" 8
+		"firing heat" 2
+	description "帕格设计的这种反导系统消耗大量能量，但其极高的射速使其效能达到洛夫莱斯实验室所能研发的任何产品的两倍。装备此炮塔的飞船将极难被导弹命中。"
+
+effect "pug anti-missile"
+	sprite "effect/large anti missile"
+		"no repeat"
+		"frame rate" 6
+	sound "pug anti-missile"
+	"sound category" "anti-missile"
+	"lifetime" 11
+	"velocity scale" 1
+
+
+outfit "Tier 3 Anti-Missile"
+	"display name" "三级反导"
+	category "Turrets"
+	series "Anti-Missile"
+	index 90020
+	cost 12000000
+	thumbnail "outfit/t3 anti missile"
+	"mass" 67
+	"outfit space" -67
+	"weapon capacity" -67
+	"turret mounts" -1
+	"unique" 1
+	weapon
+		"hardpoint sprite" "hardpoint/t3 anti missile"
+		"fire effect" "tier 3 anti-missile fire"
+		"die effect" "tier 3 anti-missile die" 2
+		"anti-missile" 100
+		"velocity" 570
+		"lifetime" 1
+		"reload" 8
+		"firing energy" 60
+		"firing heat" 10
+	description "这款强大的反导炮塔能够摧毁哪怕是最坚固的导弹。"
+
+effect "tier 3 anti-missile fire"
+	sprite "effect/anti-missile 3 fire"
+		"no repeat"
+		"frame rate" 20
+	"lifetime" 3
+	"random angle" 360
+	"velocity scale" 1
+
+effect "tier 3 anti-missile die"
+	sprite "effect/anti-missile 3 die"
+		"no repeat"
+		"frame rate" 10
+	"lifetime" 31
+	"random angle" 360
+	"velocity scale" .4
+
+
+outfit "Pug Gridfire Turret"
+	"display name" "巴格网格火力碉塔"
+	category "Turrets"
+	series "Turrets"
+	index 90020
+	cost 24000000
+	thumbnail "outfit/pug gridfire turret"
+	"mass" 83
+	"outfit space" -83
+	"weapon capacity" -83
+	"turret mounts" -1
+	"unique" 1
+	weapon
+		"hardpoint sprite" "hardpoint/pug gridfire turret"
+		"fire effect" "gridfire fire"
+		"hit effect" "gridfire hit" 2
+		"hit effect" "gridfire cloud"
+		sound "gridfire"
+		"phasing"
+		"velocity" 1440
+		"lifetime" 1
+		"reload" 20
+		"turret turn" 20
+		"firing energy" 400
+		"firing heat" 200
+		"shield damage" 300
+		"hull damage" 300
+		"blast radius" 40
+		"piercing" .3
+	description "无人理解格网火炮塔的工作原理，而帕格人也无意解释。"
+
+effect "gridfire fire"
+	sprite "effect/gridfire fire"
+		"no repeat"
+		"frame rate" 20
+	"lifetime" 7
+	"random angle" 360
+	"random spin" 20
+	"velocity scale" 1
+
+effect "gridfire hit"
+	sprite "effect/gridfire hit"
+		"no repeat"
+		"frame rate" 10
+	"lifetime" 25
+	"random angle" 360
+	"velocity scale" .00001
+
+effect "gridfire cloud"
+	sprite "effect/gridfire cloud"
+		"no repeat"
+		"frame rate" 2
+	"lifetime" 61
+	"random angle" 360
+	"random spin" 10
+	"velocity scale" .00001
+
+
+
+outfit "Pug Akfar Thruster"
+	"display name" "巴格阿克法推进器"
+	category "Engines"
+	series "Engines"
+	index 90011
+	"cost" 608000
+	thumbnail "outfit/pug akfar thruster"
+	"mass" 43
+	"outfit space" -43
+	"engine capacity" -43
+	"thrust" 48.675
+	"thrusting energy" 2.2
+	"thrusting heat" 3.1
+	"flare sprite" "effect/pug flare/medium"
+		"frame rate" 20
+	"flare sound" "ion medium"
+	description "这是帕格设计的一款小型推进器。其推力不及同尺寸的原子引擎，但通过接近离子引擎的能效弥补了这一不足。"
+
+outfit "Pug Akfar Steering"
+	"display name" "巴格阿克法转向器"
+	category "Engines"
+	series "Engines"
+	index 90010
+	"cost" 472000
+	thumbnail "outfit/pug akfar steering"
+	"mass" 33
+	"outfit space" -33
+	"engine capacity" -33
+	"turn" 1294.5
+	"turning energy" 1.3
+	"turning heat" 2.1
+	"steering flare sprite" "effect/pug flare/medium"
+		"frame rate" 20
+	"steering flare sound" "ion medium"
+	description "这是一个由帕格设计的小型转向系统。它的动力略逊于同体积的原子引擎，但通过几乎与离子引擎相当的能效弥补了这一不足。"
+
+outfit "Pug Cormet Thruster"
+	"display name" "巴格科梅特推进器"
+	category "Engines"
+	series "Engines"
+	index 90021
+	"cost" 1050000
+	thumbnail "outfit/pug cormet thruster"
+	"mass" 60
+	"outfit space" -60
+	"engine capacity" -60
+	"thrust" 71.775
+	"thrusting energy" 3.3
+	"thrusting heat" 4.6
+	"flare sprite" "effect/pug flare/large"
+		"frame rate" 22
+	"flare sound" "ion large"
+	description "这是一款由帕格设计的中型推进器。其推力略逊于同等级的原子引擎，但通过几乎媲美离子引擎的能效弥补了这一不足。"
+
+outfit "Pug Cormet Steering"
+	"display name" "巴格科梅特转向器"
+	category "Engines"
+	series "Engines"
+	index 90020
+	"cost" 880000
+	thumbnail "outfit/pug cormet steering"
+	"mass" 46
+	"outfit space" -46
+	"engine capacity" -46
+	"turn" 1950
+	"turning energy" 1.9
+	"turning heat" 3.1
+	"steering flare sprite" "effect/pug flare/large"
+		"frame rate" 22
+	"steering flare sound" "ion large"
+	description "这是一种由帕格设计的中型转向系统。其功率虽不及同级原子引擎，但凭借近乎离子引擎的能效弥补了这一不足。"
+
+outfit "Pug Lohmar Thruster"
+	"display name" "巴格洛马尔推进器"
+	category "Engines"
+	series "Engines"
+	index 90031
+	"cost" 1740000
+	thumbnail "outfit/pug lohmar thruster"
+	"mass" 84
+	"outfit space" -84
+	"engine capacity" -84
+	"thrust" 103.95
+	"thrusting energy" 4.9
+	"thrusting heat" 6.9
+	"flare sprite" "effect/pug flare/huge"
+		"frame rate" 23
+	"flare sound" "ion huge"
+	description "这是由帕格设计的大型推进器。它的功率略逊于同尺寸的原子引擎，但几乎与离子引擎一样节能，从而弥补了这一不足。"
+
+outfit "Pug Lohmar Steering"
+	"display name" "巴格洛马尔转向器"
+	category "Engines"
+	series "Engines"
+	index 90030
+	"cost" 1580000
+	thumbnail "outfit/pug lohmar steering"
+	"mass" 64
+	"outfit space" -64
+	"engine capacity" -64
+	"turn" 2932.5
+	"turning energy" 2.8
+	"turning heat" 4.7
+	"steering flare sprite" "effect/pug flare/huge"
+		"frame rate" 23
+	"steering flare sound" "ion huge"
+	description "这是由帕格设计的大型转向系统。其推力不及同等体积的原子引擎，但能效几乎与离子引擎相当，从而弥补了这一不足。"
+
+
+
+outfit "Pug Biodefenses"
+	"display name" "巴格生物防御"
+	plural "帕格生物防御系统"
+	category "Hand to Hand"
+	series "Fortifications"
+	index 90020
+	cost 100000
+	thumbnail "outfit/pug biodefenses"
+	"capture defense" 100
+	"unplunderable" 1
+	description "这种半有机防御系统能释放一种高度致命的生物工程病毒，可迅速感染安装它的舰船上的所有外来实体，同时不伤害舰船船员。该病毒与防御系统相结合，能高度精确地自动辨别敌我。"
+
+outfit "Pug Peacekeeping Staff"
+	"display name" "巴格维和杖"
+	plural "帕格维和杖"
+	category "Hand to Hand"
+	series "H2H"
+	index 90010
+	cost 123456
+	thumbnail "outfit/pug staff"
+	"capture attack" 2.3
+	"capture defense" 2.3
+	"unplunderable" 1
+	description "虽然设计用于行星人口控制，但维和杖在飞船防御方面也表现出色。该权杖能发射一道短距离光束，使被触及者进入一种充满快感和幻觉的状态，从而丧失行动能力，并游荡到不会制造麻烦的地方去。从这种快感状态中清醒过来绝非愉快的经历。"

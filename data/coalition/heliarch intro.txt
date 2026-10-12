@@ -1,0 +1,2171 @@
+# Copyright (c) 2022 by Arachi-Lover
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Heliarch Investigation 1"
+	minor
+	name "运送日权会特工"
+	description "将<bunks>名日权会特工送往<destination>。"
+	passengers 3
+	source
+		near "Quaru" 2 10
+	destination "Ring of Friendship"
+	to offer
+		random < 65
+		has "license: Coalition"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`你在当地商店才逛了几分钟，就听到萨里德人沉重的蹄声由远及近。转身一看，三名日权会特工正匆忙朝你走来。他们向你简短敬礼，随后说明了来意。`
+			`	“这位人类访客，是在找活儿干吗？”那名萨里德人问道。`
+			`	“前往<destination>，我们需要一个交通工具，”那名基梅克人接着说道。`
+			`	“我们可以支付<payment>作为报酬。而且，在我们到达目的地之后，或许还会有些更有意思的工作，”那名阿拉奇人最后说道。`
+			choice
+				`	“当然，我带你们去我的飞船。”`
+				`	“抱歉，我目前并不打算找活干。”`
+					defer
+			`	他们向你表示感谢，谢谢你同意将他们送往<planet>，并作了自我介绍：萨里德人叫伊普洛拉，基梅克人叫基里，阿拉奇人叫图格鲁布。你帮他们安顿在铺位上，心里暗自琢磨他们为何显得如此匆忙。`
+				accept
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		"coalition jobs" ++
+		payment 90000
+		conversation
+			`三位日权会成员下船后立刻朝太空港走去，在此之前，伊普洛拉先将<payment>交给了你。“我们必须与上司谈谈。我们很可能还会需要你的协助，如果对后续的工作感兴趣，你应当来太空港寻找我们。”她轻轻点头致意，随后跟着同事走进了环形站中仅限日权会出入的区域。`
+
+mission "Heliarch Investigation 2"
+	name "日权会调查"
+	description "搭载日权会特工前往已标记的行星，以便他们调查犯罪活动的迹象。"
+	source "Ring of Friendship"
+	destination "Ring of Friendship"
+	passengers 3
+	to offer
+		has "Heliarch Investigation 1: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	to complete
+		has "Heliarch Investigation 2 - Mebla's Portion: done"
+		has "Heliarch Investigation 2 - Stronghold of Flugbu: done"
+		has "Heliarch Investigation 2 - Shifting Sand: done"
+		has "Heliarch Investigation 2 - Fourth Shadow: done"
+		has "Heliarch Investigation 2 - Into White: done"
+		has "Heliarch Investigation 2 - Remote Blue: done"
+	on offer
+		conversation
+			`你发现这三名日权会特工——伊普洛拉、基里和图格鲁布——正在太空港里等你。他们向你致意，随后伊普洛拉代表三人开口道：“现在能陪我们走一趟吗？我们的上司有一项任务想要交给你。”`
+			choice
+				`	“没什么不可以。带路吧。”`
+				`	“抱歉，我没兴趣再帮忙了。”`
+					decline
+			`	三人护送你穿过数条受限通道，你经过的每扇门和走廊都站着持枪、雕像般的守卫。最终你来到一间会议室，大约十来个日权会成员围坐在中央桌前。其中一人示意你加入。`
+			`	你坐下时，一位基梅克开口：“可敬的船长，向您致敬。让您感到受欢迎，我，日权会领事伊基，希望我们能这样。”`
+			choice
+				`	“谢谢。这是我的荣幸。”`
+				`	“你就是那个有任务给我的人？”`
+			`	“稳定而安全，我们伟大的联盟是。可惜，有些人散布叛乱和反抗的思想，”她说。“为对抗这些分裂的想法，我们发誓。必须纠正这种行为，”她指着你身边的三位特工说。“我们的特工致力于此，但往往缓慢又容易预测。或许该换个方法，所以我们想请一位外人，以及他的思维方式来帮忙。”`
+			choice
+				`	“我具体要做什么？”`
+					goto what
+				`	“反抗？叛乱？你在说什么？”`
+				`	“那样的话我没兴趣。我还以为是什么简单差事，不是政治问题。”`
+					decline
+			`	“虽然为了保护我们的联盟免受夸格和一切想伤害它的人侵害，我们数千年如一日坚守不懈，但我们的平民并不像我们这样纪律严明、对局势有清醒认识，”伊基解释道。“近几个世纪以来，日益加剧的暴力和对我们人民的威胁困扰着联盟——一伙伙盗贼和恐怖组织。偷窃日权会装备、散播叛乱宣传、袭击日权会官员和据点、用爆炸和袭击破坏和平——最近他们所有活动都加剧了。”`
+			choice
+				`	“那么，你觉得我能帮上什么忙？”`
+					goto what
+				`	“他们为什么要那么做？”`
+			`	“我们仍不清楚。那些我们逮捕审讯的人，似乎不过是非法组织中的小卒，”她斟酌了几秒措辞。“我们一直在警告平民这些暴徒的行径，并请求他们提供可疑活动的线索。而你能够帮助我们的，就是调查这些活动的报告。”`
+			label what
+			`	“六个星球，我们标记了出来。每个都希望你去‘拜访’。你会运送那三位游客，”一只阿拉克指着伊普洛拉、基里和图格鲁布说。`
+			choice
+				`	“听起来挺简单。我从哪里开始？”`
+				`	“不管他们是否卧底，这对我来说有点冒险。抱歉，你得找别人了。”`
+					decline
+			`	“由你决定拜访顺序，船长，”伊基回答。“说来惭愧，我们很多方法都被那些歹徒知道了。以前类似行动就失败过，所以我担心，我们的顺序很容易被预测。”`
+			`	其他几位向你简要介绍了据报有可疑活动的星球：萨里德空间的流沙星，基梅克空间的渐白星、第四阴影和遥远深蓝，以及阿拉克空间的梅布拉的份额和弗鲁格布要塞。`
+			`	他们祝你们四位好运，并派人护送你们回太空港。几分钟后，三位日权会特工来到你的飞船前，已换掉制服，带着沉重的行李。你带那<bunks>位“游客”去看他们的铺位，然后前往驾驶舱，决定先去六个星球中的哪一个。`
+				accept
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		"assisted heliarch" ++
+		log "协助日权会在联盟空间周边的多个世界展开调查，携同其特工前往每一处寻查犯罪迹象。"
+		payment 900000
+		conversation
+			`你和特工们离开飞船时，大约十二名日权会守卫迎接你们，催促你们跟随他们进入环带限制区域。你又一次被引导穿过走廊，直到遇见领事伊基和她的代表团。她首先走向你，递给你<payment>。“欢迎回来，<last>船长。我们都很高兴，你们都安全返回了。我相信，你在了解更多这些罪犯方面，你的努力是富有成果的？”她看向你运输的特工们。`
+			`	“我们发掘出了一些有用的信息，”图格鲁布一边递交特工们的报告一边告诉她。“对任务的成功至关重要，<last>船长的合作。”`
+			`	她点点头，将数据递给身后的一名日权会成员，对方立即开始分析发现。“急切想了解取得的进展，我。”`
+			branch evidence1
+				"lunarium evidence" == 1
+			branch evidence2
+				"lunarium evidence" == 2
+			branch evidence3
+				"lunarium evidence" == 3
+			label "final thanks"
+			`	伊基感谢你在行动中的努力，然后和她的团队去分析发现。伊普洛拉、基里和图格鲁布留在他们那里，而你在守卫的护送下返回你的飞船。`
+				accept
+			label evidence1
+			`	然后特工们靠近她，基里向领事低语了几句，递给她另一份报告。伊基再次转向你，说道：“相当了不起的发现，这是。做得很好，你，船长。”`
+				goto "final thanks"
+			label evidence2
+			`	然后特工们靠近她，基里向领事低语了几句，递给她另外两份报告。伊基再次转向你，说道：“对我们的调查最有用，这些发现将证明。出色的工作，船长。”`
+				goto "final thanks"
+			label evidence3
+			`	然后特工们靠近她，基里向领事低语了几句，递给她另外三份报告。伊基再次转向你，说道：“令人羡慕，你调查的能力，<last>。出色的工作，船长。”`
+				goto "final thanks"
+
+mission "Heliarch Investigation 2 - Bonus 1"
+	landing
+	invisible
+	source
+		government "Coalition"
+	to offer
+		has "Heliarch Investigation 2: done"
+		"lunarium evidence" == 1
+	on offer
+		clear "lunarium evidence"
+		payment 300000
+		conversation
+			`当你准备着陆时，收到了来自日权会领事伊基的讯息。“<last>舰长！你的发现，我们已经分析过了。你帮助我们查获了一些被盗的设备，为此，我们心怀感激。作为答谢，我将会发送一笔奖金。”`
+			`	当她说完后，<payment>被转入你的账户。`
+				decline
+
+mission "Heliarch Investigation 2 - Bonus 2"
+	landing
+	invisible
+	source
+		government "Coalition"
+	to offer
+		has "Heliarch Investigation 2: done"
+		"lunarium evidence" == 2
+	on offer
+		clear "lunarium evidence"
+		payment 700000
+		conversation
+			`你在降落时收到日权会领事伊基的消息。“船长<last>！你的发现，我们已分析。你的协助，是巨大恩惠；我们已定位两处被盗装备的藏匿点。调查哪些人涉及这些行动，我的团队正在进行。非常感激你的帮助，所以我们发送一笔金钱奖励作为感谢。”`
+			`	当她说完后，<payment>被转入你的账户。`
+				decline
+
+mission "Heliarch Investigation 2 - Bonus 3"
+	landing
+	invisible
+	source
+		government "Coalition"
+	to offer
+		has "Heliarch Investigation 2: done"
+		"lunarium evidence" == 3
+	on offer
+		clear "lunarium evidence"
+		payment 1200000
+		conversation
+			`当你准备降落时，日权会领事伊基给你发来一条消息。“<last>船长！分析你的发现，我们已经做了。让我非常担忧，所有这些偷来的装备藏匿点。欠你人情，我们确实。没有你的帮助，这些行动，我们无法发现。一笔奖金，作为感谢，我发送。你应得的，船长。”`
+			`	当她说完后，<payment>被转入你的账户。`
+				decline
+
+mission "Heliarch Investigation 2 - Mebla's Portion"
+	name "调查 <planet>"
+	description "将日权会三重奏运送至<destination>，以便他们调查犯罪活动的迹象。"
+	source "Ring of Friendship"
+	destination "Mebla's Portion"
+	to offer
+		has "Heliarch Investigation 1: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	to fail
+		or
+			has "Heliarch Investigation 2: declined"
+			has "Heliarch Investigation 2: aborted"
+			has "Heliarch Investigation 2: failed"
+	on complete
+		conversation
+			`你到达时正下着雷暴雨，这在<planet>是常有的事，探员们讨论着如何最好地调查这颗星球。`
+			`	图格鲁布提议他假扮成一名在星球上寻找住所的阿拉奇作家，然后匆匆跑向一处看起来像是房产中介的地方。伊普洛拉则继续按原计划假装成游客，说她会一边在城里走动，一边向当地的年轻阿拉奇打听传闻，希望能找到些有用的线索。`
+			`	两人离开了，留下你和基里，他在朋友们离开你的飞船时一直很沉默。`
+			choice
+				`	“你不打算跟着他们干吗？”`
+				`	“你还没决定怎么调查这颗星球吗？”`
+			`	“船长<last>。一种优势，你们人类在这类任务中的方法会给我们带来，领事是这么说的。但你们的外来想法没有得到充分利用，如果只是为了决定我们在这些星球上着陆的顺序，那它们就被浪费了。”`
+			`	他透过你的舱门望向雨中的太空港，舱门还因他朋友们的离开而敞开着。“带路吧，好吗？那些仓库，我想检查一下，但你的协助我能用得上。”`
+			choice
+				`	“当然，我去拿雨衣。”`
+				`	“我可不想顶着那雨出去。”`
+					goto decline
+			`	你直线步行了大约一个小时，尽管有建筑物和当地设施的遮蔽，仍不时被飞溅的雨滴击中。基里带你来到城镇的最边缘，如果没有那巨大的雨云和持续的倾盆大雨，你本可以看到远处的山丘。有一两个仓库的门上有相当多的锈迹，还有一次你看到一个屋顶破损的仓库。你还能辨认出不远处的小树和灌木丛的轮廓。`
+			`	“那么，船长，开始寻找可疑的东西吧，你会从哪里开始？”`
+			choice
+				`	（检查那些生锈铁门的仓库。）`
+				`	（检查那个屋顶漏水的仓库。）`
+					goto reactor
+				`	（走远一点，检查那些树木和灌木丛。）`
+					goto trees
+			`	基里走近门，门没等他碰就自动打开了。不幸的是，仓库里空无一物，没有什么值得注意的东西。基里说这里存放的是玩具零件：只是堆积如山的塑料。你又检查了几个类似的仓库，但都没发现什么。雨开始下得更大了。`
+			choice
+				`	（现在检查那个屋顶漏水的仓库。）`
+					goto reactor
+				`	（走远一点，检查那些树木和灌木丛。）`
+					goto trees2
+				`	（把剩下的交给基里处理。）`
+			`	你表示歉意，并告诉基里你不知道下一步该怎么做。虽然他确实同意亲自去办，但他还是不停地征求你对他所做选择的意见。`
+			`	你又在四周搜寻了几个小时，直到风雨交加、在仓库之间往来变得过于危险。你们两人便在其中一间仓库里暂避，静待天气转好。等风雨初歇，已是日暮时分，伊普洛拉通知基里，她和塔格鲁布已经回到了飞船上。于是你们两人也决定动身返回。`
+			`	塔格鲁布似乎找到了一些关于走私武器途径此处的线索，但并非什么要紧的发现。精疲力竭的日权会特工们回到各自的铺位躺下，示意你驾船离开这颗星球。`
+				accept
+			label reactor
+			action
+				"lunarium evidence" ++
+			`	基里走到门前等了片刻，仿佛觉得它会自动开启。见大门纹丝不动，他摘下头戴设备摆弄了一会儿，重新戴上后又等了片刻，依然徒劳无功。“所有这些仓库，我本该都有权限进入的。损坏，这门上的电子设备倒似乎并没有，”他评论道。随后，他一边试着撬锁，一边请你帮忙在附近寻找可用的工具来强行破门。你寻得了一件类似撬棍或铲子的铁器递给他，两人费了些力气找准角度用力扳动，终于将门撬开了。`
+			`	起初里面看上去空无一物，但在他把这地方彻底爬着搜寻了一遍后，他将脑袋贴在房间另一端的一块大金属板上。你走上前去，两人再次用那件工具合力撬开锁，发现了一条通往地下的隐蔽楼梯。`
+			`	下楼时，基里冲着你大喊隐蔽，你急忙折返，险之又险地躲过了一阵密集的枪弹。基里就没那么走运了，就在他快退到楼梯口时，一发子弹击中了他的一条后腿。你赶在下一波子弹袭来前上前扶他，但他靠着剩下的五条好腿，似乎应付起来也绰绰有余。`
+			`	你们两人急忙冲回地面。基里一边叮嘱你保持警惕盯着楼梯口，一边掏出一部形似无线电的小设备呼叫支援。几分钟后，两艘日权会“惩罚者级”战舰降落在附近。数十名全副武装的特工冲入仓库，你则陪同基里前往其中一艘飞船，等待他的伤口处理完毕。`
+			`	数小时后，特工们返回并报告称他们击毁了炮塔，发现地下设施已人去楼空。“许多自动化生产线，我们发现了，”其中一人向基里汇报道。“为其供电的，我们的一台反应堆模块便是。”`
+			`	当本地的日权会势力控制住局面后，他们调来了一艘“破袭者”飞船来接你们俩。它将你和基里送回距离<ship>更近的地方，在那里你们发现伊普洛拉和塔格鲁布早已在等候。大家进入船内后，基里建议你立即启航，他的同僚们则跟着他来到铺位，向他询问事情的经过。`
+				accept
+			label trees
+			`	你建议趁着雨势还算温和，去搜寻一下先前注意到的植被附近是否有异样，他便跟随着你。你们在林木间搜寻了数分钟，却一无所获。`
+			`	途经另一片灌木丛时，基里注意到其中几株歪斜得有些怪异。在进行更仔细的查看后，他告诉你这些灌木似乎曾被移走过、随后又匆匆被重新栽植，并指着它们根部周围碎石呈现出的古怪波浪形纹路。此时，雨下得更大了。`
+			choice
+				`	（挖出那些灌木。）`
+				`	（返回仓库，在附近搜寻。）`
+					goto back
+			label "bush ending"
+			`	你帮他合力将灌木连根拔起，并往深处多挖了些以查探底下是否有玄机，但一无所获。你又找了几处可疑的灌木丛，可底下也都是空的。此时狂风夹着暴雨，在户外已寸步难行，你们便躲进一间仓库中避雨。`
+			`	临近傍晚时，风雨终于止息。伊普洛拉通知他，她和塔格鲁布已经回到了飞船上，你们两人见状也决定返回。`
+			`	塔格鲁布似乎找到了一些关于走私武器途径此处的线索，但并非什么要紧的发现。他们回到各自的铺位躺下，准许你起航离港。`
+				accept
+			label back
+			`	尽管基里很想试着把那些灌木挖出来，你还是说服了他不要去碰，随后你们两人回到了被仓库群环绕的空旷街道。随着雨势变得愈发猛烈，你几乎无法将眼前的仓库同先前见到的那些区分开来。`
+			choice
+				`	（检查那些生锈铁门的仓库。）`
+				`	（检查那个屋顶漏水的仓库。）`
+					goto reactor
+			`	基里朝门走去，他甚至连碰都没碰一下，门就自动开启了。遗憾的是，仓库里似乎并没有任何有价值的信息。用基里的话说，这里不过是个存放玩具零件的仓库：全是一堆堆叠在一起的塑料。你们接着排查了另外几间类似的仓库，却同样一无所获。随着风雨愈发凶猛，到了寸步难行的地步，你们只得在其中一间仓库里暂避风雨。`
+			`	临近傍晚时，风雨终于止息。伊普洛拉通知他，她和塔格鲁布已经回到了飞船上，你们两人见状也决定返回。`
+			`	塔格鲁布似乎找到了一些关于走私武器途径此处的线索，但并非什么要紧的发现。他们回到各自的铺位躺下，准许你起航离港。`
+				accept
+			label trees2
+			`	你建议趁着雨势还算温和，去搜寻一下先前注意到的植被附近是否有异样，他便跟随着你。你们在林木间搜寻了数分钟，却一无所获。`
+			`	途经另一片灌木丛时，基里注意到其中几株歪斜得有些怪异。在进行更仔细的查看后，他告诉你这些灌木似乎曾被移走过、随后又匆匆被重新栽植，并指着它们根部周围碎石呈现出的古怪波浪形纹路。此时，雨下得更大了。`
+			choice
+				`	（挖出那些灌木。）`
+					goto "bush ending"
+				`	（返回那些敞开的仓库中避雨。）`
+			`	尽管在瓢泼大雨中几乎听不清彼此的说话声，基里还是执意留在原处，在泥地里挖掘了一番，想要看看是否能有所发现。`
+			`	你折返回空旷的街道上，小心翼翼以防在湿滑的泥地里摔倒。你走进了基里先前撬开的其中一间仓库，不久他也跟了进来，并告诉你他已经把那些可疑的灌木都挖开了，但下面没有任何发现。`
+			`	临近傍晚时，风雨终于止息。伊普洛拉通知他，她和塔格鲁布已经回到了飞船上，你们两人见状也决定返回。`
+			`	塔格鲁布似乎找到了一些关于走私武器途径此处的线索，但并非什么要紧的发现。他们回到各自的铺位躺下，准许你起航离港。`
+				accept
+			label decline
+			`	基里留下你后径自离开，你独自在那里坐了几个小时。最后，三名特工结伴返回，表示仅有塔格鲁布发现了一些非法活动的踪迹——即走私武器通过该行星的证据。`
+			`	三名特工回到各自的铺位躺下，并建议你尽快驾船起航离港。`
+
+mission "Heliarch Investigation 2 - Stronghold of Flugbu"
+	name "调查 <planet>"
+	description "将日权会三重奏运送至<destination>，以便他们调查犯罪活动的迹象。"
+	source "Ring of Friendship"
+	destination "Stronghold of Flugbu"
+	to offer
+		has "Heliarch Investigation 1: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	to fail
+		or
+			has "Heliarch Investigation 2: declined"
+			has "Heliarch Investigation 2: aborted"
+			has "Heliarch Investigation 2: failed"
+	on complete
+		conversation
+			`尽管你怀疑任何对抗日权会的人在如此庞大的建筑群内活动是否真能成气候，但鉴于这颗星球所处的战略位置、巨大的资源倾注、现成的防御工事以及驻防于此的大量飞船，它在任何情况下都必然会成为被调查的目标。`
+			`	三名特工通知你，他们即将前往的设施的大部分区域都禁止你入内，所以你留在了自己的飞船里。日落时分，他们返回并表示没有找到任何有价值的线索。“不出所料，”基里叹了口气评论道。他们告诉你已经准备好启航，随后回到了各自的铺位。`
+
+mission "Heliarch Investigation 2 - Shifting Sand"
+	name "调查 <planet>"
+	description "将日权会三重奏运送至<destination>，以便他们调查犯罪活动的迹象。"
+	source "Ring of Friendship"
+	destination "Shifting Sand"
+	to offer
+		has "Heliarch Investigation 1: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	to fail
+		or
+			has "Heliarch Investigation 2: declined"
+			has "Heliarch Investigation 2: aborted"
+			has "Heliarch Investigation 2: failed"
+	on complete
+		conversation
+			`伊普洛拉立刻离开了飞船，消失在太空港里。图格鲁布和基里解释说，她是动身前往附近的一处绿洲了。`
+			`	“与大自然亲近，萨里德向来喜欢。希望能从那里的其他人那儿听到风声，她正是这般打算的，”基里解释道，同时他也准备动身离开，并称自己结识几位驻防此地的日权会特工，可以协助他调查有关当地走私据点的传言。`
+			`	作为你飞船上仅存的最后一名日权会特工，图格鲁布转向你，问道：“协助我的搜寻，你可愿意，船长？”`
+			choice
+				`	"当然。我们去哪？"`
+				`	“抱歉，这次我得拒绝。”`
+					goto decline
+			`	“一处废弃的矿场，正是我们的目标。设施附近可疑活动的报告，我们已经收到——最近有几艘飞船前往了那里，尽管关闭多年，这处矿井已经，”他解释道。你将他提供的坐标输入了导航仪。`
+			`	你来到了一处宏伟的采矿场遗迹前。只见这颗星球的地壳上被撕开了一个巨大的坑洞，沿着螺旋形坡道向下延伸，直达深不见底的千米地底，而周围其他地方的地表则基本完好无损。在洞口边缘附近，你注意到了一栋中等规模的建筑，由几个相互连接的模块舱室拼成，表面布满了被风沙侵蚀的痕迹。图格鲁布告诉你，这在过去开采活跃时，曾是矿工与管理团队的基地。`
+			`	靠近建筑、但远离那个巨大矿洞的地方，坐落着几个大型停机坪，其尺寸甚至能容纳体型最庞大的货船，当初可能供运送矿石原料前往熔炼厂的飞船停靠。你降落在其中一个停机坪上，与图格鲁布一同走下飞船。当你迈下停机坪时，图格鲁布让你留意远处正在酝酿的沙尘暴，催促说你们必须赶在风暴席卷此处之前开始行动。`
+			choice
+				`	“我们先去检查那栋建筑吧。”`
+				`	“也许我们该试着下到矿洞里去。”`
+					goto hole
+			`	由于多年无人照管，采矿基地已无电力供应。图格鲁布不得不强行开门，他用前肢抠住墙面拼命扒拉，终于让舱门滑了开来。`
+			`	屋子里出奇地整洁，只有门槛附近被飘进来的风沙蒙上了厚厚的一层灰。虽然大体上还算干净，但显然前主人在收拾行李离开前，并没有花心思打扫。迎面第一间屋子里塞满了大大小小的橱柜、档案架和工作台，后面连着一间摆满床铺的集体宿舍以及一处储藏室。`
+			`	“其他的入口，这里似乎并没有。若真有人在此处隐藏什么，强行破门而入他们也必须，一如我们如今，”图格鲁布说道。`
+			choice
+				`	“这儿看起来很久没人来过了。我们去瞧瞧那处矿洞吧。”`
+					goto hole2
+				`	“可能有什么东西藏在这里。我们四处看看。”`
+			`	你们两人开始翻检头一间屋子里的每一个抽屉、档案架和大小箱子，但最终仅找到几份关于这处矿场的散落文件，还有一些想必是极度无聊的矿工们留下的陈旧涂鸦。图格鲁布试着启动电脑，但不管他如何鼓捣也通不上电。这栋建筑确实已经彻底断电了。`
+			`	“寻不见任何线索在这儿，我们也是会，船长，”图格鲁布说道，同时望着门外步步逼近的沙暴。`
+			choice
+				`	“抱歉，咱们还是趁现在风沙还没彻底刮起来，赶紧去外面看看那个矿洞吧。”`
+					goto hole3
+				`	“等等。我们试试其他房间。”`
+			`	你前往宿舍，而图格鲁布则快速翻检储藏室里遗留的物品。你仔细搜寻了每张床铺的床头床底，想要找出些异常，却一无所获。这间卧室连着基地的另外两处较大的舱室：一处是盥洗室，另一处则是食堂，但把这些地方也翻了一遍后，你依旧是一无所获。`
+			`	图格鲁布结束了储藏室的搜寻并过来同你汇合，表示他那头同样没有任何值得注意的发现。你们正打算动身离开，但沙尘暴终于席卷了此地，于是你们决定留在屋内等待风暴平息。`
+				goto fail
+			label hole3
+			`	你们两人开始向矿井下行，可刚迈出门外，猛烈的风沙便扑面袭来，显然风暴已经赶到了。你们仍试图顶风朝矿洞口挪动，但狂风裹挟着流沙，使得你们甚至连下井的安全立足点都找不到。无奈之下，你们俩只得退回屋内，等待能见度好转。`
+				goto fail
+			label hole
+			`	你们两人靠近洞口，找到其中一条螺旋向下的坡道，小心翼翼地朝深处走去。沿途经过了数辆体型庞大的采矿车，它们形似巨型卡车，但车轮被厚重的履带所取代，车头前部则装有大量掘进钻头和钻孔设备。图格鲁布解释道，这些车辆是用来从主矿洞向外延伸开凿隧道的，以便开采一些较小的旁支矿脉，避免进行大面积不必要的开挖。`
+			`	随着你们继续朝下走，他指了指那些被机械开凿出的坑洞，又指向聚集在矿井底部的大量车辆。`
+			choice
+				`	（继续下行。）`
+				`	（调查附近的车辆和隧道。）`
+					goto tunnel
+			`	你们两个加快速度，继续向下深入矿井，下行到大约四分之一处时，可以更清楚地看到底部。多年来，当地的风暴似乎一直在往这里灌沙，由于作业已经停止，没人费心清理。沙子还没有掩埋大型采矿机，但你怀疑未来的岁月里，连它们也会被完全覆盖。`
+			`	图格鲁布在一处停住你，让你注意洞顶。晴朗的天空越来越暗，你可以看到风势增强，将一些小岩石抛下。“时间，我们没有多少了，船长。在沙尘暴中搜寻，我们做不到；及时到达底部，我们也赶不及。”`
+			choice
+				`	（转而尝试调查侧面的车辆和隧道。）`
+					goto tunnel
+				`	（返回地面调查建筑。）`
+			`	你们两个冲回地面。你紧紧贴在图格鲁布身上，他则抓着一处洞壁笔直向上攀爬，帮你们省去了走螺旋坡道的时间。你们在风暴吞没建筑、彻底掩埋挖掘洞口前的几分钟赶回了建筑。由于建筑没有电力，图格鲁布不得不强行开门，他用前腿抓牢墙壁并用力拉门，直到它滑开。`
+			`	屋子里出奇地整洁，只有门槛附近被飘进来的风沙蒙上了厚厚的一层灰。虽然大体上还算干净，但显然前主人在收拾行李离开前，并没有花心思打扫。迎面第一间屋子里塞满了大大小小的橱柜、档案架和工作台，后面连着一间摆满床铺的集体宿舍以及一处储藏室。`
+			`	“其他的入口，这里似乎并没有。若真有人在此处隐藏什么，强行破门而入他们也必须，一如我们如今，”图格鲁布说道。`
+			`	由于被风暴困在屋内，你们两个翻遍了每一个抽屉、文件柜和箱子，把储藏区的所有东西都查了个遍，尝试启动电脑，甚至连卧室以及相连的用餐区和洗手间都搜过了，但一切都是徒劳。你们的搜寻毫无收获，只能留在屋里，任凭风暴在建筑周围肆虐。`
+				goto fail
+			label tunnel
+			action
+				"lunarium evidence" ++
+			`	由于图格鲁布比你更熟悉这些车辆，他先去检查了车辆，随后才与你一同探索挖掘洞侧壁上的隧道。这些坑道大多笔直延伸，直通较小矿脉的所在地。`
+			`	风沙继续往矿井里堆积。你们来到了一辆没被完全开回的车辆前，它仍然堵着隧道的入口。图格鲁布爬上去看看能否钻进去，但在检查驾驶控制时，他惊讶地发现这辆车依然可以使用。他把车开走，让出了通道，随后你们两个走了进去。`
+			`	用手电筒照亮前方，你惊讶地发现这条隧道是微微向上挖掘的，它并没有把你带到被采空的大型矿脉处，而是通往了一个简陋的旧矿井。当你靠近时，墙壁上的几盏灯闪烁着亮起，照亮了支撑着长长通道的木梁。在你继续深入之前，图格鲁布拦住了你。他在第一盏灯前的地面、墙壁和天花板上爬来爬去，绕了好多圈却始终没有前进一步。他最后停了下来，慢慢把一条腿伸了过去，但在显然触碰到了什么东西后，又立刻缩了回来。`
+			`	“请求支援设备以安全通过，我们必须，”他说。接着他用通讯设备向日权会特工请求援助，并向他们警告了沙尘暴的情况。随后你返回地面建筑等待他们。`
+			`	不久后，几十名日权会特工赶到。他们中的大多数人留在外面设法阻挡沙尘，而几个人则带着某种切割工具和几件传感器设备，跟着你们两个下到了那条奇特的隧道里。用传感器检测了几分钟后，他们用工具精准地拆除了图格鲁布先前缓慢检查的东西：几根极细的线缆，它们连接着隐藏在木梁内的某种机械装置。`
+			`	清理完毕后，特工们冲进该处，但没有找到任何人。不过他们确实发现了数不胜数的箱子，里面塞满了日权会法杖、爆能枪、防暴装备以及其他武器。`
+			`	特工们准备将走私武器运上自己的飞船，同时护送你和图格鲁布回到了外面。尽管风暴仍在肆虐，但在起飞前，你依然能辨认出停在自己飞船附近的几艘日权会拦截者。你与伊普洛拉和基里会合，他们在回各自铺位前向图格鲁布询问了这次惊险经历的更多细节。`
+				accept
+			label hole2
+			`	你们两个离开建筑，靠近洞口，在众多螺旋向下的坡道中选了一条，小心地往下走。你们经过了一些大型采矿车辆，它们类似于装有厚实履带而非车轮的巨型卡车，车头配有许多钻机和钻头。图格鲁布解释说，这些车辆被用来从主挖掘洞向外开凿通道，以便在无需无谓挖掘的情况下，开采较小的矿藏。`
+			`	在继续下行的途中，他指向机器开凿出的一些坑道，以及井底深处附近的更多车辆。`
+			choice
+				`	（继续下行。）`
+				`	（调查附近的车辆和隧道。）`
+					goto tunnel
+			`	你们两个加快速度，继续向下深入矿井，下行到大约四分之一处时，已经能更清楚地看到底部。多年来，当地的风暴似乎一直在往这里灌沙，由于作业已经停止，没人费心清理。沙子还没有掩埋大型采矿机，但你怀疑未来的岁月里，连它们也会被完全覆盖。`
+			`	图格鲁布在一处停住你，让你注意洞顶。晴朗的天空变得更加昏暗，暴风云遮蔽了大部分天空，你可以看到风势变大，将许多小碎石抛下。同时，越来越多的沙子正渗入洞中。“离开，我们必须，船长。在沙尘暴中搜寻，我们做不到；及时到达底部，我们也赶不及。”`
+			`	为了节省时间，避开长长的螺旋坡道，你紧紧抱住图格鲁布，他则沿着洞壁一路攀爬向上，同时小心避开落石和坠落的沙子。你们勉强在风暴完全吞没矿井前赶回了建筑，决定在那里等待。等待期间，你和图格鲁布又搜寻了一番，但最终依然一无所获。`
+			label fail
+			`	夜幕降临，风暴毫无平息的迹象。在收到伊普洛拉的通知后，图格鲁布告诉你你们应该返回飞船，并去接她和基里。风暴刚一稍有减弱，他就协助你离开建筑，穿过肆虐的狂风，直到返回你们的飞船。你们俩与其余人会合，特工们随后回了各自的铺位。`
+				accept
+			label decline
+			`	“我明白了，”他说。他给你了他需要前往的坐标，你将他送过去放下，随后返回了机库。`
+			`	几个小时后，基里和伊普洛拉返回并联系了图格鲁布，图格鲁布表示你可以去之前放下他的地方接他。他回到你的飞船后，告诉你他没有找到任何有价值的线索。`
+
+mission "Heliarch Investigation 2 - Fourth Shadow"
+	name "调查 <planet>"
+	description "将日权会三重奏运送至<destination>，以便他们调查犯罪活动的迹象。"
+	source "Ring of Friendship"
+	destination "Fourth Shadow"
+	to offer
+		has "Heliarch Investigation 1: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	to fail
+		or
+			has "Heliarch Investigation 2: declined"
+			has "Heliarch Investigation 2: aborted"
+			has "Heliarch Investigation 2: failed"
+	on complete
+		conversation
+			`对于这颗行星，他们三人告诉你，考虑到这里人口稠密，他们无法在同一个地方停留太久。于是，他们交给你数十家工厂的坐标，并指示你按自己偏好的顺序带他们去每一家工厂。`
+			`	“突击检查，我们将要执行，”基里在三人准备装备和武器时说道。你花了数小时在这颗行星上空飞行，在一座工厂放下一位特工，又飞往另一座，再下一座，然后去接回三人中的第一位，陷入了一个仿佛永无止境的循环。`
+			`	从最后一座工厂接上图格鲁布后，他们最后一次分析了所有发现。他们逐一排查每家工厂，机械地对照着一长串“可能存在的异常”进行核对，在旁边做上标记，并在记录有“异常”的工厂旁简要写下描述。`
+			`	“一些复制器出现未经授权的功率激增，我们发现了。同样缺失的，还有存储运输的部分记录，”伊普洛拉说道。你在日权会基地降落，他们将调查结果副本交给驻扎在那里的日权会成员，然后返回你的飞船。当他们走向铺位时，你看到几艘日权会飞船正朝着其中几家工厂的方向飞去。`
+
+mission "Heliarch Investigation 2 - Into White"
+	name "调查 <planet>"
+	description "将日权会三重奏运送至<destination>，以便他们调查犯罪活动的迹象。"
+	source "Ring of Friendship"
+	destination "Into White"
+	to offer
+		has "Heliarch Investigation 1: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	to fail
+		or
+			has "Heliarch Investigation 2: declined"
+			has "Heliarch Investigation 2: aborted"
+			has "Heliarch Investigation 2: failed"
+	on complete
+		conversation
+			`基里已经换上了他的冬衣，指示你在赤道附近降落。他说他和图格鲁布会进行一些暗中的盘问，并表示在这种气候下，这已经是“他们所能做的一切了”。`
+			`	你在那里较大的定居点之一放下了他们。他们离开后，伊普洛拉请求你带她去往这颗星球的南极附近。`
+			`	“关于那个区域，一直有着可疑且相似的独立报告。而受命前去调查，我。”`
+			`	当你降落在一片孤立的冰原上，刚好避开了附近正在增强的暴风雪时，伊普洛拉完成了准备。你发现她背着一个装有设备的包，穿着——至少与她的同事相比——相当单薄的衣物。尽管她是一个萨里德人，你依然担心她会在这种极端天气里冻伤，但她向你保证自己不会有事。`
+			`	她告诉你她几个小时后就会回来，然后等着你打开舱门。`
+			choice
+				`	“祝你好运。小心别在这雪地里迷路了。”`
+					goto warm
+				`	“等等，我和你一起去，这样我们能搜得更快些。”`
+			`	她沉思了几秒，回头看着你。“确定要如此，你吗，船长？凶险异常，这些风暴可能会是。”`
+			choice
+				`	“别担心，走这点雪路我还不至于拖后腿。”`
+					goto snow
+				`	“转念一想，你说得对。祝你好运。”`
+			label warm
+			`	你打开舱门，她便出发了。你在飞船里无所事事地待了几个小时，等待着日权会特工发来任何信号，但联络器上始终没有消息。伊普洛拉返回后表示她什么也没找到，于是你驾船离开去接基里和图格鲁布。他们同样空手而归。`
+				accept
+			label snow
+			`	她保持沉默，退离舱门并坐下等待。你回到房间，找出能找到的最暖和、最厚实的衣服，为接下来的雪地之旅做好准备。准备就绪后，你回到操作台前开启舱门，你们两人一同踏入了白雪皑皑的旷野。离开飞船没多久，你就能隐约看出附近有一些细细的黑色线条。看来你们降落的地方离一片森林很近。遗憾的是，面对越来越密的大雪，这些树木并不能给你们提供多少遮蔽。`
+			`	你们继续深入这片死寂的森林，感觉走了好几个小时，久到你的脚都因寒冷开始微微发麻。在又一次绕过一棵棵一模一样的树木后，伊普洛拉带你走出了森林，来到一片散落着几十座小而坚固房屋的雪原上。伊普洛拉解释说，这里曾经是个度假胜地，在这颗星球还没像如今这般寒冷的时候，很受基梅克家庭的欢迎。这里的风雪没那么猛烈，因此你还能隐约看到度假区边缘几座小丘上的洞穴入口。被雪覆盖的巨石散落在整片平原上，伊普洛拉提醒你要小心别被它们绊倒。`
+			`	“检查洞穴，我们必须。更加狂暴，这风雪很快就会变得，”她说道。`
+			choice
+				`	“你带路吧。”`
+					goto "bumpy road"
+				`	“你走前面。我看看能不能在房子里搜出什么东西。”`
+			`	她点点头，告诉你这个地方已经关闭了，所以需要的话你可以强行破门进去。当她开始往山上走时，你走向最近的房子，在几次正常开门失败后，你直接炸开了锁。你弯腰穿过这间废弃住宅的入口——这明显不是为非基梅克人设计的——并开始搜寻内部。家具完好得令人吃惊，虽然落了些灰尘，但你在任何容器里、床底下或是地板下都一无所获。`
+			`	你继续走向下一栋房子，由于逐渐熟悉了这些度假屋的标准布局，你的搜寻速度也快了起来。搜完第五栋房子走出来，你发现雪越下越大了。在暴风雪完全降临之前，最好试着去找找伊普洛拉，看看她是否有所发现。`
+			choice
+				`	（进入最近的洞穴。）`
+					goto shelter
+				`	（试着挖开雪堆找点东西。）`
+			label dig
+			`	你刨开积雪，碰到了一个坚硬的表面，但发现那只是一块石头。你又试了其他几个雪堆，依旧徒劳无功。就在你刚刚挖开另一堆雪、发现依旧是石头时，伊普洛拉出现在了你身后。`
+			`	“徒劳无功，清理积雪是，”她说道。“什么都没找到，我。回你的飞船，我们必须去。”`
+			choice
+				`	（回到飞船。）`
+					goto back
+				`	（继续挖掘。）`
+					goto "keep dig"
+			label shelter
+			`	你冲入最近的洞穴，打开手电筒小心地探索其内部。过了一会儿，你注意到洞穴更深处传来另一束光线，随后伊普洛拉走了出来。“找到什么了吗？”她问，你摇了摇头。除了几个小营地外，她也一无所获。你们在洞穴里又多待了一会儿，当天色放晴、夜幕降临时，你跟着她回到了飞船。`
+			`	一到那里，你便动身去接基里和图格鲁布，他们同样空手而归。特工们回到了各自的铺位，而你准备起飞。`
+				accept
+			label "bumpy road"
+			`	起初，跟着她爬上山丘十分吃力，你的双腿不断陷进雪里；但随着在度假区中越走越深，脚下的地面也变得越来越坚实，虽然有些凹凸不平。你试着留心脚下，避开四处散落的巨石，但在踩中一片比平时更深的积雪后，你被一个雪堆绊倒了。她扶你起来，你们两人最终抵达了其中一个洞穴的入口。`
+			choice
+				`	（和伊普洛拉一起进去。）`
+					goto cave
+				`	（在雪地上搜索。）`
+			`	你告诉她你打算在雪地里再搜寻一会儿，如果暴风雪再次转强，你就会进洞避难。你走在逐渐加剧的暴风雪中，这次格外留心脚下凹凸不平的地面，试图找出度假木屋有什么异样，或者也许能直接在雪地里发现什么。虽然四周景色十分壮观，但搜寻任务很快就变得枯燥无味。即使你绕着整个度假区走了一圈，也依然一无所获。风雪开始变得越来越急，你于是开始朝洞穴方向往回走。`
+			`	由于光顾着遮挡迎面刮来的风雪，你在半路上再次被一个雪堆绊倒，并意识到自己已经记不清伊普洛拉进了哪个洞穴。不过，考虑到当下的天气，随便找个洞穴避避风雪都是个不错的选择。`
+			choice
+				`	（进入最近的洞穴。）`
+					goto shelter
+				`	（试着挖开雪堆找点东西。）`
+					goto dig
+			label cave
+			`	你和伊普洛拉拿出各自的手电筒，开始探索这片洞穴。在经过一番兜兜转转后，她注意到几块大石头显然是从壁上剥落的，但仍然紧贴在石壁上。她放下手电筒开始推那些石头，露出了一条通往小营地的通道，里面有几张临时床铺、翻倒的设备箱，中间还有一处早已熄灭的残破火堆。`
+			`	你翻找着那些箱子，而她则仔细搜寻整个房间，寻找其他隐藏通道，但你们谁都没有发现。她检查了营火的灰烬，断定这里已经有好几个月没人来过了。你们继续探索洞穴，最终绕了一圈回到室外，从另一个洞口走了出来——据伊普洛拉所说，这次的出口离森林要远得多。鉴于此时暴风雪大得甚至让你们看不见刚才的那片森林，你纳闷她究竟是怎么分清方位的，以及她还能在这样的风雪中撑多久。`
+			choice
+				`	（建议返回飞船。）`
+					goto "bumpy blizzard"
+				`	（继续探查这些洞穴。）`
+			`	你折返回去，继续探索这片洞穴系统。你们又找到了几处隐藏的营地，但它们都和第一处一样荒废已久。每当接近另一个出口时，迎面而来的风雪冰霜都会让你们察觉到出口的存在。`
+			`	几个小时后，暴风雨终于平息，你们两人回到了飞船。随后，你动身去接基里和图格鲁布，他们也同样空手而归。`
+				accept
+			label "bumpy blizzard"
+			`	伊普洛拉迟疑了一下，接着解释说你现在穿行于暴风雪中可能会生病。她建议不如先在洞穴中等待，直到外面的环境安全到能让普通人穿行为止。`
+			`	在你的坚持下，她只得勉强妥协，嘱咐你要紧跟在后。她走得很慢，因此你跟上她不成问题，但你还是一次又一次地摔倒，被岩石堆成的积雪隆起所绊。再次摔倒后，伊普洛拉又一次朝你伸出了手，要把你拉起来。`
+			choice
+				`	（握住她的手。）`
+				`	（试着挖开积雪，看看能不能找到什么。）`
+					goto "snow dig"
+			label back
+			`	她将你扶起，你们继续顺着山坡往下走。回到森林后，她开始寻找返回飞船的来时路。走到半路时，暴风雨开始逐渐减弱。`
+			`	当你们两人回到飞船，你动身去接基里和图格鲁布，他们同样空手而归。`
+				accept
+			label "snow dig"
+			`	你开始手脚并用地在雪地里挖掘，伊普洛拉在一旁劝你停下并继续朝飞船走去。但你固执地继续挖着，尽管隔着手套，冰雪也依然不断带走双手的温度。你碰到了一个坚硬的表面，便以此为中心清理起来，结果发现那其实只是一块巨石。`
+			`	“满意了吗？回去，我们必须。来吧，现在，”你转身看到她再次朝你伸出了手。`
+			choice
+				`	（握住她的手。）`
+					goto back
+				`	（走向另一个雪堆，试着在那里挖掘。）`
+			label "keep dig"
+			`	你站起身，跑向先前摔倒的另一个地点。伊普洛拉跟了过来，即便漫天飞雪吸收了周围的声响，你也能听到她无可奈何的叹气声。她本想把你拉走，但你的手再次碰到了一个坚硬的表面，这一次甚至发出了微弱的金属回响。她松开了手，俯下身开始帮你一起挖那处积雪。当埋藏的东西终于露出来后，她站起身。虽然大部分仍深埋在雪下，但你能看出那是个非常巨大的金属容器——露出雪地的部分形状几乎就像是棺材较宽的那一端。`
+			`	在清理干净它上方仅能扫除的积雪后，你才发现它要比你们两人大上许多倍。你试图寻找能打开它的方法，同时她也开始翻找随身携带的背包，但那冰冷且覆满坚霜的金属在你的努力下纹丝不动。她似乎终于找到了想要的东西——某种通信设备——但还没来得及将其启动，一道来自度假区另一端的能量束便震动了附近的地面。那道能量束仅差一米左右就打中了她，且瞬间将所及之处的积雪融化得无影无踪。`
+			`	她大喊着让你趴下，同时从包里抽出一把日权会爆能枪，朝着能量束射来的方向射击还击。`
+			action
+				"lunarium evidence" ++
+			choice
+				`	（找掩护。）`
+				`	（拔出配枪协助她。）`
+					goto help
+			`	你冲到最近的度假木屋后方，躲在那里希望它能提供足够的保护。你仍能听到伊普洛拉四处腾挪的声音，偶尔探头张望，只见她一边还击一边在木屋间闪避，在努力拉近与射击者距离的同时，险之又险地避开了射来的能量爆能。枪声突然停歇，你看到她朝你走来，说现在应该可以安全出来了。`
+			`	“逃跑了，我们的袭击者，”她说道。从外表看，她似乎没有受伤。你们两人回到挖出的那个地方，伊普洛拉拿起她的背包。她先前在奔跑躲避与开枪还击的间隙设法呼叫了支援，随后你们便在其中一栋房子旁等了数分钟。`
+				goto "open crate"
+			label help
+			`	你们两人一边开枪还击，一边向度假木屋后方移动以寻找掩护。伊普洛拉示意你转移到另一栋木屋，而她自己则抄了另一条路。你朝着袭击者所在的方向射击，同时冲向下一栋木屋，险之又险地避开了迎面射来的几道能量束。你很快便看不见伊普洛拉的身影了，只能从她快速穿过度假区时，手中武器发出的明亮闪光来隐约判断她的位置。`
+			`	在你努力跟上她的同时，你注意到敌人的射击频率开始降低，火力在你的方向与伊普洛拉之间来回交替。尽管距离越来越近，但肆虐的暴风雪让你连袭击者的身影都看不清。好在这种情况似乎对双方都一样，你和伊普洛拉没费多大周折便避开了袭来的能量束。`
+			`	你才穿过大半个度假区，射击便完全停止了。伊普洛拉仍保持了片刻举枪瞄准的姿势，在继续穿过几栋木屋时开了几枪，但最终还是放下了武器朝你走来。“逃跑了，我们的袭击者，”她说道。你们两人回到挖出的那个地方，伊普洛拉拿起了她的背包。她在奔跑躲避与还击的间隙抽空设法呼叫了支援，因此你们俩在一栋房子旁等候了数分钟。`
+			label "open crate"
+			`	就在暴风雪平息前，几艘日权会的中和者级舰船降落了。你被引至其中一艘船上烘干衣物，以确保没有被冻伤。在度假区巡逻的日权会特工几乎清一色全都是萨里德人，他们很快就锁定了更多埋在雪中的棺材状容器。特工们利用飞船上带来的设备将它们拉了出来，小心地融化掉表面覆盖的冰雪，待水分晾干后，终于合力撬开了盖子。`
+			`	令特工们吃惊的是，每个容器内部都装有一枚日权会终结者鱼雷。随着一个个容器被打开，露出了数十枚鱼雷，伊普洛拉带着一队特工出发，前去向他们展示与袭击者交火的现场痕迹。在另一组特工动身前往地下之前，她向他们说明了当地洞穴的布局，并就袭击者可能的逃跑去向阐述了她的看法。当她回到你身边时，一位中和者级舰船的舰长告诉你，后续的一切将由他们接手，并派了一艘飞船将你们两人送回原先停泊自己座驾的地方。随后他在你准备起飞时离去。`
+			`	你折返回去接上基里和图格鲁布，他们听说了刚才的遭遇后十分兴奋。虽然他们自己这趟一无所获，但在一旁津津有味地听着伊普洛拉讲述事情的来龙去脉也挺高兴。`
+
+
+mission "Heliarch Investigation 2 - Remote Blue"
+	name "调查 <planet>"
+	description "运送日权会三人组前往调查那颗孤立的<planet>。"
+	source "Ring of Friendship"
+	destination "Remote Blue"
+	to offer
+		has "Heliarch Investigation 1: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	to fail
+		or
+			has "Heliarch Investigation 2: declined"
+			has "Heliarch Investigation 2: aborted"
+			has "Heliarch Investigation 2: failed"
+	on complete
+		conversation
+			`当你降落时，另外几艘民用飞船也在附近降落。一些基梅克人走下船，在你的飞船外等候。基里是唯一离开你飞船的人，在与其他基梅克人交谈了几句后，他们分成两组动身前往市区。`
+			`	“不欢迎外来者，这个世界的人们是，”图格鲁布解释道。“决定雇佣基梅克卧底特工，伊基领事已经。”`
+			`	你在旁边等了几个小时，期间伊普洛拉和图格鲁布一直在调试你飞船的通信设备，与那两组人保持联络。他们并没有提起哪一组人有所收获。当天色渐暗，基里独自回到了飞船。他没有对这次行动透露半个字，只是一言不发地回铺位去休息。伊普洛拉和图格鲁布也照做，告知你随时可以起飞后，便也各自去休息了。`
+
+
+
+mission "Heliarch Recon 1"
+	minor
+	name "日权会侦察"
+	description "飞往所有日权会要求的夸格星球与空间站并着陆，让你飞船改装过的传感器扫描周围环境，随后返回 <destination>。"
+	source
+		government "Heliarch"
+	stopover "Lagrange"
+	stopover "Forpelog"
+	stopover "Grakhord"
+	stopover "Alta Hai"
+	stopover "Kuwaru Efreti"
+	destination "Ring of Wisdom"
+	to offer
+		"reputation: Quarg" >= 0
+		has "ship attribute: jump drive"
+		has "visited planet: Lagrange"
+		has "visited planet: Alta Hai"
+		has "visited planet: Kuwaru Efreti"
+		has "First Contact: Hai: offered"
+		has "license: Coalition"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	to fail
+		"reputation: Quarg" < 0
+	on offer
+		conversation
+			`当你降落时，三名日权会特工正在恭候。“为我们社会做出如此多贡献的人类访客，我们欢迎，”萨里德人说着，与其他两人一齐向你敬礼。`
+			`	“由奥洛里领事派遣，我们是，”基梅克人骄傲地说道，仿佛你理所当然应该知道那是谁似的。“一项对你的重要任务，他心中筹划着。”`
+			`	“这位访客能走到何种程度，如果为了进一步帮助我们的联盟，这意味着的话？”阿拉克人问道。`
+			choice
+				`	“我很乐意帮忙。你们需要什么？”`
+				`	“我不大明白你们是什么意思。”`
+				`	“显然，我也有自己的限度。”`
+			`	“一个跳跃引擎，你拥有。遥远之处，你能前往。困扰你，夸格的严酷牢笼并不会，”萨里德人解释道，三人一齐走向你的飞船。`
+			`	“数量稀少，我们自己的跳跃引擎是；而且风险太大，对于我们自己人冒险远行来说，”基梅克人补充道。`
+			`	“如果帮助我们获取关于压迫者的情报，你希望的话；借给联盟你飞船的传感器一小段时间，你愿意吗？”阿拉克人问道。`
+			choice
+				`	"你们是要我去监视夸格？"`
+				`	"抱歉，我不想卷入你们与夸格的纷争。"`
+					decline
+			`	"作为间谍活动，‘故障’可不算数，"萨里德回应道。`
+			`	"仅仅是调整你飞船的传感器，我们会做的。在一段时间内，特别调校以扫描夸格世界，它们会是的，"基梅克澄清道。"任何不利于你的证据，他们都不会有的。"`
+			choice
+				`	"好吧，你们需要我在哪些星球着陆？"`
+				`	"抱歉，我不想卷入你们与夸格的纷争。"`
+					decline
+			`	他们要求你给他们看你的星系图，于是你带他们进入飞船，指出你发现的所有夸格星球和空间站。他们第一次看到完整星图时有点惊讶，似乎不确定该派你去哪里。`
+			`	你快速向他们介绍了每个夸格世界，在他们内部讨论了一会儿后，萨里德开口了。"对夸格的采矿作业以及他们环世界的各个建造阶段，执政官很感兴趣。"`
+			`	他指向其中几个世界，你列出了需要着陆的地点：<stopovers>。`
+			`	他们叫来一些工程师改造你的飞船传感器，整个过程只花了几分钟。完成后，日权会特工感谢你的合作，并告诉你收集完所有数据后前往<destination>。`
+				accept
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		event "heliarch recon break" 10 21
+		"coalition jobs" ++
+		payment 165000
+		conversation
+			`当你返回时，日权会三人组正急切地等待。他们迅速迎接你，催促你向他们展示飞船日志，以便查看你收集到的信息。他们似乎不太在意关于格拉考德或福佩洛格的数据，对环世界更感兴趣。然而，在检查数据时，萨里德皱起了眉头。基梅克把所有的腿都收拢靠近身体，阿拉克眯起了所有眼睛——这大概就是他们表达类似反应的方式。`
+			`	"在星环上着陆，你真的做到了，对吧，船长？"萨里德指着你访问过的地方问道。`
+			`	你点了点头，基梅克人用一条腿轻轻敲击你的控制面板。“星环上的数据，传感器没能收集到！出问题了，必定是哪里。”`
+			`	他们让工程师把你的传感器恢复正常，你则向他们解释你的飞船在着陆时的表现。他们互相交谈了一会儿，然后阿拉克说："太直接的法子，我们可能采取了。船长<last>，很快再次联系你，我们会。"`
+			`	他们递给你<payment>，然后前往环的日权会区域之一。`
+
+mission "Heliarch Recon Alta Hai"
+	landing
+	invisible
+	source "Alta Hai"
+	destination "Earth"
+	to offer
+		has "Heliarch Recon 1: active"
+	on offer
+		conversation
+			`准备降落时，飞船内部传来一阵刺耳的高频哨音。越靠近环世界，声音就越强烈，直到你的飞船完全关闭。你手忙脚乱地试图手动降落，但控制器完全失效，结果自动驾驶仪在最后一刻恢复正常，像往常一样平稳着陆。望向窗外，你看见几个夸格静静地站着，盯着你的飞船，然后他们匆忙离开，完全没有与你联系。`
+				decline
+
+mission "Heliarch Recon Forpelog"
+	landing
+	invisible
+	source "Forpelog"
+	destination "Earth"
+	to offer
+		has "Heliarch Recon 1: active"
+	on offer
+		conversation
+			`	虽然你告诉他们这不过是个贫瘠的采矿前哨站，但日权会仍坚持要收集这颗小卫星的情报。不管它有没有用，你还是按照他们的要求降落，让扫描仪好好读取这个世界的数据。`
+				decline
+
+mission "Heliarch Recon Grakhord"
+	landing
+	invisible
+	source "Grakhord"
+	destination "Earth"
+	to offer
+		has "Heliarch Recon 1: active"
+	on offer
+		conversation
+			`按指示，你降落在格拉考德，让飞船正常运转，同时日权会的传感器进行读数。尽管日权会的技术非常先进，但你怀疑仅仅通过改装扫描仪，他们能否穿透岩层完全揭露夸格的采矿作业。`
+				decline
+
+mission "Heliarch Recon Kuwaru Efreti"
+	landing
+	invisible
+	source "Kuwaru Efreti"
+	destination "Earth"
+	to offer
+		has "Heliarch Recon 1: active"
+	on offer
+		conversation
+			`当你接近环世界准备降落时，控制面板上有几盏灯开始闪烁，你还能听到飞船内部某处传来一阵哨音。这种状况持续了几秒后便停止了。`
+				decline
+
+mission "Heliarch Recon Lagrange"
+	landing
+	invisible
+	source "Lagrange"
+	destination "Earth"
+	to offer
+		has "Heliarch Recon 1: active"
+	on offer
+		conversation
+			`你并不真正了解日权会对你的传感器做了什么，也不知道你是否能看到他们正在收集的数据，但当你准备着陆时，你听到船体传来微弱的呼啸声。声音持续了很短时间，你正常着陆了。希望没坏什么东西。`
+				decline
+
+event "heliarch recon break"
+
+mission "Heliarch Recon 2-A"
+	landing
+	name "扫描准备"
+	description "安装一个装备扫描仪，然后降落在<destination>上，日权会特工将对其进行改造，使其能够按他们需要的方式扫描夸格飞船。"
+	source
+		near "Ekuarik" 1 100
+	destination "Ring of Wisdom"
+	to offer
+		has "event: heliarch recon break"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	to complete
+		has "outfit: Outfit Scanner"
+	on offer
+		conversation
+			`你着陆后，那些曾让你在一些夸格世界和星环上着陆收集数据的日权会特工联系了你。"船长<last>，新任务给你，我们有，"基梅克说道。`
+			choice
+				`	"你们需要我做什么？"`
+				`	"抱歉，我不愿再为帮你们监视夸格而拿我的船冒险了。"`
+					decline
+			`	"太大太复杂而无法快速读数，行星和星环都是，因此想要获取夸格飞船的更新扫描，执政官现在有此意，"阿拉克说道。`
+			`	"在战争期间扫描过它们，我们当然做过，但现在要精确得多，我们的技术已经变得，"萨里德解释道。"使用我们自己的扫描仪，我们不能对你要求。极大的风险，这会带来，但如果去往<planet>，一个人类的装备扫描仪你能带去，改装它以适合我们的用途，我们会。"`
+			choice
+				`	"好的，我准备好装备扫描仪后就过去。"`
+				`	"这听起来比你之前要我做的更危险。抱歉，我不感兴趣。"`
+					decline
+			`	他们感谢你愿意帮忙，并告诉你他们会在<destination>上等候。`
+				accept
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+
+mission "Heliarch Recon 2-B"
+	name "静默扫描"
+	description "既然日权会已经修改了你的装备扫描仪，前往<waypoints>扫描那里的几艘夸格飞船，然后向<destination>汇报。"
+	landing
+	source "Ring of Wisdom"
+	waypoint "Enif"
+	to offer
+		has "Heliarch Recon 2-A: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`与你交谈过的日权会特工在你降落后已准备好一队工程师。他们从你的飞船上拆下装备扫描仪，带到一个受限制区域。大约一小时后，他们返回，虽然你看不出装备有任何可见变化，但他们保证现在它更适合扫描夸格飞船了。`
+			`	The agents then come into your ship, asking for your map again. "Now, in the earliest stages of construction, this ring you showed us is," the Arach says, pointing to <waypoints>, where Lagrange is. "Interested in the Quarg ships guarding that system, Consul Aulori is. Suffice, one scan per type of ship there should."`
+				accept
+	npc "scan outfits"
+		personality staying uninterested target
+		government "Quarg"
+		system "Enif"
+		fleet
+			names "quarg"
+			variant
+				"Quarg Lindwyrm"
+				"Quarg Wardragon"
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		"coalition jobs" ++
+		payment 200000
+		conversation
+			`工程师再次拆下你的装备扫描仪，复制了一份扫描日志，交给日权会特工，特工们则给你<payment>。"感激你，我们是，船长<last>，"萨里德说。"记住你的帮助，执政官会的。"`
+			`	当工程师返回后，他们将你的装备扫描仪装回原位。日权会特工与你告别，并向你保证夸格不至于为此袭击你。"如果对做你自己的调查感兴趣，你希望，也许再次降落在他们的星环上，你可以，"基梅克建议道。"也许找到一些对我们有意义的事物，你会。"`
+			`	他祝你旅途平安，然后与同事们离开了。`
+
+mission "Quarg Interrogation"
+	landing
+	invisible
+	source
+		attributes "quarg"
+		not planet "Humanika"
+	destination "Earth"
+	deadline 1
+	to offer
+		has "Heliarch Recon 2-B: done"
+	on offer
+		conversation
+			`当你降落在<origin>上时，一名夸格正耐心地等在你的飞船外，仿佛预料到你会打开舱门。你起初没在意，但当你想查看当地新闻时，发现屏幕界面没有显示任何本地服务设施。又过了几分钟，你意识到飞船也没有被补给燃料。你向外望去，看到更多夸格站在你所在着陆坪的加油机旁，只是盯着你的飞船。看到另一名夸格还在等待你的舱门，你走出飞船去和他交谈。`
+			`	"你好，<first> <last>，"它说。`
+			choice
+				`	"你好，有什么事吗？"`
+				`	"有什么问题吗？"`
+			`	它眨了眨眼，然后缓缓看向停在远处的战龙。"你被看见降落在我们的一些世界和星环上，带来了奇怪的扫描装置，并且还被发现扫描了我们的一些飞船。这是为什么？"`
+			choice
+				`	"I was just curious about your species."`
+					goto lie
+				`	"What are you talking about? I never did any of that."`
+					goto lie
+				`	"Scanning? I'm sorry, I think my ship just had some malfunctions. I didn't mean to offend."`
+					goto lie
+				`	"The Heliarchs asked me to do it."`
+					goto truth
+			label lie
+			`	Around ten seconds pass without it saying anything, simply staring at your eyes and blinking slowly. "I see." Without another word, it walks away, heading toward the Wardragon.`
+				accept
+			label truth
+			`	"那你为什么同意？你希望加入他们的行列，是吗？"它问道。`
+			choice
+				`	"我只是想帮忙。我又没有摧毁你们的飞船之类的。"`
+				`	"They told me that the Quarg keep others in 'separate boxes,' and that you hinder their development."`
+					goto hinder
+			`	"Perhaps not, but you agreed to collect information on us and our worlds, which hold countless civilians, and deliver the findings to a group that despises us."`
+				goto end
+			label hinder
+			`	"你相信那些话吗？我们限制过你的行动吗？责备过你与亥族或科拉斯交往吗？即使在你同意帮助那些愚蠢、暴虐的赫利阿克斯之后，你现在不还是在我们的世界里，和平地与一个夸格交谈吗？"`
+			label end
+			`	It blinks a few more times as a few small stripes on its face rapidly alternate between shades of deep blue and bright red. It then ends with, "It would be most wise to cut off all your ties with these 'Heliarchs,' human." It walks away, headed to the Wardragon it looked at before.`
+				decline
+	npc save
+		government "Quarg"
+		personality launching uninterested
+		fleet
+			names "quarg"
+			variant
+				"Quarg Wardragon"
+
+mission "Heliarch Recon 3-A"
+	landing
+	name "扫描准备"
+	description "前往<destination>，赫利阿奇将在那里与你讨论下一项侦察任务。"
+	source
+		near "Ekuarik" 1 100
+	destination "Ring of Wisdom"
+	to offer
+		has "Quarg Interrogation: offered"
+		has "Rim Archaeology 5B: active"
+		has "event: rim archaeology results"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`着陆后，日权会的特工联系了你——正是他们让你去扫描夸格的飞船和星球。基梅克向你打招呼：“又见面了，<last>船长！再次感谢你，我们必须要说，你最近的这次服务。详尽得多，比起我们已有的扫描，你的数据。”`
+			`	萨里德打断了他：“不过……并不满意，奥洛里执政官，对这些数据。被指派再次寻求你的帮助，我们。”`
+			branch license
+				has "joined the heliarchs"
+			`	“破例，议会决定这么做，”阿拉克解释道。“授予你一个我们的扫描模块，你会得到。仅用于这次任务，所以任务结束后必须归还。安装到你的飞船上，<planet>上的一个团队会负责。”`
+				goto choice
+			label license
+			`	“一次‘像样的’近距离扫描，用日权会的扫描模块，执政官想要，”阿拉克解释道。“现在你已加入我们，对你来说很简单，购买一个应该不成问题。准备好了之后，你必须前往<planet>听取计划。”`
+			label choice
+			choice
+				`	“好的，我会尽快赶过去。”`
+					accept
+				`	“抱歉，但我不想再冒险惹恼夸格，现在已经惹得够多了。”`
+					goto decline
+				`	“上次为什么不直接让我这么做？”`
+			branch license2
+				has "joined the heliarchs"
+			`	“受限的技术，这是。仅供日权会使用，”阿拉克告诉你。`
+			`	“对你来说也很危险，当时，”萨里德补充道。“可能被激怒而攻击你，夸格，如果他们注意到我们的技术在你的飞船上。”`
+			choice
+				`	“那这次又有什么不同？”`
+					goto choice2
+				`	“呃，我不想冒任何这种风险。抱歉，但我帮不了你们。”`
+					goto decline
+			label license2
+			`	“可能对你很危险，当时，”阿拉克解释道。“可能激怒夸格攻击你。”`
+			choice
+				`	“那这次又有什么不同？”`
+				`	“呃，我不想冒任何这种风险。抱歉，但我帮不了你们。”`
+					goto decline
+			label choice2
+			`	“获得了有价值的情报，执政官们，”萨里德回应。“一个更安全、更简单的任务。直到你到达<planet>之前，我们不被允许讨论细节。有兴趣再次帮助我们吗，船长？”`
+			choice
+				`	“好吧，如果你们确定安全，我就帮你们。”`
+					accept
+				`	“抱歉，我不太喜欢这个计划。”`
+			label decline
+			branch license3
+				has "joined the heliarchs"
+			`	他们对你的拒绝既惊讶又沮丧，显然没有预料到。他们又坚持了一会儿，但最终放弃了说服你的尝试。失望地，他们离开去了日权会办公室。`
+				decline
+			label license3
+			`	他们对你的拒绝既惊讶又沮丧，显然没有预料到。随后他们的表情凝结成冰冷而恐惧的凝视。他们低声交谈了几句，然后萨里德对你说道。`
+			`	“船长，我们必须坚持。这是执政官的命令。现在你已在我们行列中，所以你应该按照指挥链的指示去做。”`
+			`	“可能失去你的军衔，如果你违抗这样的命令。符合你的最佳利益，继续协助我们和执政官，”基梅克继续说。`
+			`	“你会继续的。我们会告知执政官这一点。”阿拉克说着，拿出一个装置，似乎确认了你将前往<destination>。没有给你多少抗议的机会，三人感谢了你的服从，然后登上一艘日权会的飞船。`
+				accept
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		fail "Rim Archaeology 5B"
+
+mission "Heliarch Recon 3-B"
+	landing
+	name "非静默扫描"
+	description "既然你的飞船已装备了日权会扫描模块，前往<waypoints>星系并扫描那里的夸格战龙。"
+	source "Ring of Wisdom"
+	destination "Ring of Wisdom"
+	waypoint "Zubeneschamali"
+	deadline 15
+	to offer
+		has "Heliarch Recon 3-A: done"
+		not "Heliarch Recon 3-C: offered"
+		not "joined the lunarium"
+		not "joined the heliarchs"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`你降落时，日权会的特工和工程师正在等待，他们立刻着手在你的飞船上安装扫描模块。`
+			`	"记住，船长，你只是借用。一旦归还，我们就会取回扫描器，"萨里德说道。`
+			`	"最多到<date>，你可以保留。如果用时更长，将被视为盗窃，"阿拉克补充道。`
+			choice
+				`	"那时间够用吗？"`
+				`	"这个扫描器到底是用来做什么的？"`
+			`	"通常来说，对我们这些低级人员来说，这些信息是不可获取的，" 基梅克开始说道。"但，奥洛里执政官指示了我们，所以才能把计划转告给你。执政官们了解到，在人类空间附近的一个考古遗址那里，有一艘孤零零的夸格战龙在守卫。你知道这事吗？"`
+			`	你表示确认，向他们解释说你在苏格参与了遗址周围的工作，战龙飞来保护它时你就在那里。`
+			`	"那找到它应该没什么困难，" 阿拉克说。"那艘船离其他夸格很远，所以如果它攻击你，你应该更容易逃脱。"`
+			`	"我们需要的，就是一次快速扫描，" 萨里德告诉你。"一旦你扫描了它，你应该马上回来。"`
+			`	你被警告，如果战龙攻击你，不要使其瘫痪或摧毁它，因为这无疑会永久损害你与夸格的关系。`
+			`	工程师们完成后，探员们祝你好运，你便回到你的飞船内。`
+				accept
+	npc save "scan outfits"
+		government "Quarg"
+		personality heroic staying uninterested
+		system "Zubeneschamali"
+		ship "Quarg Wardragon" "Gloref Esa Kurayi"
+	on accept
+		"assisting heliarchy" ++
+		outfit "Scanning Module" 1
+	on fail
+		"assisting heliarchy" --
+		"reputation: Heliarch" = -1000
+		"reputation: Coalition" = -1000
+	on complete
+		"assisting heliarchy" --
+		"coalition jobs" ++
+		"assisted heliarch" ++
+		log "扫描了在氐宿三星系飞行的夸格战龙，并将扫描日志交付给了赫利阿奇。"
+		outfit "Scanning Module" -1
+		payment 690000
+		conversation
+			`日权会的特工在您降落时就让工程师立即从您的飞船中取下他们的扫描仪。他们第一次查看扫描日志，似乎对结果很满意，同时递给您<payment>。`
+			`	"你幸存了下来，值得庆幸，船长，"萨里德拍了拍你的手臂。`
+			`	"奇怪，真是，那战龙没有攻击船长……"阿拉克看着扫描数据自言自语。"无疑是件幸事，但它们的行为十分反常。"`
+			`	"这些扫描详细得多。我确信，奥洛里执政官会对结果感到满意，"基梅克告诉你。"你帮了我们大忙，船长。"`
+			`	他们转达了执政官的口信，感谢您所做的一切，并请您在获得任何关于夸格飞船或环世界的重要信息时，前往<planet>找他的特工。日权会的成员向您告别后便离开了。`
+
+mission "Heliarch Recon 3-C"
+	landing
+	name "非静默扫描"
+	description "既然你的飞船已装备了日权会扫描模块，前往<waypoints>星系并扫描那里的夸格战龙。"
+	source "Ring of Wisdom"
+	destination "Ring of Wisdom"
+	waypoint "Zubeneschamali"
+	to offer
+		has "Heliarch Recon 3-A: done"
+		not "Heliarch Recon 3-B: offered"
+		has "joined the heliarchs"
+		has "outfit: Scanning Module"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`日权会的探员们在你与一队工程师着陆时正等着你。他们让工程师对你的扫描模块进行一些快速检测。`
+			`	"这个任务慢慢来，你当然可以，船长，但让我们催你快些，奥洛里执政官说过了，" 阿拉克说道。"不确定这机会之窗还能持续多久，我们所有人都是。"`
+			choice
+				`	"这'机会之窗'是什么意思？"`
+				`	"具体任务是什么？"`
+			`	"通常来说，对我们这些低级人员来说，这些信息是不可获取的，" 基梅克开始说道。"但，奥洛里执政官指示了我们，所以才能把计划转告给你。执政官们了解到，在人类空间附近的一个考古遗址那里，有一艘孤零零的夸格战龙在守卫。你知道这事吗？"`
+			`	你表示确认，向他们解释说你在苏格参与了遗址周围的工作，战龙飞来保护它时你就在那里。`
+			`	"那找到它应该没什么困难，" 阿拉克说。"那艘船离其他夸格很远，所以如果它攻击你，你应该更容易逃脱。"`
+			`	"我们需要的，就是一次快速扫描，" 萨里德告诉你。"一旦你扫描了它，你应该马上回来。"`
+			`	你被警告，如果战龙攻击你，不要使其瘫痪或摧毁它，因为那无疑会永久损害你与它们的关系。`
+			`	工程师们完成后，探员们祝你好运，你便回到你的飞船内。`
+				accept
+	npc save "scan outfits"
+		government "Quarg"
+		personality heroic staying uninterested
+		system "Zubeneschamali"
+		ship "Quarg Wardragon" "Gloref Esa Kurayi"
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		"coalition jobs" ++
+		"assisted heliarch" ++
+		log "扫描了在氐宿三星系飞行的夸格战龙，并将扫描日志交付给了赫利阿奇。"
+		payment 690000
+		conversation
+			`日权会特工查看扫描记录时似乎对结果很满意，同时递给你 <payment>。`
+			`	"你幸存了下来，值得庆幸，船长，"萨里德拍了拍你的手臂。`
+			`	"奇怪，真是，那战龙没有攻击船长……"阿拉克看着扫描数据自言自语。"无疑是件幸事，但它们的行为十分反常。"`
+			`	"这些扫描详细得多。我确信，奥洛里执政官会对结果感到满意，"基梅克告诉你。"你帮了我们大忙，船长。"`
+			`	特工们转达了执政官的口信，他感谢你的所有努力，并请你若获得任何关于夸格飞船或环世界的重要情报，前往 <planet> 寻找他的特工。日权会道别后便上路了。`
+
+mission "Keep Zug Wardragon"
+	landing
+	invisible
+	source "Ring of Wisdom"
+	to offer
+		or
+			has "Heliarch Recon 3-B: done"
+			has "Heliarch Recon 3-C: done"
+	npc kill
+		government "Quarg"
+		personality heroic staying uninterested
+		system "Zubeneschamali"
+		ship "Quarg Wardragon" "Gloref Esa Kurayi"
+
+
+
+mission "Heliarch Expedition 1"
+	minor
+	landing
+	name "域外侦察"
+	description "穿过天津四的虫洞，降落在彼处的星球上，并进入那个有着破碎环状世界的星系，为日权会收集数据。"
+	source "Ring of Wisdom"
+	stopover "Ruin"
+	waypoint "World's End"
+	to offer
+		has "Ruin: Landing: offered"
+		or
+			has "Heliarch Recon 3-B: done"
+			has "Heliarch Recon 3-C: done"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`当你降落在<origin>上时，你想起日政官们曾要求你分享任何关于夸格飞船和环状世界的情报。你想告诉他们你在天津四的虫洞另一侧看到的那个被摧毁的环带吗？`
+			choice
+				`	（是的。）`
+				`	（现在还不想。）`
+					defer
+				`	（不，他们没必要知道。）`
+					decline
+			`	你拦下一群路过的日权会特工，他们向你敬礼。“一位有价值的朋友，你已证明自己是，船长，”其中一位萨里德人说。“提供帮助，我们能如何？”`
+			choice
+				`	“能带我去见一位上级吗？我有一些关于环状世界的情报。”`
+				`	“有我可以谈谈破碎环状世界的人吗？”`
+			`	这群人私下讨论了一会儿，然后将你带入了环状世界的一个受限区域。<origin>的内部走廊与你曾去过的任何日权会设施都不同，到处散乱堆放着大型罐子、设备箱，墙壁、地板和天花板上贴满了某种隔离材质。不过最引人注目的是这里驻扎的警卫数量之多——如果从你走过的少数通道来看，很可能超过了环内的平民数量。“请在这里等候，”护送你的日政官们对你说道，同时打开了一扇门，里面是一间类似会议室的房间。他们让你在长桌的一端就座。`
+			`	大约过了十分钟才有人进来，但随后许多日政官开始涌入房间，在桌旁各自落座。当最后一个人进门时，警卫宣布“奥洛里执政官”，所有日政官起立敬礼，谈话声被蹄子敲击地面的声响所取代。他是一位年迈的萨里德人，灰色眼眸，淡色头发，留着修剪整齐的短须。他戴着一条奇特的项链，上面挂着四颗大宝石。他在你对面坐下，其他日政官在他落座后也随之坐下。`
+			`	“诸位同僚，原谅我的耽搁，你们必须，”他对其他日政官说道。“沉浸在我的晚祷中，我是。”他环视房间片刻，简短地瞥了每一位日政官，直到视线落在你的身上。“被告知，我是，有些对我们有价值的情报，你有，<last>船长。”`
+			choice
+				`	“我知道一个星系，那里有一个破碎的夸格环状世界。我想我应该告诉你们。”`
+				`	“如果我告诉你们一个能找到破碎夸格环状世界的地方，会有报酬吗？”`
+			`	他眯起眼睛，然后说道：“重复一遍，你能吗？”你又说了一次，他再次显得困惑。他向身边的一名日政官打了个手势，随后摘下挂在脖子上的翻译盒，换上了对方的翻译盒。`
+			`	他再次询问，你又重复了一遍。“一个……未完工的环状世界，是吗？”`
+			choice
+				`	“不，它肯定是破碎的。星系里到处是碎片，没有任何生命迹象。”`
+					goto how
+				`	“我没说未完工，我说的是破碎。我分得清区别。”`
+			`	其他日政官因为你的语气而僵住了，他们都盯着你，仿佛不敢看向奥洛里以观察他的反应。`
+			branch license
+				has "joined the heliarchs"
+			`	他专注地盯着你看了几秒，随后看向守卫入口的特工。他们打开门，召集了更多日政官。这些人走进来，站到你的身侧和身后。“恐怕我是，再一次未能理解它，<first> <last>。现在，最后一次，重复一遍，你会吗？”察言观色之下，你小心翼翼地重复了刚才的信息，注意不再显得无礼。`
+				goto how
+			label license
+			`	“分得清，是吗？”他开始说道。“而且指望可以我，今天之内你依然会去解释这二者的区别吗？需要我的关注，重要的工作是，所以如果你不再抗命，建议我是，为我们所有人阐明这二者的区别，你去。然后，决定是否将你似乎极其渴望去亵渎的象征丢进这个星系的太阳中，我将会，”他说道，指了指你的头和你所佩戴的日政官环冠。你小心翼翼地重复了刚才的信息，注意不再显得无礼。`
+			label how
+			`	他微微前倾身体，盯着你。环视桌子周围，其他日政官正在进行一场看似安静却激烈的讨论，他们比划着手势，低语中偶尔用身体的重量压得桌子有些倾斜。`
+			`	“怎么发现的？”奥洛里问道，眼睛仍紧盯着你。你尽力解释了天津四的位置，以及你在虫洞另一侧看到的情况。当你解释这个星系是如何被发现，并第一次说出“帕格”这个词时，在场的日政官们似乎集体倒吸了一口气。你停顿了一下，许多人又回到了悄声低语的讨论中，有些人付之一笑，另一些人则保持沉默。`
+			`	一位萨里德人动了动，似乎想站起来，但一看到奥洛里站起身，并用一只手用力按在桌上，他又坐了回去。桌旁的谈话声顿时消失了，他死死盯着你，沉默了足足一分钟。“回避我们片刻，你会吗？”他终于开口说道，并示意几名警卫把你带出房间。`
+			`	先前的悄声低语此刻变成了极其大声的辩论，不过厚实的大门阻挡了大部分声音，使得门外的翻译器无法捕捉到任何内容。半小时后，随着有人粗暴地快速敲击桌子并用你认为是萨里德语大声斥责着什么，大多数争吵声戛然而止。`
+			`	里面安静了一会儿，接着大门再次打开。几位日政官匆忙离去，你被请回了房间。执政官奥洛里仍然站着，见你进来，向你点了点头。`
+			`	“进行调整，你飞船的传感器将会。更加适用，它们会变得，对于详细的三维投影，”他说道。他派了两名日政官卫兵送你回到飞船，随后一些工程师进入舱内并花了一些时间进行改装。改装完成后，当时在房间里的其中一位日政官走近你，告诉你他们需要你降落在你所描述的星球<stopovers>上，并前往<waypoints>扫描那座环状世界。他祝你好运，接着便匆匆返回了受限区域。`
+				accept
+	on accept
+		"assisting heliarchy" ++
+	on stopover
+		dialog `你在那颗神秘世界周围飞行了一段时间，直到传感器发出奇特的蜂鸣声，你猜测这代表着日政官的改装已完成了对该星球的数据读取。`
+	on enter "World's End"
+		dialog `你启动了飞船的传感器，让它连续数小时收集日权会所需的数据。最终，你听到一阵单调而有节奏的蜂鸣声，看过去发现传感器的性能已经恢复正常。`
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		event "heliarch expedition break 1" 22 34
+		payment 3000000
+		conversation
+			`你降落时遇到了十几名日政官卫兵，在传输了扫描日志后，他们迅速将你带到了环带的受限区域。奥洛里以及上次会议中见过的其他几位日政官正坐在一间大房间里等你，房间里投射出了破碎环状世界的全息模型，供所有人观看。`
+			`	“怀疑你对我们说的话，我们所有人曾是，船长，”奥洛里说道，示意你陪他绕着全息投影走动。“声称疯了，你，这里的某些人确实如此断言过。”他短暂地瞥了一眼身旁的一个基梅克。“或者用玩笑浪费我们的时间，你。”在你们两人继续走动时，一名萨里德人退后给执政官让路。“向我保证过，他们中的一些人，完全不可能，它是，去破坏一座环带。”他在靠近一名阿拉克的地方跺了跺蹄子，停在投影显示更大损伤的位置。环带的一大块断裂部分完全展现出来，周围环绕着漂浮的尘埃云。“但并非疯子，也非开玩笑的人，你。而且不可能，这显然不是。无价的情报，你带给我们的正是，<last>船长。彻底调查这个地点，我们必须，所以再次请求你的协助，我们将会，当合适的人选，我们已找到时。”`
+			`	奥洛里刚说完，一名萨里德人便急忙走上前：“大人，反对派遣任何人，议会是——”`
+			`	“同意，议会将会，”奥洛里打断了他，依然凝视着投影。`
+			`	那名萨里德人沉思了片刻，接着说道：“花费数年，它将会，去寻找并训练一个愿意成为调查员的人。一项危险的任务，它——”`
+			branch "expeditions past"
+				has "Coalition: Expeditions Past 10: done"
+			`	“而且白白等待数年，我们不会，”奥洛里再次打断他。“时日无多，我们已经在是。要么寻找一个自愿的人，并且尽快找到，你应该，要么另谋生路，你将会，”他看着那个萨里德人，随后看向门口。`
+				goto end
+			label "expeditions past"
+			`	“危险？”奥洛里嗤之以鼻，再次打断这名日政官。“被议会的怯懦所困扰，你的心智是。成功返回，仲裁者塞德利塔里斯做到了。安然无恙，她是，而且得到了这位人类在远征中的协助，她是，”他向你点头示意。“活生生的证据，她是，毫无根据，议会陈旧的偏执是。现在，尽快找到愿意的人，你必须，在他们得知此事并再次干涉我们工作之前，他们。”`
+			label end
+			`	那名日政官离开了房间，奥洛里递给你一张价值<payment>的芯片。他派人护送你离开房间返回飞船，并承诺很快会有更多工作交给你。`
+
+event "heliarch expedition break 1"
+
+mission "Heliarch Expedition 2"
+	landing
+	name "已联络"
+	description "前往<destination>，日政官们将在那里告诉你他们未来调查破碎的夸格环状世界的计划。"
+	source
+		government "Coalition"
+	destination "Ring of Wisdom"
+	to offer
+		has "event: heliarch expedition break 1"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`一个日政官代表团在你降落在<origin>上时联系了你。“向你致敬，船长。由奥洛里执政官派来，我们是，”其中一人说道。“被召见，你的出席是，在<destination>。”`
+			`	他们告诉你，自己并没有被告知执政官需要你做什么，但请你尽早前往<planet>。`
+				accept
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+
+mission "Heliarch Expedition 3"
+	landing
+	name "域外远征"
+	description "护送一艘日政官飞船前往<destination>提取补给，然后引导他们穿过人类星域并越过天津四的虫洞，以便他们进一步调查那座破碎的环状世界。"
+	source "Ring of Wisdom"
+	destination "Ablub's Invention"
+	to offer
+		has "Heliarch Expedition 2: done"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`当你抵达时，发现除了停在靠近你飞船处的一艘日政司惩戒者外，停机坪上空无一人。成百上千全副武装的日政官在周围巡逻。奥洛里执政官在你走下舷梯时迎了上来。“仔细分析你的发现，我们一直在，船长。很多启发，它们已带给我们，”他说道。“只可惜，能获得的收获是有限的，从二手的观察中。出于这个原因，护送我们的一艘飞船前往那里，你必须。”`
+			`	他指向那艘停在你飞船附近的惩戒者，你看到船员们正往里面装载着数十个货柜。他告诉你，这艘飞船将跟随你前往破碎的环带，并在废墟星上建立基地，以便他们能长时间近距离地研究残骸。`
+			choice
+				`	“当然。我来带路。”`
+					goto accept
+				`	“你们期望在那里找到什么？备件吗？”`
+					goto parts
+				`	“嗯，我觉得他们自己就能到那里。抱歉，我没兴趣。”`
+			label decline
+			branch license
+				has "joined the heliarchs"
+			`	他微微皱眉。“恐怕我是，船长，那样一个选项，是不存在的。对航行于人类星域极其不熟悉，我们是，而且处于一个真正特殊的空间，这环带是。提醒你，我必须，最初引起我们注意的正是你，现在放弃这项工作，你不能。代表我们的联盟，坚持我必须，协助我们的这项努力，你去。”他停顿了片刻，用更低沉的语调继续说道。“非常……对你不欢迎，联盟将会变得，如果现在放弃，你做了。最后几台扫描仪，科学家们已经要求，所以，在<destination>短暂停留后，前往环状世界，你将带他们去。”`
+				goto end
+			label license
+			`	“请求你的合作，我没有。命令，这些是。”他严厉地看着你。“护送这艘船前往那里，你将会，否则发现我们的联盟对你不再那么好客，你将会。最后几台扫描仪，科学家们已经要求，所以，在<destination>短暂停留后，带上他们你将会前往破碎的环带。”`
+				goto end
+			label parts
+			`	“太过先进，构成这个以及所有其他环状世界的复合材料是。复制它们，我们不能。至少现在不行。如果这个环带如何被摧毁，我们了解，也许如何建造我们自己的部件，我们能够做到。如果不能，那么或许寻找我们可以什么手段被用于破坏它，从而我们自己破坏环带的方法，我们能够发现。成功做到这一点在过去，我们还没有。”`
+			choice
+				`	“好吧，我来带路。”`
+					goto accept
+				`	“嗯，我又不是巨型结构工程师，所以我看不出有什么必要亲自去。他们可以自己找路。”`
+					goto decline
+			label accept
+			`	“太好了。这艘飞船装备了跃迁引擎，且有足够的燃料到达这颗‘废墟星’。科学家们要求带上最后几台扫描仪，所以在<destination>短暂停留后，你就可以带他们前往环带世界了。”`
+			label end
+			`	他把你介绍给“惩罚者”号的船员，以及数十名准备登上这艘战舰陪同你的科学家和工程师。他祝你们好运，随后在几十名护卫的陪同下离去。领事一脱离视线，“惩罚者”号的部分船员便开始坐立不安。他们的船长是一名阿拉奇人，他命令船员做好准备，让飞船跟随你，随后他们准备出发。`
+				accept
+	npc accompany save
+		personality escort heroic opportunistic
+		government "Heliarch"
+		ship "Heliarch Punisher (Fuel)" "Eldest Inspector"
+	on accept
+		"assisting heliarchy" ++
+	# No reputation penalty for aborting this mission.
+	on abort
+		"assisting heliarchy" --
+	on fail
+		"assisting heliarchy" --
+		"reputation: Heliarch" = -1000
+		"reputation: Coalition" = -1000
+	on complete
+		"assisting heliarchy" --
+
+mission "Heliarch Expedition 4"
+	landing
+	name "域外远征"
+	description "护卫一艘日权会的飞船，穿越人类空间并进入天津四的虫洞，以便他们能进一步调查那座破碎的环世界。"
+	source "Ablub's Invention"
+	destination "Ruin"
+	to offer
+		has "Heliarch Expedition 3: done"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`“惩罚者”号的船长已将一些设备装载上船，机械师们在离开联盟空间前对飞船进行最后一次维护检查。船长告诉你，一旦你起飞，他们就会跟随你的引导。他每隔一两分钟就会紧张地望向天空。`
+				accept
+	npc accompany save
+		personality escort heroic opportunistic
+		government "Heliarch"
+		ship "Heliarch Punisher (Fuel)" "Eldest Inspector"
+	on accept
+		"assisting heliarchy" ++
+	on visit
+		dialog `“你已抵达<planet>，但把日权会的飞船甩在了后方。最好先起飞，等候他们到来。”`
+	# No reputation penalty for aborting this mission.
+	on abort
+		"assisting heliarchy" --
+	on fail
+		"assisting heliarchy" --
+		"reputation: Heliarch" = -1000
+		"reputation: Coalition" = -1000
+	on complete
+		"assisting heliarchy" --
+		event "heliarch expedition break 2" 275 496
+		conversation
+			`在<planet>那古怪的设施里补满燃料后，“惩罚者”号的船长让你跟着他的飞船绕着整颗星球飞。显然，他们想在这里找一个隐蔽的地方扎营，一处不易被发现的所在。`
+			`	他们最终选定半山腰的一个洞穴，俯瞰着雾霭弥漫的山谷。浓雾中，一条河流隐约可见。正当他们卸下货物、开始安顿时，船长朝你走来。他是一个年轻的阿拉奇人，之前那般忧心忡忡瞥向天空的神态在这里变得更加剧烈，开始说话时他甚至难以直视你。他终于找到了折中办法：用一双眼睛盯着你，其余的眼睛则搜寻着天空。“以全体船员之名，我必须感谢你引导我们，船长<last>。”“飞船上储备了足够维持近一年的物资，但如果我们在建立某种农场的尝试中能有所收获，我们就会停留更久。这是执政官的命令。当我们准备返回联盟时，我会给你发消息，通知你我们在这里的工作已经完成。”`
+			choice
+				`	“明白了。祝你们在这里的研究好运。”`
+					goto end
+				`	“有什么问题吗？”`
+			`	他用所有的眼睛重新望向天空。“离开联盟是被禁止的，对平民和日权会成员都一样。外界已被证明过于危险，人们认为不值得像这样拿我们的跃迁引擎去冒险。我担心飞船的安全——还有船员们的安全。”`
+			branch "expeditions past"
+				has "Coalition: Expeditions Past 10: done"
+			choice
+				`	“为什么这是禁止的？”`
+				`	“别担心，我相信你们会没事的。祝你们研究顺利。”`
+					goto end
+			`	“除了第一次之外，之前日权会对外界的远征都进展得很糟。”他不再监视天空，而是完全把注意力集中在你身上。“我明白这次任务的重要性，也明白执政官寄望于我们。只是……有时我会想，这个任务是否值得让我们所有人去冒险。”`
+				goto end
+			label "expeditions past"
+			choice
+				`	“这还是禁止的吗？但塞德利塔里斯安然返回了，我载着她穿越人类空间又飞了回来，一路顺利，没有任何问题。”`
+				`	“别担心，我相信你们会没事的。祝你们研究顺利。”`
+					goto end
+			`	“确实如此，但禁止所有人离开的法令并未废止。我亲自与仲裁官塞德利塔里斯谈过，必须承认我现在安心多了。但为了船员们着想，我仍必须保持警惕。他们中没有多少人像我一样改变了看法。”`
+			label end
+			`	他再次感谢你的帮助，向你敬礼告别，随后前去帮助“惩罚者”号的船员在洞穴内建立行动基地。你回到自己的飞船，飞回<planet>空荡荡的船坞。现在，剩下的就是等待这里的日权会团队完成他们的工作并返回联盟了。`
+
+event "heliarch expedition break 2"
+
+mission "Heliarch Expedition 5"
+	landing
+	name "会见奥洛里"
+	description "前往<destination>，奥洛里执政官希望就日权会对那座被摧毁的环世界的发现与你谈谈。"
+	source
+		near "Sol" 1 100
+	destination "Ring of Wisdom"
+	to offer
+		has "event: heliarch expedition break 2"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`当你在降落坪着陆后，你发现收到了一条来自你带到废墟星的日权会成员的消息——那是一颗位于帕格在天津四留下的虫洞另一侧的神秘星球。“船长<last>，我们对破碎环世界的研究已经完成了力所能及的部分。我们即将跃迁回联盟。我想奥洛里执政官在收到我们的报告后会想和你谈谈，所以你应当尽快前往<planet>。”`
+				accept
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		"assisted heliarch" ++
+		payment 20000000
+		conversation
+			`出乎你的意料，你抵达<planet>时，并没有迎接队伍在等候你，甚至连奥洛里发来的报酬消息都没有。你离开飞船，向最近的日权会成员提及你是被要求来此会见奥洛里执政官的。他们却敷衍你，说执政官并没有提出过这样的要求。你试图解释是率领废墟星远征队的日权会成员让你过来的，但他们再次打发了你，似乎对你所说的事情一无所知，继续忙自己的事情去了。`
+			`	你又试了几次都无济于事，决定暂时返回飞船。直到一天的时光即将结束，两名日权会守卫才来到你的飞船前，请你出来。你照办了，他们让你跟着走，“因为执政官已准备好见你了。”`
+			`	你再次被带过<planet>那高深莫测、挤满守卫的大厅，来到一条长长的走廊，两旁有几十扇紧闭的门。走廊尽头的那扇门显然是你的目的地。然而，又有两名守卫从那里走来，对护送你的人解释道：“‘友谊之环’那边已经传来了消息。”他们向你表示歉意，称奥洛里可能还要忙上一阵。你被带到房间正门外，以便他的“会议”一结束就立刻接见你。`
+			`	另一个房间里，一名日权会仲裁员向和你一起等待的守卫招手，交给他们别的任务。其中三人离开了，只剩下那个从飞船把你带过来的守卫，是个萨里德人。尽管奥洛里房间的门锁着，你们俩还是能清楚地听到里面激烈的争吵声——不只他的声音，还有许多你认为是其他执政官的声音。在一段听起来像是奥洛里的声音、特别漫长且激烈的争辩之后，和你在一起等待的日权会萨里德守卫称他们很快就会出来，便匆匆走开，拐过了街角。`
+			branch license
+				has "joined the heliarchs"
+			label waited
+			`	又过了几分钟，你又听见里面传来一些激烈的讨论声。过了一会儿，讨论声止息了，门随之打开，奥洛里独自站在门后。“看来你已经到了，船长。请务必原谅我让你久等。刚才我和其他几位执政官正忙着审视远征队的发现。”`
+			choice
+				`	“没关系，我不介意等待。”`
+				`	“我正要回飞船。看来你的会议永远不会结束了。”`
+			label beckon
+			`	他示意你走到房间中央，房间里仍然只有用于与其他执政官视频通话的那些监视器在发光。他走到监视器墙边的一张小桌旁，拿起价值<payment>的筹码芯片递给你。“远征队已经在有限的时间里尽力搜寻了。但当舰队只有一艘飞船——一艘战舰时，能用来实验的时间实在有限。别误会，我对目前的初步结果非常满意，但令人沮丧的是，我们受限于这些时间和资源的限制。”他叹了口气。“我非常希望对那个环带进行一次规模更大、更实质性的远征。但就目前的情况来看，在采取任何进一步行动之前，我似乎必须等待议会的批准。”`
+			`	他走到房间的另一侧，拿起一张桌子上的小盒子，周围立着写满潦草笔记和草图模型的展示板。他把盒子带到你面前并打开它，露出里面一小块显然是金属材质的物件，但它带有一些你无法辨认的奇特、未知的属性。“十亿。”`
+			choice
+				`	“什么？”`
+				`	“这东西有这么贵吗？”`
+			`	“在独立战争期间，轰击这一座环带的弹药中使用的裂变材料总量，以千吨计，达到了十亿。仅仅是这一座环带。它们甚至没能留下一个凹痕。一个都没有。”他拿起那块碎片。“这是远征队设法回收的、破碎环带中较小的一块残片。”他凝视了几秒钟，随后将其放回盒子里，重新放回桌上。“身处我这个位置，我不得不去了解夸格，甚至像夸格一样去学习。我必须像他们一样思考，如果我想要尝试突破他们为了阻止他人从其技术中获益而设下的重重封锁。我们在数量上处于劣势。我们的技术依然落后。如果我找不到缩小差距的办法，那么，也许查明是什么可怕的武器能击碎他们的环带，并学会如何制造这种武器，就是震慑夸格进攻的唯一希望。”`
+			`	奥洛里停顿了将近一分钟，看着监视器。“无论其他执政官对你说些什么废话都不重要，船长。记住这一点：夸格永远不会放弃他们的环带。有了你的帮助，以及远征队的努力，我们或许能为应对他们做好准备。”`
+			`	he... -> 他再次向你道谢，并示意门的方向。在我们两人离开后不久，许多守卫便赶了过来，护送你回到飞船。你离去时，奥洛里则走向环带走廊的更深处，去进一步研究关于那座被摧毁的环世界的报告。`
+				accept
+			label license
+			`	里面的讨论仍在继续，没有丝毫平息的迹象。鉴于从飞船走到这里的路程相对较短，你觉得这地方应该还不算环带限制区域的深处，因此你头环的神经接口或许有权限打开这扇门。`
+			choice
+				`	（尝试打开它。）`
+				`	（就在外面等候。）`
+					goto waited
+			`	正如你所料，门响应了你的指令。房间很暗，里面的许多实验仪器、电脑，以及无数写满笔记的板子，仅由房间一端摆放的各种监视器所照亮。奥洛里独自一人在里面，正通过视频通话与其他几位执政官交谈。`
+			branch "knows iekie"
+				has "Heliarch Investigation 2: done"
+			`	一块最显著的监视器屏幕上显现出一位基梅克执政官，此时似乎由她主导着讨论。“你并不受豁免于我们的法律和规程。且不论你的越权违规，我必须要求立即罢免其他所有涉事人员。包括‘惩罚者’号的船长，以及全体船员。”`
+				goto response
+			label "knows iekie"
+			`	在最显眼的监视器上，你认出了伊奇执政官，这位基梅克日权会成员是你先前在协助调查联盟各星球可疑活动时结识的。她此刻似乎正主导着讨论。“你并不能豁免于我们的法律和规程。暂且不谈你的违规，我必须要求立即免去其他所有涉事人员的职务，包括‘惩罚者’号的船长，以及它的船员。”`
+			label response
+			`	“那绝不可能发生。命令是我下达的。他们不过是在执行上级的意志，”奥洛里回答道。“想必你也不会去鼓励下属违抗命令吧。”`
+			`	“所以，你这是在对这一显而易见的越权行为宣称承担全部责任了？”`
+			`	“我声明，我的下属是代表我并按照我的指示行事的。他们并没有任何违规行为。现在，如果我们要讨论为下属的行为负责的话——”`
+			`	“你别想开脱此事，”她打断他。“你当然清楚，对外界的进一步远征是被禁止的，而且你没有事先通知议会，你已经两次违反了法律。”`
+			`	安全和豁免... -> 在她说完之后，其他的执政官们又对奥洛里进行了一番抨击，他静静地等着他们说完。“在几个世纪前，我被任命为夸格遗物和环世界的首席研究员。自那时起，我一直在继续研究并深化我们在这一领域的知识，且我从未做过任何违背探寻夸格秘密之事。这次远征为我们节省了几个世纪，甚至数千年的研究时间。现在，我必须亲自去深入分析这些发现。为了推进我们的抗争，也为了让我们有一线生机。我相信，当关系到我们联盟的福祉与稳定时，你们也同样有许多更富有成效的事情要去忙，不是吗？”`
+			`	其他人商议了几分钟，随后决定结束这次商讨。“一旦你完成了对这些发现的分析，就必须立刻在‘友谊之环’向全体议会进行汇报。届时，我们将决定是否可以对这些越权行为不予追究。”奥洛里表示赞同，通话随机结束。`
+			`	他转身准备离去，在看到你时，脸上闪过了一丝转瞬即逝的惊讶——显然他刚才太沉浸于讨论中，根本没有察觉到你在一旁观看。“嗯，很显然你已经到了。是不是有些好奇，<last>？”`
+			choice
+				`	“我只看到了结尾。”`
+				`	“他们似乎对你不太高兴。”`
+			`	他哼了一声。“一群懦夫。确实，我冒了一次险，拿着我们的一个跃迁引擎穿过那条未知的虫洞。但是，这是必要的。对我们的认知是必要的。对我们的生存也是必要的。”`
+				goto beckon
+
+
+
+mission "Heliarch Containment 1"
+	minor
+	name "运输日权会士兵"
+	description "将这些 <bunks> 名日权会士兵，连同 <cargo>，在 <date> 之前送达 <destination>，以便他们能打击一个恐怖组织。"
+	passengers 33
+	cargo "military supplies" 25
+	deadline
+	source
+		near "3 Spring Rising" 1 5
+	destination "Fourth Shadow"
+	to offer
+		has "license: Coalition"
+		has "main plot completed"
+		not "joined the lunarium"
+		not "assisting lunarium"
+		random < 75
+	on offer
+		conversation
+			`<origin>上的太空港正处于一片混乱之中，数十名日权会特工正步履匆匆地四处巡逻。有些人正准备登上自己的飞船，另一些则在与这里的几位船长交谈。你这里也不例外，一名基梅克特工在注意到你的注视后，正朝你走来。`
+			`	“许多协助，我们需要，船长，”他们说。“去往 <destination> 的运输，我们需要。为了我们 <bunks> 人，以及 <cargo>。极其紧迫，此任务是。”`
+			`	在你甚至没有察觉的时候，一名阿拉克特工也已悄然走近。在基梅克说完后，他说道：“袭击了数个工厂区和政府大楼，那些恐怖分子是，所以我们必须立刻出发。<payment>，你将获得，如果在 <date> 之前我们抵达。”`
+			choice
+				`	“我很乐意帮忙。带上你的同事和货物到我的船上。”`
+					goto accept
+				`	“恐怖分子？那个星球上的日权会不能自己处理吗？”`
+				`	“你得找别人了。我现在不去那里。”`
+					goto decline
+			`	“正如我所说，袭击了许多政府大楼，他们确实，”阿拉克解释道。“破坏了数个驻军地，那些袭击造成的，而且瘫痪了当地特工的即时响应能力，他们已经。更不用说，一个非常繁华且人口众多的世界，<planet>是，所以一项更艰巨的任务，定位并逮捕这些罪犯是。”`
+			`	“维护和平，我们的职责是，”基梅克补充道。“如果协助达成这一目标，你希望，护送我们去那里，你应该。”`
+			choice
+				`	“好的。带上你的同事和货物到我的船上。”`
+				`	“你得找别人了。我现在不去那里。”`
+					goto decline
+			label accept
+			`	他们感谢你的配合，并用设备呼叫其余特工来到你的船上。在将最后一批货物固定在货舱后，你带他们前往各自的铺位，然后走回驾驶舱。`
+				accept
+			label decline
+			branch license
+				has "joined the heliarchs"
+			`	他们显然很失望，但还是为占用你的时间致以谢意，随后走向下一位商人船长，试图寻求其协助。`
+				decline
+			label license
+			`	他们对你的拒绝感到困惑。“不愿去帮助你的同僚士兵吗，你？对该地区的平民构成危险，那些罪犯是。”`
+			`	“真遗憾，那是，”阿拉克带着不赞同的神色后退。“寻找其他人来帮忙，我们会。”`
+			`	两人随即离去，走向附近的商船船长，试图寻求他们的协助。`
+				decline
+	on accept
+		"assisting heliarchy" ++
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on fail
+		"assisting heliarchy" --
+		conversation
+			`由于未能按时送达日权会特工，他们面色难看地离开了你的飞船。随后，此前雇佣你帮忙的日权会成员联系了你。`
+			`	“多亏了你缺乏纪律，失去了一次抓捕危险罪犯的绝佳机会，我们。不可靠，你已经证明了，<last>。”`
+			`	他们切断了通讯。看来你此后都不会再收到协助日权会进行此类工作的委托了。`
+	on complete
+		"assisting heliarchy" --
+		payment 420000
+		dialog `你被告知着陆后立即打开舱门。你照做后，日权会特工从你的飞船里鱼贯而出，而另一组等候在此的人则开始卸载货物。几秒钟后，你看到 <payment> 已记入你的账户。`
+
+mission "Heliarch Containment 2"
+	name "接回伤兵"
+	description "降落于 <stopovers> 接载 <bunks> 名需要医疗救助的日权会士兵，并在 <date> 之前将他们送达 <destination>。"
+	source
+		near "Bloptab" 1 4
+	stopover "Delve of Bloptab"
+	destination "Ahr"
+	passengers 21
+	deadline
+	to offer
+		has "Heliarch Containment 1: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+		random < 65
+	on offer
+		conversation
+			`你刚走进太空港，就被一群日权会特工拦了下来，他们大部分是阿拉奇人。`
+			`	“受了伤，我们的许多同僚。在 <stopovers> 上，他们。”其中一人说道。“正忙于遏制犯罪行动，他们是，却在平民之中以袭击偷袭了他们，那些恶徒。鉴于情况，对他们很危险，这或许会，如果在那里的医院接受治疗，他们。”`
+			`	“<bunks>人，总共，你将运送。最迟在 <date> 之前送达 <destination>，他们必须被送去，”这群人中唯一的那位萨里德补充道。`
+			choice
+				`	“别担心，我会确保他们尽快得到救治。”`
+					goto accept
+				`	“你们难道不能用自己的飞船接送他们吗？”`
+					goto ships
+				`	“这很悲惨，但我并不感兴趣。抱歉。”`
+					decline
+			label ships
+			`	萨里德摇了摇头。“逃离了 <stopovers>，在袭击发生后，许多歹徒已经。处于高度戒备状态，当地的舰队是，为了试图拦截他们的船只。派遣了几艘可用的船只作为援助，我们当然已经，但依然，利用更多的协助，我们可以。”`
+			`	“招募其他船长的协助，我们一直在，”这群人中的另一位阿拉奇人回答。“正前往那里，另外七艘飞船已经在，需要尽可能多的帮助，我们是。”`
+			choice
+				`	“我明白了。好吧，我会去那里接他们。”`
+				`	“抱歉，不过听起来你们已经得到了不少帮助，而我正忙于其他事情。”`
+					goto decline
+			label accept
+			`	他们向你致谢，并敦促你尽快前往 <stopovers>。在注意到一队基梅克飞船在附近降落后，这群人转向了其他潜在的船长，以寻求协助。`
+				accept
+			label decline
+			branch license
+				has "joined the heliarchs"
+			`	萨里德皱起眉头。“真遗憾，那是，利用所有可用的协助，我们本可以。”这群人随即离去，转而向下一位商船船长寻求帮助。`
+				decline
+			label license
+			`	这群人显然深感震惊。“不愿去帮助你的同僚士兵吗，你？！”其中一位阿拉奇人惊呼道。`
+			`	“真可耻。”萨里德摇了摇头。“如果受了伤的是你，难道从你的日权会同僚那里，帮助你不会期盼吗？”`
+			`	这群人愤然离去，试图招募更多的民用船长来提供帮助。`
+				decline
+	on accept
+		"assisting heliarchy" ++
+	on stopover
+		dialog `你注意到数十艘日权会战舰正在快速勘测这颗星球。着陆后，你看到更多前来协助接载受伤特工的飞船。数百名缠着绷带的萨里德人、基梅克人和阿拉奇人正被送上那些起落不停的飞船。你接上你的乘客，准备前往 <destination> 的医疗中心。`
+	on visit
+		dialog phrase "generic missing stopover or passengers"
+	on fail
+		"assisting heliarchy" --
+		conversation
+			`“由于未能及时接上受伤的日权会特工并送达医疗机构，部分特工已因伤势过重而牺牲。那些幸存者在离开你的飞船时，愤怒地对你百般辱骂和抱怨。随后，雇佣你协助的日权会成员联系了你。”`
+			`	“难以置信。让我们损失了宝贵士兵的生命，你这缺乏纪律的表现造成的。不可靠且对我们部队的疾苦冷漠无情，你已经证明了，<last>。”`
+			`	他们切断了通讯。看来你此后都不会再收到协助日权会进行此类工作的委托了。`
+	on complete
+		"assisting heliarchy" --
+		payment 360000
+		conversation
+			`你协助医护人员将特工们抬上运输车，其中一位负责监督行动的阿拉奇日权会成员递给你 <payment>。`
+			`	“许多伤亡得以避免，多亏了你在我们联合行动中提供的协助，船长，”她说。“关于这番通力合作，上报给我的上级，我将会。”`
+			choice
+				`	“谢谢，但我其实没做什么了不起的事。这只是一次简单的运输任务。”`
+				`	“那里有许多伤员。那些法外之徒到底干了什么？”`
+					goto accident
+			`	“胡言乱语。寻找‘了不起’的行为，我们并不是，当我们寻求协助时。更受珍视，你持之以恒的协助与合作是。我们联盟成功的关键，此类协助是。”`
+				goto end
+			label accident
+			`	“一场恐怖袭击，那曾是。囤积在那里的宝贵资源和设备，他们所觊觎的。不过多亏了特工们的努力，被洗劫，那些仓库并没有，”她说道，同时指向正从你的飞船被转移到地面车辆上的受伤日权会特工。`
+			label end
+			`	她向你道别，并回去继续确保受伤的特工们能被妥善送往医院。`
+				accept
+
+mission "Heliarch Containment 3"
+	name "信息医学"
+	description "在从 <planet stopovers> 接载 <cargo> 的同时，释放日权会交给你的间谍机器人，以对该星球实施监视。"
+	source "Ring of Power"
+	stopover "Secret Sky"
+	cargo "medication" 15
+	to offer
+		has "Heliarch Containment 2: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			branch license
+				has "joined the heliarchs"
+			`当你在太空港漫步时，三名日权会官员走近了你。“向你致敬，船长 <last>。感兴趣，你会有吗，在陪同我们这事上？一个提议，我们有，”萨里德说道。`
+			choice
+				`	“什么事？”`
+				`	“当然，带路吧。”`
+					goto way
+				`	“抱歉，现在没空散步。”`
+					decline
+			`	“‘我们不能告诉你，’那名基梅克人说道，‘除非你接受我们的提议。’”`
+			choice
+				`	“行。带我到能说的地方去。”`
+					goto way
+				`	“听起来有点可疑，我免了。”`
+					decline
+			label license
+			`当你在太空港四处走动时，三位日权会官员朝你走来。他们向你敬礼，那名萨里德人开口道：“向你致敬，船长 <last>。我们是执政官普洛图布派来的。”`
+			`	“‘他有一个任务想交给你，但他希望私下里详谈，’那名基梅克人解释道，‘请跟我们来，好吗？’”`
+			label way
+			`	在环状区的限制区域里转了几十个弯后，他们把你带到一间房间。那里有一名阿拉克人正在等候，旁边还有几名日权会成员正指着桌上投影的联盟地图，低声讨论着什么。`
+			`	“‘准备好与我们合作了吗，船长？’那名阿拉克人问道，‘是我要求见你的。你可以称我为执政官普洛图布。’”`
+			choice
+				`	“<first> <last>。很高兴见到你。”`
+				`	“你为我准备了什么工作？”`
+			`	“‘我们需要像你这样的人。我们收到了来自忠诚爱国者和同僚的匿名举报。在萨里德人的世界 <stopovers>，可能正在酝酿某种可怕的活动。我们担心，不法团伙在那里的活动正在增加，’他说，‘那就是你的目的地。’”`
+			`	几个小箱子被拿进房间并放在桌上。打开后，普洛图布给你看里面装有数个小型无人机——这些无人机与联盟飞船使用的船体维修模块中的无人机非常相似。`
+			`	“‘这是两种技术的结合：扫描模块那惊人的监控能力，以及维修无人机灵活的移动性与耐用的外壳。’他向你解释说，你将前往 <planet stopovers> 接收该星球生产的 <cargo>，但在着陆进场时，你必须抛弃装有无人机的板条箱，好让它们担任间谍机器人。‘你必须保持低调。这看起来必须像是一项普通平常的差事。在完成任务后，你必须返回 <origin>。届时你的酬金将准备就绪。<payment>绝对足够了。’”`
+			`	他祝你好运，之前那三位日权会成员护送你返回飞船。`
+				accept
+	on accept
+		"assisting heliarchy" ++
+	on stopover
+		dialog `按照指示，你在降落进场时释放了无人机。从太空港的正常状况来看，你在提取货物时似乎没有引起任何人的注意。`
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		payment 330000
+		conversation
+			`降落回 <planet> 后，一队全副武装的日权会卫兵迎上前来，他们正护送着执政官普洛图布。他赞许地点了点头，将你的酬金 <payment> 交到你手上。`
+			`	“‘你又帮了我们一次，船长。我期待与你进一步合作。你随时应该到本地太空港找我的一个下属。我可能很快就有更多工作给你。’他简短地敬了个礼，然后前往圆环的另一区域。”`
+
+mission "Heliarch Containment 4-A"
+	name "秘密运输"
+	description "护送三艘满载日权会特工的基梅克尖塔前往 <destination>，他们希望利用民用船只来打对方一个措手不及。"
+	source "Ring of Power"
+	destination "Remote Blue"
+	to offer
+		has "event: plasma turret available"
+		has "Heliarch Containment 3: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`你在太空港被一名全副武装的日权会卫兵拦下，并被要求跟随他进入限制区域。你照做了，穿过走廊，最终来到执政官普洛图布面前，房间比上次更小。三名基梅克日权会成员与他在一起。`
+			`	“‘我必须再次请求你的协助，<last>船长，’他开口道。‘长期以来，对日权会而言，<destination>一直是个棘手的世界。我必须承认，我明知那里存在无法无天的行为，却羞愧地忽视了。船长，我们希望你能再次为我们提供支持。’”`
+			choice
+				`	“你有什么计划？”`
+					goto plan
+				`	“我真的不太愿意参与这些事。能让我走吗？”`
+			branch license
+				has "joined the heliarchs"
+			`	他微微抬起头，然后用他自己的语言嘟囔了几句，暂时关闭了翻译器。他妥协了，派人迅速带你回到了飞船。`
+				decline
+			label license
+			`	他盯着你看了几秒，几乎像座雕像。“恐怕这些是命令。我直接从友谊之环的执政官伊基那里收到了这些指示。船长，你将是完成这项任务的得力助手，所以我必须坚持让你参与。”`
+			label plan
+			`	他把你介绍给那三名基梅克人，并开始解释计划。“你已经被允许使用我们的民用飞船。你最近刚买下三艘新的基梅克尖塔。你将驾驶它们搭载许多乘客前往 <destination>。这是一份非常赚钱的差事。”他停顿片刻，示意基梅克人出发。“他们将伪装成平民在你的船上工作。那些尖塔里的士兵全副武装，随时准备彻底调查 <planet>。这三艘船已奉命跟随你的飞船前往那里。”`
+			`	普洛图布祝你们好运，接着你被护送回飞船。你看到那三艘之前提到的基梅克尖塔停靠在 <ship> 附近，一名基梅克日权会卫兵向你发来通讯，说他们已准备就绪，随时可以出发。`
+				accept
+	npc accompany save
+		personality escort heroic opportunistic
+		government "Coalition"
+		ship "Kimek Spire" "Kiry Paichee"
+		ship "Kimek Spire" "Achipa Kyrri"
+		ship "Kimek Spire" "Pakee Pikary"
+	on accept
+		"assisting heliarchy" ++
+	on visit
+		dialog `你已经到达 <planet>，但日权会的运输船还没到！最好先离开，等它们抵达。`
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+
+mission "Heliarch Containment 4-B"
+	landing
+	name "与普洛图布会面"
+	description "领取护送日权会运输船的报酬。"
+	source "Remote Blue"
+	destination "Station Cian"
+	to offer
+		has "Heliarch Containment 4-A: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`数百名日权会特工从三艘基梅克运输船中涌出，成群结队地冲向城市的不同区域。他们步伐一致，手持武器。从当地人的反应来看，显然他们既没有预料到这种事，也不乐意看到特工以这种方式在城中活动。`
+			`	当最后一批日权会成员离开运输船时，其中一名基梅克船长通知你，你现在应该前往 <destination> 与执政官普洛图布会面，领取你的 <payment> 报酬，并且“避免卷入任何潜在的报复行动”。`
+				accept
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		payment 495000
+		conversation
+			`你降落在空间站，发现 <payment> 已经转账给你。随同酬金一起的还有来自普洛图布的一条通讯：“船长，你必须原谅我的缺席。罪犯再次袭击了第四阴影，所以我正在从力量之环内组织调集一些飞船。”`
+			`	他接着解释说，这次袭击规模相当大，驻扎在此的大部分舰队已被派去协助控制局势。其余的飞船则在协助 <origin> 的行动，因此目前空间站的军事力量相当空虚。“这将是棘手的一周，但我不会用这些事来打扰你。船长，你的支持对我们一直很有帮助。”`
+
+mission "Heliarch Containment 5"
+	landing
+	name "拦截逃逸飞船"
+	description "击败企图逃跑的犯罪船只。你必须使它们瘫痪并登船，以协助日权会查明它们的武器来源。"
+	source "Station Cian"
+	to offer
+		has "Heliarch Containment 4-B: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		"reputation: Lunarium" = -1000
+		event "lunarium fleeing rb"
+		conversation
+			`与普洛图布的通讯结束后，空间站在接下来的几个小时里显得极其安静。你离开飞船，想找点有趣的事做，但这里的商店寥寥无几，没有什么特别引人注目的地方。你来到任务板前，发现上面空空如也。你还注意到市场的商品交易价格没有更新，所有的公共新闻系统也停止了运转。`
+			`	突然，几名仍驻留在此的日权会卫兵急匆匆地从你身边走过，跑进了一间办公室。但他们很快又走了出来，径直向你走来。`
+			`	“‘船长！你帮过我们，对吧？协助了遥远深蓝行动？’你点点头。‘执政官认为你值得信赖，而我们急需一艘能战斗的飞船。你必须帮我们！’”`
+			choice
+				`	“怎么回事？”`
+				`	“你说能战斗是什么意思？我们被攻击了吗？”`
+			`	他们解释说，不只是空间站的贸易和新闻系统出了问题——他们一直无法联系上遥远深蓝的小组，也无法联系上前往第四阴影的舰队，甚至无法与联盟其他任何地方取得任何联系。`
+			`	“‘我们只能得到本地星系的读数，它们警告我们有飞船接近！武装的民用飞船！肯定是罪犯，从遥远深蓝逃过来的！’”`
+			`	你还没来得及多说什么，他们几乎就把你推回了飞船。他们向你保证，你将为此获得丰厚的报酬，但请求你只瘫痪敌舰，以便能够登船搜寻可能存在的人质，或者将这些不法分子逮捕并进行审讯。`
+				launch
+	npc board
+		personality timid plunders entering target
+		government "Lunarium"
+		ship "Saryd Sojourner (Bombardments)" "Hodoviah"
+		conversation
+			`正如你之前战斗时所怀疑的那样，这艘船配备了日权会武器。不幸的是，你无法确认它使用的装备，也无法检查是否有人质，因为当你准备进入时，自毁程序启动了。`
+				launch
+	npc board
+		personality timid plunders entering target
+		government "Lunarium"
+		ship "Arach Spindle (Plasma)" "Aramitess"
+		conversation
+			`这艘船装备了来自人类空间的等离子炮塔，正是自由世界研发的那种武器。不幸的是，当你准备登船时它启动了自毁程序，所以你无法确认船上是否有人质。`
+				launch
+	npc board
+		personality timid plunders entering target
+		government "Lunarium"
+		ship "Kimek Thistle (Torpedoes)" "Resheph"
+		conversation
+			`这艘船装备了鱼雷发射管。不知为何，罪犯获得了人类的装备。你正要进入飞船寻找可能存在的任何人质，但当你注意到自毁程序启动时，你急忙退了回来。`
+				launch
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		"reputation: Lunarium" = 1
+		event "lunarium detained rb"
+		"assisted heliarch" ++
+		payment 1320000
+		conversation
+			`尽管你始终未能查明船上是否有人质，但驻扎在 <planet> 的日权会人员仍因你“逮捕了匪徒”而将你奉为英雄。他们立即着手修复你的飞船。在接下来的几个小时里，你依然保持戒备，以防有更多敌舰穿过，但一切似乎并无异样。临近一天结束时，空间站也恢复了正常，通讯和其他功能均已恢复。`
+			`	通讯一恢复，日权会人员便立即联系了执政官普洛图布，向他汇报了发生的事情。不久之后，<payment> 便被汇入你的账户，接着你与执政官接通了通话。`
+			`	“实在丢人，这本会是，若在此种情况下，罪犯的飞船得以逃脱。做得很好，你，船长。”他和你讨论了那些飞船使用的装备，得知它们不仅拥有日权会装备，还获取了人类武器时，他感到十分惊慌。他发出一声你难以分辨的声音，像是喘息又像是咆哮；你只知道你的耳朵不想再听到那种声音了。`
+			`	“将这份报告带给其他执政官，即刻我会。要求你执行更多任务，我们也许会，但眼下，完成你的工作是，船长。”他简短敬礼后结束了通话。随着当地驻军从遥远深蓝返回，日权会的飞船也匆忙赶回。许多飞船的船长亲自前来祝贺你成功拦截了逃跑的飞船。`
+
+event "lunarium fleeing rb"
+	system "12 Autumn Above"
+		remove fleet "Heliarch"
+
+event "lunarium detained rb"
+	system "12 Autumn Above"
+		add fleet "Heliarch" 800
+
+
+
+mission "Heliarch Drills 1"
+	minor
+	name "加油演习"
+	description "护卫两艘日权会审判官级飞船前往<destination>，作为一次测试联盟在紧急情况下加油能力的演习。"
+	source
+		near "Belug" 6 100
+	destination "Belug's Plunge"
+	to offer
+		has "license: Coalition"
+		not "joined the lunarium"
+		not "assisting lunarium"
+		random < 30
+		"combat rating" >= 8104
+	on offer
+		conversation
+			`当你准备前往太空港时，两艘日权会审判官级飞船在你的飞船旁降落。工人们一拥而上，准备为它们补充燃料。一位黑发刚及肩的年轻萨里德人从其中一艘审判官飞船上走下，她掏出一个类似表盘的东西，似乎是在记录为飞船加满燃料箱所耗费的时间。`
+			`	完成后，她赞许地点点头，环视了机库一圈。当她注意到你在注视时，便朝你走来。“你好，人类访客，”她说。“行政官洛图奥拉，我是。对我们的飞船感兴趣，你是吗？”你刚开始点头，这便足够让她继续说下去。“一次加油演习，这曾是。当降落时，在最后一刻才通知当地政府，我们是这样做的，这样更‘真实’它会是。重要的一环这会是，测试面对紧急情况我们准备得有多么充分。”`
+			choice
+				`	“什么样的紧急情况？”`
+				`	“这么说，你是想让我协助进行其中的一些演习，我没猜错吧？”`
+					goto help
+				`	“你们这样做很好。不过，我该动身了。”`
+					decline
+			`	“各种各样的紧急情况，”她回答。“夸格入侵、犯罪袭击、对自然灾害的应对行动。对所有这些做好准备，我们必须。”`
+			label help
+			`	她看了看你的飞船，又看向那两艘审判官。“差不多完成了加油演习，我们曾是。正准备返回<planet>，我曾是。安排一些更有趣的演习，我是可以的，如果你的协助，我能得到的话。陪我们一起回去，你愿意吗？”`
+			choice
+				`	“好吧，你需要我做什么？”`
+					goto accept
+				`	“这些‘更有趣的演习’会涉及什么内容？”`
+				`	“抱歉，我对那种工作不感兴趣。”`
+					decline
+			`	“考虑到那一点，我还没有，”她说。“一些飞船战斗训练，也许。非常受益，与外人一同训练可能会是。”`
+			choice
+				`	“好吧，那我现在只需跟着你的飞船就行了？”`
+				`	“抱歉，但我对那种工作不感兴趣。”`
+					decline
+			label accept
+			`	“跟随你前往<planet>，我的飞船会，”她指着审判官级飞船说道。“急着返回，我们并不，所以如果紧急事务在别处，你有的话，跟随你一段时间，我们能。一次加油演习的延伸，这将会是。”`
+			`	她告诉你，当你到达<planet>时她会付给你<payment>，并且还会准备另一次“演习”让你协助。随后她回到其中一艘审判官级飞船中，它们准备在你起飞后跟随你的飞船。`
+				accept
+	npc accompany save
+		personality escort heroic opportunistic
+		government "Heliarch"
+		fleet
+			names "heliarch"
+			fighters
+				names "heliarch fighter"
+			variant
+				"Heliarch Judicator" 2
+				"Heliarch Pursuer" 4
+				"Heliarch Rover" 4
+				"Heliarch Stalker" 4
+	on accept
+		"assisting heliarchy" ++
+	on visit
+		dialog `你已抵达<planet>，但有些日权会护卫舰被落在了后面。最好起飞离港，在此等待它们到来。`
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		"coalition jobs" ++
+		payment 150000
+		conversation
+			`当你降落时，洛图奥拉付给你<payment>。“一个关于下次演习的想法，我有了，”她说。“需要安排更多的飞船，我必须，所以需要几个小时，我会。等我搞定后到太空港来见我，你应该。”`
+
+mission "Heliarch Drills 2-A"
+	name "追击演习"
+	description "降落在<planet>上，同时避开日权会猎手。"
+	source "Belug's Plunge"
+	destination "Shadow of Leaves"
+	"apparent payment" 300000
+	to offer
+		has "Heliarch Drills 1: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`当你在太空港找到行政官洛图奥拉时，她向你展示了一幅联盟星图。她指向两个星系，分别位于基梅克和萨里德领空。“打了许多电话，我打了，并且为这次演习集结许多飞船，我设法做到了。多么称职于它们的工作，我们的猎人是，我们将会看到。”`
+			choice
+				`	“什么意思？”`
+					goto explain
+				`	“我要和它们战斗吗？”`
+			`	“不，不交战，”她说。“还不是时候。仅仅模拟一次追捕，它们会是。”`
+			label explain
+			`	她再次指向那几个星系。“在不被猎手发现的情况下，降落在<planet>和余烬岬角，你的任务是。攻击你，它们不会，但在你降落时允许它们留在星系中，你不能。一旦顺利在这两个星球都完成了降落，你做到后，返回这里领取<payment>，你可以。”`
+			choice
+				`	"Okay, I'll head out to the planets then."`
+					goto accept
+				`	“你能告诉我追捕者会在哪里吗？”`
+			`	“知晓他们的追捕者，被追捕者是不会的，”她说着，笑出了声，仿佛这是个玩笑。“好吧，通常如此……来自联盟中的许多星系，那些猎手是。准备好在你起飞时跟随你的飞船，它们会是。”`
+			label accept
+			`	She points again to one of the planets. "Still preparing, some Hunters around Ashy Reach are, so head for <planet> first, you should." She wishes you luck on avoiding the Hunters and heads off to a Heliarch military building.`
+				accept
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Silver Bell"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Hunter"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Fallen Leaf"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Companion"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Good Omen"
+	on accept
+		"assisting heliarchy" ++
+	on visit
+		dialog `在你降落后，一艘一直在追捕你的日权会猎手也在你身旁降落。你需要在此着陆之前甩掉它才能成功。`
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+
+mission "Heliarch Drills 2-B"
+	landing
+	name "追击演习"
+	description "降落在<planet>上，同时避开日权会猎手。"
+	source "Shadow of Leaves"
+	destination "Ashy Reach"
+	to offer
+		has "Heliarch Drills 2-A: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`你着陆时没有任何猎手尾随，地面上的一名日权会人员一边看着你的飞船，一边对着通讯器说话。几分钟后，行政官洛图奥拉联系了你。“干得漂亮，船长！前往下一个目标，<planet>，你可以了。”她再次祝你好运，随后结束了通讯。`
+				accept
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "4 Axis"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Sol Kimek"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "3 Spring Rising"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "5 Summer Above"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "3 Pole"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "12 Autumn Above"
+	on accept
+		"assisting heliarchy" ++
+	on visit
+		dialog `在你降落后，一艘一直在追捕你的日权会猎手也在你身旁降落。你需要在此着陆之前甩掉它才能成功。`
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+
+mission "Heliarch Drills 2-C"
+	landing
+	name "追击演习"
+	description "降落在<planet>上，同时避开日权会猎手。"
+	source "Ashy Reach"
+	destination "Belug's Plunge"
+	to offer
+		has "Heliarch Drills 2-B: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`你又一次成功避开了猎手并降落在<origin>，当地的一名日权会特工随即将你的成功告知了行政官洛图奥拉。她联系你时说道：“出色的工作，<last>船长！现在，同一些我拥有的线人谈过了，并且另外一场供你协助的演习，我已安排好。在你最方便的时候返回<planet>，你可以。”她挂断了通讯……几秒钟后又打了回来。“啊，原谅我，你必须，船长。忘记了一些事，我曾是。听闻了最近的演习，一些同僚有，并且为参加演习准备好了他们自己的猎手，他们如今已。在返回<planet>的途中避开它们，按照惯例，你应该。”`
+			`	She mentions they've contributed some credits to your reward, now a total of <payment>, which will be yours when you land on <destination> without any of the Hunters on your tail.`
+				accept
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "1 Axis"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "4 Winter Rising"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "5 Spring Below"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Ki War Ek"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "8 Winter Below"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Quaru"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Last Word"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Homeward"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Fell Omen"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Ekuarik"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Belug"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Speloog"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Torbab"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Flugbu"
+	npc evade
+		government "Heliarch"
+		personality heroic opportunistic target
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Hunter"
+		system "Debrugt"
+	on accept
+		"assisting heliarchy" ++
+	on visit
+		dialog `在你降落后，一艘一直在追捕你的日权会猎手也在你身旁降落。你需要在此着陆之前甩掉它才能成功。`
+	on fail
+		"assisting heliarchy" --
+	on complete
+		"assisting heliarchy" --
+		"coalition jobs" ++
+		payment 470000
+		conversation
+			`你降落时，行政官洛图奥拉前来迎接，递给你<payment>的报酬，并祝贺你成功甩掉了追击的飞船。“挫败了许多猎人飞行员，我听说你有，”她笑着说。“对他们而言是一次很好的训练，我希望这曾是。正在为另外一次演习做收尾安排，我是。当准备好时，你是的话，到太空港来见我，你必须。”`
+
+mission "Heliarch Drills 3"
+	name "战斗演练"
+	description "前往<waypoints>星系与<npc>交战，成功后向<planet>汇报。你只能使其瘫痪。若摧毁或俘获该船，你将被视为赫利阿奇的敌人。"
+	source "Belug's Plunge"
+	waypoint "Torbab"
+	to offer
+		has "Heliarch Drills 2-C: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`洛图奥拉正在太空港入口处与一位基梅克日权会船长交谈。“啊，船长在那儿了，”她对基梅克人说。“<last>船长，你的陪练对手，这位是，”她说着，向那位基梅克人示意，对方微微低头向你敬礼。“很想与外人切磋她的飞船，她会是。”`
+			`	那位基梅克人并未久留，只祝你“战斗愉快”，便动身前往机库，登上了一艘“惩戒者”级飞船飞走了。你看着洛图奥拉，等她解释。“坚固的飞船，我们的惩戒者是，但调查过你的遭遇记录，我们有，并且战斗的经验，你有，”她说。“避免发生任何意外，我们希望，所以拆卸掉了，那艘飞船的终结者吊舱是。仅仅一次演习，这会是，所以只以使对方瘫痪为目标，你们应当。如果成功，你是的话，留出了<payment>作为你的酬劳，我们有。”`
+			choice
+				`	“太好了。我很想和你们的一艘战舰较量一下。”`
+					goto accept
+				`	“其实，我不确定自己是否能行。我觉得我的船打不过惩戒者。”`
+			`	你第一次看到洛图奥拉收起了笑容，似乎因可能要取消对决而感到困惑和难过。“什么？别这样，船长，确信我是，表现得很好，你会的。如果装备精良，你的飞船不是的话，自由地按照你的想法武装自己，并在稍后返回与惩戒者决斗，你可以。”她语气变得柔和，继续说道：“如果真的不合你意，这会是的话，取消决斗，我是可以的，但获得像这样的机会，我们经常是不能的。深表感激，你对这最后一次演习的配合，这将会是。”`
+			choice
+				`	“好吧，我想我可以找找办法来为战斗做准备。”`
+				`	“抱歉，但我实在不太想就这样挑战你们的一艘战舰。”`
+					decline
+			`	她几乎跳了起来，欢快的神态犹如拨动了开关一般瞬间恢复。“谢谢你，<last>船长！确实是一次独一无二的体验，这将会是。”`
+			label accept
+			`	她凝视了一会儿，然后调出了一张星图。“前往了<waypoints>星系，惩戒者是。在那里等你，它会。”她告诉你，准备好与惩戒者交战时便前往<waypoints>，并提醒你只可使其瘫痪，因为任何更严厉的举动都会让你成为日权会的罪犯。`
+				accept
+	npc disable save
+		government "Heliarch Test Dummy"
+		personality disables staying nemesis heroic
+		system "Torbab"
+		ship "Heliarch Punisher (Scrappy)" "Awaiting Adversary"
+		on destroy
+			fail
+			"reputation: Heliarch" = -1000
+			"reputation: Coalition" = -1000
+			dialog `惩戒者号在船体崩解时试图向你发出呼叫，但你永远不会听到他们最后的哀嚎。你未能仅仅使飞船瘫痪，而是葬送了整船船员。看来，你在联盟领空中将不再受欢迎。`
+		on board
+			fail
+			"reputation: Heliarch" = -1000
+			"reputation: Coalition" = -1000
+			dialog `尽管你已使惩戒者号瘫痪，但你却决定靠拢并登船进行回收，这彻底辜负了赫利阿奇对你的信任。他们以及联盟的其余势力都不会对此感到高兴。`
+		on capture
+			dialog `在一场漫长而疲惫的战斗后，你和你的船员成功捕获了惩戒者号。随着船长以及她的大部分船员的性命落入你手，联盟必然不会再欢迎你了。`
+	on accept
+		"assisting heliarchy" ++
+	on fail
+		"assisting heliarchy" --
+	on visit
+		dialog `你已降落在<planet>，但尚未使<npc>瘫痪。返回前先将其瘫痪。`
+	on complete
+		"assisting heliarchy" --
+		"coalition jobs" ++
+		"assisted heliarch" ++
+		payment 800000
+		conversation
+			`你返回时，执政官洛托拉向你致意。“战胜了我们的惩罚者之一，你做到了！或许真正的威胁，是你，而非夸格，”她说着，盯着你看了几秒，似乎在等你笑出来。她把<payment>递给你，继续说道：“被发送了一份战斗记录，我确实是。从中学习到很多，但愿我们能。”`
+			`	她感谢你帮她完成训练科目，表示这对当地学院训练学员大有裨益。最后她祝你一路平安，随后走向一栋日权会建筑。`
+
+mission "Heliarch License 1"
+	minor
+	landing
+	name "会见执政官"
+	description "前往<destination>，日权会的执政官将任命你为日权会特工。"
+	source
+		near "Quaru" 1 100
+	destination "Ring of Friendship"
+	to offer
+		or
+			"assisted heliarch" >= 5
+			and
+				"coalition jobs" >= 70
+				"assisted heliarch" == 4
+			and
+				"coalition jobs" >= 100
+				"assisted heliarch" == 3
+		not "joined the lunarium"
+		not "assisting heliarchy"
+		not "assisting lunarium"
+	to complete
+		not "assisting lunarium"
+	to fail
+		has "joined the lunarium"
+	on offer
+		conversation
+			`当你降落在<origin>时，发现日权会的代表团正在外面等候。你与他们见面后，其中那位萨里德说道：“联盟的坚定盟友，你已证实自己是。”`
+			`	“讨论了你的功绩，执政官们已经。极大的满足，你的贡献带给了我们，”基梅克继续说道。`
+			`	“与你，一场会面他们请求。去<destination>你必须，若要加入我们行列，你如此希望，”阿拉奇说完。`
+				accept
+	on visit
+		dialog `你当前正在协助月影社。若想加入日权会，请取消或完成你为他们承接的任何任务。`
+
+mission "Heliarch License 2"
+	landing
+	invisible
+	source "Ring of Friendship"
+	to offer
+		has "Heliarch License 1: done"
+		not "joined the lunarium"
+		not "assisting lunarium"
+	on offer
+		conversation
+			`日权会<origin>当局向你提供了一个日权会成员的位置。你愿意与他们见面并正式加入日权会吗？考虑到他们与夸格的历史，以及联盟空间中酝酿的叛乱传言，这无疑会让你走上与夸格和抵抗力量冲突的道路。`
+			choice
+				`	（是的。）`
+				`	（还没。）`
+					defer
+				`	（不。我根本不想支持日权会。）`
+					decline
+			action
+				log "日权会赠予了我一个特殊的环冠，使我可以使用他们的一部分技术。我还获得了一个翻译器，以便与联盟各物种自由交流。"
+				set "license: Heliarch"
+				set "language: Coalition"
+				set "joined the heliarchs"
+				event "first heliarch unlock"
+			`	当你降落时，迎接你的是一个小小的仪式。三位日权会执政官欢迎你，每人手持一颗宝石：萨里德的翡翠、基梅克的红宝石、阿拉奇的蓝宝石。他们依次将宝石递给你：先是萨里德，然后是基梅克，最后是阿拉奇。摄像师和摄影师包围着现场，被一排排日权会卫兵拦在远处。看来你加入日权会已经成了一件大事。`
+			`	仪式结束后，他们让你跟随进入环带的限制区域，带你来到一个非常大的圆形房间，有点像竞技场或礼堂，数百名日权会执政官就坐。还有更多的摄像人员和摄影师，不过这次都是日权会成员。你被指示走到中央。`
+			`	带你来的执政官们发言了，你再次被提醒你对联盟的“贡献与忠诚”。“格外特别，这场仪式是，”阿拉奇说。“加入我们的行列，首次，一个外人做到了。做出许多贡献并对我们联盟展现忠诚，这个外人已经。”`
+			`	“来自人类，<first> <last>走来了，”基梅克继续说道。“我们最新的邻居，以及一个仍然生活在夸格训斥目光下的群体，他们是。触及他们所有人，解放他们所有人，我们仍然不能，但是，在这条战线上的第一步，<last>船长的加冕是。”`
+			`	萨里德走向你，拿着一个箱子。她打开箱子，露出里面一个金色的头环，默默地看着你。`
+			choice
+				`	“我自己戴上吗？”`
+				`	（拿起头环。）`
+					goto circlet
+			`	“允许别人为我们加冕，我们绝不，”她说。“再也不会了。”`
+			choice
+				`	（拿起头环。）`
+			label circlet
+			`	你拿起头环，举到头顶，日权会执政官们全都站了起来。你放下头环，调整好让它适合你。一旦“加冕”完成，许多执政官欢呼庆祝，接着是一阵掌声和更多的演讲。`
+			`	一切结束后，你由一些卫兵护送出去，但仍然留在限制区域。你被带到一个更小的房间，两位穿着白大褂的日权会成员正在操作一台类似医院超声波机器的设备。其中一人向你要头环，把它连接到机器控制台附近的几根电缆上。“配置你的头环，我们现在将做，以便对你的意志它能响应，”另一个人说着，示意你坐下。他拿着一个大的、类似头盔的东西，顶部有一根电缆连接到机器。`
+			choice
+				`	“响应我的意志？什么意思？”`
+				`	“这真的有必要吗？”`
+			`	“仅仅是珠宝饰品或等级象征，这些并不是，”摆弄你头环的成员解释道。“作为纽带，它们确实是，充当日权会意志与我们联盟机器和程序之间的接口。允许你访问我们的一些限制环区，它们会，并且作为我们许多装备商的钥匙，它们也是。”`
+			`	他们示意你坐下，你照做了，头盔被戴到你的头上。它完全遮住了你的视线，而且感觉比你想象的要重得多。“现在开始，我们将，”你勉强听到一位日权会成员说道，因为大部分声音都被隔绝了。过程开始后，你听到脑海中回荡着波浪般的嗡嗡声，没过多久你便感觉自己仿佛在旋转。在你的不适感加剧之前，日权会成员们停止了机器，帮你取下了头盔。“全部完成，我们已经。拿着，”一位说道，把你的头环递还给你。`
+			`	再次戴上后，你没有注意到任何变化，但他们鼓励你在一扇门上试试。你从座位上站起来，走向入口门，离门还有几步远时，门就开了。你心想关上它，它就关了。你又重复了几次，然后转向日权会成员，他们看到你摆弄你的新能力似乎觉得很有趣。你看向头盔，心念一动，头盔就转了起来，仿佛绕着它假设附着的头部旋转。你关掉它，开始用房间里的灯光和电脑测试头环。`
+			`	完成后，两位日权会成员进一步解释。“由于较低级别你是，允许你访问所有一切和各处，你的头环不会。至少现在不会。但是，如前所述，进入一些限制区域，你现在可以。在我们的许多世界上，找到你会日权会的装备商，届时提供我们的一些装备将会。允许你接取我们在这里为日权会特工发布的任务，这头环也将。”`
+			`	他们称赞你加入，并道别，让卫兵护送你回飞船。三位迎接你的日权会执政官在你到达时等候着，递给你一个小盒子，你很快意识到那是一个翻译设备。“我们的一员你现在是，船长，”萨里德说。“信任你我们确实会，去维护联盟的价值观和法律。”`
+			`	三位再次向你祝贺并祝你一路平安。`
+				decline
+
+event "first heliarch unlock"
+	planet "Ring of Friendship"
+		outfitter "Heliarch Basics"
+	planet "Ring of Power"
+		outfitter "Heliarch Basics"
+	planet "Ring of Wisdom"
+		outfitter "Heliarch Basics"
+	planet "Saros"
+		outfitter "Heliarch Basics"
+	planet "Ahr"
+		outfitter "Heliarch Basics"
+	planet "Ki Patek Ka"
+		outfitter "Heliarch Basics"
+	planet "Belug's Plunge"
+		outfitter "Heliarch Basics"
+	planet "Stronghold of Flugbu"
+		outfitter "Heliarch Basics"
+	planet "Delve of Bloptab"
+		outfitter "Heliarch Basics"
+	planet "Far Home"
+		outfitter "Heliarch Basics"
+	planet "Dwelling of Speloog"
+		outfitter "Heliarch Basics"
+	planet "Blue Interor"
+		outfitter "Heliarch Basics"
+	planet "Sandy Two"
+		outfitter "Heliarch Basics"
+	planet "Second Rose"
+		outfitter "Heliarch Basics"

@@ -1,0 +1,495 @@
+# Copyright (c) 2015 by Michael Zahniser
+# Copyright (c) 2024 by Hurleveur
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+mission "Unfettered returning home"
+	minor
+	description "这名亥族人请求你将他偷运出无羁者星域，并护送其前往<destination>。"
+	source
+		attributes "unfettered"
+	destination "Hai-home"
+	clearance
+	passengers 1
+	to offer
+		has "Unfettered Tribute 3: done"
+		random < 40
+	on offer
+		conversation
+			`夜里，你听到飞船主舱门传来轻微的刮擦声。要查看一下吗？`
+			choice
+				`	（是的。）`
+				`	（否。）`
+					defer
+			`	你抓起手电筒打开舱门，发现有一名年轻的亥族人站在那里，肩上挎着一个大挎包。“你就是<first> <last>，对吗？”他问道。你点了点头。他接着问：“上面写的东西是真的吗？”`
+			`	他手里拿着一张箔纸。你认出那是你之前一直运送给无羁者的口粮的包装纸——也就是他们向爱好和平的亥族人强征的“贡品”。由于你从未拆开过那些口粮，因而没有意识到包装纸的内侧写着字，那是用亥族棱角分明的字母写成的寥寥数语。那个无羁者青年看到你困惑的表情，便翻译了这条信息：“上面写着，‘亥族故土也是你的家。重归你的同胞吧。’”`
+			choice
+				`	“我认为这是真的。提供这份贡品的亥族人说，他们希望无羁者能放弃暴力，并与他们和解。”`
+					goto true
+				`	“抱歉，但如果你天性容易诉诸暴力，我不认为他们会允许你生活在他们之中。”`
+			`	你不太擅长解读亥族人的情绪，但这个青年似乎有些沮丧。“你确定吗？”他问。`
+			choice
+				`	“我很确定。我帮不了你。”`
+					goto refuse
+				`	“也许你可以跟我一起去看看，但别抱太大希望。”`
+					goto end
+			label true
+			`	“你能带我去亥族故土吗？”他问，“你能够前往无缚者领地之外的地方。我能跟你一起去吗？”`
+			choice
+				`	“好，我带你去。”`
+					goto end
+				`	“抱歉，我不能冒着激怒无缚者的风险带上一个叛逃者。”`
+			label refuse
+			`	青年失望地离开了。你希望自己做了正确的选择。`
+				decline
+			label end
+			`	你带这名青年来到你的一间铺位室，并叮嘱他躲在里面，直到你们抵达亥族故土。`
+				accept
+
+	on visit
+		dialog `你寻找那个年轻的亥族人，却发现他搭上了你的一艘护航舰！最好先出发，并在这个星系中等待你的护航舰抵达。`
+	on complete
+		payment 100000
+		dialog
+			`你本不必担心那个无羁者青年在亥族故土会受到怎样的接待。在你犹豫地联系亥族政府后不过几分钟，欢呼的人群就聚集在了你的飞船周围。当他走出舱门时，面对如此热烈的欢迎，他显得目瞪口呆。一位亥族执政官感谢你送他回来，并支付了你<payment>。`
+		"reputation: Hai" += 10
+		"reputation: Hai (Wormhole Access)" += 10
+		"reputation: Hai Merchant" += 10
+		"reputation: Hai Merchant (Human)" += 10
+		"reputation: Hai Merchant (Sympathizers)" += 10
+
+
+
+# This mission will offer but defer itself the first time if you lack money but have sufficient net worth.
+mission "Hai Legacy 1"
+	invisible
+	shipyard
+	source "Hai-home"
+	destination "Darkcloak"
+	clearance
+	to offer
+		has "First Contact: Unfettered: offered"
+		"reputation: Hai (Unfettered)" < 0
+		not "Unfettered Jump Drive 1: offered"
+		"credits" + "net worth" * ( 1 - "Hai Legacy 1: deferred" ) >= 10000000
+	on offer
+		conversation
+			branch first
+				not "Hai Legacy 1: deferred"
+			`你想起曾有一个戴兜帽的身影在这个船坞向你提供商机。你要遵照他们的指示，前往指定的坐标吗？`
+			choice
+				`	（当然。）`
+					goto go
+				`	（也许下次吧。）`
+					defer
+				`	（永远不。）`
+					decline
+			label first
+			`当你在船坞里浏览时，一个戴着兜帽的身影悄悄靠近了你。你停下来想听听他们要说什么，他们却一把抓住你的胳膊，拉着你跟上。“继续走，”那名陌生人低声喝道。在对几艘飞船指指点点并随意评价，假装成普通路人之后，他们再次向你搭腔。`
+			`	“我和我的伙伴想给你提供一个利润丰厚的商机。这需要你全神贯注，所以你最好先处理完手头的所有事务。如果你感兴趣，就来这个坐标找我们。”`
+			`	临走前，他们补充道：“我们注意到你指挥着多艘飞船。不过，这次是独自行动；确保你能把大部分飞船停放在港口。”`
+				to display
+					"total ships" > 1
+			`	没等你回应，他们便将一张纸塞进你手中，随即迅速隐入人群之中。纸上只写了一个地点，当你对照当地地图时，它似乎指向了这颗星球另一侧的一处海滩。`
+			branch continue
+				"credits" >= 10000000
+			`	不过，纸上还提到你手头至少需要有一千万信用点的现金！你必须攒够钱或是申请一笔贷款，改天再前往指定的地点。`
+				defer
+			label continue
+			`	你会去那里吗？`
+			choice
+				`	（当然。）`
+				`	（也许下次吧。）`
+					defer
+			label go
+			`	就在你思索那片海滩是否有足够空间降落飞船时，你发现纸的背面附着一张火车票。上面几行手写的便签给出了具体的路线指引，且在最下方明确要求不要驾驶你的星舰前往。`
+			`	令你惊讶的是，当地的火车站位于地下。你根本无法想象它有多么庞大——感觉你几乎能从这里前往整颗星球的任意地方。你向一位亥族人问路，而在得知只需在附近的终端上扫描车票，所有相关信息就会显示出来时，你感到有些窘迫。`
+			`	离开火车站后，你徒步走了几个小时才到达目的地。到达后，你四下寻找着那位陌生人。除了一个洞穴、一些稀疏的植被以及海滩本身，周围看不到任何显眼的事物。你再次核对了坐标确保无误，又在四周多转了转。`
+			`	你等了一会儿，直到在海滩远处看见了两个戴兜帽的身影，当他们朝你走来时，你开始怀疑这到底是不是个好主意。即使他们已经走到近前可以说话了，兜帽下的面孔依然无法窥视。“你好，<last>，”其中一人对你说，“抱歉如此隐秘，但事实是，我们承担不起任何风险。如果你不知道我们是谁，这对大家都好，而且我们需要一个僻静的地方来和你谈话。”`
+			choice
+				`	“详细说说。”`
+					goto "tell me"
+				`	“你们是怎么知道我的？”`
+					goto know
+				`	（逃跑。）`
+			`	他们对你突然改变主意感到有些惊讶，但并没有试图阻拦你。`
+			label "train back"
+			`	一路无事，你回到火车站，买了张回太空港的车票。`
+				decline
+			label know
+			`	第二个咧嘴一笑。“任何降落到我们母星上的外来者都必然会备受瞩目。我们知道你曾经帮助过我们的同胞。”`
+			`	“不过，别以为我们不知道你与无羁者发生过的小冲突，”第一个用严肃的语气补充道。`
+				to display
+					"reputation: Hai (Unfettered)" < -1250
+			label "tell me"
+			`	突然，你听到身后的大海传来一阵巨大的轰鸣声，地面也随之开始震颤。`
+			choice
+				`	（转身。）`
+			`	海浪变得汹涌激荡，狂风呼啸着从你身边掠过，一个被烟雾笼罩的轮廓从水中浮现，仿佛是一头古老的海怪正从深渊中升起。`
+			`	但这并不是什么海怪。那是一艘飞船，其武器正直指着你！`
+			label "try again"
+			scene "scene/emerging ladybug"
+			choice
+				`	（跑！）`
+				`	（静观其变。）`
+					goto wait
+				`	（尝试联系自己的舰队求援。）`
+					to display
+						"total ships" > 1
+				`	（朝它开火！）`
+					goto foolish
+			`	就在你想要做出反应时，离你最近的那名亥族人一把死死抓住你的胳膊，在震耳欲聋的噪声中大喊道：“如果这艘船真想杀你，<last>，你早就没命了。”`
+			label wait
+			`	在飞船逐渐降落到海滩的过程中，巨大的引擎声震耳欲聋，你几乎听不见任何其他声音。突然间，一切都安静了下来。他们转向你，其中一人看起来比另一人更为从容。“这艘船对你没有恶意。”`
+			choice
+				`	（保持沉默。）`
+					goto explain
+				`	“为什么在发生那事之前，你们什么都不说？”`
+			`	第二个咧嘴一笑答道：“我们本可以的，但那还有什么乐趣？我们只是想看看你会怎么反应。”`
+			label explain
+			`	“这艘船是我们的保障，万一你对我们图谋不轨，它能确保万无一失。毕竟，我们现在还不能确定能否完全信任你。”`
+			`	随后，那两名亥族人带你进入了附近的一个洞穴。当你跟着他们前进时，嵌在墙壁上的水晶折射出微弱的蓝色荧光，直到你们走进一处宽阔的洞室，阳光从缝隙中透射进来，显露出另一艘飞船。第一名亥族人再次开口：“外面那艘船是非卖品。然而这一艘，是我们帝国曾称霸群星的时代里专为战争而造的强大遗物——一艘‘奇虾’！”`
+			scene "scene/cave scene"
+			choice
+				`	“这到底是怎么回事？”`
+			`	第二个这时向你走近一步，几乎是抢着打断了第一个人的话：“我们有个提议。如果你同意为我们的同胞——无羁亥族——运送急需的物资，我们就会以一千万信用点的优惠价格将这艘船卖给你——其中甚至包括两件属于野蛮科拉斯人的武器！”第一名亥族人对此似乎显得有些惊讶并想要插话，但第二个人不等他开口就继续说了下去：`
+			`	“这些传奇武器几乎可以干扰任何引擎系统！不用担心，只要协助我们，你轻而易举就能赚回这艘船的成本。<destination>需要一批急需的医疗物资，但如此仓促之间，我们自己实在抽不出时间和人手送过去。”`
+			`	“当然，这艘船已经有些年头了，你也别指望在船坞能卖出什么高价。但无论如何，它都是一艘优秀的好船，兼具战斗、货运与采矿能力。那么，你觉得怎么样，<last>？这可是千载难逢的机会，现在可造不出这样的好船了。”`
+			label choice
+			choice
+				`	“我会帮助你们的。”`
+					goto take
+				`	“如果你们缺少人手，那另一艘飞船是谁在驾驶？”`
+					to display
+						not "unfettered: pilot dialog"
+					goto pilot
+				`	“另一艘船为什么藏在水下？”`
+					to display
+						not "unfettered: ocean dialog"
+					goto ocean
+				`	“不了，谢谢。我没打算再给舰队添船。”`
+			`	两个亥族看起来有些失望。“真遗憾。我们大概不会再见了，”其中一个说。“你最好忘了我们曾在这里见过面，”另一个说。他们示意先前的那艘飞船重新潜入海中，随后沿着海滩走开了。`
+				goto "train back"
+			label pilot
+			action
+				set "unfettered: pilot dialog"
+			`	“你知道得越少，对我们大家都好，船长。”`
+				goto choice
+			label ocean
+			action
+				set "unfettered: ocean dialog"
+			`	“我们在那里找到了它，”第一个回答道。`
+			`	“在暴风雨中寻找一滴雨很难，但那滴雨在落下时却能看清一切，”另一个补充道。`
+				goto choice
+			label take
+			action
+				give ship "Anomalocaris (Venerable)" "Good Omen"
+					id "hai legacy"
+				debt 10000000
+			`	他们给了你这艘飞船的访问权限，并开始向你解释细节：“这其实无足轻重，但你肯定明白这笔交易我们无法通过正规途径进行。我们会改用罚款的形式。你将被指控携带你根本不知道已被禁用的技术，因为这些科拉斯武器确实很可疑。不过，这不会被记录在你的永久档案上。”`
+			`	你很快意识到他们根本不是在征求你的意见。事实上，还没等他们把话说完，你就收到了罚款通知。“我们需要对飞船做一些改装，然后你才能使用它。”`
+			choice
+				`	（返回船坞。）`
+					goto leave
+				`	“他们为什么会在意不同的飞船？”`
+			`	“因为这艘飞船十分古老，无羁者会想方设法保护它。但其他飞船就未必如此了。”`
+			label leave
+			`	他们渐渐走远，直到你再也听不见他们的谈话，只留下这艘飞船的访问代码，以便你将其开往船坞。在自动驾驶系统的辅助下，你顺利地驾驶了飞船，没有遇到任何麻烦。`
+				accept
+			label foolish
+			`	你掏出武器，开始朝飞船射击。`
+			branch miss
+				random < 50
+			branch lucky?
+				random < 2
+			`	你的子弹击中了飞船，但这种小型武器根本无法对重型装甲造成任何伤害，即使装甲已经有些磨损。飞船随即还击，险些命中，激起的一股沙柱朝你涌来，迫使你丢掉了武器。那两个亥族中的一人随后朝你走来，显得有些失望。`
+			`	“你能活下来算你命大，但如果你觉得对飞船动枪是明智之举，那你就对我们毫无用处。再见。”他们转身一言不发地离开，飞船也飞走了。`
+				goto "train back"
+			label lucky?
+			`	你成功打中了一枪，但这似乎对你眼前的大型太空飞船毫无影响。随后你听到一声轻微的爆炸。你不确定是这艘受损飞船的系统自行发生了故障，还是纯属侥幸，你的那一枪真的对它造成了什么影响。`
+			`	不幸的是，你根本没有机会反思自己的行为，因为飞船突然爆炸，把你和海滩上的其他所有人一同葬送了。`
+				die
+			label miss
+			`	你这一枪落空了。飞船和那两个亥族都没有任何反应。你感觉自己似乎听到了一声轻笑，但不能确定是从哪里传来的。`
+				goto "try again"
+	on defer
+		set "Hai Legacy 1: deferred"
+	on accept
+		clear "unfettered: ocean dialog"
+		clear "unfettered: pilot dialog"
+		log "Accepted a somewhat shady deal for an old Hai ship called an Anomalocaris; the transaction could not be conducted through normal channels, so a loan was issued in lieu of a conventional purchase. It seems to still be in a good enough state to fly."
+		fail
+
+
+
+mission "Hai Legacy 2"
+	autosave
+	landing
+	name "遗产回收"
+	description "使用你新获得的“奇虾”飞船，在<date>之前将援助物资送达<planet>上的无羁亥族。"
+	clearance
+	deadline 7
+	cargo "food (aid)" 121
+	source "Hai-home"
+	destination "Darkcloak"
+	to offer
+		not "Hai Legacy 1: declined"
+		has "First Contact: Unfettered: offered"
+		"reputation: Hai (Unfettered)" < 0
+		not "Unfettered Jump Drive 1: offered"
+		"credits" + "net worth" * ( 1 - "Hai Legacy 1: deferred" ) >= 10000000
+	to accept
+		has "ship model: Anomalocaris"
+	on offer
+		conversation
+			`在这次遭遇之后，你离开船坞前往太空港。一名工人立刻迎了上来，其他人则开始把板条箱装上你的飞船。快速查看货运数据表明，货物已经登记在了你的名下。现在剩下的就是需要在<date>之前将其送达<destination>。`
+			`	当你返回飞船，准备从星球起飞时，你注意到控制面板上有一条消息：`
+			`	“进行送货时，你最好带上我们托付给你的“奇虾”飞船。”`
+				accept
+	on enter
+		system
+			attributes "unfettered"
+		conversation
+			action
+				"old reputation: Hai (Unfettered)" = "reputation: Hai (Unfettered)"
+				"reputation: Hai (Unfettered)" >?= 0
+			`当你进入星系时，你已准备好通过战斗强行护送货物通过。然而，平时极具攻击性的无羁者却突然停止了开火。`
+	on fail
+		"reputation: Hai (Unfettered)" <?= -1000
+		dialog `得知你未能按时运送货物后，无羁者及其同伴显然很不高兴，并在你的控制面板上留下了一条简短的消息：“未能完成我们的嘱托，你可没法向我们证明自己。”`
+	on visit
+		dialog `你已抵达 <planet>，但你要么没有驾驶“奇虾”飞船，要么就是有部分货物装在其他飞船上。`
+	to complete
+		has "ship model: Anomalocaris"
+	on complete
+		dialog `着陆后，一群无羁者围在你的飞船旁开始卸载医疗物资，不过奇怪的是，他们似乎并不着急。卸货完毕后不久，你收到了之前向其购买飞船的那名亥族发来的一条相当简短的信息，伴随而来的还有一笔数额多得惊人的信用点：“感谢你帮助我们的同胞，<last>。请收下这笔<payment>。”`
+		payment 1500000
+		log "使用“奇虾”飞船向无羁亥族运送了一批急需的食品货物，这似乎令他们颇为满意。"
+
+
+
+mission "Hai Legacy 3"
+	landing
+	deadline 2
+	name "远古诉求"
+	description "在<system>星系中击败无羁者挑战者。你只有2天时间，且飞船瘫痪将导致挑战失败。"
+	source "Darkcloak"
+	destination "Firelode"
+	to offer
+		has "Hai Legacy 2: done"
+		has "ship model: Anomalocaris"
+	on offer
+		conversation
+			`送达补给后，你发现自己的飞船成为了焦点。一名看起来像工程师的无羁者走过来与你交谈，比起你之前与其他无羁者打交道的经历，她起初的态度要温和得多。`
+			`	“欢迎。虽然我不知道你是如何得到这艘飞船的，但我猜想我们中的一些人会把它视为一种昭示。你看，它是我们过去的遗存，一段我们引以为傲的过去。正因如此，大多数无羁者战士会说，你需要证明自己拥有使用它的权利。”`
+			`	她叹了口气，语气随之一转：“不过，我可不信那一套。对我来说，真正重要的是这艘飞船既坚固耐用，又充满了宝贵的古代技术。”`
+			`	当她的目光更加聚焦在你的飞船上时，她的眼睛亮了起来。“我甚至看到了那些我们英勇奋战才从野蛮的科拉斯人那里夺来的武器！”`
+				to display
+					has "outfit (flagship installed): Thermal Repeater Turret"
+			`	突然，她提高嗓门，以便让所有人都能听见：“我，麦拉，向你挑战！胜者将赢得拥有这件光荣遗存及其强大武器的权利！”`
+			choice
+				`	“如果我赢了能得到什么？”`
+					goto win
+				`	“我就不能把它直接卖给你吗？”`
+				`	“这艘飞船是我买的。它是我的，我想怎么处置就怎么处置。”`
+					goto fleeing
+			`	“不行，因为在我同胞们的眼里，那就意味着我同样不配拥有这艘飞船。之后他们就会为此向我发起挑战。”`
+			label win
+			`	麦拉转过身去，与其他无羁者交谈了一会儿，然后才重新对你说道：“你将赢得前往我们世界的权利。但是，为了保持我们对你的尊重，在你用其他方式证明自己之前，你必须让这艘“奇虾”飞船保持良好的状态。它是一件无价的遗存。如果你拒绝证明自己的价值，你将不再被允许在此降落。”`
+			`	她接着瞪了你一眼。“当心，虽然没有什么官方规则，但你必须且仅能使用“奇虾”飞船。那么，你准备升空应战，还是因为害怕而退缩了？”`
+			choice
+				`	“我接受。”`
+				`	“我没有什么要向你们证明的。这艘飞船现在是我的。”`
+					goto fleeing
+			`	麦拉咧嘴一笑：“好！我不会亲自和你交手，因为那太冒险了。毕竟，我只是个工程师。不过，我可不想剥夺我的兄弟和他的船员们在一位强大的人类战士面前证明自己的机会！”`
+			`	你不确定麦拉是不是在开玩笑，但她的朋友们似乎已经跃跃欲试了。一个看起来像是他们头领的人走到你跟前：“这么说，你觉得自己配得上驾驶这艘属于亥族帝国的强大飞船？”`
+			`	“是啊，人类，你凭什么这么认为？”另一个人附和道。`
+			choice
+				`	（保持沉默。）`
+				`	“你们是想把我吓得不敢应战吗？”`
+					goto scare
+			`	“我想我们很快就会知道答案了，”第三个人说道。`
+			label scare
+			`	这群人的头领走近了一些，用更加严肃的语气对你说道：“你应该明白，这与其说是一场友谊赛，不如说是一场让你真正赢得驾驶这艘飞船资格的战斗。你应当知晓，这场对决有一些……隐含的规则，尽管并没有官方明文规定。我们原本以为大家都心知肚明，但既然你是个外来者，那我就给你讲解一下，”他一边说着，一边把你带离了人群。`
+			`	“自然，既然是决斗，除了我们之外无人可以干涉，但你也应该知道，飞船瘫痪就算输。别想耍花招换用这艘奇虾之外的飞船，否则我们连来都不会来！毕竟，你必须证明自己配得上它。胜者享有战利品，所以允许掠夺，但不要企图偷我们的飞船。要是那么干，所有无羁者都会与你为敌！”`
+			# This is a "warning" for the incoming extra ship that happens because you killed/captured 10 Shield Beetles or so.
+			`	他随后死死盯着你的双眼。“我们有时会为朋友通融规则，但你可没有这个待遇。”`
+				to display
+					"reputation: Hai (Unfettered)" < -1500
+			`	梅拉开始显得有点不耐烦。“你们是打算聊上一整天，还是动手决斗？赶紧去艾玛·提！”无羁者立刻奔向自己的飞船，但等他们走远后，梅拉把你拉到身边。“我希望今天之内把这件事办完，所以别考验我的耐心。你能得到这个协议算你走运，因为他们原本打算强行夺取遗物。现在，快，去你的飞船！做好最后需要的任何改装，然后来和我们打一场。”`
+			`	你看到无羁者已经开始起飞程序，所以你应该尽快准备驾驶你的奇虾起飞，不得使用其他飞船。`
+				accept
+			label fleeing
+			action
+				"reputation: Hai (Unfettered)" = "old reputation: Hai (Unfettered)"
+				set "unfettered: fled with the relic"
+			`	眼看他们不太可能配合，你迅速回到飞船并起飞，无羁者紧随其后追了上来。`
+				launch
+	on enter
+		conversation
+			branch fleeing
+				has "unfettered: fled with the relic"
+			branch "too many ships"
+				"total ships" > 1
+			branch anomaly
+				not "flagship model: Anomalocaris"
+			`当你离开行星大气层时，收到了一条简短的信息。“我们今天在艾玛·提等你。别让我们失望。”`
+				accept
+			label fleeing
+			action
+				fail
+			`无羁者似乎很不高兴看到你带着他们的战利品离开。挑战者已经在轨道上等你，并向你发来通讯：“你想往哪跑，猴子？”`
+				decline
+			label "too many ships"
+			`当你起飞去与轨道上的舰队汇合时，收到了无羁者的通讯：“你必须让你的舰队留在原地待命。如果他们插手，决斗就会作废！”`
+				decline
+			label anomaly
+			`你一进入轨道，就收到了无羁者的通讯：“你以为我们是瞎子吗，猴子？那根本不是遗物！你甚至不配让我们启动起飞程序。”`
+			action
+				"reputation: Hai (Unfettered)" = "old reputation: Hai (Unfettered)"
+				fail
+	on enter "Ehma Ti"
+		conversation
+			branch "too many ships"
+				"total ships" > 1
+			`进入星系时，你看到挑战者确实在等你，他们立刻向你发来通讯：“让我们看看你有什么本事，猴子！像个真正的战士一样，展现你对武器的精准控制！向我们证明你有能力让我们的飞船瘫痪，同时又能保持克制不去摧毁它们！”`
+				accept
+			label "too many ships"
+			`当你率领舰队到达这个星系时，收到了无羁者的通讯：“如果你连自己有多少艘船都数不清，就不配让我们浪费时间，猴子！在我们真亥族人面前，不光彩的手段是行不通的！”`
+				goto failed
+			label anomaly
+			`你一进入轨道，就收到了无羁者的通讯：“你以为我们是瞎子吗，猴子？那根本不是遗物！你甚至不配让我们启动起飞程序。”`
+			label failed
+			action
+				"reputation: Hai (Unfettered)" = "old reputation: Hai (Unfettered)"
+				fail
+	on enter "Hi Yahr" "Wah Ki" "Zuba Zub" "Bore Fah"
+		"reputation: Hai (Unfettered)" = "old reputation: Hai (Unfettered)"
+		fail
+		dialog `你收到了来自无羁者的通讯：“你临阵脱逃，未能完成决斗。因此，你别想再平白得到我们的尊重了！要是我们以后在自己的星球上再次撞见你，你最好乖乖把船还给我们！”`
+	on disabled
+		fail
+		dialog
+			`在你的飞船瘫痪后，一艘无羁者的飞船向你发来呼叫：“你输掉了挑战，但我们本来也没对你这样的人类抱什么期望。只要你给出合理的贿赂，我们可以帮你修理飞船，但你最好降落在我们的星球上，并带着极其丰厚的补偿将其交还给我们。如果你想据为己有，那我们就只能诉诸武力了。`
+			`	“但请注意，你与我们的休战在你降落时即告结束。今天，你让我们失望了。或许有一天，你会证明自己的实力。”`
+	on visit
+		fail
+	on fail
+		"reputation: Hai (Unfettered)" = "old reputation: Hai (Unfettered)"
+		clear "old reputation: Hai (Unfettered)"
+		dialog `当你进入行星大气层时，无羁者联络了你：“你未能完成决斗。停火协议已结束。你别想再平白得到我们的尊重了！”`
+	npc disable
+		government "Hai (Unfettered Challenger)"
+		to spawn
+			"total ships" == 1
+			has "flagship model: Anomalocaris"
+			not "unfettered: fled with the relic"
+			"old reputation: Hai (Unfettered)" >= -1500
+		personality disables heroic plunders staying target unconstrained
+		ship "Sea Scorpion (Ionic Blasters)" "Thunder Struck"
+		system "Ehma Ti"
+		on kill
+			dialog `你收到了梅拉的通讯，她的声音听起来相当愤怒：“摧毁那艘飞船只能是出于无能或恶意，而我们对这两者都绝不姑息！”`
+			"reputation: Hai (Unfettered)" = "old reputation: Hai (Unfettered)"
+			fail
+		dialog `你收到来自无羁者飞船的消息：“我们投降。请降落在火脉星领取你的奖励。”`
+	npc disable
+		government "Hai (Unfettered Challenger)"
+		to spawn
+			"total ships" == 1
+			has "flagship model: Anomalocaris"
+			not "unfettered: fled with the relic"
+			"old reputation: Hai (Unfettered)" < -1500
+		personality heroic mute plunders target unconstrained
+		ship "Shield Beetle (Tripulse Ionic Turret)" "Requiem"
+		system "Ehma Ti"
+		on kill
+			dialog `你收到了梅拉的通讯，她的声音听起来相当愤怒：“摧毁那艘飞船只能是出于无能或恶意，而我们对这两者都绝不姑息！”`
+			"reputation: Hai (Unfettered)" = "old reputation: Hai (Unfettered)"
+			fail
+		dialog `你成功击败了无羁者挑战者。现在是时候降落到火脉星领取你的奖励了。`
+	npc
+		government "Hai (Unfettered)"
+		to spawn
+			not "unfettered: fled with the relic"
+		ship "Lightning Bug (Unfettered Shipyards)" "Dungeon Master"
+		system "Ehma Ti"
+		personality launching pacifist staying uninterested
+		on disable
+			dialog `梅拉向你发来通讯：“停下！我只是个观察者。如果你摧毁了我的飞船，交易就作废！”`
+		on kill
+			"reputation: Hai (Unfettered)" = "old reputation: Hai (Unfettered)"
+			set "unfettered: outcast"
+			dialog `当你摧毁了那艘萤火虫级飞船，连同船上的梅拉及其船员时，你收到了无羁者愤怒的通讯：“你彻底违背了决斗的规则，杀死了我们最杰出的工程师之一！这里不再欢迎你了！”`
+			fail
+	npc
+		government "Hai (Unfettered)"
+		to spawn
+			has "unfettered: fled with the relic"
+		personality heroic launching unconstrained
+		ship "Sea Scorpion (Shredder)" "Hunter"
+	to complete
+		not "unfettered: fled with the relic"
+		# Needed to make sure the mission doesn't auto complete if no ships spawn.
+		has "flagship model: Anomalocaris"
+	on complete
+		clear "old reputation: Hai (Unfettered)"
+		log "成功使用一艘古代亥族战舰击败了一名无羁者挑战者。只要那艘飞船还在我手中，我就能赢得无羁亥族的尊重。"
+		conversation
+			`当你安然降落后，梅拉走了过来，显得十分惊讶：“你真的赢了！我目睹了全过程，我收集到的关于这些异星武器效果的数据对我的研究将大有裨益。你觉得难吗？”`
+			choice
+				`	“挺有意思的。”`
+					goto next
+				`	“这太简单了！”`
+				`	“这算是个挑战。”`
+					goto challenge
+			`	“别太自负了，船长，”她若有所思地说道，“我相信你很清楚那类飞行员最后的下场。”`
+				goto next
+			label challenge
+			`	“哦，这么说他们的计划到底还是差点得逞了？或许我也该加入这场战斗的。”`
+			label next
+			`	“好吧，恭喜你，我原以为你没这个本事。我会授权你降落，条件是你要完好无损地保存这件来自我们过去的遗物。记住，眼下你在我们这的声誉完全是沾了那艘飞船的光。如果你因为自己的无能而以某种方式丢了它，那在真亥族面前可就太难看了。”`
+			`	梅拉随后走开了，开始在一个小设备上查看你战斗的数据。目前看来，只要你还拥有奇虾，无羁亥族就会对你保持一定程度的尊重。`
+
+
+
+mission "Undeserved Anomalocaris"
+	minor
+	invisible
+	landing
+	source
+		attributes "unfettered"
+	to offer
+		has "ship model: Anomalocaris"
+		"reputation: Hai (Unfettered)" < 0
+		not "Hai Legacy 2: active"
+		not "Hai Legacy 3: done"
+	on offer
+		conversation
+			`当你降落时，无数的亥族急忙冲向你的飞船，每人都携带着数件武器。其中一人指着你，在迅速聚集的人群前大声宣告，声音大到所有人都能听见：“你不配驾驶这件古老的遗物！”`
+			`	站在他们身后的一人随后附和道：“你浪费了通过光荣战斗来赢得这一权利的机会！我们对你的失败一清二楚！”`
+				to display
+					has "Hai Legacy 3: offered"
+			`	随后，一个看起来地位更高的无羁者走近你，用威胁的语气说道：“你必须立刻把飞船交还给我们，还有那些野蛮人的武器——要是你还没有把它们抢走的话。”他低头思索了片刻，接着再次开口：“我们会给你另一艘飞船好让你离开，但你必须把奇虾交出来！”`
+			choice
+				`	（交出奇虾。）`
+				`	（拒绝他们的要求并离开。）`
+					depart
+			`	你和船员离开了这艘曾短暂属于你的飞船，当地的无羁者民兵被告知这艘船现在属于他们了。在你的飞船周围聚集的无羁者们高兴地散去，只留下一人——从他身上携带的武器数量来看，大概是他们的首领。他走过来与你交谈，手里拿着武器，但枪口朝下：“我们很高兴你能明事理，决定交出飞船。作为交换，我们会为你提供一艘合适的替代飞船。”`
+			`	“那件遗物本就不属于你，但你还有其他方式可以向我们证明自己。”这位无羁者首领继续以明显强装出来的轻松语气说道：“例如，给我们带一个跳跃引擎……或者两个……这绝对能赢得我们的好感，并证明你的战斗实力。”`
+				to display
+					not "Unfettered Jump Drive 1: offered"
+			action
+				give ship "Lightning Bug (Unfettered Shipyards)" "Good Will"
+				take ship "Anomalocaris"
+			`	无羁者首领随后派了几个人护送你到太空港边缘。在过去的路上，他们中的一些人似乎在极力克制怒火，你敢发誓其中有人随时都想攻击你。最终你被带到一艘停靠的萤火虫前，在办理了一些繁琐的手续后，无羁者们便将飞船留给了你。`
+				decline

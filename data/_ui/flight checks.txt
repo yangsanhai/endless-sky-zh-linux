@@ -1,0 +1,38 @@
+# Copyright (c) 2014 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Conversations shown when launching from a planet with insufficiently equipped ships.
+conversation "flight check: no energy!"
+	scene "scene/engine2"
+	`你听过太多关于星舰系统故障引发事故的恐怖传闻，因此对起飞前安全检查的必要性深信不疑。听着 <ship> 预热时发出的嗡嗡声、咔哒声和滴答声交织成的复杂交响，你在心里过了一遍检查清单。计算机：正常。生命维持系统：正常。`
+	`	一切顺利，直到试运行启动系统时……你发现你的发电机功率不足以带动它们。你要么安装一些电池，要么换成功率更大的发电机。`
+	
+conversation "flight check: no thruster!"
+	scene "scene/engine2"
+	`你听过太多关于星舰系统故障引发事故的恐怖传闻，因此对起飞前安全检查的必要性深信不疑。听着 <ship> 预热时发出的嗡嗡声、咔哒声和滴答声交织成的复杂交响，你在心里过了一遍检查清单。计算机：正常。生命维持系统：正常。`
+	`	一切顺利，直到试运行启动推进器时……你尴尬地发现，你根本没装推进器。该回装备店去补上了！`
+
+conversation "flight check: no steering!"
+	scene "scene/engine"
+	`你听过太多关于星舰系统故障引发事故的恐怖传闻，因此对起飞前安全检查的必要性深信不疑。听着 <ship> 预热时发出的嗡嗡声、咔哒声和滴答声交织成的复杂交响，你在心里过了一遍检查清单。计算机：正常。生命维持系统：正常。`
+	`	一切顺利，直到试运行启动转向引擎时……你尴尬地发现，你根本没装转向器。该回装备店去补上了！`
+	
+conversation "flight check: overheating!"
+	scene "scene/engine"
+	`你听过太多关于星舰系统故障引发事故的恐怖传闻，因此对起飞前安全检查的必要性深信不疑。听着 <ship> 预热时发出的嗡嗡声、咔哒声和滴答声交织成的复杂交响，你在心里过了一遍检查清单。计算机：正常。生命维持系统：正常。`
+	`	等你走完清单时，舱内已经热得让人难受。空气里弥漫着臭氧和灼热金属的气味，摄像头显示引擎附近的船体正往外喷涌蒸汽或烟雾。如果还在大气层里系统就热成这样，一旦进入真空，它们很可能会过热。你要么安装冷却系统，要么换掉一些部件，改用发热更低的替代品。`
+
+conversation "flight check: no bunks!"
+	scene "outfit/bunk room"
+	`你听过太多关于星舰系统故障引发事故的恐怖传闻，因此对起飞前安全检查的必要性深信不疑。听着 <ship> 预热时发出的嗡嗡声、咔哒声和滴答声交织成的复杂交响，你在心里过了一遍检查清单。计算机：正常。生命维持系统：正常。`
+	`	一切顺利，但诊断屏幕上突然弹出一个人工确认提示。你呼叫 <ship> 的船员……然后尴尬地发现，你根本没装铺位。该回装备店去补上了！`

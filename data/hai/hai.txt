@@ -1,0 +1,826 @@
+# Copyright (c) 2014-2016 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# For Hai shipyards their "Advanced" ships are restricted to the planets where the ships are actually manufactured.
+# In the case of "Intermediate" shipyards being required, those should be restricted to planets with substantial industrial bases.
+# The basics are those which can (but might not) be exported and sold pretty much anywhere that could provide reasonable maintenance services.
+
+# Imo Loo Mer Corp shipyards:
+shipyard "Imo Loo Mer Basics"
+	"Scarab"
+	"Lightning Bug"
+
+shipyard "Imo Loo Mer Advanced"
+	"Centipede"
+	"Geocoris"
+
+
+# Mon Ki o'Uden Splinter (unfettered) shipyards:
+shipyard "Mon Ki o'Uden Advanced"
+	"Aphid (Unfettered)"
+	"Lightning Bug (Unfettered Shipyards)"	#Stolen
+	"Sea Scorpion"
+	"Shield Beetle (Unfettered Shipyards)"
+	# Has "Solifuge" and "Violin Spider" added by event.
+	# Technically has the specs for the "Ladybug" but not the resources to build it.
+
+
+# Mon Ki i'Hiya Consortium (loyalist) shipyards:
+shipyard "Mon Ki i'Hiya Basics"
+	"Aphid"
+	# Has "Ladybug" & "Flea" added by event.
+
+shipyard "Mon Ki i'Hiya Advanced"
+	"Shield Beetle"
+	# Has "Pond Strider" added by event.
+
+
+# Yeer e Ki Cooperative shipyards:
+shipyard "Yeer e Ki Basics"
+	"Aphid"
+	"Grasshopper"
+
+shipyard "Yeer e Ki Advanced"
+	"Water Bug"
+	"Cicada"
+
+
+outfitter "Hai Basics"
+	"Pulse Cannon"
+	"Hai Tracker"
+	"Bullfrog Anti-Missile"
+	"Geode Reactor"
+	"Hai Williwaw Cooling"
+	"Hyperdrive"
+	"Hai Chasm Batteries"
+	"Hai Fissure Batteries"
+	"Supercapacitor"
+	"Cargo Expansion"
+	"Small Bunk Room"
+	"Fuel Pod"
+	"Hai Corundum Regenerator"
+	`"Basrem" Reverse Thruster`
+	`"Basrem" Atomic Thruster`
+	`"Basrem" Atomic Steering`
+	"Local Map"
+	"Quantum Keystone"
+	"Pulse Rifle"
+
+outfitter "Hai Intermediate"
+	"Pulse Cannon"
+	"Pulse Turret"
+	"Hai Tracker"
+	"Hai Tracker Pod"
+	"Tracker Storage Pod"
+	"Bullfrog Anti-Missile"
+	"Chameleon Anti-Missile"
+	"Hai Cuttlefish Jammer"
+	"Pebble Core"
+	"Geode Reactor"
+	"Hai Williwaw Cooling"
+	"Hyperdrive"
+	"Hai Chasm Batteries"
+	"Hai Fissure Batteries"
+	"Hai Gorge Batteries"
+	"Supercapacitor"
+	"Outfits Expansion"
+	"Cargo Expansion"
+	"Small Bunk Room"
+	"Bunk Room"
+	"Fuel Pod"
+	"Hai Corundum Regenerator"
+	`"Basrem" Reverse Thruster`
+	`"Basrem" Atomic Thruster`
+	`"Basrem" Atomic Steering`
+	`"Benga" Reverse Thruster`
+	`"Benga" Atomic Thruster`
+	`"Benga" Atomic Steering`
+	`"Biroo" Reverse Thruster`
+	`"Biroo" Atomic Thruster`
+	`"Biroo" Atomic Steering`
+	"Local Map"
+	"Quantum Keystone"
+	"Pulse Rifle"
+	"Outfit Scanner"
+	"Cargo Scanner"
+	"Sand Cell"
+
+outfitter "Hai Advanced"
+	"Pulse Cannon"
+	"Ion Cannon"
+	"Pulse Turret"
+	"Hai Tracker"
+	"Hai Tracker Pod"
+	"Tracker Storage Pod"
+	"Bullfrog Anti-Missile"
+	"Chameleon Anti-Missile"
+	"Hai Cuttlefish Jammer"
+	"Pebble Core"
+	"Geode Reactor"
+	"Boulder Reactor"
+	"Hai Williwaw Cooling"
+	"Hyperdrive"
+	"Hai Chasm Batteries"
+	"Hai Fissure Batteries"
+	"Hai Gorge Batteries"
+	"Hai Ravine Batteries"
+	"Hai Valley Batteries"
+	"Supercapacitor"
+	"Outfits Expansion"
+	"Cargo Expansion"
+	"Small Bunk Room"
+	"Bunk Room"
+	"Fuel Pod"
+	"Hai Corundum Regenerator"
+	"Hai Diamond Regenerator"
+	`"Basrem" Reverse Thruster`
+	`"Basrem" Atomic Thruster`
+	`"Basrem" Atomic Steering`
+	`"Benga" Reverse Thruster`
+	`"Benga" Atomic Thruster`
+	`"Benga" Atomic Steering`
+	`"Biroo" Reverse Thruster`
+	`"Biroo" Atomic Thruster`
+	`"Biroo" Atomic Steering`
+	`"Bondir" Atomic Thruster`
+	`"Bondir" Atomic Steering`
+	`"Bufaer" Atomic Thruster`
+	`"Bufaer" Atomic Steering`
+	"Luxury Accommodations"
+	"Local Map"
+	"Quantum Keystone"
+	"Pulse Rifle"
+	"Outfit Scanner"
+	"Cargo Scanner"
+	"Sand Cell"
+
+outfitter "Hai-home Only"
+	"Holovid Zone"
+
+outfitter "Unfettered Basics"
+	"Pulse Cannon"
+	"Hai Tracker"
+	"Bullfrog Anti-Missile"
+	"Hai Octopus Jammer"
+	"Sand Cell"
+	"Geode Reactor"
+	"Hai Williwaw Cooling"
+	"Hyperdrive"
+	"Hai Chasm Batteries"
+	"Hai Fissure Batteries"
+	"Supercapacitor"
+	"Cargo Expansion"
+	"Small Bunk Room"
+	"Fuel Pod"
+	"Hai Corundum Regenerator"
+	`"Basrem" Atomic Thruster`
+	`"Basrem" Atomic Steering`
+	"Value Detector"
+	"Local Map"
+	"Quantum Keystone"
+	"Pulse Rifle"
+	"Asteroid Scanner"
+	"Outfit Scanner"
+	"Phantom Pallet"
+
+# For ships, stations, or corporations.
+phrase "hai"
+	word
+		"Yeer"
+		"Wah'"
+		"Du"
+		"Mon"
+		"Luf"
+		"Vai"
+		"Woh"
+		"Far"
+		"Yoot"
+		"Imo"
+	word
+		" " 2
+		" e " 2
+		" Cor "
+		" Yo "
+		" Sook "
+		" Woa "
+		" Ood "
+		" Loo "
+	word
+		"Loh"
+		"Eh"
+		"Ow"
+		"Hey"
+		"Lur"
+		"Sen"
+		"Bin"
+		"Bah"
+		"Ki" 2
+		"Blep"
+		"Tee"
+		"Say"
+		"Hiya"
+		"Choo"
+		"Gip"
+		"Oo"
+		"Mer"
+		"Tou"
+
+phrase "hai first names"
+	word
+		"Tee"
+		"Say"
+		"Hiya"
+		"Choo"
+		"Gip"
+		"Oo"
+		"Mer"
+		"Ki"
+		"Tou"
+		"Cor"
+		"Yo"
+		"Sook"
+		"Woa"
+		"Loh"
+		"Eh"
+		"Ow"
+		"Hey"
+		"Lur"
+		"Sen"
+		"Bin"
+		"Na"
+		"Ya"
+		"Os"
+		"Gem"
+		"Mis"
+		"Ey"
+		"Ra"
+		"Des"
+		"Ai"
+	word
+		"neep"
+		"ari"
+		"mah"
+		"t'k"
+		"eep"
+		"nem"
+		"oot"
+		"ru"
+		"har"
+		"na"
+		"shi"
+		"en"
+		"ana"
+		"ama"
+		"heep"
+		"kei"
+		"yo"
+		"met"
+	word
+		"" 9
+		"aru"
+		"ow"
+		"hey"
+		"lur"
+		"sen"
+		"bin"
+		"chi"
+		"li"
+		"ri"
+
+phrase "hai last names"
+	word
+		"Yeer"
+		"Wah'"
+		"Du'"
+		"Mon"
+		"Luf"
+		"Vai'"
+		"Woh'"
+		"Far"
+		"Yoot"
+		"Imo'"
+		"Anl'"
+		"Tae"
+	word
+		"tle"
+		"uden"
+		"aru"
+		"ow"
+		"hey"
+		"lur"
+		"sen"
+		"bin"
+		"chi"
+		"li"
+		"ri"
+		"ooh"
+		"pip"
+
+phrase "unfettered chosen names"
+	word
+		"He"
+		"Si"
+	word
+		"-"
+	word
+		"Yi"
+		"Ra"
+
+phrase "friendly hai"
+	word
+		"凡是"
+		"所有"
+		"一个 "
+	word
+		"寻求"
+		"怀有"
+		"带来"
+		"秉持"
+		"给予"
+		"追求"
+		"珍视"
+		"带来"
+		"奉献"
+		"寻求"
+		"恪守"
+		"传递"
+		"怀有"
+		"心怀"
+		"拥有"
+		"怀有"
+		"秉持"
+	word
+		"和平"
+		"敞开心扉"
+		"和平安宁"
+		"非暴力"
+		"理解"
+		"和解"
+		"融洽"
+		"和睦"
+		"宁静"
+	word
+		"与"
+	word
+		"爱"
+		"温柔之心"
+		"同情心"
+		"友谊"
+		"友好情谊"
+		"善意"
+		"友好意图"
+		"同理心"
+		"关爱"
+		"善良"
+	word
+		"，都欢迎"
+	word
+		"来到亥族领区。"
+		"来到我们的领地。"
+		"来到我们的世界。"
+		"拜访我们。"
+		"与我们共存。"
+		"来到我们的星域。"
+		
+phrase "friendly hai"
+	word
+		"要想"
+	word
+		"在亥族星域受欢迎"
+		"在我们的领地受欢迎"
+		"在我们的星球上受欢迎"
+		"在我们之中受欢迎"
+		"在我们的星域受欢迎"
+	word
+		"，你需要"
+		"，你必须"
+		"，你得"
+		"，就需要"
+		"，就必须"
+		"，就得"
+	word
+		"倡导"
+		"带来"
+		"信奉"
+		"展现"
+		"追求"
+		"珍视"
+	word
+		"仁爱"
+		"温情"
+		"慈悲"
+		"友谊"
+		"亲善"
+		"善意"
+		"友好善意"
+		"同理心"
+		
+	word
+		"与"
+	word
+		"和平。"
+		"包容之心。"
+		"宁静。"
+		"非暴力。"
+		"理解。"
+		"和解。"
+		"和谐。"
+		"融洽。"
+		"合作。"
+
+phrase "friendly hai"
+	word
+		"你有人类飞船的冷却系统可以交易吗？我们很多同胞都觉得它们比我们的威利沃更时髦、更有异域风情。"
+		"我们的信条禁止赌博，但总有少数人经不住诱惑。"
+		"搬运我们的量子钥石时请务必尊重。它们是亥族至关重要的文化宝藏。"
+		"我们盛赞人类飞船技术的多样性。不过，你们那些更原始的引擎想必很考验耐心。"
+		"我们理解不同物种有不同的饮食习惯。但知道有些人类会吃松鼠，仍然令人不安。"
+		"零重力板球是一项迷人的人类运动。不过我们发现，亲身参与比观看要有趣得多。"
+
+phrase "friendly disabled hai"
+	word
+		"同为和平使者"
+		"人类访客"
+		"朋友"
+	word
+		"里，"
+	word
+		"请向我们伸出援手"
+		"我们的飞船瘫痪了，需要维修"
+		"请抽空救援我们"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+phrase "hostile hai"
+	word
+		"你"
+	word
+		"来到"
+		"踏入"
+	word
+		"亥族的"
+		"我们的"
+	word
+		"领空"
+		"领地"
+		"星界"
+	word
+		"，怀着"
+	word
+		"不纯的"
+		"不洁的"
+		"污浊的"
+		"邪恶的"
+		"可耻的"
+		"暴戾的"
+		"贪婪的"
+		"不道德的"
+		"好战的"
+		"残暴的"
+		"残忍的"
+		"冷酷的"
+	word
+		" "
+	word
+		"念头"
+		"信仰"
+		"信条"
+		"企图"
+		"决心"
+	word
+		"；我们"
+		"。我们"
+	word
+		"必须"
+		"不得不"
+		"别无选择，只能"
+	word
+		"将你驱赶"
+		"将你驱逐"
+		"将你排除"
+		"将你清除"
+	word
+		"出"
+	word
+		"亥族的"
+		"我们的"
+	word
+		"领空。"
+		"领地。"
+		"星界。"
+
+phrase "hostile disabled hai"
+	word
+		"你这"
+	word
+		"不洁的"
+		"污秽的"
+		"受玷污的"
+		"卑劣的"
+		"可耻的"
+		"残暴的"
+		"贪婪的"
+		"败德的"
+		"好战的"
+		"野蛮的"
+		"残忍的"
+		"无情的"
+	word
+		" "
+	word
+		"人类"
+		"生物"
+		"东西"
+		"生灵"
+	word
+		". "
+		"! "
+	word
+		"我们为你提供庇护，你却背叛了我们。"
+		"我们对你们只有和平友善，你们却毫不回应。"
+		"我们只渴望和平生活，你们却带来了战争。"
+		"难道你们没有灵魂吗？"
+		
+
+phrase "friendly unfettered"
+	word
+		"我们"
+	word
+		"欢迎"
+		"接纳"
+		"容忍"
+	word
+		" "
+	word
+		"真正的"
+		"强悍的"
+		"雄心勃勃的"
+	word
+		" "
+	word
+		"种族"
+		"族群"
+		"个体"
+	word
+		"，只要"
+		" "
+	word
+		"随时准备"
+		"愿意"
+		"准备好"
+		"自愿"
+		"打算"
+	word
+		" "
+	word
+		"帮助"
+		"协助"
+		"配合"
+		"支持"
+		"追随"
+		"服从"
+	word
+		"这"
+	word
+		"真正的"
+		"强大的"
+		"原始的"
+		"强盛的"
+		"纯正的"
+	word
+		"亥族。"
+
+phrase "ship bribe acceptance hai"
+	word
+		"我"
+		"我们"
+		"我们所有人"
+	word
+		" "
+	word
+		"觉得与你合作"
+		"认为同你打交道"
+	word
+		" "
+	word
+		"极其可耻"
+		"非常卑劣"
+	word
+		" to work with you, "
+	word
+		"但"
+		"不过"
+	word
+		" "
+	word
+		"这次付款就为你破例一次。"
+		"还是会收下你的贿赂。"
+		"希望你在这之后能自觉离开。"
+		"希望此后你别再来打扰我们。"
+
+phrase "ship bribe acceptance hai"
+	word
+		"我"
+		"我们"
+	word
+		"会"
+	word
+		"接受"
+		"收下"
+		"拿走"
+	word
+		"你的"
+	word
+		"捐款"
+		"钱"
+		"钱款"
+	word
+		"，仅限这次。"
+	word
+		"" 4
+		"下次你可就没这么幸运了。"
+
+phrase "ship bribe rejection hai"
+	word
+		"亥族"
+		"我"
+		"亥族"
+		"我们"
+	word
+		" "
+	word
+		"绝不能"
+		"不愿"
+		"决不"
+		"永不"
+		"不会"
+	word
+		" "
+	word
+		"接受"
+		"收受"
+		"收取"
+	word
+		" "
+	word
+		"贿赂"
+		"款项"
+	word
+		"，尤其是来自"
+	word
+		"" 15
+		"征服成性的"
+		"专横跋扈的"
+		"邪恶的"
+		"无可救药的"
+		"粗鲁无礼的"
+		"毫无用处的"
+	word
+		"作恶者"
+		"压迫者"
+		"海盗"
+		"暴君"
+		"好战分子"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+	replace
+		"evil evildoers" "evildoers"
+
+phrase "friendly disabled unfettered"
+	word
+		"强大的"
+		"真正的"
+		"野心勃勃的"
+		"值得尊敬的"
+	word
+		" "
+	word
+		"战士"
+		"人类"
+		"盟友"
+	word
+		"! "
+		". "
+	word
+		"这些懦夫"
+		"我们的敌人"
+		"他们"
+	word
+		"已经"
+	word
+		"击残了我们"
+		"占了我们的上风"
+		"击败了我们"
+	word
+		"! "
+		". "
+	word
+		"协助我们战斗"
+		"修理我们，好让我们能继续这场光荣的战斗"
+		"修好我们的飞船，好让我们能继续战斗"
+		"在敌人消灭我们之前，先消灭他们"
+	word
+		"而战！"
+		"愿意砸多少钱。"
+		
+phrase "hostile unfettered"
+	word
+		"和平"
+		"安宁"
+		"非暴力"
+		"谦逊"
+		"顺从"
+		"和谐"
+		"温顺"
+		"驯服"
+		"屈服"
+		"谦虚"
+		"怯懦"
+		"忍耐"
+		"隐忍"
+		"逆来顺受"
+		"克制"
+		"宿命论"
+		"和平主义"
+		"消极"
+		"冷漠"
+	word
+		"只属于"
+	word
+		"脆弱者"
+		"软弱者"
+		"可怜虫"
+		"弱者"
+		"不洁者"
+		"受蒙蔽者"
+		"误入歧途者"
+		"迷茫者"
+	word
+		"；我们才是"
+		"！我们才是"
+	word
+		"真正的"
+		"强悍的"
+		"原初的"
+		"强大的"
+		"纯正的"
+	word
+		"亥族！"
+
+phrase "hostile disabled unfettered"
+	word
+		"你这个懦夫"
+		"你这个弱者"
+		"你这只猴子"
+		"你这个可怜的蠢货"
+	word
+		"! "
+		". "
+	word
+		"把你还没做完的事做个了结"
+		"我的兄弟姐妹会替我报仇的"
+		"在这之后，我的兄弟姐妹会轻而易举收拾掉你"
+		"我要向你发起决斗！登舰来战"
+		"你敢登我的舰试试"
+		"让我们面对面做个了断"
+	word
+		"而战！"
+		"愿意砸多少钱。"
+
+phrase "bribe rejection unfettered"
+	word
+		"真正的亥族"
+		"我们"
+		"亥族"
+	word
+		" "
+	word
+		"绝不上当收受"
+		"绝不稀罕"
+		"绝不接受"
+		"根本不需要"
+	word
+		" "
+	word
+		"贿赂"
+		"信用点"
+	word
+		"，哪怕来自"
+	word
+		"弱者！"
+		"懦夫！"
+		"恶徒！"
+		"间谍！"
+		"敌人！"

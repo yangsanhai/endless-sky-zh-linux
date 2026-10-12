@@ -1,0 +1,1281 @@
+# Copyright (c) 2023 by Saugia
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+
+mission "Passive-Aggressive Observations"
+	invisible
+	non-blocking
+	landing
+	destination "Vigales"
+	to offer
+		has "First Contact: Gegno Scin: offered"
+		not "Gegno Anticipation: offered"
+		not "Gegno Apprehension: offered"
+		not "Gegno Genocide Defense: offered"
+	on complete
+		"gegno: encounters" ++
+		conversation
+			`当你在这颗沙漠世界的天空中航行时，你注意到地下的探测读数与你之前遇到格诺维成员的那颗星球十分相似。很可能这颗星球也是你当时与之对抗的同种或类似大型蛇状生物的家园。最终，你发现一艘大型格诺维飞船停泊在地面上，不过与你之前的遭遇不同，这艘飞船并没有深陷于沙漠之中——它很可能是最近才降落在这里的。一群格诺维战士正在飞船附近列队走出，就在他们行动时，又有两艘格诺飞船出现在你上方。`
+			choice
+				`	（离开。）`
+					goto leave
+				`	（继续观察。）`
+			`	那两艘接近的飞船降落向地表，完全没有理会你。其中一艘与地面上的一样是相同型号，大概是某种运输船。然而，另一艘似乎是某种拦截机，不过它显然比人类星区里像“麻雀”这样的飞船要大得多，甚至可能有“猎头者”那么大。`
+			`	考虑到这颗星球上还有更多之前遇到的那种怪物，而且格诺维人在此人数众多，你最好趁着局势再次失控之前赶紧离开。`
+			choice
+				`	（离开。）`
+					goto leave
+				`	（接近着陆区。）`
+			`	你推动飞船加速，朝格诺维的着陆区飞去。就在另一艘运输船已经着陆，而那艘拦截舰仍在降落过程中时，它随着你的接近而突然调转机头对准了你。与你前几天面对的辛恩战舰不同——辛恩战舰对你的出现更多是被动反应，而这里的格诺维人却特意朝你的飞船飞来。片刻之后，你收到了一段来自拦截舰的通话呼叫，听上去极为愤怒。`
+			`	“奇伊·齐耶伊·埃斯奇奇·奇伊·耶德夫·泰赫·沃尔特！”`
+			choice
+				`	（立刻离开。）`
+				`	（继续。）`
+					goto continue
+			`	你决定最好不要再侵入格诺维的区域了，因为谁也说不准如果你继续靠近，他们会做出什么事情来。当你退后时，那艘拦截舰有些恼火地朝你猛地冲了一下，并继续监视着停留在该区域的你，直到你彻底离开。虽然辛恩人似乎对交流持更开放的态度，但格诺维人显然对此十分反感。`
+				decline
+
+			label continue
+			action
+				set "provoked military"
+			`	你决定无视警告，继续朝格诺维飞去。拦截舰毫不犹豫地开始向你冲锋，地面上的飞船也开始准备起飞。甚至地面上的一些格诺维士兵也在大喊，并用武器指着你的飞船比划。看来格诺维已不再容忍你的存在了。`
+				decline
+
+			label leave
+			action
+			`	你决定撤离该区域，那些飞船继续朝地表飞去，仿佛你从未存在过。不论他们是否有敌意，卷入可能是某种军事演习的行动总归危险，尤其是面对格诺维的时候。`
+				decline
+
+	npc save
+		on kill
+			set "yvx killed"
+		government "Gegno Vi"
+		personality heroic vindictive staying ramming daring uninterested
+		system "Vorsuke"
+		ship "Rhyolite" "Imtydei"
+	npc save
+		government "Gegno Vi"
+		personality heroic vindictive staying uninterested
+		system "Vorsuke"
+		ship "Schist" "Ess Ouec"
+
+mission "Vi Military Group"
+	invisible
+	non-blocking
+	landing
+	to offer
+		has "Passive-Aggressive Observations: done"
+	to complete
+		never
+	on enter "Vorsuke"
+		fail
+
+	npc
+		to spawn
+			has "provoked military"
+		on kill
+			set "yvx killed"
+		government "Gegno Vi (Combative)"
+		personality heroic vindictive ramming daring staying launching
+		system "Vorsuke"
+		ship "Rhyolite" "Imtydei"
+	npc
+		to spawn
+			has "provoked military"
+		government "Gegno Vi (Combative)"
+		personality heroic vindictive staying launching
+		system "Vorsuke"
+		ship "Schist" "Ess Ouec"
+	npc
+		to spawn
+			has "provoked military"
+		government "Gegno Vi (Combative)"
+		personality heroic vindictive staying launching
+		system "Vorsuke"
+		ship "Schist" "Ess Utchec"
+	npc
+		to spawn
+			has "provoked military"
+		government "Gegno Vi (Combative)"
+		personality heroic vindictive staying entering
+		system "Vorsuke"
+		fleet
+			names "gegno vi"
+			variant
+				"Hornfel (Heavy Weapons)" 1
+				"Eclogite" 2
+
+
+mission "Foreign Spectator I"
+	invisible
+	non-blocking
+	landing
+	to offer
+		has "First Contact: Gegno Scin: offered"
+		not "Gegno Anticipation: offered"
+		not "Gegno Apprehension: offered"
+		not "Gegno Genocide Defense: offered"
+	to complete
+		never
+	to fail
+		has "Battle over Zydee: offered"
+	on enter "Oihaug"
+		fail
+		"gegno: encounters" ++
+		conversation
+			`你进入星系时，发现星系中心有一支维族舰队和一支辛族舰队，但双方并未交战。相反，它们正观看着两艘分属两派、似乎在相互对决的飞船。这可能是格诺派系之间的某种仪式活动。最好别插手。`
+
+	npc
+		on provoke
+			set "interrupted arena"
+		government "Gegno Vi"
+		personality heroic vindictive ramming staying uninterested
+		system "Oihaug"
+		ship "Eclogite" "Tschelgi Dueyu"
+	npc
+		on provoke
+			set "interrupted arena"
+		government "Gegno Scin"
+		personality heroic vindictive staying uninterested
+		system "Oihaug"
+		ship "Felsic" "Tschelgi Dueich"
+	npc
+		on provoke
+			set "interrupted arena"
+		government "Gegno Vi (Neutral)"
+		personality heroic vindictive staying uninterested swarming
+		system "Oihaug"
+		fleet
+			names "gegno vi"
+			variant
+				"Hornfel"
+				"Slate" 2
+	npc
+		on provoke
+			set "interrupted arena"
+		government "Gegno Scin (Neutral)"
+		personality heroic vindictive staying uninterested swarming
+		system "Oihaug"
+		fleet
+			names "gegno scin"
+			variant
+				"Coesite" 2
+				"Tridymite"
+				"Mica"
+
+
+mission "Brief Bystander"
+	invisible
+	non-blocking
+	landing
+	destination "Esstch"
+	to offer
+		has "First Contact: Gegno Scin: offered"
+		not "Gegno Anticipation: offered"
+		not "Gegno Apprehension: offered"
+		not "Gegno Genocide Defense: offered"
+	on complete
+		"gegno: encounters" ++
+		conversation
+			`这颗行星表面散落着许多古老的记录仪器，似乎与格诺人对其表现出的漠不关心相矛盾。尽管它位于格诺的母星系霍伊特斯尔，但显然荒无人烟。不过，由于这颗行星并非严格受格诺控制，因此是个方便的停靠点，而且他们似乎既没有注意到你已着陆，也并不在乎。`
+			`	然而，当你在周围飞行时，注意到地面上停着一艘小型格诺穿梭机。它黄褐色的船体表明这是一艘民用飞船，但不知道它在这里做什么。`
+			choice
+				`	（调查。）`
+					goto investigate
+				`	（别管他们。）`
+					decline
+
+			label investigate
+			action
+				set "gegno: approached bystander"
+			`	你驾驶飞船朝穿梭机驶去，靠近后，能看到一个格诺人正在地上摆弄附近的设备。当你飞得更近时，他停下工作，回到穿梭机中，不久便起飞离开。看来他对与你交流没有任何兴趣。`
+			`	在这颗卫星旁着陆后，你走下飞船上前查看。这台设备与你目前见过的其他设备并无二致，唯一引人注目的特征似乎就是年代久远。`
+				decline
+
+
+mission "Scin on Cyife"
+	invisible
+	landing
+	source "Cyife"
+	to offer
+		has "First Contact: Gegno Scin: offered"
+		not "Gegno Anticipation: offered"
+		not "Gegno Apprehension: offered"
+		not "Gegno Genocide Defense: offered"
+	on offer
+		"gegno: encounters" ++
+		conversation
+			`在这颗地处偏远、冷酷而荒凉的卫星上，几乎没有什么值得关注的事物。不过，塞菲的表面倒是有几分奇特。穿透地表的部分折射光线似乎会平白消散，或是以奇异的图案反射回来。虽然表面看似是冰，但更仔细的检查表明，局部区域实际上是由另一种结晶物质构成的。而在远处，矗立着一个在这片荒凉土地上极为醒目的庞然大物——一个泛着绿光的巨大蛋形结构。`
+
+			branch "boarded epidote"
+				has "scin: entered epidote"
+
+			branch "saw epidote"
+				has "scin: approached epidote"
+
+			`	当你靠得足够近时，那个椭圆形的物体显露出了真容——原来是一艘带有辛族涂装的格诺大型飞船。它为何会出现在这远离其母星域的荒凉之地，依然是个谜，就和它停靠的这颗卫星一样神秘。仅仅过了几秒钟，它便升空冲入大气层，离开了这颗卫星。在它停泊的地点没有留下任何东西，也找不到任何能表明辛族最初在此目的的痕迹。`
+				decline
+
+			label "saw epidote"
+			`	当你靠得足够近时，那个椭圆形的物体显露出了真容——原来这是一艘大型格诺辛飞船，与你不久前在与辛族接触时遇到的那一艘很像。它为何会出现在这远离其母星域的偏远之地，依然是个谜，就像它所停靠的卫星一样神秘。或者至少是‘曾经’停泊于此，因为仅过了几秒钟，它便升空冲入大气层，飞离了这颗卫星。`
+				decline
+
+			label "boarded epidote"
+			`	当你靠得足够近时，那个椭圆形的物体显露出了真容——原来是格诺辛的一艘大型科考船，与你不久前在与辛族互动时登上的那艘是同一型号。或许是辛族认为塞菲的神秘之处值得他们远离母星域千里迢迢前来调查。但你永远无法确知了，因为仅仅过了几秒钟，这艘飞船便升空冲入大气层，消失在太空中。他们似乎什么都没有留下。`
+				decline
+
+
+mission "Battle over Zydee"
+	invisible
+	landing
+	to offer
+		has "First Contact: Gegno Scin: offered"
+		not "Gegno Anticipation: offered"
+		not "Gegno Apprehension: offered"
+		not "Gegno Genocide Defense: offered"
+	to complete
+		never
+	source "Zydee"
+	on offer
+		"gegno: encounters" ++
+		conversation
+			`虽然这颗行星无人居住，但地表上停泊着不少格诺辛飞船。看来这里正进行着某项工程，以继续扩建先前已建成的部分基础设施，而那些忙于工作的辛族人几乎完全没有理会你的到访。`
+			`	However, a few moments later, the Scin suddenly start scurrying to their ships. Based on your experiences so far, you haven't gotten close enough to alarm them. They begin taking off one by one in a hurried fashion, but not toward you - the <ship>'s sensors suddenly begin picking up a large Gegno Vi fleet entering the system. It appears that this place is turning into a battlefield, and getting caught up in the middle of it is likely something you should avoid.`
+				accept
+	on enter "Kneirc"
+		event "gegno: vi occupy zydee" 1 3
+		fail
+
+	npc
+		on provoke
+			set "zydee interference"
+		government "Gegno Scin"
+		personality timid launching uninterested
+		system "Kneirc"
+		fleet
+			names "gegno scin"
+			variant
+				"Epidote"
+				"Coesite"
+				"Tridymite"
+				"Halite"
+	npc
+		on provoke
+			set "zydee interference"
+		government "Gegno Vi"
+		personality heroic staying
+		system "Kneirc"
+		fleet
+			names "gegno vi"
+			variant
+				"Gneiss"
+				"Hornfel (Heavy Weapons)"
+				"Hornfel (Heavy Load)"
+				"Eclogite" 3
+	npc
+		on provoke
+			set "zydee interference"
+		government "Gegno Vi"
+		personality heroic entering
+		system "Kneirc"
+		fleet
+			names "gegno vi"
+			variant
+				"Diorite"
+				"Schist (Heavy Load)"
+				"Schist (Light Load)"
+	npc
+		on provoke
+			set "zydee interference"
+		government "Gegno Scin"
+		personality heroic staying
+		system "Kneirc"
+		fleet
+			names "gegno scin"
+			variant
+				"Coesite" 3
+	npc
+		on provoke
+			set "zydee interference"
+		government "Gegno Scin"
+		personality heroic entering
+		system "Kneirc"
+		fleet
+			names "gegno scin"
+			variant
+				"Feldspar"
+				"Felsic" 3
+				"Coesite" 4
+				"Halite" 6
+
+# Zydee becomes occupied by the Vi even if the player doesn't find the above mission.
+mission "Vi Occupy Zydee"
+	invisible
+	non-blocking
+	landing
+	to offer
+		or
+			has "Gegno Anticipation: offered"
+			has "Gegno Apprehension: offered"
+		not "event: gegno: vi occupy zydee"
+		not "Gegno Genocide Defense: offered"
+	to complete
+		never
+	on offer
+		fail
+		event "gegno: vi occupy zydee" 1 3
+
+mission "Curious Civilians"
+	invisible
+	non-blocking
+	landing
+	to offer
+		has "First Contact: Gegno Scin: offered"
+		not "Gegno Genocide Defense: offered"
+	to complete
+		never
+	on enter
+		system
+			government "Gegno"
+		fail
+		"gegno: encounters" ++
+		event "gegno: civilian suspicion"
+
+
+mission "Gegno Suspicions"
+	invisible
+	landing
+	source "Giaru Gegno"
+	to offer
+		has "gegno: encounters"
+		"gegno: encounters" < 6
+		not "Gegno Intervention: offered"
+		not "Gegno Genocide Defense: offered"
+	on offer
+		conversation
+			`在处理完停靠例行程序并进入环世界后，你禁不住感到有些不对劲。往常，这里的夸格人总是步履匆匆、各司其职，但不知为何，周围能见到的夸格人似乎比平时少得多。此外，你偶尔遇到的那几位也在互相交谈，时不时还会朝你的方向飞快地瞥上一眼。而最反常的是，在你到访的这片区域里，竟然完全看不到任何格诺人的身影。`
+			`	几分钟后，当你穿行于环世界一尘不染的内部通道时，听到某条分支走廊的深处传来一个呼唤你的声音。转过身，你认出了一位过去曾给过你帮助的夸格人，他身着独特的服饰，身旁还跟着几位同伴。“情境性的问候再次奉上，<first> <last>。我们能否占用你片刻的重要时间？”`
+			choice
+				`	“当然。”`
+					goto follow
+				`	“需要多久？”`
+			`	“视需要而定，因为此事具有重大的象征意义，”它说道，语气微微上扬。`
+
+			label follow
+			`	你跟随这群夸格来到一间较小的会议室，这与你先前去过的那间很像。不过，考虑到环世界大到难以想象，也许你每次去的都是不同的房间。落座后，先前说话的那位夸格注视了你一会儿，随后低下头看了看桌面，接着又抬起头望向你。`
+			
+			branch "negative rep"
+				or
+					"reputation: Gegno Vi" < 0
+					"reputation: Gegno Scin" < 0
+
+			`	“此前，我曾建议你在与格诺人打交道时保持谨慎。我们也获悉了你之后经历的几次接触，尽管它们在本质上微不足道。据称在这些情况下，你大体上都能及时离去，对此我们表示由衷的赞赏。然而，”夸格继续道，“尽管你已尽可能保持警惕，但部分颇具声望的格诺人物仍对你那些微不足道的频频露面感到恼怒。他们向我们质询，是否能够避免此类不必要的事件再次发生。”`
+			choice
+				`	“为什么这让他们感到不满？”`
+					goto imagine
+				`	“我从没伤害过他们。”`
+					goto harm
+				`	“这纯属巧合罢了。”`
+					goto coincidental
+				`	“我想多了解他们一些。”`
+					goto learn
+
+			label harm
+			`	“伤害他人并不一定需要诉诸暴力。无论初衷多么纯粹，即便是最微小、最无意的举动，也可能迅速引发始料未及的后果。”夸格随后陷入了短暂的沉思。`
+				goto imagine
+				
+			label coincidental
+			`	“即便只是短暂的巧合，也可能带来当事人不愿看到、也无法预料的后果。毕竟，世间所有生灵的存在，都不过是归因于一系列偶然的巧合。”夸格随后陷入了短暂的沉思。`
+				goto imagine
+
+			label learn
+			`	“探索未知的渴望并不总能带来愉快的机遇。那些好奇心最重的生灵，若对其探寻之物的本质一无所知，反倒最容易受到伤害。”夸格随后陷入了短暂的沉思。`
+
+			label imagine
+			`	“你不妨设想一下，在人类称之为‘地盘战争’的那场大规模冲突期间，如果有某个陌生的外星人来到了人类的星域。我们夸格曾痛心地见证了那场险恶的冲突——那是一个充满巨大浪费、不幸危机以及人类内部互不信任的黑暗时期。格诺人目前正处于一个类似的脆弱阶段，外来者的介入显然并不合适。事实是，几位具有重要地位的格诺人已经就你先前的出现同我们进行了接触，并对你未明说的意图表示了担忧。”短暂的停顿后，夸格用一种异样的眼神看着你，让你有些摸不着头脑。“不过，出人意料的是，他们有几次竟然也好奇地向我们打听起你的来历——在我们与格诺人打交道的过往经历中，这还是极其罕见的情况。”`
+			`	这位夸格站起身来，并示意你起立。`
+			choice
+				`	（站起身来。）`
+
+			`	“我们能给你的最好建议，就是在未来避免与他们有进一步的接触。在此期间，我们将尝试同格诺的高层进行极为审慎的交涉，以求达成允许你存在的某种共识。如果我们能找到契合点，你将会收到一位头衔为‘阿德劳尼’之人的通讯——而我正蒙受此封号。”`
+			`	在一旁全程专注倾听谈话的其余夸格人开始护送你离开房间。如果格诺人甚至不惜联系夸格来关照你的出现，那么此事对他们来说确实非同小可。眼下，你最好与格诺人保持距离，让夸格去尝试与他们达成某种解决方案。`
+				decline
+
+
+			label "negative rep"
+			`	“此前，我曾建议你在与格诺人接触时保持谨慎。然而，我们正越来越关注由于你的存在而发生于他们身上的连锁反应。看来事态确实已经发展到了严重的境地。以往格诺人很少主动寻找我们，但最近有几次，他们的重要人物特意找上门来质询——而最令人瞩目的是，这都是由暴力冲突引起的。”夸格长久地凝视着你，等待着你的回答。`
+			choice
+				`	“是他们先攻击我的。”`
+				`	“我想引起他们的注意。”`
+					goto attention
+				`	“人类星域里暴力冲突屡见不鲜，但你们夸格人似乎从来都不感兴趣。”`
+					goto violence
+
+			`	这位夸格又端详了你片刻才作答。“基于某些准则，我或许能理解他们何以会……倾向于……如此行事。但此时这既不符合他们长者的利益，任何狡辩也均无意义。”夸格朝你眨了眨眼，随后陷入了片刻的沉思。`
+				goto cases
+
+			label attention
+			`	夸格眨了眨眼。“所以，你便通过挑起无端的敌对行为，为你那所谓的……问题……找到了合理的解决方案？”随后，这位夸格用你认为带有审判意味的目光，长久而尴尬地死死盯着你，然后才移开视线，陷入了独自的思索中。`
+				goto cases
+
+			label violence
+			`	这位夸格思索了许久你所说的话，似乎从未预料到会得到这种回答。“诚然，对于你们这般好斗的人类而言，冲突可谓是司空见惯。但眼下这件事却完全是另外一码事。”随后，夸格再次自顾自地思忖了良久。`
+
+
+			label cases
+			`	“你不妨设想一下，在人类称之为‘地盘战争’的那场大规模冲突期间，如果有某个带有敌意的外星人来到了人类的星域。我们夸格曾痛心地见证了那场险恶的冲突——那是一个充满巨大浪费、不幸危机以及人类内部互不信任的时期。格诺人目前正处于一个类似的脆弱阶段，引入更多的敌意——特别是来自外部的敌意——显然并不合适。许多具有重要地位的格诺人已经联系了我们，虽然我们希望这仅仅作为一次口头的严厉警示，但遗憾的是，格诺人认为这已经超出了‘留心’的范畴。”这位夸格站起身来，并示意你也起立。`
+			choice
+				`	（站起身来。）`
+
+			`	“在这个关键的时刻，我们建议你立刻离开格诺星域。在此期间，我们将尝试同格诺的高层进行极为审慎的交涉，以争取达成某种双方均可接受的妥协。如果我们能找到契合点，你将会收到一位头衔为‘阿德劳尼’之人的通讯——而我正蒙此封号。”`
+			`	当其余的夸格人护送你离开房间时，那名叫‘阿德劳尼’的夸格最后一次对你叮嘱道：“请克制自己，不要再有任何暴力倾向了，船长。”如果格诺人甚至大费周章地为此联系夸格，那么此事对他们来说确实非同小可。眼下，最好还是听从夸格的警告，先离开格诺星域，直到寻得某种解决方案——如果真的能找到的话。`
+				decline
+
+	on decline
+		event "gegno: quarg talks" 8
+
+
+mission "Under the Nose"
+	invisible
+	non-blocking
+	landing
+	source "Giaru Gegno"
+	to offer
+		has "Gegno Suspicions: declined"
+		not "Gegno Genocide Defense: offered"
+		not "yvx killed"
+	to complete
+		never
+	on enter "Aleit"
+		fail
+
+	npc
+		on kill
+			set "yvx killed"
+		government "Gegno Vi (Neutral)"
+		personality heroic vindictive ramming entering fleeing uninterested
+		system "Aleit"
+		ship "Rhyolite" "Imtydei"
+
+
+mission "Scin Surveillance"
+	invisible
+	non-blocking
+	repeat
+	landing
+	deadline 7
+	source
+		near "Heutesl" 100
+	to offer
+		random < 30
+		has "event: gegno: civilian suspicion"
+		not "Gegno Genocide Defense: offered"
+		not "Gegno Anticipation: offered"
+		not "Gegno Intervention: offered"
+	to complete
+		never
+	npc save
+		government "Gegno Scin"
+		personality surveillance
+		system
+			government "Gegno Scin"
+		fleet
+			names "gegno scin"
+			variant
+				"Tridymite"
+
+
+mission "Veering Vi A"
+	repeat
+	invisible
+	non-blocking
+	landing
+	deadline 7
+	to offer
+		random < 30
+		has "Gegno Suspicions: declined"
+		not "Full Vi Backlash: offered"
+		not "Gegno Genocide Defense: offered"
+		not	"Gegno Anticipation: offered"
+		not	"Gegno Intervention: offered"
+	npc
+		on kill
+			"vi backlash" ++
+		system "Ookmya"
+		government "Gegno Vi (Combative)"
+		personality heroic staying
+		fleet
+			names "gegno vi"
+			variant 10
+				"Dunite"
+			variant
+				"Dunite" 2
+
+
+mission "Veering Vi B"
+	repeat
+	invisible
+	non-blocking
+	landing
+	deadline 7
+	to offer
+		random < 30
+		has "Gegno Suspicions: declined"
+		not "Full Vi Backlash: offered"
+		not "Gegno Genocide Defense: offered"
+		not	"Gegno Anticipation: offered"
+		not	"Gegno Intervention: offered"
+	npc
+		on kill
+			"vi backlash" ++
+		system
+			government "Gegno Vi"
+		government "Gegno Vi (Combative)"
+		personality heroic staying
+		fleet
+			names "gegno vi"
+			variant
+				"Eclogite"
+
+
+mission "Full Vi Backlash"
+	invisible
+	non-blocking
+	landing
+	to offer
+		"vi backlash" >= 3
+		"reputation: Gegno Vi" >= 0
+	on offer
+		fail
+		clear "vi backlash"
+		"reputation: Gegno Vi" = -1
+
+
+mission "Return to Giaru Gegno"
+	entering
+	description `被称为‘阿德劳尼’的夸格已召唤你返回 <destination>。`
+	source
+		not system "Aleit"
+	destination "Giaru Gegno"
+	to offer
+		or
+			has "event: gegno: quarg talks"
+			"gegno: encounters" >= 6
+		not "Gegno Intervention: offered"
+		not "Gegno Genocide Defense: offered"
+	on enter
+		dialog `你的通讯设备收到了一条传入消息：“致以问候，人类 <first> <last>。此消息发自名叫阿德劳尼的夸格。请一有机会便尽快返回 <planet>。”`
+	on complete
+		fail "Scin Surveillance"
+		fail "Veering Vi A"
+		fail "Veering Vi B"
+
+
+mission "Gegno Anticipation"
+	landing
+	name "来自格诺的传唤"
+	description "在接下来的8天内前往 <destination> 向格诺人报到，届时你将得知自己与他们是否还有未来。"
+	source "Giaru Gegno"
+	destination "Dueyu Eitch"
+	clearance
+	to offer
+		has "Return to Giaru Gegno: offered"
+		not "Gegno Genocide Defense: offered"
+		not "Gegno Intervention: offered"
+		not "event: gegno: apprehension"
+		"reputation: Gegno Vi" > -100
+		"reputation: Gegno Scin" > -50
+	on offer
+		conversation
+			branch "negative rep"
+				or
+					"reputation: Gegno Vi" < 0
+					"reputation: Gegno Scin" < 0
+
+			`你一在环世界上降落，就有一小群夸格人上前来迎接你，并迅速示意你跟上。他们护送你穿过环世界的各个大厅，里面似乎依然看不到任何格诺人的身影。在下一条走廊的尽头，你看到阿德劳尼正在等候，不过他身旁还站着一个身着奇特服饰的格诺人。在你们会合后，其他的夸格人朝另一个方向离去，而阿德劳尼则迈步走向另一条走廊。“请赏光，陪我们走一趟。”`
+			`	当你跟在他们身后时，阿德劳尼伸出一只手臂，开口说道：“如果你愿意——用你们人类的话来说，迁就我一下——你猜我与格诺人的谈判结果如何？”`
+			choice
+				`	“他们会接纳我吗？”`
+				`	"That they want nothing to do with me?"`
+					goto "deny me"
+				`	"I don't know."`
+					goto unsure
+
+			action
+				set "gegno word: accept"
+			`	短暂停顿后，阿德劳尼转向格诺，用他们的语言咕哝了几句，然后回应你。“我明白了。那你认为理由是什么？”`
+			choice
+				`	“我以前帮过他们，现在也能帮他们。”`
+				`	"I figured you could convince them."`
+					goto convince
+				`	"I don't know."`
+					goto unsure
+
+			`	当你继续在环世界完美无瑕的内部穿行时，阿德劳尼沉思了片刻。“这是非常典型的人类回答。然而，不要将你协助的价值与他们的价值混为一谈。即便你给格诺提供了有益的帮助，他们也未必要以善意作为回报。目前你听从了我的警告，但你不过是在做格诺从一开始就渴望的事——那就是不要打扰他们。”`
+			choice
+				`	"Maybe it's better I do leave them alone."`
+					goto better
+				`	"There must be something I can do."`
+					goto understand
+
+			label "convince"
+			`	阿德劳尼一边继续穿行于环世界，一边微微瞪了你一眼。“你不记得我之前提过，我们夸格也曾尝试过你所渴望的这种劝说吗？我们根本没有能力说服格诺接受任何事情。他们极度忠于自己的族群，甚至会打破一切界限来反对劝告，即便那劝告来自我们夸格。”`
+			choice
+				`	"Maybe it's better I do leave them alone."`
+					goto better
+				`	"There must be something I can do."`
+					goto understand
+
+			label "deny me"
+			action
+				set "gegno word: reject"
+			`	短暂停顿后，阿德劳尼转向格诺，用他们的语言咕哝了几句，然后回应你。“我明白了。那你认为理由是什么？”`
+			choice
+				`	“他们在我身边时的表现。”`
+				`	"From what you've told me before."`
+					goto before
+				`	"I don't know."`
+					goto unsure
+
+			`	“确实，格诺对缺乏谨慎的你十分警惕。”几秒钟过去了，阿德劳尼向那名格诺投去一个奇怪的眼神。你拿不准它在想什么。那名格诺似乎用他们的语言问了个问题，但没得到回应。阿德劳尼又停顿了片刻才再次开口。“尽管如此，你却置身于我们未曾经历的险境之中。我们作为一个物种，主动接纳了与格诺的接触；然而，你却仍是这里唯一的人类。也许这其中蕴含着某种值得注意的特殊意味。”`
+			choice
+				`	"Are you saying there's something I can do?"`
+					goto understand
+				`	"I'm not sure I understand."`
+					goto interest
+
+			label "before"
+			`	“我明白了。”阿德劳尼慢慢地眨了眨眼，凝视着你。那神情仿佛有些惊讶，或者至少是没料到会得到这样的回答。“听从我幸运的指示，确是你的明智之举。若非如此，此时此刻与你交谈的，恐怕就不会是我了。或者说，根本就不会有任何人。”接着，随着你们继续漫步，它又将视线移向前方，留下你独自回味这番话。“遗憾的是，夸格无法在这个微妙的事务上为你提供更多帮助。如果你还记得，我们此前曾尝试与格诺进行沟通，但他们固守己见，即便是要不可思议地反对我们夸格，也绝不妥协。”`
+			choice
+				`	"Maybe it's better I do leave them alone."`
+					goto better
+				`	"There must be something I can do."`
+					goto understand
+
+			label "unsure"
+			action
+				set "gegno word: unsure"
+			`	阿德劳尼短暂地转过头来，面无表情地看着你，随后转向那名格诺用他们的语言咕哝了几句，这才回应你。“那你为何会感到不确定？”`
+			choice
+				`	"I wasn't sure you could convince them."`
+					goto convince
+				`	“我对他们一无所知。”`
+
+			action
+				set "gegno word: friend"
+			`	停顿片刻后，阿德劳尼转向你，短暂地瞪了你一眼，随后重新目视前方，你们三人继续穿过环世界。“这倒是个相当重要的结论，不是吗？我已说过多次，格诺并非我认为人类有能力去了解的族群。即便你了解得更多，恐怕格诺也并不会反过来渴望——那个人类词汇是怎么说的——友谊？”那名格诺随后用其语言询问了句什么，阿德劳尼便与他展开了颇为冗长的谈话。`
+			choice
+				`	"Maybe it's better I do leave them alone."`
+					goto better
+				`	"There must be something I can do."`
+					goto understand
+
+			label "interest"
+			`	The Quarg turns back to you. "You are here not at the whim of your fanatic species, but at your own behest. Actions you take may be that of a human, but are not willed by that of humanity." Blinking slowly, Adrauni then turns to the Gegno walking besides it and begins a somewhat lengthy conversation with them.`
+				goto "visit a"
+
+			label "understand"
+			`	You walk in silence for an awkward period of time. The strange architecture of the ringworld does little to comfort you; it feels like you've walked down the same path several times now. A few moments later, you eventually begin following Adrauni and the Gegno down what appears to be a different section, though it is strangely wider than previous ones. Before you begin asking more questions, Adrauni finally replies. "It is apparent that you may understand something of your fragile circumstance. It is no longer what I, rather, the Quarg, can do for you. It is what you can do for yourself."`
+				goto "visit a"
+
+			label "better"
+			`	Adrauni speaks to the Gegno once more for an extended period of time. The strange architecture of the ringworld does little to comfort you; it feels like you've walked down the same path several times now. A few moments later, you eventually begin following Adrauni and the Gegno down what appears to be a different section, though it is strangely wider than previous ones. "Yes, it may be that your timely departure is the most favorable outcome in this affair." A long, awkward silence ensues, at the end of which Adrauni briefly comes to a halt, still facing forward, now crossing its arms behind its back. "Though you and I figure that is... unlikely."`
+				goto "visit a"
+
+			label "visit a"
+			`	那名格诺在一条独立走廊的入口处与你们分别，你跟着阿德劳尼来到了最后一站。这趟看似漫长的环世界之旅已近终点，你发现自己回到了起点——你的飞船停靠的泊位。虽然跟着阿德劳尼绕回这里感觉像是在穿梭于令人头晕的迷宫，但一想到这不过是走了几分钟，你便禁不住想象，若是去探索整个环世界又该是何等混乱。阿德劳尼停下脚步转向你，微微低下身子与你平视。“你必须代表你自己——代表你那顽强的一面——去寻求会面。前往格诺的母星杜尤埃奇，以你期望被看待的方式展现自己。只有那时，你才能找到你想要的答案。”`
+			
+			label "epilogue a"
+			choice
+				`	"Won't they prevent me from landing?"`
+					to display
+						not "gegno: landing dialog"
+
+				`	"Couldn't we have just asked the Gegno from earlier?"`
+					to display
+						not "gegno: asked dialog"
+					goto ask
+
+				`	"I'm not sure that's safe. Could you escort me there?"`
+					to display
+						not "gegno: escort dialog"
+					goto escort
+			
+				`	"Thank you. I will leave now."`
+					to display
+						has "gegno: landing dialog"
+					goto "end a"
+
+			action
+				set "gegno: landing dialog"
+			`	"Contrarily, I rather believe them to be expecting of you. Do remember you must hail the planet for clearance."`
+				goto "epilogue a"
+
+			label "ask"
+			action
+				set "gegno: asked dialog"
+			`	Adrauni ponders your question for a few moments before answering. "Ah, yes, your naivety to Gegno culture had but briefly passed me. Tradition amongst female Scin is to allocate time of research just short of a lifespan. The one whom you speak of is very much devoted to us here, nothing more. For any official matters with the Gegno to pass, they must go through the great heart of the colony."`
+				goto "epilogue a"
+
+			label "escort"
+			action
+				set "gegno: escort dialog"
+			`	阿德劳尼朝你眨了眨眼。“我本希望你已明白，你先前的感悟意味着什么。”它转头望向一旁陷入沉思，随后又看向你。“通常情况下，我们夸格极少会因为琐碎的缘由去拜访格诺。若是此时你有人陪同，格诺对你本就不稳定的看法只怕会再生变数。想象一下，如果夸格带着某些来路不明的旁人，去访问你们那颗名叫地球的星球，会是何种情景。”你猜测，阿德劳尼随后做出了相当于夸格人叹气的举动。“不过，是的，我可以派人护送你。请务必对这个决定深思熟虑。”`
+			choice
+				`	"Yes, I would like an escort."`
+					goto "quarg escort"
+				`	"Actually, I should be fine."`
+					goto "no escort"
+
+			label "quarg escort"
+			action
+				set "gegno: escort dialog"
+				set "gegno anticipation: quarg escort"
+			`	Adrauni hesitantly responds. "I shall send for one upon your departure."`
+				goto "epilogue a"
+
+			label "no escort"
+			action
+				set "gegno: escort dialog"
+			`	"I see. May it be for the best, then."`
+				goto "epilogue a"
+
+			label "end a"
+			`	"Safe travels, <first> <last>. I aspire for your daring decisions to befit the wise on your journey ahead." Adrauni gives you a lengthy bow, then leaves the hangar. You get the feeling that this might have been the last time you meet with it. As you return to your ship, a few other Quarg, who have been watching the conversation from afar, also return to their normal routine as if nothing had happened. Now, it is up to you to see for yourself whether or not the Gegno will accept you.`
+				accept
+
+			label "negative rep"
+
+			`一旦降落在环世界上，你便注意到在你停靠的机库一侧站着一群格诺。他们有着‘维’战士那庞大的身躯，虽然没有离开原来的位置，但当你步出飞船时，他们始终目不转睛地盯着你。随后，一小群夸格朝你走来，迅速示意你跟上他们，护送你穿过环世界的条条通道。最终，你被引到了以前见过阿德劳尼的房间，或者是与那间完全相同的一个地方。“请坐。”`
+			`	你同另外两名夸格一同坐下，其余的夸格随之退出，门在他们身后滑上。阿德劳尼面无表情地凝视了你一会儿，随后开口道。“我猜你已经知晓，我同那些难缠的格诺谈判的结果是什么了。”`
+			choice
+				`	"That they are upset with me?"`
+					goto upset
+				`	“他们会容忍我？”`
+				`	"No, I do not."`
+					goto "no idea"
+
+			`	阿德劳尼继续盯着你，然后慢慢眨眼。“我明白了。你对‘容忍’这个词在这种语境下有什么奇怪的理解？”`
+			choice
+				`	“允许我在他们的星球上降落。”`
+				`	"Allow me access to their technology."`
+					goto tech
+				`	"I don't know."`
+					goto "dont know"
+
+			`	阿德劳尼沉思了片刻。“这是非常典型的人类回答。即便照你们的定义，我们夸格对人类只有最低限度的容忍，我们也仅是向你们开放了少数奇妙世界的访问权。然而，人类又是如何对待他者的？格诺，或者其他有着古怪脾性的种族，难道就会被获准在你们的地球上自由活动吗？对你个人而言或许可以，但对焦虑重重的人类整体来说，显然是不可能的。”房间里的另一名夸格对阿德劳尼说了些什么，它用自己的语言同其交谈了几句。`
+			choice
+				`	"Is there no way I can work with the Gegno?"`
+					goto work
+				`	"I guess I should leave them alone."`
+					goto alone
+
+			label "tech"
+			`	阿德劳尼嗒嗒地叩击着牙齿，似乎是在发笑，你以前还从未见它有过这种反应。“而我们这许多生活在野心勃勃的人类身边的夸格，又何曾给予了你们获取我们技术的许可？在虚伪的容忍之下，没有人有权理所当然地获得他人的发明成果。”房间里的其他夸格有些诧异地看着阿德劳尼，随后它开始用自己的语言与他们交谈。过了一会儿，他们也用异样的眼神打量着你，气氛陷入了一阵尴尬的沉默，最终由阿德劳尼再次对你开口所打破。“即便对我们而言，格诺也几乎没有分享过任何有价值的事物。”`
+			choice
+				`	"Then is there no way I can work with the Gegno?"`
+					goto work
+				`	"I guess I should leave them alone."`
+					goto alone
+
+			label "dont know"
+			`	阿德劳尼继续盯着你，接着慢慢眨了眨眼。“确实，你并不懂得。所谓的容忍，是指尽管有着不尽人意的前提，却依然默许不受约束的事态发生。正如我之前所言，这可不是格诺的行事风格。”它抬头思索了片刻。“也许是我对你那天真看法的评判有误。人类确实在容忍自己群体里那些不受待见的人——也就是被称为海盗的那些家伙。你们这一物种里，有些势力纵容着他们令人厌恶的行为，有些则不然。话虽如此，若是一个非人类的种族也搞起类似的挑衅……我猜结果就会截然不同。”接着，阿德劳尼开始与房间里的其他夸格交谈。`
+			choice
+				`	"Are you saying there's no way I can work with the Gegno?"`
+					goto work
+				`	"I guess I should leave them alone."`
+					goto alone
+
+
+			label "upset"
+			`	“显然如此，毕竟维派自己已经悍然进入了我们的环世界。这种武力示威实属空前，比起其他那些不那么放肆的沟通方式，这更令人难以容忍。我本曾抱有一丝微茫的希望，以为你理解了我对非暴力的宣扬，因为我相信年轻物种心怀乐观期许是有益的，但最终，事实证明我的希望毫无根据。”房间里的其他几位夸格突然对阿德劳尼说起话来，就好像你根本不在场一样，并开始了一场漫长的辩论，其间不时朝你的方向怒目而视。`
+			choice
+				`	"Then is there no way I can work with the Gegno?"`
+					goto work
+				`	"I guess I should leave them alone."`
+					goto alone
+
+
+			label "no idea"
+			`	“是的，我相信这是这起节外生枝的局势中的一个共同主题。在了解清楚情况之前就盲目行动是极其危险的做法，正如我们夸格多年来一直在劝诫你们这些冲动的人类那样。在我们与你的探讨中，这一点显然已被证实。然而，这里所跨越的巨大界限，已经超出了我们所能容纳的范围。”阿德劳尼的表情随后微微一变，再次向你怒目而视。“尤其是在此前已发出过接连警告的情况下。”房间里的另一个夸格对阿德劳尼说了些什么，它便开始用自己的语言与对方交谈起来。`
+			choice
+				`	"Then is there no way I can work with the Gegno?"`
+					goto work
+				`	"I guess I should leave them alone."`
+					goto alone
+
+			
+			label "work"
+			`	You sit in silence for an uncomfortable amount of time, during which even the Quarg don't speak to one another. The strange structure and bright lights of the room do little to reassure you as the Quarg ponder to themselves. A few moments later, they begin talking amongst themselves once more, but you don't have a chance to get a word in. After several more minutes of deliberation and strange looks, the other Quarg stand up and flank you from both sides, while Adrauni finally addresses you once more. "Unfortunately, at this stage of events, not I, nor the Quarg, can give you an answer to your inquiry. We are of agreement in our strong opposition to further interaction between yourself and the Gegno." It then does what you think would be the Quarg equivalent of a sigh.`
+				goto "visit b"
+
+			label "alone"
+			`	You sit in silence for an uncomfortable period of time, during which even the Quarg don't speak to one another. The strange structure and bright lights of the room do little to reassure you as the Quarg ponder to themselves. A few moments later, they begin talking amongst themselves once more, but you don't have a chance to get a word in. After several more minutes of deliberation and strange looks, the other Quarg stand up and flank you from both sides, while Adrauni finally addresses you once more. "Indeed, that statement is in our strongest of preferences for this matter." It stands up and crosses its arms behind its back. "Though I would suppose you and I figure that to be... unlikely."`
+				goto "visit b"
+
+			label "visit b"
+			`	你身后的门打开了，夸格示意你再次跟上它们，护送你离开房间，回到你飞船停泊的机库。走廊里行走的夸格似乎比平时多了一些，还有一些把守在各个入口处。你忍不住想到，这仅仅是环世界极其微小的一部分，这让其余的部分显得更加庞大得不可思议，且到处都挤满了夸格。当你回到机库时，眼前的一幕是维战士被一大群夸格挡住，不过双方似乎都没有表现出敌意，也没有任何交流的意图。阿德劳尼随后停在你面前。“协助你处理此事已不再属于我们的管辖范围。然而，如果你确实执意要继续寻求与格诺接触，你就必须自己前去请求接见。前往格诺的母星杜尤埃奇，以你希望被看待的方式展现自己。只有这样，你才能找到你那些随性念头的答案。”`
+
+			label "epilogue b"
+			choice
+				`	"Won't they deny me from landing?"`
+					to display
+						not "gegno: deny dialog"
+
+				`	"Couldn't we just ask the Gegno over there?"`
+					to display
+						not "gegno: there dialog"
+					goto there
+			
+				`	"I will be leaving now."`
+					to display
+						has "gegno: deny dialog"
+					goto "end b"
+
+			action
+				set "gegno: deny dialog"
+			`	After a pause, Adrauni responds. "Contrarily, I rather believe them to be expecting of you, accounting for their exclamations of the situation."`
+				goto "epilogue b"
+
+			label "there"
+			action
+				set "gegno: there dialog"
+			`	"Those of the Vi do not represent those of the Gegno, that is, of a whole species. The Vi present with us are merely of one family, to which there are many such groups." Adrauni considers your question for a few moments, almost appearing to have a slight interest in it. "It is unlike that of which you humans are familiar to. Vi culture does not denote a family merely by ancestry nor familiarity."`
+				goto "epilogue b"
+
+			label "end b"
+			`	"Although your actions thus far are in dissatisfaction, I aspire for future decisions being made to befit the wise on your journey ahead. I wish you an educational journey, <first> <last>." Adrauni gives you a lengthy bow, then leaves the hangar. You get the feeling that this might have been the last time you meet with it. As you return to your ship, the Vi warriors continue watching from afar, but the Quarg steadfastly block them off. It is up to you to figure out yourself whether or not the Gegno will tolerate you any further.`
+				accept
+
+	on accept
+		clear "gegno: landing dialog"
+		clear "gegno: asked dialog"
+		clear "gegno: escort dialog"
+		clear "gegno: deny dialog"
+		clear "gegno: there dialog"
+
+	npc
+		to spawn
+			has "gegno anticipation: quarg escort"
+		government "Quarg (Gegno)"
+		system "Heutesl"
+		personality entering staying escort
+		fleet
+			names "quarg"
+			variant
+				"Quarg Wardragon"
+
+	npc
+		on provoke
+			fail
+			"reputation: Gegno" = -100
+			"reputation: Gegno Vi" = -100
+			"reputation: Gegno Vi (Neutral)" = -100
+			"reputation: Gegno Scin" = -100
+			"reputation: Gegno Scin (Neutral)" = -100
+			dialog `在你决定向正在监视你访问其母星的格诺舰队开火后，你遭到了猛烈的反击，同时收到了无数听上去极其愤怒的通讯呼叫。你与格诺建立联系的最后一丝机会如今也已荡然无存。`
+		government "Gegno Vi (Neutral)"
+		personality heroic vindictive staying
+		system "Heutesl"
+		fleet "Vi Warfleet" 3
+	npc
+		on provoke
+			fail
+			"reputation: Gegno" = -100
+			"reputation: Gegno Vi" = -100
+			"reputation: Gegno Vi (Neutral)" = -100
+			"reputation: Gegno Scin" = -100
+			"reputation: Gegno Scin (Neutral)" = -100
+			dialog `在你决定向正在监视你访问其母星的格诺舰队开火后，你遭到了猛烈的反击，同时收到了无数听上去极其愤怒的通讯呼叫。你与格诺建立联系的最后一丝机会如今也已荡然无存。`
+		government "Gegno Scin (Neutral)"
+		personality heroic vindictive staying
+		system "Heutesl"
+		fleet "Scin Warfleet" 3
+
+
+mission "Gegno Apprehension"
+	invisible
+	non-blocking
+	landing
+	to complete
+		never
+	to offer
+		or
+			"gegno: encounters" >= 6
+			has "dead augen"
+			and
+				"gegno: encounters" >= 3
+				has "Full Vi Backlash: offered"
+			and
+				"gegno: encounters" >= 3
+				or
+					"reputation: Gegno Vi" <= -100
+					"reputation: Gegno Scin" <= -50
+			and
+				"gegno: encounters" >= 3
+				or
+					has "interrupted arena"
+					has "zydee interference"
+	on offer
+		event "gegno: apprehension"
+		fail
+
+
+mission "Gegno Intervention"
+	landing
+	clearance
+	name "来自格诺的传唤"
+	description "在接下来的8天内前往 <destination> 向格诺人报到，届时你将得知自己与他们是否还有未来。"
+	to offer
+		has "event: gegno: apprehension"
+		not "Gegno Genocide Defense: offered"
+		not "Gegno Anticipation: offered"
+	source "Giaru Gegno"
+	destination "Dueyu Eitch"
+	deadline 8
+	on offer
+		fail "Scin Surveillance"
+		fail "Veering Vi A"
+		fail "Veering Vi B"
+		"reputation: Quarg (Gegno)" = 0
+		conversation
+			`正当你在与环世界对接时，你注意到指定的机库里已经停靠着一艘巨大的黄褐色格诺飞船，周围簇拥着维和辛两派的多艘飞船。在它们附近，一小群夸格正与几名神色颇为恼火的格诺争论着什么。你一走出飞船，两边都停下动作朝你望来。你认出阿德劳尼正迅速向你走来，身旁还跟着一名身穿精致盔甲的格诺，其装束既非辛派也非维派。`
+			`	阿德劳尼毫不迟疑地开口：“<first> <last>。我想你明白这件事意味着什么。”`
+			choice
+				`	“我现在还不确定发生了什么。”`
+				`	“我想我大概明白怎么回事了。”`
+
+			`	这名夸格站在你面前，微微躬身对你说话：“形势已如此棘手，格诺的诸多投诉我们夸格已然收到。干涉他们的事务你已屡次为之。虽然我很想就此事与你多加探讨，但我，乃至整个夸格族，都无法再为你在此处的作为提供任何帮助。”阿德劳尼转向那名格诺，对方显得有些不屑一顾，或者至少在努力避免与你目光接触。在一段你完全听不懂的简短交谈后，那名格诺走向那艘黄褐色飞船。仿佛得到了某种信号，机库里的所有其他格诺也各自返回了各自的飞船。`
+			`	目送所有飞船离去时，阿德劳尼再次开口：“八次公转的时间，格诺已给予你，让你在他们的世界上露面。若你未能遵从，那么用他们的话来说，你将被从他们的星域中‘请离’。”`
+			choice
+				`	“请离？”`
+				`	“你会跟我一起来吗？”`
+					goto coming
+				`	“好吧，我会去的。”`
+					goto end
+
+			`	阿德劳尼略作思忖。“更贴切的表达或许是放逐，或者说，被冷落？格诺的文化是将一切都视作一个大家庭。你出现在他们的星域中，就相当于已经跨入了他们的家门，然而，这已经是一场不再欢迎你的邀请了。”`
+			choice
+				`	“我不是已经不受欢迎了吗？”`
+				`	“他们决定不了我去哪。”`
+					goto where
+			
+			`	“阐明这一哲学颇为不易。我们夸格曾经同样遭受过冷遇。在某些显著的层面上，我们至今依然如此——然而，那与此事的性质截然不同。”`
+				goto end
+
+			label "where"
+			`	“即便如此，也切莫仓促地将其与免受惩罚的行为混为一谈。在他们自己的世界上，如何行事全凭他们自行裁决。然而，你在他们星域中最终采取的行动，也并非无人监视。”`
+				goto end
+
+			label "coming"
+			`	“我不去。确实，令人遗憾的是，我已无法再行协助，但此事的命运最终仅属于你与格诺。”`
+				goto end
+
+			label "end"
+			`	阿德劳尼最后一次在你面前挺直了身躯。“为了维系我们与格诺那所剩无几的关系，我必须告知你，我们无法再允许你进入他们领空内的这几颗夸格星球了。尽管发生了这样不幸的事，我依然寄望于你在前方的旅程中做出明智的抉择，<first> <last>。”阿德劳尼向你深深鞠了一躬，随后离开了机库。这很可能是你们的最后一次会面。现在，只能靠你自己去设法与格诺寻得某种共识了——如果那还有可能的话。`
+				accept
+
+	npc
+		on provoke
+			fail
+			"reputation: Gegno" = -100
+			"reputation: Gegno Vi" = -100
+			"reputation: Gegno Vi (Neutral)" = -100
+			"reputation: Gegno Scin" = -100
+			"reputation: Gegno Scin (Neutral)" = -100
+			dialog `在你决定向正在监视你访问其母星的格诺舰队开火后，你遭到了猛烈的反击，同时收到了无数听上去极其愤怒的通讯呼叫。你与格诺建立联系的最后一丝机会如今也已荡然无存。`
+		government "Gegno Vi (Neutral)"
+		personality heroic vindictive staying
+		system "Heutesl"
+		fleet "Vi Warfleet" 3
+	npc
+		on provoke
+			fail
+			"reputation: Gegno" = -100
+			"reputation: Gegno Vi" = -100
+			"reputation: Gegno Vi (Neutral)" = -100
+			"reputation: Gegno Scin" = -100
+			"reputation: Gegno Scin (Neutral)" = -100
+			dialog `在你决定向正在监视你访问其母星的格诺舰队开火后，你遭到了猛烈的反击，同时收到了无数听上去极其愤怒的通讯呼叫。你与格诺建立联系的最后一丝机会如今也已荡然无存。`
+		government "Gegno Scin (Neutral)"
+		personality heroic vindictive staying
+		system "Heutesl"
+		fleet "Scin Warfleet" 3
+
+
+
+mission "Acquiescence"
+	name `运送维派战士至<destination>。`
+	landing
+	clearance
+	description `前往<destination>，让那名维派战士作为你的“乘客”。`
+	blocked `你至少需要一个空余铺位才能接受此任务。`
+	source "Dueyu Eitch"
+	passengers 1
+	to offer
+		or
+			has "Gegno Anticipation: offered"
+			has "Gegno Intervention: offered"
+		not "Gegno Anticipation: failed"
+		not "Gegno Intervention: failed"
+		not "Gegno Genocide Defense: offered"
+
+	destination "Tschyss"
+	on offer
+		conversation
+			`当你开始降落时，格诺再次表现出警惕，维派和辛派的舰队正环绕着他们的母星运行。而你那艘比你先一步抵达该星系的夸格“护卫船”则留在了后方。两支舰队中各驶出几艘较小的格诺飞船，跟随你一起降落到星球表面，并在前方列队引导你前往目的地。`
+				to display
+					has "gegno anticipation: quarg escort"
+				
+			`当你开始降落时，格诺再次表现出警惕，维派和辛派的舰队正环绕着他们的母星运行。两支舰队中各驶出几艘较小的格诺飞船，跟随你一起降落到星球表面，并在前方列队引导你前往目的地。`
+				to display
+					not "gegno anticipation: quarg escort"
+
+			`	在穿过数层浓重的烟雾后，你再次穿梭于格诺母星上那些高耸如城堡般的城市之间。最终，你被带离了城市的喧嚣，来到了一处更为偏远的区域，这里有一座被烟雾笼罩的宏伟建筑，或许正是你初次造访这里时去过的那座。然而，与此前所见的一切相比，其周围的活动迹象要冷清得多。`
+			`	格诺飞船并没有指引你前往塔楼旁侧的任何一个停靠港，而是将你引向了建筑的底部，那里被另一团暗沉的烟雾所遮蔽。当你降落到地面时，那些格诺飞船在上方悬停保持原位，你则将飞船停靠在地上。这片区域似乎完全没有其他格诺的身影，安静得近乎令人毛骨悚然。`
+			choice
+				`	（留在飞船里。）`
+				`	（离开飞船。）`
+					goto exit
+			
+			`	你决定留在安全的飞船内。上方盘旋的格诺不再提供任何帮助——它们仅仅是在注视着你。除了它们之外，这片区域没有其他任何载具，更不用说有飞船了。没过多久，你注意到前方烟雾中出现了一个阴影般的身影，手持某种长杖。一名孤独的格诺走出了烟雾，沉重地迈出几步，随后在距离你飞船数米开外的地方驻足站定。`
+			`	你现在采取的任何行动都完全取决于你自己。然而，你实际上只剩下了一个选择。`
+			choice
+				`	（与格诺会面。）`
+				`	（离开格诺和他们的世界。）`
+					goto "no more gegno"
+
+			`	你决定继续你的尝试。既然你已经回到了他们的母星，且他们目前为止并未表现出任何想要驱逐你的迹象，那么你便已走到了这一步。外部环境对人类而言似乎算得上“安全”——类似于地球的环境，只比现在的地球污染得还要严重一些。你带上随身武器以备不测，随后离开飞船，谨慎地朝那名格诺走去。虽然有些难以辨认，但你几乎可以肯定，这就是你先前在那颗荒漠星球上初次遇到的那个格诺。它外表上唯一的不同之处，就是左臂上系着某种红色的带子。头顶的飞船突然飞走，那名格诺转过身，开始朝你面前那座宏伟的塔楼走去。`
+				goto tower
+
+
+			label "exit"
+			`	外部环境对人类而言似乎算得上“安全”——类似于地球的环境，只比现在的地球污染得还要严重一些。你带上随身武器以备不测，随后离开飞船。上方飞船里的格诺专注地注视着你的一举一动，除了远处引擎的嗡嗡声外，四周死一般寂静。没过多久，你注意到飞船前方烟雾中出现了一个阴影般的身影，手持某种长杖。一名孤独的格诺从烟雾中走出，缓缓向你靠近。它在距离你几米外停下，虽然有点难以辨认，但你几乎可以肯定，这就是你之前在那颗荒漠星球上初次遇到的那个格诺维。它外表上唯一的不同之处，就是左臂上系着某种红色的带子。`
+			`	至此，你接下来所采取的任何行动都完全取决于你自己。然而，你实际上只剩下了一个选择。`
+			choice
+				`	（与格诺会面。）`
+				`	（离开格诺和他们的世界。）`
+					goto "no more gegno"
+
+			`	你决定继续你的尝试。考虑到你已经回到了他们的母星，且他们目前为止并未表现出任何想要驱逐你的迹象，那么就没有理由半途而废了。当你走向那名格诺时，它看起来的确就是你以前遇到的那一个。头顶的飞船突然飞走，那名格诺转过身，开始朝着你面前那座宏伟的塔楼走去。`
+
+
+			label "tower"
+			`	你面前的塔楼确实蔚为壮观。它看起来比任何人类建筑都要庞大和高耸，但与你在上方暗沉烟雾中看到的那些部分相比，它明显显得非常古老。随着塔身拔地而起，其庞大的基座周围排列着一排排火炬般的结构，熊熊火焰在其上方高高腾起。内部也同样引人入胜——你进入的第一个区域简直就像是直接从某个古老的中世纪奇幻故事里搬出来的一样。一切看起来都有着岩石雕琢的质感，尽管有些入口似乎是由较新的金属材料制成。`
+			`	你正好奇是否所有的格诺建筑都采用这种风格，但你的思绪很快被那个一直走在你前方数步的格诺打断——它咕哝了一声，示意你进入巨大房间另一端的一个笼状平台。`
+			choice
+				`	（进入笼子。）`
+			`	幸好，这个笼子和监牢并无共同之处；伴随着锁链的撞击声和其他难以名状的杂音，你开始向上攀升，前往你的下一个目的地。然而，这台升降梯的摇晃和金属撞击声实在无法让你安下心来。突然之间，你听到上方传来一阵低沉而有节奏的隆隆声。几乎在同一瞬间，一阵强风铺面而来。你的笼子已经升到了建筑外壁，正仅凭几根轨道和滑轮系统的支撑飞速上升。在你面前塔楼的核心周围，还环绕着其他大型金属滑轮系统，远处左侧的另一个滑轮上也载有一名格诺。在上升的过程中，你看到许多格诺排列在塔楼不同高度的阳台上，以稳定的节奏敲击着巨大的、如同定音鼓一般的鼓。它们偶尔会发出呼喊，或是吹奏某种类似号角的乐器。`
+			`	又在鼓声中挺过了几分钟，穿过数层烟雾，伴随着一阵阵高原反应般的不适感，升降梯终于抵达了塔楼的顶端——这是一个巨大的露天圆形平台，一群身穿各色盔甲的格诺正围绕着一张大桌子（或是某种显示网格）聚集在一起，桌面上摆放着数个行星和飞船的模型。平台边缘环绕着一圈电子火炬，光芒向上直插昏暗的天空。`
+			`	引你来到此处的格诺示意你过去加入它们，与其他格诺站在一起。`
+			choice
+				`	（走向格诺。）`
+					goto meeting
+				`	（留在原地。）`
+
+			`	没过多久，两名格诺士兵走过来，基本上算是“迫使”你加入其他人。既然情况如此，你不如按它们的规矩来。`
+
+			label meeting
+			`	当你走到其他格诺身边时，鼓声戛然而止。屏幕中央显示着一些文字，你一个字也看不懂。三名格诺并肩站立，与其他格诺分开，开始用低沉洪亮的声音说话；它们的语言无法理解。其中一个非常魁梧，看起来像是属于维派的格诺，而另外两个则较小。这三名格诺都穿着同样精致的盔甲，带有华丽的凸起、垂饰和其他细节。在场的其他格诺体型各异，但都没有穿着代表派系的颜色。它们中有的偶尔会瞥你几眼，有的则完全无视你。`
+			`	几分钟过去了，气氛越来越尴尬，期间有几名格诺从人群中走出，走到桌子对面与那三人讨论。你看向身旁的格诺向导，它的目光紧盯着前方的对话。三人组中的一位终于叫它过去，将一颗沙漠行星的模型放在桌上——就是一切开始的那一颗。接下来是一场激烈的讨论，你看着你的向导，意识到它是唯一一个手臂上戴着红色臂带的格诺。随着讨论继续，人群中的其他格诺似乎很不高兴。`
+			`	尽管你觉得可能不会发生，但那一刻还是来了——那三人中最魁梧的一个直接向你示意。紧张气氛骤然升级，它用它们的语言说了些什么，然后示意你站到它们对面。所有其他格诺都盯着你，等待着，你的向导则退到一旁。`
+			choice
+				`	（靠近那三人。）`
+					goto trio
+				`	（留在原地。）`
+
+			`	你选择不做任何事，留在原地。你做的任何事都可能对你不利。又过了片刻，格诺三人组回到桌旁，开始用桌上各种物品互相讨论。屏幕上循环显示着图像和文字，但你离得太远，看不清任何内容。又过了几分钟，你觉得它们几乎已经把你忘了，你开始忽略它们的讨论。最终，你被拉回了现实；一切再次陷入沉默，格诺三人组中的一位呼唤你，让你看屏幕。`
+				goto "what does home mean"
+
+
+			label "trio"
+			`	当你走向平台中央时，挡路的格诺纷纷让开。你现在成了焦点，四周一片死寂。你一在三人组前停下，桌上的屏幕就显示出几张<ship>在不同背景下的图像，三人组中的一位移动了几颗行星模型，分别对应你访问过的格诺空间中的行星。又是一阵短暂的沉默——似乎连空气都带着期待——之后，三人中的一个用它们的语言对你说话，声音比以前低。`
+			`	“伊尤·乌迪约姆·格诺·泰西斯。乌迪赫，泰伊·阿特斯·奥弗·泰伊·皮耶普奥？”`
+			choice
+				`	“你是在问我关于格诺的事吗？”`
+				`	“我想与格诺达成共识。”`
+				`	“抱歉，我听不懂你在说什么。”`
+
+			`	格诺盯着你，然后看向屏幕，屏幕正缓慢切换着你曾经身处的各种情景：`
+
+			`	屏幕上出现了一颗更详细的沙漠行星图像，与第一颗不同。旁边还有许多图形——一个代表维战士小队，还有你曾在那里看到过的独特格诺飞船，以及一些滚动的文字，可能是那天在场的每一位战士的名字。行星名称旁边是一个较小的图形，显示了你曾与之交手的巨型沙虫之一，暗示除了第一颗沙漠行星，其他沙漠世界上也有它们的身影。`
+				to display
+					has "Passive-Aggressive Observations: done"
+
+
+			`	在桌子一侧，你注意到一颗类似水星的行星模型——你曾在它们母星系着陆过的那颗——但奇怪的是，屏幕上从未显示过它。`
+				to display
+					has "Brief Bystander: done"
+
+
+			`	屏幕上出现两艘不同飞船的图像，与桌上的两个模型相符。其中一艘是你在沙漠星球沙地上首次遇到的那种维飞船，另一艘是辛派飞船，看起来像是格诺其他飞船的衍生型号。你听到人群中有人大声呼喊，听起来有些失望，但被格诺三人组制止了。`
+				to display
+					has "Foreign Spectator I: failed"
+
+
+			`	其中一个比较突出的情景是维与辛之间在一颗森林世界卫星附近发生的一场大战。屏幕滚动着一长串短语，旁边是不同格诺飞船的图形，可能是参与那场战斗的船只。你周围的格诺互相低语，偶尔发出咕哝声。`
+				to display
+					has "Battle over Zydee: offered"
+
+
+			`	在桌子远端，你看到一颗冰卫星的小模型。关于它没有显示其他内容。`
+				to display
+					has "Scin on Cyife: offered"
+
+			`	你抬头看到格诺三人组仍在专注地盯着你。周围所有其他格诺的表情也类似。屏幕上并排出现了两个图标，每个图标下是一长串短语。随着滚动，格诺们开始互相讨论，有的声音很大，有的则很轻。当三人组向人群讲话，开始某种演说，时而指向人群，时而指向你时，你差点吓了一跳。尽管大多数格诺显得很不满，但三人组还是安抚了人群。`
+				to display
+					or
+						"reputation: Gegno Vi" < 0
+						"reputation: Gegno Scin" < 0
+
+			`	随后，三人组中最魁梧的格诺将一艘巨大的维派战舰模型放在桌子中央——你绝对认得出那种飞船。周围的格诺爆发了更多愤怒的呼喊；放下模型的那个格诺狠狠瞪着你，而另外两个最终平息了这场骚动。`
+				to display
+					has "dead augen"
+
+
+			`	在回顾了所有与你相关的案例后，三人组再次向集会发表了长篇演说。它们的声音在室外空气中回荡，所有格诺都以齐声的呼喊或吟唱作答，随后又是一片沉默。奇妙的是，你感觉自己仿佛是作为集会的一员站在它们中间，而不是什么外来的异星人。你完全没有受到任何限制，哪怕你身上还带着武器。`
+			`	三人组中体型较小的一个格诺朝你打了个手势并再次开口。你依然一个字也听不懂，但这一定很重要，因为除了你的向导，其他所有的格诺都后退了几步。那位三人组成员张开双臂，邀请你使用桌子和上面的物品，随后它们三个也向后退去，留下你独自一人站在空地上。`
+			choice
+				`	（靠近桌子，试着解释我卷入的事件。）`
+					goto explain
+				`	（留在原地，什么都不做。）`
+
+			action
+				set "gegno: no proclamation"
+			`	你没有走向桌子，而是尴尬地站在空地上。如果你真的是它们眼中的麻烦制造者，那么也许什么都别说是更好的选择。整整一分钟的沉默过去了，包括三人组在内的所有格诺都没有说半个字。相反，它们只是默默地评判着你做出的选择。随后，三人组走回桌旁，将所有的模型推到一旁，仿佛正在准备着什么。`
+				goto "what does home mean"
+
+
+			label "explain"
+			`	你走到桌边，竭尽全力逐一解释各种情况。由于你无法阅读屏幕上的文字，也无法对其进行操作，你便试着拿起那些模型，似乎没有人在意这一点。同时，你用手势比划着，主要表达你的飞船“飞走”的意思。你怀疑这能不能让格诺明白些什么，但它们似乎并不在乎你的言辞或动作本身；相反，它们似乎是对你说话时的语气和情绪产生了反应。在你竭尽全力描述完一切后，你从桌旁退开。三人组走回桌旁，聚在一起讨论你的反应。接着，它们开始把所有的模型推到一旁，仿佛正在准备着什么。`
+				goto "what does home mean"
+
+
+			label "what does home mean"
+			`	令你和其他格诺都感到惊讶的是，屏幕上出现了地球的图像。格诺绝不可能离开过自己领地的边界，更不用说造访人类星空了。它们是如何得到这张图像的依然是个谜，但事实是，人类母星的图像此时此刻就展现在你眼前。随后，三人组中发言最少的那名格诺走上前来，但它没有走向桌子，而是径直朝你走来。`
+			choice
+				`	（什么都不做。）`
+					goto home
+				`	（把手放在枪套上。）`
+			`	如果格诺拥有地球的图像，谁知道它们对你、甚至是对整个人类了解多少？你慢慢将手伸向枪套中的武器，准备应对任何可能的敌对行为。尽管你做出了这个动作，但那个格诺并没有丝毫迟疑，依然向你走来，不过人群中有些格诺似乎流露出些许担忧。`
+
+			label "home"
+			`	此时它站在距离你不到两米的地方，专注地看着你。你当前所在世界的图像覆在了地球的图像之上，格诺指向了它。“Gegno Dueyu Eitch echre, echre isend Gegno。”图像切换回地球，格诺依然指着屏幕。“Eyuu dueyu nnepta, viehetch eyuu。”格诺随后指向你脚旁的地面。“Viehetch eyuu ayyr Dueyu Eitch. Udiyh tei tsider？”`
+			choice
+				`	（什么也不说。）`
+				`	“……杜尤地球？”`
+					goto dueyu
+
+			`	你一言不发，继续注视着格诺，而它也回望着你，思索着你的沉默。它用鼻子发出哼声，随后离开你，加入了身后的另外两个格诺。`
+				goto decision
+
+			label "dueyu"
+			`	格诺俯下身子凑近到你的高度，脸上露出一副古怪的表情——可能表示否定或不满。你有些惊慌，而旁观的其他格诺似乎也很惊讶它居然靠你这么近。随后它发出一阵低沉的嘟囔，听起来就像是大声的耳语：“Eyuu idu keiou ghynem uf, ‘Dueyu’。”直起身子后，格诺回到了身后另外两名格诺那里。`
+
+			branch "done with the gegno"
+				or
+					or
+						"reputation: Gegno Vi" <= -100
+						"reputation: Gegno Scin" <= -50
+					and
+						"reputation: Gegno Vi" < 0
+						"reputation: Gegno Scin" < 0
+						has "zydee interference"
+					and
+						has "Full Vi Backlash: offered"
+						has "dead augen"
+					and
+						"gegno: encounters" >= 6
+						has "gegno: no proclamation"
+
+
+			label "decision"
+			action
+				"reputation: Gegno" = 1
+			`	带着一种终结感，三人组向人群招手，开始了另一段长篇演说。屏幕上出现一个空间站的图像，重新聚拢的其他格诺随之展开了热烈的讨论。听众中的一些格诺之间开始发生争执。与此同时，你的格诺向导碰了碰你，开始引导你离开讨论现场，回到笼式升降梯，没有引起任何人的注意。`
+			`	几分钟后，你被护送回塔楼底部，那里现在围着一大群格诺平民，全都傻傻地盯着你们俩。你被带回飞船，头脑有些发晕，不确定该如何看待这整场遭遇。就像在沙漠星球上你第一次与它接触时那样，那个格诺走向你的飞船，递给你一个小型指南针设备，并在地图上标记了一个不同的位置。`
+			`	至少，你可以把这当作一个信号——它们与你之间的事情还没完，于是你开始准备前往下一个目的地。`
+				launch
+
+
+			label "done with the gegno"
+			`	带着一种终结感，三人组向人群招手，开始了另一段长篇演说。演讲结束后，人群陷入了沉默。你的格诺向导碰了碰你，引导你回到笼式升降梯，而旁人对此连眼皮都没抬一下。几分钟后，你被护送回塔楼底部，那里依然和先前一样荒凉。你被带回飞船，头脑有些发晕，不确定该如何看待这整场遭遇。当你准备启程时，那个格诺与你的飞船保持着一段距离。`
+			`	在你离开之前，你看着它举起长杖武器转了转。随之而来的是一团爆炸产生的烟雾，在<ship>旁边留下了一个相当大的弹坑。看来你在这里已经不受欢迎了，尽管它特意避开了你这么大一个目标可能另有深意。无论如何，在这趟旅程中的任何时候，被炸飞的都有可能是你。`
+			`	尽管对方有这种敌对行为，但在你离开星球时并没有遭到追击。`
+				flee
+
+
+			label "no more gegno"
+			`	你最终认定，继续与格诺周旋已经不再值得。即使你最终能够与它们进行某种对话，要想取得哪怕些许进展，也可能要付出极大的努力——假定这甚至真的可行。也许甚至连降落在这里本身就是一个错误。考虑到你正只身一人，留在一个对夸格都表现出极度排外的物种母星上，如果你继续这种尝试，你根本无法预见接下来会发生什么。`
+			`	当你准备启程时，那个一直面无表情注视着你的格诺举起长杖武器并转了转。随之而来的是一团爆炸产生的烟雾，在<ship>旁边留下了一个相当大的弹坑。看来它们至少对你决定离开感到不满，考虑到它们之前甚至根本不想和你有任何瓜葛，这未免有些奇怪。然而，它们有意偏离了这么大一个目标，或许另有深意。无论如何，被炸飞的都有可能是你。`
+			`	尽管对方有这种敌对行为，但在你离开星球时并没有遭到追击。`
+				flee
+
+
+
+mission "Gegno Asteroid Mining Prologue"
+	landing
+	name "开采5吨铁"
+	description "开采并运回5吨铁至<destination>。"
+	source "Tschyss"
+	to offer
+		has "Acquiescence: offered"
+		not "Gegno Genocide Defense: offered"
+	on offer
+		conversation
+			branch "returned"
+				has "Gegno Asteroid Mining Prologue: deferred"
+
+			`你到达了目的地：一座巨大的空间站。这次，那个格诺并没有直接站在你驾驶舱的后方，而是坐到了你一张空置的铺位旁，直到现在都一动不动。尽管作为格诺唯一的一座空间站显得宏伟壮观，但它看起来非常陈旧且死气沉沉。当你被引导穿过宽敞的内部空间时——其中大部分仅仅是由管道、栏杆和支撑结构构成的骨架——你发现这里明显缺少人员，运转的机器也寥寥无几。有些区域甚至没有正常加压，不过幸好你的宇航服弥补了这一点。偶尔你会遇到几名工人，但他们看起来非常无精打采，或者纯粹就是缺乏干劲。`
+			`	最终，你来到了一个大型停泊舱，这里有更多的工人和飞船。一些工人正在来回搬运物资箱，另一些则在互相交谈。与你同行的那个格诺随后指了指房间对面墙上的一块裂了半边的显示板。最后投来意味深长的一眼后，那个格诺便离开让你自便。考虑到它在杜尤埃奇受到的那种对待，你怀疑自己是否还能再见到它。`
+			choice
+				`	（走向显示屏。）`
+					goto board
+				`	（尝试与我周围的格诺人交流。）`
+			
+			`	你试图引起设施中其他一些格诺人的注意，但大部分都投来奇怪的目光或直接无视你，直到一个看起来很不耐烦的格诺人指了指那块巨大的裂纹显示屏。`
+
+			label "board"
+			`	这块显示屏虽然布满裂纹、破旧不堪，但其他功能似乎依然正常。它展示了一系列实时更新的图形列表。每个图形的左侧是各种可开采的小行星，右侧则是计数标记。这似乎是某种与空间站关联的工作列表，这意味着格诺人至少给了你一个“尽一份力”的机会，又或者是在让你弥补此前的所作所为。`
+			choice
+				`	（接受其中一项任务。）`
+				`	（什么也不做，直接离开。）`
+					goto nothing
+			
+			label "accept"
+			`	你摆弄着屏幕，试图弄懂它的用法。一些格诺人因此盯着你看。在他们无声的审视下，你总算发现这是一个触控界面，不过需要很大的力气才能让它响应。`
+			`	当你第一次让设备运转起来时，你看到了一颗富含铁的赤铁矿小行星的图像，旁边还有五个奇形怪状的计数标记。开采它们或许并不是深入了解格诺人的最佳途径，但为他们工作总归是一个开始。`
+				accept
+
+			label "nothing"
+			`	你决定离开设施。离开时没有一个格诺人注意你，他们又重新专注于自己的工作。`
+				defer
+
+			label "returned"
+			`尽管你之前离开了空间站，但你获得了再次降落的许可。你是否想去任务设施并尝试接受其中一个任务？`
+			choice
+				`	（是的。）`
+					goto accept
+				`	（否。）`
+					defer
+	on defer
+		set "Gegno Asteroid Mining Prologue: deferred"
+	on visit
+		dialog "你已返回<origin>，但你的飞船上并没有5吨开采好的铁。请确保在降落前先开采5吨铁并收集到货舱中。"
+	on complete
+		payment 12000
+		outfit "Iron" -5
+		conversation
+			`你将飞船停靠在空间站靠近该设施的港口，而非另一侧。那里有一大群格诺工人在等着你，他们全都穿着锈迹斑斑或受损的装备。在互相对视和低声讨论了一会儿后，他们卸下了你飞船上的矿物，然后像什么都没发生过一样继续干活。另一个格诺人走近你，令你惊讶的是，他为你付出的劳动支付了 <payment>。看来无论付出者是谁，哪怕是异星物种，格诺人都一样看重并予以回报。`
+			`	目前，你仍然可以访问该空间站，并且可以继续接这些采矿零工。希望有朝一日，格诺人能意识到你的价值远不止他们给你打上的那些标签。`

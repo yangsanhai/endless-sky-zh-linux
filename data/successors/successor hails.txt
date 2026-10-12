@@ -1,0 +1,1181 @@
+# Copyright (c) 2024 by Daeridanii
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Successor civilian
+
+phrase "successor friendly hail" # Wary
+	word
+		`阁下便是诸家族口中的“高贵访客”吗？`
+		`阁下便是诸家族盛情迎捧的“尊贵客人”吗？`
+		"阁下便是那来自遥远异乡的诡秘生灵吗？"
+		"阁下便是那自远方群星游历至此的奇特旅人吗？"
+		"阁下便是踏足我等尊贵领地的外邦访客吗？"
+		"阁下莫非是自历史长河中走出的生灵，重返此处探寻当下？"
+		"阁下的座舰与面貌显得甚是奇异罕见，"
+	word
+		" / "
+	word
+		"我已察觉阁下的到来，但仍对汝保持警惕。"
+		"若汝之灵魂已然腐化，便请与我保持距离。"
+		"若汝以友相待，我自当以友相还。"
+		"汝在这片群星间有何所求？莫非只是怡然游历？"
+		"汝究竟将自身力量效忠于何人、何物？"
+		"汝在这片群星间有何图谋？是为冷眼旁观，抑或插手干预？"
+		"汝在这片群星间有何目的？是为通商交好，抑或图谋背叛？"
+
+
+phrase "successor friendly hail" # Equipment
+	word
+		"我飞行时绝少不了"
+		"我远航时总会带上"
+		"飞行若不带上"
+	word
+		" "
+	word
+		"一台可靠的扫描仪"
+		"我那台可靠的扫描仪"
+		"一个更大的燃料箱"
+		"通讯设备"
+		"些许交谈"
+		"储备的蟹肉方块"
+		"储备的海带餐包"
+		"一周份的储备物资"
+	word
+		", / "
+	word
+		"我建议阁下为了自身利益着想，也宜如此。"
+		"这能让漫长的时光飞逝而过。"
+		"深邃漆黑的太空也因其存在而变得明亮。"
+		"若是没有它，起飞也就毫无意义了。"
+
+
+phrase "successor friendly hail" # Basic greeting
+	word
+		"向你致意"
+		"听着"
+	word
+		"里，"
+	word
+		"船长同仁"
+		"飞行员同仁"
+		"踏星者"
+		"船长"
+		"来客"
+	word
+		"愿意砸多少钱。" 3
+		"而战！" 3
+		"，哪怕你有些古怪。"
+
+
+phrase "successor friendly hail" # Regretful
+	word
+		"我"
+	word
+		" "
+	word
+		"原本注定"
+		"受过训练"
+		"从小受教"
+	word
+		" "
+	word
+		"成为一名"
+	word
+		" "
+	phrase
+		"successor occupation"
+	word
+		"里，"
+	word
+		"真的"
+		"确实"
+		"没错"
+		"千真万确"
+	word
+		", / "
+	word
+		"而不是"
+	word
+		" "
+	word
+		"这种"
+		"这个"
+		"一"
+	word
+		" "
+	word
+		"寒酸的"
+		"卑微的"
+		"潦倒的"
+		"落寞的"
+		"可悲的"
+		"孤独的"
+	word
+		" "
+	word
+		"飞行员"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "successor friendly hail" # Media
+	word
+		"阁下可曾"
+	word
+		" "
+	word
+		"欣赏过"
+		"看过"
+		"领略过"
+		"品味过"
+	word
+		" "
+	phrase
+		"successor media name"
+	word
+		"? / "
+	word
+		"诚然，在吾看来无物能与其媲美"
+		"毋庸置疑，此乃同类之中吾之最爱"
+		"于艺术中蕴含如此真谛，实乃世所罕见"
+		"若未曾品味，那实乃阁下的一大损失"
+		"在漫漫星路中品味此作，堪称完美"
+		"于今日观之，比以往任何时候都更具现实意义"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "successor friendly hail" # Cargo
+	word
+		"受雇运送"
+		"我正运载"
+	word
+		" "
+	word
+		"一"
+	word
+		" "
+	word
+		"一批" 2
+		"一箱"
+		"一货箱"
+	word
+		" "
+	word
+		"昂贵的"
+		"装有"
+		"镀金的"
+	word
+		" "
+	phrase
+		"successor commodities (2-syllable)"
+	word
+		". / "
+		"! / "
+	word
+		"我定会使其"
+		"其必将被"
+	word
+		" "
+	word
+		"送达得"
+		"奉上得"
+		"卸下得"
+	word
+		" "
+	word
+		"迅速"
+		"安全"
+		"及时"
+		"细心"
+	word
+		"且坚定不移"
+		"，一如我的准则"
+		"且准时"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "successor friendly hail" # Proverbs
+	word
+		"我们游在自己加盐的水中。"
+		"一人盲目，两人愚钝，但三人不随幻想摇摆。"
+		"信任止于臂尖。"
+		"睁眼，展臂。"
+		"怀疑之卵乃谨慎之苗。"
+		"宁处干室，不陷狂澜。"
+		"首名记过往，次名映当下，三名指未来。"
+		"荣耀生于安全。"
+		"真理中真的没有美吗？美德中真的没有欢乐吗？"
+
+
+phrase "successor friendly hail" # Relation
+	word
+		"我的"
+	word
+		" "
+	phrase
+		"successor relation"
+	word
+		" "
+	word
+		"总是告诫我：做个"
+		"刚获得了头衔："
+		"曾经认识一位友好的"
+		"帮我找到了一位友好的"
+		"刚成婚，对象是一位"
+		"曾对我说：切勿信任"
+		"曾是一位技艺精湛的"
+	word
+		" "
+	phrase
+		"successor occupation"
+	word
+		", / "
+	word
+		"在这漫漫长日里，我真希望他们是我。"
+		"那是一份崇高的职业，却并不适合我。"
+		"轮不到我来评判，然而……"
+		"希望我能很快再次见到他们。"
+		"阁下可曾见过他们？他们带来了什么消息吗？"
+
+
+phrase "successor friendly hail" # Conspiracy
+	word
+		"希望汝能将此想法恪守于你我之间："
+		"曾有一友私下密告于吾："
+		"吾闻自名声清白、诚实之口："
+		"高门企图掩盖此事，但吾深知："
+		"吾于多年恪勤领航中悟得："
+		"倘若汝愿信吾之言："
+		"若汝图谋奸诈，尽可疑吾之言，然而："
+	word
+		" / "
+	word
+		"乃是阴险诡诈的德拉克毁灭了吾等帝国。"
+		"乃是背信弃义的夸格招致了旧帝国的覆灭。"
+		"乃是心怀嫉妒的联盟招致了旧帝国的终结。"
+		"乃是精明狡黠的科拉特致使旧帝国走向覆灭。"
+		"乃是高门自行毁灭了吾等帝国。"
+		"上佳的贸易路线乃是不易被扫描所查之途。" 5
+		"上佳的贸易路线乃是能为汝赚得金钱之途。" 5
+		"上佳的贸易路线乃是隐匿于汝之传感器外之途。" 2
+		"虚无之中存在着连高门亦为之恐惧的噩梦。"
+		"此地的荒芜星系极易滋生诡异异象。"
+
+
+phrase "successor friendly hail" # Compliance
+	word
+		"若被"
+		"当被"
+	word
+		" "
+	word
+		"各家族的舰船扫描"
+		"当地家族扫描"
+		"家族战舰扫描"
+		"家族巡逻队扫描"
+	word
+		", / "
+	word
+		"务必火速停船"
+		"切勿试图逃离"
+		"速速停稳飞船"
+	word
+		"且切勿抵抗"
+		"，亮明汝之身份"
+		"，阐明汝之航线"
+		"，出示汝之文书"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "successor friendly hail" # Careful
+	word
+		"莫让你的"
+	word
+		" "
+	word
+		"远航"
+		"旅程"
+		"行程"
+		"使命"
+		"心血"
+	word
+		" "
+	word
+		"付诸东流"
+		"功亏一篑"
+		"化为灰烬"
+		"徒劳无功"
+	word
+		"! / "
+		"; / "
+	word
+		"保持你的飞船完好"
+		"妥善安放你的货物"
+		"仔细留意你的传感器"
+		"审慎阅读你的指令"
+	word
+		"，并时刻保持警觉"
+		"，保持警觉"
+		"，为了安全着想"
+		"，为了全船人员着想"
+		"，并保持思维敏捷"
+		"，并保持武备精良"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "successor hostile hail"
+	word
+		"你辜负了我们的信任，究竟是何居心！？"
+		"如今我们才看清，信任你竟是我们的愚蠢；"
+		"残忍、恶毒、暴戾而卑劣的家伙。"
+		"卑劣！你的伪装现已败露。"
+		"你的消亡不会在浩瀚宇宙中留下半点痕迹。"
+		"如今你该明白，我们之间的情谊已然作废。"
+	word
+		" / "
+	word
+		"真遗憾，你注定要落得惨死的下场。"
+		"各大世家将剥夺你的性命。"
+		"准备告别你这具凡胎肉身吧。"
+		"就让死亡的温柔之手合上你的双眼吧。"
+		"这场对你的报复并不能带给我们丝毫快意。"
+
+
+phrase "successor friendly disabled hail"
+	word
+		"及时施援，必彰阁下高德，"
+		"嗟乎，我等之舰已然瘫痪，"
+		`"“救命！”尊贵的访客，我等向汝呼求，`
+		"友人啊，我等英勇之舰已然受创，"
+	word
+		" / "
+	word
+		"还请速速行动，我等苦苦恳求。"
+		"倘若力所能及，还请施以援助。"
+		"阁下之援助，定能令我等重获新生。"
+		"乐善好施乃高尚之举，及时相助实乃明智之策。"
+
+
+phrase "successor hostile disabled hail"
+	word
+		"毁灭狂徒，且看你造下的恶果！"
+		"你的奸计击垮了我们最华丽的战舰！"
+		"阴险贼子，行径与本性皆盲目残忍！"
+		"残忍的欺诈者，我们方知错在轻信于你，"
+	word
+		" / "
+	word
+		"各大世家定会将你这阴险恶徒绳之以法！"
+		"就算不保战船，至少饶我们一命吧！"
+		"你这遭诅咒的愚蠢残暴之徒，必死无疑！"
+		"无论付出什么代价，我们的家族都定会为我们报仇！"
+
+# High Houses: Generic
+
+phrase "high houses friendly hail"
+	word
+		"吾等欢迎阁下光临我们的星域"
+		"阁下光临吾等美丽的星区，吾等深感欣喜"
+		"吾等已知悉阁下到访，并予以接纳"
+		`按吾等法令，阁下乃是“高贵之友”`
+		`在吾等的天空之下，阁下即是“尊贵之客”`
+		`在吾等之中，阁下当被称为“尊贵过客”`
+	word
+		", / "
+	word
+		"以便阁下"
+	word
+		" "
+	word
+		"得以"
+		"可以"
+		"定能"
+		"能够"
+	word
+		" "
+	word
+		"游览我们宜人的世界"
+		"赏览我们生机盎然的星球"
+		"见证我们取得的进步"
+		"分享我们成功的喜悦"
+		"共同见证我们的喜悦"
+		"领略我们领土的风光"
+		"深入了解我们取得的成功"
+		"对我们取得的成就赞叹不已"
+	word
+		"愿意砸多少钱。" 3
+		"而战！"
+
+
+phrase "high houses friendly hail"
+	word
+		"凭借高贵血统，我辈共享尊荣，"
+		"凭欢欣之力与正直之威，我辈翱翔星海，"
+		"任何邪恶都无法阻挡我们崇高的目标："
+		"我们的目标真挚而纯粹："
+		"凭警觉的双眼与英勇的赤心，"
+	word
+		" / "
+	word
+		"为世人缔造伟大而持久的和平。"
+		"为世人开创真实而欢欣的和平。"
+		"在和平中守护世人的安宁与光明。"
+		"增进世人所有的喜悦与福祉。"
+
+
+phrase "high houses friendly hail"
+	word
+		"听着"
+		"致敬"
+	word
+		"里，"
+	word
+		"旅行者"
+		"贵客"
+		"异乡人"
+		"船长"
+		"驾驶员"
+	word
+		"而战！"
+	word
+		" / "
+	word
+		"我们的"
+	word
+		" "
+	word
+		"家族"
+		"舰队"
+		"星舰"
+		"舰艇"
+	word
+		" "
+	word
+		"巡视着"
+		"守卫着"
+		"注视着"
+		"庇佑着"
+	word
+		" "
+	word
+		"这片星域"
+		"这些世界"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "high houses friendly hail"
+	word
+		"凡"
+		"愿凡"
+	word
+		" "
+	word
+		"邪恶"
+		"怨恨"
+		"狂怒"
+		"奸邪"
+		"残暴"
+		"暴戾"
+		"暴行"
+		"嘲弄"
+	word
+		" "
+	word
+		"存于心者，"
+		"奉为指引者，"
+		"存为意图者，"
+	word
+		" "
+	word
+		"战栗"
+		"胆寒"
+		"溃逃"
+		"退散"
+	word
+		" "
+	word
+		"且在恐惧中面如土色"
+		"于我等威势面前"
+		"于我等降临之际"
+	word
+		". / "
+		"! / "
+	word
+		"尔之家族在此"
+		"尔之家族莅临"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "high houses friendly hail"
+	word
+		"切勿亮出"
+		"切勿纵放恶毒的"
+	word
+		" "
+	word
+		"利刃"
+		"长枪"
+		"利爪"
+	word
+		"所挟之"
+	word
+		"邪恶"
+		"积怨"
+		"怒火"
+		"残暴"
+		"恐惧"
+		"暴行"
+		"嘲弄"
+	word
+		" "
+	word
+		"于吾等目光之下"
+		"于吾等视界之内"
+		"于吾等尚存一息之际"
+		"于吾等领界之中"
+		"于吾等子民之上"
+	word
+		". / "
+		"! / "
+	word
+		"凡逆贼必遭惨痛之报"
+		"吾等之怒火亦如吾等之慈爱"
+		"吾等之威能远胜卑劣之敌"
+		"守护乃吾等恪守之天职"
+		"吾等绝不姑息残暴之敌"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "high houses friendly hail"
+	word
+		"公正"
+		"力量"
+		"远见"
+		"威严"
+		"仁爱"
+	word
+		"里，"
+	word
+		"荣誉"
+		"热忱"
+		"英勇"
+	word
+		"里，"
+	word
+		"正直"
+		"忠诚"
+		"严谨"
+		"高贵"
+		"诚信"
+		"明晰"
+		"迅捷"
+		"勇敢"
+	word
+		": "
+	word
+		"此等"
+		"凡此"
+	word
+		" "
+	word
+		"美德，皆属于"
+	word
+		" "
+	word
+		"吾等"
+	word
+		" "
+	word
+		"高贵之"
+		"尊贵之"
+	word
+		" "
+	word
+		"家族。"
+
+
+phrase "high houses friendly hail"
+	word
+		"前往"
+		"造访"
+	word
+		" "
+	word
+		"行星地表"
+		"星球本土"
+	word
+		" "
+	word
+		"去一睹"
+		"去触摸"
+	word
+		" "
+	word
+		"一艘奥尔克拉级战舰"
+		"一艘塞特吉级战舰"
+		"一艘维萨德级战舰"
+		"一门“奥杰特”线圈炮"
+		"一门线圈炮"
+	word
+		" "
+	word
+		"，亲自体验"
+		"，近距离感受"
+		"，用你自己的双手"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "high houses hostile hail"
+	word
+		"尔等虚伪诡诈，已达恶行之极，"
+		"尔等之声名，皆建于怯懦之上，"
+		"如今方知，昔日信赖于尔实乃吾等愚盲；"
+		"尔已昭然自证实乃小人与怯徒；"
+		"怯懦者在死期降临前，早已死过无数次，"
+	word
+		" / "
+	word
+		"吾等之天职，便是剥夺尔之性命。"
+		"愿尔于死亡之中，得享生前所缺之安宁。"
+		"愿尔之死英勇而迅速。"
+		"愿尔于死亡之中，能悔悟自身之过错。"
+		"如今吾等已彻底洞悉尔之险恶。"
+		"愿尔那狡诈无耻之心就此停止跳动。"
+		"勇士一生只品尝一次死亡。"
+
+
+phrase "high houses hostile hail"
+	word
+		"履行此等庄严职责，非我等所乐，"
+		"汝之恶毒，必以我等之决心相迎："
+		"终结汝之残暴，正是我等庄严之职责："
+	word
+		" / "
+	word
+		"我等定让汝之死亡迅速而无痛。"
+		"我等之荆棘，必萌发于汝叛逆之血肉。"
+		"愿汝之死亡英勇而迅速。"
+		"愿汝之痛苦剧烈而迅速。"
+
+
+phrase "high houses hostile disabled hail" 2
+	word
+		"万恶的恶狗，我们的复仇终将降临于你！"
+		"复仇这道菜，放凉了吃才最香，"
+		"你能击碎我们的飞船，却绝无法摧毁我们的意志！"
+		"去腐烂生脓吧，奸诈的小人！"
+		"登舰吧，我们将战斗至最后一刻！"
+	word
+		" / "
+	word
+		"我们的友人必将为你的残暴报仇雪恨！"
+		"愿你腐烂的肉身在烈火中化为灰烬！"
+		"我们的友人终会让你尝到恐惧的滋味。"
+		"你唯一称得上高尚的举动，就是去死。"
+
+
+phrase "high houses hostile disabled hail"
+	word
+		"自虚空核心，吾等刺向汝！/为仇恨之善，吾辈吐尽残息于汝！" # Moby-Dick
+		"懦夫生前已死千回，/勇者仅尝死亡一次！" # Julius Caesar, Act 2, Scene 2
+		"悲哉，毁灭、倾覆与腐朽；/最恶不过是死亡，而死亡终有出头之日。" # Richard II, Act 3, Scene 2
+		"恶犬，退后，否则便拥抱汝之死亡；/莫踏入吾怒火所及之界。" # The Two Gentlemen of Verona, Act 5, Scene 4
+		"而一场安眠，我们就此终结/心中之痛，以及血肉之躯所承的/千百种天然冲击。" # Hamlet, Act 3, Scene 1
+
+# High Houses: Old Houses
+
+phrase "old houses friendly hail" # Boast hails
+	word
+		"那群"
+	word
+		" "
+	word
+		"铁臂"
+		"长枪"
+		"宝剑"
+		"坚盾"
+		"精锐"
+		"翘楚"
+	word
+		" "
+	word
+		"属于老星族，"
+	word
+		" "
+	word
+		"以"
+		"凭"
+	word
+		" "
+	word
+		"喜悦"
+		"自豪"
+		"力量"
+		"荣耀"
+	word
+		" "
+	word
+		"立身；"
+	word
+		" / "
+	word
+		"此乃吾等引以为傲的朴素真理。"
+		"此乃众人皆见的坦诚事实。"
+		"此乃吾等满心欢喜的朴素真理。"
+		"此乃吾等光明磊落的坦荡真理。"
+		"此乃吾等怀着至臻喜悦坚守的地位。"
+		"此乃吾等绝不辜负的至高荣耀。"
+		"此乃言行一致、纯粹坦荡的至乐。"
+
+
+phrase "old houses friendly hail" 10
+	phrase
+		"high houses friendly hail"
+
+
+phrase "chydiyi friendly hail" 7
+	phrase
+		"old houses friendly hail"
+
+
+phrase "chydiyi friendly hail"
+	word
+		"共享奇迪伊家族的遮护天穹"
+		"承蒙遮护天穹之恩而翱翔"
+	word
+		", / "
+	word
+		"其"
+		"吾等"
+	word
+		" "
+	word
+		"舰队"
+		"舰船"
+		"飞船"
+	word
+		" "
+	word
+		"乃是其中的云彩"
+		"宛如其间的璀璨星环"
+		"乃是其中的咆哮风暴"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "myurej friendly hail" 6
+	phrase
+		"old houses friendly hail"
+
+
+phrase "myurej friendly hail"
+	word
+		"莫拘于"
+	word
+		" "
+	word
+		"世事兴衰"
+		"进退纷扰"
+		"浪潮呼息"
+		"昔日伤痛"
+	word
+		"里，"
+	word
+		"消长变幻"
+		"恐惧束缚"
+		"过往阴影"
+	word
+		", / "
+	word
+		"拭亮你的双眼"
+		"自豪地高昂起头"
+		"向着前方张开双臂"
+		"激发你的意志"
+		"放飞你的灵魂"
+	word
+		"里，"
+	word
+		"沐浴这高贵的一日"
+		"共享今日之欢愉"
+		"愿你所求皆获成功"
+		"体味你角色的乐趣"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "myurej friendly hail"
+	word
+		"来自"
+	word
+		"缪雷吉"
+		"显赫的缪雷吉"
+		"亲爱的缪雷吉"
+	word
+		"家族的繁茂之臂，"
+	word
+		"向你递出"
+		"为你献上"
+	word
+		"这份"
+	word
+		"友谊"
+		"和平"
+		"援助"
+		"和睦"
+	word
+		". / "
+	word
+		"尔可按需接纳。"
+		"若需相助，只需发声呼唤。"
+		"此乃我等高贵立下的承诺。"
+	
+
+phrase "sioeora friendly hail" 7
+	phrase
+		"old houses friendly hail"
+
+
+phrase "sioeora friendly hail"
+	word
+		"那群"
+	word
+		" "
+	word
+		"熠熠生辉的"
+		"卓越绝伦的"
+		"完美无瑕的"
+		"精妙绝伦的"
+	word
+		" "
+	word
+		"飞船"
+		"舰艇"
+		"器械"
+		"武备"
+	word
+		"属于"
+	word
+		"我们高贵的家族"
+		"光辉的西奥拉"
+		"双月家族"
+	word
+		" / "
+	word
+		"随时准备提供协助"
+		"皆以冠绝群伦而闻名"
+		"绝不姑息心怀恶念之徒"
+		"皆是我等乐于调遣之物"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+# High Houses: New Houses
+
+phrase "new houses friendly hail" # Boast hails
+	word
+		"那群"
+	word
+		" "
+	word
+		"吾等乃强臂，"
+		"吾等乃锋矛，"
+		"吾等乃利剑，"
+		"吾等乃坚盾，"
+		"吾等乃翘楚，"
+		"吾等乃精锐，"
+	word
+		" "
+	word
+		"于新世家"
+	word
+		" "
+	word
+		"欢欣之中"
+		"自豪之中"
+		"喜悦之中"
+	word
+		" "
+	word
+		"立身；"
+	word
+		" / "
+	word
+		"此乃吾等引以为傲之朴素真理。"
+		"此乃众人昭然可见之坦诚事实。"
+		"此乃吾等深感欢欣之朴素真理。"
+
+
+phrase "new houses friendly hail" 10
+	phrase
+		"high houses friendly hail"
+
+
+phrase "kaatrij friendly hail" 6
+	phrase
+		"new houses friendly hail"
+
+
+phrase "kaatrij friendly hail"
+	word
+		"我等身披薄纱双翼，亦握獠牙利爪。"
+		"愿汝能认清自身的万千面相。"
+		"铭记逝者，不论今朝与往昔。"
+		"我等同心坚守，自古至今。"
+		"莫窥莫索，从今乃至永恒。"
+		"我等守望、维系，永不停息。"
+	word
+		" / "
+	word
+		"我等高贵名门因而得以自由翱翔。"
+		"在团结之中，我等寻得力量。"
+		"愿汝如汝之美德般时刻保持警惕。"
+
+
+phrase "kaatrij friendly hail"
+	word
+		"那群"
+	word
+		" "
+	word
+		"基吉兰"
+		"融合"
+		"羽翼"
+		"翼眼"
+	word
+		"家族"
+	word
+		"向您问候"
+		"注视着您"
+		"注视并记录着您"
+		"向您致敬"
+	word
+		" thee, "
+	word
+		"旅人"
+		"船长"
+		"异星人"
+		"飞行员"
+		"贵客"
+	word
+		". / "
+	word
+		"愿您常怀"
+		"愿您得享"
+	word
+		" "
+	word
+		"清明"
+		"谨慎"
+		"顺遂"
+		"正直"
+	word
+		" "
+	word
+		"于旅途之中。"
+		"于征途之上。"
+
+
+phrase "seineq friendly hail"
+	phrase
+		"new houses friendly hail" 7
+
+
+phrase "seineq friendly hail"
+	word
+		"在"
+	word
+		" "
+	word
+		"生机盎然的"
+		"持久的"
+		"辉煌的"
+		"熠熠生辉的"
+	word
+		" "
+	word
+		"和平"
+	word
+		" "
+	word
+		"与"
+		"伴随着"
+	word
+		" "
+	word
+		"光彩夺目的"
+		"充满激情的"
+		"目光睿智的"
+	word
+		" "
+	word
+		"自豪中"
+	word
+		", / "
+	word
+		"新派世家"
+		"我们高贵的世家"
+		"伟大的塞内克家族"
+		"显贵派"
+		"双重缠绕之环"
+	word
+		" "
+	word
+		"正"
+	word
+		" "
+	word
+		"长存并繁荣"
+		"宣告着成功"
+		"彰显着我等的才干"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+
+phrase "aqrabe friendly hail" 6
+	phrase
+		"new houses friendly hail"
+
+
+phrase "aqrabe friendly hail"
+	word
+		"谨听"
+		"牢记"
+		"莫忽视"
+		"莫轻视"
+	word
+		" "
+	word
+		"那"
+		"吾等"
+	word
+		" "
+	word
+		"尊贵的"
+		"庄严的"
+		"睿智的"
+	word
+		"圣者——"
+		"典范——"
+	word
+		"明晰"
+		"聪慧"
+		"认知"
+		"家族"
+		"诚信"
+		"谦逊"
+		"勤勉"
+		"团结"
+		"财富"
+	word
+		": / "
+	word
+		`“切勿喂养惰怠之巨口。”`
+		`“繁荣自会彰显美德。”`
+		`“力量乃美德之依凭。”`
+		`“坚韧乃成功之胚芽。”`
+		`“炫耀乃虚假之皮囊。”`
+		`“安宁乃繁荣之保障。”`
+		`“非利器无以致改善。”`
+		`“当使黄金为织线，而非雕像。”`
+
+
+phrase "aqrabe friendly hail"
+	word
+		"吾等乃阿克拉贝"
+		"尊贵的阿克拉贝家族"
+	word
+		"里，"
+	word
+		"伊杰高塔"
+		"新派忠诚阵营"
+	word
+		"：绝无"
+	word
+		"恶徒"
+		"凶徒"
+		"奸邪"
+	word
+		" "
+	word
+		"能"
+		"可以"
+		"能够"
+	word
+		" "
+	word
+		"逃脱"
+		"规避"
+		"躲避"
+	word
+		"吾等的"
+	word
+		"怒火"
+		"目光"
+		"掌控"
+		"威严"
+	word
+		"愿意砸多少钱。"
+		"而战！"
+
+# People's Houses
+
+phrase "people's houses friendly hail"
+	word
+		"欢庆尔等的自由与坚忍吧。"
+		"我对你绝无伤害或恶念。"
+		"我们高举反抗压迫的自由旗帜。"
+		"民舍提供真正的平等。"
+	word
+		" / "
+	word
+		"摆脱贵族枷锁，自由生活。"
+		"不受沉闷世俗的束缚。"
+		"民舍随时准备提供协助。"
+
+phrase "people's houses hostile hail"
+	word
+		"你这无耻小人，行事与名号竟一般卑劣！？"
+		"你不过是权势手下一名愚蠢的奴仆！"
+		"你莫非对世间苦难视听皆闭，抑或本就纯粹邪恶？"
+		"若你肯抛下货物，我们自会离去。"
+		"凡甘愿抛下货物者，绝不受半分伤害。"
+		"论择友与行事，你皆是这般无耻！"
+	word
+		" / "
+	word
+		"你的鲜血将染红你的飞船舱壁。"
+		"凡抗拒者，皆格杀勿论。"
+		"愿你的痛苦深重绵长，永无止境。"
+		"就由我来帮你解脱这凡俗之躯。"
+		"准备告别你这身尘世皮囊吧。"
+		"死神那猝不及防的巨手定会合上你的双眼。"

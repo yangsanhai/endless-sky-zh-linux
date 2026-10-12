@@ -1,0 +1,960 @@
+# Copyright (c) 2015 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+conversation "assisting merchant"
+	`${assist merchant 1} <origin>${assist merchant 2} ${assist merchant 3} <payment>${assist merchant 4}`
+		decline
+
+conversation "assisting merchant hazardous"
+	`${assist merchant 1 hazardous} <origin>${assist merchant 2} ${assist merchant 3} <payment>${assist merchant 4}`
+		decline
+
+mission "Assisting Merchant (Small)"
+	assisting
+	repeat
+	minor
+	to offer
+		random < 20
+	source
+		government "Merchant"
+		category "Interceptor" "Light Warship" "Transport" "Light Freighter"
+		not attributes "automaton"
+	on offer
+		payment 10000
+		conversation "assisting merchant"
+	# A mission with no destination will not be offered, so give it one.
+	# What the destination is doesn't matter, because you always 'decline' this.
+	destination "Earth"
+
+mission "Assisting Merchant (Medium)"
+	assisting
+	repeat
+	minor
+	to offer
+		random < 15
+	source
+		government "Merchant"
+		category "Medium Warship" "Heavy Freighter"
+		not attributes "automaton"
+	on offer
+		payment 20000
+		conversation "assisting merchant"
+	destination "Earth"
+
+mission "Assisting Merchant (Large)"
+	assisting
+	repeat
+	minor
+	to offer
+		random < 10
+	source
+		government "Merchant"
+		category "Heavy Warship"
+		not attributes "automaton"
+	on offer
+		payment 30000
+		conversation "assisting merchant"
+	destination "Earth"
+
+phrase "assist merchant 1"
+	phrase
+		"assist merchant 1-1"
+	phrase
+		"assist merchant 1-2"
+	phrase
+		"assist merchant 1-3"
+
+phrase "assist merchant 1 hazardous"
+	phrase
+		"assist merchant 1-1"
+	phrase
+		"assist merchant 1-2 hazardous"
+	phrase
+		"assist merchant 1-3"
+
+phrase "assist merchant 1-1"
+	word
+		`得知`
+		`鉴于`
+		`了解到`
+		`考虑到`
+		`眼见`
+		`深知`
+
+phrase "assist merchant 1-2"
+	word
+		`您改变了航向 `
+		`您特意绕道 `
+		`您可能改变了自己的飞行计划 `
+
+phrase "assist merchant 1-2 hazardous"
+	word
+		`你冒着生命危险`
+		`你冒着牺牲飞船的风险`
+		`你冒着损失自己飞船的风险`
+		`你顶着敌人的炮火`
+		`你不顾危险`
+
+phrase "assist merchant 1-3"
+	word
+		`前去` 4
+		`为了` 2
+		`只为能够`
+	word
+		`拯救`
+		`维修`
+		`救援`
+		`保全`
+		`协助`
+		`帮助`
+	word
+		`那`
+
+phrase "assist merchant 2"
+	phrase
+		`assist merchant 2 simple` 2
+		`assist merchant 2 complex`
+
+phrase "assist merchant 2 simple"
+	word
+		`里，`
+
+phrase "assist merchant 2 complex"
+	word
+		`并`
+	word
+		`挽救其货物，`
+		`保全其货物，`
+		`拯救其船员，`
+		`解救其船员，`
+
+phrase "assist merchant 3"
+	word
+		`该舰的`
+		`是`
+		`飞船的`
+		`船只的`
+	word
+		`` 4
+		`松了一口气的`
+	word
+		`船长`
+	word
+		`给了你 `
+		`向你奉上 `
+		`酬谢你 `
+
+phrase "assist merchant 4"
+	word
+		`愿意砸多少钱。` 5
+		` ，以示感谢。`
+		` ，以示谢意。`
+		` ，以表达他们的感激之情。`
+		` ，以示感谢。`
+		` ，作为感谢。`
+		` ，感谢您的帮助。`
+
+
+
+mission "Asteroid Course"
+	assisting
+	minor
+	name "乘客送往<planet>"
+	description "将一艘被毁船只的剩余船员（曾在 <origin> 上工作的 <bunks> 人）运送至 <destination>。"
+	to offer
+		random < 6
+	source
+		government "Merchant" "Syndicate"
+		category "Light Freighter" "Interceptor"
+		not attributes "automaton"
+	passengers 3 7
+	destination
+		distance 1 3
+		not government "Pirate"
+		attributes shipyard
+	on offer
+		conversation
+			`当你接近 <origin> 时，你的雷达传感器探测到你正在协助的飞船即将被一颗巨大的小行星撞击！虽然在正常飞行中这不会造成太大麻烦，但一艘已经遭受重创且无法躲避的飞船可能会被彻底摧毁。`
+			branch unarmed
+				not "armament deterrence"
+			choice
+				`	（射击小行星。）`
+					goto fire
+				`	（操纵我的飞船为<origin>提供掩护。）`
+					goto move
+				`	（尝试修理<origin>，使其能够躲避小行星。）`
+					goto repair
+				`	（中断对接操作并飞离。）`
+					goto escape
+			label unarmed
+			choice
+				`	（操纵我的飞船为<origin>提供掩护。）`
+					goto move
+				`	（尝试修理<origin>，使其能够躲避小行星。）`
+					goto repair
+				`	（中断对接操作并飞离。）`
+			label escape
+			`	你调转船头，启动推进器，试图尽可能远离那艘瘫痪的飞船。几秒钟后，小行星撞上了 <origin>，将其撕成碎片，导致所有船员遇难，而小行星的表面仅留下一道划痕。`
+				depart
+			label fire
+			branch success
+				random < 50
+			`	你向小行星开火，试图摧毁它，但看来你只是让情况变得更糟。小行星现在碎裂成了几十个较小的碎块，仍然直直朝 <origin> 飞去。在你来不及反应并弥补失误之前，大部分碎块已经击中了 <origin>，飞船随即开始迅速失压。除了退到安全距离外，你对那艘正在爆炸的飞船已无能为力……`
+				depart
+			label success
+			`	你射出的炮弹迅速将小行星击碎，碎块的方向似乎发生了足够大的偏转，得以完全避开 <origin>。在修好飞船后，你呼叫了它的船长，对方对你表示感谢，并支付了 30,000 信用点。`
+				decline
+			label repair
+			branch crew
+				random < 40
+			`	你与 <origin> 对接，希望能活着逃出生天，但当你刚到达舱门时，小行星就撞了上来，那艘瘫痪的飞船开始发生一连串爆炸。你设法回到了自己的驾驶舱并脱离对接，但另一艘船上的船员却没能及时转移到你的飞船上……`
+				depart
+			label crew
+			`	你与 <origin> 对接，希望能活着逃出生天，但当你刚到达舱门时，小行星就撞了上来，那艘瘫痪的飞船开始发生一连串爆炸。不过，在脱离对接之前，另一艘飞船上的大部分船员已经成功转移到了你的船上，他们请求你带他们前往 <destination>。`
+			choice
+				`	"好吧，不远。"`
+					launch
+				`	“你们能付我多少钱？”`
+			`	"我有几十万信用点，"其中一人说道，大概是船长。"我得存够钱买一艘新星舰，但你仍然会得到一笔不错的报酬。"`
+				launch
+			label move
+			`	小行星在撞击了你的护盾后，碎裂成无数碎片并飞离了 <origin>。在修好飞船后，你呼叫了它的船长，对方对你表示感谢，并支付了 30,000 信用点。`
+				decline
+	on decline
+		payment 30000
+	on complete
+		payment
+		payment 35000
+		dialog "之前与你交谈过的船长再次感谢你救了他和他的船员，然后递给你 <payment>。"
+
+
+
+mission "Dangerous Journey"
+	assisting
+	minor
+	name "运送至<planet>"
+	description "将<cargo>运送到<destination>。报酬为<payment>。"
+	to offer
+		random < 10
+	source
+		government "Merchant"
+		category "Light Freighter" "Heavy Freighter"
+		not attributes "automaton"
+	destination
+		government "Republic" "Syndicate" "Free Worlds"
+		attributes "frontier"
+		distance 2 3
+	cargo random 5 2 .1
+	on offer
+		conversation
+			`当你修好 <origin> 时，船长呼叫了你。"这是我过去一周里第四次做这活差点送命！来，把这个 <cargo> 送到 <destination>，帮我把这活干完。他们说报酬是 <payment>。"`
+			choice
+				`	（接收货物。）`
+					accept
+				`	（不接收货物。）`
+			`	船长开始大声咒骂，于是你切断了信号。希望他们能安然无恙地抵达目的地。`
+				decline
+	on complete
+		payment 7500
+		dialog `你卸下了运送的<commodity>，向对方解释起初接下这趟差事的商人如何退出并将货物交给了你，随后领取了<payment>的报酬。`
+
+
+
+conversation "assisting law enforcement"
+	`<origin>号的船长感谢你为他们进行了修复，但告知你，使他们瘫痪的海盗只是攻击<destination>的舰队中的一小部分。`
+	`	如果你协助<planet>当局，他们很可能会支付你一笔丰厚的报酬，但这也很容易让你白白送命。`
+	choice
+		`	（不参与战斗。）`
+			decline
+		`	（加入防御舰队。）`
+			accept
+
+mission "Assisting Free Worlds"
+	assisting
+	repeat
+	minor
+	name "保卫 <planet>"
+	description "击退袭击<destination>的海盗。"
+	to offer
+		"combat rating" > 100
+		random < 5
+	source
+		government "Free Worlds"
+		not category "Fighter" "Drone"
+		not attributes "automaton"
+	destination
+		government "Free Worlds"
+		distance 2 4
+	on offer
+		conversation "assisting law enforcement"
+	npc kill
+		government "Pirate"
+		personality heroic staying target harvests plunders
+		system destination
+		fleet "Large Southern Pirates" 2
+		fleet "Small Southern Pirates"
+	npc
+		government "Free Worlds"
+		personality heroic staying
+		system destination
+		fleet "Large Free Worlds"
+	on complete
+		payment 150000
+		dialog phrase "generic pirate attack payment dialog"
+
+mission "Assisting Republic"
+	assisting
+	repeat
+	minor
+	name "保卫 <planet>"
+	description "击退袭击<destination>的海盗。"
+	to offer
+		"combat rating" > 100
+		random < 5
+	source
+		government "Republic"
+		not category "Fighter" "Drone"
+		not attributes "automaton"
+	destination
+		government "Republic"
+		distance 2 4
+	on offer
+		conversation "assisting law enforcement"
+	npc kill
+		government "Pirate"
+		personality heroic staying target harvests plunders
+		system destination
+		fleet "Large Northern Pirates" 2
+		fleet "Small Northern Pirates"
+	npc
+		government "Republic"
+		personality heroic staying
+		system destination
+		fleet "Small Republic" 2
+	on complete
+		payment 150000
+		dialog phrase "generic pirate attack payment dialog"
+
+mission "Assisting Deep Security"
+	assisting
+	repeat
+	minor
+	name "保卫 <planet>"
+	description "击退袭击<destination>的海盗。"
+	to offer
+		"combat rating" > 100
+		random < 5
+	source
+		government "Deep Security"
+		not category "Fighter" "Drone"
+		not attributes "automaton"
+	destination
+		attributes "deep"
+		distance 2 4
+	on offer
+		conversation "assisting law enforcement"
+	npc kill
+		government "Pirate"
+		personality heroic staying target harvests plunders
+		system destination
+		fleet "Large Northern Pirates" 2
+		fleet "Small Northern Pirates"
+	npc
+		government "Deep Security"
+		personality heroic staying
+		system destination
+		fleet "Large Deep Security"
+	on complete
+		payment 150000
+		dialog phrase "generic pirate attack payment dialog"
+
+mission "Assisting Syndicate"
+	assisting
+	repeat
+	minor
+	name "保卫 <planet>"
+	description "击退袭击<destination>的海盗。"
+	to offer
+		"combat rating" > 100
+		random < 5
+	source
+		government "Syndicate"
+		not category "Fighter" "Drone"
+		not attributes "automaton"
+	destination
+		government "Syndicate"
+		distance 2 4
+	on offer
+		conversation "assisting law enforcement"
+	npc kill
+		government "Pirate"
+		personality heroic staying target harvests plunders
+		system destination
+		fleet "Large Core Pirates" 2
+		fleet "Small Core Pirates"
+	npc
+		government "Syndicate"
+		personality heroic staying
+		system destination
+		fleet "Large Syndicate"
+	on complete
+		payment 150000
+		dialog phrase "generic pirate attack payment dialog"
+
+
+
+conversation "boarding pirate"
+	`你对<origin>号的装备和货物进行了短程扫描。在货物中，你发现了一箱价值<payment>的信用芯片。你把这个箱子拖回自己的飞船，接着考虑下一步的行动。`
+		decline
+
+mission "Boarding Pirate (Small)"
+	boarding
+	repeat
+	minor
+	to offer
+		random < 7
+	source
+		government "Pirate"
+		category "Interceptor" "Light Warship" "Transport" "Light Freighter"
+	on offer
+		payment 50000
+		conversation "boarding pirate"
+	destination "Earth"
+
+mission "Boarding Pirate (Medium)"
+	boarding
+	repeat
+	minor
+	to offer
+		random < 5
+	source
+		government "Pirate"
+		category "Medium Warship" "Heavy Freighter"
+	on offer
+		payment 100000
+		conversation "boarding pirate"
+	destination "Earth"
+
+mission "Boarding Pirate (Large)"
+	boarding
+	repeat
+	minor
+	to offer
+		random < 3
+	source
+		government "Pirate"
+		category "Heavy Warship"
+	on offer
+		payment 150000
+		conversation "boarding pirate"
+	destination "Earth"
+
+
+
+mission "Pirate Ambush"
+	invisible
+	boarding
+	repeat
+	minor
+	deadline 1
+	to offer
+		"combat rating" > 100
+		random < 5
+	source
+		government "Pirate"
+		category "Interceptor" "Light Warship" "Transport" "Light Freighter"
+		not attributes "automaton"
+	on offer
+		conversation
+			`你登上了<origin>号，但舱内没有发现任何船员。当你到达驾驶舱时，望向太空，看到一个逃生舱正渐渐漂远。<origin>号正在向附近的海盗发送求救信号，自毁程序也已启动！你急忙跑回自己的飞船，准备迎战。`
+				launch
+	destination "Earth"
+	npc kill
+		government "Pirate"
+		personality nemesis harvests plunders entering
+		fleet "pirate raid" 2
+
+
+
+mission "Pirate Mutiny"
+	boarding
+	minor
+	description "将 <bunks> 名前海盗船员送往 <destination>。"
+	to offer
+		random < 10
+	source
+		government "Pirate"
+		category "Medium Warship" "Heavy Warship"
+		not attributes "automaton"
+	destination
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
+		distance 2 4
+	passengers 10 20
+	on offer
+		conversation
+			`当你登上<origin>号时，发现大多数船员都已丧命。一名幸存的船员向你走来，他高举双手，看起来还是个不超过16岁的少年。他解释说，在飞船瘫痪后，一部分船员决定推翻暴虐的船长。他接着诉说道，大多数海盗船员其实都是被迫在船上做苦役。幸存的 <bunks> 名船员恳求你带他们前往 <destination>，以便逃离海盗的奴役。`
+			`	战斗似乎对飞船造成了无法修复的损伤。如果你把这些海盗留在这里，这艘船在太空中恐怕撑不了多久。`
+			choice
+				`	（帮助海盗船员。）`
+					launch
+				`	（丢下海盗船员。）`
+					flee
+	on complete
+		payment 25000
+		dialog `海盗船员们感谢你将他们带到 <planet>。其中一人递给你一小笔数额为 <payment> 的报酬。你祝愿他们在新生活中一切顺利，随后与他们道别。`
+
+
+
+mission "Slave Crew Rescue"
+	invisible
+	assisting
+	deadline 1
+	passengers 1
+	to offer
+		random < 10
+	source
+		government "Merchant"
+		category "Heavy Freighter"
+		not attributes "automaton"
+	destination "Earth"
+	on offer
+		conversation
+			branch "boarding alone" "boarding with a big boarding party"
+				"flagship crew" < 3
+
+			label "boarding alone"
+			branch "flagship is empty" "first mate left on flagship"
+				"flagship crew" == 1
+
+			label "flagship is empty"
+			`你将飞船空置，独自登上 <origin> 号。虽然你并不预料会有危险，但独自一人待在一艘陌生且瘫痪的飞船上，你仍感到有些不安，因此特意带上了一把随身武器。当你意识到听不到任何手忙脚乱的动静，也看不到任何船员像你预想的那样四处奔忙抢修受损部位时，你的不安感愈发强烈。在走向舰桥的途中，你看到只有一个英俊、衣着得体的年轻人在焊接舱壁，顿时松了一口气。他的动作娴熟灵巧，但你老练的眼光看得出那面舱壁已受损严重、无法修复，他的工作只是徒劳。他抬起头，自我介绍是塔奎因船长，并出价 350,000 信用点，请求你这位专家协助修理他的飞船。`
+				goto "first decision"
+
+			label "first mate left on flagship"
+			`你让大副负责看管自己的飞船，独自登上 <origin> 号。虽然你并不预料会有危险，但独自一人待在一艘陌生且瘫痪的飞船上，你仍感到有些不安，因此特意带上了一把随身武器。当你意识到听不到任何手忙脚乱的动静，也看不到任何船员像你预想的那样四处奔忙抢修受损部位时，你的不安感愈发强烈。在走向舰桥的途中，你看到只有一个英俊、衣着得体的年轻人在焊接舱壁，顿时松了一口气。他的动作娴熟灵巧，但你老练的眼光看得出那面舱壁已受损严重、无法修复，他的工作只是徒劳。他抬起头，自我介绍是塔奎因船长，并出价 350,000 信用点，请求你这位专家协助修理他的飞船。`
+				goto "first decision"
+
+			label "boarding with a big boarding party"
+			`当你的登船队登上 <origin> 号时，你意识到听不到任何手忙脚乱的动静，也看不到任何船员像你预想的那样四处奔忙抢修受损部位。在走向舰桥的途中，迎接你的是一个英俊、衣着得体的年轻人在焊接舱壁。他的动作娴熟灵巧，但你老练的眼光看得出那面舱壁已受损严重、无法修复，他的工作只是徒劳。他抬起头，自我介绍是塔奎因船长，并出价 350,000 信用点，请求你这位专家协助修理他的飞船。`
+
+			label "first decision"
+			choice
+				`	（接受这笔慷慨的报酬并协助修理。）`
+					accept
+				`	“虽说不该对送上门的好处挑三拣四，但你为什么会出这么多钱请我帮忙？”`
+					goto probe
+				`	“能让你的船员也来帮帮忙吗？”`
+					goto "crew missing"
+				`	“这么大的一艘飞船，不应该有更多的船员吗？”`
+					goto "crew missing"
+
+			label probe
+			`	塔奎因有些尴尬地笑了笑。“老实说，我现在有点心急如焚，”他说。“我的货舱里装满了易腐货物，必须在三天内送达给一位非常重要的客户，如果赶不上期限，他很可能就不会再跟我做生意了。我本以为雇些没有经验的乡下人当船员能省点钱，但如你所见，这事办砸了。他们甚至到现在还缩在自己的舱室里。我把我因为抠门省下来的利润全都给你，就当是花钱买个教训吧。”`
+				goto "get to work"
+
+			label "crew missing"
+			`	塔奎因爽朗地笑了。“那帮人？他们是我在新印度招来的一群土包子，现在正躲在舱室里呢。那些乡巴佬没见过这种危险，也没什么技术活的底子。怪我自己太抠门，舍不得花钱雇得力的帮手吧。等我们摆脱这个麻烦，我肯定要招募些更有经验、更可靠的船员。”`
+
+			label "get to work"
+			`	“我们现在可以开始干活了吗？”`
+			choice
+				`	（开始修理飞船。）`
+					accept
+				`	（继续追问。）`
+			`	塔奎因船长的解释让你感到有些不对劲，于是你继续提问以分散他的注意力，同时悄悄向飞船的船员舱走去。随着你逐渐走近，你开始隐约听到有人敲击墙壁并呼救的声音。塔奎因脸上流露出一种近乎诡异的毫无波澜的表情，但他的身体十分紧绷，仿佛每一块肌肉都同时绷紧了。`
+			choice
+				`	“我想我们走错路了。这就去修理你的飞船吧。”`
+					goto coward
+				`	“现在我明白你这飞船是干什么勾当的了，不过别担心，大家都是自己人。修理费就不收你的了。”`
+					goto "trickster or monster"
+				`	“我可以帮你，但价钱得涨到 1,000,000 信用点，否则我就把你丢在这儿，并且去向当局举报你开的是一艘奴隶船。”`
+					goto blackmailer
+				`	“我要求你立刻释放你的奴隶。”`
+					goto "the direct approach"
+				`	（立即攻击他。）`
+					goto "attack but tarquin is prepared"
+
+			label coward
+			`	“好的，就这么办，”塔奎因回答。然而，他那友善的态度已荡然无存，整个人像钢缆一样紧绷。你们在死寂般沉默中干活，在 <origin> 号重新恢复运转后，你尴尬地收下了你的报酬。`
+			action
+				set "tarquin hates you"
+			`	当你安全地回到自己的飞船上时，你松了一口气，庆幸整个风波终于结束了。`
+				accept
+
+			label "trickster or monster"
+			`	塔奎因放松下来。“在这片不友好的星系中，能遇到志同道合的船长真是太难得了，”他说。“我绝不会白占你修理飞船的便宜。这笔钱你务必收下，我坚持。”`
+			choice
+				`	（现在去修他的船。）`
+					accept
+				`	（趁其不备出手攻击他。）`
+					goto "attack with the element of surprise"
+
+			label "attack with the element of surprise"
+			branch "attack alone with the element of surprise" "attack with a big boarding party"
+				"flagship crew" < 3
+
+			label "attack but tarquin is prepared"
+			branch "attack alone but tarquin is prepared" "attack with a big boarding party"
+				"flagship crew" < 3
+
+			label "attack alone with the element of surprise"
+			`	你以最快的速度拔出了武器。`
+			branch "good luck" "bad luck"
+				random < 80
+
+			label "attack alone but tarquin is prepared"
+			branch "good luck" "bad luck"
+				random < 40
+
+			label "attack with a big boarding party"
+			`	塔奎因根本无法凭一己之力抗衡你整个登船队，很快便缴械投降。尽管他脸上依然面无表情，但双眼中却闪烁着冰冷的怒火。`
+			choice
+				`	（就地处决他。）`
+					goto execution
+				`	（将他押作俘虏。）`
+			branch "has brig"
+				has "outfit (flagship installed): Brig"
+
+			`	你命令一名登船队员把他绑起来并严加看守。在你搜身时，塔奎因一边恶狠狠地咒骂，一边拼命挣扎。你从他身上搜出了一把藏着的手枪、一把小刀，以及他原本打算用来付给你的信用点芯片。接着，你动身前去解救这艘飞船的船员。`
+			`	船员舱已被改造成了带有坚固门锁的监牢。由于没有明显的开锁方法，你和你的同伴们只得开始动手将舱门强行炸开。`
+			`	突然，刺耳的警报器以断续的尖叫声打破了吵闹。飞船的自毁程序已经启动！你急忙冲回先前关押塔奎因的舱室，却发现他不知怎么已经脱逃。留在原处的只有一名处于昏迷状态的己方队员，其脸上留有一道深深的割伤——显然是方才被塔奎因身上你未能搜出来的另一件隐藏武器所伤。附近的控制面板显示一艘逃生舱已被弹射了出去。`
+			`	飞船将在不到 30 秒内爆炸。你痛苦地意识到，自己根本没有可能来得及释放那些囚犯，执意尝试只会让所有人白白送命。你和你的登船队员只得满腔怒火地撤回己方飞船，并在千钧一发之际解开对接锁扣。紧接着，<origin> 号在太空中爆裂成一团残骸碎片，残忍地终结了被塔奎因船长奴役的那些受害者本就悲惨的一生。`
+			action
+				set "tarquin hates you"
+			`	你暗自发誓，如果今后彼此的道路再次交汇，这将是你最后一次低估塔奎因船长了。`
+				launch
+
+			label "has brig"
+			`	你对塔奎因进行了搜身，搜出了一把藏着的手枪、几把小刀、他原本准备支付你的信用点芯片，以及一个微型开锁器。接着，你命令一名登船队员将他押送回己方飞船的牢房关起来。在枪口的逼迫下，塔奎因一路被押解着，嘴里还恶狠狠地咒骂不断。你决定稍后再行考虑如何处置他，眼下先去解救这艘飞船的船员。`
+				goto "rescue the crew with tarquin captured"
+
+			label execution
+			`	你冷酷地开枪击毙了塔奎因船长，这让你的登船队中至少有一名队员感到极度震惊。少了个垃圾，真是大快人心，你心里想着，同时搜查了前船长塔奎因的尸体。你搜出了一把藏着的手枪、几把小刀、他原本准备支付给你的信用点芯片，以及一个微型开锁器。接着你拿着它动身去解救他的船员。`
+				goto "rescue the crew"
+
+			label blackmailer
+			branch "blackmailing alone" "blackmailing with a big boarding party"
+				"flagship crew" < 3
+
+			label "blackmailing with a big boarding party"
+			`	塔奎因审视着你的登船队，冷冷地盯着你，气氛令人难堪地沉默了至少五秒钟，随后他终于做出了回应。“行，”他冷冷地说道，哪怕脸上其他部分依然平静，眼中却燃烧着几乎无法遏制的怒火。在你们小队于一片死寂中修理飞船时，他整个人依然像钢缆般紧绷着。在 <origin> 号终于重新恢复运转后，你有些尴尬地收下了属于你的报酬。`
+			action
+				set "tarquin hates you"
+			`	当你安全地回到自己的飞船上时，你松了一口气，庆幸整个风波终于结束了。`
+				decline
+
+			label "blackmailing alone"
+			`	“要让我被一个愚蠢到独自登上瘫痪飞船的人勒索，简直是太阳打西边出来，”塔奎因嗤笑道。`
+				goto "attack alone but tarquin is prepared"
+
+			label "the direct approach"
+			branch "acting stupid alone" "attack with a big boarding party"
+				"flagship crew" < 3
+
+			label "acting stupid alone"
+			`	塔奎因船长仰头大笑，与此同时抽出一把暗藏的手枪朝你连开五枪——全在眨眼之间。你临终前最后的念头，是他那声东击西手段的奏效，以及自己虚张声势的愚蠢。`
+				die
+
+			label "bad luck"
+			`	说时迟那时快，他闪电般抽出一把暗藏的手枪，在你来得及反应之前就击穿了你的脊椎。你所玩的危险游戏戛然而止。`
+				die
+
+			label "good luck"
+			`	他闪电般抽出一把暗藏的手枪，但你更快。这是他这辈子犯下的最后一个错误。你搜查了前船长塔奎因的尸体，除了手枪外，还找到了几把藏在身上的飞刀、他原本打算付给你的信用芯片，以及一个微型开锁器。你带着开锁器前去解救船员。`
+				goto "rescue the crew"
+
+			label "rescue the crew"
+			`	飞船的船员舱被改造成了带有坚固门锁的牢房。幸运的是，那个开锁器打开了所有的门，近十几个因营养不良而面呈菜色的可怜人跌跌撞撞地走了出来，并向你诉说了整件事的来龙去脉：在过去的几个月里，塔奎因船长一直把他们当做奴隶关押，在飞船停放时将他们锁在舱房里，一旦他们有所抱怨，就用断食作为惩罚。看到他毫无生气的尸体横躺在甲板上，他们感到十分痛快。`
+			`	你把<origin>交给他们，然后返回自己的飞船。`
+				accept
+
+			label "rescue the crew with tarquin captured"
+			`	飞船的船员舱被改造成了带有坚固门锁的牢房。幸运的是，那个开锁器打开了所有的门，近十几个因营养不良而面呈菜色的可怜人跌跌撞撞地走了出来，并向你诉说了整件事的来龙去脉：在过去的几个月里，塔奎因船长一直把他们当做奴隶关押，在飞船停靠时将他们锁在舱房里，一旦他们有所抱怨，就用断食作为惩罚。听说他已被收监，他们感到十分痛快。`
+			action
+				set "captured tarquin"
+			`	你把<origin>交给他们，然后返回自己的飞船，琢磨着该如何处置塔奎因。`
+			`	在银河刑事司法数据库中快速查询公共数据后，发现他并未因任何罪行而被通缉。但你依然决定将他移交给最近星球的执法机关。`
+				accept
+
+	on decline
+		payment 1000000
+	on accept
+		payment 350000
+
+mission "Turn in Tarquin"
+	description "将塔奎因船长移交给最近星球上的执法部门。"
+	passengers 1
+	landing
+	to offer
+		has "captured tarquin"
+	destination "Earth"
+	on offer
+		set "turned in tarquin"
+		conversation
+			"你把塔奎因船长从禁闭室里拖出来，带到港口的警察局，呈上你宇航服摄像头记录的影像证据以及由船员整理并公证的证词，指证其奴役他人的罪行。值班警官感谢了你做出的贡献，随即将塔奎因收押。他最后朝你投来阴鸷的目光，令你脊背发凉。"
+				decline
+
+mission "Boarding Derelict"
+	boarding
+	repeat
+	invisible
+	deadline 3
+	to complete
+		never
+	source
+		government "Derelict (Boardable)"
+	destination "Earth"
+	npc
+		government "Pirate"
+		personality entering nemesis vindictive staying
+		fleet "pirate raid" 2
+	on offer
+		conversation
+			`你登上<origin>，打量着它废弃的船体，它看起来状态还算稳定。你可以冒险将其修复以获取更丰厚的利润，也可以尽可能多地拆卸回收有用物资，然后放弃剩余部分。`
+			choice
+				`	（拆解回收这艘船。）`
+					goto salvage
+				`	（尝试修理这艘船。）`
+			`	为了博取更大的收益，你决定尝试修理这艘船。`
+			choice
+				`	（先修理引擎。）`
+					goto engines
+				`	（先修理船体。）`
+					goto hull
+				`	（先修理动力系统。）`
+			branch powersurge
+				random < 80
+			`	经过一些简单的修理，你成功让飞船的动力系统恢复运转并平稳运行。`
+			choice
+				`	（接下来修理引擎。）`
+					goto engines(p)
+				`	（接下来修理船体。）`
+					goto hull(p)
+			label hull
+			branch crumple
+				random < 15
+			`	虽然花了一些时间，但你最终成功稳定了飞船的船体。在此期间，你还发现并修复了嵌入在船体内部的一些破损线路，它们原本可能会引发电涌。`
+			choice
+				`	（接下来修理引擎。）`
+					goto engines(h)
+				`	（接下来修理动力系统。）`
+					goto power(h)
+			label hull(e)
+			branch crumple
+				random < 45
+			`	虽然花了一些时间，但你最终成功稳定了飞船的船体。在此期间，你还发现并修复了嵌入在船体内部的一些破损线路，它们原本可能会引发电涌。`
+			choice
+				`	（修理动力系统。）`
+					goto power(eh)
+				`	（由于担心自己的修理反而让飞船变得更加危险，你决定逃离此处。）`
+					goto flee
+			label hull(p)
+			branch crumple
+				random < 25
+			`	虽然花了一些时间，但你最终成功稳定了飞船的船体。在此期间，你还发现并修复了嵌入在船体内部的一些破损线路，它们原本可能会引发电涌。`
+			choice
+				`	（修理引擎。）`
+					goto engines(hp)
+				`	（由于担心自己的修理反而让飞船变得更加危险，你决定逃离此处。）`
+					goto flee
+			label hull(ep)
+			branch crumple
+				random < 75
+			`	虽然花了一些时间，但你最终成功稳定了飞船的船体。在此期间，你还发现并修复了嵌入在船体内部的一些破损线路，它们原本可能会引发电涌。`
+			`	修理完毕后，你前往驾驶舱，准备看看<origin>能否在不发生爆炸的情况下顺利启动。做好了稍有不对就立刻冲向气闸的准备，你按下了启动键。`
+			branch fail
+				random < 40
+			`	飞船在轰鸣声中恢复了生机。你屏息凝神，等待着可能传来的系统爆炸声，然而什么都没有发生。成功了！这艘船现在是你的了。`
+				goto success
+			label engines
+			branch misfire
+				random < 60
+			`	在你修理引擎系统时，一个阀门突然爆开。幸运的是，副阀门是机械式的，无需电力驱动，它自动关闭并阻止了冷却剂猛烈喷出。你变得更加小心，完成了引擎的修理工作。`
+			choice
+				`	（接下来修理船体。）`
+					goto hull(e)
+				`	（接下来修理动力系统。）`
+					goto power(e)
+			label engines(h)
+			branch misfire
+				random < 60
+			`	在你修理引擎系统时，一个阀门突然爆开。幸运的是，副阀门是机械式的，无需电力驱动，它自动关闭并阻止了冷却剂猛烈喷出。你变得更加小心，完成了引擎的修理工作。`
+			choice
+				`	（修理动力系统。）`
+					goto power(eh)
+				`	（由于担心自己的修理反而让飞船变得更加危险，你决定逃离此处。）`
+					goto flee
+			label engines(p)
+			`	在你修理引擎系统时，一个阀门突然爆开。幸运的是你已经恢复了电力，这让副阀门能够自动关闭，从而阻止了冷却剂猛烈喷出。你变得更加小心，完成了引擎的修理工作。`
+			choice
+				`	（修理船体。）`
+					goto hull(ep)
+				`	（由于担心自己的修理反而让飞船变得更加危险，你决定逃离此处。）`
+					goto flee
+			label engines(hp)
+			`	在你修理引擎系统时，一个阀门突然爆开。幸运的是你已经恢复了电力，这让副阀门能够自动关闭，从而阻止了冷却剂猛烈喷出。你变得更加小心，完成了引擎的修理工作。`
+			`	修理完毕后，你前往驾驶舱，准备看看<origin>能否在不发生爆炸的情况下顺利启动。做好了稍有不对就立刻冲向气闸的准备，你按下了启动键。`
+			branch fail
+				random < 5
+			`	飞船在轰鸣声中恢复了生机。你屏息凝神，等待着可能传来的系统爆炸声，然而什么都没有发生。成功了！这艘船现在是你的了。`
+				goto success
+			label power(h)
+			branch powersurge
+				random < 5
+			`	经过一些简单的修理，你成功让飞船的动力系统恢复运转并平稳运行。`
+			choice
+				`	（修理引擎。）`
+					goto engines(hp)
+				`	（由于担心自己的修理反而让飞船变得更加危险，你决定逃离此处。）`
+					goto flee
+			label power(e)
+			branch powersurge
+				random < 55
+			`	经过一些简单的修理，你成功让飞船的动力系统恢复运转并平稳运行。`
+			choice
+				`	（修理船体。）`
+					goto hull(ep)
+				`	（由于担心自己的修理反而让飞船变得更加危险，你决定逃离此处。）`
+					goto flee
+			label power(eh)
+			branch powersurge
+				random < 15
+			`	经过一些简单的修理，你成功让飞船的动力系统恢复运转并平稳运行。`
+			`	修理完毕后，你前往驾驶舱，准备看看<origin>能否在不发生爆炸的情况下顺利启动。做好了稍有不对就立刻冲向气闸的准备，你按下了启动键。`
+			branch fail
+				random < 25
+			`	飞船在轰鸣声中恢复了生机。你屏息凝神，等待着可能传来的系统爆炸声，然而什么都没有发生。成功了！这艘船现在是你的了。`
+				goto success
+			label powersurge
+			`	通过一些简单的修理，你成功让飞船的动力系统恢复了运转。但好景不长，伴随着一阵令整艘飞船剧烈颤抖的猛烈震动，电力再次中断。在<origin>彻底解体之前，你迅速跑回了自己的飞船。`
+				depart
+			label crumple
+			`	当你正在修补一段船体时，注意到上面的一处形变正在缓慢扩大。更糟糕的是，这部分在结构上对整个船体至关重要。在<origin>彻底解体之前，你迅速跑回了自己的飞船。`
+				depart
+			label misfire
+			`	在你修理引擎系统时，一个阀门突然爆开。由于没有电力，副阀门无法关闭，导致冷却剂不受控制地喷入船舱。液体的冲击力引发了猛烈的震动，整艘飞船都随之剧烈颤抖。在<origin>彻底解体之前，你迅速跑回了自己的飞船。`
+				depart
+			label flee
+			action
+				payment 7500
+			`	由于担心自己那笨拙的修理反而把事情搞砸，你决定离这艘船远点。不过，你还是顺手拿走了修理期间找到的一些废料，它们价值<payment>。`
+			`	你的担忧果然灵验了，就在你脱离对接的瞬间，<origin>开始分崩离析。`
+				depart
+			label fail
+			`	就在它开始轰鸣着启动时，一声剧烈的爆炸震动了飞船！`
+			choice
+				`	（逃跑。）`
+			`	你开始在飞船狭窄的走廊里狂奔。各种杂物四处翻滚，接二连三的爆炸随时可能将你掀翻在地。`
+			choice
+				`	（跑进气闸。）`
+					goto run
+				`	（扑进气闸。）`
+					goto dive
+				`	（滑进气闸。）`
+			`	当你滑过地板时，爆炸在身体两侧接连发生，你确信自己飞身穿过气闸安全脱险的一幕看起来绝对像个动作片英雄。刚刚死里逃生，你不想再继续碰运气，赶忙迅速撤离。`
+				depart
+			label run
+			`	当你冲向气闸时，爆炸在身体两侧接连发生，你确信自己撞开气闸安全脱险的一幕看起来绝对像个动作片英雄。刚刚死里逃生，你不想再继续碰运气，赶忙迅速撤离。`
+				depart
+			label dive
+			`	当你扑向气闸时，爆炸在身体两侧接连发生，你确信自己团身翻滚穿过气闸安全脱险的一幕看起来绝对像个动作片英雄。刚刚死里逃生，你不想再继续碰运气，赶忙迅速撤离。`
+				depart
+			label success
+			branch beacon
+				random < 15
+			branch virus
+				random < 5
+				"credits" > 1000000
+			action
+				payment 65000
+			`	尽管你竭尽全力，这艘飞船就是无法起飞。好在现在你可以气定神闲地在船上搜刮，顺走任何你想要的装备。在离开驾驶舱前，你还在控制面板上发现了一张价值<payment>的信用芯片。`
+				decline
+			label beacon
+			`	然而，你注意到飞船控制面板上有一盏闪烁的警示灯。你一边走近一边纳闷这代表着什么信号，直到凑近了才发现，它在警告有“敌对飞船”正进入该星系。这艘废弃船只显然是个海盗陷阱，更糟糕的是，飞船似乎被设定了自爆！在你急忙跑回自己飞船的路上，你大概猜到了这究竟是怎么一回事。`
+				launch
+			label virus
+			action
+				payment -200000
+			`	然而片刻之后，驾驶舱里的一块屏幕亮了起来，上面显示着一些诡异的内容。仔细端详后你才意识到，那是一种恶意软件，而且它正试图黑进你的飞船！`
+			`	你狂奔回自己的飞船，迅速起飞并摧毁了<origin>，但还没等你想办法彻底清除病毒，它就已经入侵了你的银行账户；此时，你的账户发来了一条余额变动<payment>的通知。`
+				depart
+			label salvage
+			`	决定不冒这个险，你迅速在飞船内搜刮起任何有价值的废料和装备。`
+			branch valuable
+				random < 40
+			action
+				payment 10000
+			`	粗略检查后，你发现船上没什么值钱的东西，只从<origin>中打捞出微薄的<payment>。`
+				goto detonate
+			label valuable
+			branch rare
+				or
+					and
+						random < 25
+						or
+							not "derelict treasure map: ion cannons"
+							not "derelict family investment"
+					random < 5
+			action
+				payment 63000
+			`	搜索飞船后，你发现它相当有价值；你从<origin>中打捞出大量物资，价值<payment>。`
+				goto detonate
+			label rare
+			branch quest
+				or
+					not "derelict treasure map: ion cannons"
+					not "derelict family investment"
+			action
+				payment 475000
+			`	在面板下方，你发现了一个隐秘的小盒子。打开它，发现里面装满了<payment>。`
+				goto detonate
+			label quest
+			branch treasure
+				not "derelict treasure map: ion cannons"
+				or
+					random < 50
+					has "derelict family investment"
+			action
+				set "derelict family investment"
+			`	当你搜索飞船寻找值钱的物品时，发现了一个装有325,000信用点的大黑箱子。进一步调查后，你发现箱子旁边还有一份文本日志，便决定把这两样东西都带走。`
+				goto detonate
+			label treasure
+			action
+				set "derelict treasure map: ion cannons"
+				payment 26500
+			`	当你搜索飞船寻找值钱的东西时，发现一张地图塞在面板里。它很容易携带，让你还有时间从<origin>中再打捞出微薄的<payment>。`
+				goto detonate
+			label detonate
+			choice
+				`	（引爆飞船然后离开，防止别人打捞。）`
+				`	（尝试再找一些打捞物。）`
+					goto continued
+			`	离开前你引爆了飞船，防止其他废船猎人搜寻这艘现已空置的船。`
+				depart
+			label continued
+			branch unlucky
+				random < 75
+			action
+				payment 35000
+			`	你试图在船上寻找更多值钱的东西，幸运地找到了额外价值<payment>的打捞物。然而，船体开始嘎吱作响，迫使你匆忙返回自己的飞船。`
+			`	时间刚刚好，就在你的飞船脱离的瞬间，<origin>开始剧烈解体。`
+				depart
+			label unlucky
+			branch pirate
+				random < 20
+			`	你试图在船上寻找更多值钱的东西，但一无所获。然而，船体开始嘎吱作响，迫使你匆忙返回自己的飞船。`
+			`	时间刚刚好，就在你的飞船脱离的瞬间，<origin>开始剧烈解体。`
+				depart
+			label pirate
+			`	你前往驾驶舱，希望能找到任何值钱的东西。最初什么也没找到，你转身离开，打算搜索飞船的其他部分。`
+				goto beacon

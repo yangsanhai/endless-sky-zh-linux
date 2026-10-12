@@ -1,0 +1,511 @@
+# Copyright (c) 2021 by Michael Zahniser
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+news "anonymous quarg"
+	location
+		government "Quarg"
+		attributes "human quarg" "hai quarg"
+	name
+		word
+			"夸格"
+	message
+		word
+			`“你就是所谓的‘游客’吗？”`
+	message
+		word
+			`"`
+		word
+			"你是"
+		word
+			" "
+		word
+			"一位商人"
+			"一位商船船长"
+			"一位行商"
+			"一位船长"
+		word
+			"吗？"
+		word
+			" "
+		word
+			"人们"
+		word
+			" "
+		word
+			"热爱和平的"
+			"遵守法律的"
+			"从事贸易的"
+		word
+			" "
+		word
+			"是"
+		word
+			" "
+		word
+			"欢迎"
+			"受人感激"
+		word
+			" "
+		word
+			"在这里"
+			"在夸格世界"
+			"在所有夸格世界"
+		word
+			"愿意砸多少钱。"
+		word
+			`"`
+
+news "linguist on quarg planets in human and hai space"
+	location
+		government "Quarg"
+		attributes "human quarg" "hai quarg"
+	name
+		word
+			"Linguist"
+	message
+		word
+			`"`
+		word
+			"夸格语跟我们的语言大不一样"
+		word
+			" "
+		word
+			"that"
+		word
+			" "
+		word
+			"大多数人"
+			"普通人"
+		word
+			" "
+		word
+			"永远无法"
+			"无法"
+			"绝不可能"
+		word
+			" "
+		word
+			"学会它"
+			"理解它"
+			"说这种语言"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"我一直在研究"
+			"我研究过"
+			"我一直在学习"
+		word
+			" "
+		word
+			"夸格语"
+		word
+			" "
+		word
+			"十年了"
+			"多年了"
+			"在我职业生涯的大部分时间里"
+			"一辈子"
+		word
+			"里，"
+		word
+			"但我还是发不准他们的音"
+			"但我仍未掌握其逻辑"
+		word
+			"愿意砸多少钱。"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"我"
+		word
+			" "
+		word
+			"正在写"
+			"正在做"
+		word
+			" "
+		word
+			"一项研究"
+			"一项分析"
+		word
+			" "
+		word
+			"关于夸格语"
+		word
+			"里，"
+		word
+			"主要专注于 "
+		word
+			"发音"
+			"使用"
+		word
+			" 的 "
+		word
+			"名词"
+			"动词"
+			"形容词"
+			"词语"
+			"代词"
+		word
+			"愿意砸多少钱。"
+		word
+			`"`
+
+news "tourist on quarg planets in human and hai space"
+	location
+		government "Quarg"
+		attributes "human quarg" "hai quarg"
+		not attributes "station"
+	name
+		word
+			"Tourist"
+	message
+		word
+			`"`
+		word
+			"这些夸格人看起来真古怪，每次看到他们我都打颤。"
+			"这个世界的公共厕所是我见过最干净的。"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"我太喜欢这些建筑的外观了。我打算把我的 "
+		word
+			"房子"
+			"客厅"
+			"公寓"
+			"厨房"
+			"卧室"
+		word
+			" 装饰成它们那样。"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"你见过"
+		word
+			" "
+		word
+			"那些"
+			"他们的"
+		word
+			" "
+		word
+			"环世界"
+		word
+			" 近距离观察"
+			""
+		word
+			"吗？ "
+		word
+			"我简直无法理解它们到底有多大。"
+		word
+			`"`
+
+news "engineer on quarg planets in human space"
+	location
+		government "Quarg"
+		attributes "human quarg"
+	name
+		word
+			"Engineer"
+			"Tarazed engineer"
+	message
+		word
+			`"`
+		word
+			"夸格的科技领先我们太多，恐怕就算他们把设计图纸给我们，我们也造不出他们的飞船。"
+			"我正在为河鼓三公司开发一艘新飞船。偶尔会来这里，从这些宏伟的设计中汲取灵感。"
+		word
+			`"`
+
+news "merchant on quarg planets in human and hai space"
+	location
+		government "Quarg"
+		attributes "human quarg" "hai quarg"
+	name
+		word
+			"商人"
+			"Captain"
+			"Ship captain"
+			"Merchant captain"
+			"Starship captain"
+			"Spacecraft captain"
+			"Spaceship captain"
+			"Freelance captain"
+			"Merchant pilot"
+			"Starship pilot"
+			"Spacecraft pilot"
+			"Spaceship pilot"
+			"Freelance pilot"
+	message
+		word
+			`"`
+		word
+			"夸格拥有令人惊叹的飞船，但我敢打赌我的 "
+		word
+			"巨兽"
+			"运输者 III"
+			"散装货轮"
+			"双峰驼"
+		word
+			" 能装载他们飞船两倍的货物。"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"夸格是一个不好战的种族，但我听说他们曾与 "
+		word
+			"一个外星种族"
+			"一些昆虫型外星人"
+		word
+			" "
+		word
+			"在过去"
+			"很久以前"
+		word
+			"愿意砸多少钱。"
+		word
+			`"`
+
+news "merchant on quarg planets in human space"
+	location
+		government "Quarg"
+		attributes "human quarg"
+	name
+		word
+			"商人"
+			"Captain"
+			"Ship captain"
+			"Merchant captain"
+			"Starship captain"
+			"Spacecraft captain"
+			"Spaceship captain"
+			"Freelance captain"
+			"Merchant pilot"
+			"Starship pilot"
+			"Spacecraft pilot"
+			"Spaceship pilot"
+			"Freelance pilot"
+	message
+		word
+			`"`
+		word
+			"夸格在这些星系中不遗余力地遏制海盗活动。 "
+		word
+			"我能驾驶一支由 "
+		word
+			"星型驳船"
+			"穿梭机"
+			"重型穿梭机"
+		word
+			" 组成的舰队在这里转悠！"
+		word
+			`"`
+	message
+		word
+			`"`
+		word
+			"夸格是 "
+		word
+			"和平的"
+			"一个和平的种族"
+			"不暴力"
+		word
+			"里，"
+		word
+			"但我见过他们的武器开火：它们 "
+		word
+			"干掉了"
+			"瘫痪了"
+			"摧毁了"
+		word
+			" "
+		word
+			"一艘利维坦级海盗船"
+			"一艘海盗船"
+			"一艘掠夺者船"
+		word
+			" "
+		word
+			"几秒之内"
+			"几秒钟内"
+			"连一次攻击都没挨到"
+		word
+			"愿意砸多少钱。"
+		word
+			`"`
+
+news "reporter on quarg planets in human space"
+	location
+		government "Quarg"
+		attributes "human quarg"
+	name
+		word
+			"Reporter"
+	message
+		word
+			`"`
+		word
+			"来看看我的新文章："
+			"快来看我的新文章！"
+			"快看这个！"
+			"看看我的新文章！"
+			"看看这个！"
+		word
+			" '"
+		word
+			"三"
+			"五"
+			"七"
+		word
+			" "
+		word
+			"河鼓三公司从夸格偷走的东西！"
+			"夸格帮助河鼓三公司的事情！"
+			"人类从夸格学到的秘密！"
+		word
+			`"`
+
+news "student on quarg planets"
+	location
+		government "Quarg"
+		attributes "human quarg"
+	name
+		word
+			"学员"
+			"Scholar"
+			"University student"
+	message
+		word
+			`"`
+		word
+			"我在参加"
+		word
+			" "
+		word
+			"学习考察"
+			"实地考察"
+			"参观学习"
+		word
+			" "
+		word
+			"和我的"
+		word
+			" "
+		word
+			"班级"
+			"老师"
+			"导师"
+			"学校"
+		word
+			"愿意砸多少钱。"
+		word
+			" "
+		word
+			"他们给我讲了关于"
+			"我了解了关于"
+		word
+			" "
+		word
+			"环形世界，但"
+			"夸格，但"
+		word
+			" "
+		word
+			"亲眼见到它们感觉完全不一样"
+			"没想到它们那么大"
+			"看到他们的科技仍让我着迷"
+			"他们建筑的规模令人惊叹"
+		word
+			"愿意砸多少钱。"
+		word
+			`"`
+
+news "quarg anywhere"
+	location
+		attributes "quarg" "human quarg" "hai quarg"
+		not attributes "korath quarg" "gegno quarg"
+	name
+		word
+			"夸格"
+	message
+		word
+			`“是的，人类？你有什么问题吗？”`
+			`“你好，人类。你在我们的世界里过得愉快吗？我们很高兴有访客来。”`
+			`“抱歉，但我们不会向你们提供我们的技术。人类自行成长和发展才是最好的。”`
+			`“看到那么多物种还在沉迷于无谓的争斗，这让我深感忧虑。我只希望你们都能认清道理。”`
+			`“去年我们的科学研究成果颇丰，但恐怕我们不能简单地与你们分享这些发现。”`
+			`“如果你发现我们某件科技落入他人之手，请向我们报告。我们不能让我们的设备落到不该拥有的人手中。”`
+			`“欢迎你与我们共处，前提是你不在我们的世界里与任何人发生冲突。”`
+			`一大群夸格从你身边走过，带来一阵诡异的寂静。`
+			`一群夸格正全神贯注地进行着一场看似有趣的讨论，直到另一个夸格走来。它们一起转向它，在它快速说了些什么之后，它们齐刷刷站起来，走向机库里的别处。`
+			`一个年长的夸格正和一个年幼的夸格玩耍，后者甚至比你还要矮。这个奇怪的游戏是将一个装有某种黏糊糊金属物质的罐子互相传递。每次罐子被传递，里面的物质就会变成不同的形状，有时变成你无法理解的形状。`
+			`几十个夸格孩童由几名成人带领着走动，像是学校出游。它们注意到你时，不停地回头张望并相互交谈。看来它们从未见过人类。`
+
+news "ringworld quarg"
+	location
+		attributes "quarg"
+		attributes "ringworld"
+	name
+		word
+			"夸格"
+	message
+		phrase
+			"ringworld quarg phrases" 8
+			"quarg poems on species" 1
+
+phrase "ringworld quarg phrases"
+	word
+		`你看到一个较矮、较年轻的夸格，按夸格年龄算可能是个孩子，由一个成年夸格带着参观环世界。看起来像是家长在教孩子关于环的知识。`
+		`一个夸格离墙壁站得过近，令人不适，它正用双掌缓慢地敲击墙壁。你观察了几分钟，直到它突然停下，然后像其他夸格一样继续自己的事务。`
+		`环世界内的日常活动被几十个身穿重型护甲的夸格打断了，它们步伐迅速，护送着一个漂浮的巨大的管状容器。其他夸格迅速为这群夸格让路，与装甲夸格保持一大段距离。`
+		`一些夸格科学家正拖着一整列连在一起的实验推车，车上装满了器具、化学品、零件和试剂。你花了将近半小时才看到最后一辆推车经过。`
+		`数百个夸格堵在环内最大最宽的走廊之一。它们全都坐在地板上，面无表情地向下凝视，一片寂静，偶尔有一两个抬头看一眼天花板，然后又垂下目光。你注意到，目睹这一场景的夸格都停止交谈，转向别处。`
+		`一个夸格走到你面前，俯视着你的眼睛。它沉默地站在那里，只是看着你，最后眨了一次眼，然后走开，消失在环的走廊中。`
+		`一个夸格正在监督环内抵达的数十个飞船大小的货柜的卸载。它似乎在心中清点货物，这些货物以完全相同的组别移出。在卸了数千吨货物之后，它在数据板上数十个小点中的一个上轻点了一下，然后重新开始计数。`
+		`两艘夸格飞船同时降落在相隔几个机库的位置。它们打开舱门，出来的人应该就是各船的全体船员。没有丝毫迟疑，每艘船的船员登上另一艘船，然后起飞离开。`
+		`夸格似乎正在环内举办某种节日：望不到尽头的摊位绵延开来，全都展示着同一种类似橙子的水果的变种，有的光滑到不可能，有的皱得难以置信，大小从豌豆到西瓜不等。你搞不清它们最看重哪种品质。`
+		`你看到一个夸格按它们标准算是匆忙地转过一个急弯。当你看向它进去的走廊时，发现那是个死胡同，而那个夸格已经莫名其妙地消失了。`
+
+phrase "quarg poems on species"
+	word
+		"坚毅意志 / 铭刻古骨 / 奋起踏上 / 无神宝座"
+		"幕后牵丝 / 编演纷争 / 浑噩傀儡 / 尚或苟存"
+		"残酷葬送 / 至亲圣贤 / 漫长忍耐 / 化为狂怒"
+		"禁忌之火 / 不屈之战 / 天使宣判 / 不复受苦"
+		"成熟之心 / 异客囚禁 / 炉火温存 / 挥起连枷"
+		"君临之躯 / 毁于己手 / 余无所存 / 唯余利刃"
+		"孤寂遗民 / 重塑世界 / 至伟奇观 / 尚待示人"
+		"狭小家园 / 无友可结 / 家犬反噬 / 惨淡终局"
+		"鲁莽新客 / 听取忠告 / 否则鲜血 / 付出代价"
+		"多舛往昔 / 反目旧友 / 如今同立 / 直至终局"
+		"恩泽归于 / 昔绝之人 / 化弱为强 / 庇护新生"
+		"强邻看破伪装 / 莫使世人忘却 / 智者之诅"
+		"身如坚石 / 刚勇、谦卑与诡黠 / 淬炼技艺 / 战祸频仍"
+		"双福朝圣 / 昔日神话 / 众庶保全 / 王室阶层"
+		"云端飘摇 / 处于注视之下 / 今启征程 / 走向无垠苍穹"
+		"狂风巨浪背后 / 往昔遗忘传说 / 无论衰颓奇观 / 永恒夺回手中"
+		"坟冢外之幽魂 / 心智之密谋 / 恒星之怒照亮前路 / 归向抛却之故乡"
+		"悲鸣低语 / 恒星撕裂 / 陌路双生 / 吾等未生之魂"

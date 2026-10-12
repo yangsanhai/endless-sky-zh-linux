@@ -1,0 +1,1437 @@
+# Copyright (c) 2014 by Michael Zahniser and Nate Graham
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+
+mission "Paradise Job: Care Package"
+	name "送往<planet>的关怀包裹"
+	job
+	repeat
+	deadline
+	description "一位焦急的母亲将支付你<payment>，要求你在<date>之前将一份装有<cargo>的爱心包裹送给她在<destination>上学的孩子。"
+	cargo "Food" 1
+	to offer
+		random < 10
+	source
+		attributes "paradise"
+	destination
+		distance 2 5
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "paradise" "research" "wealthy"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 5000
+		dialog "你心里依然纳闷，为什么一个大学生会需要如此大量的<commodity>，但你还是送达了这份星际爱心包裹，并收取了<payment>的报酬。"
+
+
+mission "Paradise Job: Birthday Supplies"
+	name "送往<planet>的生日物资"
+	job
+	repeat
+	deadline
+	description "一对老夫妇希望你在<date>前将<cargo>送至<destination>，为他们孙子的生日派对提供物资。报酬为<payment>。"
+	cargo "Luxury Goods" 1 3
+	to offer
+		random < 10
+	source
+		attributes "paradise"
+	destination
+		distance 2 10
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "paradise" "wealthy" "core" "near earth"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 5000
+		dialog "你将货物送到乡间一座宏伟宅邸的花园里，只见一个噘着嘴的小毛孩正被一大群客人簇拥在中央，大发着极其惹眼的脾气。父母尴尬地递给你<payment>的报酬。"
+
+
+mission "Paradise Job: Art Delivery"
+	name "送往<planet>的艺术品"
+	job
+	repeat
+	deadline
+	description "为即将在<destination>举办的艺术展运送<cargo>，请在<date>前完成。报酬为<payment>。"
+	cargo "Luxury Goods" 1 2 .4
+	to offer
+		random < 10
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "wealthy"
+	destination
+		distance 2 5
+		attributes "paradise"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 5000
+		dialog "你的飞船被引导至一座富丽堂皇的建筑群的后方装卸码头，你的货物<commodity>在此卸下。你收取了<payment>的报酬。"
+
+
+mission "Paradise Job: Newlyweds"
+	name "前往<planet>的新婚夫妇"
+	job
+	repeat
+	deadline
+	description "这对新婚夫妇希望搭乘一艘豪华飞船，带着重达<tons>的结婚礼物，在<date>之前抵达<destination>度蜜月。他们将支付你<payment>以求送他们前往。"
+	passengers 2
+	cargo "wedding gifts" 2 4
+	to offer
+		random < 10
+	to accept
+		has "outfit (installed): Luxury Accommodations"
+	source
+		attributes "paradise"
+	destination
+		distance 2 15
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Quarg"
+		attributes "paradise" "wealthy" "core" "near earth"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 250
+		dialog "你在<planet>与这对比翼鸟告别，并收取了<payment>的报酬。"
+
+
+mission "Paradise Job: Theater Props"
+	name "送往<planet>的剧院道具"
+	job
+	repeat
+	deadline
+	description "<destination>上的一个剧团需要运送<tons>的特殊<commodity>作为道具，用于<date>即将上演的演出。报酬为<payment>。"
+	cargo "Luxury Goods" 2 6 .35
+	to offer
+		random < 10
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "wealthy" "urban"
+	destination
+		distance 2 8
+		attributes "paradise"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 8000
+		dialog "你的飞船被引导至一个庞大的娱乐综合体的后方装卸码头，你运送的<commodity>在此卸下。你收取了<payment>的报酬。"
+
+
+mission "Paradise Job: Fine Food"
+	name "送往<planet>的高级食材"
+	job
+	repeat
+	deadline
+	description "<destination>上一家备受好评的餐厅寻求在<date>前获取<tons>的高级<commodity>。报酬为<payment>。"
+	cargo "Food" 2 5 .25
+	to offer
+		random < 10
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "farming" "fishing"
+	destination
+		distance 2 10
+		attributes "paradise"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 8000
+		dialog "你的飞船被引导至一家极为气派的餐厅的后方装卸码头。戴着白手套的侍者们小心翼翼地卸下<commodity>货物，并转交了你<payment>的报酬。"
+
+
+mission "Transport partiers [1]"
+	name "前往<planet>的派对宾客"
+	job
+	repeat
+	description "这<bunks>名大学生愿意支付<payment>搭乘豪华飞船前往<destination>参加一场大型派对，并随身携带<tons>他们所谓“完全合法”的药品。"
+	passengers 7 12
+	cargo "pharmaceuticals" 2 4
+	illegal 1000 `事实证明，你货舱里那些“完全合法的药品”根本就没那么合法。没收货物的官员们与其中一名学生交谈了很长时间，你怀疑这名学生有政治背景。对于罚款金额之少以及无人被捕的事实，你并不感到意外。`
+	stealth
+	to offer
+		random < 10
+	to accept
+		has "outfit (installed): Luxury Accommodations"
+	source
+		attributes "paradise"
+	destination
+		distance 4 12
+		attributes "tourism"
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 200
+		dialog "你毫不遗憾地与这些一直由你运送、吵闹又粗鲁的捣蛋鬼告别。他们的父母寄来了<payment>的报酬，却连一句感谢的话都没说。"
+
+
+mission "Transport partiers [2]"
+	name "前往<planet>的派对宾客"
+	job
+	repeat
+	description "这<bunks>名大学生愿意支付<payment>搭乘豪华飞船前往<destination>参加一场大型派对，并随身携带<tons>他们的零食和学习用品。"
+	passengers 7 12
+	cargo "snacks and school supplies" 2 4
+	to offer
+		random < 10
+	to accept
+		has "outfit (installed): Luxury Accommodations"
+	source
+		attributes "paradise"
+	destination
+		distance 4 12
+		attributes "tourism"
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 5000 190
+		dialog "你向这些学生道别，他们在旅途中表现得异常出色——引发了关于哲学、微流控技术和星际经济学等诸多引人入胜的对话。他们自豪的父母向你支付了<payment>的报酬。"
+
+mission "Paradise Job: Food Donations"
+	name "食品捐赠至<planet>"
+	job
+	repeat
+	description "<origin>的优秀市民们正在寻找一位富有同情心的船长，执行一项仁慈任务，将<cargo>捐赠给<destination>营养不良的人们。报酬为<payment>。"
+	cargo "Food" 7 2 .1
+	to offer
+		random < 10
+	source
+		attributes "paradise"
+	destination
+		distance 2 16
+		attributes "rim" "south" "dirt belt" "frontier" "military"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 1000 90
+		dialog "你领取了<payment>的报酬，但在此之前你注意到那些卸下<commodity>捐赠物资的码头工人们个个身强力壮、大腹便便。"
+
+
+mission "Paradise Job: Clothing Donations"
+	name "向<planet>捐赠衣物"
+	job
+	repeat
+	description "<origin>的高尚市民们正在寻找一位富有同情心的船长，执行一项仁慈任务，向<destination>那些衣衫不整、与时尚隔绝的人们捐赠<cargo>。报酬为<payment>。"
+	cargo "Clothing" 7 2 .1
+	to offer
+		random < 10
+	source
+		attributes "paradise"
+	destination
+		distance 2 16
+		attributes "rim" "south" "dirt belt" "frontier" "military"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 1000 100
+		dialog "你领取了<payment>的报酬，但同时也注意到了正在卸载<commodity>捐赠物的码头工人身上穿着的高质量衣物。"
+
+
+mission "Paradise Job: Medical Aid"
+	name "向<planet>提供医疗援助"
+	job
+	repeat
+	description "<origin>的善良市民们正在寻找一位富有同情心的船长，执行一项人道救援任务，将<cargo>捐赠给<destination>受苦的人们。报酬为<payment>。"
+	cargo "Medical" 7 2 .1
+	to offer
+		random < 10
+	source
+		attributes "paradise"
+	destination
+		distance 2 16
+		attributes "rim" "south" "dirt belt" "frontier" "military"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 1000 100
+		dialog "你收下了<payment>的报酬，但在这之前，你注意到正在卸下<commodity>捐赠物资的码头工人普遍健康且充满活力。"
+
+
+mission "Paradise Job: Charity"
+	name "运往<planet>的慈善物资"
+	job
+	repeat
+	description "<origin>的优秀市民们正在寻找一位富有同情心的船长，执行一项慈善任务，将<cargo>捐赠给<destination>那些天真且文化发展不足的人们。报酬为<payment>。"
+	cargo "Luxury Goods" 7 2 .1
+	to offer
+		random < 10
+	source
+		attributes "paradise"
+	destination
+		distance 2 16
+		attributes "rim" "south" "dirt belt" "frontier" "military"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 1000 100
+		dialog "你收取了<payment>的报酬，但在此之前，你注意到了正在卸载<commodity>捐赠物资的码头工人身上衣服、珠宝和电子产品的品质。"
+
+
+mission "Paradise Job: Party Goods"
+	name "来自<planet stopovers>的派对物资"
+	job
+	repeat
+	deadline
+	description "一场重要的盛会之后，<commodity>的行星地表供应正在减少。请在<stopovers>装载<tons>吨，并于<date>前返回<origin>。报酬为<payment>。"
+	cargo "Luxury Goods" 10 2 .1
+	to offer
+		random < 10
+	source
+		attributes "paradise"
+	stopover
+		distance 5 9
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "paradise" "wealthy"
+		attributes "spaceport"
+	on stopover
+		dialog "你监督着码头工人将一箱箱<commodity>搬上飞船。这派对一定很盛大。"
+	on visit
+		dialog "你回到了<planet>，但忘了先去<stopovers>取<commodity>！最好趁还来得及赶紧去。"
+	on complete
+		payment
+		payment 10000 135
+		dialog "你的飞船被引导降落在临时停机坪上，附近是一片广阔的绿野，正在建造新奇城堡。穿着考究的服务员卸下<commodity>，你收取了报酬<payment>。"
+
+
+mission "Paradise Job: Estate Assets"
+	name "运送遗产至<planet>"
+	job
+	repeat
+	description "受托人正在寻找愿意将一位最近去世的正直公民的遗产各部分——<cargo>——运送至<destination>即将举行的遗产拍卖会的星舰船长。报酬为<payment>。"
+	cargo "Luxury Goods" 18 2 .15
+	to offer
+		random < 10
+	source
+		attributes "paradise"
+	destination
+		distance 3 12
+		attributes "wealthy"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 10000
+		dialog "当你看着码头工人一箱接一箱地卸货时，你不禁好奇是什么驱使某人收集如此大量的<commodity>。你收取了<payment>的报酬。"
+
+
+mission "Paradise Jobs: Contract Laborers"
+	name "来自<planet stopovers>的合同劳工"
+	job
+	repeat
+	description "在<stopovers>接取<bunks>名渴望体验天堂世界奢华的合同工后，返回<destination>。报酬为<payment>。"
+	passengers 13 30
+	to offer
+		random < 10
+	source
+		attributes "paradise"
+	stopover
+		distance 7 15
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "mining" "fishing" "textiles" "factory" "farming" "oil"
+		attributes "spaceport"
+	on stopover
+		dialog "这群衣着破旧的年轻男女对登船并不像你预想的那样高兴，尽管有新的机遇等待着他们。他们疲惫地拖着脚步走上舷梯，准备返回<planet>。"
+	on visit
+		dialog phrase "generic missing stopover or passengers"
+	on complete
+		payment 10000 50
+		dialog "这些邋遢的合同劳工全程都沉默不语，没跟你说一句话。然而，在<origin>接待你的那个邋遢工头似乎很满意。他把报酬<payment>递给你。"
+
+
+mission "Paradise Job: Waste Disposal"
+	name "在<planet>处理废弃物"
+	job
+	repeat
+	description "需要紧急处理废弃物。将<cargo>运送到<destination>以防止房产价值下跌。报酬为<payment>。"
+	cargo "Garbage" 30 2 .03
+	to offer
+		random < 10
+	source
+		attributes "paradise"
+	destination
+		distance 2 20
+		attributes "dirt belt"
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		dialog "你在<planet>卸下了那批极其难闻的<commodity>货物，已经迫不及待地想给货舱来一次化学清洁。你收到了<payment>的报酬，希望这里有人知道怎么处理你留下的那堆恶心玩意儿。"
+
+
+mission "Transport high-class tourists"
+	description "带领<bunks>名超级富有的游客开启一场精彩绝伦的旅程，前往<destination>这个狂野而充满异域风情的世界。只有当你的飞船配备有舒适旅程所需的“合适设施”时，他们才会考虑乘坐你的飞船。报酬为<payment>。"
+	job
+	repeat
+	passengers 5 5 .37
+	to offer
+		random < 10
+	to accept
+		has "outfit (installed): Luxury Accommodations"
+	source
+		attributes "paradise"
+	destination
+		attributes "religious" "quarg" "pirate" "volcanic" "frontier"
+		distance 8 20
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		dialog "你的乘客开始四处闲逛，当宣传册上光鲜亮丽的照片被现实取代时，其中一些人面露困惑。你收到了<payment>的报酬。"
+		payment 25000 250
+
+
+mission "Transport high-class tourist group"
+	description "带领<bunks>名超级富有的游客开启一场精彩绝伦的旅程，前往<destination>这个狂野而充满异域风情的世界。只有当你的飞船配备有舒适旅程所需的“合适设施”时，他们才会考虑乘坐你的飞船。报酬为<payment>。"
+	job
+	repeat
+	passengers 15 5 .15
+	to offer
+		random < 30
+		random < "passenger space" - 35
+	to accept
+		has "outfit (installed): Luxury Accommodations"
+	source
+		attributes "paradise"
+	destination
+		attributes "religious" "quarg" "pirate" "volcanic" "frontier"
+		distance 8 20
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		dialog "你的乘客开始四处闲逛，当宣传册上光鲜亮丽的照片被现实取代时，其中一些人面露困惑。你收到了<payment>的报酬。"
+		payment 25000 170
+
+
+mission "Pleasure cruise security"
+	description "护送<npc>乘坐观光游轮前往狂野而奇异的星球<stopovers>，并携带<tons>吨他们的<commodity>，然后返回<destination>，你将获得<payment>的报酬。"
+	job
+	repeat
+	cargo "Luxury Goods" 15 3 .17
+	to offer
+		random < 10
+		"combat rating" > 10
+	source
+		attributes "paradise" "wealthy"
+	stopover
+		attributes "tourism" "religious" "quarg" "pirate" "volcanic" "frontier" "moon" "fishing"
+		attributes "spaceport"
+		distance 6 15
+	destination
+		attributes "paradise"
+		distance 1 6
+	npc accompany save
+		government "Merchant"
+		personality escort timid
+		fleet
+			names "civilian"
+			variant
+				"Star Queen"
+	on stopover
+		dialog "<npc>的乘客们穿着他们能找到的最显眼的游客服装四处闲逛，对这个遥远世界的新奇景象发出惊叹。希望他们中没人会被抢。你准备踏上返回<destination>的旅程。"
+	on visit
+		dialog "你已经到达<planet>，但必须等<npc>随你一同访问过<stopovers>并在本星与你汇合后，才能完成此任务。"
+	on complete
+		dialog "你向<npc>的船长告别，收下了<payment>的报酬。"
+		payment
+		payment 50000
+
+
+mission "Paradise Job: Parolees"
+	name "假释犯送至<planet>"
+	job
+	repeat
+	description `这些<bunks>名非暴力惯犯同意延长社区服务刑期，以换取在<destination>天堂世界服刑。他们需要用安全的飞船运输。报酬为<payment>。`
+	passengers 20 4 .1
+	to offer
+		random < 15
+		"passenger space" > 40
+	to accept
+		has "outfit (installed): Brig"
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "mining" "fishing" "textiles" "factory" "farming" "oil"
+	destination
+		distance 2 18
+		attributes "paradise"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 170000 110
+		dialog "乘客们在当地安保部队的监视下不情愿地鱼贯而出，准备偿还他们对社会的债务。一名职员在<planet>检查他们的状况。他看起来相当满意，将<payment>的报酬交给你。"
+
+
+mission "Paradise Job: Debtors"
+	name "运送债务人至<planet>"
+	job
+	repeat
+	description `这些<bunks>可怜人因为试图过入不敷出的生活而破产。为此，当地政府将付给你<payment>，让你把他们安全运送到<destination>，以便“让他们有点用处”。`
+	passengers 20 4 .1
+	to offer
+		random < 15
+		"passenger space" > 40
+	to accept
+		has "outfit (installed): Brig"
+	source
+		attributes "paradise"
+	destination
+		distance 2 30
+		attributes "mining" "fishing" "forest" "textiles" "factory" "farming" "oil" "frontier" "dirt belt" "south" "rim"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 170000 110
+		dialog "乘客们在移民官员的注视下不情愿地离开飞船。一个笑嘻嘻的劳务中介正在那里等着付给你应得的<payment>。"
+
+
+mission "Paradise Job: Retirees"
+	name "送富豪退休者至<planet>"
+	job
+	repeat
+	description "这一群<bunks>位富有的退休人员愿意支付<payment>，要求您以豪华的方式将他们以及<tons>吨他们最珍贵的财产运送到<destination>。"
+	passengers 7 12 .6
+	cargo "treasured possessions" 7 12 .2
+	to offer
+		random < 10
+		"passenger space" > 15
+		"cargo space" > 40
+	to accept
+		has "outfit (installed): Luxury Accommodations"
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "frontier" "dirt belt" "south" "farming" "mining" "rim" "forest" "urban"
+	destination
+		distance 3 16
+		attributes "paradise"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 200
+		dialog "你与那些退休者告别了——他们虽然有时会洒出饮料，或在你试图工作时惹恼你，但整体而言极其礼貌，满肚子都是那些虽然道德上常常存疑、却极为有趣的故事。当他们的最后一件行李安全卸载后，你的账户收到了来自他们旅行中介的<payment>转账。"
+
+
+mission "Paradise Job: Pirate Retirees (Illegal)"
+	name "送富豪退休者至<planet>"
+	job
+	repeat
+	description `这群由<bunks>名富有“退休者”组成的团体愿意支付<payment>，以获取前往<destination>的体面而不问来路的运输服务，同时还要求将<tons>吨他们最珍贵的财物一同运走。`
+	passengers 4 10 .6
+	cargo "treasured possessions" 4 10 .2
+	illegal 15000 `在扫描您的飞船后，执法部门通知您。显然，您一直在运送的那些“退休人士”实际上是秘密通缉的逃犯。他们登上您的飞船后，逮捕了这些所谓的退休者，并搜查了其“珍贵财物”——那些财物除了是通过非法途径获得外，本身并无问题。最终，他们没收了这些财物并带走了罪犯，仅对您处以小额罚款。`
+	stealth
+	to offer
+		random < 5
+		"passenger space" > 15
+		"cargo space" > 40
+	to accept
+		has "outfit: Luxury Accommodations"
+	source
+		government "Pirate"
+	destination
+		distance 3 16
+		attributes "paradise"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 15000 300
+		dialog "你与这些自称退休的人告别了。他们干活时要么洒了饮料，要么惹恼你。除此之外，他们虽然喧闹，却极其礼貌，满脑子都是些非常有趣但道德上常令人质疑的轶事。最后一件行李安全卸下后，你的账户便收到了一笔来自匿名来源的<payment>付款。"
+
+
+mission "Paradise Job: Pirate Retirees (Legal)"
+	name "送富豪退休者至<planet>"
+	job
+	repeat
+	description `这群由<bunks>名富有“退休者”组成的团体愿意支付<payment>，以获取前往<destination>的体面而不问来路的运输服务，同时还要求将<tons>吨他们最珍贵的财物一同运走。`
+	passengers 4 10 .6
+	cargo "treasured possessions" 4 10 .2
+	to offer
+		random < 5
+		"passenger space" > 15
+		"cargo space" > 40
+	to accept
+		has "outfit: Luxury Accommodations"
+	source
+		government "Pirate"
+	destination
+		distance 3 16
+		attributes "paradise"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 200
+		dialog "你向这群自称退休的人道别。他们干起活来总爱打翻饮料，或是惹你心烦。不过除此之外，他们虽然喧闹，却极为礼貌，满肚子都是些逗趣但往往道德存疑的轶事。等最后一批物品安全卸下后，你的账户收到了一笔来自匿名来源的<payment>报酬。"
+
+
+mission "Paradise Job: Wilderness Retreat"
+	name "前往<planet>的荒野度假"
+	job
+	repeat
+	description `将<bunks>名伪名人和富裕游客带到名为<destination>的蛮荒世界，进行一次“荒野度假”。只有你能确保他们旅途舒适，他们才会考虑你的飞船。报酬为<payment>。`
+	passengers 10 4 .1
+	to offer
+		random < 10
+		"passenger space" > 25
+	to accept
+		has "outfit (installed): Luxury Accommodations"
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
+		attributes "urban" "near earth" "core" "paradise"
+	destination
+		distance 6 20
+		attributes "frontier" "rim" "forest" "fishing"
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 25000 250
+		dialog `迎接你们乘客的是一群过于热情的“荒野向导”，他们穿着滑稽夸张的服装。你不禁觉得这些人要么即将登上热门真人秀，要么就是会被安全地骗光钱财——不过他们这种人，沦落到这种下场也实在让人同情不起来。其中一名迎接者悄悄转给了你<payment>作为报酬。`
+
+
+mission "Gemini Shipyards Shipment [0]"
+	name "运送至<planet>的货物"
+	description "将<cargo>运送至<destination>——双子星造船厂的所在地，它是共和国海军船坞的组成部分，也是人类空间中最先进的造船厂之一。报酬为<payment>。"
+	cargo "weapons" 5 2 .1
+	job
+	repeat
+	to offer
+		random < 15
+		has "landing access: Geminus"
+		or
+			not "event: war begins"
+			has "event: geminus rebuilt"
+	source
+		near Castor 2 10
+		attributes factory
+	destination Geminus
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 0 160
+		dialog phrase "generic cargo delivery payment"
+
+mission "Gemini Shipyards Shipment [1]"
+	name "运送至<planet>的货物"
+	description "将<cargo>运送至<destination>——双子星造船厂的所在地，它是共和国海军船坞的组成部分，也是人类空间中最先进的造船厂之一。报酬为<payment>。"
+	cargo "Ship Systems" 5 2 .1
+	job
+	repeat
+	to offer
+		has "landing access: Geminus"
+		random < 15
+		or
+			not "event: war begins"
+			has "event: geminus rebuilt"
+	source
+		near Castor 2 10
+		attributes factory
+	destination Geminus
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 0 160
+		dialog phrase "generic cargo delivery payment"
+
+mission "Lovelace Labs Shipment [0]"
+	name "运送至<planet>的货物"
+	description "将<cargo>运送至<destination>，这里是洛夫莱斯实验室——该地区一家备受尊敬的武器制造商所在地。报酬为<payment>。"
+	cargo Metal 5 2 .1
+	job
+	repeat
+	to offer
+		random < 10
+		has "landing access: Ada"
+	source
+		near Aldebaran 2 10
+		attributes core factory
+		not government "Pirate"
+	destination Ada
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 0 160
+		dialog phrase "generic cargo delivery payment"
+
+mission "Polymath Nanoinstruments Shipment [0]"
+	name "运送至<planet>的货物"
+	description "将<cargo>运送至<destination>，即Polymath Nanoinstruments的总部，该公司是人类星域中最大的电子公司之一。报酬为<payment>。"
+	cargo Electronics 5 2 .1
+	job
+	repeat
+	to offer
+		random < 10
+		has "landing access: Vinci"
+	source
+		near Miaplacidus 2 10
+		attributes core factory
+	destination Vinci
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 0 160
+		dialog phrase "generic cargo delivery payment"
+
+
+
+# Martini Bombings jobs
+
+mission "Martini Evacuation (Resident Family)"
+	name "疏散马提尼家族至<planet>"
+	description "这户来自马提尼的<bunks>口之家在核弹轰炸中失去了他们的<martini house>，希望立刻离开。将他们及其<cargo>运送到<planet>，那里有他们的住所。他们会支付你<payment>。"
+	job
+	repeat
+	passengers 3 20 .96
+	cargo "belongings" 2 4
+	substitutions
+		"<martini house>" "公寓"
+		"<martini house>" "房子"
+			random < 50
+		"<martini house>" "高档公寓"
+			random < 33
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2" # Gives the player about a month to do these missions.
+		random < 30
+	source Martini
+	destination
+		distance 2 5
+		attributes "paradise" "wealthy" "urban"
+		not attributes "station"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		dialog phrase "martini evac dialog plural"
+		payment 8000 200
+
+
+mission "Martini Evacuation (Resident Group)"
+	name "疏散马提尼居民至<planet>"
+	description "这些来自马提尼的<bunks>位居民在核弹轰炸中失去了他们的<martini house>，希望立刻离开。将他们和他们的<cargo>运送到<planet>，那里有他们的住所。他们会支付你<payment>。"
+	job
+	repeat
+	passengers 3 2 .68
+	cargo "belongings" 3 6
+	substitutions
+		"<martini house>" "公寓"
+		"<martini house>" "房子"
+			random < 50
+		"<martini house>" "高档公寓"
+			random < 33
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 30
+	source Martini
+	destination
+		distance 2 5
+		attributes "paradise" "wealthy" "urban"
+		not attributes "station"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		dialog phrase "martini evac dialog plural"
+		payment 8000 200
+
+
+mission "Martini Evacuation (Resident)"
+	name "疏散马提尼居民至<planet>"
+	description "这位来自马提尼的居民在核爆中失去了他们的<martini house>，希望立刻离开。将他们和他们的<cargo>运送到<planet>，那里有他们的住处。他们会支付你<payment>。"
+	job
+	repeat
+	passengers 1
+	cargo "belongings" 1 2
+	substitutions
+		"<martini house>" "公寓"
+		"<martini house>" "房子"
+			random < 50
+		"<martini house>" "高档公寓"
+			random < 33
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 30
+	source Martini
+	destination
+		distance 2 5
+		attributes "paradise" "wealthy" "urban"
+		not attributes "station"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		dialog phrase "martini evac dialog singular"
+		payment 6000 200
+
+
+mission "Martini Evacuation (Family, Luxury)"
+	name "疏散马提尼居民至<planet>"
+	description "这户来自马提尼的<bunks>口之家在核爆中失去了他们的<martini house>，希望立刻乘坐豪华飞船离开。将他们和他们的<cargo>运送到<planet>，那里有他们的住所。他们会支付你<payment>。"
+	job
+	repeat
+	passengers 3 20 .96
+	cargo "belongings" 2 4
+	substitutions
+		"<martini house>" "公寓"
+		"<martini house>" "房子"
+			random < 50
+		"<martini house>" "高档公寓"
+			random < 33
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 30
+	to accept
+		has "outfit: Luxury Accommodations"
+	source Martini
+	destination
+		distance 2 5
+		attributes "paradise" "wealthy" "urban"
+		not attributes "station"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		dialog phrase "martini evac dialog plural"
+		payment 12000 230
+
+
+mission "Martini Evacuation (Singular, Luxury)"
+	name "疏散马提尼居民至<planet>"
+	description "这位来自马提尼的居民在核爆中失去了他们的<martini house>，希望立刻乘坐豪华飞船离开。将他们和他们的<cargo>运送到<planet>，那里有他们的住所。他们会支付你<payment>。"
+	job
+	repeat
+	passengers 1
+	cargo "belongings" 1 2
+	substitutions
+		"<martini house>" "公寓"
+		"<martini house>" "房子"
+			random < 50
+		"<martini house>" "高档公寓"
+			random < 33
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 30
+	to accept
+		has "outfit: Luxury Accommodations"
+	source Martini
+	destination
+		distance 2 5
+		attributes "paradise" "wealthy" "urban"
+		not attributes "station"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		dialog phrase "martini evac dialog singular"
+		payment 8000 230
+
+
+mission "Martini Evacuation (Tourist)"
+	name "疏散游客至<planet>"
+	description "这位来自<planet>的游客在核弹爆炸发生时正于马提尼观光，现在希望立即离开。将他们送回位于<planet>的家中，他们会支付你<payment>。"
+	job
+	repeat
+	passengers 1
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 30
+	source Martini
+	destination
+		distance 2 8
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		dialog phrase "generic passenger dropoff payment"
+		payment 3000 170
+
+
+mission "Martini Evacuation (Tourist Couple)"
+	name "疏散游客夫妇至<planet>"
+	description "这对来自<planet>的游客夫妇在核弹爆炸发生时正于马提尼观光，现在希望立即离开。将他们送回位于<planet>的家中，他们会支付你<payment>。"
+	job
+	repeat
+	passengers 2
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 30
+	source Martini
+	destination
+		distance 2 8
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		dialog phrase "generic passenger dropoff payment"
+		payment 3000 170
+
+
+mission "Martini Evacuation (Tourist Family)"
+	name "疏散游客家庭至<planet>"
+	description "这户来自<planet>的<bunks>口游客家庭在核弹爆炸发生时正于马提尼观光，现在希望立即离开。将他们送回位于<planet>的家中，他们会支付你<payment>。"
+	job
+	repeat
+	passengers 3 20 .96
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 30
+	source Martini
+	destination
+		distance 2 5
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		dialog phrase "generic passenger dropoff payment"
+		payment 5000 170
+
+mission "Martini Evacuation (Tourist Group)"
+	name "疏散旅游团至<planet>"
+	description "这群来自<planet>的<bunks>名游客在核弹爆炸发生时正于马提尼观光，现在希望立即离开。将他们送回位于<planet>的家中，他们会支付你<payment>。"
+	job
+	repeat
+	passengers 3 20 .68
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 30
+	source Martini
+	destination
+		distance 2 5
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		dialog phrase "generic passenger dropoff payment"
+		payment 5000 170
+
+
+mission "Martini Evacuation (Businessman Group)"
+	name "从马提尼疏散商人团体至<planet>"
+	description "这群由<bunks>人组成的商人团体在核爆发生时正在马提尼出差，现在希望立即离开。将他们送回位于<planet>的家中，他们会支付你<payment>。"
+	job
+	repeat
+	passengers 3 6
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 30
+	source Martini
+	destination
+		distance 2 8
+		attributes "paradise" "wealthy"
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		dialog phrase "martini evac dialog plural"
+		payment 10000 200
+
+
+mission "Martini Evacuation (Businessman)"
+	name "疏散商人至<planet>"
+	description "这位在核弹爆炸发生时正在马提尼出差的商人希望立即离开。将他们送回位于<planet>的家中，他们会支付你<payment>。"
+	job
+	repeat
+	passengers 1
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 30
+	source Martini
+	destination
+		distance 2 8
+		not attributes "station"
+	on visit
+		dialog phrase "generic cargo and passenger on visit"
+	on complete
+		dialog phrase "martini evac dialog singular"
+		payment 5000 200
+
+
+mission "Martini Evacuation (Exhausted Doctors)"
+	name "运送获准返回的医生至<planet>"
+	description "这<bunks>名医生在轰炸发生后一直在马提尼治疗病人，现已获准返回。将他们送回位于<planet>的家中，他们会支付你<payment>。"
+	job
+	repeat
+	passengers 2 10 .9
+	to offer
+		has "event: initial deployment 1"
+		not "event: initial deployment 2"
+		random < 30
+	source Martini
+	destination
+		distance 4 12
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		dialog phrase "generic passenger dropoff payment"
+		payment 5000 170
+
+
+mission "Martini Evacuation (Exhausted Search and Rescue Team)"
+	name "运送获准返回的搜救队至<planet>"
+	description "这<bunks>名搜救人员一直在马提尼首都搜寻核爆受害者，现已获准返回。将他们送回位于<planet>的家中，他们会支付你<payment>。"
+	job
+	repeat
+	passengers 2 10 .9
+	to offer
+		has "event: initial deployment 1"
+		not "event: initial deployment 2"
+		random < 30
+	source Martini
+	destination
+		distance 4 12
+		not attributes "station"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		dialog phrase "generic passenger dropoff payment"
+		payment 5000 170
+
+
+
+# Martini evac on complete dialog
+phrase "martini evac dialog singular"
+	word
+		"在整趟航程中"
+		"在飞船上时"
+		"在登船期间"
+		"在两次超跳之间"
+	word
+		"，来自马提尼的乘客一直在"
+	phrase
+		"martini evac 1"
+
+phrase "martini evac 1"
+	word
+		"指责"
+		"一再指责"
+		"痛斥"
+	word
+		" "
+	word
+		"自由世界"
+		"南部防卫公约"
+		"南部公约组织"
+		"“那些${insults for southerners}”"
+		"“那些${insults for southerners}”"
+		"the '${insults for southerners}'"
+	word
+		"要为马提尼遭受的"
+	word
+		"核轰炸"
+		"破坏"
+		"浩劫"
+		"灾难"
+	word
+		"负责。他们递给你<payment>，随后前往他们那"
+	word
+		" " 10
+		"维护良好的"
+		"昂贵的"
+		"奢华的"
+		"天价的"
+		"避暑"
+		"度假"
+		"额外的"
+		"另一处"
+		"朋友的"
+		"亲戚的"
+	word
+		"顶层公寓"
+		"高档公寓"
+		"公寓"
+		"豪宅"
+		"住宅"
+	word
+		"，位于<planet>。"
+
+phrase "martini evac 1"
+	word
+		"向你讲述"
+		"让你了解"
+		"跟你谈起"
+		"向你告知"
+	word
+		"有关"
+		"关于"
+	word
+		"马提尼岛上平民的绝望处境"
+		"他们在爆炸中遇难的熟人"
+		"马提尼岛上人们面临的严峻状况"
+		"马提尼地面上不断恶化的局势"
+		"马提尼所遭受的毁灭"
+		"他们亲眼目睹的惨状"
+		"他们在马提尼遭受的崩溃与损失"
+		"他们在马提尼至今音讯全无的亲友"
+	word
+		"，并恳求你在救援工作中提供更多帮助"
+		"，并感谢你将他们带离这颗星球"
+		""
+	word
+		"。他们递给你<payment>，随后前往"
+	word
+		"一处公寓"
+		"一栋住宅"
+	word
+		"，位于 <planet>。"
+
+
+phrase "martini evac dialog plural"
+	word
+		"在整个航程中"
+		"在船上时"
+		"在乘舰期间"
+		"在跃迁间隙"
+	word
+		"，你搭载的来自马提尼的乘客一直在"
+	phrase
+		"martini evac 2"
+
+phrase "martini evac 2"
+	word
+		"指责"
+		"反复指责"
+		"谴责"
+	word
+		" "
+	word
+		"自由世界"
+		"南部防御协定"
+		"南部协定"
+		"“那些${insults for southerners}”"
+		"“他们${insults for southerners}”"
+		"the '${insults for southerners}'"
+	word
+		"要对"
+	word
+		"核轰炸"
+		"毁灭"
+		"浩劫"
+	word
+		"在马提尼造成的破坏负责。这群人递给你<payment>，随后便回到了他们的"
+	word
+		" " 4
+		"精心维护的"
+		"昂贵的"
+		"奢华的"
+		"天价的"
+	word
+		"顶层公寓"
+		"公寓"
+		"住宅"
+		"别墅"
+	word
+		"与"
+	word
+		"庄园"
+		"高档公寓"
+		"豪宅"
+		"宅邸"
+	word
+		"，全都位于<planet>。"
+
+phrase "martini evac 2"
+	word
+		"向你倾诉"
+		"向你反映"
+		"谈论"
+		"向你陈述"
+	word
+		"有关"
+		"关于"
+	word
+		"马提尼星上民众的绝望境况"
+		"他们在爆炸中丧生的熟人"
+		"马提尼星上人们面临的悲惨处境"
+		"马提尼星地面上日益恶化的局势"
+		"马提尼星上遭受的破坏"
+		"他们亲眼目睹的惨状"
+		"他们在马提尼星上承受的崩溃与损失"
+		"他们在马提尼星上至今音讯全无的亲友"
+	word
+		"。他们"
+	word
+		"恳求你进一步协助救援工作，"
+		"感谢你将他们带离那颗星球，"
+	word
+		"递给你<payment>，随后各自回到了其"
+	word
+		"公寓"
+		"住宅"
+		"公寓与住宅"
+	word
+		"，均在<planet>上。"
+
+phrase "insults for southerners"
+	word
+		"该死的"
+		"见鬼的"
+		"神经兮兮的"
+		"不知天高地厚的"
+		"哭爹喊娘的"
+		"爱发牢骚的"
+		"愚蠢的"
+		"煽动叛乱的"
+		"大逆不道的"
+		"背信弃义的"
+		"奸诈阴险的"
+		"虚伪狡诈的"
+		"制造恐慌的"
+		"贪得无厌的"
+		"胆小懦弱的"
+		"卑劣下流的"
+	word
+		" "
+	word
+		"南方佬"
+		"南方人"
+		"集体主义者"
+		"颠覆分子"
+		"叛乱分子"
+		"救济对象"
+		"火箭狂人"
+		"海盗"
+		"法外之徒"
+		"军火走私客"
+		"狗娘养的"
+		"私掠船员"
+	word
+		"来自"
+	word
+		"伯恩"
+		"锈迹星"
+		"慰藉星"
+		"绿岩星"
+		"图勒"
+		"苏格"
+		"长跃星"
+		"南部星区"
+		"边缘星区"
+		"南部边缘星区"
+
+
+
+mission "Martini Relief (Medical) [0]"
+	name "向马提尼运送赈灾物资"
+	description "由于近期发生核弹袭击，请将<cargo>运送至<planet>以帮助救治伤员。你需要呼叫太空港管制员以获得该行星的降落许可。报酬为<payment>。"
+	job
+	repeat
+	cargo Medical 1 2 .2
+	clearance "当你向太空港管制员解释你正运送一批至关重要的<commodity>以帮助救治伤员时，他们批准了你的降落请求。"
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 25
+	source
+		near Pollux 2 10
+	destination Martini
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 6000 170
+		dialog phrase "generic cargo delivery payment"
+
+
+mission "Martini Relief (Medical) [1]"
+	name "向马提尼运送赈灾物资"
+	description "由于近期发生核弹袭击，请将<cargo>运送至<planet>以帮助救治伤员。你需要呼叫太空港管制员以获得该行星的降落许可。报酬为<payment>。"
+	job
+	repeat
+	cargo Medical 1 2 .2
+	clearance "当你向太空港管制员解释你正运送一批至关重要的<commodity>以帮助救治伤员时，他们批准了你的降落请求。"
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 10
+	source
+		near Pollux 2 10
+	destination Martini
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 8000 180
+		dialog phrase "generic cargo delivery payment"
+
+
+mission "Martini Relief (Reconstruction)"
+	name "向马提尼运送建筑物资"
+	description "由于近期遭受核弹轰炸，请将<cargo>运送至<planet>以协助重建工作。你需要呼叫太空港管制员以获得该行星的降落许可。报酬为<payment>。"
+	job
+	repeat
+	cargo Construction 1 2 .2
+	clearance "当你向太空港管制员解释你正为重建工作运送一批至关重要的<commodity>时，他们批准了你的降落请求。"
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 20
+	source
+		near Pollux 2 10
+	destination Martini
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 7000 170
+		dialog phrase "generic cargo delivery payment"
+
+
+mission "Martini Relief (Food)"
+	name "向马提尼运送食品包裹"
+	description "由于近期发生的核爆炸，请将<cargo>运送至<planet>以帮助维持补给。你需要呼叫太空港管制员以获得该星球的降落许可。报酬为<payment>。"
+	job
+	repeat
+	cargo "food packages" 1 2 .2
+	clearance "当你向太空港管制员解释你正为难民营运送一批至关重要的<commodity>时，他们批准了你的降落请求。"
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 20
+	source
+		near Pollux 2 10
+	destination Martini
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 7000 180
+		dialog phrase "generic cargo delivery payment"
+
+
+mission "Martini Relief (Water Tablets)"
+	name "向马提尼运送净水片"
+	description "由于近期发生的核爆炸，请将<cargo>运送至<planet>以帮助维持补给。你需要呼叫太空港管制员以获得该星球的降落许可。报酬为<payment>。"
+	job
+	repeat
+	cargo "water purification tablets" 1 2 .2
+	clearance "当你向太空港管制员解释你正为难民营运送一批至关重要的<commodity>时，他们批准了你的降落请求。"
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 20
+	source
+		near Pollux 2 10
+	destination Martini
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 7000 180
+		dialog phrase "generic cargo delivery payment"
+
+
+mission "Martini Relief (Fire Retardant)"
+	name "向马提尼运送阻燃剂"
+	description "由于近期发生的核爆炸，请将<cargo>运送至<planet>以帮助维持补给。你需要呼叫太空港管制员以获得该星球的降落许可。报酬为<payment>。"
+	job
+	repeat
+	cargo "fire retardant" 1 2 .2
+	clearance "当你向太空港管制员解释你正运送一批至关重要的<commodity>以协助扑灭首都周围不断蔓延的大火时，他们批准了你的降落请求。"
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 10
+	source
+		near Pollux 2 10
+	destination Martini
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment 7000 170
+		dialog phrase "generic cargo delivery payment"
+
+
+mission "Martini Relief (People) [0]"
+	name "向马提尼运送救援人员"
+	description "由于马提尼近期遭受的核弹轰炸，请将<bunks>名<martini relief occupations>运送至<planet>，以缓解超负荷运转的医院的压力。你需要呼叫太空港管制员以获得该行星的降落许可。报酬为<payment>。"
+	job
+	repeat
+	passengers 2 2 .3
+	substitutions
+		"<martini relief occupations>" "医生"
+		"<martini relief occupations>" "技术员"
+			random < 50
+		"<martini relief occupations>" "nurses"
+			random < 33
+		"<martini relief occupations>" "surgeons"
+			random < 25
+	clearance "当你向太空港管制员解释你船上载有一批协助马提尼救灾工作的<martini relief occupations>时，他们批准了你的降落请求。"
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 25
+	source
+		near Pollux 2 10
+	destination Martini
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 180
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Martini Relief (People) [1]"
+	name "向马提尼运送救援人员"
+	description "由于马提尼近期遭受的核弹轰炸，请将<bunks>名<martini relief occupations>运送至<planet>以协助马提尼的救援工作。你需要呼叫太空港管制员以获得该行星的降落许可。报酬为<payment>。"
+	job
+	repeat
+	passengers 2 2 .3
+	substitutions
+		"<martini relief occupations>" "evacuation coordinators"
+		"<martini relief occupations>" "搜救人员"
+			random < 50
+		"<martini relief occupations>" "firefighters"
+			random < 33
+		"<martini relief occupations>" "volunteers"
+			random < 25
+	clearance "当你向太空港管制员解释你船上载有一批协助马提尼救灾工作的<martini relief occupations>时，他们批准了你的降落请求。"
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 15
+	source
+		near Pollux 2 10
+	destination Martini
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 180
+		dialog phrase "generic passenger dropoff payment"
+
+mission "Martini Relief (People) [2]"
+	name "向马提尼运送救援人员"
+	description "由于马提尼近期遭受的核弹轰炸，请将<bunks>名<martini relief occupations>运送至<planet>以协助安置和重建工作。你需要呼叫太空港管制员以获得该行星的降落许可。报酬为<payment>。"
+	job
+	repeat
+	passengers 2 2 .3
+	substitutions
+		"<martini relief occupations>" "工程师"
+		"<martini relief occupations>" "技术员"
+			random < 50
+		"<martini relief occupations>" "construction workers"
+			random < 33
+		"<martini relief occupations>" "volunteers"
+			random < 25
+	clearance "当你向太空港管制员解释你船上载有一批协助马提尼救灾工作的<martini relief occupations>时，他们批准了你的降落请求。"
+	to offer
+		has "event: war begins"
+		not "event: initial deployment 2"
+		random < 10
+	source
+		near Pollux 2 10
+	destination Martini
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		payment 10000 180
+		dialog phrase "generic passenger dropoff payment"

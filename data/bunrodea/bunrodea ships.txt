@@ -1,0 +1,523 @@
+# Copyright (c) 2021 by Amazinite
+#
+# Endless Sky is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# Endless Sky is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program. If not, see <https://www.gnu.org/licenses/>.
+
+ship "Kaiken"
+	"display name" "凯肯"
+	sprite "ship/kaiken"
+	thumbnail "thumbnail/kaiken"
+	"administrative cost" 0
+	attributes
+		category "Fighter"
+		"cost" 1199000
+		"shields" 3200
+		"hull" 800
+		"required crew" 1
+		"bunks" 1
+		"mass" 60
+		"drag" 1.05
+		"heat dissipation" 0.91
+		"outfit space" 121
+		"weapon capacity" 35
+		"engine capacity" 45
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		"Locust Blaster" 3
+		"Lasher Pistol"
+		
+		"Solar Battery"
+		"Solar Cell" 27
+		"Small Shield Relay"
+		"Shield Relay Limiter" 6
+		
+		"Chiisana Rift Thruster" 2
+		"Chiisana Rift Steering"
+	
+	engine -5.5 30.5
+	engine 5.5 30.5
+	gun -7 -31
+	gun 7 -31
+	gun 0 -20
+	leak "flame" 60 80
+	explode "tiny explosion" 20
+	explode "small explosion" 15
+	description "虽然以战斗机的标准来看不算特别快，但怀剑级在速度上的不足被其耐久度和火力所弥补；它拥有大量的武器空间和多达三个火炮位，可以安装三门蝗虫冲击炮，或者选择使用一门更大型的颚部炮。"
+	description "	战斗机默认不配备超空间引擎。除非你的舰队中拥有带战斗机机库的飞船，否则无法携带战斗机。"
+
+
+
+ship "Sasumata"
+	"display name" "刺股"
+	sprite "ship/sasumata"
+	thumbnail "thumbnail/sasumata"
+	"administrative cost" 4
+	attributes
+		category "Transport"
+		"cost" 12650000
+		"shields" 15500
+		"hull" 4200
+		"required crew" 10
+		"bunks" 72
+		"mass" 710
+		"drag" 7.05
+		"heat dissipation" 0.54
+		"fuel capacity" 700
+		"cargo space" 32
+		"outfit space" 397
+		"weapon capacity" 122
+		"engine capacity" 126
+		"cloak" .05
+		"cloaked regen multiplier" -1
+		"cloaked repair multiplier" -1
+		"cloaking energy" 10
+		"cloaking fuel" .05
+		weapon
+			"blast radius" 90
+			"shield damage" 900
+			"hull damage" 450
+			"hit force" 1350
+	outfits
+		"Swarm Pod" 2
+		"Swarm Missile" 1000
+		"Swarm Clip"
+		"Buzzer Anti-Missile" 2
+		"Lasher Pistol" 41
+		
+		"Quark Reactor"
+		"Reactor Overclocker" 2
+		"Solar Battery" 2
+		"Solar Cell" 30
+		"Large Shield Relay"
+		"Shield Relay Limiter" 10
+		
+		"Subarashii Rift Thruster"
+		"Ookii Rift Steering"
+		"Hyperdrive"
+	
+	engine -11 109
+	engine 11 109
+	gun -12.5 -110.5
+	gun 12.5 -110.5
+	turret -10 -5
+	turret 10 -5
+	bay "Fighter" 0 -93
+	bay "Fighter" 0 -93
+	bay "Fighter" 0 -93
+	bay "Fighter" 0 -93
+	leak "leak" 50 50
+	leak "big leak" 80 30
+	explode "tiny explosion" 30
+	explode "small explosion" 30
+	explode "medium explosion" 20
+	explode "large explosion" 5
+	"final explode" "final explosion small"
+	description "刺股叉级是邦罗迪亚的主力侦察飞船。虽然并非为战斗而设计，这艘隐身运输舰仍能抗衡一些小型战舰；其四个战斗机泊位使得刺股叉级在部署战斗机后成为一股不可忽视的力量。"
+	description "	隐身技术内置于刺股叉级的船体中；它不能被移除或转移到另一艘船上。"
+
+
+
+ship "Tanto"
+	"display name" "短刀"
+	sprite "ship/tanto"
+	thumbnail "thumbnail/tanto"
+	"administrative cost" 3
+	attributes
+		category "Light Freighter"
+		"cost" 5995000
+		"shields" 16200
+		"hull" 3600
+		"required crew" 3
+		"bunks" 7
+		"mass" 247
+		"drag" 3.9
+		"heat dissipation" 0.7
+		"fuel capacity" 600
+		"cargo space" 219
+		"outfit space" 231
+		"weapon capacity" 56
+		"engine capacity" 102
+		weapon
+			"blast radius" 120
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Buzzer Anti-Missile" 2
+		"Lasher Pistol" 5
+		
+		"Solar Battery" 2
+		"Solar Cell" 42
+		"Small Shield Relay"
+		
+		"Ookii Rift Thruster"
+		"Ookii Rift Steering"
+		"Chiisana Rift Thruster"
+		"Hyperdrive"
+		
+	engine -20 148
+	engine 20 148
+	gun -16.5 -135
+	gun 16.5 -135
+	turret 0 -74.5
+	turret 0 108
+	leak "leak" 60 50
+	leak "flame" 40 80
+	leak "big leak" 80 30
+	explode "tiny explosion" 30
+	explode "small explosion" 30
+	explode "medium explosion" 15
+	"final explode" "final explosion small"
+	description "短刀级货船被设计为一款高速封锁突破船。虽然武装和装甲薄弱，但对于其尺寸而言，短刀级极其迅捷，使其能够在任何敌对势力将全部火力倾泻在这艘小船上之前，跳跃进出星系。"
+
+
+
+ship "Ararebo"
+	"display name" "阿拉雷博"
+	sprite "ship/ararebo"
+	thumbnail "thumbnail/ararebo"
+	"administrative cost" 6
+	attributes
+		category "Utility"
+		"cost" 17565000
+		"shields" 50300
+		"hull" 13600
+		"required crew" 15
+		"bunks" 43
+		"mass" 1068
+		"drag" 19.7
+		"heat dissipation" 0.53
+		"fuel capacity" 700
+		"cargo space" 414
+		"outfit space" 594
+		"weapon capacity" 112
+		"engine capacity" 108
+		weapon
+			"blast radius" 200
+			"shield damage" 2000
+			"hull damage" 1000
+			"hit force" 3000
+	outfits
+		"Locust Turret" 2
+		"Buzzer Anti-Missile" 2
+		"Lasher Pistol" 29
+		
+		"Dark Reactor"
+		"Reactor Overclocker" 8
+		"Reactor Limiter" 3
+		"Solar Battery"
+		"Solar Cell" 36
+		"Large Shield Relay"
+		"Shield Relay Booster" 16
+		"Large Nanite Fabricator"
+		"Nanite Enhancer" 5
+		
+		"Ookii Rift Thruster"
+		"Ookii Rift Steering"
+		"Hyperdrive"
+	
+	engine -17 185
+	engine 17 185
+	turret 0 -118.5 "Buzzer Anti-Missile"
+	turret 0 -41 "Locust Turret"
+	turret 0 79.5 "Locust Turret"
+	turret 0 112 "Buzzer Anti-Missile"
+	bay "Fighter" 0 -132
+	bay "Fighter" 0 -132
+	bay "Fighter" -7 -132
+	bay "Fighter" 7 -132
+	bay "Fighter" -17 -132
+	bay "Fighter" 17 -132
+	bay "Fighter" -29 -133.5
+	bay "Fighter" 29 -133.5
+	leak "leak" 40 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "tiny explosion" 50
+	explode "small explosion" 30
+	explode "medium explosion" 10
+	explode "large explosion" 10
+	"final explode" "final explosion medium"
+	description "荒法师级是邦罗迪亚在太空中运输大量货物的主要方式之一，但任何胆敢认为这艘货船是软柿子的人都将大错特错。荒法师级同时兼任邦罗迪亚的主要支援航母，搭载着一个由八架战斗机组成的中队，足以将几乎任何飞船撕成碎片。"
+
+
+
+ship "Tekkan"
+	"display name" "泰坎"
+	sprite "ship/tekkan"
+	thumbnail "thumbnail/tekkan"
+	"administrative cost" 4
+	attributes
+		category "Light Warship"
+		"cost" 10119000
+		"shields" 18600
+		"hull" 5200
+		"required crew" 6
+		"bunks" 9
+		"mass" 364
+		"drag" 4.0
+		"heat dissipation" 0.75
+		"fuel capacity" 700
+		"cargo space" 21
+		"outfit space" 321
+		"weapon capacity" 100
+		"engine capacity" 85
+		weapon
+			"blast radius" 140
+			"shield damage" 1400
+			"hull damage" 700
+			"hit force" 2100
+	outfits
+		"Locust Blaster" 2
+		"Locust Turret"
+		"Buzzer Anti-Missile" 2
+		"Lasher Pistol" 8
+		
+		"Quark Reactor"
+		"Solar Battery"
+		"Solar Cell" 36
+		"Small Shield Relay"
+		"Shield Relay Booster" 5
+		
+		"Ookii Rift Thruster"
+		"Ookii Rift Steering"
+		"Hyperdrive"
+	
+	engine -11.5 66.5
+	engine 11.5 66.5
+	gun -24 -62.5
+	gun 24 -62.5
+	turret 0 -42 "Locust Turret"
+	turret -25 -2 "Buzzer Anti-Missile"
+	turret 25 -2 "Buzzer Anti-Missile"
+	leak "leak" 50 50
+	leak "flame" 80 80
+	explode "tiny explosion" 40
+	explode "small explosion" 20
+	explode "medium explosion" 10
+	explode "large explosion" 5
+	"final explode" "final explosion small"
+	description "泰坎级是邦罗迪亚武库中唯一一款优先采用炮塔而非前向火炮的飞船。这使得这种小巧快速的飞船能够作为主力反导防御手段，保护那些炮塔位较少的大型邦罗迪亚飞船。泰坎级还能利用罕见但强大的蝗虫炮塔，在一艘小型飞船上集中可观的火力。"
+
+
+
+ship "Kunai"
+	"display name" "苦无"
+	sprite "ship/kunai"
+	thumbnail "thumbnail/kunai"
+	"administrative cost" 4
+	attributes
+		category "Light Warship"
+		"cost" 12444000
+		"shields" 21400
+		"hull" 5700
+		"required crew" 15
+		"bunks" 37
+		"mass" 603
+		"drag" 6.8
+		"heat dissipation" 0.66
+		"fuel capacity" 700
+		"cargo space" 28
+		"outfit space" 407
+		"weapon capacity" 158
+		"engine capacity" 102
+		weapon
+			"blast radius" 210
+			"shield damage" 2100
+			"hull damage" 1050
+			"hit force" 3150
+	outfits
+		"Mandible Cannon" 4
+		"Locust Blaster" 2
+		"Lasher Pistol" 26
+		
+		"Quark Reactor"
+		"Solar Battery" 2
+		"Solar Cell" 28
+		"Small Shield Relay"
+		"Shield Relay Booster" 4
+		"Small Nanite Fabricator"
+		
+		"Ookii Rift Thruster"
+		"Ookii Rift Steering"
+		"Chiisana Rift Steering"
+		"Hyperdrive"
+	
+	engine -8 49
+	engine 8 49
+	gun -5.5 -29.5 "Locust Blaster"
+	gun 5.5 -29.5 "Locust Blaster"
+	gun -13.5 -20.5 "Mandible Cannon"
+	gun 13.5 -20.5 "Mandible Cannon"
+	gun -40 -19 "Mandible Cannon"
+	gun 40 -19 "Mandible Cannon"
+	leak "leak" 50 50
+	leak "flame" 80 80
+	explode "tiny explosion" 60
+	explode "small explosion" 30
+	explode "medium explosion" 40
+	explode "large explosion" 20
+	"final explode" "final explosion small"
+	description "苦无级是邦罗迪亚最小的炮艇，这类战舰极其注重前向火炮的威力。由于缺乏炮塔安装位，且更注重转向速度而非航行速度，苦无级极易受到导弹武器的攻击，必须依赖舰队中其他配备反导炮塔的飞船。"
+
+
+
+ship "Kama"
+	"display name" "卡玛"
+	sprite "ship/kama"
+	thumbnail "thumbnail/kama"
+	"administrative cost" 7
+	attributes
+		category "Medium Warship"
+		"cost" 20580000
+		"shields" 43700
+		"hull" 11500
+		"required crew" 39
+		"bunks" 43
+		"mass" 1160
+		"drag" 12.6
+		"heat dissipation" 0.5
+		"fuel capacity" 800
+		"cargo space" 56
+		"outfit space" 573
+		"weapon capacity" 247
+		"engine capacity" 121
+		weapon
+			"blast radius" 350
+			"shield damage" 3500
+			"hull damage" 1750
+			"hit force" 5250
+	outfits
+		"Mandible Cannon" 4
+		"Swarm Pod" 6
+		"Swarm Missile" 2400
+		"Lasher Pistol" 41
+		
+		"Electroweak Reactor"
+		"Reactor Overclocker" 2
+		"Solar Battery"
+		"Solar Cell" 36
+		"Large Shield Relay"
+		"Shield Relay Booster" 6
+		"Outfits Expansion" 2
+		
+		"Ookii Rift Thruster"
+		"Ookii Rift Steering"
+		"Nami Rift Steering"
+		"Hyperdrive"
+		
+	engine -11.5 132.5
+	engine 11.5 132.5
+	gun -24.5 -129 "Swarm Pod"
+	gun 24.5 -129 "Swarm Pod"
+	gun -5 -114 "Mandible Cannon"
+	gun 5 -114 "Mandible Cannon"
+	gun -14 -105.5 "Mandible Cannon"
+	gun 14 -105.5 "Mandible Cannon"
+	gun -54.5 -20 "Swarm Pod"
+	gun 54.5 -20 "Swarm Pod"
+	gun -62.5 -9.5 "Swarm Pod"
+	gun 62.5 -9.5 "Swarm Pod"
+	turret 0 54.5
+	leak "leak" 50 50
+	leak "flame" 80 80
+	leak "big leak" 80 30
+	explode "tiny explosion" 80
+	explode "small explosion" 40
+	explode "medium explosion" 40
+	explode "large explosion" 30
+	explode "huge explosion" 10
+	"final explode" "final explosion medium"
+	description "镰级炮艇是一艘令人生畏的战舰，可搭载多达十门火炮，并配备一个通常装有反导炮塔的炮塔位。这使得镰级相比其较小的姊妹舰苦无级，较不易受到导弹武器的威胁。"
+
+
+
+ship "Chigiriki"
+	"display name" "契木棍"
+	sprite "ship/chigiriki"
+	thumbnail "thumbnail/chigiriki"
+	"administrative cost" 8
+	attributes
+		category "Heavy Warship"
+		"cost" 30876000
+		"shields" 64200
+		"hull" 21000
+		"required crew" 49
+		"bunks" 69
+		"mass" 1698
+		"drag" 16.54
+		"heat dissipation" 0.4
+		"fuel capacity" 900
+		"cargo space" 102
+		"outfit space" 747
+		"weapon capacity" 504
+		"engine capacity" 145
+		weapon
+			"blast radius" 410
+			"shield damage" 4100
+			"hull damage" 2050
+			"hit force" 6600
+	outfits
+		"Thorax Cannon"
+		"Locust Blaster" 6
+		"Swarm Pod" 10
+		"Swarm Missile" 4000
+		"Lasher Pistol" 59
+		
+		"Dark Reactor"
+		"Reactor Limiter" 3
+		"Solar Battery" 3
+		"Solar Cell" 19
+		"Large Shield Relay"
+		"Shield Relay Booster" 16
+		"Outfits Expansion" 4
+		
+		"Ookii Rift Thruster"
+		"Subarashii Rift Steering"
+		"Hyperdrive"
+		
+	engine -75 155
+	engine 75 155
+	engine -22.5 183.5
+	engine 22.5 183.5
+	gun -33.5 -175 "Locust Blaster"
+	gun 33.5 -175 "Locust Blaster"
+	gun -24 -157.5 "Locust Blaster"
+	gun 24 -157.5 "Locust Blaster"
+	gun -14.5 -153 "Locust Blaster"
+	gun 14.5 -153 "Locust Blaster"
+	gun 0 -143 "Thorax Cannon"
+	gun -67 -26.5 "Swarm Pod"
+	gun 67 -26.5 "Swarm Pod"
+	gun -75 12.5 "Swarm Pod"
+	gun 75 12.5 "Swarm Pod"
+	gun -82.5 21.5 "Swarm Pod"
+	gun 82.5 21.5 "Swarm Pod"
+	gun -95.5 85.5 "Swarm Pod"
+	gun 95.5 85.5 "Swarm Pod"
+	gun -106.5 105.5 "Swarm Pod"
+	gun 106.5 105.5 "Swarm Pod"
+	turret -20.5 40
+	turret 20.5 40
+	leak "leak" 30 50
+	leak "flame" 30 80
+	leak "big leak" 30 30
+	explode "tiny explosion" 90
+	explode "small explosion" 70
+	explode "medium explosion" 45
+	explode "large explosion" 20
+	explode "huge explosion" 10
+	"final explode" "final explosion large"
+	description "千切棍级是邦罗迪亚最大的炮艇，拥有惊人的十七个火炮口。其中一个炮口配备了毁灭性的胸甲炮，这种巨型火炮能够对任何胆敢挡在千切棍级面前的飞船造成巨大伤害。一些千切棍级还兼作导弹平台，倾泻而下的导弹墙甚至能遮蔽最近的恒星。"
