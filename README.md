@@ -12,28 +12,43 @@
 - 界面翻译：按钮、菜单、属性面板、提示消息、帮助弹窗、按键提示等（本项目补充，共 1456 条）
 - 飞船/装备中文名：1170+ 条 `display name`
 - 商品名、分类名：全部中文
+- 完整图像与音效：官方原始素材，已一并打包
 
-## 二、怎么直接用（推荐）
+## 二、安装方式一：deb 包（推荐，双击安装）
 
-仓库根目录的 `endless-sky-linux-zh` 就是编译好的 Linux 可执行文件。
+到 [Releases](https://github.com/yangsanhai/endless-sky-zh-linux/releases) 下载 **`endless-sky-zh_0.11.3_amd64.deb`**：
 
 ```bash
-# 1. 下载整个仓库（或 git clone）
-git clone https://github.com/yangsanhai/endless-sky-zh-linux.git
-cd endless-sky-zh-linux
+# 用 apt 安装（会自动补依赖；改成你下载的实际路径）
+sudo apt install ./endless-sky-zh_0.11.3_amd64.deb
 
-# 2. 安装运行库（Debian/Ubuntu）
-sudo apt-get install -y libsdl2-2.0-0 libpng16-16 libjpeg62-turbo libglew2.2 \
-  libopenal1 libmad0 libavif16 libflac++10 libminizip1t64 zlib1g libfreetype6
-
-# 3. 在仓库目录里运行（必须在这个目录，因为要读 data/ 和 fonts/）
-chmod +x endless-sky-linux-zh
-./endless-sky-linux-zh
+# 或者
+sudo dpkg -i endless-sky-zh_0.11.3_amd64.deb && sudo apt-get -f install
 ```
 
-> 注意：**必须在仓库根目录运行**，否则读不到 `data/` 和 `fonts/`。
+装完之后：
 
-## 三、怎么自己编译
+- 在应用菜单里搜 **「无尽天空」** 直接点开
+- 或者终端里执行 `endless-sky-zh`
+
+安装位置：程序与资源在 `/opt/endless-sky-zh/`，启动器 `/usr/games/endless-sky-zh`。
+卸载：`sudo apt remove endless-sky-zh`。
+
+## 三、安装方式二：AppImage（免安装，单文件）
+
+下载 **`EndlessSkyZH-x86_64.AppImage`**，然后：
+
+```bash
+chmod +x EndlessSkyZH-x86_64.AppImage
+./EndlessSkyZH-x86_64.AppImage
+```
+
+- 这个包**自带运行库**（SDL2/GLEW/OpenAL 等都在里面），换别的发行版基本也能直接跑
+- 如果提示缺少 FUSE：Debian/Ubuntu 上 `sudo apt install libfuse2t64`（旧的叫 `libfuse2`），
+  或者不解压直接跑：`./EndlessSkyZH-x86_64.AppImage --appimage-extract-and-run`
+- 桌面环境里对 AppImage 双击也通常可直接运行（部分环境需先给执行权限）
+
+## 四、从源码自己编译
 
 ```bash
 sudo apt-get install -y build-essential cmake ninja-build git \
@@ -56,24 +71,29 @@ cmake --build build -j$(nproc)
 ./build/endless-sky
 ```
 
-## 四、文件说明
+> 注意：运行时资源目录的识别方式是「从可执行文件所在目录开始，逐级向上找含有 `credits.txt` 的目录」。
+> 所以**自己手动摆放文件时，`credits.txt` 必须和 `data/`、`images/`、`sounds/` 放在同一层**，否则游戏会报
+> `找不到资源目录！` 直接退出。仓库根目录里那个 `endless-sky-linux-zh` 单独拿出来跑也会因此报错，建议直接用上面的 deb 或 AppImage。
+
+## 五、仓库文件说明
 
 | 文件/目录 | 说明 |
 |---|---|
 | `endless-sky-linux-zh` | 编译好的 Linux 可执行文件（64 位） |
-| `data/` | 游戏数据（中文）：任务、对话、星球、飞船装备、商品等 |
-| `fonts/` | 中文字体（思源黑体 SourceHanSansCN） |
+| `data/` | 游戏数据（中文）：任务、对话、星球、飞船装备、商品等，含中文字体 |
+| `credits.txt` | 游戏用来定位资源目录的锚点文件（**不能删**） |
+| `images/`、`sounds/`、`shaders/` | 官方图像、音效与着色器素材 |
 | `interface-translation.patch` | 界面文本的程序内注入补丁（1456 条，基于 0.11.3 源码） |
 | `README.md` | 本文件 |
 
-## 五、已知说明
+## 六、已知说明
 
 - **地名/星系名/星球名保持英文**（地图地名，汉化意义不大）
-- 存档位置：`~/.local/share/endless-sky/`
+- 存档位置：`~/.local/share/endless-sky/saves/`（安装/升级游戏不会动你的存档）
 - 键位配置文件 `keys.txt` 里的动作名保持英文（翻译会导致按键失效，已刻意保留）
 - 如果游戏里还有个别英文，欢迎提 Issue 指出来
 
-## 六、许可与来源
+## 七、许可与来源
 
 - 本项目的游戏源码来自 [SoluteToNight/endless-sky-CN](https://github.com/SoluteToNight/endless-sky-CN)（GPL-3.0），
   上游为 [endless-sky/endless-sky](https://github.com/endless-sky/endless-sky)（GPL-3.0）。
