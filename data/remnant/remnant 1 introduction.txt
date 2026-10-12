@@ -322,7 +322,7 @@ mission "Remnant: Defense 2"
 			names "korath"
 			# This ship has been here for a while and all its cargo outfits are gone, it just has commodities.
 			cargo 4
-			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			commodities "食物" "服装" "金属" "塑料" "医疗用品" "重金属"
 			variant
 				"Rano'erek (Crippled)"
 		dialog "你已经摧毁了在<planet>袭击中残留的科拉斯飞船。现在你可以返回那里领取报酬。"
@@ -2294,7 +2294,7 @@ mission "Remnant: Salvage 2"
 		fleet
 			names "korath"
 			cargo 3
-			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			commodities "食物" "服装" "金属" "塑料" "医疗用品" "重金属"
 			outfitters "Korath Exiles Remnant Donations"
 			variant
 				"Rano'erek"
@@ -3738,7 +3738,7 @@ ship "_Ion Timer Ship"
 	# The _Ion Storm Timer: Generator outfit counteracts this until there is an ion storm
 	# sprite "ship/shuttle" # uncomment this for debugging
 	attributes
-		category "Game Mechanics"
+		category "游戏机制"
 		"heat dissipation" 1
 		"hull" 1.0
 		"mass" 100

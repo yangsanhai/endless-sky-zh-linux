@@ -534,7 +534,7 @@ phrase "shakespeare play"
 		"《维罗纳二绅士》"
 
 trade
-	commodity "Successor High Value"
+	commodity "后继者高价值品"
 		"fossils"
 		"insulative silver chains"
 		"Kijra-pet skeletons"

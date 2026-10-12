@@ -19,7 +19,7 @@ ship "Shale"
 	thumbnail "thumbnail/gegno shale"
 	"administrative cost" 1
 	attributes
-		category "Transport"
+		category "运输船"
 		licenses
 			"Gegno Civilian"
 		"cost" 148000
@@ -59,7 +59,7 @@ ship "Dolomite"
 	thumbnail "thumbnail/gegno dolomite"
 	"administrative cost" 3
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		licenses
 			"Gegno Civilian"
 		"cost" 2768000
@@ -104,7 +104,7 @@ ship "Conglomerate"
 	thumbnail "thumbnail/gegno conglomerate"
 	"administrative cost" 4
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		licenses
 			"Gegno Civilian"
 		"cost" 5909000
@@ -154,7 +154,7 @@ ship "Granofel"
 	thumbnail "thumbnail/gegno granofel"
 	"administrative cost" 3
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		licenses
 			"Gegno Civilian"
 		"cost" 5150000
@@ -203,7 +203,7 @@ ship "Gypsum"
 	thumbnail "thumbnail/gegno gypsum"
 	"administrative cost" 2
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		licenses
 			"Gegno Civilian"
 			"Gegno Driller"
@@ -254,7 +254,7 @@ ship "Corundum"
 	thumbnail "thumbnail/gegno corundum"
 	"administrative cost" 2
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		licenses
 			"Gegno Civilian"
 			"Gegno Driller"
@@ -325,7 +325,7 @@ ship "Protolith"
 	thumbnail "thumbnail/gegno protolith"
 	"administrative cost" 17
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		"cost" 115700000
 		"shields" 0
 		"hull" 48600
@@ -385,7 +385,7 @@ ship "Dunite"
 	thumbnail "thumbnail/gegno dunite"
 	"administrative cost" 1
 	attributes
-		category "Interceptor"
+		category "截击机"
 		licenses
 			"Vi Evocati"
 		"cost" 50000
@@ -431,7 +431,7 @@ ship "Augen"
 	thumbnail "thumbnail/gegno augen"
 	"administrative cost" 24
 	attributes
-		category "Superheavy"
+		category "超重型"
 		licenses
 			"Vi Lord"
 		"cost" 58800000
@@ -568,7 +568,7 @@ ship "Slate"
 	thumbnail "thumbnail/gegno slate"
 	"administrative cost" 1
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		licenses
 			"Vi Evocati"
 		"cost" 169000
@@ -609,7 +609,7 @@ ship "Schist"
 	thumbnail "thumbnail/gegno schist a"
 	"administrative cost" 4
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		licenses
 			"Vi Evocati"
 		"cost" 3737000
@@ -691,7 +691,7 @@ ship "Rhyolite"
 	thumbnail "thumbnail/gegno rhyolite"
 	"administrative cost" 1
 	attributes
-		category "Interceptor"
+		category "截击机"
 		licenses
 			"Vi Centurion"
 		"cost" 1165000
@@ -742,7 +742,7 @@ ship "Eclogite"
 	thumbnail "thumbnail/gegno eclogite"
 	"administrative cost" 2
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		licenses
 			"Vi Centurion"
 		"cost" 2500000
@@ -794,7 +794,7 @@ ship "Diorite"
 	thumbnail "thumbnail/gegno diorite"
 	"administrative cost" 2
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			"Vi Centurion"
 		"cost" 3350000
@@ -863,7 +863,7 @@ ship "Hornfel"
 	thumbnail "thumbnail/gegno hornfel a"
 	"administrative cost" 5
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			"Vi Centurion"
 		"cost" 5052000
@@ -1001,7 +1001,7 @@ ship "Gneiss"
 	thumbnail "thumbnail/gegno gneiss"
 	"administrative cost" 7
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		licenses
 			"Vi Lord"
 		"cost" 15066000
@@ -1083,7 +1083,7 @@ ship "Granulite"
 	thumbnail "thumbnail/gegno granulite"
 	"administrative cost" 7
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		licenses
 			"Vi Lord"
 		"cost" 16820000
@@ -1173,7 +1173,7 @@ ship "Halite"
 	thumbnail "thumbnail/gegno halite"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		licenses
 			"Scin Hoplologist"
 			"Scin Architect"
@@ -1217,7 +1217,7 @@ ship "Mica"
 	thumbnail "thumbnail/gegno mica"
 	"administrative cost" 1
 	attributes
-		category "Transport"
+		category "运输船"
 		licenses
 			"Scin Adjutant"
 		"cost" 201000
@@ -1258,7 +1258,7 @@ ship "Coesite"
 	thumbnail "thumbnail/gegno coesite"
 	"administrative cost" 2
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		licenses
 			"Scin Adjutant"
 		"cost" 1872000
@@ -1313,7 +1313,7 @@ ship "Tridymite"
 	thumbnail "thumbnail/gegno tridymite"
 	"administrative cost" 2
 	attributes
-		category "Transport"
+		category "运输船"
 		licenses
 			"Scin Architect"
 			"Scin Hoplologist"
@@ -1368,7 +1368,7 @@ ship "Felsic"
 	thumbnail "thumbnail/gegno felsic"
 	"administrative cost" 3
 	attributes
-		category "Utility"
+		category "通用"
 		licenses
 			"Scin Architect"
 			"Scin Hoplologist"
@@ -1422,7 +1422,7 @@ ship "Feldspar"
 	thumbnail "thumbnail/gegno feldspar"
 	"administrative cost" 7
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		licenses
 			"Scin Architect"
 			"Scin Hoplologist"
@@ -1472,23 +1472,23 @@ ship "Feldspar"
 		right
 	turret -74.5 13 "Acuit Artillery"
 	turret 74.5 13 "Acuit Artillery"
-	bay "Fighter" -73 -173.5
+	bay "战斗机" -73 -173.5
 		"launch effect" "scin launch"
 		over
-	bay "Fighter" 73 -173.5
+	bay "战斗机" 73 -173.5
 		"launch effect" "scin launch"
 		over
-	bay "Fighter" -70 -98
+	bay "战斗机" -70 -98
 		"launch effect" "scin launch"
 		over
-	bay "Fighter" 70 -98
+	bay "战斗机" 70 -98
 		"launch effect" "scin launch"
 		over
-	bay "Fighter" -65.5 120
+	bay "战斗机" -65.5 120
 		"launch effect" "scin launch"
 		angle -180
 		over
-	bay "Fighter" 65.5 120
+	bay "战斗机" 65.5 120
 		"launch effect" "scin launch"
 		angle -180
 		over
@@ -1509,7 +1509,7 @@ ship "Epidote"
 	thumbnail "thumbnail/gegno epidote"
 	"administrative cost" 6
 	attributes
-		category "Utility"
+		category "通用"
 		licenses
 			"Scin Architect"
 			"Scin Hoplologist"
@@ -1552,11 +1552,11 @@ ship "Epidote"
 	turret 0 -144.5 "Astuit Battery"
 	turret 0 -27 "Astuit Battery"
 	turret 0 65 "Acuit Artillery"
-	bay "Fighter" 0 122
+	bay "战斗机" 0 122
 		"launch effect" "scin launch"
 		angle -180
 		under
-	bay "Fighter" 0 180
+	bay "战斗机" 0 180
 		"launch effect" "scin launch"
 		angle -180
 		under
@@ -1577,7 +1577,7 @@ ship "Kyanite"
 	thumbnail "thumbnail/gegno kyanite"
 	"administrative cost" 5
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 28870000
 		"shields" 0
 		"hull" 13650

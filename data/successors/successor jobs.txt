@@ -437,7 +437,7 @@ mission "Successors: High Value Delivery Out"
 	repeat
 	name "贵重物品送至 <planet>"
 	description "需要一位信使将<cargo>从<origin>运送至<planet>。送达后你将获得<payment>的报酬。"
-	cargo "Successor High Value" 6 9 .2
+	cargo "后继者高价值品" 6 9 .2
 	to offer
 		has "known to the successors"
 		random < 10

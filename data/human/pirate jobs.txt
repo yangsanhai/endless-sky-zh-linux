@@ -25,7 +25,7 @@ mission "Cargo Smuggling [0]"
 	repeat
 	infiltrating
 	description "将<cargo>走私至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Cargo" 5 2 .1
+	cargo "违禁货物" 5 2 .1
 	illegal 40000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -58,7 +58,7 @@ mission "Cargo Smuggling [1]"
 	repeat
 	infiltrating
 	description "将<cargo>走私至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Cargo" 5 2 .1
+	cargo "违禁货物" 5 2 .1
 	illegal 50000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -92,7 +92,7 @@ mission "Cargo Smuggling [2]"
 	repeat
 	infiltrating
 	description "将<cargo>走私至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Cargo" 5 2 .1
+	cargo "违禁货物" 5 2 .1
 	illegal 64000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -126,7 +126,7 @@ mission "Cargo Smuggling [3]"
 	repeat
 	infiltrating
 	description "将<cargo>走私至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Cargo" 5 2 .1
+	cargo "违禁货物" 5 2 .1
 	illegal 80000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -162,7 +162,7 @@ mission "Drug Running [0]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Substances" 5 2 .1
+	cargo "违禁品" 5 2 .1
 	illegal 75000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	to offer
 		random < 80
@@ -195,7 +195,7 @@ mission "Drug Running [1]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。如果被执法部门抓获，你将被罚款46,000信用点。报酬为<payment>。"
-	cargo "Illegal Substances" 5 2 .1
+	cargo "违禁品" 5 2 .1
 	illegal 92000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -229,7 +229,7 @@ mission "Drug Running [2]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Substances" 5 2 .1
+	cargo "违禁品" 5 2 .1
 	illegal 110000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -263,7 +263,7 @@ mission "Drug Running [3]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Substances" 5 2 .1
+	cargo "违禁品" 5 2 .1
 	illegal 130000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -299,7 +299,7 @@ mission "Bulk Cargo Smuggling [0]"
 	repeat
 	infiltrating
 	description "将<cargo>走私至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Cargo" 25 2 .1
+	cargo "违禁货物" 25 2 .1
 	illegal 47000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -333,7 +333,7 @@ mission "Bulk Cargo Smuggling [1]"
 	repeat
 	infiltrating
 	description "将<cargo>走私至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Cargo" 25 2 .1
+	cargo "违禁货物" 25 2 .1
 	illegal 130000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -367,7 +367,7 @@ mission "Bulk Cargo Smuggling [2]"
 	repeat
 	infiltrating
 	description "将<cargo>走私至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Cargo" 25 2 .1
+	cargo "违禁货物" 25 2 .1
 	illegal 172000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -403,7 +403,7 @@ mission "Bulk Drug Running [0]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Substances" 25 2 .1
+	cargo "违禁品" 25 2 .1
 	illegal 172000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -437,7 +437,7 @@ mission "Bulk Drug Running [1]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Substances" 25 2 .1
+	cargo "违禁品" 25 2 .1
 	illegal 200000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -471,7 +471,7 @@ mission "Bulk Drug Running [2]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>，且途中不得被行星执法部门扫描或抓获。报酬为<payment>。"
-	cargo "Illegal Substances" 25 2 .1
+	cargo "违禁品" 25 2 .1
 	illegal 240000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -507,7 +507,7 @@ mission "Stealth Cargo Smuggling (North) [0]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Cargo" 5 2 .1
+	cargo "严重违禁货物" 5 2 .1
 	illegal 260000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -569,7 +569,7 @@ mission "Stealth Cargo Smuggling (North) [1]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Cargo" 5 2 .1
+	cargo "严重违禁货物" 5 2 .1
 	illegal 350000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -654,7 +654,7 @@ mission "Stealth Cargo Smuggling (Core) [0]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Cargo" 5 2 .1
+	cargo "严重违禁货物" 5 2 .1
 	illegal 260000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -715,7 +715,7 @@ mission "Stealth Cargo Smuggling (Core) [1]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Cargo" 5 2 .1
+	cargo "严重违禁货物" 5 2 .1
 	illegal 350000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -802,7 +802,7 @@ mission "Stealth Cargo Smuggling (South) [0]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Cargo" 5 2 .1
+	cargo "严重违禁货物" 5 2 .1
 	illegal 260000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -864,7 +864,7 @@ mission "Stealth Cargo Smuggling (South) [1]"
 	repeat
 	infiltrating
 	description "将<cargo>运送到<destination>。如果你被行星执法机构扫描或抓获，后果可能会很严重。你需要在远离太空港的地方着陆，否则可能被抓住。报酬为<payment>。"
-	cargo "Highly Illegal Cargo" 5 2 .1
+	cargo "严重违禁货物" 5 2 .1
 	illegal 350000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -954,7 +954,7 @@ mission "Stealth Drug Running (North) [0]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Substances" 5 2 .1
+	cargo "严重违禁品" 5 2 .1
 	illegal 350000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -1016,7 +1016,7 @@ mission "Stealth Drug Running (North) [1]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Substances" 5 2 .1
+	cargo "严重违禁品" 5 2 .1
 	illegal 500000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -1101,7 +1101,7 @@ mission "Stealth Drug Running (Core) [0]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Substances" 5 2 .1
+	cargo "严重违禁品" 5 2 .1
 	illegal 350000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -1162,7 +1162,7 @@ mission "Stealth Drug Running (Core) [1]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Substances" 5 2 .1
+	cargo "严重违禁品" 5 2 .1
 	illegal 500000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -1249,7 +1249,7 @@ mission "Stealth Drug Running (South) [0]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Substances" 5 2 .1
+	cargo "严重违禁品" 5 2 .1
 	illegal 350000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -1311,7 +1311,7 @@ mission "Stealth Drug Running (South) [1]"
 	repeat
 	infiltrating
 	description "将<cargo>运送至<destination>。若被行星执法部门扫描或抓获，后果可能非常严重。报酬为<payment>。"
-	cargo "Highly Illegal Substances" 5 2 .1
+	cargo "严重违禁品" 5 2 .1
 	illegal 500000 `除了罚款之外，你的非法货物也被没收。海盗们听到这个消息可不会高兴。`
 	stealth
 	to offer
@@ -3211,7 +3211,7 @@ conversation "southern pirate defense"
 
 outfit "Secret Cargo"
 	"display name" "秘密货物"
-	category "Special"
+	category "特殊"
 	cost 0
 	thumbnail "outfit/unknown"
 	"mass" 1

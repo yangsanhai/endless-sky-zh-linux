@@ -21,7 +21,7 @@ ship "Koryfi"
 	thumbnail "thumbnail/avgi koryfi"
 	"administrative cost" 1
 	attributes
-		category "Transport"
+		category "运输船"
 		"cost" 600000
 		"shields" 300
 		"hull" 1800
@@ -131,7 +131,7 @@ ship "Melodikos"
 	thumbnail "thumbnail/avgi melodikos"
 	"administrative cost" 2
 	attributes
-		category "Space Liner"
+		category "太空客轮"
 		"cost" 1200000
 		"shields" 600
 		"hull" 2400
@@ -279,7 +279,7 @@ ship "Avlaki"
 	thumbnail "thumbnail/avgi avlaki"
 	"administrative cost" 1
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		"cost" 450000
 		"shields" 300
 		"hull" 1800
@@ -388,7 +388,7 @@ ship "Harmonikos"
 	thumbnail "thumbnail/avgi harmonikos"
 	"administrative cost" 2
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		"cost" 900000
 		"shields" 600
 		"hull" 2400
@@ -533,7 +533,7 @@ ship "Phononos"
 	thumbnail "thumbnail/avgi phononos"
 	"administrative cost" 1
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		"cost" 180000
 		"hull" 1500
 		"automaton" 1
@@ -597,7 +597,7 @@ ship "Frequentia"
 	thumbnail "thumbnail/avgi frequentia"
 	"administrative cost" 1
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		"cost" 1200000
 		"shields" 600
 		"hull"	1800
@@ -672,7 +672,7 @@ ship "Polari"
 	thumbnail "thumbnail/avgi polari"
 	"administrative cost" 2
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 1800000
 		"shields" 600
 		"hull"	2100
@@ -736,11 +736,11 @@ ship "Polari"
 		right
 	turret -14 27 "Green Optical Laser"
 	turret 14 27 "Green Optical Laser"
-	bay "Drone" -9 -25
+	bay "无人机" -9 -25
 		"launch effect" "avgi internal"
-	bay "Drone" 9 -25
+	bay "无人机" 9 -25
 		"launch effect" "avgi internal"
-	bay "Fighter" 0 48
+	bay "战斗机" 0 48
 		"launch effect" "avgi internal"
 
 	leak "leak" 30 30
@@ -759,7 +759,7 @@ ship "Entasi"
 	thumbnail "thumbnail/avgi entasi"
 	"administrative cost" 2
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 2400000
 		"shields" 1500
 		"hull" 3600
@@ -857,28 +857,28 @@ ship "Entasi"
 	turret -10 72 "Blue Optical Laser"
 	turret 10 72 "Blue Optical Laser"
 	turret 0 -4
-	bay "Fighter" 0 -30
+	bay "战斗机" 0 -30
 		"launch effect" "avgi external"
 		over
-	bay "Fighter" 0 -30
+	bay "战斗机" 0 -30
 		"launch effect" "avgi external"
 		under
-	bay "Drone" -18 -45
+	bay "无人机" -18 -45
 		"launch effect" "avgi internal"
 		angle 270
-	bay "Drone" 18 -45
+	bay "无人机" 18 -45
 		"launch effect" "avgi internal"
 		angle 90
-	bay "Drone" -18 -18
+	bay "无人机" -18 -18
 		"launch effect" "avgi internal"
 		angle 270
-	bay "Drone" 18 -18
+	bay "无人机" 18 -18
 		"launch effect" "avgi internal"
 		angle 90
-	bay "Drone" -18 72
+	bay "无人机" -18 72
 		"launch effect" "avgi internal"
 		angle 270
-	bay "Drone" 18 72
+	bay "无人机" 18 72
 		"launch effect" "avgi internal"
 		angle 90
 
@@ -899,7 +899,7 @@ ship "Undsyni"
 	thumbnail "thumbnail/avgi undsyni"
 	"administrative cost" 5
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 12000000
 		"shields" 2400
 		"hull" 15000
@@ -973,16 +973,16 @@ ship "Undsyni"
 	turret 0 -30 "Green Optical Laser"
 	turret 0 42 "Green Optical Laser"
 	turret 0 186 "Green Optical Laser"
-	bay "Drone" -65.5 3
+	bay "无人机" -65.5 3
 		"launch effect" "avgi internal"
 		angle 270
-	bay "Drone" 65.5 3
+	bay "无人机" 65.5 3
 		"launch effect" "avgi internal"
 		angle 90
-	bay "Drone" 65.5 29
+	bay "无人机" 65.5 29
 		"launch effect" "avgi internal"
 		angle 90
-	bay "Drone" -65.5 29
+	bay "无人机" -65.5 29
 		"launch effect" "avgi internal"
 		angle 270
 
@@ -1070,7 +1070,7 @@ ship "Modified Tachytia"
 	thumbnail "thumbnail/avgi tachytia"
 	"administrative cost" 12
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 99000000
 		"shields" 6000
 		"hull" 36000
@@ -1150,37 +1150,37 @@ ship "Modified Tachytia"
 	turret 0 -3 "Green Optical Laser"
 	turret 0 -360 "Green Optical Laser"
 	turret 0 450 "Green Optical Laser"
-	bay "Drone" -18 420
+	bay "无人机" -18 420
 		"launch effect" "avgi internal"
-	bay "Drone" 18 420
+	bay "无人机" 18 420
 		"launch effect" "avgi internal"
-	bay "Drone" -18 432
+	bay "无人机" -18 432
 		"launch effect" "avgi internal"
-	bay "Drone" 18 432
+	bay "无人机" 18 432
 		"launch effect" "avgi internal"
-	bay "Drone" -18 447
+	bay "无人机" -18 447
 		"launch effect" "avgi internal"
-	bay "Drone" 18 447
+	bay "无人机" 18 447
 		"launch effect" "avgi internal"
-	bay "Drone" -18 459
+	bay "无人机" -18 459
 		"launch effect" "avgi internal"
-	bay "Drone" 18 459
+	bay "无人机" 18 459
 		"launch effect" "avgi internal"
-	bay "Fighter" -21 432
+	bay "战斗机" -21 432
 		"launch effect" "avgi internal"
-	bay "Fighter" 21 432
+	bay "战斗机" 21 432
 		"launch effect" "avgi internal"
-	bay "Fighter" -21 420
+	bay "战斗机" -21 420
 		"launch effect" "avgi internal"
-	bay "Fighter" 21 420
+	bay "战斗机" 21 420
 		"launch effect" "avgi internal"
-	bay "Fighter" -21 447
+	bay "战斗机" -21 447
 		"launch effect" "avgi internal"
-	bay "Fighter" 21 447
+	bay "战斗机" 21 447
 		"launch effect" "avgi internal"
-	bay "Fighter" -21 459
+	bay "战斗机" -21 459
 		"launch effect" "avgi internal"
-	bay "Fighter" 21 459
+	bay "战斗机" 21 459
 		"launch effect" "avgi internal"
 
 	leak "leak" 60 15
@@ -1207,7 +1207,7 @@ ship "Tremoros"
 	thumbnail "thumbnail/avgi tremoros"
 	"administrative cost" 1
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 600000
 		"shields" 600
 		"hull" 2400
@@ -1284,7 +1284,7 @@ ship "Prismaios"
 	thumbnail "thumbnail/avgi prismaios"
 	"administrative cost" 2
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		licenses
 			"Twilight Guard"
 			"Avgi Torch"
@@ -1430,7 +1430,7 @@ ship "Interferos"
 	thumbnail "thumbnail/avgi interferos"
 	"administrative cost" 1
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 1500000
 		"shields" 900
 		"hull" 4500
@@ -1567,7 +1567,7 @@ ship "Diaspersi"
 	thumbnail "thumbnail/avgi diaspersi"
 	"administrative cost" 4
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			"Twilight Guard"
 			"Avgi Torch"
@@ -1640,31 +1640,31 @@ ship "Diaspersi"
 	turret -9 9 "Green Optical Laser"
 	turret 9 9 "Green Optical Laser"
 	turret 0 51 "Medium VLS"
-	bay "Fighter" 0 -63
+	bay "战斗机" 0 -63
 		"launch effect" "avgi external"
 		over
-	bay "Fighter" -36 18
+	bay "战斗机" -36 18
 		"launch effect" "avgi external"
 		under
-	bay "Fighter" 36 18
+	bay "战斗机" 36 18
 		"launch effect" "avgi external"
 		under
-	bay "Drone" -21 -75
+	bay "无人机" -21 -75
 		"launch effect" "avgi internal"
 		angle 270
-	bay "Drone" 21 -75
+	bay "无人机" 21 -75
 		"launch effect" "avgi internal"
 		angle 90
-	bay "Drone" -21 -54
+	bay "无人机" -21 -54
 		"launch effect" "avgi internal"
 		angle 270
-	bay "Drone" 21 -54
+	bay "无人机" 21 -54
 		"launch effect" "avgi internal"
 		angle 90
-	bay "Drone" -24 -30
+	bay "无人机" -24 -30
 		"launch effect" "avgi internal"
 		angle 270
-	bay "Drone" 24 -30
+	bay "无人机" 24 -30
 		"launch effect" "avgi internal"
 		angle 90
 	
@@ -1749,7 +1749,7 @@ ship "Refraktos"
 	thumbnail "thumbnail/avgi refraktos"
 	"administrative cost" 4
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			"Twilight Guard"
 			"Avgi Torch"
@@ -1912,7 +1912,7 @@ ship "Difraktos"
 	thumbnail "thumbnail/avgi difraktos"
 	"administrative cost" 5
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			"Twilight Guard"
 			"Avgi Torch"
@@ -1999,10 +1999,10 @@ ship "Difraktos"
 	turret 9 -66 "Medium VLS"
 	turret 0 36 "Green Optical Laser"
 	turret 0 90 "Green Optical Laser"
-	bay "Drone" -21 -21
+	bay "无人机" -21 -21
 		"launch effect" "avgi internal"
 		angle 270
-	bay "Drone" 21 -21
+	bay "无人机" 21 -21
 		"launch effect" "avgi internal"
 		angle 90
 	
@@ -2162,7 +2162,7 @@ ship "Atenuatia"
 	thumbnail "thumbnail/avgi atenuatia"
 	"administrative cost" 8
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		licenses
 			"Twilight Guard"
 			"Avgi Torch"
@@ -2247,76 +2247,76 @@ ship "Atenuatia"
 	turret 0 30 "Medium VLS"
 	turret 0 96 "Green Optical Laser"
 	turret 0 160 "Green Optical Laser"
-	bay "Drone" -24 -234
+	bay "无人机" -24 -234
 		"launch effect" "avgi internal"
 		angle 160
-	bay "Drone" 24 -234
+	bay "无人机" 24 -234
 		"launch effect" "avgi internal"
 		angle 200
-	bay "Drone" -42 -225
+	bay "无人机" -42 -225
 		"launch effect" "avgi internal"
 		angle 160
-	bay "Drone" 42 -225
+	bay "无人机" 42 -225
 		"launch effect" "avgi internal"
 		angle 200
-	bay "Drone" -63 -219
+	bay "无人机" -63 -219
 		"launch effect" "avgi internal"
 		angle 160
-	bay "Drone" 63 -219
+	bay "无人机" 63 -219
 		"launch effect" "avgi internal"
 		angle 200
-	bay "Drone" -18 -216
+	bay "无人机" -18 -216
 		"launch effect" "avgi internal"
 		angle 260
-	bay "Drone" 18 -216
+	bay "无人机" 18 -216
 		"launch effect" "avgi internal"
 		angle 100
-	bay "Drone" -24 -175
+	bay "无人机" -24 -175
 		"launch effect" "avgi internal"
 		angle 160
-	bay "Drone" 24 -175
+	bay "无人机" 24 -175
 		"launch effect" "avgi internal"
 		angle 200
-	bay "Drone" -24 -175
+	bay "无人机" -24 -175
 		"launch effect" "avgi internal"
 		angle 160
-	bay "Drone" 24 -175
+	bay "无人机" 24 -175
 		"launch effect" "avgi internal"
 		angle 200
-	bay "Drone" -46 -165
+	bay "无人机" -46 -165
 		"launch effect" "avgi internal"
 		angle 160
-	bay "Drone" 46 -165
+	bay "无人机" 46 -165
 		"launch effect" "avgi internal"
 		angle 200
-	bay "Drone" -46 -165
+	bay "无人机" -46 -165
 		"launch effect" "avgi internal"
 		angle 160
-	bay "Drone" 46 -165
+	bay "无人机" 46 -165
 		"launch effect" "avgi internal"
 		angle 200
-	bay "Drone" -18 -150
+	bay "无人机" -18 -150
 		"launch effect" "avgi internal"
 		angle 260
-	bay "Drone" 18 -150
+	bay "无人机" 18 -150
 		"launch effect" "avgi internal"
 		angle 100
-	bay "Fighter" 0 -216
+	bay "战斗机" 0 -216
 		"launch effect" "avgi external"
 		over
-	bay "Fighter" 0 -216
+	bay "战斗机" 0 -216
 		"launch effect" "avgi external"
 		under
-	bay "Fighter" 0 -150
+	bay "战斗机" 0 -150
 		"launch effect" "avgi external"
 		over
-	bay "Fighter" 0 -150
+	bay "战斗机" 0 -150
 		"launch effect" "avgi external"
 		under
-	bay "Fighter" 0 -117
+	bay "战斗机" 0 -117
 		"launch effect" "avgi external"
 		over
-	bay "Fighter" 0 -117
+	bay "战斗机" 0 -117
 		"launch effect" "avgi external"
 		under
 
@@ -2378,7 +2378,7 @@ ship "Akoustiki"
 	thumbnail "thumbnail/avgi akoustiki"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		"cost" 120000
 		"shields" 180
 		"hull" 1200
@@ -2449,7 +2449,7 @@ ship "Photikon"
 	thumbnail "thumbnail/avgi photikon"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		licenses
 			"Twilight Guard"
 		"cost" 180000
@@ -2554,7 +2554,7 @@ ship "Vibratia"
 	thumbnail "thumbnail/avgi vibratia"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		licenses
 			"Twilight Guard"
 		"cost" 90000
@@ -2621,7 +2621,7 @@ ship "Undulon"
 	thumbnail "thumbnail/avgi undulon"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		licenses
 			"Twilight Guard"
 			"Avgi Atomics"
@@ -2694,7 +2694,7 @@ ship "Optikon"
 	thumbnail "thumbnail/avgi optikon"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		"cost" 54000
 		"hull" 600
 		"automaton" 1
@@ -2746,7 +2746,7 @@ ship "Sonikis"
 	thumbnail "thumbnail/avgi sonikis"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		"cost" 60000
 		"hull" 600
 		"automaton" 1

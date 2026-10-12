@@ -809,7 +809,7 @@ mission "Wanderer Kor Efreti: Equipment"
 	job
 	repeat
 	description "将 <cargo> 交付至 <destination> 上的科·埃弗雷提。报酬为 <payment>。"
-	cargo "Equipment" 5 3 .15
+	cargo "设备" 5 3 .15
 	to offer
 		has "wanderers sestor done"
 		random < 70

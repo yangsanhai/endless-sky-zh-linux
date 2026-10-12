@@ -49,7 +49,7 @@ ship "Tace Mesa"
 	swizzle 0
 	"never disabled"
 	attributes
-		category "Unclassified"
+		category "未分类"
 		cost 500000
 		"mass" 525
 		"outfit space" 45

@@ -40,7 +40,7 @@ mission "Southbound Shipment [1]"
 	job
 	repeat
 	description "运送 <cargo> 至 <destination>，南向船厂所在地，也是边缘星区最大的飞船铸造星。报酬为 <payment>。"
-	cargo "Ship Alloys" 5 2 .1
+	cargo "舰船合金" 5 2 .1
 	to offer
 		random < 10
 		has "landing access: Zug"

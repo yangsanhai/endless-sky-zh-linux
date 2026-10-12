@@ -309,7 +309,7 @@ mission "Food Convoy [0]"
 		government "Merchant"
 		personality escort timid
 		"cargo settings"
-			commodities "Food"
+			commodities "食物"
 		fleet
 			names "civilian"
 			variant
@@ -355,7 +355,7 @@ mission "Food Convoy [1]"
 		government "Merchant"
 		personality escort timid
 		"cargo settings"
-			commodities "Food"
+			commodities "食物"
 		fleet
 			names "civilian"
 			variant
@@ -404,7 +404,7 @@ mission "Food Convoy [2]"
 		government "Merchant"
 		personality escort timid
 		"cargo settings"
-			commodities "Food"
+			commodities "食物"
 		fleet
 			names "civilian"
 			variant

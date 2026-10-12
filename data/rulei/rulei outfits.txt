@@ -13,8 +13,8 @@
 
 outfit "Fate Sealer"
 	"display name" "命运封缄者"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 99020
 	cost 77777777
 	thumbnail "outfit/unknown"
@@ -59,8 +59,8 @@ outfit "Fate Sealer Activated"
 
 outfit "Fate Divider"
 	"display name" "命运分割者"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 99030
 	cost 77777777
 	thumbnail "outfit/unknown"
@@ -125,8 +125,8 @@ effect "fusion blast"
 
 outfit "Abyssal Composer"
 	"display name" "深渊编曲者"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 99040
 	cost 170000000
 	thumbnail "outfit/unknown"

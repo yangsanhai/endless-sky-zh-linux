@@ -16,7 +16,7 @@
 
 outfit "Korath Tek'far Reactor"
 	"display name" "科拉思 泰克'法反应堆"
-	category "Power"
+	category "能源"
 	cost 1200000
 	thumbnail "outfit/unknown"
 	"mass" 25
@@ -27,7 +27,7 @@ outfit "Korath Tek'far Reactor"
 
 outfit "Korath Tek'nel Reactor"
 	"display name" "科拉思 泰克'内尔反应堆"
-	category "Power"
+	category "能源"
 	cost 14000000
 	thumbnail "outfit/unknown"
 	"mass" 140
@@ -39,7 +39,7 @@ outfit "Korath Tek'nel Reactor"
 
 outfit "Korath Shield Generator"
 	"display name" "科拉思护盾发生器"
-	category "Systems"
+	category "系统"
 	cost 1700000
 	thumbnail "outfit/unknown"
 	"mass" 52
@@ -50,7 +50,7 @@ outfit "Korath Shield Generator"
 
 outfit "Korath Heat Shunt"
 	"display name" "科拉思散热导管"
-	category "Systems"
+	category "系统"
 	cost 450000
 	thumbnail "outfit/unknown"
 	"mass" 34
@@ -60,7 +60,7 @@ outfit "Korath Heat Shunt"
 
 outfit "Korath Ark'torbal Thruster"
 	"display name" "科拉思 阿克'托巴尔推进器"
-	category "Engines"
+	category "引擎"
 	"cost" 40000
 	thumbnail "outfit/unknown"
 	"mass" 17
@@ -76,7 +76,7 @@ outfit "Korath Ark'torbal Thruster"
 
 outfit "Korath Ark'parat Steering"
 	"display name" "科拉思 阿克'帕拉特转向器"
-	category "Engines"
+	category "引擎"
 	"cost" 36000
 	thumbnail "outfit/unknown"
 	"mass" 12
@@ -89,7 +89,7 @@ outfit "Korath Ark'parat Steering"
 
 outfit "Korath Jak'torbal Thruster"
 	"display name" "科拉思 贾克'托巴尔推进器"
-	category "Engines"
+	category "引擎"
 	"cost" 317000
 	thumbnail "outfit/unknown"
 	"mass" 89
@@ -105,7 +105,7 @@ outfit "Korath Jak'torbal Thruster"
 
 outfit "Korath Jak'parat Steering"
 	"display name" "科拉思 贾克'帕拉特转向器"
-	category "Engines"
+	category "引擎"
 	"cost" 2740000
 	thumbnail "outfit/unknown"
 	"mass" 67
@@ -121,7 +121,7 @@ outfit "Korath Jak'parat Steering"
 # stacks up and limits how many you can install.
 outfit "Mass Expansion"
 	"display name" "质量扩展"
-	category "Systems"
+	category "系统"
 	cost 50000
 	thumbnail "outfit/blue screwdriver"
 	"mass" 5
@@ -133,7 +133,7 @@ outfit "Mass Expansion"
 # Deprecated to give it a less generic name.
 outfit "Reverse Thruster"
 	"display name" "反向推进器"
-	category "Engines"
+	category "引擎"
 	"cost" 140000
 	thumbnail "outfit/reverse thruster"
 	"mass" 22
@@ -146,7 +146,7 @@ outfit "Reverse Thruster"
 # Deprecated for 0.9.2 due to long outfit names.
 outfit "Bullfrog Anti-Missile Turret"
 	"display name" "牛蛙反导弹炮塔"
-	category "Turrets"
+	category "炮塔"
 	cost 55000
 	thumbnail "outfit/anti-missile hai"
 	"mass" 10
@@ -166,7 +166,7 @@ outfit "Bullfrog Anti-Missile Turret"
 
 outfit "Chameleon Anti-Missile Turret"
 	"display name" "变色龙反导弹炮塔"
-	category "Turrets"
+	category "炮塔"
 	cost 140000
 	thumbnail "outfit/heavy anti-missile hai"
 	"mass" 22
@@ -200,14 +200,14 @@ effect "big explosion"
 # Deprecated to clarify their name as being part of the Navy, and not a general purpose license for cruiser type ships.
 outfit "Cruiser License"
 	"display name" "巡洋舰许可"
-	category "Special"
+	category "特殊"
 	thumbnail "outfit/navy cruiser license"
 	description "It is a very rare privilege to be permitted to purchase a Navy capital ship for private use - not just because of a Cruiser's firepower, but because it is a potent symbol of the Republic's strength."
 
 # Deprecated to clarify their name as being part of the Navy, and not a general purpose license for carrier type ships.
 outfit "Carrier License"
 	"display name" "航母许可"
-	category "Special"
+	category "特殊"
 	thumbnail "outfit/navy carrier license"
 	description "Only a handful of people in the past century have been given permission to purchase a Navy Carrier, even a decommissioned one, for private use."
 
@@ -235,7 +235,7 @@ mission "Navy Carrier License Compatibility"
 
 outfit "Afterburner"
 	"display name" "加力燃烧室"
-	category "Engines"
+	category "引擎"
 	"cost" 70000
 	thumbnail "outfit/afterburner"
 	"mass" 10
@@ -251,7 +251,7 @@ outfit "Afterburner"
 
 outfit "Korath Grab-Strike"
 	"display name" "科拉思擒拿击"
-	category "Turrets"
+	category "炮塔"
 	cost 821000
 	thumbnail "outfit/grab-strike"
 	"mass" 52
@@ -290,7 +290,7 @@ outfit "Korath Grab-Strike"
 
 outfit "Korath Banisher"
 	"display name" "科拉思驱逐器"
-	category "Turrets"
+	category "炮塔"
 	cost 943000
 	thumbnail "outfit/banisher"
 	"mass" 41
@@ -319,7 +319,7 @@ outfit "Korath Banisher"
 
 outfit "Korath Warder"
 	"display name" "科拉思看守者"
-	category "Turrets"
+	category "炮塔"
 	cost 845000
 	thumbnail "outfit/warder"
 	"mass" 28
@@ -341,7 +341,7 @@ outfit "Korath Warder"
 
 outfit "Korath Fire-Lance"
 	"display name" "科拉思火焰长枪"
-	category "Guns"
+	category "枪炮"
 	cost 697000
 	thumbnail "outfit/fire-lance"
 	"mass" 22
@@ -367,7 +367,7 @@ outfit "Korath Fire-Lance"
 
 outfit "Korath Repeater"
 	"display name" "科拉思连发器"
-	category "Guns"
+	category "枪炮"
 	cost 306000
 	thumbnail "outfit/repeater"
 	"mass" 11
@@ -396,7 +396,7 @@ outfit "Korath Repeater"
 
 outfit "Korath Repeater Turret"
 	"display name" "科拉思连发碉塔"
-	category "Turrets"
+	category "炮塔"
 	cost 874000
 	thumbnail "outfit/repeater turret"
 	"mass" 29
@@ -429,7 +429,7 @@ outfit "Korath Repeater Turret"
 
 outfit "Korath Piercer"
 	"display name" "科拉思穿甲弹"
-	category "Ammunition"
+	category "弹药"
 	cost 3500
 	thumbnail "outfit/piercer"
 	"mass" .3
@@ -438,7 +438,7 @@ outfit "Korath Piercer"
 
 outfit "Korath Piercer Rack"
 	"display name" "科拉思穿甲弹架"
-	category "Ammunition"
+	category "弹药"
 	cost 56000
 	thumbnail "outfit/korath piercer storage"
 	"mass" 2.2
@@ -449,7 +449,7 @@ outfit "Korath Piercer Rack"
 
 outfit "Korath Piercer Launcher"
 	"display name" "科拉思穿甲弹发射器"
-	category "Secondary Weapons"
+	category "副武器"
 	cost 593000
 	thumbnail "outfit/piercer launcher"
 	"mass" 18
@@ -492,7 +492,7 @@ outfit "Korath Piercer Launcher"
 
 outfit "Korath Mine"
 	"display name" "科拉思水雷"
-	category "Ammunition"
+	category "弹药"
 	cost 3500
 	thumbnail "outfit/korath mine"
 	"mass" .7
@@ -501,7 +501,7 @@ outfit "Korath Mine"
 
 outfit "Korath Mine Rack"
 	"display name" "科拉思水雷架"
-	category "Ammunition"
+	category "弹药"
 	cost 31500
 	thumbnail "outfit/korath mine storage"
 	"mass" 2.7
@@ -512,7 +512,7 @@ outfit "Korath Mine Rack"
 
 outfit "Korath Minelayer"
 	"display name" "科拉思布雷舰"
-	category "Secondary Weapons"
+	category "副武器"
 	cost 1073000
 	thumbnail "outfit/korath minelayer"
 	"mass" 36
@@ -554,7 +554,7 @@ outfit "Korath Minelayer"
 
 outfit "Korath Disruptor"
 	"display name" "科拉思干扰器"
-	category "Turrets"
+	category "炮塔"
 	cost 983000
 	thumbnail "outfit/disruptor"
 	"mass" 35
@@ -583,7 +583,7 @@ outfit "Korath Disruptor"
 
 outfit "Korath Slicer"
 	"display name" "科拉思切割者"
-	category "Guns"
+	category "枪炮"
 	cost 832000
 	thumbnail "outfit/slicer"
 	"mass" 46
@@ -609,7 +609,7 @@ outfit "Korath Slicer"
 
 outfit "Korath Slicer Turret"
 	"display name" "科拉思切割者碉塔"
-	category "Turrets"
+	category "炮塔"
 	cost 1473000
 	thumbnail "outfit/slicer turret"
 	"mass" 59
@@ -639,7 +639,7 @@ outfit "Korath Slicer Turret"
 
 outfit "Korath Repeater Rifle"
 	"display name" "科拉思连发步枪"
-	category "Hand to Hand"
+	category "近战"
 	cost 53000
 	thumbnail "outfit/korath rifle"
 	"capture attack" 1.6
@@ -650,7 +650,7 @@ outfit "Korath Repeater Rifle"
 outfit "Nanotech Battery"
 	"display name" "纳米技术电池"
 	plural "Nanotech Batteries"
-	category "Power"
+	category "能源"
 	cost 3000000
 	thumbnail "outfit/quarg quantum battery"
 	"mass" 50
@@ -660,7 +660,7 @@ outfit "Nanotech Battery"
 
 outfit "Quantum Shield Generator"
 	"display name" "量子护盾发生器"
-	category "Systems"
+	category "系统"
 	cost 30000000
 	thumbnail "outfit/quarg aegis shield generator"
 	"mass" 120
@@ -672,7 +672,7 @@ outfit "Quantum Shield Generator"
 outfit "Intrusion Countermeasures"
 	"display name" "入侵对抗系统"
 	plural "Intrusion Countermeasures"
-	category "Hand to Hand"
+	category "近战"
 	thumbnail "outfit/quarg countermeasures"
 	"capture defense" 24
 	"unplunderable" 1
@@ -680,7 +680,7 @@ outfit "Intrusion Countermeasures"
 
 outfit "Quarg Skylance"
 	"display name" "夸格天矛"
-	category "Turrets"
+	category "炮塔"
 	cost 18000000
 	thumbnail "outfit/quarg skylance"
 	"mass" 60
@@ -710,7 +710,7 @@ outfit "Quarg Skylance"
 
 outfit "Quarg Anti-Missile"
 	"display name" "夸格反导"
-	category "Turrets"
+	category "炮塔"
 	cost 6000000
 	thumbnail "outfit/quarg stratospear"
 	"mass" 40
@@ -730,7 +730,7 @@ outfit "Quarg Anti-Missile"
 
 outfit "Multimodal Armor: Resilient"
 	"display name" "多模装甲：坚韧"
-	category "Systems"
+	category "系统"
 	series "Special Systems"
 	index 11030
 	thumbnail "outfit/successor armor light"
@@ -745,8 +745,8 @@ outfit "Multimodal Armor: Resilient"
 
 outfit "Nettle Magazine"
 	"display name" "荨麻弹匣"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 07021
 	licenses
 		"Twilight Guard"
@@ -760,8 +760,8 @@ outfit "Nettle Magazine"
 
 outfit "Orchid Magazine"
 	"display name" "兰花弹匣"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 07031
 	licenses
 		"Avgi Atomics"
@@ -775,8 +775,8 @@ outfit "Orchid Magazine"
 
 outfit `Z-3600 "Beam" Amat Torch`
 	plural `Z-3600 "Beam" Amat Torches`
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07080
 	"cost" 300000000
 	thumbnail "outfit/beam antimatter drive"
@@ -803,8 +803,8 @@ outfit `Z-3600 "Beam" Amat Torch`
 
 outfit "Teciimach Canister"
 	"display name" "泰奇玛奇罐"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 03020
 	cost 35500
 	thumbnail "outfit/emp torpedo"
@@ -815,8 +815,8 @@ outfit "Teciimach Canister"
 
 outfit "Teciimach Canister Rack"
 	"display name" "泰奇玛奇罐挂架"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 03021
 	licenses
 		Remnant

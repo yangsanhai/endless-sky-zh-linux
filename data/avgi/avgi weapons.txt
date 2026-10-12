@@ -16,8 +16,8 @@
 
 outfit "Speck Round"
 	"display name" "微粒弹"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 07010
 	cost 6
 	thumbnail "outfit/speck round"
@@ -28,8 +28,8 @@ outfit "Speck Round"
 
 outfit "Speck Magazine"
 	"display name" "微粒弹匣"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 07011
 	cost 12000
 	thumbnail "outfit/speck magazine"
@@ -42,8 +42,8 @@ outfit "Speck Magazine"
 
 outfit "Speckle Coilgun"
 	"display name" "微粒线圈炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 07010
 	cost 32000
 	thumbnail "outfit/speckle coilgun"
@@ -76,8 +76,8 @@ outfit "Speckle Coilgun"
 
 outfit "Speckle Turret"
 	"display name" "微粒炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 07020
 	cost 90000
 	thumbnail "outfit/speckle turret"
@@ -166,7 +166,7 @@ outfitter "Speck Round Restock"
 
 outfit "Optical Lasing Generator"
 	"display name" "光学激光发生器"
-	category "Systems"
+	category "系统"
 	series "Special Systems"
 	index 07010
 	cost 1200000
@@ -182,7 +182,7 @@ outfit "Optical Lasing Generator"
 
 outfit "Green Optical Laser"
 	"display name" "绿色光学激光"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 07010
 	cost 90000
@@ -236,8 +236,8 @@ effect "green laser scattering"
 
 outfit "Blue Optical Laser"
 	"display name" "蓝色光学激光"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 07010
 	licenses
 		"Twilight Guard"
@@ -301,7 +301,7 @@ outfit "Ultraviolet Excimer Laser"
 	"display name" "紫外准分子激光"
 	series "Avgi: Beams"
 	index 30
-	category "Turrets"
+	category "炮塔"
 	licenses
 		"Twilight Guard"
 	cost 120000
@@ -387,8 +387,8 @@ effect "laser explosion"
 
 outfit "Ultrarelativistic Electron Beam"
 	"display name" "超相对论电子束"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 07020
 	cost 3000000
 	thumbnail "outfit/unknown"
@@ -432,8 +432,8 @@ outfit "TeV Electron Bunch"
 
 outfit "UREB Turret"
 	"display name" "UREB炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 07010
 	cost 3000000
 	thumbnail "outfit/ureb turret"
@@ -510,8 +510,8 @@ effect "electron flare"
 
 outfit "External Launch Rail"
 	"display name" "外置发射导轨"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 07010
 	licenses
 		"Avgi Atomics"
@@ -547,8 +547,8 @@ outfit "External Launch Rail"
 
 outfit "External Launch Tube"
 	"display name" "外置发射管"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 07020
 	licenses
 		"Twilight Guard"
@@ -587,8 +587,8 @@ outfit "External Launch Tube"
 
 outfit "Tiny VLS"
 	"display name" "垂直发射阵列 (9)"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 07030
 	licenses
 		"Twilight Guard"
@@ -631,8 +631,8 @@ outfit "Tiny VLS"
 
 outfit "Small VLS"
 	"display name" "垂直发射阵列 (18)"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 07031
 	licenses
 		"Twilight Guard"
@@ -675,8 +675,8 @@ outfit "Small VLS"
 
 outfit "Medium VLS"
 	"display name" "垂直发射阵列 (36)"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 07032
 	licenses
 		"Twilight Guard"
@@ -721,8 +721,8 @@ outfit "Medium VLS"
 
 
 outfit `"Nettle" KKV`
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 07020
 	cost 450
 	thumbnail "outfit/nettle kkv"
@@ -806,8 +806,8 @@ outfitter "Nettle Restock"
 
 
 outfit `"Orchid" Nuclear Missile`
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 07030
 	licenses
 		"Avgi Atomics"
@@ -961,8 +961,8 @@ outfit "Orchid Divert Stage Expended"
 
 
 outfit `"Ophrys" Nuclear Torpedo`
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 07040
 	licenses
 		"Avgi Atomics"
@@ -977,8 +977,8 @@ outfit `"Ophrys" Nuclear Torpedo`
 
 outfit "Ophrys Stockpile"
 	"display name" "兰花储备"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 07041
 	licenses
 		"Avgi Atomics"

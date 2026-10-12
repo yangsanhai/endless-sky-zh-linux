@@ -224,7 +224,7 @@ fleet "Korath Ember Waste Raid"
 	fighters
 		names "korath"
 	cargo 1
-	commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+	commodities "食物" "服装" "金属" "塑料" "医疗用品" "重金属"
 	outfitters "Korath Exiles Remnant Donations"
 	personality
 		disables plunders opportunistic harvests
@@ -388,7 +388,7 @@ fleet "Korath Ember Waste Large Raid"
 	fighters
 		names "korath"
 	cargo 1
-	commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+	commodities "食物" "服装" "金属" "塑料" "医疗用品" "重金属"
 	outfitters "Korath Exiles Remnant Donations"
 	personality
 		disables plunders opportunistic harvests
@@ -537,7 +537,7 @@ fleet "Small Kor Sestor"
 	names "kor sestor"
 	fighters
 		names "kor sestor fighter"
-	commodities Plastic Equipment Industrial Electronics "Heavy Metals"
+	commodities Plastic Equipment Industrial Electronics "重金属"
 	variant 5
 		"Met Par Tek 53" 3
 	variant 5
@@ -596,7 +596,7 @@ fleet "Large Kor Sestor"
 	names "kor sestor"
 	fighters
 		names "kor sestor fighter"
-	commodities Plastic Equipment Industrial Electronics "Heavy Metals"
+	commodities Plastic Equipment Industrial Electronics "重金属"
 	variant 8
 		"Kar Ik Vot 349"
 		"Tek Far 71 - Lek"
@@ -710,7 +710,7 @@ fleet "Small Kor Mereti"
 	names "kor mereti"
 	fighters
 		names "kor mereti"
-	commodities Plastic Equipment Industrial Electronics "Heavy Metals"
+	commodities Plastic Equipment Industrial Electronics "重金属"
 	personality
 		opportunistic
 	variant 1
@@ -762,7 +762,7 @@ fleet "Large Kor Mereti"
 	names "kor mereti"
 	fighters
 		names "kor mereti"
-	commodities Plastic Equipment Industrial Electronics "Heavy Metals"
+	commodities Plastic Equipment Industrial Electronics "重金属"
 	personality
 		opportunistic
 	variant 5

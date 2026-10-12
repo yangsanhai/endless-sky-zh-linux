@@ -16,7 +16,7 @@
 outfit "R01 Skirmish Battery"
 	"display name" "R01 遭遇战炮组"
 	plural "R01 小型战斗电池组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 06010
 	licenses
@@ -32,7 +32,7 @@ outfit "R01 Skirmish Battery"
 outfit "R02 Battlezone Battery"
 	"display name" "R02 战区炮组"
 	plural "R02 战区电池组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 06020
 	licenses
@@ -48,7 +48,7 @@ outfit "R02 Battlezone Battery"
 outfit "R03 Warforge Battery"
 	"display name" "R03 铸战炮组"
 	plural "R03 战铸电池组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 06030
 	licenses
@@ -64,7 +64,7 @@ outfit "R03 Warforge Battery"
 outfit "R04 Crusade Battery"
 	"display name" "R04 十字军炮组"
 	plural "R04 远征电池组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 06040
 	licenses
@@ -82,7 +82,7 @@ outfit "R04 Crusade Battery"
 
 outfit "C3 Scrap Cell"
 	"display name" "C3废料电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 06010
 	licenses
@@ -98,7 +98,7 @@ outfit "C3 Scrap Cell"
 
 outfit "C7 Brawl Cell"
 	"display name" "C7格斗电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 06020
 	licenses
@@ -114,7 +114,7 @@ outfit "C7 Brawl Cell"
 
 outfit "C17 Warzone Core"
 	"display name" "C17战区核心"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 06030
 	licenses
@@ -130,7 +130,7 @@ outfit "C17 Warzone Core"
 
 outfit "C27 Campaign Core"
 	"display name" "C27战役核心"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 06040
 	licenses
@@ -149,7 +149,7 @@ outfit "C27 Campaign Core"
 
 outfit "I70 Ameliorate Cell"
 	"display name" "I70 改良电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 06050
 	licenses
@@ -170,8 +170,8 @@ outfit "I70 Ameliorate Cell"
 
 outfit "RG15 Torch Thruster"
 	"display name" "RG15 火炬推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06011
 	licenses
 		"Gegno Civilian"
@@ -191,8 +191,8 @@ outfit "RG15 Torch Thruster"
 
 outfit "RG15 Torch Steering"
 	"display name" "RG15 火炬转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06010
 	licenses
 		"Gegno Civilian"
@@ -212,8 +212,8 @@ outfit "RG15 Torch Steering"
 
 outfit "RG18 Torch Thruster"
 	"display name" "RG18 火炬推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06021
 	licenses
 		"Gegno Civilian"
@@ -233,8 +233,8 @@ outfit "RG18 Torch Thruster"
 
 outfit "RG18 Torch Steering"
 	"display name" "RG18 火炬转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06020
 	licenses
 		"Gegno Civilian"
@@ -254,8 +254,8 @@ outfit "RG18 Torch Steering"
 
 outfit "RG3 Torch Thruster"
 	"display name" "RG3 火炬推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06031
 	licenses
 		"Gegno Civilian"
@@ -278,8 +278,8 @@ outfit "RG3 Torch Thruster"
 
 outfit "RG3 Torch Steering"
 	"display name" "RG3 火炬转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06030
 	licenses
 		"Gegno Civilian"
@@ -303,8 +303,8 @@ outfit "RG3 Torch Steering"
 outfit "SC-1 Plasma Engines"
 	"display name" "SC-1 等离子引擎"
 	plural "SC-1 等离子引擎"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06040
 	licenses
 		"Gegno Civilian"
@@ -332,8 +332,8 @@ outfit "SC-1 Plasma Engines"
 
 outfit "SC-12 Plasma Thruster"
 	"display name" "SC-12 等离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06051
 	licenses
 		"Gegno Civilian"
@@ -354,8 +354,8 @@ outfit "SC-12 Plasma Thruster"
 
 outfit "SC-12 Plasma Steering"
 	"display name" "SC-12 等离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06050
 	licenses
 		"Gegno Civilian"
@@ -376,8 +376,8 @@ outfit "SC-12 Plasma Steering"
 
 outfit "SC-14 Plasma Thruster"
 	"display name" "SC-14 等离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06061
 	licenses
 		"Gegno Civilian"
@@ -398,8 +398,8 @@ outfit "SC-14 Plasma Thruster"
 
 outfit "SC-14 Plasma Steering"
 	"display name" "SC-14 等离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 06060
 	licenses
 		"Gegno Civilian"
@@ -421,9 +421,9 @@ outfit "SC-14 Plasma Steering"
 outfit "SC-15 Plasma Thrusters"
 	"display name" "SC-15 等离子推进器"
 	plural "SC-15 等离子推进器"
-	series "Engines"
+	series "引擎"
 	index 06070
-	category "Engines"
+	category "引擎"
 	licenses
 		"Gegno Civilian"
 		"Scin Hoplologist"
@@ -451,8 +451,8 @@ outfit "SC-15 Plasma Thrusters"
 
 outfit "Irate Cannon"
 	"display name" "暴怒加农炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 06010
 	licenses
 		"Gegno Civilian"
@@ -483,8 +483,8 @@ outfit "Irate Cannon"
 
 outfit "Irate Cannon Turret"
 	"display name" "暴怒加农炮碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 06010
 	licenses
 		"Gegno Civilian"
@@ -536,8 +536,8 @@ effect "irate smoke"
 
 outfit "Choleric Cannon"
 	"display name" "暴怒加农炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 06020
 	licenses
 		"Gegno Civilian"
@@ -569,8 +569,8 @@ outfit "Choleric Cannon"
 
 outfit "Choleric Cannon Turret"
 	"display name" "暴怒加农炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 06020
 	licenses
 		"Gegno Civilian"
@@ -623,8 +623,8 @@ effect "choleric smoke"
 
 outfit "Ballistic Cannon"
 	"display name" "弹道加农炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 06030
 	licenses
 		"Gegno Civilian"
@@ -659,8 +659,8 @@ outfit "Ballistic Cannon"
 
 outfit "Ballistic Cannon Turret"
 	"display name" "弹道加农炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 06030
 	licenses
 		"Gegno Civilian"
@@ -726,8 +726,8 @@ effect "ballistic smoke"
 
 outfit "Astuit Battery"
 	"display name" "阿斯图伊特炮组"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 06040
 	licenses
 		"Gegno Civilian"
@@ -766,8 +766,8 @@ effect "astuit hit"
 outfit "Acuit Artillery"
 	"display name" "阿库伊特火炮"
 	plural "精准火炮"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 06050
 	licenses
 		"Gegno Civilian"
@@ -808,8 +808,8 @@ effect "acuit hit"
 
 outfit "Acumen Bolt Cannon"
 	"display name" "敏锐弩炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 06040
 	licenses
 		"Gegno Civilian"
@@ -853,8 +853,8 @@ effect "neutron explosion"
 
 outfit "Guile Pulse Laser"
 	"display name" "诡诈脉冲激光"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 06050
 	licenses
 		"Gegno Civilian"
@@ -887,8 +887,8 @@ outfit "Guile Pulse Laser"
 
 outfit "Excavator"
 	"display name" "挖掘机"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 06060
 	licenses
 		"Gegno Civilian"
@@ -931,8 +931,8 @@ effect "excavate"
 
 outfit "Burrower"
 	"display name" "掘地者"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 06070
 	licenses
 		"Gegno Civilian"
@@ -981,8 +981,8 @@ effect "burrow"
 outfit "Ion Torch"
 	"display name" "离子火炬"
 	plural "离子火炬"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 06080
 	licenses
 		"Gegno Civilian"
@@ -1023,8 +1023,8 @@ outfit "Ion Torch"
 
 outfit "Savagery Bludgeon"
 	"display name" "蛮荒棍棒"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 06090
 	cost 10000
 	licenses
@@ -1055,7 +1055,7 @@ effect "bludgeon impact"
 
 outfit "Savagery Pike"
 	"display name" "蛮荒长矛"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 06010
 	licenses
@@ -1070,7 +1070,7 @@ outfit "Savagery Pike"
 
 outfit "Irate Carronade"
 	"display name" "暴怒短炮"
-	category "Hand to Hand"
+	category "近战"
 	series "Fortifications"
 	index 06010
 	licenses
@@ -1085,7 +1085,7 @@ outfit "Irate Carronade"
 	
 outfit "Plasmasickle"
 	"display name" "等离子镰刀"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 06020
 	licenses
@@ -1100,7 +1100,7 @@ outfit "Plasmasickle"
 outfit "Plasma Grenades"
 	"display name" "等离子手雷"
 	plural "等离子手雷"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 06030
 	licenses
@@ -1118,64 +1118,64 @@ outfit "Plasma Grenades"
 
 outfit "Gegno Civilian License"
 	"display name" "盖格诺民用执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 06010
 	thumbnail "outfit/unknown"
 	description "你已被接纳为名义上的格诺公民，被认为能为格诺族群带来福祉，并被授予了使用其民用科技的权限。"
 
 outfit "Gegno Driller License"
 	"display name" "盖格诺钻探执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 06020
 	thumbnail "outfit/unknown"
 	description "格诺现在认可你的足智多谋以及能交付远超合格标准工作成果的能力。你已被授予获取其采矿技术的权限。"
 
 outfit "Vi Lord License"
 	"display name" "Vi领主执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 06050
 	thumbnail "outfit/unknown"
 	description "维族军事高层中的大多数人都视你为一位可敬的对手，以及实现其野心不可或缺的助力。现在，维护维族最大型舰船的重任已尽在你的掌控之中。"
 	
 outfit "Vi Centurion License"
 	"display name" "Vi百夫长执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 06040
 	thumbnail "outfit/unknown"
 	description "在维族的精英卫队中，你已证明自己是战斗中的强大领袖与明智的决策者。现在，维族的部分军事武库已对你开放，随时静候你的挑选。"
 
 outfit "Vi Evocati License"
 	"display name" "Vi召还兵执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 06030
 	thumbnail "outfit/unknown"
 	description "格诺维已经认可你为他们事业奋斗的坚定战士，并看到了你的价值。现在你已获准随意使用低阶的维族科技。"
 
 outfit "Scin Hoplologist License"
 	"display name" "斯金重装兵执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 06070
 	thumbnail "outfit/unknown"
 	description "在格诺辛眼中，你的智慧最为可贵，而你的奖赏是能够使用先进的辛族武器。"
 
 outfit "Scin Architect License"
 	"display name" "斯金建筑师执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 06080
 	thumbnail "outfit/unknown"
 	description "证明你对斯钦的建设性工作有所助益，你现在已获得驾驶其最先进飞船的许可。"
 
 outfit "Scin Adjutant License"
 	"display name" "斯金副官执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 06060
 	thumbnail "outfit/unknown"
 	description "你做出的建设性行为引起了格诺辛的兴趣，他们授权你购买其最基础的技术。"

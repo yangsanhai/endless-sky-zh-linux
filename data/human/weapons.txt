@@ -13,8 +13,8 @@
 
 outfit "Energy Blaster"
 	"display name" "能量爆能枪"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01010
 	cost 16000
 	thumbnail "outfit/blaster"
@@ -38,8 +38,8 @@ outfit "Energy Blaster"
 
 outfit "Twin Blaster"
 	"display name" "双联冲击炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01030
 	cost 40000
 	thumbnail "outfit/twin blaster"
@@ -77,8 +77,8 @@ outfit "Blaster Submunition"
 
 outfit "Blaster Turret"
 	"display name" "爆能炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 01010
 	cost 100000
 	thumbnail "outfit/blaster turret"
@@ -106,8 +106,8 @@ outfit "Blaster Turret"
 
 outfit "Quad Blaster Turret"
 	"display name" "四联爆能碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 01030
 	cost 230000
 	thumbnail "outfit/quad blaster turret"
@@ -144,8 +144,8 @@ effect "blaster impact"
 
 outfit "Modified Blaster"
 	"display name" "改装型爆能炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01020
 	cost 35000
 	thumbnail "outfit/mod blaster"
@@ -169,8 +169,8 @@ outfit "Modified Blaster"
 
 outfit "Twin Modified Blaster"
 	"display name" "双联改装冲击炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01040
 	cost 84000
 	thumbnail "outfit/twin mod blaster"
@@ -208,8 +208,8 @@ outfit "Modified Blaster Submunition"
 
 outfit "Modified Blaster Turret"
 	"display name" "改装型爆能碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 01020
 	cost 170000
 	thumbnail "outfit/mod blaster turret"
@@ -237,8 +237,8 @@ outfit "Modified Blaster Turret"
 
 outfit "Heavy Blaster"
 	"display name" "重型爆能枪"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01050
 	cost 125000
 	thumbnail "outfit/heavy blaster"
@@ -263,8 +263,8 @@ outfit "Heavy Blaster"
 
 outfit "Beam Laser"
 	"display name" "光束激光"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01050
 	cost 29000
 	thumbnail "outfit/laser"
@@ -289,8 +289,8 @@ outfit "Beam Laser"
 
 outfit "Laser Turret"
 	"display name" "激光碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 01040
 	cost 140000
 	thumbnail "outfit/laser turret"
@@ -329,8 +329,8 @@ effect "beam laser impact"
 
 outfit "Heavy Laser"
 	"display name" "重型激光"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01060
 	cost 60000
 	thumbnail "outfit/heavy laser"
@@ -355,8 +355,8 @@ outfit "Heavy Laser"
 
 outfit "Heavy Laser Turret"
 	"display name" "重型激光碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 01050
 	cost 320000
 	thumbnail "outfit/heavy laser turret"
@@ -395,8 +395,8 @@ effect "heavy laser impact"
 
 outfit "Mining Laser"
 	"display name" "采矿激光"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01070
 	cost 38000
 	thumbnail "outfit/mining laser"
@@ -425,8 +425,8 @@ outfit "Mining Laser"
 
 outfit "Mining Laser Turret"
 	"display name" "采矿激光碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 01060
 	cost 66000
 	thumbnail "outfit/mining laser turret"
@@ -459,7 +459,7 @@ outfit "Mining Laser Turret"
 
 outfit "Tractor Beam"
 	"display name" "牵引光束"
-	category "Turrets"
+	category "炮塔"
 	series "Tractor Beams"
 	index 10
 	cost 75000
@@ -489,8 +489,8 @@ effect "tractor beam"
 
 outfit "Electron Beam"
 	"display name" "电子束"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01080
 	cost 170000
 	thumbnail "outfit/electron beam"
@@ -515,8 +515,8 @@ outfit "Electron Beam"
 
 outfit "Electron Turret"
 	"display name" "电子碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 01070
 	cost 720000
 	thumbnail "outfit/electron turret"
@@ -555,7 +555,7 @@ effect "electron impact"
 
 outfit "Anti-Missile Turret"
 	"display name" "反导弹炮塔"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 01010
 	cost 60000
@@ -588,7 +588,7 @@ effect "small anti-missile"
 
 outfit "Heavy Anti-Missile Turret"
 	"display name" "重型反导碉塔"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 01020
 	cost 150000
@@ -621,8 +621,8 @@ effect "large anti-missile"
 
 outfit "Particle Cannon"
 	"display name" "粒子炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01090
 	cost 220000
 	thumbnail "outfit/particle cannon"
@@ -659,8 +659,8 @@ effect "particle impact"
 
 outfit "Proton Gun"
 	"display name" "质子枪"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01100
 	cost 150000
 	thumbnail "outfit/proton gun"
@@ -706,8 +706,8 @@ effect "proton impact"
 
 outfit "Proton Turret"
 	"display name" "质子碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 01080
 	cost 260000
 	thumbnail "outfit/proton turret"
@@ -736,8 +736,8 @@ outfit "Proton Turret"
 
 outfit "Plasma Cannon"
 	"display name" "等离子炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01110
 	cost 190000
 	thumbnail "outfit/plasma cannon"
@@ -764,8 +764,8 @@ outfit "Plasma Cannon"
 
 outfit "Plasma Turret"
 	"display name" "等离子碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 01090
 	cost 520000
 	thumbnail "outfit/plasma turret"
@@ -796,8 +796,8 @@ outfit "Plasma Turret"
 
 outfit "Plasma Repeater"
 	"display name" "等离子连发炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 01120
 	cost 274000
 	thumbnail "outfit/plasma repeater"
@@ -837,8 +837,8 @@ effect "plasma explosion"
 
 outfit "Flamethrower"
 	"display name" "火焰喷射器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01160
 	cost 190000
 	thumbnail "outfit/flamethrower"
@@ -906,8 +906,8 @@ effect "flamethrower hit"
 
 outfit "Meteor Missile"
 	"display name" "流星导弹"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01020
 	cost 500
 	thumbnail "outfit/meteor"
@@ -918,9 +918,9 @@ outfit "Meteor Missile"
 outfit "Meteor Missile Box"
 	"display name" "流星导弹箱"
 	plural "流星导弹箱"
-	series "Ammunition"
+	series "弹药"
 	index 01021
-	category "Ammunition"
+	category "弹药"
 	cost 9000
 	thumbnail "outfit/meteor storage"
 	"mass" 2
@@ -931,8 +931,8 @@ outfit "Meteor Missile Box"
 
 outfit "Meteor Missile Launcher"
 	"display name" "流星导弹发射器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01050
 	cost 15000
 	thumbnail "outfit/meteor launcher"
@@ -974,8 +974,8 @@ outfit "Meteor Missile Launcher"
 
 outfit "Meteor Missile Pod"
 	"display name" "流星导弹发射舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01040
 	cost 5000
 	thumbnail "outfit/meteor pod"
@@ -1040,8 +1040,8 @@ outfitter "Meteor Missile Restock"
 
 outfit "Sidewinder Missile"
 	"display name" "响尾蛇导弹"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01030
 	cost 900
 	thumbnail "outfit/sidewinder"
@@ -1051,8 +1051,8 @@ outfit "Sidewinder Missile"
 
 outfit "Sidewinder Missile Rack"
 	"display name" "响尾蛇导弹挂架"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01031
 	cost 20000
 	thumbnail "outfit/sidewinder storage"
@@ -1064,8 +1064,8 @@ outfit "Sidewinder Missile Rack"
 
 outfit "Sidewinder Missile Launcher"
 	"display name" "响尾蛇导弹发射器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01070
 	cost 60000
 	thumbnail "outfit/sidewinder launcher"
@@ -1109,8 +1109,8 @@ outfit "Sidewinder Missile Launcher"
 
 outfit "Sidewinder Missile Pod"
 	"display name" "响尾蛇导弹吊舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01060
 	cost 20000
 	thumbnail "outfit/sidewinder pod"
@@ -1178,8 +1178,8 @@ outfitter "Sidewinder Missile Restock"
 
 outfit "Javelin"
 	"display name" "标枪"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01010
 	cost 50
 	thumbnail "outfit/javelin"
@@ -1189,8 +1189,8 @@ outfit "Javelin"
 
 outfit "Javelin Storage Crate"
 	"display name" "标枪储存箱"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01011
 	cost 5000
 	thumbnail "outfit/javelin storage"
@@ -1202,8 +1202,8 @@ outfit "Javelin Storage Crate"
 
 outfit "Javelin Pod"
 	"display name" "标枪发射舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01020
 	cost 20000
 	thumbnail "outfit/javelin pod"
@@ -1236,8 +1236,8 @@ outfit "Javelin Pod"
 
 outfit "Javelin Mini Pod"
 	"display name" "标枪微型发射舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01010
 	cost 5000
 	thumbnail "outfit/javelin mini pod"
@@ -1273,8 +1273,8 @@ outfit "Javelin Mini Pod"
 
 outfit "Javelin Turret"
 	"display name" "标枪碉塔"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01030
 	cost 110000
 	thumbnail "outfit/javelin turret"
@@ -1325,9 +1325,9 @@ outfitter "Javelin Restock"
 outfit "Torpedo"
 	"display name" "鱼雷"
 	plural "鱼雷"
-	series "Ammunition"
+	series "弹药"
 	index 01050
-	category "Ammunition"
+	category "弹药"
 	cost 1400
 	thumbnail "outfit/torpedo"
 	"mass" .4
@@ -1336,8 +1336,8 @@ outfit "Torpedo"
 
 outfit "Torpedo Storage Rack"
 	"display name" "鱼雷储存架"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01051
 	cost 21000
 	thumbnail "outfit/torpedo storage"
@@ -1349,8 +1349,8 @@ outfit "Torpedo Storage Rack"
 
 outfit "Torpedo Launcher"
 	"display name" "鱼雷发射器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01110
 	cost 80000
 	thumbnail "outfit/torpedo launcher"
@@ -1393,8 +1393,8 @@ outfit "Torpedo Launcher"
 
 outfit "Torpedo Pod"
 	"display name" "鱼雷吊舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01100
 	cost 30000
 	thumbnail "outfit/torpedopod"
@@ -1460,9 +1460,9 @@ outfitter "Torpedo Restock"
 outfit "Typhoon Torpedo"
 	"display name" "台风鱼雷"
 	plural "台风鱼雷"
-	series "Ammunition"
+	series "弹药"
 	index 01060
-	category "Ammunition"
+	category "弹药"
 	cost 2700
 	thumbnail "outfit/typhoon"
 	"mass" .5
@@ -1471,8 +1471,8 @@ outfit "Typhoon Torpedo"
 
 outfit "Typhoon Storage Tube"
 	"display name" "台风储存管"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01061
 	cost 40500
 	thumbnail "outfit/typhoon storage"
@@ -1484,8 +1484,8 @@ outfit "Typhoon Storage Tube"
 
 outfit "Typhoon Launcher"
 	"display name" "台风发射器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01130
 	cost 260000
 	thumbnail "outfit/typhoon launcher"
@@ -1528,8 +1528,8 @@ outfit "Typhoon Launcher"
 
 outfit "Typhoon Pod"
 	"display name" "台风吊舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01120
 	cost 100000
 	thumbnail "outfit/typhoonpod"
@@ -1594,8 +1594,8 @@ outfitter "Typhoon Torpedo Restock"
 
 outfit "Heavy Rocket"
 	"display name" "重型火箭"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01040
 	cost 2000
 	thumbnail "outfit/rocket"
@@ -1605,8 +1605,8 @@ outfit "Heavy Rocket"
 
 outfit "Heavy Rocket Rack"
 	"display name" "重型火箭挂架"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01041
 	cost 20000
 	thumbnail "outfit/rocket storage"
@@ -1618,8 +1618,8 @@ outfit "Heavy Rocket Rack"
 
 outfit "Heavy Rocket Launcher"
 	"display name" "重型火箭发射器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01090
 	cost 40000
 	thumbnail "outfit/rocket launcher"
@@ -1658,8 +1658,8 @@ outfit "Heavy Rocket Launcher"
 
 outfit "Heavy Rocket Pod"
 	"display name" "重型火箭吊舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01080
 	cost 15000
 	thumbnail "outfit/rocket pod"
@@ -1725,8 +1725,8 @@ outfitter "Heavy Rocket Restock"
 
 outfit "Nuclear Missile"
 	"display name" "核导弹"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01170
 	cost 1000000
 	thumbnail "outfit/nuke"
@@ -1806,8 +1806,8 @@ effect "nuke residue slow"
 outfit "Gatling Gun Ammo"
 	"display name" "加特林弹药"
 	plural "加特林弹药"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01070
 	cost 4
 	thumbnail "outfit/bullet"
@@ -1818,8 +1818,8 @@ outfit "Gatling Gun Ammo"
 outfit "Bullet Boxes"
 	"display name" "弹丸箱"
 	plural "弹药箱"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 01071
 	cost 3000
 	thumbnail "outfit/bullet storage"
@@ -1831,8 +1831,8 @@ outfit "Bullet Boxes"
 
 outfit "Gatling Gun"
 	"display name" "加特林机炮"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01140
 	cost 20000
 	thumbnail "outfit/gat"
@@ -1865,8 +1865,8 @@ outfit "Gatling Gun"
 
 outfit "Gatling Turret"
 	"display name" "加特林碉塔"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 01150
 	cost 120000
 	thumbnail "outfit/gat turret"

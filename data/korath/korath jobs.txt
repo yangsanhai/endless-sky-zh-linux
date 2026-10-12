@@ -57,7 +57,7 @@ mission "Kor Efreti: Food Cargo [0]"
 	job
 	repeat
 	description "科·埃弗雷提需要将一些食物补给运送到另一颗星球。将 <cargo> 送至 <destination>。报酬为 <payment>。"
-	cargo "Food" 5 3 .16
+	cargo "食物" 5 3 .16
 	to offer
 		has "wanderers sestor done"
 	source
@@ -77,7 +77,7 @@ mission "Kor Efreti: Food Cargo [1]"
 	job
 	repeat
 	description "科·埃弗雷提需要将一些食物补给运送到另一颗星球。将 <cargo> 送至 <destination>。报酬为 <payment>。"
-	cargo "Food" 5 3 .14
+	cargo "食物" 5 3 .14
 	to offer
 		has "wanderers sestor done"
 		random < 70
@@ -100,7 +100,7 @@ mission "Kor Efreti: Industrial to Wanderers"
 	job
 	repeat
 	description "科·埃弗雷提没有太多制造能力，但流浪者可以利用这些材料。将 <cargo> 运送到 <destination>。报酬为 <payment>。"
-	cargo "Industrial" 5 3 .13
+	cargo "工业品" 5 3 .13
 	to offer
 		has "wanderers sestor done"
 		random < 75
@@ -142,7 +142,7 @@ mission "Kor Efreti: Rush Delivery Food"
 	job
 	repeat
 	description "<destination> 上的科·埃弗雷提食物供应严重不足。在 <date> 前运送 <cargo> 以缓解危机。报酬为 <payment>。"
-	cargo "Food" 10 6 .1
+	cargo "食物" 10 6 .1
 	deadline
 	to offer
 		has "wanderers sestor done"

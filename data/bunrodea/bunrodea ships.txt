@@ -17,7 +17,7 @@ ship "Kaiken"
 	thumbnail "thumbnail/kaiken"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		"cost" 1199000
 		"shields" 3200
 		"hull" 800
@@ -65,7 +65,7 @@ ship "Sasumata"
 	thumbnail "thumbnail/sasumata"
 	"administrative cost" 4
 	attributes
-		category "Transport"
+		category "运输船"
 		"cost" 12650000
 		"shields" 15500
 		"hull" 4200
@@ -113,10 +113,10 @@ ship "Sasumata"
 	gun 12.5 -110.5
 	turret -10 -5
 	turret 10 -5
-	bay "Fighter" 0 -93
-	bay "Fighter" 0 -93
-	bay "Fighter" 0 -93
-	bay "Fighter" 0 -93
+	bay "战斗机" 0 -93
+	bay "战斗机" 0 -93
+	bay "战斗机" 0 -93
+	bay "战斗机" 0 -93
 	leak "leak" 50 50
 	leak "big leak" 80 30
 	explode "tiny explosion" 30
@@ -135,7 +135,7 @@ ship "Tanto"
 	thumbnail "thumbnail/tanto"
 	"administrative cost" 3
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		"cost" 5995000
 		"shields" 16200
 		"hull" 3600
@@ -190,7 +190,7 @@ ship "Ararebo"
 	thumbnail "thumbnail/ararebo"
 	"administrative cost" 6
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 17565000
 		"shields" 50300
 		"hull" 13600
@@ -234,14 +234,14 @@ ship "Ararebo"
 	turret 0 -41 "Locust Turret"
 	turret 0 79.5 "Locust Turret"
 	turret 0 112 "Buzzer Anti-Missile"
-	bay "Fighter" 0 -132
-	bay "Fighter" 0 -132
-	bay "Fighter" -7 -132
-	bay "Fighter" 7 -132
-	bay "Fighter" -17 -132
-	bay "Fighter" 17 -132
-	bay "Fighter" -29 -133.5
-	bay "Fighter" 29 -133.5
+	bay "战斗机" 0 -132
+	bay "战斗机" 0 -132
+	bay "战斗机" -7 -132
+	bay "战斗机" 7 -132
+	bay "战斗机" -17 -132
+	bay "战斗机" 17 -132
+	bay "战斗机" -29 -133.5
+	bay "战斗机" 29 -133.5
 	leak "leak" 40 50
 	leak "flame" 30 80
 	leak "big leak" 50 30
@@ -260,7 +260,7 @@ ship "Tekkan"
 	thumbnail "thumbnail/tekkan"
 	"administrative cost" 4
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 10119000
 		"shields" 18600
 		"hull" 5200
@@ -319,7 +319,7 @@ ship "Kunai"
 	thumbnail "thumbnail/kunai"
 	"administrative cost" 4
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 12444000
 		"shields" 21400
 		"hull" 5700
@@ -380,7 +380,7 @@ ship "Kama"
 	thumbnail "thumbnail/kama"
 	"administrative cost" 7
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 20580000
 		"shields" 43700
 		"hull" 11500
@@ -450,7 +450,7 @@ ship "Chigiriki"
 	thumbnail "thumbnail/chigiriki"
 	"administrative cost" 8
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 30876000
 		"shields" 64200
 		"hull" 21000

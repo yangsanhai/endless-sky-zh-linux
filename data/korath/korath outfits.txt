@@ -15,7 +15,7 @@
 outfit "Generator (Candle Class)"
 	"display name" "发电机（蜡烛级）"
 	plural "发电机（蜡烛级）"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 04010
 	cost 493000
@@ -29,7 +29,7 @@ outfit "Generator (Candle Class)"
 outfit "Generator (Furnace Class)"
 	"display name" "发电机（熔炉级）"
 	plural "发电机（熔炉星级）"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 04020
 	cost 925000
@@ -43,7 +43,7 @@ outfit "Generator (Furnace Class)"
 outfit "Generator (Inferno Class)"
 	"display name" "发电机（地狱火级）"
 	plural "发电机（地狱火级）"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 04030
 	cost 1877000
@@ -56,7 +56,7 @@ outfit "Generator (Inferno Class)"
 
 outfit "Plasma Core"
 	"display name" "等离子核心"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 04040
 	cost 4188000
@@ -69,7 +69,7 @@ outfit "Plasma Core"
 
 outfit "Double Plasma Core"
 	"display name" "双联等离子核心"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 04050
 	cost 9321000
@@ -82,7 +82,7 @@ outfit "Double Plasma Core"
 
 outfit "Triple Plasma Core"
 	"display name" "三重等离子核心"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 04060
 	cost 20460000
@@ -97,7 +97,7 @@ outfit "Triple Plasma Core"
 
 outfit "Small Heat Shunt"
 	"display name" "小型散热器"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 04010
 	cost 180000
@@ -109,7 +109,7 @@ outfit "Small Heat Shunt"
 
 outfit "Large Heat Shunt"
 	"display name" "大型散热导管"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 04020
 	cost 790000
@@ -121,7 +121,7 @@ outfit "Large Heat Shunt"
 
 outfit "Liquid Sodium Cooler"
 	"display name" "液钠冷却器"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 04030
 	cost 1660000
@@ -138,7 +138,7 @@ outfit "Liquid Sodium Cooler"
 outfit "Systems Core (Tiny)"
 	"display name" "系统核心（微型）"
 	plural "系统核心（微型）"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 04010
 	cost 621000
@@ -156,7 +156,7 @@ outfit "Systems Core (Tiny)"
 outfit "Systems Core (Small)"
 	"display name" "系统核心（小型）"
 	plural "系统核心（小型）"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 04020
 	cost 1452000
@@ -174,7 +174,7 @@ outfit "Systems Core (Small)"
 outfit "Systems Core (Medium)"
 	"display name" "系统核心（中型）"
 	plural "系统核心（中型）"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 04030
 	cost 3630000
@@ -192,7 +192,7 @@ outfit "Systems Core (Medium)"
 outfit "Systems Core (Large)"
 	"display name" "系统核心（大型）"
 	plural "系统核心（大型）"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 04040
 	cost 9075000
@@ -210,7 +210,7 @@ outfit "Systems Core (Large)"
 
 outfit "Fuel Processor"
 	"display name" "燃料处理器"
-	category "Systems"
+	category "系统"
 	series "Ramscoops"
 	index 04010
 	cost 400000
@@ -224,7 +224,7 @@ outfit "Fuel Processor"
 
 outfit "Command Center"
 	"display name" "指挥中心"
-	category "Systems"
+	category "系统"
 	series "Passenger"
 	index 50
 	cost 437000
@@ -239,7 +239,7 @@ outfit "Command Center"
 
 outfit "Reasoning Node"
 	"display name" "推理节点"
-	category "Systems"
+	category "系统"
 	series "Special Systems"
 	index 04010
 	cost "23000"
@@ -250,7 +250,7 @@ outfit "Reasoning Node"
 
 outfit "Control Transceiver"
 	"display name" "控制收发器"
-	category "Systems"
+	category "系统"
 	series "Special Systems"
 	index 04020
 	cost "7000"
@@ -263,7 +263,7 @@ outfit "Control Transceiver"
 outfit "Afterburner (Asteroid Class)"
 	"display name" "加力燃烧室（小行星级）"
 	plural "加力燃烧室（小行星级）"
-	category "Engines"
+	category "引擎"
 	series "Afterburners"
 	index 04010
 	"cost" 136000
@@ -284,7 +284,7 @@ outfit "Afterburner (Asteroid Class)"
 outfit "Afterburner (Comet Class)"
 	"display name" "加力燃烧室（彗星级）"
 	plural "加力燃烧室（彗星级）"
-	category "Engines"
+	category "引擎"
 	series "Afterburners"
 	index 04020
 	"cost" 299000
@@ -303,7 +303,7 @@ outfit "Afterburner (Comet Class)"
 outfit "Afterburner (Lunar Class)"
 	"display name" "加力燃烧室（月级）"
 	plural "加力燃烧室（月球级）"
-	category "Engines"
+	category "引擎"
 	series "Afterburners"
 	index 04030
 	"cost" 647000
@@ -322,7 +322,7 @@ outfit "Afterburner (Lunar Class)"
 outfit "Afterburner (Planetary Class)"
 	"display name" "加力燃烧室（行星级）"
 	plural "加力燃烧室（行星级）"
-	category "Engines"
+	category "引擎"
 	series "Afterburners"
 	index 04040
 	"cost" 1459000
@@ -342,7 +342,7 @@ outfit "Afterburner (Planetary Class)"
 outfit "Afterburner (Stellar Class)"
 	"display name" "加力燃烧室（恒星级）"
 	plural "加力燃烧室（恒星级）"
-	category "Engines"
+	category "引擎"
 	series "Afterburners"
 	index 04060
 	"cost" 3280000
@@ -434,8 +434,8 @@ effect "korath afterburner huge"
 outfit "Engine (Meteor Class)"
 	"display name" "引擎（流星级）"
 	plural "引擎（流星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04010
 	"cost" 187000
 	thumbnail "outfit/tiny korath engine"
@@ -459,8 +459,8 @@ outfit "Engine (Meteor Class)"
 outfit "Bow Drive (Meteor Class)"
 	"display name" "船首引擎（流星级）"
 	plural "舰首推进器（流星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04011
 	"cost" 187000
 	thumbnail "outfit/korath bow drive"
@@ -485,8 +485,8 @@ outfit "Bow Drive (Meteor Class)"
 outfit "Reverser (Asteroid Class)"
 	"display name" "反推器（小行星级）"
 	plural "反向推进器（小行星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04022
 	"cost" 113000
 	thumbnail "outfit/tiny korath reverser"
@@ -506,8 +506,8 @@ outfit "Reverser (Asteroid Class)"
 outfit "Reverser (Comet Class)"
 	"display name" "反推器（彗星级）"
 	plural "反向推进器（彗星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04032
 	"cost" 249000
 	thumbnail "outfit/small korath reverser"
@@ -527,8 +527,8 @@ outfit "Reverser (Comet Class)"
 outfit "Reverser (Lunar Class)"
 	"display name" "反推器（卫星级）"
 	plural "反向推进器（月球级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04042
 	"cost" 539000
 	thumbnail "outfit/medium korath reverser"
@@ -548,8 +548,8 @@ outfit "Reverser (Lunar Class)"
 outfit "Reverser (Planetary Class)"
 	"display name" "反推器（行星级）"
 	plural "反向推进器（行星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04052
 	"cost" 1216000
 	thumbnail "outfit/large korath reverser"
@@ -569,8 +569,8 @@ outfit "Reverser (Planetary Class)"
 outfit "Reverser (Stellar Class)"
 	"display name" "反推器（恒星级）"
 	plural "反向推进器（恒星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04062
 	"cost" 2733000
 	thumbnail "outfit/huge korath reverser"
@@ -591,8 +591,8 @@ outfit "Reverser (Stellar Class)"
 outfit "Thruster (Asteroid Class)"
 	"display name" "推进器（小行星级）"
 	plural "推进器（小行星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04021
 	"cost" 113000
 	thumbnail "outfit/tiny korath thruster"
@@ -610,8 +610,8 @@ outfit "Thruster (Asteroid Class)"
 outfit "Thruster (Comet Class)"
 	"display name" "推进器（彗星级）"
 	plural "推进器（彗星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04031
 	"cost" 249000
 	thumbnail "outfit/small korath thruster"
@@ -629,8 +629,8 @@ outfit "Thruster (Comet Class)"
 outfit "Thruster (Lunar Class)"
 	"display name" "推进器（卫星级）"
 	plural "推进器（月球级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04041
 	"cost" 539000
 	thumbnail "outfit/medium korath thruster"
@@ -648,8 +648,8 @@ outfit "Thruster (Lunar Class)"
 outfit "Thruster (Planetary Class)"
 	"display name" "推进器（行星级）"
 	plural "推进器（行星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04051
 	"cost" 1216000
 	thumbnail "outfit/large korath thruster"
@@ -667,8 +667,8 @@ outfit "Thruster (Planetary Class)"
 outfit "Thruster (Stellar Class)"
 	"display name" "推进器（恒星级）"
 	plural "推进器（恒星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04061
 	"cost" 2733000
 	thumbnail "outfit/huge korath thruster"
@@ -686,8 +686,8 @@ outfit "Thruster (Stellar Class)"
 outfit "Steering (Asteroid Class)"
 	"display name" "转向器（小行星级）"
 	plural "转向系统（小行星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04020
 	"cost" 95000
 	thumbnail "outfit/tiny korath steering"
@@ -705,8 +705,8 @@ outfit "Steering (Asteroid Class)"
 outfit "Steering (Comet Class)"
 	"display name" "转向器（彗星级）"
 	plural "转向系统（彗星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04030
 	"cost" 221000
 	thumbnail "outfit/small korath steering"
@@ -724,8 +724,8 @@ outfit "Steering (Comet Class)"
 outfit "Steering (Lunar Class)"
 	"display name" "转向器（卫星级）"
 	plural "转向系统（月球级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04040
 	"cost" 473000
 	thumbnail "outfit/medium korath steering"
@@ -743,8 +743,8 @@ outfit "Steering (Lunar Class)"
 outfit "Steering (Planetary Class)"
 	"display name" "转向器（行星级）"
 	plural "转向系统（行星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04050
 	"cost" 1077000
 	thumbnail "outfit/large korath steering"
@@ -762,8 +762,8 @@ outfit "Steering (Planetary Class)"
 outfit "Steering (Stellar Class)"
 	"display name" "转向器（恒星级）"
 	plural "转向系统（恒星级）"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04060
 	"cost" 2435000
 	thumbnail "outfit/huge korath steering"
@@ -780,8 +780,8 @@ outfit "Steering (Stellar Class)"
 
 outfit "Arkrof GP Hybrid Thruster"
 	"display name" "阿克洛夫通用混合推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04071
 	"cost" 165000
 	thumbnail "outfit/tiny efreti thruster"
@@ -798,8 +798,8 @@ outfit "Arkrof GP Hybrid Thruster"
 
 outfit "Farves GP Hybrid Thruster"
 	"display name" "法尔维斯 GP 混合推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04081
 	"cost" 405000
 	thumbnail "outfit/small efreti thruster"
@@ -816,8 +816,8 @@ outfit "Farves GP Hybrid Thruster"
 
 outfit "Gaktem GP Hybrid Thruster"
 	"display name" "加克特姆 GP 混合推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04091
 	"cost" 883000
 	thumbnail "outfit/medium efreti thruster"
@@ -834,8 +834,8 @@ outfit "Gaktem GP Hybrid Thruster"
 
 outfit "Nelmeb GP Hybrid Thruster"
 	"display name" "内尔梅布GP混合推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04101
 	"cost" 1649000
 	thumbnail "outfit/large efreti thruster"
@@ -853,8 +853,8 @@ outfit "Nelmeb GP Hybrid Thruster"
 
 outfit "Arkrof GP Hybrid Steering"
 	"display name" "阿克洛夫通用混合转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04070
 	"cost" 131000
 	thumbnail "outfit/tiny efreti steering"
@@ -871,8 +871,8 @@ outfit "Arkrof GP Hybrid Steering"
 
 outfit "Farves GP Hybrid Steering"
 	"display name" "法尔维斯 GP 混合转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04080
 	"cost" 413000
 	thumbnail "outfit/small efreti steering"
@@ -890,8 +890,8 @@ outfit "Farves GP Hybrid Steering"
 
 outfit "Gaktem GP Hybrid Steering"
 	"display name" "加克特姆 GP 混合转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04090
 	"cost" 833000
 	thumbnail "outfit/medium efreti steering"
@@ -909,8 +909,8 @@ outfit "Gaktem GP Hybrid Steering"
 
 outfit "Nelmeb GP Hybrid Steering"
 	"display name" "内尔梅布GP混合转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 04100
 	"cost" 1439000
 	thumbnail "outfit/large efreti steering"
@@ -928,7 +928,7 @@ outfit "Nelmeb GP Hybrid Steering"
 
 outfit "Thermal Repeater Rifle"
 	"display name" "热能连发步枪"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 04010
 	cost 53000
@@ -940,7 +940,7 @@ outfit "Thermal Repeater Rifle"
 
 outfit "Microbot Defense Station"
 	"display name" "微型机器人防御站"
-	category "Hand to Hand"
+	category "近战"
 	series "Fortifications"
 	index 04010
 	cost 53000

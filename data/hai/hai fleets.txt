@@ -596,7 +596,7 @@ fleet "Unfettered Logistics"
 	government "Hai (Unfettered Civilians)"
 	names "hai"
 	cargo 3
-	commodities "Food" "Heavy Metals" "Medical"
+	commodities "食物" "重金属" "医疗用品"
 	personality
 		confusion 25
 		timid frugal appeasing

@@ -288,7 +288,7 @@ mission "Tarazed Shipyards Shipment [0]"
 mission "Tarazed Shipyards Shipment [1]"
 	name "运送至<planet>的货物"
 	description "将<cargo>运送至<planet>，即南部星区最大的造船企业之一的河鼓三造船厂所在地。报酬为<payment>。"
-	cargo "Ship Alloys" 5 2 .1
+	cargo "舰船合金" 5 2 .1
 	job
 	repeat
 	to offer
@@ -307,7 +307,7 @@ mission "Tarazed Shipyards Shipment [1]"
 mission "Tarazed Shipyards Shipment [2]"
 	name "运送至<planet>的货物"
 	description "将<cargo>运送至<planet>，即南部星区最大的造船企业之一的河鼓三造船厂所在地。报酬为<payment>。"
-	cargo "Ship Systems" 5 2 .1
+	cargo "舰船系统" 5 2 .1
 	job
 	repeat
 	to offer

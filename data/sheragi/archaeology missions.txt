@@ -301,7 +301,7 @@ mission "Deep Archaeology 5"
 ship "Timer Ship"
 	"display name" "定时舰"
 	attributes
-		category "Game Mechanics"
+		category "游戏机制"
 		"heat dissipation" 1
 		"hull" 3
 		"hull repair rate" .001
@@ -316,7 +316,7 @@ ship "Timer Ship"
 
 outfit "Timer Weapon"
 	"display name" "定时武器"
-	category "Guns"
+	category "枪炮"
 	thumbnail "outfit/unknown"
 	"gun ports" -1
 	weapon

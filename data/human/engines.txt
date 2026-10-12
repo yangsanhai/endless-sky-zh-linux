@@ -13,7 +13,7 @@
 
 outfit "Volcano Afterburner"
 	"display name" "火山加力燃烧器"
-	category "Engines"
+	category "引擎"
 	series "Afterburners"
 	index 01000
 	"cost" 70000
@@ -41,7 +41,7 @@ effect "afterburner"
 
 outfit "Caldera Afterburner"
 	"display name" "火山口加力燃烧室"
-	category "Engines"
+	category "引擎"
 	series "Afterburners"
 	index 01010
 	"cost" 390000
@@ -70,7 +70,7 @@ effect "caldera afterburner"
 
 outfit "Ionic Afterburner"
 	"display name" "离子加力燃烧器"
-	category "Engines"
+	category "引擎"
 	series "Afterburners"
 	index 01020
 	"cost" 340000
@@ -102,8 +102,8 @@ effect "ionic afterburner"
 outfit "X1050 Ion Engines"
 	"display name" "X1050离子引擎"
 	plural "X1050 离子引擎"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01000
 	"cost" 20000
 	thumbnail "outfit/tiny ion engines"
@@ -128,8 +128,8 @@ outfit "X1050 Ion Engines"
 
 outfit "X1700 Ion Thruster"
 	"display name" "X1700离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01011
 	"cost" 12000
 	thumbnail "outfit/tiny ion thruster"
@@ -147,8 +147,8 @@ outfit "X1700 Ion Thruster"
 
 outfit "X2700 Ion Thruster"
 	"display name" "X2700离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01021
 	"cost" 26000
 	thumbnail "outfit/small ion thruster"
@@ -166,8 +166,8 @@ outfit "X2700 Ion Thruster"
 
 outfit "X3700 Ion Thruster"
 	"display name" "X3700离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01031
 	"cost" 58000
 	thumbnail "outfit/medium ion thruster"
@@ -185,8 +185,8 @@ outfit "X3700 Ion Thruster"
 
 outfit "X4700 Ion Thruster"
 	"display name" "X4700离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01041
 	"cost" 128000
 	thumbnail "outfit/large ion thruster"
@@ -204,8 +204,8 @@ outfit "X4700 Ion Thruster"
 
 outfit "X5700 Ion Thruster"
 	"display name" "X5700离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01051
 	"cost" 281000
 	thumbnail "outfit/huge ion thruster"
@@ -224,8 +224,8 @@ outfit "X5700 Ion Thruster"
 
 outfit "X1200 Ion Steering"
 	"display name" "X1200离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01010
 	"cost" 10000
 	thumbnail "outfit/tiny ion steering"
@@ -243,8 +243,8 @@ outfit "X1200 Ion Steering"
 
 outfit "X2200 Ion Steering"
 	"display name" "X2200离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01020
 	"cost" 21000
 	thumbnail "outfit/small ion steering"
@@ -262,8 +262,8 @@ outfit "X2200 Ion Steering"
 
 outfit "X3200 Ion Steering"
 	"display name" "X3200离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01030
 	"cost" 46000
 	thumbnail "outfit/medium ion steering"
@@ -281,8 +281,8 @@ outfit "X3200 Ion Steering"
 
 outfit "X4200 Ion Steering"
 	"display name" "X4200离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01040
 	"cost" 102000
 	thumbnail "outfit/large ion steering"
@@ -300,8 +300,8 @@ outfit "X4200 Ion Steering"
 
 outfit "X5200 Ion Steering"
 	"display name" "X5200离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01050
 	"cost" 225000
 	thumbnail "outfit/huge ion steering"
@@ -320,8 +320,8 @@ outfit "X5200 Ion Steering"
 
 outfit "X1100 Ion Reverse Thruster"
 	"display name" "X1100离子反向推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01012
 	"cost" 12000
 	thumbnail "outfit/reverse thruster ion"
@@ -341,8 +341,8 @@ outfit "X1100 Ion Reverse Thruster"
 
 outfit "Chipmunk Plasma Thruster"
 	"display name" "花栗鼠等离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01101
 	"cost" 20000
 	thumbnail "outfit/tiny plasma thruster"
@@ -360,8 +360,8 @@ outfit "Chipmunk Plasma Thruster"
 
 outfit "Greyhound Plasma Thruster"
 	"display name" "灰狗等离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01111
 	"cost" 45000
 	thumbnail "outfit/small plasma thruster"
@@ -379,8 +379,8 @@ outfit "Greyhound Plasma Thruster"
 
 outfit "Impala Plasma Thruster"
 	"display name" "黑斑羚等离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01121
 	"cost" 99000
 	thumbnail "outfit/medium plasma thruster"
@@ -398,8 +398,8 @@ outfit "Impala Plasma Thruster"
 
 outfit "Orca Plasma Thruster"
 	"display name" "虎鲸等离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01131
 	"cost" 217000
 	thumbnail "outfit/large plasma thruster"
@@ -417,8 +417,8 @@ outfit "Orca Plasma Thruster"
 
 outfit "Tyrant Plasma Thruster"
 	"display name" "暴君等离子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01141
 	"cost" 389000
 	thumbnail "outfit/huge plasma thruster"
@@ -437,8 +437,8 @@ outfit "Tyrant Plasma Thruster"
 
 outfit "Chipmunk Plasma Steering"
 	"display name" "花栗鼠等离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01100
 	"cost" 16000
 	thumbnail "outfit/tiny plasma steering"
@@ -456,8 +456,8 @@ outfit "Chipmunk Plasma Steering"
 
 outfit "Greyhound Plasma Steering"
 	"display name" "灰狗等离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01110
 	"cost" 36000
 	thumbnail "outfit/small plasma steering"
@@ -475,8 +475,8 @@ outfit "Greyhound Plasma Steering"
 
 outfit "Impala Plasma Steering"
 	"display name" "黑斑羚等离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01120
 	"cost" 79000
 	thumbnail "outfit/medium plasma steering"
@@ -494,8 +494,8 @@ outfit "Impala Plasma Steering"
 
 outfit "Orca Plasma Steering"
 	"display name" "虎鲸等离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01130
 	"cost" 174000
 	thumbnail "outfit/large plasma steering"
@@ -513,8 +513,8 @@ outfit "Orca Plasma Steering"
 
 outfit "Tyrant Plasma Steering"
 	"display name" "暴君等离子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01140
 	"cost" 324700
 	thumbnail "outfit/huge plasma steering"
@@ -533,8 +533,8 @@ outfit "Tyrant Plasma Steering"
 
 outfit "Capybara Reverse Thruster"
 	"display name" "水豚反向推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01102
 	"cost" 20000
 	thumbnail "outfit/reverse thruster plasma"
@@ -554,8 +554,8 @@ outfit "Capybara Reverse Thruster"
 
 outfit "A120 Atomic Thruster"
 	"display name" "A120原子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01201
 	"cost" 140000
 	thumbnail "outfit/tiny atomic thruster"
@@ -572,8 +572,8 @@ outfit "A120 Atomic Thruster"
 
 outfit "A250 Atomic Thruster"
 	"display name" "A250原子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01211
 	"cost" 280000
 	thumbnail "outfit/small atomic thruster"
@@ -590,8 +590,8 @@ outfit "A250 Atomic Thruster"
 
 outfit "A370 Atomic Thruster"
 	"display name" "A370原子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01221
 	"cost" 560000
 	thumbnail "outfit/medium atomic thruster"
@@ -608,8 +608,8 @@ outfit "A370 Atomic Thruster"
 
 outfit "A520 Atomic Thruster"
 	"display name" "A520原子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01231
 	"cost" 1120000
 	thumbnail "outfit/large atomic thruster"
@@ -626,8 +626,8 @@ outfit "A520 Atomic Thruster"
 
 outfit "A860 Atomic Thruster"
 	"display name" "A860原子推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01241
 	"cost" 2240000
 	thumbnail "outfit/huge atomic thruster"
@@ -645,8 +645,8 @@ outfit "A860 Atomic Thruster"
 
 outfit "A125 Atomic Steering"
 	"display name" "A125原子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01200
 	"cost" 120000
 	thumbnail "outfit/tiny atomic steering"
@@ -663,8 +663,8 @@ outfit "A125 Atomic Steering"
 
 outfit "A255 Atomic Steering"
 	"display name" "A255原子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01210
 	"cost" 240000
 	thumbnail "outfit/small atomic steering"
@@ -681,8 +681,8 @@ outfit "A255 Atomic Steering"
 
 outfit "A375 Atomic Steering"
 	"display name" "A375原子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01220
 	"cost" 480000
 	thumbnail "outfit/medium atomic steering"
@@ -699,8 +699,8 @@ outfit "A375 Atomic Steering"
 
 outfit "A525 Atomic Steering"
 	"display name" "A525原子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01230
 	"cost" 960000
 	thumbnail "outfit/large atomic steering"
@@ -717,8 +717,8 @@ outfit "A525 Atomic Steering"
 
 outfit "A865 Atomic Steering"
 	"display name" "A865原子转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01240
 	"cost" 1920000
 	thumbnail "outfit/huge atomic steering"
@@ -736,8 +736,8 @@ outfit "A865 Atomic Steering"
 
 outfit "AR120 Reverse Thruster"
 	"display name" "AR120反向推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 01202
 	"cost" 140000
 	thumbnail "outfit/reverse thruster"

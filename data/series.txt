@@ -31,15 +31,15 @@
 
 category "series"
 	# Guns
-	"Guns" 100
+	"枪炮" 100
 	# Turrets
-	"Turrets" 100
+	"炮塔" 100
 	"Anti-Missile" 200
 	"Tractor Beams" 300
 	# Secondary Weapons
-	"Secondary Weapons" 100
+	"副武器" 100
 	# Ammunition
-	"Ammunition" 100
+	"弹药" 100
 	# Systems
 	"Drives" 100
 	"Shields" 200
@@ -57,7 +57,7 @@ category "series"
 	"Batteries" 200
 	"Solar" 300
 	# Engines
-	"Engines" 100
+	"引擎" 100
 	"Afterburners" 200
 	# Hand to Hand
 	"H2H" 100
@@ -66,4 +66,4 @@ category "series"
 	"Functional Unique" 100
 	"Non-Functional Unique" 200
 	# Licenses
-	"Licenses" 100
+	"许可证" 100

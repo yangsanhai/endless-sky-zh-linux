@@ -22,7 +22,7 @@ ship "Jje"
 	swizzle 0
 	"never disabled"
 	attributes
-		category "Unclassified Minor"
+		category "未分类·次要"
 		"cost" 0
 		"hull" 4000
 		"required crew" 2
@@ -75,7 +75,7 @@ ship "Ayym"
 	swizzle 0
 	"never disabled"
 	attributes
-		category "Unclassified"
+		category "未分类"
 		"cost" 0
 		"hull" 6000
 		"required crew" 4
@@ -125,31 +125,31 @@ ship "Ayym"
 			"hit force" 4500
 	engine 0 0
 	"steering engine" 0 0
-	bay "Unclassified Minor" -36 40
+	bay "未分类·次要" -36 40
 		over
 		angle 60
-	bay "Unclassified Minor" 36 20
+	bay "未分类·次要" 36 20
 		over
 		angle -70
-	bay "Unclassified Minor" -16 104
+	bay "未分类·次要" -16 104
 		over
 		angle 162
-	bay "Unclassified Minor" -28 66
+	bay "未分类·次要" -28 66
 		over
 		angle 68
-	bay "Unclassified Minor" -18 14
+	bay "未分类·次要" -18 14
 		over
 		angle 127
-	bay "Unclassified Minor" 35 25
+	bay "未分类·次要" 35 25
 		over
 		angle 25
-	bay "Unclassified Minor" 25 70
+	bay "未分类·次要" 25 70
 		over
 		angle -120
-	bay "Unclassified Minor" 11 110
+	bay "未分类·次要" 11 110
 		over
 		angle 38
-	bay "Unclassified Minor" -36 40
+	bay "未分类·次要" -36 40
 		over
 		angle -53
 	"final explode" "ayym boom"

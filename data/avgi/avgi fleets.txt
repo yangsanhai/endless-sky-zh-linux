@@ -80,7 +80,7 @@ fleet "Avgi Patrol"
 	government "Avgi (Twilight Guard)"
 	names "avgi military names"
 	cargo 4
-	commodities "Food" "Equipment" "Medical"
+	commodities "食物" "设备" "医疗用品"
 	fighters
 		names "avgi fighter names"
 		personality
@@ -114,7 +114,7 @@ fleet "Avgi Scouts"
 	government "Avgi (Twilight Guard)"
 	names "avgi civilian names"
 	cargo 3
-	commodities "Food" "Equipment" "Medical"
+	commodities "食物" "设备" "医疗用品"
 	fighters
 		names "avgi fighter names"
 	personality
@@ -141,7 +141,7 @@ fleet "Avgi Strike Group"
 	government "Avgi (Twilight Guard)"
 	names "avgi military names"
 	cargo 3
-	commodities "Food" "Equipment" "Medical"
+	commodities "食物" "设备" "医疗用品"
 	fighters
 		names "avgi fighter names"
 		personality
@@ -186,7 +186,7 @@ fleet "Avgi Fleetgroup"
 	government "Avgi (Twilight Guard)"
 	names "avgi military names"
 	cargo 4
-	commodities "Food" "Equipment" "Medical" "Heavy Metals"
+	commodities "食物" "设备" "医疗用品" "重金属"
 	fighters
 		names "avgi fighter names"
 		personality
@@ -252,7 +252,7 @@ fleet "Avgi Twilight Guard Logistics"
 	government "Avgi (Twilight Guard)"
 	names "avgi military names"
 	cargo 4
-	commodities "Food" "Equipment" "Medical" "Heavy Metals"
+	commodities "食物" "设备" "医疗用品" "重金属"
 	fighters
 		names "avgi fighter names"
 		personality

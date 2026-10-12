@@ -22,7 +22,7 @@ ship "Aaulqra"
 	attributes
 		licenses
 			"High Houses"
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 26000000
 		"shields" 10000
 		"hull" 55000
@@ -119,7 +119,7 @@ ship "Ejniisde"
 	attributes
 		licenses
 			"Successor"
-		category "Space Liner"
+		category "太空客轮"
 		"cost" 4100000
 		"shields" 2000
 		"hull" 9500
@@ -199,7 +199,7 @@ ship "Kaskhorade"
 	attributes
 		licenses
 			"High Houses"
-		category "Utility"
+		category "通用"
 		"cost" 45250000
 		"shields" 7000
 		"hull" 44500
@@ -297,7 +297,7 @@ ship "Kvelqde"
 	attributes
 		licenses
 			"Successor"
-		category "Transport"
+		category "运输船"
 		"cost" 185000
 		"shields" 350
 		"hull" 2400
@@ -380,7 +380,7 @@ ship "Kvelqde-Khora"
 	attributes
 		licenses
 			"Successor"
-		category "Interceptor"
+		category "截击机"
 		"cost" 240000
 		"shields" 785
 		"hull" 4625
@@ -463,7 +463,7 @@ ship "Myaede"
 	attributes
 		licenses
 			"Successor"
-		category "Light Freighter"
+		category "轻型货船"
 		"cost" 3250000
 		"shields" 1500
 		"hull" 13000
@@ -548,7 +548,7 @@ ship "Nnaatej"
 	attributes
 		licenses
 			"Successor"
-		category "Transport"
+		category "运输船"
 		"cost" 3825000
 		"shields" 3000
 		"hull" 15500
@@ -632,7 +632,7 @@ ship "Nnesaarau"
 	attributes
 		licenses
 			"Successor"
-		category "Transport"
+		category "运输船"
 		"cost" 1225000
 		"shields" 1800
 		"hull" 2200
@@ -706,7 +706,7 @@ ship "Ojde"
 	attributes
 		licenses
 			"Successor"
-		category "Heavy Freighter"
+		category "重型货船"
 		"cost" 8250000
 		"shields" 3000
 		"hull" 31500
@@ -790,7 +790,7 @@ ship "Seiitej"
 	attributes
 		licenses
 			"High Houses"
-		category "Utility"
+		category "通用"
 		"cost" 9250000
 		"shields" 8000
 		"hull" 19000
@@ -877,7 +877,7 @@ ship "Stolsaqra"
 	attributes
 		licenses
 			"Successor"
-		category "Interceptor"
+		category "截击机"
 		"cost" 450000
 		"shields" 850
 		"hull" 6100
@@ -969,7 +969,7 @@ ship "Veusade"
 	attributes
 		licenses
 			"High Houses"
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 16500000
 		"shields" 8000
 		"hull" 29000
@@ -1066,7 +1066,7 @@ ship "Vujlet"
 	attributes
 		licenses
 			"High Houses"
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 8200000
 		"shields" 3000
 		"hull" 17500

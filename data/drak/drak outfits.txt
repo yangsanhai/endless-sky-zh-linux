@@ -13,8 +13,8 @@
 
 outfit "Drak Distancer"
 	"display name" "德拉克远距器"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 99020
 	cost 1000000
 	thumbnail "outfit/unknown"
@@ -43,8 +43,8 @@ effect "distancer flare"
 
 outfit "Drak Draining Field"
 	"display name" "德拉克汲取场"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 99030
 	cost 10000000
 	thumbnail "outfit/unknown"
@@ -76,8 +76,8 @@ outfit "Drak Draining Field"
 
 outfit "Drak Draining Field (Augmented)"
 	"display name" "德拉克汲取场（增强）"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 99031
 	cost 100000000
 	thumbnail "outfit/unknown"
@@ -111,7 +111,7 @@ outfit "Drak Draining Field (Augmented)"
 
 outfit "Drak Anti-Missile Field"
 	"display name" "德拉克反导场"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 99010
 	cost 1000000
@@ -133,7 +133,7 @@ outfit "Drak Anti-Missile Field"
 
 outfit "Drak Anti-Missile Field (Augmented)"
 	"display name" "德拉克反导场（增强）"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 99011
 	cost 10000000
@@ -157,8 +157,8 @@ outfit "Drak Anti-Missile Field (Augmented)"
 
 outfit "Drak Turret"
 	"display name" "德拉克碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 99010
 	cost 1000000
 	thumbnail "outfit/unknown"
@@ -187,8 +187,8 @@ outfit "Drak Turret"
 
 outfit "Drak Turret (Augmented)"
 	"display name" "德拉克碉塔（增强）"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 99011
 	cost 10000000
 	thumbnail "outfit/unknown"
@@ -229,8 +229,8 @@ effect "drak bolt impact"
 
 outfit "Drak Antimatter Cannon"
 	"display name" "德拉克反物质炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 99010
 	cost 10000000
 	thumbnail "outfit/unknown"
@@ -258,8 +258,8 @@ outfit "Drak Antimatter Cannon"
 
 outfit "Drak Antimatter Cannon (Augmented)"
 	"display name" "德拉克反物质炮（增强）"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 99011
 	cost 100000000
 	thumbnail "outfit/unknown"

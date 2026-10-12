@@ -1700,7 +1700,7 @@ phrase "hostile disabled lunarium"
 		"而战！"
 
 trade
-	commodity "coalition cargo"
+	commodity "联盟货物"
 		"anodized titanium horseshoes"
 		"Arachi accordions"
 		"Arachi armor replicas"

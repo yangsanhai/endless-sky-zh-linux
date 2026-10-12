@@ -13,8 +13,8 @@
 
 outfit "Sunbeam"
 	"display name" "阳光束"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 09020
 	licenses
 		"Wanderer Outfits"
@@ -52,8 +52,8 @@ effect "sunbeam impact"
 
 outfit "Sunbeam Turret"
 	"display name" "阳光束炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 09020
 	licenses
 		"Wanderer Outfits"
@@ -85,8 +85,8 @@ outfit "Sunbeam Turret"
 
 outfit "Dual Sunbeam Turret"
 	"display name" "双联日光束碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 09030
 	licenses
 		"Wanderer Outfits"
@@ -118,8 +118,8 @@ outfit "Dual Sunbeam Turret"
 
 outfit "Moonbeam"
 	"display name" "月光束"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 09010
 	licenses
 		"Wanderer Outfits"
@@ -165,8 +165,8 @@ effect "moonbeam impact"
 
 outfit "Moonbeam Turret"
 	"display name" "月光束碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 09010
 	licenses
 		"Wanderer Outfits"
@@ -201,7 +201,7 @@ outfit "Moonbeam Turret"
 
 outfit "Wanderer Anti-Missile"
 	"display name" "漫游者反导弹"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 09010
 	licenses
@@ -235,8 +235,8 @@ effect "wanderer anti-missile"
 
 outfit "Thunderhead Launcher"
 	"display name" "雷云发射器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 09010
 	licenses
 		"Wanderer Outfits"
@@ -281,8 +281,8 @@ outfit "Thunderhead Launcher"
 
 outfit "Thunderhead Missile"
 	"display name" "雷云导弹"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 09010
 	cost 1800
 	thumbnail "outfit/thunderhead"
@@ -316,8 +316,8 @@ outfit "Thunderhead"
 
 outfit "Thunderhead Storage Array"
 	"display name" "雷云储存阵列"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 09011
 	licenses
 		"Wanderer Outfits"
@@ -342,7 +342,7 @@ outfitter "Thunderhead Missile Restock"
 
 outfit "Small Biochemical Cell"
 	"display name" "小型生化电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 09010
 	licenses
@@ -358,7 +358,7 @@ outfit "Small Biochemical Cell"
 
 outfit "Large Biochemical Cell"
 	"display name" "大型生化电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 09020
 	licenses
@@ -374,7 +374,7 @@ outfit "Large Biochemical Cell"
 
 outfit "Red Sun Reactor"
 	"display name" "红日反应堆"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 09030
 	licenses
@@ -390,7 +390,7 @@ outfit "Red Sun Reactor"
 
 outfit "Yellow Sun Reactor"
 	"display name" "黄日反应堆"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 09040
 	licenses
@@ -406,7 +406,7 @@ outfit "Yellow Sun Reactor"
 
 outfit "White Sun Reactor"
 	"display name" "白日反应堆"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 09050
 	licenses
@@ -422,7 +422,7 @@ outfit "White Sun Reactor"
 
 outfit "Blue Sun Reactor"
 	"display name" "蓝阳反应堆"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 09060
 	licenses
@@ -439,7 +439,7 @@ outfit "Blue Sun Reactor"
 
 outfit "Bright Cloud Shielding"
 	"display name" "亮云护盾"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 09010
 	licenses
@@ -454,7 +454,7 @@ outfit "Bright Cloud Shielding"
 
 outfit "Dark Storm Shielding"
 	"display name" "暗暴护盾场"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 09020
 	licenses
@@ -469,7 +469,7 @@ outfit "Dark Storm Shielding"
 
 outfit "Wanderer Ramscoop"
 	"display name" "漫游者冲压收集器"
-	category "Systems"
+	category "系统"
 	series "Ramscoops"
 	index 09010
 	licenses
@@ -484,7 +484,7 @@ outfit "Wanderer Ramscoop"
 
 outfit "Wanderer Heat Sink"
 	"display name" "漫游者散热器"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 09010
 	licenses
@@ -499,8 +499,8 @@ outfit "Wanderer Heat Sink"
 
 outfit "Type 1 Radiant Thruster"
 	"display name" "1型光耀推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 09011
 	licenses
 		"Wanderer Outfits"
@@ -520,8 +520,8 @@ outfit "Type 1 Radiant Thruster"
 
 outfit "Type 2 Radiant Thruster"
 	"display name" "2型光耀推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 09021
 	licenses
 		"Wanderer Outfits"
@@ -541,8 +541,8 @@ outfit "Type 2 Radiant Thruster"
 
 outfit "Type 3 Radiant Thruster"
 	"display name" "3型光耀推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 09031
 	licenses
 		"Wanderer Outfits"
@@ -562,8 +562,8 @@ outfit "Type 3 Radiant Thruster"
 
 outfit "Type 4 Radiant Thruster"
 	"display name" "4型光耀推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 09041
 	licenses
 		"Wanderer Outfits"
@@ -583,8 +583,8 @@ outfit "Type 4 Radiant Thruster"
 
 outfit "Type 1 Radiant Steering"
 	"display name" "1型光耀转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 09010
 	licenses
 		"Wanderer Outfits"
@@ -604,8 +604,8 @@ outfit "Type 1 Radiant Steering"
 
 outfit "Type 2 Radiant Steering"
 	"display name" "2型光耀转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 09020
 	licenses
 		"Wanderer Outfits"
@@ -625,8 +625,8 @@ outfit "Type 2 Radiant Steering"
 
 outfit "Type 3 Radiant Steering"
 	"display name" "3型光耀转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 09030
 	licenses
 		"Wanderer Outfits"
@@ -646,8 +646,8 @@ outfit "Type 3 Radiant Steering"
 
 outfit "Type 4 Radiant Steering"
 	"display name" "4型光耀转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 09040
 	licenses
 		"Wanderer Outfits"
@@ -667,24 +667,24 @@ outfit "Type 4 Radiant Steering"
 
 outfit "Wanderer Outfits License"
 	"display name" "漫游者装备执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 09010
 	thumbnail "outfit/wanderer outfits license"
 	description "这个形状奇特的盘子里保存着一批哨兵裙草种子。这是一种敏感而坚韧的物种，流浪者在初期改造行星时用它来检测星球对其方法的响应程度。每颗种子都内置了世代限制，确保这种草在几个生命周期后消失，不会与原生植物竞争。这些种子象征着行星改造的开始和善意的传递，赋予持有者获取流浪者装备的权利。"
 
 outfit "Wanderer License"
 	"display name" "漫游者执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 09020
 	thumbnail "outfit/wanderer license"
 	description "这枚琥珀外壳中封存的贵族守望木的枝叶——据传来自流浪者最初的母星——象征着他们的骄傲与喜悦：一颗行星的彻底复兴。这种树虽然体量无匹、令人敬畏，却对气候的丝毫变化都极为脆弱，因此一棵这样的树木能生长至成熟，被视为生态系统恢复的标志。作为和平的象征，如同地球的橄榄枝一般，它赋予持有者购买非军用流浪者飞船的权利。"
 
 outfit "Wanderer Military License"
 	"display name" "漫游者军用执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 09030
 	thumbnail "outfit/wanderer military license"
 	description "流浪者的历史并非没有艰辛与失败。这根被铸入青铜模具的枯枝，铭记着流浪者未能拯救一个世界的时刻——尽管他们技艺高超，但当比他们更强大的存在主动寻求毁灭时，他们也无力阻止。高贵守望木的陨落，他们珍视的象征，如今化作庄严的誓言：当和平失败时，他们也必须准备战斗。为了与流浪者并肩作战，此许可证授予使用他们最强大战舰的权限。"

@@ -19,7 +19,7 @@ ship "Korath Dredger"
 	sprite "ship/dredger"
 	thumbnail "thumbnail/dredger"
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		"cost" 29370000
 		"shields" 32500
 		"hull" 16500
@@ -77,11 +77,11 @@ ship "Korath Dredger"
 	"reverse engine" 80.5 73
 		over
 		zoom 0.7
-	bay "Fighter" -93.5 -61
-	bay "Fighter" 93.5 -61
-	bay "Fighter" -84 174
+	bay "战斗机" -93.5 -61
+	bay "战斗机" 93.5 -61
+	bay "战斗机" -84 174
 		back
-	bay "Fighter" 84 174
+	bay "战斗机" 84 174
 		back
 	explode "tiny explosion" 120
 	explode "small explosion" 60
@@ -97,7 +97,7 @@ ship "Korath Raider"
 	sprite "ship/raider"
 	thumbnail "thumbnail/raider"
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 16570000
 		"shields" 27000
 		"hull" 9000
@@ -153,8 +153,8 @@ ship "Korath Raider"
 	turret 36 -141 "Grab-Strike Turret"
 	turret 0 41 "Banisher Grav-Turret"
 	turret 0 94 "Warder Anti-Missile"
-	bay "Fighter" -80 151 back
-	bay "Fighter" 80 151 back
+	bay "战斗机" -80 151 back
+	bay "战斗机" 80 151 back
 	explode "tiny explosion" 20
 	explode "small explosion" 45
 	explode "medium explosion" 50
@@ -170,7 +170,7 @@ ship "Korath Chaser"
 	sprite "ship/chaser"
 	thumbnail "thumbnail/chaser"
 	attributes
-		category "Fighter"
+		category "战斗机"
 		"cost" 671000
 		"shields" 2300
 		"hull" 900
@@ -210,7 +210,7 @@ ship "Korath World-Ship"
 	sprite "ship/world-ship a"
 	thumbnail "thumbnail/world-ship a"
 	attributes
-		category "Utility"
+		category "通用"
 		cost 27690000
 		shields 47000
 		hull 34000
@@ -844,7 +844,7 @@ ship "Quarg Skylark"
 	sprite "ship/skylark"
 	thumbnail "thumbnail/skylark"
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 5900000
 		"shields" 120000
 		"hull" 70000

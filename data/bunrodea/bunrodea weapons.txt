@@ -13,8 +13,8 @@
 
 outfit "Locust Blaster"
 	"display name" "蝗虫冲击枪"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 10010
 	cost 284000
 	thumbnail "outfit/locust blaster"
@@ -40,8 +40,8 @@ outfit "Locust Blaster"
 
 outfit "Locust Turret"
 	"display name" "蝗虫碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 10010
 	cost 1265000
 	thumbnail "outfit/locust turret"
@@ -71,8 +71,8 @@ outfit "Locust Turret"
 
 outfit "Mandible Cannon"
 	"display name" "巨颚加农炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 10020
 	cost 1170000
 	thumbnail "outfit/mandible cannon"
@@ -104,8 +104,8 @@ outfit "Mandible Cannon"
 
 outfit "Thorax Cannon"
 	"display name" "胸甲炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 10030
 	cost 3484000
 	thumbnail "outfit/thorax cannon"
@@ -183,8 +183,8 @@ effect "yellow spark fragment"
 
 outfit "Swarm Clip"
 	"display name" "蜂群弹夹"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 10011
 	cost 24000
 	thumbnail "outfit/swarm storage"
@@ -196,8 +196,8 @@ outfit "Swarm Clip"
 
 outfit "Swarm Missile"
 	"display name" "蜂群导弹"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 10010
 	cost 250
 	thumbnail "outfit/swarm missile"
@@ -207,8 +207,8 @@ outfit "Swarm Missile"
 
 outfit "Swarm Pod"
 	"display name" "蜂群吊舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 10010
 	cost 363000
 	thumbnail "outfit/swarm pod"
@@ -278,7 +278,7 @@ outfitter "Swarm Missile Restock"
 
 outfit "Buzzer Anti-Missile"
 	"display name" "嗡鸣者反导弹"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 10010
 	cost 1195000

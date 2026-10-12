@@ -16,7 +16,7 @@ phrase "free worlds scanner payment"
 		`你着陆时，一位自由世界的船长正在等你，他取走了你的扫描日志副本，同时你收到了<payment>的报酬。`
 
 trade
-	commodity "Free Worlds Outfits"
+	commodity "自由世界装备"
 		"ion engines"
 		"plasma engines"
 		"cooling systems"
@@ -167,7 +167,7 @@ mission "FW Convoy Defense [0]"
 		government "Merchant"
 		personality escort timid
 		"cargo settings"
-			commodities "Ship Alloys" "Ship Systems" "Free Worlds Outfits"
+			commodities "舰船合金" "舰船系统" "自由世界装备"
 		fleet
 			names "civilian"
 			variant
@@ -231,7 +231,7 @@ mission "FW Convoy Defense [1]"
 		government "Merchant"
 		personality escort timid
 		"cargo settings"
-			commodities "Ship Alloys" "Ship Systems" "Free Worlds Outfits"
+			commodities "舰船合金" "舰船系统" "自由世界装备"
 		fleet
 			names "civilian"
 			variant
@@ -295,7 +295,7 @@ mission "FW Convoy Defense [2]"
 		government "Merchant"
 		personality escort timid
 		"cargo settings"
-			commodities "Ship Alloys" "Ship Systems" "Free Worlds Outfits"
+			commodities "舰船合金" "舰船系统" "自由世界装备"
 		fleet
 			names "civilian"
 			variant
@@ -397,7 +397,7 @@ mission "FW Outfitter Resupply [0]"
 	name `补给 <planet>`
 	description `<planet>上的装备商补给即将耗尽，需要立即补充。请在<date>之前将<tons>吨拆解好的<commodity>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Free Worlds Outfits" 5 2 .1
+	cargo "自由世界装备" 5 2 .1
 	to offer
 		random < 50
 		has "salary: Free Worlds"
@@ -420,7 +420,7 @@ mission "FW Outfitter Resupply [1]"
 	name `补给 <planet>`
 	description `<planet>上的装备商库存不足，需要立即补货。请在<date>之前运送<tons>吨拆解后的<commodity>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Free Worlds Outfits" 5 2 .1
+	cargo "自由世界装备" 5 2 .1
 	to offer
 		random < 40
 		has "salary: Free Worlds"
@@ -443,7 +443,7 @@ mission "FW Outfitter Resupply [2]"
 	name `补给 <planet>`
 	description `<planet>上的装备商补给即将耗尽，需要立即补充。请在<date>之前将<tons>吨拆解好的<commodity>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Free Worlds Outfits" 5 2 .1
+	cargo "自由世界装备" 5 2 .1
 	to offer
 		random < 30
 		has "salary: Free Worlds"
@@ -466,7 +466,7 @@ mission "FW Bulk Outfitter Resupply [0]"
 	name `补给 <planet>`
 	description `<planet>上的装备商补给即将耗尽，需要立即补充。请在<date>之前将<tons>吨拆解好的<commodity>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Free Worlds Outfits" 25 2 .05
+	cargo "自由世界装备" 25 2 .05
 	to offer
 		random < 30
 		has "salary: Free Worlds"
@@ -489,7 +489,7 @@ mission "FW Bulk Outfitter Resupply [1]"
 	name `补给 <planet>`
 	description `<planet>上的装备商补给即将耗尽，需要立即补充。请在<date>之前将<tons>吨拆解好的<commodity>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Free Worlds Outfits" 25 2 .05
+	cargo "自由世界装备" 25 2 .05
 	to offer
 		random < 25
 		has "salary: Free Worlds"
@@ -512,7 +512,7 @@ mission "FW Bulk Outfitter Resupply [2]"
 	name `补给 <planet>`
 	description `<planet>上的装备商补给即将耗尽，需要立即补充。请在<date>之前将<tons>吨拆解好的<commodity>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Free Worlds Outfits" 25 2 .05
+	cargo "自由世界装备" 25 2 .05
 	to offer
 		random < 20
 		has "salary: Free Worlds"
@@ -535,7 +535,7 @@ mission "FW Frontline Resupply [0]"
 	name `补给 <planet>`
 	description `战争前线急需补给。请立即在<date>之前将<cargo>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Food" 5 2 .1
+	cargo "食物" 5 2 .1
 	to offer
 		random < 40
 		has "salary: Free Worlds"
@@ -564,7 +564,7 @@ mission "FW Frontline Resupply [1]"
 	name `补给 <planet>`
 	description `战争前线急需补给。请立即在<date>之前将<cargo>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Medical" 5 2 .1
+	cargo "医疗用品" 5 2 .1
 	to offer
 		random < 30
 		has "salary: Free Worlds"
@@ -593,7 +593,7 @@ mission "FW Frontline Resupply [2]"
 	name `补给 <planet>`
 	description `战争前线急需补给。请立即在<date>之前将<cargo>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Heavy Metals" 5 2 .1
+	cargo "重金属" 5 2 .1
 	to offer
 		random < 20
 		has "salary: Free Worlds"
@@ -622,7 +622,7 @@ mission "FW Frontline Resupply [3]"
 	name `补给 <planet>`
 	description `战争前线急需补给。请立即在<date>之前将<cargo>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Military" 5 2 .1
+	cargo "军需品" 5 2 .1
 	to offer
 		random < 20
 		has "salary: Free Worlds"
@@ -652,7 +652,7 @@ mission "FW Bulk Frontline Resupply [0]"
 	name `补给 <planet>`
 	description `战争前线急需补给。请立即在<date>之前将<cargo>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Food" 25 2 .95
+	cargo "食物" 25 2 .95
 	to offer
 		random < 30
 		has "salary: Free Worlds"
@@ -681,7 +681,7 @@ mission "FW Bulk Frontline Resupply [1]"
 	name `补给 <planet>`
 	description `战争前线急需补给。请立即在<date>之前将<cargo>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Medical" 25 2 .95
+	cargo "医疗用品" 25 2 .95
 	to offer
 		random < 15
 		has "salary: Free Worlds"
@@ -710,7 +710,7 @@ mission "FW Bulk Frontline Resupply [2]"
 	name `补给 <planet>`
 	description `战争前线急需补给。请立即在<date>之前将<cargo>运送至<destination>。报酬为<payment>。`
 	deadline 2 1
-	cargo "Military" 25 2 .95
+	cargo "军需品" 25 2 .95
 	to offer
 		random < 15
 		has "salary: Free Worlds"

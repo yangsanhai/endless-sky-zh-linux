@@ -27,7 +27,7 @@ mission "Assisting Merchant (Small)"
 		random < 20
 	source
 		government "Merchant"
-		category "Interceptor" "Light Warship" "Transport" "Light Freighter"
+		category "截击机" "轻型战舰" "运输船" "轻型货船"
 		not attributes "automaton"
 	on offer
 		payment 10000
@@ -44,7 +44,7 @@ mission "Assisting Merchant (Medium)"
 		random < 15
 	source
 		government "Merchant"
-		category "Medium Warship" "Heavy Freighter"
+		category "中型战舰" "重型货船"
 		not attributes "automaton"
 	on offer
 		payment 20000
@@ -59,7 +59,7 @@ mission "Assisting Merchant (Large)"
 		random < 10
 	source
 		government "Merchant"
-		category "Heavy Warship"
+		category "重型战舰"
 		not attributes "automaton"
 	on offer
 		payment 30000
@@ -175,7 +175,7 @@ mission "Asteroid Course"
 		random < 6
 	source
 		government "Merchant" "Syndicate"
-		category "Light Freighter" "Interceptor"
+		category "轻型货船" "截击机"
 		not attributes "automaton"
 	passengers 3 7
 	destination
@@ -248,7 +248,7 @@ mission "Dangerous Journey"
 		random < 10
 	source
 		government "Merchant"
-		category "Light Freighter" "Heavy Freighter"
+		category "轻型货船" "重型货船"
 		not attributes "automaton"
 	destination
 		government "Republic" "Syndicate" "Free Worlds"
@@ -290,7 +290,7 @@ mission "Assisting Free Worlds"
 		random < 5
 	source
 		government "Free Worlds"
-		not category "Fighter" "Drone"
+		not category "战斗机" "无人机"
 		not attributes "automaton"
 	destination
 		government "Free Worlds"
@@ -323,7 +323,7 @@ mission "Assisting Republic"
 		random < 5
 	source
 		government "Republic"
-		not category "Fighter" "Drone"
+		not category "战斗机" "无人机"
 		not attributes "automaton"
 	destination
 		government "Republic"
@@ -356,7 +356,7 @@ mission "Assisting Deep Security"
 		random < 5
 	source
 		government "Deep Security"
-		not category "Fighter" "Drone"
+		not category "战斗机" "无人机"
 		not attributes "automaton"
 	destination
 		attributes "deep"
@@ -389,7 +389,7 @@ mission "Assisting Syndicate"
 		random < 5
 	source
 		government "Syndicate"
-		not category "Fighter" "Drone"
+		not category "战斗机" "无人机"
 		not attributes "automaton"
 	destination
 		government "Syndicate"
@@ -425,7 +425,7 @@ mission "Boarding Pirate (Small)"
 		random < 7
 	source
 		government "Pirate"
-		category "Interceptor" "Light Warship" "Transport" "Light Freighter"
+		category "截击机" "轻型战舰" "运输船" "轻型货船"
 	on offer
 		payment 50000
 		conversation "boarding pirate"
@@ -439,7 +439,7 @@ mission "Boarding Pirate (Medium)"
 		random < 5
 	source
 		government "Pirate"
-		category "Medium Warship" "Heavy Freighter"
+		category "中型战舰" "重型货船"
 	on offer
 		payment 100000
 		conversation "boarding pirate"
@@ -453,7 +453,7 @@ mission "Boarding Pirate (Large)"
 		random < 3
 	source
 		government "Pirate"
-		category "Heavy Warship"
+		category "重型战舰"
 	on offer
 		payment 150000
 		conversation "boarding pirate"
@@ -472,7 +472,7 @@ mission "Pirate Ambush"
 		random < 5
 	source
 		government "Pirate"
-		category "Interceptor" "Light Warship" "Transport" "Light Freighter"
+		category "截击机" "轻型战舰" "运输船" "轻型货船"
 		not attributes "automaton"
 	on offer
 		conversation
@@ -494,7 +494,7 @@ mission "Pirate Mutiny"
 		random < 10
 	source
 		government "Pirate"
-		category "Medium Warship" "Heavy Warship"
+		category "中型战舰" "重型战舰"
 		not attributes "automaton"
 	destination
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
@@ -524,7 +524,7 @@ mission "Slave Crew Rescue"
 		random < 10
 	source
 		government "Merchant"
-		category "Heavy Freighter"
+		category "重型货船"
 		not attributes "automaton"
 	destination "Earth"
 	on offer

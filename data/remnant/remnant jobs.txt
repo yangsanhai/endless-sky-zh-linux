@@ -34,7 +34,7 @@ mission "Remnant: Bounty"
 		fleet
 			names "korath"
 			cargo 3
-			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			commodities "食物" "服装" "金属" "塑料" "医疗用品" "重金属"
 			variant
 				"Palavret (Crippled)"
 		dialog "你已经摧毁了科拉斯飞船。现在可以返回 <planet> 领取报酬。"
@@ -67,7 +67,7 @@ mission "Remnant: Bounty 2"
 		fleet
 			names "korath"
 			cargo 3
-			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			commodities "食物" "服装" "金属" "塑料" "医疗用品" "重金属"
 			variant
 				"Palavret (Hyperdrive)"
 		dialog "你已经摧毁了科拉斯飞船。现在可以返回 <planet> 领取报酬。"
@@ -190,7 +190,7 @@ mission "Remnant: Bounty 3"
 		fleet
 			names "korath"
 			cargo 3
-			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			commodities "食物" "服装" "金属" "塑料" "医疗用品" "重金属"
 			variant
 				"Rano'erek (Crippled)"
 		dialog "你已经摧毁了科拉斯飞船。现在可以返回 <planet> 领取报酬。"
@@ -220,7 +220,7 @@ mission "Remnant: Bounty 4"
 		fleet
 			names "korath"
 			cargo 3
-			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			commodities "食物" "服装" "金属" "塑料" "医疗用品" "重金属"
 			variant
 				"Rano'erek (Crippled)"
 		dialog "你已经摧毁了科拉斯飞船。现在可以返回 <planet> 领取报酬。"
@@ -255,7 +255,7 @@ mission "Remnant: Bounty 5"
 		fleet
 			names "korath"
 			cargo 3
-			commodities "Food" "Clothing" "Metal" "Plastic" "Medical" "Heavy Metals"
+			commodities "食物" "服装" "金属" "塑料" "医疗用品" "重金属"
 			variant
 				"Rano'erek (Ground Assault)"
 				"'olofez" 4
@@ -271,7 +271,7 @@ mission "Remnant: Bounty 5"
 mission "Remnant: Logistics Civil Engineering"
 	name "民用运输至<planet>"
 	description `<planet>上的工程师需要运送<cargo>。后勤调整值为<payment>。`
-	cargo "remnant civil" 20 4 .1
+	cargo "遗民民用物资" 20 4 .1
 	job
 	repeat
 	to offer
@@ -298,7 +298,7 @@ mission "Remnant: Logistics Civil Engineering"
 mission "Remnant: Logistics Industrial Delivery"
 	name "工业运输至<planet>"
 	description `<planet>上的项目团队需要运送<cargo>。后勤调整值为<payment>。`
-	cargo "remnant industrial" 20 4 .03
+	cargo "遗民工业物资" 20 4 .03
 	job
 	repeat
 	to offer
@@ -325,7 +325,7 @@ mission "Remnant: Logistics Industrial Delivery"
 mission "Remnant: Logistics Outfitter Delivery"
 	name "运送零件至<planet>"
 	description `<planet>上的装备商维修团队需要交付<cargo>零件。后勤调整值为<payment>。`
-	cargo "remnant outfitter repair" 20 3 .04
+	cargo "遗民装备维修件" 20 3 .04
 	job
 	repeat
 	to offer
@@ -353,7 +353,7 @@ mission "Remnant: Logistics Outfitter Delivery"
 mission "Remnant: Logistics Salvage Delivery"
 	name "打捞物资运输至<planet>"
 	description `将最近打捞作业中获得的<cargo>部件运送到<planet>上的装备商处，以供研究、翻新或回收。后勤调整值为<payment>。`
-	cargo "remnant salvage" 5 4 .06
+	cargo "遗民打捞物" 5 4 .06
 	job
 	repeat
 	to offer
@@ -420,7 +420,7 @@ ship "Rescue Dummy"
 	"display name" "救援假人"
 	# sprite "ship/behemoth"
 	attributes
-		category "Game Mechanics"
+		category "游戏机制"
 		"heat dissipation" 1
 		"hull" 1
 		"mass" 10
@@ -435,7 +435,7 @@ ship "Rescue Dummy"
 
 outfit "Suicide Gun"
 	"display name" "自毁炮"
-	category "Guns"
+	category "枪炮"
 	thumbnail "outfit/unknown"
 	"gun ports" -1
 	weapon

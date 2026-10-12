@@ -19,7 +19,7 @@ ship "Aberrant Latte"
 	thumbnail "thumbnail/aberrant latte"
 	"never disabled"
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 5700000
 		"shields" 9600
 		"hull" 14400
@@ -90,7 +90,7 @@ ship "Aberrant Chomper"
 	thumbnail "thumbnail/aberrant chomper"
 	"never disabled"
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 5700000
 		"shields" 6400
 		"hull" 14400
@@ -168,7 +168,7 @@ ship "Aberrant Pileup"
 	thumbnail "thumbnail/aberrant pileup"
 	"never disabled"
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 5700000
 		"shields" 13600
 		"hull" 18600
@@ -240,7 +240,7 @@ ship "Aberrant Hugger"
 	thumbnail "thumbnail/aberrant hugger"
 	"never disabled"
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 5700000
 		"shields" 9600
 		"hull" 14400
@@ -314,7 +314,7 @@ ship "Aberrant Longfellow"
 	thumbnail "thumbnail/aberrant longfellow"
 	"never disabled"
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 5700000
 		"shields" 10800
 		"hull" 17200
@@ -394,7 +394,7 @@ ship "Aberrant Dancer"
 	thumbnail "thumbnail/aberrant dancer"
 	"never disabled"
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 5700000
 		"shields" 19200
 		"hull" 33800
@@ -472,7 +472,7 @@ ship "Aberrant Junior"
 	thumbnail "thumbnail/aberrant junior"
 	"never disabled"
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 5700000
 		"shields" 6400
 		"hull" 18600
@@ -547,7 +547,7 @@ ship "Aberrant Icebreaker"
 	thumbnail "thumbnail/aberrant icebreaker"
 	"never disabled"
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 5700000
 		"shields" 7600
 		"hull" 21600
@@ -623,7 +623,7 @@ ship "Aberrant Pike"
 	thumbnail "thumbnail/aberrant pike"
 	"never disabled"
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 5700000
 		"shields" 6600
 		"hull" 17900
@@ -698,7 +698,7 @@ ship "Aberrant Mole"
 	thumbnail "thumbnail/aberrant mole"
 	"never disabled"
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 5700000
 		"shields" 6600
 		"hull" 15200
@@ -775,7 +775,7 @@ ship "Aberrant Whiskers"
 	thumbnail "thumbnail/aberrant whiskers"
 	"never disabled"
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 5700000
 		"shields" 6200
 		"hull" 17200
@@ -845,7 +845,7 @@ ship "Aberrant Trip"
 	thumbnail "thumbnail/aberrant trip"
 	"never disabled"
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 5700000
 		"shields" 14200
 		"hull" 16600
@@ -927,7 +927,7 @@ ship "Aberrant Triplet"
 	thumbnail "thumbnail/aberrant triplet"
 	"never disabled"
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 5700000
 		"shields" 34600
 		"hull" 33800

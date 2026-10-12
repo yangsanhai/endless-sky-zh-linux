@@ -17,7 +17,7 @@ ship "Earth Shaper"
 	thumbnail "thumbnail/earth shaper"
 	"administrative cost" 1
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		licenses
 			Wanderer
 		"cost" 500000
@@ -57,7 +57,7 @@ ship "Flycatcher"
 	thumbnail "thumbnail/flycatcher"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		licenses
 			Wanderer
 		"cost" 830000
@@ -99,7 +99,7 @@ ship "Summer Leaf"
 	thumbnail "thumbnail/summer leaf"
 	"administrative cost" 3
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		licenses
 			Wanderer
 		"cost" 9500000
@@ -151,7 +151,7 @@ ship "Autumn Leaf"
 	thumbnail "thumbnail/autumn leaf"
 	"administrative cost" 4
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		licenses
 			Wanderer
 		"cost" 12500000
@@ -215,7 +215,7 @@ ship "Strong Wind"
 	thumbnail "thumbnail/strong wind"
 	"administrative cost" 5
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			"Wanderer"
 		"cost" 16100000
@@ -275,7 +275,7 @@ ship "Heavy Gust"
 	thumbnail "thumbnail/heavy gust"
 	"administrative cost" 6
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			"Wanderer Military"
 		"cost" 17600000
@@ -347,7 +347,7 @@ ship "Tempest"
 	thumbnail "thumbnail/tempest"
 	"administrative cost" 7
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			"Wanderer Military"
 		"cost" 19700000
@@ -472,7 +472,7 @@ ship "Derecho"
 	thumbnail "thumbnail/derecho"
 	"administrative cost" 8
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		licenses
 			"Wanderer Military"
 		"cost" 30500000
@@ -604,7 +604,7 @@ ship "Hurricane"
 	thumbnail "thumbnail/hurricane"
 	"administrative cost" 10
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		licenses
 			"Wanderer Military"
 		"cost" 39100000
@@ -746,7 +746,7 @@ ship "Cool Breeze"
 	thumbnail "thumbnail/cool breeze"
 	"administrative cost" 1
 	attributes
-		category "Interceptor"
+		category "截击机"
 		licenses
 			"Wanderer Military"
 		"cost" 4530000
@@ -805,7 +805,7 @@ ship "Winter Gale"
 	thumbnail "thumbnail/winter gale"
 	"administrative cost" 5
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		licenses
 			"Wanderer Military"
 		"cost" 14100000
@@ -910,7 +910,7 @@ ship "Deep River"
 	thumbnail "thumbnail/deep river"
 	"administrative cost" 7
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		licenses
 			Wanderer
 		"cost" 18300000
@@ -1001,7 +1001,7 @@ ship "Deep River Transport"
 	thumbnail "thumbnail/deep river"
 	"administrative cost" 7
 	attributes
-		category "Space Liner"
+		category "太空客轮"
 		licenses
 			Wanderer
 		"cost" 18300000
@@ -1055,7 +1055,7 @@ ship "Riptide"
 	thumbnail "thumbnail/riptide"
 	"administrative cost" 7
 	attributes
-		category "Space Liner"
+		category "太空客轮"
 		licenses
 			Wanderer
 		"cost" 21120000

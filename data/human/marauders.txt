@@ -17,7 +17,7 @@ ship "Marauder Arrow"
 	thumbnail "thumbnail/marrows"
 	"administrative cost" 1
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 1320000
 		"shields" 2300
 		"hull" 500
@@ -119,7 +119,7 @@ ship "Marauder Bounder"
 	thumbnail "thumbnail/mbounders"
 	"administrative cost" 1
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 1250000
 		"shields" 2500
 		"hull" 700
@@ -232,7 +232,7 @@ ship "Marauder Falcon"
 	thumbnail "thumbnail/mfalcons"
 	"administrative cost" 5
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 13900000
 		"shields" 14100
 		"hull" 4100
@@ -374,7 +374,7 @@ ship "Marauder Firebird"
 	thumbnail "thumbnail/mfirebirds"
 	"administrative cost" 3
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 4100000
 		"shields" 6400
 		"hull" 3600
@@ -495,7 +495,7 @@ ship "Marauder Leviathan"
 	thumbnail "thumbnail/mleviathans"
 	"administrative cost" 6
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 10800000
 		"shields" 16000
 		"hull" 5500
@@ -628,7 +628,7 @@ ship "Marauder Manta"
 	thumbnail "thumbnail/mmantas"
 	"administrative cost" 2
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 3740000
 		"shields" 6500
 		"hull" 1750
@@ -760,7 +760,7 @@ ship "Marauder Quicksilver"
 	thumbnail "thumbnail/mquicksilvers"
 	"administrative cost" 1
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 1200000
 		"shields" 3500
 		"hull" 900
@@ -924,7 +924,7 @@ ship "Marauder Raven"
 	thumbnail "thumbnail/mravens"
 	"administrative cost" 2
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 2750000
 		"shields" 5200
 		"hull" 1600
@@ -1041,7 +1041,7 @@ ship "Marauder Splinter"
 	thumbnail "thumbnail/msplinters"
 	"administrative cost" 2
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 3400000
 		"shields" 5700
 		"hull" 1950

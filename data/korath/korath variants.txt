@@ -1053,35 +1053,35 @@ ship "Ra'at Ik 621" "Ra'at Ik 621 (Automata)"
 	turret "Thermal Repeater Turret"
 	turret "Warder Anti-Missile"
 	turret "Warder Anti-Missile"
-	bay "Fighter" -100 -169
+	bay "战斗机" -100 -169
 		"launch effect" "korath internal"
-	bay "Fighter" 0 -169
+	bay "战斗机" 0 -169
 		"launch effect" "korath internal"
-	bay "Fighter" 100 -169
+	bay "战斗机" 100 -169
 		"launch effect" "korath internal"
-	bay "Fighter" -98 156 back
+	bay "战斗机" -98 156 back
 		"launch effect" "korath internal"
-	bay "Fighter" 98 156 back
+	bay "战斗机" 98 156 back
 		"launch effect" "korath internal"
-	bay "Fighter" -50 303 back
+	bay "战斗机" -50 303 back
 		"launch effect" "korath internal"
-	bay "Fighter" -50 303 back
+	bay "战斗机" -50 303 back
 		"launch effect" "korath internal"
-	bay "Fighter" 50 303 back
+	bay "战斗机" 50 303 back
 		"launch effect" "korath internal"
-	bay "Fighter" 50 303 back
+	bay "战斗机" 50 303 back
 		"launch effect" "korath internal"
-	bay "Drone" -100 -169
+	bay "无人机" -100 -169
 		"launch effect" "korath internal"
-	bay "Drone" 100 -169
+	bay "无人机" 100 -169
 		"launch effect" "korath internal"
-	bay "Drone" -98 156 back
+	bay "无人机" -98 156 back
 		"launch effect" "korath internal"
-	bay "Drone" 98 156 back
+	bay "无人机" 98 156 back
 		"launch effect" "korath internal"
-	bay "Drone" -50 303 back
+	bay "无人机" -50 303 back
 		"launch effect" "korath internal"
-	bay "Drone" 50 303 back
+	bay "无人机" 50 303 back
 		"launch effect" "korath internal"
 
 
@@ -1116,23 +1116,23 @@ ship "Ra'at Ik 621" "Ra'at Ik 621 (Probes)"
 	turret "Shunt-Strike Turret"
 	turret "Warder Anti-Missile"
 	turret "Banisher Grav-Turret"
-	bay "Drone" -100 -169
+	bay "无人机" -100 -169
 		"launch effect" "korath internal"
-	bay "Drone" 0 -169
+	bay "无人机" 0 -169
 		"launch effect" "korath internal"
-	bay "Drone" 100 -169
+	bay "无人机" 100 -169
 		"launch effect" "korath internal"
-	bay "Drone" -98 156 back
+	bay "无人机" -98 156 back
 		"launch effect" "korath internal"
-	bay "Drone" 98 156 back
+	bay "无人机" 98 156 back
 		"launch effect" "korath internal"
-	bay "Drone" -50 303 back
+	bay "无人机" -50 303 back
 		"launch effect" "korath internal"
-	bay "Drone" -50 303 back
+	bay "无人机" -50 303 back
 		"launch effect" "korath internal"
-	bay "Drone" 50 303 back
+	bay "无人机" 50 303 back
 		"launch effect" "korath internal"
-	bay "Drone" 50 303 back
+	bay "无人机" 50 303 back
 		"launch effect" "korath internal"
 
 

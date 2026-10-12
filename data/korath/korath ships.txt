@@ -19,7 +19,7 @@ ship "Rano'erek"
 	thumbnail "thumbnail/dredger"
 	"administrative cost" 9
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 29370000
 		"shields" 32500
 		"hull" 16500
@@ -77,14 +77,14 @@ ship "Rano'erek"
 	"reverse engine" 80.5 73
 		over
 		zoom 0.7
-	bay "Fighter" -93.5 -61
+	bay "战斗机" -93.5 -61
 		"launch effect" "korath internal"
-	bay "Fighter" 93.5 -61
+	bay "战斗机" 93.5 -61
 		"launch effect" "korath internal"
-	bay "Fighter" -84 174
+	bay "战斗机" -84 174
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" 84 174
+	bay "战斗机" 84 174
 		back
 		"launch effect" "korath internal"
 	explode "tiny explosion" 120
@@ -103,7 +103,7 @@ ship "Palavret"
 	thumbnail "thumbnail/raider"
 	"administrative cost" 7
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 16570000
 		"shields" 27000
 		"hull" 9000
@@ -159,9 +159,9 @@ ship "Palavret"
 	turret 36 -141 "Grab-Strike Turret"
 	turret 0 41 "Banisher Grav-Turret"
 	turret 0 94 "Warder Anti-Missile"
-	bay "Fighter" -80 151 back
+	bay "战斗机" -80 151 back
 		"launch effect" "korath internal"
-	bay "Fighter" 80 151 back
+	bay "战斗机" 80 151 back
 		"launch effect" "korath internal"
 	explode "tiny explosion" 20
 	explode "small explosion" 45
@@ -179,7 +179,7 @@ ship "Tubfalet"
 	thumbnail "thumbnail/tubfalet"
 	"administrative cost" 8
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 22895000
 		"shields" 29500
 		"hull" 11000
@@ -273,11 +273,11 @@ ship "Tubfalet"
 	turret 36 -141 "Grab-Strike Turret"
 	turret 0 41 "Banisher Grav-Turret"
 	turret 0 94 "Warder Anti-Missile"
-	bay "Fighter" -80 151 back
+	bay "战斗机" -80 151 back
 		"launch effect" "korath internal"
-	bay "Fighter" 80 151 back
+	bay "战斗机" 80 151 back
 		"launch effect" "korath internal"
-	bay "Fighter" 28.5 145 back
+	bay "战斗机" 28.5 145 back
 		"launch effect" "korath internal"
 	explode "tiny explosion" 20
 	explode "small explosion" 45
@@ -295,7 +295,7 @@ ship "'nra'ret"
 	thumbnail "thumbnail/-nra-ret"
 	"administrative cost" 8
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 24760000
 		"shields" 32700
 		"hull" 9850
@@ -371,7 +371,7 @@ ship "'olofez"
 	thumbnail "thumbnail/chaser"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		"cost" 671000
 		"shields" 2300
 		"hull" 900
@@ -412,7 +412,7 @@ ship "Kas'ik Tek 7"
 	thumbnail "thumbnail/kas-ik tek 7"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		"cost" 210000
 		"shields" 1400
 		"hull" 800
@@ -455,7 +455,7 @@ ship "Rai'alorej"
 	thumbnail "thumbnail/rai-alorej"
 	"administrative cost" 11
 	attributes
-		category "Utility"
+		category "通用"
 		cost 31970000
 		shields 43000
 		hull 27000
@@ -516,10 +516,10 @@ ship "Rai'alorej"
 	turret 36.5 -55.5 "Banisher Grav-Turret"
 	turret -62.5 55 "Warder Anti-Missile"
 	turret 62.5 55 "Langrage Hyper-Heaver"
-	bay "Fighter" -115 -152
+	bay "战斗机" -115 -152
 		angle 30
 		"launch effect" "korath internal"
-	bay "Fighter" 115 -152
+	bay "战斗机" 115 -152
 		angle 330
 		"launch effect" "korath internal"
 	explode "tiny explosion" 30
@@ -538,7 +538,7 @@ ship "Ikatila'ej"
 	thumbnail "thumbnail/ikatila-ej"
 	"administrative cost" 24
 	attributes
-		category "Superheavy"
+		category "超重型"
 		"cost" 109375000
 		"shields" 72700
 		"hull" 93000
@@ -616,7 +616,7 @@ ship "Lor'kas Ik 577"
 	thumbnail "thumbnail/world-ship a"
 	"administrative cost" 11
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		cost 29650000
 		shields 32700
 		hull 29600
@@ -672,11 +672,11 @@ ship "Lor'kas Ik 577"
 	turret 58 -6 "Banisher Grav-Turret"
 	turret -58 25 "Grab-Strike Turret"
 	turret 58 25 "Warder Anti-Missile"
-	bay "Fighter" -72 294 back
+	bay "战斗机" -72 294 back
 		"launch effect" "korath internal"
-	bay "Fighter" 0 294 back
+	bay "战斗机" 0 294 back
 		"launch effect" "korath internal"
-	bay "Fighter" 72 294 back
+	bay "战斗机" 72 294 back
 		"launch effect" "korath internal"
 	explode "tiny explosion" 30
 	explode "small explosion" 45
@@ -693,7 +693,7 @@ ship "Ra'gru Ik 618"
 	thumbnail "thumbnail/world-ship b"
 	"administrative cost" 13
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		cost 49640000
 		shields 51000
 		hull 39500
@@ -779,7 +779,7 @@ ship "Kas'lor Ik 582"
 	thumbnail "thumbnail/world-ship c"
 	"administrative cost" 12
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		cost 28190000
 		shields 39750
 		hull 26100
@@ -824,11 +824,11 @@ ship "Kas'lor Ik 582"
 		over
 	"reverse engine" 19 -303 0.5
 		over
-	bay "Fighter" -70 51 back
+	bay "战斗机" -70 51 back
 		"launch effect" "korath internal"
-	bay "Fighter" 0 51 back
+	bay "战斗机" 0 51 back
 		"launch effect" "korath internal"
-	bay "Fighter" 70 51 back
+	bay "战斗机" 70 51 back
 		"launch effect" "korath internal"
 	turret -52.5 -80.5 "Banisher Grav-Turret"
 	turret 52.5 -80.5 "Warder Anti-Missile"
@@ -853,7 +853,7 @@ ship "Lor'nag Ik 590"
 	thumbnail "thumbnail/world-ship d"
 	"administrative cost" 12
 	attributes
-		category "Space Liner"
+		category "太空客轮"
 		cost 33640000
 		shields 47000
 		hull 34800
@@ -901,11 +901,11 @@ ship "Lor'nag Ik 590"
 		over
 	"reverse engine" 19 -303 0.5
 		over
-	bay "Fighter" -90 160 back
+	bay "战斗机" -90 160 back
 		"launch effect" "korath internal"
-	bay "Fighter" 0 160 back
+	bay "战斗机" 0 160 back
 		"launch effect" "korath internal"
-	bay "Fighter" 90 160 back
+	bay "战斗机" 90 160 back
 		"launch effect" "korath internal"
 	gun -45 -253 "Digger Mining Beam"
 	gun 45 -253 "Digger Mining Beam"
@@ -930,7 +930,7 @@ ship "Ra'at Ik 621"
 	thumbnail "thumbnail/world-ship e"
 	"administrative cost" 12
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		cost 43590000
 		shields 48000
 		hull 31400
@@ -976,23 +976,23 @@ ship "Ra'at Ik 621"
 	engine 42 343 .6
 	"reverse engine" -16 -336 0.9
 	"reverse engine" 16 -336 0.9
-	bay "Fighter" -100 -169
+	bay "战斗机" -100 -169
 		"launch effect" "korath internal"
-	bay "Fighter" 0 -169
+	bay "战斗机" 0 -169
 		"launch effect" "korath internal"
-	bay "Fighter" 100 -169
+	bay "战斗机" 100 -169
 		"launch effect" "korath internal"
-	bay "Fighter" -98 156 back
+	bay "战斗机" -98 156 back
 		"launch effect" "korath internal"
-	bay "Fighter" 98 156 back
+	bay "战斗机" 98 156 back
 		"launch effect" "korath internal"
-	bay "Fighter" -50 303 back
+	bay "战斗机" -50 303 back
 		"launch effect" "korath internal"
-	bay "Fighter" -50 303 back
+	bay "战斗机" -50 303 back
 		"launch effect" "korath internal"
-	bay "Fighter" 50 303 back
+	bay "战斗机" 50 303 back
 		"launch effect" "korath internal"
-	bay "Fighter" 50 303 back
+	bay "战斗机" 50 303 back
 		"launch effect" "korath internal"
 	gun -71 -209 "Fire-Lance"
 	gun 0 -209 "Fire-Lance"
@@ -1019,7 +1019,7 @@ ship "Kasichara A'awoj"
 	thumbnail "thumbnail/world-ship f"
 	"administrative cost" 13
 	attributes
-		category "Space Liner"
+		category "太空客轮"
 		cost 42290000
 		shields 44000
 		hull 49600
@@ -1090,7 +1090,7 @@ ship "Korsmanath A'awoj"
 	"administrative cost" 50
 	"uncapturable"
 	attributes
-		category "Superheavy"
+		category "超重型"
 		cost 276900000
 		shields 196420
 		hull 320690
@@ -1227,87 +1227,87 @@ ship "Korsmanath A'awoj"
 		angle 290
 	gun 178 -84 "Firelight Missile Bank"
 		angle 70
-	bay "Fighter" -167.5 -420
+	bay "战斗机" -167.5 -420
 		angle 315
 		"launch effect" "korath internal"
-	bay "Fighter" 167.5 -420
+	bay "战斗机" 167.5 -420
 		angle 45
 		"launch effect" "korath internal"
-	bay "Fighter" -179.5 80
+	bay "战斗机" -179.5 80
 		angle 45
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" 179.5 80
+	bay "战斗机" 179.5 80
 		angle 315
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" -167.5 -420
+	bay "战斗机" -167.5 -420
 		angle 315
 		"launch effect" "korath internal"
-	bay "Fighter" 167.5 -420
+	bay "战斗机" 167.5 -420
 		angle 45
 		"launch effect" "korath internal"
-	bay "Fighter" -179.5 80
+	bay "战斗机" -179.5 80
 		angle 45
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" 179.5 80
+	bay "战斗机" 179.5 80
 		angle 315
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" -167.5 -420
+	bay "战斗机" -167.5 -420
 		angle 315
 		"launch effect" "korath internal"
-	bay "Fighter" 167.5 -420
+	bay "战斗机" 167.5 -420
 		angle 45
 		"launch effect" "korath internal"
-	bay "Fighter" -179.5 80
+	bay "战斗机" -179.5 80
 		angle 45
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" 179.5 80
+	bay "战斗机" 179.5 80
 		angle 315
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" -167.5 -420
+	bay "战斗机" -167.5 -420
 		angle 315
 		"launch effect" "korath internal"
-	bay "Fighter" 167.5 -420
+	bay "战斗机" 167.5 -420
 		angle 45
 		"launch effect" "korath internal"
-	bay "Fighter" -179.5 80
+	bay "战斗机" -179.5 80
 		angle 45
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" 179.5 80
+	bay "战斗机" 179.5 80
 		angle 315
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" -167.5 -420
+	bay "战斗机" -167.5 -420
 		angle 315
 		"launch effect" "korath internal"
-	bay "Fighter" 167.5 -420
+	bay "战斗机" 167.5 -420
 		angle 45
 		"launch effect" "korath internal"
-	bay "Fighter" -179.5 80
+	bay "战斗机" -179.5 80
 		angle 45
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" 179.5 80
+	bay "战斗机" 179.5 80
 		angle 315
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" -167.5 -420
+	bay "战斗机" -167.5 -420
 		angle 315
 		"launch effect" "korath internal"
-	bay "Fighter" 167.5 -420
+	bay "战斗机" 167.5 -420
 		angle 45
 		"launch effect" "korath internal"
-	bay "Fighter" -179.5 80
+	bay "战斗机" -179.5 80
 		angle 45
 		back
 		"launch effect" "korath internal"
-	bay "Fighter" 179.5 80
+	bay "战斗机" 179.5 80
 		angle 315
 		back
 		"launch effect" "korath internal"
@@ -1328,7 +1328,7 @@ ship "Echo-Galleon"
 	thumbnail "thumbnail/echo-galleon"
 	"administrative cost" 10
 	attributes
-		category "Utility"
+		category "通用"
 		cost 27690000
 		shields 39000
 		hull 27000
@@ -1392,7 +1392,7 @@ ship "Arch-Carrack"
 	thumbnail "thumbnail/arch-carrack"
 	"administrative cost" 7
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		"cost" 15815000
 		"shields" 21800
 		"hull" 19300
@@ -1457,7 +1457,7 @@ ship "Charm-Shallop"
 	thumbnail "thumbnail/charm-shallop"
 	"administrative cost" 6
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 14070000
 		"shields" 19700
 		"hull" 15200
@@ -1518,7 +1518,7 @@ ship "Kar Ik Vot 349"
 	thumbnail "thumbnail/kar ik vot 349"
 	"administrative cost" 10
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 41280000
 		"shields" 57200
 		"hull" 65400
@@ -1587,7 +1587,7 @@ ship "Tek Far 71 - Lek"
 	thumbnail "thumbnail/tek far 71 lek"
 	"administrative cost" 5
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 22870000
 		"shields" 25400
 		"hull" 29500
@@ -1634,25 +1634,25 @@ ship "Tek Far 71 - Lek"
 	turret -13 -61
 	turret -14 -38 "Banisher Grav-Turret"
 	turret 14 177 "Warder Anti-Missile"
-	bay "Drone" 20.5 -65 over
+	bay "无人机" 20.5 -65 over
 		"launch effect" "korath external"
-	bay "Drone" 44.5 -40 over
+	bay "无人机" 44.5 -40 over
 		"launch effect" "korath external"
-	bay "Drone" 30 67 over
+	bay "无人机" 30 67 over
 		"launch effect" "korath external"
-	bay "Drone" 61.5 83 over
+	bay "无人机" 61.5 83 over
 		"launch effect" "korath external"
-	bay "Drone" 43 137 over
+	bay "无人机" 43 137 over
 		"launch effect" "korath external"
-	bay "Drone" 18 171.5 over
+	bay "无人机" 18 171.5 over
 		"launch effect" "korath external"
-	bay "Drone" 30 -106 under
+	bay "无人机" 30 -106 under
 		"launch effect" "korath external"
-	bay "Drone" 24 -8 under
+	bay "无人机" 24 -8 under
 		"launch effect" "korath external"
-	bay "Drone" 42 55 under
+	bay "无人机" 42 55 under
 		"launch effect" "korath external"
-	bay "Drone" 34 172 under
+	bay "无人机" 34 172 under
 		"launch effect" "korath external"
 	explode "tiny explosion" 80
 	explode "small explosion" 45
@@ -1669,7 +1669,7 @@ ship "Tek Far 78 - Osk"
 	thumbnail "thumbnail/tek far 78 osk"
 	"administrative cost" 6
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 25630000
 		"shields" 27600
 		"hull" 34100
@@ -1718,23 +1718,23 @@ ship "Tek Far 78 - Osk"
 	turret 21 -87
 	turret 23 -64 "Banisher Grav-Turret"
 	turret 38 145 "Warder Anti-Missile"
-	bay "Fighter" -18.5 -163 over
+	bay "战斗机" -18.5 -163 over
 		"launch effect" "korath external"
-	bay "Fighter" -43.5 -103.5 over
+	bay "战斗机" -43.5 -103.5 over
 		"launch effect" "korath external"
-	bay "Fighter" -16.5 -32.5 over
+	bay "战斗机" -16.5 -32.5 over
 		"launch effect" "korath external"
-	bay "Fighter" -30 57 over
+	bay "战斗机" -30 57 over
 		"launch effect" "korath external"
-	bay "Fighter" -55.5 96.5 over
+	bay "战斗机" -55.5 96.5 over
 		"launch effect" "korath external"
-	bay "Fighter" -21.5 150.5 over
+	bay "战斗机" -21.5 150.5 over
 		"launch effect" "korath external"
-	bay "Fighter" -32.5 -76.5 under
+	bay "战斗机" -32.5 -76.5 under
 		"launch effect" "korath external"
-	bay "Fighter" -14.5 43.5 under
+	bay "战斗机" -14.5 43.5 under
 		"launch effect" "korath external"
-	bay "Fighter" -42.5 193.5 under
+	bay "战斗机" -42.5 193.5 under
 		"launch effect" "korath external"
 	explode "tiny explosion" 90
 	explode "small explosion" 50
@@ -1751,7 +1751,7 @@ ship "Tek Far 109"
 	thumbnail "thumbnail/tek far 109"
 	"administrative cost" 4
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 18290000
 		"shields" 17900
 		"hull" 15800
@@ -1794,37 +1794,37 @@ ship "Tek Far 109"
 	gun 14 -206 "Piercer Missile Launcher"
 	turret -89 32
 	turret 89 32
-	bay "Drone" 38.5 -115.5 over
+	bay "无人机" 38.5 -115.5 over
 		"launch effect" "korath external"
-	bay "Drone" 25 -50.5 over
+	bay "无人机" 25 -50.5 over
 		"launch effect" "korath external"
-	bay "Drone" 59 28 over
+	bay "无人机" 59 28 over
 		"launch effect" "korath external"
-	bay "Drone" 28 79 over
+	bay "无人机" 28 79 over
 		"launch effect" "korath external"
-	bay "Drone" 19.5 145.5 over
+	bay "无人机" 19.5 145.5 over
 		"launch effect" "korath external"
-	bay "Drone" 57.5 -56.5 under
+	bay "无人机" 57.5 -56.5 under
 		"launch effect" "korath external"
-	bay "Drone" 40 19 under
+	bay "无人机" 40 19 under
 		"launch effect" "korath external"
-	bay "Drone" 60 58.5 under
+	bay "无人机" 60 58.5 under
 		"launch effect" "korath external"
-	bay "Drone" 45.5 135 under
+	bay "无人机" 45.5 135 under
 		"launch effect" "korath external"
-	bay "Fighter" -36.5 -130.5 over
+	bay "战斗机" -36.5 -130.5 over
 		"launch effect" "korath external"
-	bay "Fighter" -61.5 -68 over
+	bay "战斗机" -61.5 -68 over
 		"launch effect" "korath external"
-	bay "Fighter" -29.5 -17 over
+	bay "战斗机" -29.5 -17 over
 		"launch effect" "korath external"
-	bay "Fighter" -54.5 55 over
+	bay "战斗机" -54.5 55 over
 		"launch effect" "korath external"
-	bay "Fighter" -62 24 under
+	bay "战斗机" -62 24 under
 		"launch effect" "korath external"
-	bay "Fighter" -35 136.5 under
+	bay "战斗机" -35 136.5 under
 		"launch effect" "korath external"
-	bay "Fighter" -22 -82 under
+	bay "战斗机" -22 -82 under
 		"launch effect" "korath external"
 	explode "tiny explosion" 70
 	explode "small explosion" 40
@@ -1841,7 +1841,7 @@ ship "Met Par Tek 53"
 	thumbnail "thumbnail/met par tek 53"
 	"administrative cost" 4
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 14480000
 		"shields" 15100
 		"hull" 22200
@@ -1902,7 +1902,7 @@ ship "Far Lek 14"
 	thumbnail "thumbnail/far lek 14"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		"cost" 573000
 		"shields" 900
 		"hull" 1600
@@ -1944,7 +1944,7 @@ ship "Far Osk 27"
 	thumbnail "thumbnail/far osk 27"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		"cost" 761000
 		"shields" 1500
 		"hull" 2400
@@ -1988,7 +1988,7 @@ ship "Model 8"
 	thumbnail "thumbnail/model 8"
 	"administrative cost" 1
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 3725000
 		"shields" 5450
 		"hull" 3320
@@ -2037,7 +2037,7 @@ ship "Model 16"
 	thumbnail "thumbnail/model 16"
 	"administrative cost" 3
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 8449000
 		"shields" 15700
 		"hull" 9800
@@ -2093,7 +2093,7 @@ ship "Model 32"
 	thumbnail "thumbnail/model 32"
 	"administrative cost" 4
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 12765000
 		"shields" 27900
 		"hull" 13400
@@ -2150,7 +2150,7 @@ ship "Model 64"
 	thumbnail "thumbnail/model 64"
 	"administrative cost" 5
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 19552000
 		"shields" 41700
 		"hull" 18000
@@ -2209,7 +2209,7 @@ ship "Model 128"
 	thumbnail "thumbnail/model 128"
 	"administrative cost" 6
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 24073000
 		"shields" 57000
 		"hull" 23100
@@ -2269,7 +2269,7 @@ ship "Model 256"
 	thumbnail "thumbnail/model 256"
 	"administrative cost" 8
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 34920000
 		"shields" 71700
 		"hull" 28700
@@ -2331,7 +2331,7 @@ ship "Model 512"
 	thumbnail "thumbnail/model 512"
 	"administrative cost" 9
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 40375000
 		"shields" 86400
 		"hull" 34200

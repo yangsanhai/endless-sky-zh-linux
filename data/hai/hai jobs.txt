@@ -517,7 +517,7 @@ mission "Hai Retrieve Human Luxury Goods"
 	job
 	repeat
 	description "一位在<planet>的亥族社会名流想在同伴面前炫耀他们对人类文化的了解。他们要求在<date>之前从<stopovers>取得<cargo>。报酬为<payment>。"
-	cargo "Luxury Goods" 2 2 .29
+	cargo "奢侈品" 2 2 .29
 	deadline 24
 	to offer
 		random < 15
@@ -547,7 +547,7 @@ mission "Hai Retrieve Human Food"
 	job
 	repeat
 	description "一位位于<planet>上的亥族美食家对当地菜肴感到厌倦，想尝试他们从人类游客那里听说的食物。他们要求在<date>之前从<stopovers>取得<cargo>。报酬为<payment>。"
-	cargo "Food" 2 2 .29
+	cargo "食物" 2 2 .29
 	deadline 24
 	to offer
 		random < 15
@@ -576,7 +576,7 @@ mission "Hai Retrieve Human Electronics"
 	job
 	repeat
 	description "一位在<planet>的亥族修补匠想要拿人类科技做实验。他们要求在<date>之前从<stopovers>取得<cargo>。报酬为<payment>。"
-	cargo "Electronics" 2 2 .29
+	cargo "电子产品" 2 2 .29
 	deadline 24
 	to offer
 		random < 15

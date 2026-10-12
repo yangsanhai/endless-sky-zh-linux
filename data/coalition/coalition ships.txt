@@ -17,7 +17,7 @@ ship "Arach Courier"
 	thumbnail "thumbnail/arach courier"
 	"administrative cost" 1
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		licenses
 			Coalition
 		"cost" 723000
@@ -78,7 +78,7 @@ ship "Arach Freighter"
 	thumbnail "thumbnail/arach freighter"
 	"administrative cost" 3
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		licenses
 			Coalition
 		"cost" 4580000
@@ -150,7 +150,7 @@ ship "Arach Hulk"
 	thumbnail "thumbnail/arach hulk"
 	"administrative cost" 4
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		licenses
 			Coalition
 		"cost" 9978000
@@ -228,7 +228,7 @@ ship "Arach Spindle"
 	thumbnail "thumbnail/arach spindle"
 	"administrative cost" 3
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		licenses
 			Coalition
 		"cost" 6652000
@@ -341,7 +341,7 @@ ship "Arach Transport"
 	thumbnail "thumbnail/arach transport"
 	"administrative cost" 1
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		licenses
 			Coalition
 		"cost" 2772000
@@ -410,7 +410,7 @@ ship "Heliarch Breacher"
 	thumbnail "thumbnail/heliarch breacher"
 	"administrative cost" 5
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		licenses
 			Heliarch
 		"cost" 17659000
@@ -533,7 +533,7 @@ ship "Heliarch Hunter"
 	thumbnail "thumbnail/heliarch hunter"
 	"administrative cost" 8
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			Heliarch
 		"cost" 32985000
@@ -726,7 +726,7 @@ ship "Heliarch Interdictor"
 	thumbnail "thumbnail/heliarch interdictor"
 	"administrative cost" 8
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			Heliarch
 		"cost" 35487000
@@ -905,7 +905,7 @@ ship "Heliarch Judicator"
 	thumbnail "thumbnail/heliarch judicator"
 	"administrative cost" 7
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			Heliarch
 		"cost" 33953000
@@ -957,17 +957,17 @@ ship "Heliarch Judicator"
 	gun -13 -124.5 "Finisher Pod"
 	gun 13 -124.5 "Finisher Pod"
 	turret 0 45 "Ion Hail Turret"
-	bay "Fighter" -34.5 -82
+	bay "战斗机" -34.5 -82
 		"launch effect" "coalition launch"
-	bay "Fighter" 34.5 -82
+	bay "战斗机" 34.5 -82
 		"launch effect" "coalition launch"
-	bay "Fighter" -67.5 35
+	bay "战斗机" -67.5 35
 		"launch effect" "coalition launch"
-	bay "Fighter" -67.5 35
+	bay "战斗机" -67.5 35
 		"launch effect" "coalition launch"
-	bay "Fighter" 67.5 35
+	bay "战斗机" 67.5 35
 		"launch effect" "coalition launch"
-	bay "Fighter" 67.5 35
+	bay "战斗机" 67.5 35
 		"launch effect" "coalition launch"
 	explode "small explosion" 20
 	explode "medium explosion" 50
@@ -1095,7 +1095,7 @@ ship "Heliarch Neutralizer"
 	thumbnail "thumbnail/heliarch neutralizer"
 	"administrative cost" 6
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		licenses
 			Heliarch
 		"cost" 18847000
@@ -1221,7 +1221,7 @@ ship "Heliarch Punisher"
 	thumbnail "thumbnail/heliarch punisher"
 	"administrative cost" 11
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		licenses
 			Heliarch
 		"cost" 58487000
@@ -1475,7 +1475,7 @@ ship "Heliarch Pursuer"
 	thumbnail "thumbnail/heliarch pursuer"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		licenses
 			Heliarch
 		"cost" 1029000
@@ -1536,7 +1536,7 @@ ship "Heliarch Rover"
 	thumbnail "thumbnail/heliarch rover"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		licenses
 			Heliarch
 		"cost" 1238000
@@ -1596,7 +1596,7 @@ ship "Heliarch Stalker"
 	thumbnail "thumbnail/heliarch stalker"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		licenses
 			Heliarch
 		"cost" 1358000
@@ -1654,7 +1654,7 @@ ship "Kimek Briar"
 	thumbnail "thumbnail/kimek briar"
 	"administrative cost" 1
 	attributes
-		category "Transport"
+		category "运输船"
 		licenses
 			Coalition
 		"cost" 1532000
@@ -1717,7 +1717,7 @@ ship "Kimek Spire"
 	thumbnail "thumbnail/kimek spire"
 	"administrative cost" 5
 	attributes
-		category "Space Liner"
+		category "太空客轮"
 		licenses
 			Coalition
 		"cost" 9375000
@@ -1791,7 +1791,7 @@ ship "Kimek Thistle"
 	thumbnail "thumbnail/kimek thistle"
 	"administrative cost" 3
 	attributes
-		category "Transport"
+		category "运输船"
 		licenses
 			Coalition
 		"cost" 2904000
@@ -1878,7 +1878,7 @@ ship "Kimek Thorn"
 	thumbnail "thumbnail/kimek thorn"
 	"administrative cost" 1
 	attributes
-		category "Transport"
+		category "运输船"
 		licenses
 			Coalition
 		"cost" 440000
@@ -1939,7 +1939,7 @@ ship "Saryd Runabout"
 	thumbnail "thumbnail/saryd runabout"
 	"administrative cost" 1
 	attributes
-		category "Transport"
+		category "运输船"
 		licenses
 			Coalition
 		"cost" 942000
@@ -1998,7 +1998,7 @@ ship "Saryd Sojourner"
 	thumbnail "thumbnail/saryd sojourner"
 	"administrative cost" 5
 	attributes
-		category "Utility"
+		category "通用"
 		licenses
 			Coalition
 		"cost" 11075000
@@ -2094,7 +2094,7 @@ ship "Saryd Traveler"
 	thumbnail "thumbnail/saryd traveler"
 	"administrative cost" 3
 	attributes
-		category "Utility"
+		category "通用"
 		licenses
 			Coalition
 		"cost" 3385000
@@ -2171,7 +2171,7 @@ ship "Saryd Visitor"
 	thumbnail "thumbnail/saryd visitor"
 	"administrative cost" 2
 	attributes
-		category "Transport"
+		category "运输船"
 		licenses
 			Coalition
 		"cost" 1982000

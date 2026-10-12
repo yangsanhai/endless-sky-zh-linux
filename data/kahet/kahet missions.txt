@@ -1335,7 +1335,7 @@ ship "Cloak Check"
 
 outfit "Cloak Checker"
 	"display name" "隐形检测器"
-	category "Turrets"
+	category "炮塔"
 	thumbnail "outfit/unknown"
 	"turret mounts" -1
 	weapon
@@ -1670,7 +1670,7 @@ mission "Asteroid guarding Lathia"
 ship "Asteroid Planet"
 	"display name" "小行星行星"
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"uncapturable" 1
 		"inscrutable" 1
 		"cost" 158000000
@@ -1706,7 +1706,7 @@ ship "Asteroid Planet"
 
 outfit "Asteroid Weapon Super"
 	"display name" "???"
-	category "Guns"
+	category "枪炮"
 	cost 1861000000
 	thumbnail "outfit/unknown"
 	mass 1
@@ -1915,7 +1915,7 @@ ship "Remnant Satellite"
 	sprite "ship/remnant satellite"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		hull 130
 		mass 10
 		drag 2
@@ -2370,7 +2370,7 @@ mission "Ka'het: Patir Mystery 12.2C"
 
 outfit "Ka'het Machinery"
 	"display name" "卡'赫特机械"
-	category "Turrets"
+	category "炮塔"
 	thumbnail "outfit/unknown"
 	"turret mounts" -1
 	"unplunderable" 1
@@ -2397,7 +2397,7 @@ ship "Fetri'sei" "Fetri'sei (Patir 12.2)"
 	sprite "ship/fetri'sei"
 	thumbnail "thumbnail/fetri'sei"
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 5700000
 		"shields" 2400
 		"hull" 7200
@@ -2450,7 +2450,7 @@ ship "Fetri'sei" "Fetri'sei (Patir 12.2)"
 ship "Asteroid Large 1" "Asteroid Large (Patir 12.2)"
 	sprite "ship/asteroid adult"
 	attributes
-		category "Transport"
+		category "运输船"
 		"cost" 1350000000
 		"hull" 965612
 		"required crew" 1
@@ -2907,7 +2907,7 @@ ship "Fetri'sei" "Fetri'sei (Patir 18)"
 
 outfit "Asteroid Jump Drive (Patir 18)"
 	"display name" "???"
-	category "Systems"
+	category "系统"
 	cost 29631456
 	thumbnail "outfit/asteroid weapon 7"
 	"mass" 20
@@ -4506,7 +4506,7 @@ ship "Builder Satellite"
 	sprite "ship/builder satellite"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		"hull" 1500
 		"mass" 10
 		"drag" 2

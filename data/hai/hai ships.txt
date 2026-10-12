@@ -18,7 +18,7 @@ ship "Anomalocaris"
 	thumbnail "thumbnail/hai anomalocaris"
 	"administrative cost" 5
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 7400000
 		"shields" 14200
 		"hull" 6800
@@ -105,7 +105,7 @@ ship "Aphid"
 	thumbnail "thumbnail/hai aphid"
 	"administrative cost" 1
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		"cost" 570000
 		"shields" 1700
 		"hull" 1400
@@ -190,7 +190,7 @@ ship "Centipede"
 	thumbnail "thumbnail/hai centipede"
 	"administrative cost" 3
 	attributes
-		category "Space Liner"
+		category "太空客轮"
 		"cost" 6300000
 		"shields" 6600
 		"hull" 2400
@@ -285,7 +285,7 @@ ship "Cicada"
 	thumbnail "thumbnail/hai cicada"
 	"administrative cost" 2
 	attributes
-		category "Transport"
+		category "运输船"
 		"cost" 3850000
 		"shields" 5400
 		"hull" 2000
@@ -343,7 +343,7 @@ ship "Flea"
 	thumbnail "thumbnail/hai flea"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		"cost" 142400
 		"shields" 200
 		"hull" 700
@@ -389,7 +389,7 @@ ship "Geocoris"
 	thumbnail "thumbnail/hai geocoris"
 	"administrative cost" 5
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		"cost" 12540000
 		"shields" 13300
 		"hull" 6200
@@ -474,7 +474,7 @@ ship "Grasshopper"
 	thumbnail "thumbnail/hai grasshopper"
 	"administrative cost" 1
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 684000
 		"shields" 3300
 		"hull" 600
@@ -565,7 +565,7 @@ ship "Lightning Bug"
 	thumbnail "thumbnail/hai lightning bug"
 	"administrative cost" 2
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 3200000
 		"shields" 6700
 		"hull" 1700
@@ -682,7 +682,7 @@ ship "Ladybug"
 	thumbnail "thumbnail/hai ladybug"
 	"administrative cost" 3
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 8950000
 		"shields" 12300
 		"hull" 3600
@@ -822,7 +822,7 @@ ship "Pond Strider"
 	thumbnail "thumbnail/hai pond strider"
 	"administrative cost" 3
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 5250000
 		"shields" 10000
 		"hull" 3000
@@ -867,21 +867,21 @@ ship "Pond Strider"
 	turret -18 -53 "Bullfrog Anti-Missile"
 	turret 18 -53 "Bullfrog Anti-Missile"
 	turret 0 14 "Chameleon Anti-Missile"
-	bay "Drone" -70 -45 left under
+	bay "无人机" -70 -45 left under
 		"launch effect" "hai launch"
-	bay "Drone" 70 -45 right under
+	bay "无人机" 70 -45 right under
 		"launch effect" "hai launch"
-	bay "Drone" -70 28 left under
+	bay "无人机" -70 28 left under
 		"launch effect" "hai launch"
-	bay "Drone" 70 28 right under
+	bay "无人机" 70 28 right under
 		"launch effect" "hai launch"
-	bay "Drone" -70 -45 over
+	bay "无人机" -70 -45 over
 		"launch effect" "hai launch"
-	bay "Drone" 70 -45 over
+	bay "无人机" 70 -45 over
 		"launch effect" "hai launch"
-	bay "Drone" -70 28 over
+	bay "无人机" -70 28 over
 		"launch effect" "hai launch"
-	bay "Drone" 70 28 over
+	bay "无人机" 70 28 over
 		"launch effect" "hai launch"
 	leak "leak" 40 50
 	leak "flame" 40 70
@@ -971,7 +971,7 @@ ship "Sea Scorpion"
 	thumbnail "thumbnail/hai sea scorpion"
 	"administrative cost" 4
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 5450000
 		"shields" 15500
 		"hull" 4900
@@ -1113,7 +1113,7 @@ ship "Scarab"
 	thumbnail "thumbnail/hai scarab"
 	"administrative cost" 1
 	attributes
-		category "Transport"
+		category "运输船"
 		"cost" 1620000
 		"shields" 4600
 		"hull" 1500
@@ -1166,7 +1166,7 @@ ship "Shield Beetle"
 	thumbnail "thumbnail/hai shield beetle"
 	"administrative cost" 7
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 17900000
 		"shields" 32000
 		"hull" 9800
@@ -1425,7 +1425,7 @@ ship "Emperor Beetle"
 	thumbnail "thumbnail/hai emperor beetle"
 	"administrative cost" 8
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 35100000
 		"shields" 26700
 		"hull" 19600
@@ -1538,7 +1538,7 @@ ship "Solifuge"
 	thumbnail "thumbnail/hai solifuge"
 	"administrative cost" 8
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		licenses
 			"Unfettered Militia"
 		"cost" 22800000
@@ -1591,17 +1591,17 @@ ship "Solifuge"
 	turret -55 1 "Pulse Turret"
 	turret 54.5 50.5 "Bullfrog Anti-Missile"
 	turret -54.5 50.5 "Bullfrog Anti-Missile"
-	bay "Fighter" -51.5 -71 under
+	bay "战斗机" -51.5 -71 under
 		"launch effect" "hai launch"
-	bay "Fighter" 51.5 -71 under
+	bay "战斗机" 51.5 -71 under
 		"launch effect" "hai launch"
-	bay "Fighter" -58.5 2 under
+	bay "战斗机" -58.5 2 under
 		"launch effect" "hai launch"
-	bay "Fighter" 58.5 2 under
+	bay "战斗机" 58.5 2 under
 		"launch effect" "hai launch"
-	bay "Fighter" -51.5 76 under
+	bay "战斗机" -51.5 76 under
 		"launch effect" "hai launch"
-	bay "Fighter" 51.5 76 under
+	bay "战斗机" 51.5 76 under
 		"launch effect" "hai launch"
 	leak "leak" 40 50
 	leak "flame" 60 70
@@ -1720,7 +1720,7 @@ ship "Violin Spider"
 	thumbnail "thumbnail/hai violin spider"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		"cost" 139000
 		"shields" 1400
 		"hull" 600
@@ -1776,7 +1776,7 @@ ship "Water Bug"
 	thumbnail "thumbnail/hai water bug"
 	"administrative cost" 3
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		"cost" 6500000
 		"shields" 7900
 		"hull" 4500

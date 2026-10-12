@@ -14,8 +14,8 @@
 # Weapons:
 outfit "Plasma Discharger"
 	"display name" "等离子放电器"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 12010
 	cost 140000
 	mass 25
@@ -55,8 +55,8 @@ outfit "plasma particle"
 
 outfit "Stagnation Beam"
 	"display name" "停滞光束"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 12010
 	cost 180000
 	mass 30
@@ -99,8 +99,8 @@ effect "stagnation beam impact"
 
 outfit "Star Tail"
 	"display name" "星尾"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 12010
 	cost 320000
 	mass 48
@@ -175,7 +175,7 @@ effect "star tail live"
 
 outfit "Star Tail Cell"
 	"display name" "星尾电池"
-	category "Ammunition"
+	category "弹药"
 	cost 1500
 	thumbnail "outfit/star tail cell"
 	"mass" .1
@@ -184,7 +184,7 @@ outfit "Star Tail Cell"
 
 outfit "Star Tail Storage"
 	"display name" "星尾储能"
-	category "Ammunition"
+	category "弹药"
 	cost 6000
 	thumbnail "outfit/star tail cell storage"
 	"mass" 10
@@ -210,7 +210,7 @@ outfitter "Star Tail Cell Restock"
 
 outfit "Horizon Grappler"
 	"display name" "地平线抓钩"
-	category "Turrets"
+	category "炮塔"
 	series "Tractor Beams"
 	index 12020
 	cost 200000
@@ -241,7 +241,7 @@ effect "horizon grappler"
 # Shields/Energy:
 outfit "Gas-Class Shield"
 	"display name" "气态级护盾"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 12010
 	thumbnail "outfit/gas class shield"
@@ -256,7 +256,7 @@ outfit "Gas-Class Shield"
 
 outfit "Liquid-Class Shield"
 	"display name" "液态级护盾"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 12020
 	thumbnail "outfit/liquid class shield"
@@ -271,7 +271,7 @@ outfit "Liquid-Class Shield"
 
 outfit "Metallic Hydrogen Cell"
 	"display name" "金属氢电池"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 12010
 	thumbnail "outfit/metallic hydrogen cell"
@@ -284,8 +284,8 @@ outfit "Metallic Hydrogen Cell"
 # Engines:
 outfit "MH Blue-Class Thruster"
 	"display name" "MH 蓝级推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 12011
 	thumbnail "outfit/mh blue-class thruster"
 	cost 32000
@@ -302,8 +302,8 @@ outfit "MH Blue-Class Thruster"
 
 outfit "MH Blue-Class Steering"
 	"display name" "MH 蓝级转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 12010
 	thumbnail "outfit/mh blue-class steering"
 	cost 28000
@@ -317,8 +317,8 @@ outfit "MH Blue-Class Steering"
 
 outfit "MH Green-Class Thruster"
 	"display name" "MH 绿级推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 12021
 	thumbnail "outfit/mh green-class thruster"
 	cost 44000
@@ -335,8 +335,8 @@ outfit "MH Green-Class Thruster"
 
 outfit "MH Green-Class Steering"
 	"display name" "MH 绿级转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 12020
 	thumbnail "outfit/mh green-class steering"
 	cost 35000
@@ -350,8 +350,8 @@ outfit "MH Green-Class Steering"
 
 outfit "MH Red-Class Thruster"
 	"display name" "MH 红级推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 12031
 	thumbnail "outfit/mh red-class thruster"
 	cost 50000
@@ -368,8 +368,8 @@ outfit "MH Red-Class Thruster"
 
 outfit "MH Red-Class Steering"
 	"display name" "MH 红级转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 12030
 	thumbnail "outfit/mh red-class steering"
 	cost 49000
@@ -385,7 +385,7 @@ outfit "MH Red-Class Steering"
 # Hand to Hand
 outfit "Cloud Piercer"
 	"display name" "穿云者"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 12010
 	cost 10000
@@ -400,7 +400,7 @@ outfit "Cloud Piercer"
 # Special
 outfit "Hicemus Conflict License"
 	"display name" "希塞穆斯冲突许可证"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 12010
 	description "希塞穆斯已经足够信任你，给予你这张许可证，让你得以一窥他们最珍贵的技术——这些技术旨在让他们在其他派系面前占据优势。"

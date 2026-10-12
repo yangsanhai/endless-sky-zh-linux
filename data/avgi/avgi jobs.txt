@@ -206,7 +206,7 @@ mission "Avgi: Small Cargo 1 (Avgi Cargo)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Cargo" 3 6 .3
+	cargo "阿夫吉货物" 3 6 .3
 	to offer
 		random < 60
 	on visit
@@ -225,7 +225,7 @@ mission "Avgi: Small Cargo 2 (Avgi Cargo)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Cargo" 6 6 .6
+	cargo "阿夫吉货物" 6 6 .6
 	to offer
 		random < 60
 	on visit
@@ -244,7 +244,7 @@ mission "Avgi: Small Cargo 3 (Avgi Cargo)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Cargo" 3 9 .6
+	cargo "阿夫吉货物" 3 9 .6
 	to offer
 		random < 60
 	on visit
@@ -265,7 +265,7 @@ mission "Avgi: Bulk Cargo 1 (Avgi Cargo)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Cargo" 30 6 .12
+	cargo "阿夫吉货物" 30 6 .12
 	to offer
 		random < 30
 	on visit
@@ -284,7 +284,7 @@ mission "Avgi: Bulk Cargo 2 (Avgi Cargo)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Cargo" 30 6 .09
+	cargo "阿夫吉货物" 30 6 .09
 	to offer
 		random < 30
 	on visit
@@ -303,7 +303,7 @@ mission "Avgi: Bulk Cargo 3 (Avgi Cargo)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Cargo" 30 6 .06
+	cargo "阿夫吉货物" 30 6 .06
 	to offer
 		random < 30
 	on visit
@@ -325,7 +325,7 @@ mission "Avgi: Rush Cargo 1 (Avgi Cargo)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Cargo" 3 9 .6
+	cargo "阿夫吉货物" 3 9 .6
 	to offer
 		random < 30
 	on visit
@@ -346,7 +346,7 @@ mission "Avgi: Rush Cargo 2 (Avgi Cargo)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Cargo" 3 9 .45
+	cargo "阿夫吉货物" 3 9 .45
 	to offer
 		random < 30
 	on visit
@@ -367,7 +367,7 @@ mission "Avgi: Rush Cargo 3 (Avgi Cargo)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Cargo" 3 9 .3
+	cargo "阿夫吉货物" 3 9 .3
 	to offer
 		random < 30
 	on visit
@@ -388,7 +388,7 @@ mission "Avgi: Small Cargo 1 (Avgi Nuclear)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Nuclear" 3 6 .3
+	cargo "阿夫吉核燃料" 3 6 .3
 	to offer
 		random < 9
 	on visit
@@ -407,7 +407,7 @@ mission "Avgi: Small Cargo 2 (Avgi Nuclear)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Nuclear" 6 6 .6
+	cargo "阿夫吉核燃料" 6 6 .6
 	to offer
 		random < 9
 	on visit
@@ -426,7 +426,7 @@ mission "Avgi: Small Cargo 3 (Avgi Nuclear)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Nuclear" 3 9 .6
+	cargo "阿夫吉核燃料" 3 9 .6
 	to offer
 		random < 9
 	on visit
@@ -448,7 +448,7 @@ mission "Avgi: Rush Cargo 1 (Avgi Nuclear)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Nuclear" 3 9 .6
+	cargo "阿夫吉核燃料" 3 9 .6
 	to offer
 		random < 9
 	on visit
@@ -469,7 +469,7 @@ mission "Avgi: Rush Cargo 2 (Avgi Nuclear)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Nuclear" 3 9 .45
+	cargo "阿夫吉核燃料" 3 9 .45
 	to offer
 		random < 9
 	on visit
@@ -490,7 +490,7 @@ mission "Avgi: Rush Cargo 3 (Avgi Nuclear)"
 	destination
 		attributes "avgi diaspora"
 		distance 1 30
-	cargo "Avgi Nuclear" 3 9 .3
+	cargo "阿夫吉核燃料" 3 9 .3
 	to offer
 		random < 9
 	on visit
@@ -808,7 +808,7 @@ mission "Avgi: Bulk Cylinder Materials 1"
 		distance 1 30
 		attributes "avgi diaspora"
 	destination "Aktina Cylinder"
-	cargo "Avgi Megaconstruction" 60 6 .09
+	cargo "阿夫吉巨型建材" 60 6 .09
 	to offer
 		random < 15
 		has "avgi: aktina cylinder supply jobs"
@@ -828,7 +828,7 @@ mission "Avgi: Bulk Cylinder Materials 2"
 		distance 1 30
 		attributes "avgi diaspora"
 	destination "Aktina Cylinder"
-	cargo "Avgi Megaconstruction" 60 6 .06
+	cargo "阿夫吉巨型建材" 60 6 .06
 	to offer
 		random < 15
 		has "avgi: aktina cylinder supply jobs"
@@ -848,7 +848,7 @@ mission "Avgi: Bulk Cylinder Materials 3"
 		distance 1 30
 		attributes "avgi diaspora"
 	destination "Aktina Cylinder"
-	cargo "Avgi Megaconstruction" 60 6 .03
+	cargo "阿夫吉巨型建材" 60 6 .03
 	to offer
 		random < 9
 		has "avgi: aktina cylinder supply jobs"
@@ -875,7 +875,7 @@ mission "Avgi: Special Nuclear Material Shipment 1"
 		distance 1 30
 		government "Avgi (Twilight Guard)"
 	deadline
-	cargo "Avgi Special Nuclear" 3 6 .3
+	cargo "阿夫吉特级核燃料" 3 6 .3
 	to offer
 		random < 15
 		not "avgi: fissiles shortage"
@@ -947,7 +947,7 @@ mission "Avgi: Special Nuclear Material Shipment 3"
 		distance 1 30
 		government "Avgi (Twilight Guard)"
 	deadline
-	cargo "Avgi Special Nuclear" 3 6 .3
+	cargo "阿夫吉特级核燃料" 3 6 .3
 	to offer
 		random < 9
 		not "avgi: fissiles shortage"
@@ -998,7 +998,7 @@ mission "Avgi: Information Courier"
 		distance 1 30
 		government "Avgi (Consonance)" "Avgi (Dissonance)" "Avgi (Twilight Guard)"
 	deadline
-	cargo "Avgi Storage Media" 3 6 .3
+	cargo "阿夫吉存储介质" 3 6 .3
 	to offer
 		random < 60
 		has "avgi: infocourier jobs"
@@ -1019,7 +1019,7 @@ mission "Avgi: Information Courier Rush"
 		distance 1 30
 		government "Avgi (Consonance)" "Avgi (Dissonance)" "Avgi (Twilight Guard)"
 	deadline 1 1
-	cargo "Avgi Storage Media" 3 6 .3
+	cargo "阿夫吉存储介质" 3 6 .3
 	to offer
 		random < 45
 		has "avgi: infocourier jobs"

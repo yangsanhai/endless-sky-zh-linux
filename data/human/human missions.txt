@@ -1295,7 +1295,7 @@ effect "puff"
 
 outfit "Imaginary Weapon"
 	"display name" "想象武器"
-	category "Guns"
+	category "枪炮"
 	"gun ports" -1
 	weapon
 		sprite "projectile/rainbow"
@@ -1324,7 +1324,7 @@ ship "Hallucination"
 	"never disabled"
 	"administrative cost" 1
 	attributes
-		category "Unclassified"
+		category "未分类"
 		"hull" 1000
 		"mass" 180
 		"drag" 2.1
@@ -2038,7 +2038,7 @@ ship "Asteroid"
 		"frame rate" 10
 	"administrative cost" 2
 	attributes
-		category "Unclassified"
+		category "未分类"
 		"fuel capacity" 1
 		"hull" 10000
 		"mass" 1000
@@ -2628,7 +2628,7 @@ ship "Science Drone"
 	sprite "ship/science drone"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		hull 200
 		mass 30
 		drag 2
@@ -6908,7 +6908,7 @@ ship "Racing Flivver"
 	thumbnail "thumbnail/racing flivver"
 	"administrative cost" 1
 	attributes
-		category "Transport"
+		category "运输船"
 		# This Flivver has a high cost so that you can sell it for roughly the same amount as a normal Flivver would cost.
 		"cost" 4900000
 		"shields" 1100
@@ -8166,7 +8166,7 @@ ship "Emergency Shuttle"
 	sprite "ship/escape shuttle"
 	"administrative cost" 1
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 45000
 		"shields" 300
 		"hull" 600

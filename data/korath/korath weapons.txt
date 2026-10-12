@@ -14,8 +14,8 @@
 
 outfit "Grab-Strike Turret"
 	"display name" "擒抓打击碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 04040
 	cost 821000
 	thumbnail "outfit/grab-strike"
@@ -64,8 +64,8 @@ effect "grab-strike impact"
 
 outfit "Shunt-Strike Turret"
 	"display name" "分流打击炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 04080
 	cost 821000
 	thumbnail "outfit/shunt-strike"
@@ -127,8 +127,8 @@ effect "shunt-strike sparkle"
 
 outfit "Banisher Grav-Turret"
 	"display name" "驱逐者重力炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 04050
 	cost 943000
 	thumbnail "outfit/banisher"
@@ -158,8 +158,8 @@ outfit "Banisher Grav-Turret"
 
 outfit "Expeller Grav-Ray"
 	"display name" "驱逐重力射线"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 04030
 	cost 819000
 	thumbnail "outfit/expeller"
@@ -193,7 +193,7 @@ effect "banisher impact"
 
 outfit "Warder Anti-Missile"
 	"display name" "看守者反导弹"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 04010
 	cost 845000
@@ -227,8 +227,8 @@ effect "korath warder"
 
 outfit "Fire-Lance"
 	"display name" "火焰矛"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 04020
 	cost 697000
 	thumbnail "outfit/fire-lance"
@@ -264,8 +264,8 @@ effect "fire-lance impact"
 
 outfit "Blaze-Pike Turret"
 	"display name" "烈焰长矛炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 04020
 	cost 1970000
 	thumbnail "outfit/blaze-pike"
@@ -305,8 +305,8 @@ effect "blaze-pike hit"
 
 outfit "Korath Inferno"
 	"display name" "科拉思地狱火"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 04030
 	cost 2670000
 	thumbnail "outfit/korath inferno"
@@ -347,8 +347,8 @@ effect "korath inferno hit"
 
 outfit "Thermal Repeater"
 	"display name" "热能连发枪"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 04010
 	cost 306000
 	thumbnail "outfit/repeater"
@@ -388,8 +388,8 @@ effect "repeater impact"
 
 outfit "Thermal Repeater Turret"
 	"display name" "热能连发炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 04010
 	cost 874000
 	thumbnail "outfit/repeater turret"
@@ -424,8 +424,8 @@ outfit "Thermal Repeater Turret"
 
 outfit "Piercer Missile"
 	"display name" "穿刺导弹"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 04030
 	cost 830
 	thumbnail "outfit/piercer"
@@ -435,8 +435,8 @@ outfit "Piercer Missile"
 
 outfit "Piercer Missile Rack"
 	"display name" "穿刺导弹挂架"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 04031
 	cost 56000
 	thumbnail "outfit/korath piercer storage"
@@ -448,8 +448,8 @@ outfit "Piercer Missile Rack"
 
 outfit "Piercer Missile Launcher"
 	"display name" "穿刺导弹发射器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 04030
 	cost 593000
 	thumbnail "outfit/piercer launcher"
@@ -543,8 +543,8 @@ outfitter "Piercer Missile Restock"
 
 outfit "Korath Detainer"
 	"display name" "科拉思扣押者"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 04060
 	cost 1340000
 	thumbnail "outfit/detainer"
@@ -608,8 +608,8 @@ effect "detainer smoke"
 
 outfit "Cluster Mine"
 	"display name" "集束水雷"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 04040
 	cost 3500
 	thumbnail "outfit/korath mine"
@@ -619,8 +619,8 @@ outfit "Cluster Mine"
 
 outfit "Cluster Mine Rack"
 	"display name" "集束水雷架"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 04041
 	cost 31500
 	thumbnail "outfit/korath mine storage"
@@ -632,8 +632,8 @@ outfit "Cluster Mine Rack"
 
 outfit "Cluster Mine Layer"
 	"display name" "集束水雷布设器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 04040
 	cost 1073000
 	thumbnail "outfit/korath minelayer"
@@ -732,8 +732,8 @@ outfitter "Cluster Mine Restock"
 
 outfit "Shield Disruptor Turret"
 	"display name" "护盾干扰炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 04070
 	cost 983000
 	thumbnail "outfit/disruptor"
@@ -774,8 +774,8 @@ effect "disruptor impact"
 
 outfit "Husk-Slice"
 	"display name" "削壳刃"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 04040
 	cost 832000
 	thumbnail "outfit/slicer"
@@ -802,8 +802,8 @@ outfit "Husk-Slice"
 
 outfit "Husk-Slice Turret"
 	"display name" "削壳刃碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 04060
 	cost 1473000
 	thumbnail "outfit/slicer turret"
@@ -845,8 +845,8 @@ effect "slicer impact"
 
 outfit "Digger Mining Turret"
 	"display name" "挖掘者采矿碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 04090
 	cost 509000
 	thumbnail "outfit/korath digger turret"
@@ -878,8 +878,8 @@ outfit "Digger Mining Turret"
 
 outfit "Digger Mining Beam"
 	"display name" "挖掘者采矿光束"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 04070
 	cost 419000
 	thumbnail "outfit/korath digger"
@@ -917,8 +917,8 @@ effect "korath digger hit"
 
 outfit "Langrage Hyper-Heaver"
 	"display name" "散铁链弹超重投器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 04050
 	cost 3450000
 	thumbnail "outfit/korath heaver"
@@ -1014,8 +1014,8 @@ effect "heaver splinter hit"
 
 outfit "Firelight Storage Rack"
 	"display name" "火光储存架"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 04011
 	cost 27400
 	thumbnail "outfit/firelight rack"
@@ -1027,8 +1027,8 @@ outfit "Firelight Storage Rack"
 
 outfit "Firelight Missile"
 	"display name" "火光导弹"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 04010
 	cost 7600
 	thumbnail "outfit/firelight"
@@ -1040,8 +1040,8 @@ outfit "Firelight Missile"
 
 outfit "Firelight Missile Bank"
 	"display name" "火光导弹阵列"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 04010
 	cost 1937000
 	thumbnail "outfit/firelight bank"
@@ -1146,8 +1146,8 @@ outfitter "Firelight Restock"
 
 outfit "Microbot Grinder"
 	"display name" "微型机器人研磨机"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 04080
 	thumbnail "outfit/unknown"
 	"mass" 182
@@ -1180,8 +1180,8 @@ outfit "Microbot Grinder"
 outfit "Firestorm Torpedo"
 	"display name" "火风暴鱼雷"
 	plural "火风暴鱼雷"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 04020
 	cost 19800
 	thumbnail "outfit/firestorm torpedo"
@@ -1193,8 +1193,8 @@ outfit "Firestorm Torpedo"
 
 outfit "Firestorm Torpedo Rack"
 	"display name" "火风暴鱼雷架"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 04021
 	cost "135000"
 	thumbnail "outfit/firestorm torpedo rack"
@@ -1207,8 +1207,8 @@ outfit "Firestorm Torpedo Rack"
 outfit "Firestorm Battery"
 	"display name" "火风暴炮组"
 	plural "火风暴鱼雷发射组"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 04020
 	cost 2383000
 	thumbnail "outfit/firestorm battery"

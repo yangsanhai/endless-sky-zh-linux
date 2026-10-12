@@ -16,8 +16,8 @@
 
 outfit "Aberrant Spiker"
 	"display name" "异常尖刺者"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 05020
 	cost 1370000
 	thumbnail "outfit/unknown"
@@ -84,8 +84,8 @@ effect "spiker impact"
 
 outfit "Nucleolysis Beam"
 	"display name" "核解光束"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 05040
 	cost 1900000
 	thumbnail "outfit/nucleolysis beam"
@@ -117,7 +117,7 @@ outfit "Nucleolysis Beam"
 
 outfit "Telescopic Antimissile"
 	"display name" "伸缩式反导"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 05010
 	cost 16000000
@@ -145,7 +145,7 @@ outfit "Telescopic Antimissile"
 
 outfit "Anomalous Shield Restorer"
 	"display name" "异常护盾恢复器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 05030
 	cost 22000000
@@ -164,7 +164,7 @@ outfit "Anomalous Shield Restorer"
 
 outfit "Antimatter Power Cell"
 	"display name" "反物质电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 05020
 	cost 11000000
@@ -184,7 +184,7 @@ outfit "Antimatter Power Cell"
 outfit "Anomalous Mass"
 	"display name" "异常质量"
 	plural "异常质量体"
-	category "Special"
+	category "特殊"
 	cost 800000
 	thumbnail "outfit/anomalous mass"
 	"flotsam sprite" "effect/flotsam anomalous mass"

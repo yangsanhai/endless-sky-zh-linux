@@ -137,7 +137,7 @@ mission "Waste recycling on <planet>"
 	job
 	repeat
 	description "辛迪加系统公司正在寻找愿意作为我们全新绿色倡议的一部分、为之做出改变的无畏船长们！将<tons>可回收的<commodity>运送至我们在<destination>的专用设施。报酬为<payment>。"
-	cargo "Garbage" 5 2 .1
+	cargo "垃圾" 5 2 .1
 	to offer
 		random < 20
 	source
@@ -159,7 +159,7 @@ mission "Rush fuel Delivery"
 	repeat
 	deadline
 	description "<destination>上的一座民用反应堆燃料不足，需要在<date>之前紧急运送一批<cargo>。报酬为<payment>。"
-	cargo "Heavy Metals" 10 2 .1
+	cargo "重金属" 10 2 .1
 	to offer
 		random < 20
 		"cargo space" > 15
@@ -182,7 +182,7 @@ mission "Rush equipment Delivery"
 	repeat
 	deadline
 	description "<destination>上的辛迪加技术人员急需在<date>之前紧急运送一批<tons>的专用<commodity>。报酬为<payment>。"
-	cargo "Equipment" 5 2 .15
+	cargo "设备" 5 2 .15
 	to offer
 		random < 20
 	source
@@ -366,7 +366,7 @@ mission "Syndicate Prisoner Transport [0]"
 	job
 	repeat
 	description `将一名遭到起诉的白领罪犯及其助理、律师以及一批<cargo>运送至<planet>，他将在那里接受“软禁”以等待审判。他需要一艘足够舒适的飞船来完成这趟旅程。报酬为<payment>。`
-	cargo "Luxury Goods" 1 10
+	cargo "奢侈品" 1 10
 	passengers 5 12
 	source
 		government "Syndicate"
@@ -490,7 +490,7 @@ mission "Return Syndicate Prisoners [0]"
 	job
 	repeat
 	description `将一名被判无罪的白领罪犯连同他的助手、律师以及一批<cargo>运送回他在<planet>的家。他需要一艘足够舒适的飞船来完成这趟旅程。报酬为<payment>。`
-	cargo "Luxury Goods" 1 10
+	cargo "奢侈品" 1 10
 	passengers 3 10 .56
 	source
 		government "Syndicate"
@@ -584,7 +584,7 @@ mission "Syndicated Shipyards Shipment [0]"
 mission "Syndicated Shipyards Shipment [1]"
 	name "运送至<planet>的货物"
 	description "人类星域最大的造船厂之一，辛迪加造船厂（Syndicated Shipyards），请求一位独立船长将<cargo>运送至<destination>，以确保库存充足。报酬为<payment>。"
-	cargo "Ship Alloys" 5 2 .1
+	cargo "舰船合金" 5 2 .1
 	job
 	repeat
 	to offer
@@ -608,7 +608,7 @@ mission "Syndicated Shipyards Shipment [1]"
 mission "Syndicated Shipyards Shipment [2]"
 	name "运送至<planet>的货物"
 	description "人类星域最大的造船厂之一，辛迪加造船厂（Syndicated Shipyards），请求一位独立船长将<cargo>运送至<destination>，以确保库存充足。报酬为<payment>。"
-	cargo "Ship Systems" 5 2 .1
+	cargo "舰船系统" 5 2 .1
 	job
 	repeat
 	to offer
@@ -632,7 +632,7 @@ mission "Syndicated Shipyards Shipment [2]"
 mission "Syndicated Shipyards Shipment [3]"
 	name "运送至<planet>的货物"
 	description "将<cargo>运送至<destination>，那里是人类星域最大的造船厂之一——辛迪加造船厂的所在地。报酬为<payment>。"
-	cargo "Ship Alloys" 5 2 .1
+	cargo "舰船合金" 5 2 .1
 	job
 	repeat
 	to offer
@@ -728,7 +728,7 @@ mission "Megaparsec Shipment [0]"
 mission "Megaparsec Shipment [1]"
 	name "运送至<planet>的货物"
 	description "将<cargo>运送至<destination>，那里是以轻量化设计闻名的造船厂——Megaparsec公司的所在地。报酬为<payment>。"
-	cargo "Ship Alloys" 5 2 .1
+	cargo "舰船合金" 5 2 .1
 	job
 	repeat
 	to offer
@@ -752,7 +752,7 @@ mission "Megaparsec Shipment [1]"
 mission "Megaparsec Shipment [2]"
 	name "运送至<planet>的货物"
 	description "将<cargo>运送至<destination>，那里是以轻量化设计闻名的造船厂——Megaparsec公司的所在地。报酬为<payment>。"
-	cargo "Ship Systems" 5 2 .1
+	cargo "舰船系统" 5 2 .1
 	job
 	repeat
 	to offer

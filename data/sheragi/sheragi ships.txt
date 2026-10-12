@@ -18,7 +18,7 @@ ship "Emerald Sword"
 	"administrative cost" 10
 	swizzle 3
 	attributes
-		category "Superheavy"
+		category "超重型"
 		"cost" 100000000
 		"shields" 9500
 		"hull" 45000
@@ -117,17 +117,17 @@ ship "Emerald Sword"
 	turret -128.5 174 "Particle Waveform Turret"
 	turret 128.5 174 "Particle Waveform Turret"
 	turret 0 183 "Sheragi Anti-Missile"
-	bay "Fighter" 0 220.5 back
+	bay "战斗机" 0 220.5 back
 		"launch effect" "sheragi launch"
-	bay "Fighter" 0 220.5 back
+	bay "战斗机" 0 220.5 back
 		"launch effect" "sheragi launch"
-	bay "Fighter" 0 220.5 back
+	bay "战斗机" 0 220.5 back
 		"launch effect" "sheragi launch"
-	bay "Fighter" 0 220.5 back
+	bay "战斗机" 0 220.5 back
 		"launch effect" "sheragi launch"
-	bay "Fighter" 0 220.5 back
+	bay "战斗机" 0 220.5 back
 		"launch effect" "sheragi launch"
-	bay "Fighter" 0 220.5 back
+	bay "战斗机" 0 220.5 back
 		"launch effect" "sheragi launch"
 	explode "tiny explosion" 60
 	explode "small explosion" 26
@@ -173,7 +173,7 @@ ship "Black Diamond"
 	"administrative cost" 0
 	swizzle 9
 	attributes
-		category "Fighter"
+		category "战斗机"
 		"cost" 1000000
 		"shields" 1600
 		"hull" 3400

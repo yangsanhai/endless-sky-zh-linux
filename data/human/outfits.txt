@@ -14,7 +14,7 @@
 outfit "Cooling Ducts"
 	"display name" "冷却管道"
 	plural "冷却管道"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 01010
 	cost 10000
@@ -26,7 +26,7 @@ outfit "Cooling Ducts"
 
 outfit "Water Coolant System"
 	"display name" "水冷系统"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 01020
 	cost 25000
@@ -38,7 +38,7 @@ outfit "Water Coolant System"
 
 outfit "Liquid Nitrogen Cooler"
 	"display name" "液氮冷却器"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 01030
 	cost 60000
@@ -50,7 +50,7 @@ outfit "Liquid Nitrogen Cooler"
 
 outfit "Liquid Helium Cooler"
 	"display name" "液氦冷却器"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 01040
 	cost 150000
@@ -63,7 +63,7 @@ outfit "Liquid Helium Cooler"
 
 outfit "D14-RN Shield Generator"
 	"display name" "D14-RN 护盾发生器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 01010
 	cost 20000
@@ -76,7 +76,7 @@ outfit "D14-RN Shield Generator"
 
 outfit "D23-QP Shield Generator"
 	"display name" "D23-QP 护盾发生器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 01020
 	cost 35000
@@ -89,7 +89,7 @@ outfit "D23-QP Shield Generator"
 
 outfit "D41-HY Shield Generator"
 	"display name" "D41-HY 护盾发生器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 01030
 	cost 65000
@@ -102,7 +102,7 @@ outfit "D41-HY Shield Generator"
 
 outfit "D67-TM Shield Generator"
 	"display name" "D67-TM 护盾发生器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 01040
 	cost 120000
@@ -115,7 +115,7 @@ outfit "D67-TM Shield Generator"
 
 outfit "D94-YV Shield Generator"
 	"display name" "D94-YV 护盾发生器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 01050
 	cost 200000
@@ -128,7 +128,7 @@ outfit "D94-YV Shield Generator"
 
 outfit "S-270 Regenerator"
 	"display name" "S-270 再生器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 01060
 	cost 220000
@@ -143,7 +143,7 @@ outfit "S-270 Regenerator"
 
 outfit "S-970 Regenerator"
 	"display name" "S-970 再生器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 01070
 	cost 800000
@@ -159,7 +159,7 @@ outfit "S-970 Regenerator"
 
 outfit "Small Radar Jammer"
 	"display name" "小型雷达干扰器"
-	category "Systems"
+	category "系统"
 	series "Jammers"
 	index 01010
 	cost 24000
@@ -171,7 +171,7 @@ outfit "Small Radar Jammer"
 
 outfit "Large Radar Jammer"
 	"display name" "大型雷达干扰器"
-	category "Systems"
+	category "系统"
 	series "Jammers"
 	index 01020
 	cost 138000
@@ -184,7 +184,7 @@ outfit "Large Radar Jammer"
 
 outfit "Ramscoop"
 	"display name" "冲压采集器"
-	category "Systems"
+	category "系统"
 	series "Ramscoops"
 	index 01010
 	cost 60000
@@ -197,7 +197,7 @@ outfit "Ramscoop"
 
 outfit "Catalytic Ramscoop"
 	"display name" "催化冲压集气器"
-	category "Systems"
+	category "系统"
 	series "Ramscoops"
 	index 01020
 	cost 320000
@@ -209,7 +209,7 @@ outfit "Catalytic Ramscoop"
 
 outfit "Hyperdrive"
 	"display name" "超空间引擎"
-	category "Systems"
+	category "系统"
 	series "Drives"
 	index 10
 	cost 50000
@@ -224,7 +224,7 @@ outfit "Hyperdrive"
 
 outfit "Scram Drive"
 	"display name" "急停驱动器"
-	category "Systems"
+	category "系统"
 	series "Drives"
 	index 20
 	cost 90000
@@ -238,7 +238,7 @@ outfit "Scram Drive"
 
 outfit "Jump Drive"
 	"display name" "跃迁引擎"
-	category "Systems"
+	category "系统"
 	series "Drives"
 	index 30
 	cost 1000000
@@ -255,7 +255,7 @@ outfit "Jump Drive (Broken)"
 	plural "损坏的跳跃引擎"
 	series "Drives"
 	index 40
-	category "Systems"
+	category "系统"
 	cost 25000
 	thumbnail "outfit/jump drive (broken)"
 	"mass" 20
@@ -265,7 +265,7 @@ outfit "Jump Drive (Broken)"
 
 outfit "Cargo Scanner"
 	"display name" "货舱扫描仪"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 01020
 	cost 8000
@@ -278,7 +278,7 @@ outfit "Cargo Scanner"
 
 outfit "Outfit Scanner"
 	"display name" "装备扫描仪"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 01030
 	cost 24000
@@ -291,7 +291,7 @@ outfit "Outfit Scanner"
 
 outfit "Asteroid Scanner"
 	"display name" "小行星扫描仪"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 01010
 	cost 61000
@@ -303,7 +303,7 @@ outfit "Asteroid Scanner"
 
 outfit "Tactical Scanner"
 	"display name" "战术扫描仪"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 01040
 	cost 144000
@@ -315,7 +315,7 @@ outfit "Tactical Scanner"
 
 outfit "Surveillance Pod"
 	"display name" "侦察吊舱"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 01050
 	cost 122500
@@ -333,7 +333,7 @@ outfit "Surveillance Pod"
 
 outfit "Cloaking Device"
 	"display name" "隐形装置"
-	category "Unique"
+	category "独特"
 	series "Functional Unique"
 	index 10
 	cost 1200000
@@ -351,7 +351,7 @@ outfit "Cloaking Device"
 
 outfit "Outfits Expansion"
 	"display name" "装备扩展"
-	category "Systems"
+	category "系统"
 	series "Expansions"
 	index 20
 	cost 50000
@@ -367,7 +367,7 @@ outfit "Outfits Expansion"
 
 outfit "Cargo Expansion"
 	"display name" "货舱扩展"
-	category "Systems"
+	category "系统"
 	series "Expansions"
 	index 10
 	cost 30000
@@ -380,7 +380,7 @@ outfit "Cargo Expansion"
 
 outfit "Bunk Room"
 	"display name" "卧铺舱"
-	category "Systems"
+	category "系统"
 	series "Passenger"
 	index 20
 	cost 40000
@@ -393,7 +393,7 @@ outfit "Bunk Room"
 
 outfit "Small Bunk Room"
 	"display name" "小型铺位舱"
-	category "Systems"
+	category "系统"
 	series "Passenger"
 	index 10
 	cost 20000
@@ -406,7 +406,7 @@ outfit "Small Bunk Room"
 
 outfit "Brig"
 	"display name" "双桅横帆船"
-	category "Systems"
+	category "系统"
 	series "Passenger"
 	index 30
 	cost 40000
@@ -419,7 +419,7 @@ outfit "Brig"
 outfit "Luxury Accommodations"
 	"display name" "豪华客舱"
 	plural "豪华舱室"
-	category "Systems"
+	category "系统"
 	series "Passenger"
 	index 40
 	cost 250000
@@ -432,7 +432,7 @@ outfit "Luxury Accommodations"
 
 outfit "Fuel Pod"
 	"display name" "燃料吊舱"
-	category "Systems"
+	category "系统"
 	series "Fuel"
 	index 10
 	cost 20000
@@ -444,7 +444,7 @@ outfit "Fuel Pod"
 
 outfit "Interference Plating"
 	"display name" "干扰装甲板"
-	category "Systems"
+	category "系统"
 	series "Special Systems"
 	index 01010
 	cost 50000
@@ -457,7 +457,7 @@ outfit "Interference Plating"
 
 outfit "Laser Rifle"
 	"display name" "激光步枪"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 01010
 	cost 8000
@@ -470,7 +470,7 @@ outfit "Laser Rifle"
 outfit "Fragmentation Grenades"
 	"display name" "破片手雷"
 	plural "破片手雷"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 01020
 	cost 17000
@@ -482,7 +482,7 @@ outfit "Fragmentation Grenades"
 
 outfit "Security Station"
 	"display name" "安保站"
-	category "Hand to Hand"
+	category "近战"
 	series "Fortifications"
 	index 01010
 	cost 42000
@@ -496,7 +496,7 @@ outfit "Security Station"
 outfit "Nerve Gas"
 	"display name" "神经毒气"
 	plural "神经毒气"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 01030
 	cost 75000
@@ -510,7 +510,7 @@ outfit "Nerve Gas"
 
 outfit "Mug"
 	"display name" "马克杯"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 99010
 	cost 50
@@ -522,7 +522,7 @@ outfit "Mug"
 
 outfit "Antigrav Glass"
 	"display name" "反重力玻璃"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 99020
 	plural "反重力玻璃杯"
@@ -536,7 +536,7 @@ outfit "Antigrav Glass"
 
 outfit "Old Man's Sword"
 	"display name" "老人之剑"
-	category "Unique"
+	category "独特"
 	series "H2H"
 	index 99030
 	cost 220000
@@ -549,7 +549,7 @@ outfit "Old Man's Sword"
 
 outfit "Puny"
 	"display name" "渺小者"
-	category "Unique"
+	category "独特"
 	series "Non-Functional Unique"
 	index 10
 	"display name" `“小不点”`
@@ -560,7 +560,7 @@ outfit "Puny"
 
 outfit "Tear of Skade"
 	"display name" "斯卡德之泪"
-	category "Unique"
+	category "独特"
 	series "Functional Unique"
 	index 20
 	thumbnail "outfit/skadetear"
@@ -570,7 +570,7 @@ outfit "Tear of Skade"
 
 outfit "Blood of Surtr"
 	"display name" "苏尔特之血"
-	category "Unique"
+	category "独特"
 	series "Functional Unique"
 	index 21
 	thumbnail "outfit/surtrblood"
@@ -582,7 +582,7 @@ outfit "Blood of Surtr"
 
 outfit "Local Map"
 	"display name" "本地地图"
-	category "Special"
+	category "特殊"
 	cost 1000
 	thumbnail "outfit/map"
 	"map" 12
@@ -592,8 +592,8 @@ outfit "Local Map"
 
 outfit "Pilot's License"
 	"display name" "飞行员执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 01010
 	cost 120000
 	thumbnail "outfit/license"
@@ -601,48 +601,48 @@ outfit "Pilot's License"
 
 outfit "Navy License"
 	"display name" "海军执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 01020
 	thumbnail "outfit/navy license"
 	description "私人公民获准购买海军舰船作为私用的情况虽不寻常，但也并非闻所未闻。近期，一些富裕星球也开始向议会请愿，请求特别许可，以便为其私人安保部队购置海军战舰。"
 
 outfit "Navy Auxiliary License"
 	"display name" "海军辅助舰执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 01030
 	thumbnail "outfit/auxiliary license"
 	description "任何一种海军辅助舰被转作私用都是极其罕见的情况。"
 
 outfit "Navy Cruiser License"
 	"display name" "海军巡洋舰执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 01040
 	thumbnail "outfit/navy cruiser license"
 	description "获准购买海军主力舰作私用是一项极为罕见的特权——不仅是因为巡洋舰的强大火力，更因为它是共和国实力的有力象征。"
 
 outfit "Navy Carrier License"
 	"display name" "海军航母执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 01050
 	thumbnail "outfit/navy carrier license"
 	description "在过去的一个世纪里，只有极少数人获准购买海军航母作为私用，即便是退役的航母也是如此。"
 
 outfit "Militia License"
 	"display name" "民兵执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 01060
 	thumbnail "outfit/militia license"
 	description "这是所有应募加入地方民兵的飞行员的标配执照，但随着自由世界的成立，它也成为颁发给所有为自由世界事业而战之人的执照。它允许飞行员悬挂自由世界的旗帜，并购买这个新生政府研发的独特飞船。"
 
 outfit "City-Ship License"
 	"display name" "城市舰许可"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 01070
 	thumbnail "outfit/city-ship license"
 	description "你仔细端详执照上那艘飞船的剪影，但辨认不出它是哪种型号。或许这是一艘古老的城市飞船——那是首批带领人类在星际间走向辉煌的飞船之一。"

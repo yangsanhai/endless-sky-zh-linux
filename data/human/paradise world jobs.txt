@@ -18,7 +18,7 @@ mission "Paradise Job: Care Package"
 	repeat
 	deadline
 	description "一位焦急的母亲将支付你<payment>，要求你在<date>之前将一份装有<cargo>的爱心包裹送给她在<destination>上学的孩子。"
-	cargo "Food" 1
+	cargo "食物" 1
 	to offer
 		random < 10
 	source
@@ -41,7 +41,7 @@ mission "Paradise Job: Birthday Supplies"
 	repeat
 	deadline
 	description "一对老夫妇希望你在<date>前将<cargo>送至<destination>，为他们孙子的生日派对提供物资。报酬为<payment>。"
-	cargo "Luxury Goods" 1 3
+	cargo "奢侈品" 1 3
 	to offer
 		random < 10
 	source
@@ -64,7 +64,7 @@ mission "Paradise Job: Art Delivery"
 	repeat
 	deadline
 	description "为即将在<destination>举办的艺术展运送<cargo>，请在<date>前完成。报酬为<payment>。"
-	cargo "Luxury Goods" 1 2 .4
+	cargo "奢侈品" 1 2 .4
 	to offer
 		random < 10
 	source
@@ -112,7 +112,7 @@ mission "Paradise Job: Theater Props"
 	repeat
 	deadline
 	description "<destination>上的一个剧团需要运送<tons>的特殊<commodity>作为道具，用于<date>即将上演的演出。报酬为<payment>。"
-	cargo "Luxury Goods" 2 6 .35
+	cargo "奢侈品" 2 6 .35
 	to offer
 		random < 10
 	source
@@ -135,7 +135,7 @@ mission "Paradise Job: Fine Food"
 	repeat
 	deadline
 	description "<destination>上一家备受好评的餐厅寻求在<date>前获取<tons>的高级<commodity>。报酬为<payment>。"
-	cargo "Food" 2 5 .25
+	cargo "食物" 2 5 .25
 	to offer
 		random < 10
 	source
@@ -206,7 +206,7 @@ mission "Paradise Job: Food Donations"
 	job
 	repeat
 	description "<origin>的优秀市民们正在寻找一位富有同情心的船长，执行一项仁慈任务，将<cargo>捐赠给<destination>营养不良的人们。报酬为<payment>。"
-	cargo "Food" 7 2 .1
+	cargo "食物" 7 2 .1
 	to offer
 		random < 10
 	source
@@ -226,7 +226,7 @@ mission "Paradise Job: Clothing Donations"
 	job
 	repeat
 	description "<origin>的高尚市民们正在寻找一位富有同情心的船长，执行一项仁慈任务，向<destination>那些衣衫不整、与时尚隔绝的人们捐赠<cargo>。报酬为<payment>。"
-	cargo "Clothing" 7 2 .1
+	cargo "服装" 7 2 .1
 	to offer
 		random < 10
 	source
@@ -246,7 +246,7 @@ mission "Paradise Job: Medical Aid"
 	job
 	repeat
 	description "<origin>的善良市民们正在寻找一位富有同情心的船长，执行一项人道救援任务，将<cargo>捐赠给<destination>受苦的人们。报酬为<payment>。"
-	cargo "Medical" 7 2 .1
+	cargo "医疗用品" 7 2 .1
 	to offer
 		random < 10
 	source
@@ -266,7 +266,7 @@ mission "Paradise Job: Charity"
 	job
 	repeat
 	description "<origin>的优秀市民们正在寻找一位富有同情心的船长，执行一项慈善任务，将<cargo>捐赠给<destination>那些天真且文化发展不足的人们。报酬为<payment>。"
-	cargo "Luxury Goods" 7 2 .1
+	cargo "奢侈品" 7 2 .1
 	to offer
 		random < 10
 	source
@@ -287,7 +287,7 @@ mission "Paradise Job: Party Goods"
 	repeat
 	deadline
 	description "一场重要的盛会之后，<commodity>的行星地表供应正在减少。请在<stopovers>装载<tons>吨，并于<date>前返回<origin>。报酬为<payment>。"
-	cargo "Luxury Goods" 10 2 .1
+	cargo "奢侈品" 10 2 .1
 	to offer
 		random < 10
 	source
@@ -312,7 +312,7 @@ mission "Paradise Job: Estate Assets"
 	job
 	repeat
 	description "受托人正在寻找愿意将一位最近去世的正直公民的遗产各部分——<cargo>——运送至<destination>即将举行的遗产拍卖会的星舰船长。报酬为<payment>。"
-	cargo "Luxury Goods" 18 2 .15
+	cargo "奢侈品" 18 2 .15
 	to offer
 		random < 10
 	source
@@ -357,7 +357,7 @@ mission "Paradise Job: Waste Disposal"
 	job
 	repeat
 	description "需要紧急处理废弃物。将<cargo>运送到<destination>以防止房产价值下跌。报酬为<payment>。"
-	cargo "Garbage" 30 2 .03
+	cargo "垃圾" 30 2 .03
 	to offer
 		random < 10
 	source
@@ -419,7 +419,7 @@ mission "Pleasure cruise security"
 	description "护送<npc>乘坐观光游轮前往狂野而奇异的星球<stopovers>，并携带<tons>吨他们的<commodity>，然后返回<destination>，你将获得<payment>的报酬。"
 	job
 	repeat
-	cargo "Luxury Goods" 15 3 .17
+	cargo "奢侈品" 15 3 .17
 	to offer
 		random < 10
 		"combat rating" > 10
@@ -624,7 +624,7 @@ mission "Gemini Shipyards Shipment [0]"
 mission "Gemini Shipyards Shipment [1]"
 	name "运送至<planet>的货物"
 	description "将<cargo>运送至<destination>——双子星造船厂的所在地，它是共和国海军船坞的组成部分，也是人类空间中最先进的造船厂之一。报酬为<payment>。"
-	cargo "Ship Systems" 5 2 .1
+	cargo "舰船系统" 5 2 .1
 	job
 	repeat
 	to offer

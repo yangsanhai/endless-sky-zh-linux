@@ -16,7 +16,7 @@
 outfit "Small EM Battery"
 	"display name" "小型电磁电池"
 	plural "小型电磁电池"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 13010
 	cost 200000
@@ -34,7 +34,7 @@ outfit "Small EM Battery"
 outfit "Large EM Battery"
 	"display name" "大型电磁电池"
 	plural "大型电磁电池组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 13020
 	cost 1000000
@@ -51,7 +51,7 @@ outfit "Large EM Battery"
 
 outfit "Small Hybrid Cooling"
 	"display name" "小型混合冷却"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 13010
 	cost 200000
@@ -66,7 +66,7 @@ outfit "Small Hybrid Cooling"
 
 outfit "Large Hybrid Cooling"
 	"display name" "大型混合冷却"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 13020
 	cost 1000000
@@ -82,8 +82,8 @@ outfit "Large Hybrid Cooling"
 
 outfit "Fission Drive"
 	"display name" "裂变引擎"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 13010
 	cost 2650000
 	thumbnail "outfit/fissiondrive"
@@ -111,8 +111,8 @@ outfit "Fission Drive"
 
 outfit "Fusion Drive"
 	"display name" "聚变引擎"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 13020
 	cost 80000000
 	thumbnail "outfit/fusiondrive"
@@ -151,7 +151,7 @@ outfit "Fusion Drive"
 
 outfit "Electronic Warfare System"
 	"display name" "电子战系统"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 13010
 	cost 3400000
@@ -169,8 +169,8 @@ outfit "Electronic Warfare System"
 
 outfit "Dragonflame Cannon"
 	"display name" "龙焰炮"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 13020
 	cost 150000000
 	thumbnail "outfit/dragonflame"
@@ -244,7 +244,7 @@ effect "dragonflame debris"
 
 outfit "Sheragi Anti-Missile"
 	"display name" "谢拉吉反导"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 13010
 	cost 845000
@@ -276,8 +276,8 @@ effect "sheragiam"
 
 outfit "Particle Waveform Turret"
 	"display name" "粒子波形碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 13010
 	cost 1650000
 	thumbnail "outfit/pwave turret"
@@ -327,8 +327,8 @@ effect "pwave impact"
 
 outfit "Shard Fabricator"
 	"display name" "碎片制造器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 13010
 	cost 330000
 	thumbnail "outfit/shard"
@@ -392,8 +392,8 @@ effect "shard impact"
 
 outfit "Heavy Ion Cyclotron"
 	"display name" "重型离子回旋加速器"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 13010
 	cost 1650000
 	thumbnail "outfit/hion"

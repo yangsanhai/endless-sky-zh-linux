@@ -17,7 +17,7 @@
 outfit "Radiative Lamina"
 	"display name" "辐射薄层"
 	plural "辐射薄层板"
-	category "Systems"
+	category "系统"
 	series "Special Systems"
 	index 07010
 	cost 120000
@@ -33,7 +33,7 @@ outfit "Radiative Lamina"
 outfit "Concealment Lamina"
 	"display name" "隐蔽层板"
 	plural "隐匿薄片"
-	category "Systems"
+	category "系统"
 	series "Special Systems"
 	index 07020
 	licenses
@@ -52,7 +52,7 @@ outfit "Concealment Lamina"
 
 outfit "Magnetic Scoop"
 	"display name" "磁力收集器"
-	category "Systems"
+	category "系统"
 	series "Ramscoops"
 	index 07010
 	cost 720000
@@ -69,7 +69,7 @@ outfit "Magnetic Scoop"
 
 outfit "Plasmadyne Scoop"
 	"display name" "等离子动力采集器"
-	category "Systems"
+	category "系统"
 	series "Ramscoops"
 	index 07020
 	cost 30000000
@@ -91,7 +91,7 @@ outfit "Plasmadyne Scoop"
 
 outfit "Deuterium Slush Tank"
 	"display name" "氘浆储罐"
-	category "Systems"
+	category "系统"
 	series "Fuel"
 	index 07010
 	cost 240000
@@ -106,7 +106,7 @@ outfit "Deuterium Slush Tank"
 
 outfit "Cryogenic Deuterium Tank"
 	"display name" "低温氘储罐"
-	category "Systems"
+	category "系统"
 	series "Fuel"
 	index 07020
 	cost 120000
@@ -120,7 +120,7 @@ outfit "Cryogenic Deuterium Tank"
 
 outfit "Heatsink Partition"
 	"display name" "散热片隔板"
-	category "Systems"
+	category "系统"
 	series "Fuel"
 	index 07030
 	cost 60000
@@ -134,7 +134,7 @@ outfit "Heatsink Partition"
 
 outfit "Multispectral Scanner"
 	"display name" "多光谱扫描仪"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 07010
 	cost 360000
@@ -150,7 +150,7 @@ outfit "Multispectral Scanner"
 
 outfit "Spectrometer Array"
 	"display name" "光谱仪阵列"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 07020
 	cost 450000
@@ -170,7 +170,7 @@ outfit "Spectrometer Array"
 
 outfit "Diffuse Deflector"
 	"display name" "漫射偏导器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 07010
 	cost 450000
@@ -188,7 +188,7 @@ outfit "Diffuse Deflector"
 
 outfit "Specular Deflector"
 	"display name" "镜面偏导器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 07020
 	cost 1200000
@@ -209,7 +209,7 @@ outfit "Specular Deflector"
 
 outfit "Concentrating Solar Cell"
 	"display name" "聚光太阳能电池"
-	category "Power"
+	category "能源"
 	series "Solar"
 	index 07010
 	cost 12000
@@ -223,7 +223,7 @@ outfit "Concentrating Solar Cell"
 
 outfit "Concentrating Solar Array"
 	"display name" "聚光太阳能阵列"
-	category "Power"
+	category "能源"
 	series "Solar"
 	index 07020
 	cost 90000
@@ -239,7 +239,7 @@ outfit "Concentrating Solar Array"
 outfit "Photoelectric Lamina"
 	"display name" "光电薄层"
 	plural "光电薄层"
-	category "Power"
+	category "能源"
 	series "Solar"
 	index 07030
 	cost 420000
@@ -254,7 +254,7 @@ outfit "Photoelectric Lamina"
 
 outfit "Lantern Fission Core"
 	"display name" "提灯裂变核心"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 07010
 	cost 1500000
@@ -270,7 +270,7 @@ outfit "Lantern Fission Core"
 
 outfit "Ultracapacitor Cell"
 	"display name" "超级电容器单元"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 07010
 	cost 14400
@@ -285,7 +285,7 @@ outfit "Ultracapacitor Cell"
 	
 outfit "Ultracapacitor Bank"
 	"display name" "超级电容器组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 07020
 	cost 72000
@@ -302,8 +302,8 @@ outfit "Ultracapacitor Bank"
 
 outfit "Magnetoplasma Drive"
 	"display name" "磁等离子引擎"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07010
 	"cost" 27000
 	thumbnail "outfit/magnetoplasma drive"
@@ -335,8 +335,8 @@ outfit "Magnetoplasma Drive"
 
 outfit "Vapor Nuclear Rocket"
 	"display name" "蒸汽核火箭"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07010
 	"cost" 900000
 	thumbnail "outfit/vapor nuclear rocket"
@@ -358,8 +358,8 @@ outfit "Vapor Nuclear Rocket"
 
 
 outfit `A-3600 "Beam" Amat Drive`
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07080
 	"cost" 300000000
 	thumbnail "outfit/beam antimatter drive"
@@ -389,8 +389,8 @@ outfit `A-3600 "Beam" Amat Drive`
 
 outfit `Z-333 "Spark" Fusion Torch`
 	plural `Z-333“火花”聚变火炬组`
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07050
 	licenses
 		"Avgi Torch"
@@ -418,8 +418,8 @@ outfit `Z-333 "Spark" Fusion Torch`
 
 outfit `Z-666 "Zap" Fusion Torch`
 	plural `Z-666“电击”聚变火炬组`
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07060
 	licenses
 		"Avgi Torch"
@@ -446,8 +446,8 @@ outfit `Z-666 "Zap" Fusion Torch`
 
 outfit `Z-999 "Arc" Fusion Torch`
 	plural `Z-999“电弧”聚变火炬组`
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07070
 	licenses
 		"Avgi Torch"
@@ -499,8 +499,8 @@ effect "large remass injection"
 
 outfit "Remass Injector"
 	"display name" "工质注入器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07099
 	licenses
 		"Avgi Torch"
@@ -520,8 +520,8 @@ outfit "Remass Injector"
 
 outfit "Inductive Extractor"
 	"display name" "感应提取器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07098
 	licenses
 		"Avgi Torch"
@@ -543,8 +543,8 @@ outfit "Inductive Extractor"
 outfit "R-180 RCS Thrusters"
 	"display name" "R-180 姿控推进器"
 	plural "R-180 姿控推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07020
 	"cost" 54000
 	thumbnail "outfit/rcs small"
@@ -571,8 +571,8 @@ outfit "R-180 RCS Thrusters"
 outfit "R-360 RCS Thrusters"
 	"display name" "R-360 姿控推进器"
 	plural "R-360 姿控推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07030
 	"cost" 126000
 	thumbnail "outfit/rcs medium"
@@ -599,8 +599,8 @@ outfit "R-360 RCS Thrusters"
 outfit "R-720 RCS Thrusters"
 	"display name" "R-720 姿控推进器"
 	plural "R-720 姿控推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 07040
 	"cost" 270000
 	thumbnail "outfit/rcs large"
@@ -629,7 +629,7 @@ outfit "R-720 RCS Thrusters"
 
 outfit "Optical Laser Rifle"
 	"display name" "光学激光步枪"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 07010
 	cost 12000
@@ -643,7 +643,7 @@ outfit "Optical Laser Rifle"
 
 outfit "Trefoil Board"
 	"display name" "三叶板"
-	category "Unique"
+	category "独特"
 	series "Functional Unique"
 	index 07010
 	cost 69000
@@ -667,7 +667,7 @@ outfit "Damselflyman"
 
 outfit "Lancet Adamant"
 	"display name" "柳叶刀·金刚"
-	category "Unique"
+	category "独特"
 	series "Functional Unique"
 	index 07020
 	cost 3000000
@@ -680,21 +680,21 @@ outfit "Lancet Adamant"
 
 outfit "Twilight Guard License"
 	"display name" "暮光守卫执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 07010
 	thumbnail "outfit/unknown"
 
 outfit "Avgi Torch License"
 	"display name" "阿夫吉火炬许可"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 07020
 	thumbnail "outfit/unknown"
 
 outfit "Avgi Atomics License"
 	"display name" "阿夫吉核能许可"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 07020
 	thumbnail "outfit/unknown"

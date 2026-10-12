@@ -305,7 +305,7 @@ mission "Tycho Crater Shipyards Shipment [0]"
 mission "Tycho Crater Shipyards Shipment [1]"
 	name "运送至<planet>的货物"
 	description "将 <cargo> 运送至 <destination>，即共和国海军造船厂的组成部分——第谷陨石坑造船厂的所在地。报酬为 <payment>。"
-	cargo "Ship Alloys" 5 2 .1
+	cargo "舰船合金" 5 2 .1
 	job
 	repeat
 	to offer
@@ -323,7 +323,7 @@ mission "Tycho Crater Shipyards Shipment [1]"
 mission "Tycho Crater Shipyards Shipment [2]"
 	name "运送至<planet>的货物"
 	description "将 <cargo> 运送至 <destination>，即共和国海军造船厂的组成部分——第谷陨石坑造船厂的所在地。报酬为 <payment>。"
-	cargo "Ship Systems" 5 2 .1
+	cargo "舰船系统" 5 2 .1
 	job
 	repeat
 	to offer

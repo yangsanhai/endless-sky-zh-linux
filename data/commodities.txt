@@ -12,7 +12,7 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 trade
-	commodity "Food" 100 600
+	commodity "食物" 100 600
 		"acorns"
 		"acorn bread"
 		"alfalfa"
@@ -238,7 +238,7 @@ trade
 		"yogurt"
 		"zucchini"
 		"zucchini bread"
-	commodity "Clothing" 140 440
+	commodity "服装" 140 440
 		"athletic wear"
 		"balaclavas"
 		"ball gowns"
@@ -356,7 +356,7 @@ trade
 		"wool"
 		"work boots"
 		"zippers"
-	commodity "Metal" 190 590
+	commodity "金属" 190 590
 		"aluminized steel"
 		"aluminum"
 		"beryllium"
@@ -408,7 +408,7 @@ trade
 		"tool steel blanks"
 		"vanadium"
 		"zinc"
-	commodity "Plastic" 240 540
+	commodity "塑料" 240 540
 		"acetone"
 		"asphalt"
 		"bakelite"
@@ -448,7 +448,7 @@ trade
 		"unplasticized PVC"
 		"vinylesters"
 		"xylene"
-	commodity "Equipment" 330 730
+	commodity "设备" 330 730
 		"3D printers"
 		"CNC machines"
 		"air conditioners"
@@ -525,7 +525,7 @@ trade
 		"welding torches"
 		"wheelbarrows"
 		"whiskey barrels"
-	commodity "Medical" 430 930
+	commodity "医疗用品" 430 930
 		"antibacterials"
 		"antibiotics"
 		"anti-inflammatories"
@@ -600,7 +600,7 @@ trade
 		"tweezers"
 		"wheelchairs"
 		"X-ray machines"
-	commodity "Industrial" 520 920
+	commodity "工业品" 520 920
 		"aniline dyes"
 		"assorted shimstock"
 		"battery acid"
@@ -676,7 +676,7 @@ trade
 		"vacuum cleaners"
 		"varnish"
 		"wood"
-	commodity "Electronics" 590 890
+	commodity "电子产品" 590 890
 		"accelerometers"
 		"amplifiers"
 		"antennae"
@@ -748,7 +748,7 @@ trade
 		"voltage converters"
 		"wireless receivers"
 		"wires"
-	commodity "Heavy Metals" 610 1310
+	commodity "重金属" 610 1310
 		"actinide metals"
 		"barium"
 		"bismuth"
@@ -770,7 +770,7 @@ trade
 		"reactor-grade uranium"
 		"thorium"
 		"tungsten"
-	commodity "Luxury Goods" 920 1520
+	commodity "奢侈品" 920 1520
 		"agates"
 		"amber"
 		"amethysts"
@@ -839,7 +839,7 @@ trade
 		"whiskey"
 		"wine"
 		"yachts"
-	commodity "Garbage"
+	commodity "垃圾"
 		"animal by-products"
 		"biological waste"
 		"broken appliances"
@@ -881,7 +881,7 @@ trade
 		"used syringes"
 		"volatile gases"
 		"waste"
-	commodity "Construction"
+	commodity "建材"
 		"bolts"
 		"box girders"
 		"carbon steel"
@@ -919,7 +919,7 @@ trade
 		"welding rods"
 		"windows"
 		"wood"
-	commodity "Illegal Substances"
+	commodity "违禁品"
 		"bad blues"
 		"boosters"
 		"bootleg alcohol"
@@ -938,7 +938,7 @@ trade
 		"steam"
 		"steroids"
 		"stolen pharmaceuticals"
-	commodity "Highly Illegal Substances"
+	commodity "严重违禁品"
 		"death sticks"
 		"fire apples"
 		"hot wings"
@@ -950,7 +950,7 @@ trade
 		"stardust"
 		"toad juice"
 		"whale blubber"
-	commodity "Illegal Cargo"
+	commodity "违禁货物"
 		"banned pesticides"
 		"counterfeit artwork"
 		"counterfeit credits"
@@ -1020,7 +1020,7 @@ trade
 		"untraceable electronics"
 		"weaponized cows"
 		"weaponized pigs"
-	commodity "Highly Illegal Cargo"
+	commodity "严重违禁货物"
 		"assassin drones"
 		"assassin robots"
 		"bioweapons"
@@ -1053,11 +1053,11 @@ trade
 		"unregistered weapons"
 		"weaponized chickens"
 		"weapons-grade uranium"
-	commodity "void sprite parts"
+	commodity "虚空精灵部件"
 		"dismembered void sprites"
-		"void sprite parts"
+		"虚空精灵部件"
 		"void sprite limbs"
-	commodity "Military"
+	commodity "军需品"
 		"ammunition"
 		"armor plating"
 		"armored cars"
@@ -1100,7 +1100,7 @@ trade
 		"targeting systems"
 		"tents"
 		"transport vehicles"
-	commodity "Ship Systems"
+	commodity "舰船系统"
 		"auxiliary ramscoops"
 		"bulkhead control systems"
 		"cargo scoops"
@@ -1136,7 +1136,7 @@ trade
 		"ventilation systems"
 		"weapon mounts"
 		"weapons control systems"
-	commodity "Ship Alloys"
+	commodity "舰船合金"
 		"aluminum ship plating"
 		"civilian-grade ship alloys"
 		"combat-grade ship alloys"
@@ -1144,7 +1144,7 @@ trade
 		"lightweight ship alloys"
 		"ship alloys"
 		"titanium ship plating"
-	commodity "frozen aid"
+	commodity "冰封援助物资"
 		"blankets"
 		"emergency fuel"
 		"field rations"
@@ -1154,7 +1154,7 @@ trade
 		"mittens"
 		"parkas"
 		"tuques"
-	commodity "flames aid"
+	commodity "火焰援助物资"
 		"air quality detectors"
 		"airborne fire suppressant drones"
 		"aloe vera gel"

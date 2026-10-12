@@ -358,9 +358,9 @@ event "remnant: ssil vida activation"
 		trade Electronics 792
 		trade Equipment 626
 		trade Food 403
-		trade "Heavy Metals" 1043
+		trade "重金属" 1043
 		trade Industrial 872
-		trade "Luxury Goods" 1041
+		trade "奢侈品" 1041
 		trade Medical 508
 		trade Metal 272
 		trade Plastic 289
@@ -503,9 +503,9 @@ event "remnant: ssil vida activation"
 		trade Electronics 740
 		trade Equipment 465
 		trade Food 426
-		trade "Heavy Metals" 802
+		trade "重金属" 802
 		trade Industrial 726
-		trade "Luxury Goods" 1007
+		trade "奢侈品" 1007
 		trade Medical 736
 		trade Metal 407
 		trade Plastic 222
@@ -1031,9 +1031,9 @@ event "remnant: ssil vida activation patir 3"
 		trade Electronics 792
 		trade Equipment 626
 		trade Food 403
-		trade "Heavy Metals" 1043
+		trade "重金属" 1043
 		trade Industrial 872
-		trade "Luxury Goods" 1041
+		trade "奢侈品" 1041
 		trade Medical 508
 		trade Metal 272
 		trade Plastic 289
@@ -1176,9 +1176,9 @@ event "remnant: ssil vida activation patir 3"
 		trade Electronics 740
 		trade Equipment 465
 		trade Food 426
-		trade "Heavy Metals" 802
+		trade "重金属" 802
 		trade Industrial 726
-		trade "Luxury Goods" 1007
+		trade "奢侈品" 1007
 		trade Medical 736
 		trade Metal 407
 		trade Plastic 222

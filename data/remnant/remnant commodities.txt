@@ -13,7 +13,7 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 trade
-	commodity "remnant civil"
+	commodity "遗民民用物资"
 		"power distribution controls"
 		"sewage treatment modules"
 		"road grading and surfacing equipment"
@@ -33,7 +33,7 @@ trade
 		"civil defense emergency supplies"
 		"portable machine shop modules"
 		"local network repeaters and uplinks"
-	commodity "remnant industrial"
+	commodity "遗民工业物资"
 		"chemical process equipment"
 		"reactor vessels"
 		"welding and fabrication robots"
@@ -63,7 +63,7 @@ trade
 		"sintered metal filters"
 		"industrial gases"
 		"ultrasonic agitators"
-	commodity "remnant outfitter repair"
+	commodity "遗民装备维修件"
 		"Inhibitor Cannon"
 		"Thrasher Cannon"
 		"Thrasher Turret"
@@ -84,7 +84,7 @@ trade
 		"Crucible-Class Steering"
 		"Forge-Class Steering"
 		"Smelter-Class Steering"
-	commodity "remnant salvage"
+	commodity "遗民打捞物"
 		"salvaged Builder"
 		"Ka'het Nullifier"
 		"Ka'het Ravager Beam"

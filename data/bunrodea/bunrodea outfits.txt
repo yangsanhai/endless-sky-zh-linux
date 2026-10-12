@@ -13,7 +13,7 @@
 
 outfit "Shield Relay Booster"
 	"display name" "护盾中继增强器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 10098
 	cost 59000
@@ -27,7 +27,7 @@ outfit "Shield Relay Booster"
 
 outfit "Shield Relay Limiter"
 	"display name" "护盾中继限制器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 10099
 	cost 12000
@@ -41,7 +41,7 @@ outfit "Shield Relay Limiter"
 
 outfit "Small Shield Relay"
 	"display name" "小型护盾中继器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 10010
 	cost 172000
@@ -58,7 +58,7 @@ outfit "Small Shield Relay"
 
 outfit "Large Shield Relay"
 	"display name" "大型护盾中继器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 10020
 	cost 593000
@@ -77,7 +77,7 @@ outfit "Large Shield Relay"
 
 outfit "Nanite Enhancer"
 	"display name" "纳米机增强器"
-	category "Systems"
+	category "系统"
 	series "Repair"
 	index 10098
 	cost 76000
@@ -91,7 +91,7 @@ outfit "Nanite Enhancer"
 
 outfit "Nanite Limiter"
 	"display name" "纳米机限制器"
-	category "Systems"
+	category "系统"
 	series "Repair"
 	index 10099
 	cost 21000
@@ -105,7 +105,7 @@ outfit "Nanite Limiter"
 
 outfit "Small Nanite Fabricator"
 	"display name" "小型纳米机装配器"
-	category "Systems"
+	category "系统"
 	series "Repair"
 	index 10010
 	cost 650000
@@ -122,7 +122,7 @@ outfit "Small Nanite Fabricator"
 
 outfit "Large Nanite Fabricator"
 	"display name" "大型纳米机装配器"
-	category "Systems"
+	category "系统"
 	series "Repair"
 	index 10020
 	cost 1940000
@@ -142,7 +142,7 @@ outfit "Large Nanite Fabricator"
 outfit "Solar Battery"
 	"display name" "太阳能电池板"
 	plural "太阳能蓄电池"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 10010
 	cost 49000
@@ -156,7 +156,7 @@ outfit "Solar Battery"
 
 outfit "Solar Cell"
 	"display name" "太阳能电池"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 10020
 	cost 17000
@@ -173,7 +173,7 @@ outfit "Solar Cell"
 
 outfit "Reactor Overclocker"
 	"display name" "反应堆超频器"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 10098
 	cost 142000
@@ -187,7 +187,7 @@ outfit "Reactor Overclocker"
 
 outfit "Reactor Limiter"
 	"display name" "反应堆限制器"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 10099
 	cost 26000
@@ -201,7 +201,7 @@ outfit "Reactor Limiter"
 
 outfit "Quark Reactor"
 	"display name" "夸克反应堆"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 10010
 	cost 3367000
@@ -218,7 +218,7 @@ outfit "Quark Reactor"
 
 outfit "Electroweak Reactor"
 	"display name" "电弱反应堆"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 10020
 	cost 8393000
@@ -235,7 +235,7 @@ outfit "Electroweak Reactor"
 
 outfit "Dark Reactor"
 	"display name" "黑暗反应堆"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 10030
 	cost 15022000
@@ -254,7 +254,7 @@ outfit "Dark Reactor"
 
 outfit "Lasher Pistol"
 	"display name" "鞭笞手枪"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 10010
 	cost 47000
@@ -268,8 +268,8 @@ outfit "Lasher Pistol"
 
 outfit "Chiisana Rift Thruster"
 	"display name" "奇伊萨纳裂隙推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 10011
 	cost 130000
 	thumbnail "outfit/chiisana rift thruster"
@@ -288,8 +288,8 @@ outfit "Chiisana Rift Thruster"
 
 outfit "Nami Rift Thruster"
 	"display name" "纳米裂隙推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 10021
 	cost 262000
 	thumbnail "outfit/nami rift thruster"
@@ -308,8 +308,8 @@ outfit "Nami Rift Thruster"
 
 outfit "Ookii Rift Thruster"
 	"display name" "奥基裂隙推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 10031
 	cost 512000
 	thumbnail "outfit/ookii rift thruster"
@@ -328,8 +328,8 @@ outfit "Ookii Rift Thruster"
 
 outfit "Subarashii Rift Thruster"
 	"display name" "素晴裂隙推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 10041
 	cost 1004000
 	thumbnail "outfit/subarashii rift thruster"
@@ -347,8 +347,8 @@ outfit "Subarashii Rift Thruster"
 
 outfit "Chiisana Rift Steering"
 	"display name" "奇伊萨纳裂隙转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 10010
 	cost 201000
 	thumbnail "outfit/chiisana rift steering"
@@ -367,8 +367,8 @@ outfit "Chiisana Rift Steering"
 
 outfit "Nami Rift Steering"
 	"display name" "纳米裂隙转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 10020
 	cost 442000
 	thumbnail "outfit/nami rift steering"
@@ -387,8 +387,8 @@ outfit "Nami Rift Steering"
 
 outfit "Ookii Rift Steering"
 	"display name" "奥基裂隙转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 10030
 	cost 940000
 	thumbnail "outfit/ookii rift steering"
@@ -407,8 +407,8 @@ outfit "Ookii Rift Steering"
 
 outfit "Subarashii Rift Steering"
 	"display name" "素晴裂隙转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 10040
 	cost 1577000
 	thumbnail "outfit/subarashii rift steering"

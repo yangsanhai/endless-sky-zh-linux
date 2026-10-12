@@ -17,7 +17,7 @@ ship "Pug Zibruka"
 	thumbnail "thumbnail/pug zibruka"
 	"administrative cost" 1
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 1900000
 		"shields" 4000
 		"hull" 1000
@@ -69,7 +69,7 @@ ship "Pug Enfolta"
 	thumbnail "thumbnail/pug enfolta"
 	"administrative cost" 3
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 6300000
 		"shields" 6800
 		"hull" 1700
@@ -126,7 +126,7 @@ ship "Pug Maboro"
 	thumbnail "thumbnail/pug maboro"
 	"administrative cost" 6
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 9500000
 		"shields" 12600
 		"hull" 2700
@@ -185,7 +185,7 @@ ship "Pug Arfecta"
 	thumbnail "thumbnail/pug arfecta"
 	"administrative cost" 10
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 90000000
 		"shields" 98000
 		"hull" 80000

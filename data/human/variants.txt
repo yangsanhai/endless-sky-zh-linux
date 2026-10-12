@@ -232,10 +232,10 @@ ship "Auxiliary" "Auxiliary (Jump Transport)"
 	turret 0 -17
 	turret 0 20
 	turret 0 78 "Heavy Anti-Missile Turret"
-	bay "Fighter" 0 -74
-	bay "Fighter" 0 -17
-	bay "Fighter" 0 20
-	bay "Fighter" 0 78
+	bay "战斗机" 0 -74
+	bay "战斗机" 0 -17
+	bay "战斗机" 0 20
+	bay "战斗机" 0 78
 
 
 

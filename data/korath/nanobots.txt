@@ -14,7 +14,7 @@
 ship "Nanobot"
 	"display name" "纳米机器人"
 	attributes
-		category "Unclassified"
+		category "未分类"
 		"hull" 100
 		"automaton" 1
 		"mass" 10
@@ -38,8 +38,8 @@ ship "Nanobot"
 
 outfit "Nano Strike"
 	"display name" "纳米打击"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 99090
 	thumbnail "outfit/unknown"
 	"mass" 5

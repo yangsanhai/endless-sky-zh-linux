@@ -23,7 +23,7 @@ person "Michael Zahniser"
 		thumbnail "thumbnail/kestreloriginal"
 		"never disabled"
 		attributes
-			category "Heavy Warship"
+			category "重型战舰"
 			"cost" 50000000
 			"shields" 40000
 			"hull" 40000
@@ -75,9 +75,9 @@ person "Michael Zahniser"
 		turret 23 14 "Electron Turret"
 		turret -23 14 "Heavy Anti-Missile Turret"
 		turret 23 14 "Heavy Anti-Missile Turret"
-		bay "Fighter" -46 106 under
+		bay "战斗机" -46 106 under
 			"launch effect" "human internal"
-		bay "Fighter" 46 106 under
+		bay "战斗机" 46 106 under
 			"launch effect" "human internal"
 		explode "small explosion" 50
 		explode "medium explosion" 80
@@ -135,7 +135,7 @@ ship "Wardragon"
 	thumbnail "thumbnail/wardragon"
 	"administrative cost" 11
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 5900000
 		"shields" 160000
 		"hull" 50000
@@ -279,7 +279,7 @@ ship "Marauder Fury"
 	"administrative cost" 1
 	thumbnail "thumbnail/mfury"
 	attributes
-		category "Interceptor"
+		category "截击机"
 		"cost" 750000
 		"shields" 3000
 		"hull" 600
@@ -397,7 +397,7 @@ person "Captain Nate"
 		sprite "ship/pointedstick vanguard"
 		"never disabled"
 		attributes
-			category "Heavy Warship"
+			category "重型战舰"
 			"cost" 7200000
 			"shields" 20000
 			"hull" 8000
@@ -511,7 +511,7 @@ ship "Lampyrid-Class Transport"
 	thumbnail "thumbnail/lampyrid"
 	"administrative cost" 2
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		cost 2760000
 		"shields" 5400
 		"hull" 4400
@@ -660,7 +660,7 @@ ship "Modified Osprey"
 	"administrative cost" 8
 	swizzle 3
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 44000000
 		"shields" 41000
 		"shield generation" 10
@@ -836,7 +836,7 @@ ship "Ursa Polaris"
 	sprite "ship/localworldship"
 	"administrative cost" 10
 	attributes
-		category "Unclassified"
+		category "未分类"
 		cost 142857
 		shields 39000
 		hull 27000
@@ -907,7 +907,7 @@ ship "Ursa Polaris"
 
 outfit "LG Gridfire Turret"
 	"display name" "LG 网火碉塔"
-	category "Turrets"
+	category "炮塔"
 	"turret mounts" -1
 	weapon
 		"hardpoint sprite" "hardpoint/pug gridfire turret"
@@ -1042,7 +1042,7 @@ ship "Shooting Star"
 	sprite "ship/shooting star/shooting star"
 		"frame time" 3
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"hull" 31500
 		"threshold percentage" 0.05
 		"automaton" 200
@@ -1095,7 +1095,7 @@ ship "Shooting Star"
 
 outfit "Crystal Projector"
 	"display name" "水晶投射器"
-	category "Systems"
+	category "系统"
 	"cost" 1492
 	thumbnail "outfit/rock 0"
 	"mass" 2
@@ -1110,7 +1110,7 @@ outfit "Crystal Projector"
 
 outfit "Floating Crystal"
 	"display name" "漂浮水晶"
-	category "Systems"
+	category "系统"
 	"cost" 1861
 	thumbnail "outfit/rock 3"
 	"mass" 3
@@ -1131,7 +1131,7 @@ outfit "Floating Crystal"
 outfit "Crystalline Formation"
 	"display name" "晶体构造"
 	"cost" 1914
-	category "Systems"
+	category "系统"
 	thumbnail "outfit/rock 2"
 	"mass" 1
 	"outfit space" -1
@@ -1153,7 +1153,7 @@ outfit "Crystalline Formation"
 outfit "Hexagonal Crystal"
 	"display name" "六角水晶"
 	"cost" 1939
-	category "Systems"
+	category "系统"
 	thumbnail "outfit/rock 4"
 	"mass" 1
 	"outfit space" -1
@@ -1177,7 +1177,7 @@ outfit "Hexagonal Crystal"
 outfit "Tree Skeleton Key Stone"
 	"display name" "树骨钥石"
 	"cost" 2003
-	category "Systems"
+	category "系统"
 	thumbnail "outfit/rock 1"
 	"mass" 1
 	"outfit space" -1
@@ -1279,7 +1279,7 @@ ship "Marauder Bactrian"
 	attributes
 		licenses
 			City-Ship
-		category "Transport"
+		category "运输船"
 		"cost" 17600000
 		"shields" 30000
 		"hull" 12000
@@ -1483,7 +1483,7 @@ ship "Modified Boxwing"
 	thumbnail "thumbnail/modified boxwing"
 	"administrative cost" 2
 	attributes
-		category "Interceptor"
+		category "截击机"
 		cost 3690000
 		"shields" 8000
 		"hull" 8000
@@ -1591,7 +1591,7 @@ ship "Modified Battleship"
 	thumbnail "thumbnail/battleship"
 	"administrative cost" 8
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 35000000
 		"shields" 36000
 		"hull" 26000
@@ -1670,7 +1670,7 @@ ship "Modified Battleship"
 
 outfit "Prototype Fusion Cannon"
 	"display name" "原型聚变炮"
-	category "Secondary Weapons"
+	category "副武器"
 	cost 160000000
 	thumbnail "outfit/fusion cannon"
 	"mass" 145
@@ -1832,7 +1832,7 @@ ship "Modified Ladybug"
 	thumbnail "ship/modified ladybug"
 	"administrative cost" 6
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 8950000
 		
 		# Shaming the Solifuge
@@ -2052,7 +2052,7 @@ ship "Waverider"
 	sprite "ship/waverider"
 	"administrative cost" 2
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 3000000
 		"shields" 10000
 		"hull" 7000
@@ -2100,7 +2100,7 @@ ship "Waverider"
 
 outfit "Emotional Baggage"
 	"display name" "情感包袱"
-	category "Unique"
+	category "独特"
 	thumbnail "outfit/unknown"
 	description `它是成就当今审阅者的一切事物的实体化身。`
 	description `	很遗憾，此物品不出售。`
@@ -2227,7 +2227,7 @@ ship "Modified Hauler VI"
 	thumbnail "thumbnail/hauler vi"
 	"administrative cost" 5
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		"shields" 13200
 		"hull" 26800
 		"required crew" 3

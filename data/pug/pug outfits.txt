@@ -13,8 +13,8 @@
 
 outfit "Pug Zapper"
 	"display name" "巴格电击炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 90020
 	cost 290000
 	thumbnail "outfit/pug zapper"
@@ -41,8 +41,8 @@ outfit "Pug Zapper"
 
 outfit "Pug Zapper Turret"
 	"display name" "巴格电击碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 90010
 	cost 860000
 	thumbnail "outfit/pug zapper turret"
@@ -81,8 +81,8 @@ effect "zapper impact"
 
 outfit "Pug Seeker"
 	"display name" "巴格追踪弹"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 90010
 	cost 540000
 	thumbnail "outfit/pug seeker"
@@ -128,7 +128,7 @@ effect "seeker impact"
 
 outfit "Pug Anti-Missile"
 	"display name" "巴格反导"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 90010
 	cost 350000
@@ -161,7 +161,7 @@ effect "pug anti-missile"
 
 outfit "Tier 3 Anti-Missile"
 	"display name" "三级反导"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 90020
 	cost 12000000
@@ -202,8 +202,8 @@ effect "tier 3 anti-missile die"
 
 outfit "Pug Gridfire Turret"
 	"display name" "巴格网格火力碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 90020
 	cost 24000000
 	thumbnail "outfit/pug gridfire turret"
@@ -261,8 +261,8 @@ effect "gridfire cloud"
 
 outfit "Pug Akfar Thruster"
 	"display name" "巴格阿克法推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 90011
 	"cost" 608000
 	thumbnail "outfit/pug akfar thruster"
@@ -279,8 +279,8 @@ outfit "Pug Akfar Thruster"
 
 outfit "Pug Akfar Steering"
 	"display name" "巴格阿克法转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 90010
 	"cost" 472000
 	thumbnail "outfit/pug akfar steering"
@@ -297,8 +297,8 @@ outfit "Pug Akfar Steering"
 
 outfit "Pug Cormet Thruster"
 	"display name" "巴格科梅特推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 90021
 	"cost" 1050000
 	thumbnail "outfit/pug cormet thruster"
@@ -315,8 +315,8 @@ outfit "Pug Cormet Thruster"
 
 outfit "Pug Cormet Steering"
 	"display name" "巴格科梅特转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 90020
 	"cost" 880000
 	thumbnail "outfit/pug cormet steering"
@@ -333,8 +333,8 @@ outfit "Pug Cormet Steering"
 
 outfit "Pug Lohmar Thruster"
 	"display name" "巴格洛马尔推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 90031
 	"cost" 1740000
 	thumbnail "outfit/pug lohmar thruster"
@@ -351,8 +351,8 @@ outfit "Pug Lohmar Thruster"
 
 outfit "Pug Lohmar Steering"
 	"display name" "巴格洛马尔转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 90030
 	"cost" 1580000
 	thumbnail "outfit/pug lohmar steering"
@@ -372,7 +372,7 @@ outfit "Pug Lohmar Steering"
 outfit "Pug Biodefenses"
 	"display name" "巴格生物防御"
 	plural "帕格生物防御系统"
-	category "Hand to Hand"
+	category "近战"
 	series "Fortifications"
 	index 90020
 	cost 100000
@@ -384,7 +384,7 @@ outfit "Pug Biodefenses"
 outfit "Pug Peacekeeping Staff"
 	"display name" "巴格维和杖"
 	plural "帕格维和杖"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 90010
 	cost 123456

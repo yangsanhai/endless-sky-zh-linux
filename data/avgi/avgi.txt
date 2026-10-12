@@ -1001,7 +1001,7 @@ phrase "avgi physics"
 
 
 trade
-	commodity "Avgi Cargo"
+	commodity "阿夫吉货物"
 	# Food
 		"amine concentrate"
 		"avian meat"
@@ -1285,7 +1285,7 @@ trade
 		"ultracapacitors"
 		"voltage multipliers"
 
-	commodity "Avgi Megaconstruction"
+	commodity "阿夫吉巨型建材"
 		"boron nanofibers"
 		"boron nanofilaments"
 		"carbon nanofibers"
@@ -1300,7 +1300,7 @@ trade
 		"graphene tubes"
 		"graphene"
 
-	commodity "Avgi Nuclear"
+	commodity "阿夫吉核燃料"
 	# Radioisotopes
 		"americium 242m fuel particles"
 		"americium 242m pebbles"
@@ -1375,7 +1375,7 @@ trade
 		"tritium pellets"
 		"tritium"
 
-	commodity "Avgi Special Nuclear"
+	commodity "阿夫吉特级核燃料"
 		"americium 242m"
 		"americium"
 		"californium"
@@ -1419,5 +1419,5 @@ trade
 		"plutonium sparkplugs"
 		"channel filler material"
 
-	commodity "Avgi Storage Media"
+	commodity "阿夫吉存储介质"
 		"memory diamond"

@@ -13,7 +13,7 @@
 
 outfit "Small Collector Module"
 	"display name" "小型收集器模块"
-	category "Power"
+	category "能源"
 	series "Solar"
 	index 08010
 	licenses
@@ -28,7 +28,7 @@ outfit "Small Collector Module"
 
 outfit "Large Collector Module"
 	"display name" "大型收集器模块"
-	category "Power"
+	category "能源"
 	series "Solar"
 	index 08020
 	licenses
@@ -43,7 +43,7 @@ outfit "Large Collector Module"
 
 outfit "Small Reactor Module"
 	"display name" "小型反应堆模块"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 08030
 	licenses
@@ -59,7 +59,7 @@ outfit "Small Reactor Module"
 
 outfit "Large Reactor Module"
 	"display name" "大型反应堆模块"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 08040
 	licenses
@@ -75,7 +75,7 @@ outfit "Large Reactor Module"
 
 outfit "Small Cogeneration Module"
 	"display name" "小型联合发电模块"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 08010
 	licenses
@@ -91,7 +91,7 @@ outfit "Small Cogeneration Module"
 
 outfit "Large Cogeneration Module"
 	"display name" "大型热电联产模块"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 08020
 	licenses
@@ -106,7 +106,7 @@ outfit "Large Cogeneration Module"
 
 outfit "Small Battery Module"
 	"display name" "小型电池模块"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 08010
 	licenses
@@ -120,7 +120,7 @@ outfit "Small Battery Module"
 
 outfit "Large Battery Module"
 	"display name" "大型电池模块"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 08020
 	licenses
@@ -135,7 +135,7 @@ outfit "Large Battery Module"
 
 outfit "Small Shield Module"
 	"display name" "小型护盾模块"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 08010
 	licenses
@@ -151,7 +151,7 @@ outfit "Small Shield Module"
 
 outfit "Large Shield Module"
 	"display name" "大型护盾模块"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 08020
 	licenses
@@ -167,7 +167,7 @@ outfit "Large Shield Module"
 
 outfit "Overcharged Shield Module"
 	"display name" "超载护盾模块"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 08030
 	licenses
@@ -184,7 +184,7 @@ outfit "Overcharged Shield Module"
 
 outfit "Small Repair Module"
 	"display name" "小型维修模块"
-	category "Systems"
+	category "系统"
 	series "Repair"
 	index 08010
 	licenses
@@ -200,7 +200,7 @@ outfit "Small Repair Module"
 
 outfit "Large Repair Module"
 	"display name" "大型维修模块"
-	category "Systems"
+	category "系统"
 	series "Repair"
 	index 08020
 	licenses
@@ -216,7 +216,7 @@ outfit "Large Repair Module"
 
 outfit "Overclocked Repair Module"
 	"display name" "超频维修模块"
-	category "Systems"
+	category "系统"
 	series "Repair"
 	index 08030
 	licenses
@@ -233,7 +233,7 @@ outfit "Overclocked Repair Module"
 
 outfit "Cooling Module"
 	"display name" "冷却模块"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 08010
 	licenses
@@ -248,7 +248,7 @@ outfit "Cooling Module"
 
 outfit "Fuel Module"
 	"display name" "燃料模块"
-	category "Systems"
+	category "系统"
 	series "Fuel"
 	index 08020
 	licenses
@@ -264,7 +264,7 @@ outfit "Fuel Module"
 
 outfit "Decoy Plating"
 	"display name" "诱饵装甲"
-	category "Systems"
+	category "系统"
 	series "Jammers"
 	index 08010
 	cost 93000
@@ -278,7 +278,7 @@ outfit "Decoy Plating"
 
 outfit "Refueling Module"
 	"display name" "加油模块"
-	category "Systems"
+	category "系统"
 	series "Fuel"
 	index 08030
 	cost 822000
@@ -293,7 +293,7 @@ outfit "Refueling Module"
 
 outfit "Shield Refactor Module"
 	"display name" "护盾重构模块"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 08040
 	cost 3248000
@@ -310,7 +310,7 @@ outfit "Shield Refactor Module"
 
 outfit "Small Recovery Module"
 	"display name" "小型回收模块"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 08050
 	cost 625000
@@ -327,7 +327,7 @@ outfit "Small Recovery Module"
 
 outfit "Scanning Module"
 	"display name" "扫描模块"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 08010
 	licenses
@@ -345,7 +345,7 @@ outfit "Scanning Module"
 
 outfit "Outskirts Gauger"
 	"display name" "边陲量测者"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 08020
 	cost 1406000
@@ -360,8 +360,8 @@ outfit "Outskirts Gauger"
 
 outfit "Small Thrust Module"
 	"display name" "小型推力模块"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 08011
 	licenses
 		Coalition
@@ -380,8 +380,8 @@ outfit "Small Thrust Module"
 
 outfit "Large Thrust Module"
 	"display name" "大型推进模块"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 08021
 	licenses
 		Coalition
@@ -400,8 +400,8 @@ outfit "Large Thrust Module"
 
 outfit "Small Reverse Module"
 	"display name" "小型反推模块"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 08012
 	licenses
 		Coalition
@@ -421,8 +421,8 @@ outfit "Small Reverse Module"
 
 outfit "Large Reverse Module"
 	"display name" "大型反推模块"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 08022
 	licenses
 		Coalition
@@ -442,8 +442,8 @@ outfit "Large Reverse Module"
 
 outfit "Small Steering Module"
 	"display name" "小型转向模块"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 08010
 	licenses
 		Coalition
@@ -462,8 +462,8 @@ outfit "Small Steering Module"
 
 outfit "Large Steering Module"
 	"display name" "大型转向模块"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 08020
 	licenses
 		Coalition
@@ -482,7 +482,7 @@ outfit "Large Steering Module"
 
 outfit "Enforcer Confrontation Gear"
 	"display name" "执法者对抗装备"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 08020
 	licenses
@@ -496,7 +496,7 @@ outfit "Enforcer Confrontation Gear"
 
 outfit "Enforcer Riot Staff"
 	"display name" "执法者镇暴棍"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 08010
 	licenses
@@ -510,7 +510,7 @@ outfit "Enforcer Riot Staff"
 
 outfit "Guardian Turret"
 	"display name" "守护者碉塔"
-	category "Hand to Hand"
+	category "近战"
 	series "Fortifications"
 	index 08025
 	licenses
@@ -527,7 +527,7 @@ outfit "Guardian Turret"
 
 outfit "Anti-Materiel Gun"
 	"display name" "反器材炮"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 08030
 	cost 257200
@@ -539,8 +539,8 @@ outfit "Anti-Materiel Gun"
 
 outfit "Coalition License"
 	"display name" "联盟许可"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 08010
 	thumbnail "outfit/coalition license"
 	description "一块呈风格化徽章形状的数字芯片，该凭证代表所有者拥有浏览、使用及交易联盟民用技术的许可。"
@@ -548,15 +548,15 @@ outfit "Coalition License"
 
 outfit "Heliarch License"
 	"display name" "赫利阿克执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 08020
 	thumbnail "outfit/heliarch license"
 	description "一个由黄金和白金制成的华丽环冠，既是军阶的象征，也是进入日政司专属设施的许可证。它专为人类头部定制，出奇地轻便舒适。"
 
 outfit "Beyond the Hyperdrive"
 	"display name" "超越超空间引擎"
-	category "Unique"
+	category "独特"
 	series "Non-Functional Unique"
 	index 11
 	thumbnail "outfit/beyond the hyperdrive"

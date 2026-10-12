@@ -18,7 +18,7 @@ ship "Quarg Lindwyrm"
 	thumbnail "thumbnail/quarg lindwyrm"
 	"administrative cost" 9
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		"cost" 20000000
 		"shields" 95000
 		"hull" 55000
@@ -70,7 +70,7 @@ ship "Quarg Guivre"
 	thumbnail "thumbnail/quarg guivre"
 	"administrative cost" 14
 	attributes
-		category "Utility"
+		category "通用"
 		"cost" 75000000
 		"shields" 185000
 		"hull" 115000
@@ -122,7 +122,7 @@ ship "Quarg Drake"
 	thumbnail "thumbnail/quarg drake"
 	"administrative cost" 8
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 12000000
 		"shields" 95000
 		"hull" 25000
@@ -176,7 +176,7 @@ ship "Quarg Wardragon"
 	thumbnail "thumbnail/quarg wardragon"
 	"administrative cost" 8
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		"cost" 15000000
 		"shields" 105000
 		"hull" 30000
@@ -229,7 +229,7 @@ ship "Quarg Wyvern"
 	thumbnail "thumbnail/quarg wyvern"
 	"administrative cost" 10
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		"cost" 27000000
 		"shields" 155000
 		"hull" 45000
@@ -283,7 +283,7 @@ ship "Quarg Hydra"
 	thumbnail "thumbnail/quarg hydra"
 	"administrative cost" 15
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		"cost" 65000000
 		"shields" 310000
 		"hull" 80000

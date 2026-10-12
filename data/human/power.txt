@@ -13,7 +13,7 @@
 
 outfit "Supercapacitor"
 	"display name" "超级电容"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 01010
 	cost 1500
@@ -25,7 +25,7 @@ outfit "Supercapacitor"
 
 outfit "LP036a Battery Pack"
 	"display name" "LP036a 电池组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 01020
 	cost 6000
@@ -37,7 +37,7 @@ outfit "LP036a Battery Pack"
 
 outfit "LP072a Battery Pack"
 	"display name" "LP072a 电池组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 01030
 	cost 14000
@@ -49,7 +49,7 @@ outfit "LP072a Battery Pack"
 
 outfit "LP144a Battery Pack"
 	"display name" "LP144a 电池组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 01040
 	cost 32000
@@ -61,7 +61,7 @@ outfit "LP144a Battery Pack"
 
 outfit "LP288a Battery Pack"
 	"display name" "LP288a 电池组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 01050
 	cost 54000
@@ -73,7 +73,7 @@ outfit "LP288a Battery Pack"
 
 outfit "LP576a Battery Pack"
 	"display name" "LP576a 电池组"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 01060
 	cost 80000
@@ -86,7 +86,7 @@ outfit "LP576a Battery Pack"
 
 outfit "KP-6 Photovoltaic Panel"
 	"display name" "KP-6 光电池板"
-	category "Power"
+	category "能源"
 	series "Solar"
 	index 01010
 	cost 7000
@@ -98,7 +98,7 @@ outfit "KP-6 Photovoltaic Panel"
 
 outfit "KP-6 Photovoltaic Array"
 	"display name" "KP-6 光电池阵列"
-	category "Power"
+	category "能源"
 	series "Solar"
 	index 01020
 	cost 60000
@@ -111,7 +111,7 @@ outfit "KP-6 Photovoltaic Array"
 
 outfit "nGVF-AA Fuel Cell"
 	"display name" "nGVF-AA燃料电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01010
 	cost 35000
@@ -124,7 +124,7 @@ outfit "nGVF-AA Fuel Cell"
 
 outfit "nGVF-BB Fuel Cell"
 	"display name" "nGVF-BB燃料电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01020
 	cost 47000
@@ -137,7 +137,7 @@ outfit "nGVF-BB Fuel Cell"
 
 outfit "nGVF-CC Fuel Cell"
 	"display name" "nGVF-CC燃料电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01030
 	cost 72000
@@ -150,7 +150,7 @@ outfit "nGVF-CC Fuel Cell"
 
 outfit "nGVF-DD Fuel Cell"
 	"display name" "nGVF-DD燃料电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01040
 	cost 118000
@@ -163,7 +163,7 @@ outfit "nGVF-DD Fuel Cell"
 
 outfit "nGVF-EE Fuel Cell"
 	"display name" "nGVF-EE燃料电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01050
 	cost 177000
@@ -177,7 +177,7 @@ outfit "nGVF-EE Fuel Cell"
 
 outfit "RT-I Radiothermal"
 	"display name" "RT-I 放射热发电机"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01060
 	cost 300000
@@ -190,7 +190,7 @@ outfit "RT-I Radiothermal"
 
 outfit "S3 Thermionic"
 	"display name" "S3 热离子"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01070
 	cost 360000
@@ -203,7 +203,7 @@ outfit "S3 Thermionic"
 
 outfit "NT-200 Nucleovoltaic"
 	"display name" "NT-200 核光伏"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01080
 	cost 570000
@@ -217,7 +217,7 @@ outfit "NT-200 Nucleovoltaic"
 
 outfit "Dwarf Core"
 	"display name" "矮星核心"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01090
 	cost 800000
@@ -230,7 +230,7 @@ outfit "Dwarf Core"
 
 outfit "Fission Reactor"
 	"display name" "裂变反应堆"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01100
 	cost 1500000
@@ -243,7 +243,7 @@ outfit "Fission Reactor"
 
 outfit "Breeder Reactor"
 	"display name" "增殖反应堆"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01110
 	cost 2500000
@@ -256,7 +256,7 @@ outfit "Breeder Reactor"
 
 outfit "Fusion Reactor"
 	"display name" "聚变反应堆"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01120
 	cost 5000000
@@ -269,7 +269,7 @@ outfit "Fusion Reactor"
 
 outfit "Armageddon Core"
 	"display name" "末日核心"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01130
 	cost 9000000
@@ -282,7 +282,7 @@ outfit "Armageddon Core"
 
 outfit "Stack Core"
 	"display name" "堆叠核心"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 01140
 	cost 4500000

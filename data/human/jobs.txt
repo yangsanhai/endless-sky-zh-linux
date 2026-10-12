@@ -2981,7 +2981,7 @@ mission "Recycle garbage"
 	repeat
 	to offer
 		random < 70
-	cargo "Garbage" 15 100
+	cargo "垃圾" 15 100
 	source
 		attributes station
 	destination
@@ -3005,7 +3005,7 @@ mission "FW Wildfire Aid [1]"
 		"<problem>" "wildfire"
 			"random" < 30
 	description "在<destination>上发生了一场严重的<problem>，星球上的多个定居点受到影响。请在<date>之前将<cargo>运送至<planet>，以协助灭火工作。报酬为<payment>。"
-	cargo "flames aid" 25 2 .05
+	cargo "火焰援助物资" 25 2 .05
 	deadline
 	to offer
 		random < 5
@@ -4076,7 +4076,7 @@ mission "Republic Navy Advisory System [volcanic]"
 			"random" < 60
 		"<problem>" "gas eruption"
 			"random" < 30
-	cargo "flames aid" 10 15 0.5
+	cargo "火焰援助物资" 10 15 0.5
 	to offer
 		random < 1
 	on offer
@@ -4103,7 +4103,7 @@ mission "Republic Navy Advisory System [wildfire cargo]"
 			"random" < 60
 		"<problem>" "wildfire"
 			"random" < 30
-	cargo "flames aid" 10 15 0.5
+	cargo "火焰援助物资" 10 15 0.5
 	to offer
 		random < 1
 	on offer

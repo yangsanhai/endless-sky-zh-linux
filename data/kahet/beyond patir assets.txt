@@ -50,7 +50,7 @@ ship "Asteroid Large 1"
 	sprite "ship/asteroid adult"
 	"uncapturable"
 	attributes
-		category "Transport"
+		category "运输船"
 		"inscrutable" 1
 		"cost" 29000000
 		"hull" 36561
@@ -103,7 +103,7 @@ ship "Asteroid Large 2"
 	sprite "ship/asteroid adult 2"
 	"uncapturable"
 	attributes
-		category "Transport"
+		category "运输船"
 		"inscrutable" 1
 		"cost" 23000000
 		"hull" 37151
@@ -158,7 +158,7 @@ ship "Asteroid Large 3"
 	sprite "ship/asteroid adult 3"
 	"uncapturable"
 	attributes
-		category "Transport"
+		category "运输船"
 		"inscrutable" 1
 		"cost" 19000000
 		"hull" 35172
@@ -211,7 +211,7 @@ ship "Asteroid Large 4"
 	sprite "ship/asteroid adult 4"
 	"uncapturable"
 	attributes
-		category "Transport"
+		category "运输船"
 		"inscrutable" 1
 		"cost" 17000000
 		"hull" 35172
@@ -264,7 +264,7 @@ ship "Asteroid Large 5"
 	sprite "ship/asteroid adult 5"
 	"uncapturable"
 	attributes
-		category "Transport"
+		category "运输船"
 		"inscrutable" 1
 		"cost" 31000000
 		"hull" 36716
@@ -317,7 +317,7 @@ ship "Asteroid Medium"
 	sprite "ship/asteroid medium"
 	"uncapturable"
 	attributes
-		category "Transport"
+		category "运输船"
 		"inscrutable" 1
 		"cost" 13000000
 		"hull" 21248
@@ -369,7 +369,7 @@ ship "Asteroid Young 1"
 	sprite "ship/asteroid young"
 	"uncapturable"
 	attributes
-		category "Transport"
+		category "运输船"
 		"inscrutable" 1
 		"cost" 11000000
 		"hull" 16459
@@ -420,7 +420,7 @@ ship "Asteroid Young 2"
 	sprite "ship/asteroid young 2"
 	"uncapturable"
 	attributes
-		category "Transport"
+		category "运输船"
 		"inscrutable" 1
 		"cost" 7000000
 		"hull" 15984
@@ -471,7 +471,7 @@ ship "Asteroid Young 3"
 	sprite "ship/asteroid young 3"
 	"uncapturable"
 	attributes
-		category "Transport"
+		category "运输船"
 		"inscrutable" 1
 		"cost" 5000000
 		"hull" 17021
@@ -522,7 +522,7 @@ ship "Asteroid Young 4"
 	sprite "ship/asteroid young 4"
 	"uncapturable"
 	attributes
-		category "Transport"
+		category "运输船"
 		"inscrutable" 1
 		"cost" 3000000
 		"hull" 16462
@@ -571,7 +571,7 @@ ship "Asteroid Young 4"
 
 outfit "Asteroid Anti-Missile"
 	"display name" "???"
-	category "Turrets"
+	category "炮塔"
 	cost 18630000
 	thumbnail "outfit/asteroid weapon 2"
 	"mass" 41
@@ -597,7 +597,7 @@ effect "asteroid am fire"
 
 outfit "Asteroid Anti-Missile 2"
 	"display name" "???"
-	category "Turrets"
+	category "炮塔"
 	cost 12128000
 	thumbnail "outfit/asteroid weapon 8"
 	"mass" 29
@@ -625,7 +625,7 @@ effect "asteroid am circle defense"
 
 outfit "Asteroid Weapon Small"
 	"display name" "???"
-	category "Guns"
+	category "枪炮"
 	cost 12346000
 	thumbnail "outfit/asteroid weapon 3"
 	"mass" 31
@@ -675,7 +675,7 @@ outfit "Asteroid Circle Submunition"
 
 outfit "Asteroid Weapon Large"
 	"display name" "???"
-	category "Guns"
+	category "枪炮"
 	cost 18970000
 	thumbnail "outfit/asteroid weapon 6"
 	"mass" 43
@@ -1135,7 +1135,7 @@ outfit "asteroid launch"
 
 outfit "Asteroid Weapon Large 2"
 	"display name" "???"
-	category "Guns"
+	category "枪炮"
 	cost 171670000
 	thumbnail "outfit/asteroid weapon 1"
 	"mass" 39
@@ -1504,7 +1504,7 @@ effect "asteroid circle trail"
 
 outfit "Asteroid Weapon Large 3"
 	"display name" "???"
-	category "Guns"
+	category "枪炮"
 	cost 19870000
 	thumbnail "outfit/asteroid weapon 5"
 	"mass" 52
@@ -1654,7 +1654,7 @@ outfit "magic deployer6"
 
 outfit "Asteroid Weapon Large 4"
 	"display name" "???"
-	category "Guns"
+	category "枪炮"
 	cost 15716000
 	thumbnail "outfit/asteroid weapon 4"
 	"mass" 44
@@ -2507,7 +2507,7 @@ effect "circle defense"
 
 outfit "Asteroid Jump Drive"
 	"display name" "???"
-	category "Systems"
+	category "系统"
 	cost 9963000
 	thumbnail "outfit/asteroid weapon 7"
 	"mass" 20

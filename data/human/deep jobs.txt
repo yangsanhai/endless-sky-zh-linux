@@ -1116,7 +1116,7 @@ mission "Lionheart Shipment [0]"
 mission "Lionheart Shipment [1]"
 	name "运送至<planet>的货物"
 	description "将<cargo>运送至<destination>，这里是因先进及实验性设计而闻名的狮心工业总部。报酬为<payment>。"
-	cargo "Ship Alloys" 5 2 .1
+	cargo "舰船合金" 5 2 .1
 	job
 	repeat
 	to offer
@@ -1135,7 +1135,7 @@ mission "Lionheart Shipment [1]"
 mission "Lionheart Shipment [2]"
 	name "运送至<planet>的货物"
 	description "将<cargo>运送至<destination>，这里是因先进及实验性设计而闻名的狮心工业总部。报酬为<payment>。"
-	cargo "Ship Systems" 5 2 .1
+	cargo "舰船系统" 5 2 .1
 	job
 	repeat
 	to offer

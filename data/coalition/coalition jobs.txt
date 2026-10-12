@@ -157,7 +157,7 @@ mission "Coalition: Ringworld Materials 1"
 	name "运送材料至<planet>"
 	description "在<date>前将这些<tons>吨建筑材料送达至日权会<planet>。报酬为<payment>。"
 	deadline
-	cargo "Construction" 10 3 .02
+	cargo "建材" 10 3 .02
 	to offer
 		has "known to the heliarchs"
 		random < 30
@@ -179,7 +179,7 @@ mission "Coalition: Ringworld Materials 2"
 	name "运送材料至<planet>"
 	description "在<date>前将这些<tons>吨建筑材料送达至日权会<planet>。报酬为<payment>。"
 	deadline
-	cargo "Construction" 10 4 .02
+	cargo "建材" 10 4 .02
 	to offer
 		has "known to the heliarchs"
 		random < 20
@@ -201,7 +201,7 @@ mission "Coalition: Ringworld Materials 3"
 	name "运送材料至<planet>"
 	description "在<date>前将这些<tons>吨建筑材料送达至日权会<planet>。报酬为<payment>。"
 	deadline
-	cargo "Construction" 10 5 .02
+	cargo "建材" 10 5 .02
 	to offer
 		has "known to the heliarchs"
 		random < 10
@@ -872,7 +872,7 @@ mission "Coalition: Cargo 1"
 	repeat
 	name "运送货物至<planet>"
 	description "将<cargo>运送到<destination>。报酬为<payment>。"
-	cargo "coalition cargo" 4 6 .3
+	cargo "联盟货物" 4 6 .3
 	to offer
 		has "known to the heliarchs"
 		random < 80
@@ -894,7 +894,7 @@ mission "Coalition: Cargo 2"
 	repeat
 	name "运送货物至<planet>"
 	description "将<cargo>运送到<destination>。报酬为<payment>。"
-	cargo "coalition cargo" 4 8 .3
+	cargo "联盟货物" 4 8 .3
 	to offer
 		has "known to the heliarchs"
 		random < 70
@@ -916,7 +916,7 @@ mission "Coalition: Cargo 3"
 	repeat
 	name "运送货物至<planet>"
 	description "将<cargo>运送到<destination>。报酬为<payment>。"
-	cargo "coalition cargo" 4 11 .3
+	cargo "联盟货物" 4 11 .3
 	to offer
 		has "known to the heliarchs"
 		random < 60
@@ -938,7 +938,7 @@ mission "Coalition: Cargo 4"
 	repeat
 	name "运送货物至<planet>"
 	description "将<cargo>运送到<destination>。报酬为<payment>。"
-	cargo "coalition cargo" 4 15 .3
+	cargo "联盟货物" 4 15 .3
 	to offer
 		has "known to the heliarchs"
 		random < 50

@@ -16,8 +16,8 @@
 
 outfit "Inhibitor Cannon"
 	"display name" "抑制者加农炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 03010
 	licenses
 		Remnant
@@ -61,8 +61,8 @@ effect "inhibitor impact"
 
 outfit "Inhibitor Turret"
 	"display name" "抑制者碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 03010
 	licenses
 		Remnant
@@ -101,8 +101,8 @@ outfit "Inhibitor Turret"
 
 outfit "Thrasher Cannon"
 	"display name" "鞭笞炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 03020
 	licenses
 		Remnant
@@ -142,8 +142,8 @@ effect "thrasher impact"
 
 outfit "Thrasher Turret"
 	"display name" "鞭笞炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 03020
 	licenses
 		Remnant
@@ -177,7 +177,7 @@ outfit "Thrasher Turret"
 
 outfit "Point Defense Turret"
 	"display name" "点防御碉塔"
-	category "Turrets"
+	category "炮塔"
 	series "Anti-Missile"
 	index 03010
 	licenses
@@ -228,8 +228,8 @@ effect "point defense die"
 outfit "EMP Torpedo"
 	"display name" "EMP 鱼雷"
 	plural "EMP 鱼雷"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 03010
 	cost 4400
 	thumbnail "outfit/emp torpedo"
@@ -239,8 +239,8 @@ outfit "EMP Torpedo"
 
 outfit "EMP Torpedo Storage Bay"
 	"display name" "EMP 鱼雷储存舱"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 03011
 	licenses
 		Remnant
@@ -256,8 +256,8 @@ outfit "EMP Torpedo Storage Bay"
 
 outfit "EMP Torpedo Bay"
 	"display name" "EMP 鱼雷发射舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 03010
 	licenses
 		Remnant
@@ -311,8 +311,8 @@ outfit "EMP Torpedo Bay"
 
 outfit "Teciimach Bay"
 	"display name" "泰奇玛奇舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 03030
 	licenses
 		Remnant
@@ -367,8 +367,8 @@ outfit "Teciimach Bay"
 
 outfit "Teciimach Pod"
 	"display name" "泰奇玛奇吊舱"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 03020
 	licenses
 		Remnant
@@ -469,8 +469,8 @@ effect "emp spark"
 
 outfit "Ember Tear"
 	"display name" "余烬之泪"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 03040
 	licenses
 		"Remnant Capital"
@@ -559,7 +559,7 @@ effect "ember tear vortex"
 
 outfit "Crystal Capacitor"
 	"display name" "水晶电容器"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 03010
 	licenses
@@ -578,7 +578,7 @@ outfit "Crystal Capacitor"
 
 outfit "Millennium Cell"
 	"display name" "千禧电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 03010
 	licenses
@@ -596,7 +596,7 @@ outfit "Millennium Cell"
 
 outfit "Epoch Cell"
 	"display name" "纪元电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 03020
 	licenses
@@ -614,7 +614,7 @@ outfit "Epoch Cell"
 
 outfit "Aeon Cell"
 	"display name" "万古电池"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 03030
 	licenses
@@ -632,7 +632,7 @@ outfit "Aeon Cell"
 
 outfit "Thermoelectric Cooler"
 	"display name" "热电冷却器"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 03010
 	licenses
@@ -647,7 +647,7 @@ outfit "Thermoelectric Cooler"
 
 outfit "Emergency Ramscoop"
 	"display name" "应急冲压采集器"
-	category "Systems"
+	category "系统"
 	series "Ramscoops"
 	index 03010
 	licenses
@@ -661,7 +661,7 @@ outfit "Emergency Ramscoop"
 
 outfit "NDR-114 Android"
 	"display name" "NDR-114 仿生人"
-	category "Unique"
+	category "独特"
 	series "Functional Unique"
 	index 40
 	cost 120000
@@ -675,7 +675,7 @@ outfit "NDR-114 Android"
 
 outfit "Research Laboratory"
 	"display name" "研究实验室"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 03020
 	licenses
@@ -695,7 +695,7 @@ outfit "Research Laboratory"
 
 outfit "Quantum Key Stone"
 	"display name" "量子钥石"
-	category "Systems"
+	category "系统"
 	series "Drives"
 	index 60
 	licenses
@@ -709,7 +709,7 @@ outfit "Quantum Key Stone"
 
 outfit "Salvage Scanner"
 	"display name" "打捞扫描仪"
-	category "Systems"
+	category "系统"
 	series "Scanners"
 	index 03010
 	licenses
@@ -730,7 +730,7 @@ outfit "Salvage Scanner"
 
 outfit "Bellows-Class Afterburner"
 	"display name" "风箱级加力燃烧室"
-	category "Engines"
+	category "引擎"
 	series "Afterburners"
 	index 03010
 	"cost" 640000
@@ -757,8 +757,8 @@ effect "remnant afterburner"
 
 outfit "Anvil-Class Engine"
 	"display name" "铁砧级引擎"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 03010
 	licenses
 		Remnant
@@ -790,8 +790,8 @@ outfit "Anvil-Class Engine"
 
 outfit "Crucible-Class Thruster"
 	"display name" "坩埚级推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 03021
 	licenses
 		Remnant
@@ -817,8 +817,8 @@ outfit "Crucible-Class Thruster"
 
 outfit "Forge-Class Thruster"
 	"display name" "熔炉级推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 03031
 	licenses
 		Remnant
@@ -844,8 +844,8 @@ outfit "Forge-Class Thruster"
 
 outfit "Smelter-Class Thruster"
 	"display name" "熔炉级推进器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 03041
 	licenses
 		Remnant
@@ -871,8 +871,8 @@ outfit "Smelter-Class Thruster"
 
 outfit "Crucible-Class Steering"
 	"display name" "坩埚级转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 03020
 	licenses
 		Remnant
@@ -892,8 +892,8 @@ outfit "Crucible-Class Steering"
 
 outfit "Forge-Class Steering"
 	"display name" "熔炉级转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 03030
 	licenses
 		Remnant
@@ -913,8 +913,8 @@ outfit "Forge-Class Steering"
 
 outfit "Smelter-Class Steering"
 	"display name" "熔炉级转向器"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 03040
 	licenses
 		Remnant
@@ -938,7 +938,7 @@ outfit "Smelter-Class Steering"
 
 outfit "Tuning Rifle"
 	"display name" "调谐步枪"
-	category "Hand to Hand"
+	category "近战"
 	series "H2H"
 	index 03010
 	licenses
@@ -956,7 +956,7 @@ outfit "Tuning Rifle"
 
 outfit "Void Rifle"
 	"display name" "虚空步枪"
-	category "Unique"
+	category "独特"
 	series "Functional Unique"
 	index 50
 	licenses
@@ -976,7 +976,7 @@ outfit "Void Rifle"
 outfit "Void Sprite Parts"
 	"display name" "虚空精灵部件"
 	plural "虚空精灵部件"
-	category "Unique"
+	category "独特"
 	series "Non-Functional Unique"
 	index 20
 	cost 500
@@ -996,16 +996,16 @@ outfit "Void Sprite Parts"
 
 outfit "Remnant License"
 	"display name" "遗族执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 03010
 	thumbnail "outfit/remnant license"
 	description "这款设备除了可用作便携式敌我识别验证器、个人身份识别工具以及购买遗民技术的许可证之外，其可动部件在每次调节时都会发出机械咔嗒声。当按照特定顺序和节奏切换这些部件时，一连串咔嗒声会汇合成出人意料地优美动听的古典音乐混曲。"
 
 outfit "Remnant Capital License"
 	"display name" "遗族主力舰执照"
-	category "Licenses"
-	series "Licenses"
+	category "许可证"
+	series "许可证"
 	index 03020
 	thumbnail "outfit/remnant capital license"
 	description "虽然乍看之下无害，但该设备展现了遗民工程学的精妙简洁。轻点其边缘会发出短暂而微弱的嗡鸣声，这种声音在行星上可传播至远方。这种嗡鸣允许被托付遗民最珍贵科技的船长在遇险时召唤附近的巡逻队寻求援助。"

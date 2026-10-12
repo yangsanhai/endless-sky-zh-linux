@@ -15,8 +15,8 @@
 
 outfit "Ka'het Nullifier"
 	"display name" "卡'赫特湮灭器"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 05030
 	cost 3062000
 	thumbnail "outfit/ka'het nullifier"
@@ -115,8 +115,8 @@ effect "ionball ring"
 
 outfit "Ka'het Ravager Beam"
 	"display name" "卡'赫特蹂躏者光束"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 05020
 	cost 322000
 	thumbnail "outfit/ka'het ravager beam"
@@ -141,8 +141,8 @@ outfit "Ka'het Ravager Beam"
 
 outfit "Ka'het Ravager Turret"
 	"display name" "卡'赫特蹂躏者碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 05020
 	cost 417000
 	thumbnail "outfit/ka'het ravager turret"
@@ -177,8 +177,8 @@ effect "ravager impact"
 
 outfit "Ka'het Annihilator"
 	"display name" "卡'赫特歼灭者"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 05010
 	cost 351000
 	thumbnail "outfit/ka'het annihilator"
@@ -203,8 +203,8 @@ outfit "Ka'het Annihilator"
 
 outfit "Ka'het Annihilator Turret"
 	"display name" "卡'赫特歼灭者碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 05010
 	cost 529000
 	thumbnail "outfit/ka'het annihilator turret"
@@ -244,8 +244,8 @@ outfit "Annihilator Projectile"
 
 outfit "Ka'het EMP Deployer"
 	"display name" "卡'赫特电磁脉冲部署器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 05010
 	cost 715000
 	thumbnail "outfit/ka'het emp deployer"
@@ -295,8 +295,8 @@ outfit "Ka'het EMP Deployer"
 
 outfit "Ka'het Emergency Deployer"
 	"display name" "卡'赫特应急部署器"
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 05020
 	cost 645000
 	thumbnail "outfit/ka'het mhd deployer"
@@ -356,7 +356,7 @@ effect "mhd explosion"
 
 outfit "Ka'het Support Cooling"
 	"display name" "卡'赫特辅助冷却"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 05010
 	cost 218000
@@ -370,7 +370,7 @@ outfit "Ka'het Support Cooling"
 
 outfit "Ka'het Primary Cooling"
 	"display name" "卡'赫特主冷却"
-	category "Systems"
+	category "系统"
 	series "Cooling"
 	index 05020
 	cost 563000
@@ -385,7 +385,7 @@ outfit "Ka'het Primary Cooling"
 
 outfit "Ka'het Shield Restorer"
 	"display name" "卡'赫特护盾修复器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 05010
 	cost 138000
@@ -398,7 +398,7 @@ outfit "Ka'het Shield Restorer"
 
 outfit "Ka'het Grand Restorer"
 	"display name" "卡'赫特大型修复器"
-	category "Systems"
+	category "系统"
 	series "Shields"
 	index 05020
 	cost 1022000
@@ -415,7 +415,7 @@ outfit "Ka'het Grand Restorer"
 
 outfit "Ka'het MHD Generator"
 	"display name" "卡'赫特磁流体发电机"
-	category "Power"
+	category "能源"
 	series "Generators"
 	index 05010
 	cost 1263000
@@ -428,7 +428,7 @@ outfit "Ka'het MHD Generator"
 
 outfit "Ka'het Reserve Accumulator"
 	"display name" "卡'赫特备用蓄能器"
-	category "Power"
+	category "能源"
 	series "Batteries"
 	index 05010
 	cost 27000
@@ -443,8 +443,8 @@ outfit "Ka'het Reserve Accumulator"
 outfit "Maeri Engine Nacelles"
 	"display name" "梅里引擎舱"
 	plural "梅里引擎舱"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 05030
 	"cost" 928000
 	thumbnail "outfit/ka'het maeri engine"
@@ -468,8 +468,8 @@ outfit "Maeri Engine Nacelles"
 outfit "Ka'het Sustainer Nacelles"
 	"display name" "卡'赫特维持引擎舱"
 	plural "卡赫特维持者引擎舱"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 05020
 	"cost" 357000
 	thumbnail "outfit/ka'het sustainer engine"
@@ -493,8 +493,8 @@ outfit "Ka'het Sustainer Nacelles"
 outfit "Telis Engine Nacelles"
 	"display name" "泰利斯引擎短舱"
 	plural "泰利斯引擎舱"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 05040
 	"cost" 1372000
 	thumbnail "outfit/ka'het telis engine"
@@ -517,8 +517,8 @@ outfit "Telis Engine Nacelles"
 
 outfit "Vareti Engine Block"
 	"display name" "瓦雷蒂引擎组"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 05050
 	"cost" 1815000
 	thumbnail "outfit/ka'het vareti engine"
@@ -541,8 +541,8 @@ outfit "Vareti Engine Block"
 
 outfit "Ka'het Compact Engine"
 	"display name" "卡'赫特紧凑引擎"
-	category "Engines"
-	series "Engines"
+	category "引擎"
+	series "引擎"
 	index 05010
 	"cost" 172000
 	thumbnail "outfit/ka'het compact engine"
@@ -569,7 +569,7 @@ outfit "Ka'het Compact Engine"
 
 outfit "Ka'het Electric Stunner"
 	"display name" "卡'赫特电击器"
-	category "Hand to Hand"
+	category "近战"
 	cost 103500
 	thumbnail "outfit/ka'het taser"
 	"capture attack" 1.3

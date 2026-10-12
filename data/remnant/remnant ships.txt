@@ -20,7 +20,7 @@ ship "Albatross"
 	thumbnail "thumbnail/albatross"
 	"administrative cost" 7
 	attributes
-		category "Heavy Warship"
+		category "重型战舰"
 		licenses
 			"Remnant Capital"
 		cost 20250000
@@ -280,7 +280,7 @@ ship "Modified Dromedary"
 	attributes
 		licenses
 			"Remnant Capital"
-		category "Utility"
+		category "通用"
 		"cost" 57600000
 		"shields" 15100
 		"hull" 9600
@@ -337,9 +337,9 @@ ship "Modified Dromedary"
 	turret 51 101
 	turret -63.5 120 "Thrasher Turret"
 	turret 52.5 143 "Point Defense Turret"
-	bay "Fighter" -51 -54 under
+	bay "战斗机" -51 -54 under
 		"launch effect" "human internal"
-	bay "Fighter" 47 -40 under
+	bay "战斗机" 47 -40 under
 		"launch effect" "human internal"
 	leak "leak" 30 50
 	leak "flame" 30 80
@@ -484,7 +484,7 @@ ship "Gull"
 	thumbnail "thumbnail/gull"
 	"administrative cost" 2
 	attributes
-		category "Light Freighter"
+		category "轻型货船"
 		licenses
 			Remnant
 		cost 9500000
@@ -648,7 +648,7 @@ ship "Heron"
 	sprite "ship/heron"
 	"administrative cost" 30
 	attributes
-		category "Superheavy"
+		category "超重型"
 		licenses
 			"Remnant Capital"
 		"cost" 256375000
@@ -730,77 +730,77 @@ ship "Heron"
 	turret -123.5 125.5 "Inhibitor Turret"
 	turret 123.5 125.5 "Inhibitor Turret"
 	turret 0 250 "Point Defense Turret"
-	bay "Drone" -124 -122.5
+	bay "无人机" -124 -122.5
 		"launch effect" "remnant internal"
-	bay "Drone" 124 -122.5
+	bay "无人机" 124 -122.5
 		"launch effect" "remnant internal"
-	bay "Drone" -176 -50.5
+	bay "无人机" -176 -50.5
 		"launch effect" "remnant internal"
-	bay "Drone" 176 -50.5
+	bay "无人机" 176 -50.5
 		"launch effect" "remnant internal"
-	bay "Drone" -148.5 4
+	bay "无人机" -148.5 4
 		"launch effect" "remnant internal"
-	bay "Drone" 148.5 4
+	bay "无人机" 148.5 4
 		"launch effect" "remnant internal"
-	bay "Drone" -56 -150
+	bay "无人机" -56 -150
 		"launch effect" "remnant internal"
-	bay "Drone" 56 -150
+	bay "无人机" 56 -150
 		"launch effect" "remnant internal"
-	bay "Drone" -37 -121.5
+	bay "无人机" -37 -121.5
 		"launch effect" "remnant internal"
-	bay "Drone" 37 -121.5
+	bay "无人机" 37 -121.5
 		"launch effect" "remnant internal"
-	bay "Drone" -33.5 -99
+	bay "无人机" -33.5 -99
 		"launch effect" "remnant internal"
-	bay "Drone" 33.5 -99
+	bay "无人机" 33.5 -99
 		"launch effect" "remnant internal"
-	bay "Drone" -27 -81
+	bay "无人机" -27 -81
 		"launch effect" "remnant internal"
-	bay "Drone" 27 -81
+	bay "无人机" 27 -81
 		"launch effect" "remnant internal"
-	bay "Drone" -24 -49.5
+	bay "无人机" -24 -49.5
 		"launch effect" "remnant internal"
-	bay "Drone" 24 -49.5
+	bay "无人机" 24 -49.5
 		"launch effect" "remnant internal"
-	bay "Drone" -40 -3
+	bay "无人机" -40 -3
 		"launch effect" "remnant internal"
-	bay "Drone" 40 -3
+	bay "无人机" 40 -3
 		"launch effect" "remnant internal"
-	bay "Drone" -28 22.5
+	bay "无人机" -28 22.5
 		"launch effect" "remnant internal"
-	bay "Drone" 28 22.5
+	bay "无人机" 28 22.5
 		"launch effect" "remnant internal"
-	bay "Drone" -77.5 71.5
+	bay "无人机" -77.5 71.5
 		"launch effect" "remnant internal"
-	bay "Drone" 77.5 71.5
+	bay "无人机" 77.5 71.5
 		"launch effect" "remnant internal"
-	bay "Drone" -89.5 114
+	bay "无人机" -89.5 114
 		"launch effect" "remnant internal"
-	bay "Drone" 89.5 114
+	bay "无人机" 89.5 114
 		"launch effect" "remnant internal"
-	bay "Drone" -138.5 152.5
+	bay "无人机" -138.5 152.5
 		"launch effect" "remnant internal"
-	bay "Drone" 138.5 152.5
+	bay "无人机" 138.5 152.5
 		"launch effect" "remnant internal"
-	bay "Drone" -171 165.5
+	bay "无人机" -171 165.5
 		"launch effect" "remnant internal"
-	bay "Drone" 171 165.5
+	bay "无人机" 171 165.5
 		"launch effect" "remnant internal"
-	bay "Drone" -190.5 197.5
+	bay "无人机" -190.5 197.5
 		"launch effect" "remnant internal"
-	bay "Drone" 190.5 197.5
+	bay "无人机" 190.5 197.5
 		"launch effect" "remnant internal"
-	bay "Drone" -105 229.5
+	bay "无人机" -105 229.5
 		"launch effect" "remnant internal"
-	bay "Drone" 105 229.5
+	bay "无人机" 105 229.5
 		"launch effect" "remnant internal"
-	bay "Fighter" -31 70.5
+	bay "战斗机" -31 70.5
 		"launch effect" "remnant internal"
-	bay "Fighter" 31 70.5
+	bay "战斗机" 31 70.5
 		"launch effect" "remnant internal"
-	bay "Fighter" -40 190
+	bay "战斗机" -40 190
 		"launch effect" "remnant internal"
-	bay "Fighter" 40 190
+	bay "战斗机" 40 190
 		"launch effect" "remnant internal"
 	explode "small explosion" 40
 	explode "medium explosion" 30
@@ -819,7 +819,7 @@ ship "Ibis"
 	thumbnail "thumbnail/ibis"
 	"administrative cost" 4
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			Remnant
 		"cost" 11627000
@@ -866,17 +866,17 @@ ship "Ibis"
 		"Forge-Class Steering" 2
 		"Scram Drive"
 		
-	bay "Drone" 0 30 over
+	bay "无人机" 0 30 over
 		"launch effect" "remnant external"
-	bay "Drone" -34 68 over
+	bay "无人机" -34 68 over
 		"launch effect" "remnant external"
-	bay "Drone" 0 81 over
+	bay "无人机" 0 81 over
 		"launch effect" "remnant external"
-	bay "Drone" 34 68 over
+	bay "无人机" 34 68 over
 		"launch effect" "remnant external"
-	bay "Fighter" -25 10 under
+	bay "战斗机" -25 10 under
 		"launch effect" "remnant external"
-	bay "Fighter" 25 10 under
+	bay "战斗机" 25 10 under
 		"launch effect" "remnant external"
 	engine -16.5 120 0.7
 	engine 0 116.5 1
@@ -905,7 +905,7 @@ ship "Merganser"
 	thumbnail "thumbnail/merganser"
 	"administrative cost" 1
 	attributes
-		category "Interceptor"
+		category "截击机"
 		licenses
 			Remnant
 		"cost" 4830000
@@ -1017,7 +1017,7 @@ ship "Pelican"
 	thumbnail "thumbnail/pelican"
 	"administrative cost" 4
 	attributes
-		category "Heavy Freighter"
+		category "重型货船"
 		licenses
 			"Remnant Capital"
 		cost 9900000
@@ -1100,7 +1100,7 @@ ship "Penguin"
 	thumbnail "thumbnail/penguin"
 	"administrative cost" 1
 	attributes
-		category "Transport"
+		category "运输船"
 		licenses
 			Remnant
 		cost 2530000
@@ -1219,7 +1219,7 @@ ship "Peregrine"
 	thumbnail "thumbnail/peregrine"
 	"administrative cost" 4
 	attributes
-		category "Medium Warship"
+		category "中型战舰"
 		licenses
 			"Remnant Capital"
 		"cost" 41627000
@@ -1336,7 +1336,7 @@ ship "Petrel"
 	thumbnail "thumbnail/petrel"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		licenses
 			Remnant
 		"cost" 1141000
@@ -1452,7 +1452,7 @@ ship "Smew"
 	thumbnail "thumbnail/smew"
 	"administrative cost" 0
 	attributes
-		category "Fighter"
+		category "战斗机"
 		licenses
 			Remnant
 		"cost" 971000
@@ -1539,7 +1539,7 @@ ship "Starling"
 	thumbnail "thumbnail/starling"
 	"administrative cost" 3
 	attributes
-		category "Light Warship"
+		category "轻型战舰"
 		licenses
 			Remnant
 		cost 8800000
@@ -1703,7 +1703,7 @@ ship "Swan"
 	thumbnail "thumbnail/swan"
 	"administrative cost" 7
 	attributes
-		category "Utility"
+		category "通用"
 		licenses
 			"Remnant Capital"
 		cost 29660000
@@ -1762,13 +1762,13 @@ ship "Swan"
 	turret 0 -74.5 "Inhibitor Turret"
 	turret -116 70.5 "Point Defense Turret"
 	turret 116 70.5 "Point Defense Turret"
-	bay "Drone" -66.5 71.5 under
+	bay "无人机" -66.5 71.5 under
 		"launch effect" "remnant external"
-	bay "Drone" 66.5 71.5 under
+	bay "无人机" 66.5 71.5 under
 		"launch effect" "remnant external"
-	bay "Drone" -106.5 63.5 under
+	bay "无人机" -106.5 63.5 under
 		"launch effect" "remnant external"
-	bay "Drone" 106.5 63.5 under
+	bay "无人机" 106.5 63.5 under
 		"launch effect" "remnant external"
 	leak "remnant leak" 40 10
 	leak "remnant leak sparkle" 60 20
@@ -1788,7 +1788,7 @@ ship "Tern"
 	thumbnail "thumbnail/tern"
 	"administrative cost" 0
 	attributes
-		category "Drone"
+		category "无人机"
 		licenses
 			Remnant
 		"cost" 860000

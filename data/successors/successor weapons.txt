@@ -12,8 +12,8 @@
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
 outfit `"Ojet" Bimodal Coilgun`
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 11010
 	cost 1370000
 	thumbnail "outfit/bimodal coilgun"
@@ -58,8 +58,8 @@ outfit `"Ojet" Bimodal Coilgun`
 
 outfit "Bimodal Coilgun Turret"
 	"display name" "双模线圈炮塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 11010
 	cost 2950000
 	thumbnail "outfit/bimodal coilgun turret"
@@ -128,8 +128,8 @@ effect "bimodal switch impact"
 
 outfit "Drag Cannon"
 	"display name" "拖拽炮"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 11020
 	cost 455000
 	thumbnail "outfit/drag cannon"
@@ -182,8 +182,8 @@ effect "drag cannon impact"
 
 outfit "Successor Pulse Laser"
 	"display name" "继承者脉冲激光"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 11030
 	cost 69000
 	thumbnail "outfit/successor pulse laser"
@@ -214,8 +214,8 @@ outfit "Successor Pulse Laser"
 
 outfit "Pulse Laser Turret"
 	"display name" "脉冲激光碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 11020
 	cost 145000
 	thumbnail "outfit/successor pulse laser turret"
@@ -257,8 +257,8 @@ effect "successor pulse laser impact"
 
 outfit "Overcharged Pulse Laser"
 	"display name" "超载脉冲激光"
-	category "Guns"
-	series "Guns"
+	category "枪炮"
+	series "枪炮"
 	index 11040
 	cost 84000
 	thumbnail "outfit/overcharged pulse laser"
@@ -291,8 +291,8 @@ outfit "Overcharged Pulse Laser"
 
 outfit "Overcharged Laser Turret"
 	"display name" "超载激光碉塔"
-	category "Turrets"
-	series "Turrets"
+	category "炮塔"
+	series "炮塔"
 	index 11030
 	cost 136000
 	thumbnail "outfit/overcharged pulse laser turret"
@@ -335,8 +335,8 @@ effect "overcharged pulse laser impact"
 	"velocity scale" 0
 
 outfit `"Sjeja" Kinetic Lance`
-	category "Secondary Weapons"
-	series "Secondary Weapons"
+	category "副武器"
+	series "副武器"
 	index 11010
 	cost 3500000
 	licenses
@@ -378,8 +378,8 @@ outfit `"Sjeja" Kinetic Lance`
 
 outfit "High-Velocity Spike"
 	"display name" "高速尖刺"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 11010
 	cost 3500
 	thumbnail "outfit/hv spike"
@@ -389,8 +389,8 @@ outfit "High-Velocity Spike"
 
 outfit "High-Velocity Spike Rack"
 	"display name" "高速尖刺发射架"
-	category "Ammunition"
-	series "Ammunition"
+	category "弹药"
+	series "弹药"
 	index 11020
 	cost 50000
 	licenses
